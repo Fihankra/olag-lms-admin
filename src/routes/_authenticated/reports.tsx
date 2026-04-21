@@ -3,7 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
