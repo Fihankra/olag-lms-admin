@@ -20,6 +20,7 @@ const navItems = [
   { title: "Students", to: "/students", icon: Users },
   { title: "Programs", to: "/programs", icon: GraduationCap },
   { title: "Classes", to: "/classes", icon: BookOpen },
+  { title: "Materials", to: "/materials", icon: FolderOpen },
   { title: "Settings", to: "/settings", icon: Settings },
 ];
 
