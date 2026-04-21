@@ -401,7 +401,7 @@ function ReportsPage() {
                   <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
                   <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
                   <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
-                  {canEdit && <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>}
+                  <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
