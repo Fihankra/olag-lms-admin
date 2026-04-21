@@ -32,6 +32,7 @@ type Folder = {
   name: string;
   accessible_programs: string[];
   accessible_classes: string[];
+  created_by: string | null;
   created_at: string;
 };
 
@@ -42,6 +43,7 @@ type FileItem = {
   file_url: string;
   file_type: string;
   file_size: number;
+  created_by: string | null;
   created_at: string;
 };
 
@@ -63,9 +65,9 @@ function formatSize(bytes: number) {
 }
 
 function MaterialsPage() {
-  const { role, teacherRecord } = useAuth();
+  const { role, user } = useAuth();
   const isAdmin = role === "admin";
-  const isTeacher = role === "teacher";
+  const userId = user?.id ?? null;
 
   const [folders, setFolders] = useState<Folder[]>([]);
   const [files, setFiles] = useState<FileItem[]>([]);
@@ -73,20 +75,25 @@ function MaterialsPage() {
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [activeFolder, setActiveFolder] = useState<Folder | null>(null);
 
-  // Teacher's class program (for access filtering)
-  const [teacherProgramId, setTeacherProgramId] = useState<string | null>(null);
-
   // Modals
   const [showNewFolder, setShowNewFolder] = useState(false);
   const [showAccessModal, setShowAccessModal] = useState<Folder | null>(null);
   const [folderName, setFolderName] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  // Access edit state
+  // Access edit state (admin only)
   const [editPrograms, setEditPrograms] = useState<string[]>([]);
   const [editClasses, setEditClasses] = useState<string[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  function canManageFolder(folder: Folder) {
+    return isAdmin || (userId != null && folder.created_by === userId);
+  }
+
+  function canManageFile(file: FileItem) {
+    return isAdmin || (userId != null && file.created_by === userId);
+  }
 
   async function fetchFolders() {
     const { data } = await supabase.from("folders").select("*").order("created_at", { ascending: false });
@@ -107,50 +114,15 @@ function MaterialsPage() {
     setClasses((c.data as ClassItem[]) ?? []);
   }
 
-  // Fetch teacher's class program
-  async function fetchTeacherProgram() {
-    if (!isTeacher || !teacherRecord?.assigned_class_id) return;
-    const { data } = await supabase
-      .from("classes")
-      .select("program_id")
-      .eq("id", teacherRecord.assigned_class_id)
-      .single();
-    setTeacherProgramId((data as any)?.program_id ?? null);
-  }
-
   useEffect(() => { fetchFolders(); fetchMeta(); }, []);
-  useEffect(() => { fetchTeacherProgram(); }, [teacherRecord?.assigned_class_id]);
 
   useEffect(() => {
     if (activeFolder) fetchFiles(activeFolder.id);
   }, [activeFolder]);
 
-  // Filter folders for teachers based on access rules
-  const visibleFolders = useMemo(() => {
-    if (isAdmin) return folders;
-
-    const classId = teacherRecord?.assigned_class_id;
-
-    return folders.filter((folder) => {
-      const hasPrograms = folder.accessible_programs?.length > 0;
-      const hasClasses = folder.accessible_classes?.length > 0;
-
-      // Empty = accessible to all
-      if (!hasPrograms && !hasClasses) return true;
-
-      // Check class match
-      if (hasClasses && classId && folder.accessible_classes.includes(classId)) return true;
-
-      // Check program match
-      if (hasPrograms && teacherProgramId && folder.accessible_programs.includes(teacherProgramId)) return true;
-
-      return false;
-    });
-  }, [folders, isAdmin, teacherRecord?.assigned_class_id, teacherProgramId]);
-
   async function createFolder() {
     if (!folderName.trim()) return;
-    await supabase.from("folders").insert({ name: folderName.trim() });
+    await supabase.from("folders").insert({ name: folderName.trim(), created_by: userId });
     setFolderName("");
     setShowNewFolder(false);
     fetchFolders();
@@ -191,6 +163,7 @@ function MaterialsPage() {
         file_url: urlData.publicUrl,
         file_type: file.type || "unknown",
         file_size: file.size,
+        created_by: userId,
       }).select().single();
 
       if (inserted) uploadedFiles.push(inserted as FileItem);
@@ -289,9 +262,11 @@ function MaterialsPage() {
                     <a href={file.file_url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground hover:underline truncate block">{file.file_name}</a>
                     <span className="text-xs text-muted-foreground">{formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}</span>
                   </div>
-                  <button onClick={() => deleteFile(file)} className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors" title="Delete file">
-                    <Trash2 className="h-4 w-4" />
-                  </button>
+                  {canManageFile(file) && (
+                    <button onClick={() => deleteFile(file)} className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors" title="Delete file">
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  )}
                 </div>
               );
             })}
@@ -308,43 +283,41 @@ function MaterialsPage() {
     <div>
       <PageHeader
         title="Materials"
-        description={isTeacher ? "Access learning materials for your class" : "Organize and distribute learning materials"}
+        description="Organize and distribute learning materials"
         actions={
-          isAdmin ? (
-            <button onClick={() => setShowNewFolder(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
-              <FolderPlus className="h-4 w-4" /> New Folder
-            </button>
-          ) : undefined
+          <button onClick={() => setShowNewFolder(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
+            <FolderPlus className="h-4 w-4" /> New Folder
+          </button>
         }
       />
 
-      {visibleFolders.length === 0 ? (
+      {folders.length === 0 ? (
         <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
           <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">{isTeacher ? "No materials available" : "No folders yet"}</h2>
-          <p className="text-sm text-muted-foreground">
-            {isTeacher ? "No folders are accessible to your class yet." : "Create a folder to start uploading materials."}
-          </p>
+          <h2 className="text-lg font-semibold mb-2">No folders yet</h2>
+          <p className="text-sm text-muted-foreground">Create a folder to start uploading materials.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {visibleFolders.map((folder) => (
+          {folders.map((folder) => (
             <div key={folder.id} className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group">
               <div className="flex items-start justify-between mb-3">
                 <button onClick={() => setActiveFolder(folder)} className="flex items-center gap-2 text-left flex-1 min-w-0">
                   <FolderOpen className="h-5 w-5 text-primary shrink-0" />
                   <span className="font-medium text-foreground truncate">{folder.name}</span>
                 </button>
-                {isAdmin && (
-                  <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {isAdmin && (
                     <button onClick={() => openAccessModal(folder)} className="p-1 rounded hover:bg-accent text-muted-foreground" title="Access settings">
                       <Settings2 className="h-3.5 w-3.5" />
                     </button>
+                  )}
+                  {canManageFolder(folder) && (
                     <button onClick={() => deleteFolder(folder.id)} className="p-1 rounded hover:bg-destructive/10 text-destructive" title="Delete folder">
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
               <p className="text-xs text-muted-foreground truncate">
                 {isAdmin ? `Access: ${accessLabel(folder)}` : ""}
@@ -354,7 +327,7 @@ function MaterialsPage() {
         </div>
       )}
 
-      {/* New Folder Modal (Admin only) */}
+      {/* New Folder Modal */}
       {showNewFolder && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
