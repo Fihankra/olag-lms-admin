@@ -241,6 +241,47 @@ export type Database = {
         }
         Relationships: []
       }
+      report_history: {
+        Row: {
+          changed_at: string
+          changed_by: string | null
+          device_condition: string | null
+          id: string
+          kiosk_status: boolean | null
+          lms_status: string | null
+          missing_status: boolean | null
+          report_id: string
+        }
+        Insert: {
+          changed_at?: string
+          changed_by?: string | null
+          device_condition?: string | null
+          id?: string
+          kiosk_status?: boolean | null
+          lms_status?: string | null
+          missing_status?: boolean | null
+          report_id: string
+        }
+        Update: {
+          changed_at?: string
+          changed_by?: string | null
+          device_condition?: string | null
+          id?: string
+          kiosk_status?: boolean | null
+          lms_status?: string | null
+          missing_status?: boolean | null
+          report_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "report_history_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "reports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reports: {
         Row: {
           class_id: string
