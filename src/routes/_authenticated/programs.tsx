@@ -85,6 +85,6 @@ function ProgramsPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }

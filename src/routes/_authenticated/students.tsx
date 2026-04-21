@@ -202,6 +202,6 @@ function StudentsPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }

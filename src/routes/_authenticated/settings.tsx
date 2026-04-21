@@ -24,6 +24,6 @@ function SettingsPage() {
           Screen time controls, global kiosk toggle, and other system configurations will be available here.
         </p>
       </div>
-    </div>
+    </div></AdminOnly>
   );
 }

@@ -91,6 +91,6 @@ function ClassesPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }
