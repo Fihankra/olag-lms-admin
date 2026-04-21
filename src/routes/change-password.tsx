@@ -46,7 +46,7 @@ function PasswordStrength({ password }: { password: string }) {
   );
 }
 
-
+function ChangePasswordPage() {
   const { isAuthenticated, isLoading, user } = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
