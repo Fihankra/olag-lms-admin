@@ -512,22 +512,97 @@ function ReportsPage() {
                           <td className="px-4 py-3 text-muted-foreground">—</td>
                         </>
                       )}
-                      {canEdit && (
-                        <td className="px-4 py-3">
-                          <button
-                            onClick={() => startReportForDevice(sd.deviceUuid)}
-                            className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
-                            title={hasReport ? "Edit report" : "Submit report"}
-                          >
-                            {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
-                          </button>
-                        </td>
-                      )}
+                      <td className="px-4 py-3">
+                        <div className="flex gap-1">
+                          {canEdit && (
+                            <button
+                              onClick={() => startReportForDevice(sd.deviceUuid)}
+                              className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                              title={hasReport ? "Edit report" : "Submit report"}
+                            >
+                              {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
+                            </button>
+                          )}
+                          {hasReport && (
+                            <button
+                              onClick={() => openHistory(report.id, sd.deviceLabel)}
+                              className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                              title="View history"
+                            >
+                              <History className="h-3.5 w-3.5" />
+                            </button>
+                          )}
+                        </div>
+                      </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
+          </div>
+        )}
+
+        {/* History Modal */}
+        {historyReportId && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
+              <h2 className="text-lg font-semibold mb-1">Report History</h2>
+              <p className="text-sm text-muted-foreground mb-4">Device: {historyDeviceLabel}</p>
+
+              {historyLoading ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+                </div>
+              ) : historyEntries.length === 0 ? (
+                <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
+              ) : (
+                <div className="space-y-3">
+                  {historyEntries.map((entry, idx) => (
+                    <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-muted-foreground">Version {historyEntries.length - idx}</span>
+                        <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div>
+                          <span className="text-muted-foreground">Kiosk: </span>
+                          <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                            {entry.kiosk_status === false ? "Off" : "On"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">Condition: </span>
+                          <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                            {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">Missing: </span>
+                          <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                            {entry.missing_status ? "Yes" : "No"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">LMS: </span>
+                          <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                            {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="flex justify-end mt-4">
+                <button
+                  onClick={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+                  className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
