@@ -302,9 +302,9 @@ function ReportsPage() {
         title={isTeacher ? `Reports — ${assignedClassName}` : "Weekly Reports"}
         description={isTeacher ? "Submit and view weekly device reports for your class" : "Form master device reports by class and week"}
         actions={
-          isTeacher ? (
+          isTeacher && !pastDeadline ? (
             <button
-              onClick={() => setShowCreateModal(true)}
+              onClick={() => { setDeadlineError(null); setShowCreateModal(true); }}
               className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
             >
               <Plus className="h-4 w-4" /> New Report
