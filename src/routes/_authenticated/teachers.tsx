@@ -3,6 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/use-auth";
 
 export const Route = createFileRoute("/_authenticated/teachers")({
   component: TeachersPage,
@@ -19,6 +20,8 @@ type Teacher = {
   teacher_id: string;
   name: string;
   assigned_class_id: string | null;
+  user_id: string | null;
+  approved: boolean;
   created_at: string;
   classes?: { name: string } | null;
 };
@@ -26,6 +29,7 @@ type Teacher = {
 type ClassItem = { id: string; name: string };
 
 function TeachersPage() {
+  const { role } = useAuth();
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [showModal, setShowModal] = useState(false);
@@ -58,7 +62,7 @@ function TeachersPage() {
 
   async function saveTeacher() {
     if (!form.teacher_id.trim() || !form.name.trim()) return;
-    const payload = {
+    const payload: any = {
       teacher_id: form.teacher_id.trim(),
       name: form.name.trim(),
       assigned_class_id: form.assigned_class_id || null,
@@ -67,9 +71,15 @@ function TeachersPage() {
     if (editTeacher) {
       await supabase.from("teachers").update(payload).eq("id", editTeacher.id);
     } else {
+      payload.approved = true; // Admin-added teachers are auto-approved
       await supabase.from("teachers").insert(payload);
     }
     setShowModal(false);
+    fetchTeachers();
+  }
+
+  async function toggleApproval(t: Teacher) {
+    await supabase.from("teachers").update({ approved: !t.approved }).eq("id", t.id);
     fetchTeachers();
   }
 
@@ -78,9 +88,30 @@ function TeachersPage() {
     fetchTeachers();
   }
 
+  // Only show for admin
+  if (role !== "admin") return null;
+
   const columns = [
     { key: "teacher_id", label: "Teacher ID" },
     { key: "name", label: "Name" },
+    {
+      key: "approved",
+      label: "Status",
+      render: (t: Teacher) => t.user_id ? (
+        <button
+          onClick={(e) => { e.stopPropagation(); toggleApproval(t); }}
+          className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
+            t.approved
+              ? "bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20"
+              : "bg-amber-500/10 text-amber-400 hover:bg-amber-500/20"
+          }`}
+        >
+          {t.approved ? "Approved" : "Pending — Click to Approve"}
+        </button>
+      ) : (
+        <span className="text-xs text-muted-foreground">Manual</span>
+      ),
+    },
     {
       key: "assigned_class_id",
       label: "Form Master Of",
