@@ -14,7 +14,266 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      classes: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          program_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          program_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          program_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "classes_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "programs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      devices: {
+        Row: {
+          assigned_student_id: string | null
+          created_at: string
+          device_id: string
+          id: string
+          kiosk_mode: boolean
+          last_seen: string | null
+          network_name: string | null
+          network_status: string
+        }
+        Insert: {
+          assigned_student_id?: string | null
+          created_at?: string
+          device_id: string
+          id?: string
+          kiosk_mode?: boolean
+          last_seen?: string | null
+          network_name?: string | null
+          network_status?: string
+        }
+        Update: {
+          assigned_student_id?: string | null
+          created_at?: string
+          device_id?: string
+          id?: string
+          kiosk_mode?: boolean
+          last_seen?: string | null
+          network_name?: string | null
+          network_status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "devices_assigned_student_id_fkey"
+            columns: ["assigned_student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      programs: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      reports: {
+        Row: {
+          class_id: string
+          created_at: string
+          device_condition: string | null
+          device_id: string
+          id: string
+          kiosk_status: boolean | null
+          lms_status: string | null
+          missing_status: boolean | null
+          teacher_id: string
+          week_start: string
+        }
+        Insert: {
+          class_id: string
+          created_at?: string
+          device_condition?: string | null
+          device_id: string
+          id?: string
+          kiosk_status?: boolean | null
+          lms_status?: string | null
+          missing_status?: boolean | null
+          teacher_id: string
+          week_start: string
+        }
+        Update: {
+          class_id?: string
+          created_at?: string
+          device_condition?: string | null
+          device_id?: string
+          id?: string
+          kiosk_status?: boolean | null
+          lms_status?: string | null
+          missing_status?: boolean | null
+          teacher_id?: string
+          week_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reports_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reports_device_id_fkey"
+            columns: ["device_id"]
+            isOneToOne: false
+            referencedRelation: "devices"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reports_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teachers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      settings: {
+        Row: {
+          id: string
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          id?: string
+          key: string
+          updated_at?: string
+          value?: Json
+        }
+        Update: {
+          id?: string
+          key?: string
+          updated_at?: string
+          value?: Json
+        }
+        Relationships: []
+      }
+      students: {
+        Row: {
+          assigned_device_id: string | null
+          class_id: string | null
+          created_at: string
+          id: string
+          name: string
+          password_hash: string | null
+          program_id: string | null
+          student_id: string
+        }
+        Insert: {
+          assigned_device_id?: string | null
+          class_id?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          password_hash?: string | null
+          program_id?: string | null
+          student_id: string
+        }
+        Update: {
+          assigned_device_id?: string | null
+          class_id?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          password_hash?: string | null
+          program_id?: string | null
+          student_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_students_device"
+            columns: ["assigned_device_id"]
+            isOneToOne: false
+            referencedRelation: "devices"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "students_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "students_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "programs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      teachers: {
+        Row: {
+          assigned_class_id: string | null
+          created_at: string
+          id: string
+          name: string
+          teacher_id: string
+        }
+        Insert: {
+          assigned_class_id?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          teacher_id: string
+        }
+        Update: {
+          assigned_class_id?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          teacher_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "teachers_assigned_class_id_fkey"
+            columns: ["assigned_class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
