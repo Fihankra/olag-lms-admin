@@ -333,8 +333,9 @@ function ReportsPage() {
                   onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
                   className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
                 >
-                  <option value="">Select device</option>
-                  {classDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
+                   <option value="">Select device</option>
+                   {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
+                   {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
                 </select>
               </div>
 
