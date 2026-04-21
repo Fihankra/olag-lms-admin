@@ -63,7 +63,7 @@ function ClassesPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Classes"
         description="Manage classes linked to programs"

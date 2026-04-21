@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_authenticated/settings")({
 
 function SettingsPage() {
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader title="Settings" description="System configuration and preferences" />
       <div className="bg-card rounded-lg border border-border p-8 flex flex-col items-center justify-center text-center">
         <Settings className="h-12 w-12 text-muted-foreground mb-4" />

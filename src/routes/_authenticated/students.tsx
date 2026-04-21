@@ -118,7 +118,7 @@ function StudentsPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Students"
         description="Manage student records and device assignments"

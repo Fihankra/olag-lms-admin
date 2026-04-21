@@ -60,7 +60,7 @@ function ProgramsPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Programs"
         description="Manage academic programs"
