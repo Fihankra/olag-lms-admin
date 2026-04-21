@@ -18,7 +18,6 @@ export const submitReport = createServerFn({ method: "POST" })
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
 
-    // Get teacher record
     const { data: teacher } = await supabase
       .from("teachers")
       .select("id, assigned_class_id")
@@ -29,11 +28,9 @@ export const submitReport = createServerFn({ method: "POST" })
       return { error: "You are not assigned as a form master." };
     }
 
-    // Check deadline
     const deadlineError = await checkDeadline(supabase, data.week_start);
     if (deadlineError) return { error: deadlineError };
 
-    // Check duplicate
     const { data: existing } = await supabase
       .from("reports")
       .select("id")
@@ -76,7 +73,6 @@ export const updateReport = createServerFn({ method: "POST" })
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
 
-    // Verify teacher owns this report
     const { data: teacher } = await supabase
       .from("teachers")
       .select("id")
@@ -85,7 +81,6 @@ export const updateReport = createServerFn({ method: "POST" })
 
     if (!teacher) return { error: "Teacher record not found." };
 
-    // Check deadline
     const deadlineError = await checkDeadline(supabase, data.week_start);
     if (deadlineError) return { error: deadlineError };
 
@@ -110,49 +105,56 @@ export const getDeadlineSetting = createServerFn({ method: "GET" })
     const { supabase } = context;
     const { data } = await supabase
       .from("settings")
-      .select("value")
-      .eq("key", "report_deadline")
-      .single();
+      .select("key, value")
+      .in("key", ["report_deadline", "report_week_start"]);
 
-    // Default: Friday 23:59
-    const defaults = { day: 5, hour: 23, minute: 59 };
-    if (!data?.value) return defaults;
+    const defaults = { day: 2, hour: 23, minute: 59, weekStartDay: 2 };
+    if (!data?.length) return defaults;
 
-    const v = data.value as Record<string, number>;
-    return {
-      day: v.day ?? defaults.day,
-      hour: v.hour ?? defaults.hour,
-      minute: v.minute ?? defaults.minute,
-    };
+    let result = { ...defaults };
+    for (const row of data) {
+      const v = row.value as Record<string, number>;
+      if (row.key === "report_deadline") {
+        result.day = v.day ?? defaults.day;
+        result.hour = v.hour ?? defaults.hour;
+        result.minute = v.minute ?? defaults.minute;
+      }
+      if (row.key === "report_week_start") {
+        result.weekStartDay = v.day ?? defaults.weekStartDay;
+      }
+    }
+    return result;
   });
 
 async function checkDeadline(
   supabase: any,
   weekStart: string
 ): Promise<string | null> {
-  // Get deadline setting
-  const { data: setting } = await supabase
+  const { data } = await supabase
     .from("settings")
-    .select("value")
-    .eq("key", "report_deadline")
-    .single();
+    .select("key, value")
+    .in("key", ["report_deadline", "report_week_start"]);
 
-  // Default: Friday 23:59
-  const day = (setting?.value as any)?.day ?? 5;
-  const hour = (setting?.value as any)?.hour ?? 23;
-  const minute = (setting?.value as any)?.minute ?? 59;
+  const deadlineDay = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.day ?? 2;
+  const hour = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.hour ?? 23;
+  const minute = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.minute ?? 59;
+  const weekStartDay = (data?.find((r: any) => r.key === "report_week_start")?.value as any)?.day ?? 2;
 
-  // Calculate deadline datetime for this week_start
-  const monday = new Date(weekStart + "T00:00:00Z");
-  const deadlineDate = new Date(monday);
-  // day: 1=Mon ... 7=Sun
-  deadlineDate.setUTCDate(monday.getUTCDate() + (day - 1));
+  // week_start is the date of the configured start day
+  const startDate = new Date(weekStart + "T00:00:00Z");
+
+  // Calculate how many days from week start to deadline day
+  let dayOffset = deadlineDay - weekStartDay;
+  if (dayOffset < 0) dayOffset += 7;
+
+  const deadlineDate = new Date(startDate);
+  deadlineDate.setUTCDate(startDate.getUTCDate() + dayOffset);
   deadlineDate.setUTCHours(hour, minute, 59, 999);
 
   const now = new Date();
   if (now > deadlineDate) {
     const dayNames = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    return `The deadline for this week's reports was ${dayNames[day]} at ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}. Submissions are closed.`;
+    return `The deadline for this week's reports was ${dayNames[deadlineDay]} at ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}. Submissions are closed.`;
   }
 
   return null;
