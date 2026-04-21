@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useAuth } from "../hooks/use-auth";
 import { LogIn } from "lucide-react";
@@ -106,7 +106,8 @@ function LoginPage() {
         </form>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          Contact your administrator if you need access.
+          Teacher?{" "}
+          <Link to="/register" className="text-primary hover:underline">Register here</Link>
         </p>
       </div>
     </div>
