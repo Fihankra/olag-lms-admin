@@ -155,9 +155,42 @@ function ReportsPage() {
     });
     setSubmitting(false);
     setShowCreateModal(false);
+    setEditingReport(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
+
+  function openEditModal(report: Report) {
+    setEditingReport(report);
+    setCreateForm({
+      device_id: report.device_id,
+      kiosk_status: report.kiosk_status === true ? "true" : "false",
+      device_condition: report.device_condition ?? "good",
+      missing_status: report.missing_status === true ? "true" : "false",
+      lms_status: report.lms_status ?? "active",
+    });
+    setShowCreateModal(true);
+  }
+
+  async function updateReport() {
+    if (!editingReport) return;
+    setSubmitting(true);
+    await supabase.from("reports").update({
+      kiosk_status: createForm.kiosk_status === "true",
+      device_condition: createForm.device_condition,
+      missing_status: createForm.missing_status === "true",
+      lms_status: createForm.lms_status,
+    }).eq("id", editingReport.id);
+    setSubmitting(false);
+    setShowCreateModal(false);
+    setEditingReport(null);
+    setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
+    fetchReports();
+  }
+
+  // Deadline: teachers can only edit reports for the current week
+  const currentMonday = getMonday(new Date());
+  const canEditReports = isTeacher && filterWeek === currentMonday;
 
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
