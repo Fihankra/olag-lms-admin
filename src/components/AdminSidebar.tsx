@@ -8,8 +8,10 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
+  LogOut,
 } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "../hooks/use-auth";
 
 const navItems = [
   { title: "Dashboard", to: "/", icon: LayoutDashboard },
@@ -23,6 +25,7 @@ const navItems = [
 export function AdminSidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+  const { logout, user } = useAuth();
 
   return (
     <aside
@@ -62,10 +65,17 @@ export function AdminSidebar() {
         })}
       </nav>
 
-      <div className="p-3 border-t border-sidebar-border">
-        {!collapsed && (
-          <p className="text-xs text-muted-foreground">Admin Panel v1.0</p>
+      <div className="p-3 border-t border-sidebar-border space-y-2">
+        {!collapsed && user && (
+          <p className="text-xs text-muted-foreground truncate">{user.email}</p>
         )}
+        <button
+          onClick={() => logout()}
+          className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-destructive transition-colors w-full"
+        >
+          <LogOut className="h-4 w-4 shrink-0" />
+          {!collapsed && <span>Sign out</span>}
+        </button>
       </div>
     </aside>
   );
