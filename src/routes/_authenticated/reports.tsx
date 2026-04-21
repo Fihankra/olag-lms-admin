@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil, Clock } from "lucide-react";
+import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
