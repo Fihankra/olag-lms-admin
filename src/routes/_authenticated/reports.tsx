@@ -116,6 +116,29 @@ function ReportsPage() {
   useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
   useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
 
+  // Realtime subscription for report inserts/updates
+  useEffect(() => {
+    const channel = supabase
+      .channel(`reports-${filterWeek}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "reports",
+          filter: `week_start=eq.${filterWeek}`,
+        },
+        () => {
+          fetchReports();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [filterWeek, filterClass, assignedClassId]);
+
   // Fetch deadline setting
   useEffect(() => {
     async function loadDeadline() {
