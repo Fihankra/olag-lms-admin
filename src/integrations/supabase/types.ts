@@ -84,6 +84,68 @@ export type Database = {
           },
         ]
       }
+      files: {
+        Row: {
+          created_at: string
+          file_name: string
+          file_size: number | null
+          file_type: string
+          file_url: string
+          folder_id: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          file_name: string
+          file_size?: number | null
+          file_type?: string
+          file_url: string
+          folder_id: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string
+          file_size?: number | null
+          file_type?: string
+          file_url?: string
+          folder_id?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "files_folder_id_fkey"
+            columns: ["folder_id"]
+            isOneToOne: false
+            referencedRelation: "folders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      folders: {
+        Row: {
+          accessible_classes: string[] | null
+          accessible_programs: string[] | null
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          accessible_classes?: string[] | null
+          accessible_programs?: string[] | null
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          accessible_classes?: string[] | null
+          accessible_programs?: string[] | null
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
       programs: {
         Row: {
           created_at: string
