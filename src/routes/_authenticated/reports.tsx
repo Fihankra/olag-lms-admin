@@ -361,25 +361,30 @@ function ReportsPage() {
         </div>
       )}
 
-      {/* Create Report Modal (Teacher only) */}
+      {/* Create/Edit Report Modal (Teacher only) */}
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-1">New Device Report</h2>
-            <p className="text-sm text-muted-foreground mb-4">Week of {formatWeek(filterWeek)}</p>
+            <h2 className="text-lg font-semibold mb-1">{editingReport ? "Edit Device Report" : "New Device Report"}</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Week of {formatWeek(filterWeek)}
+              {editingReport && ` · ${editingReport.devices?.device_id ?? ""}`}
+            </p>
             <div className="space-y-3">
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Device</label>
-                <select
-                  value={createForm.device_id}
-                  onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
-                  className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
-                >
-                   <option value="">Select device</option>
-                   {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
-                   {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
-                </select>
-              </div>
+              {!editingReport && (
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-1 block">Device</label>
+                  <select
+                    value={createForm.device_id}
+                    onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
+                    className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                  >
+                    <option value="">Select device</option>
+                    {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
+                    {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
+                  </select>
+                </div>
+              )}
 
               <div>
                 <label className="text-sm font-medium text-foreground mb-1 block">Kiosk Mode</label>
@@ -415,9 +420,13 @@ function ReportsPage() {
             </div>
 
             <div className="flex gap-2 justify-end mt-4">
-              <button onClick={() => setShowCreateModal(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={createReport} disabled={!createForm.device_id || submitting} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50">
-                {submitting ? "Submitting…" : "Submit Report"}
+              <button onClick={() => { setShowCreateModal(false); setEditingReport(null); setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" }); }} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
+              <button
+                onClick={editingReport ? updateReport : createReport}
+                disabled={(!editingReport && !createForm.device_id) || submitting}
+                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+              >
+                {submitting ? "Saving…" : editingReport ? "Update Report" : "Submit Report"}
               </button>
             </div>
           </div>
