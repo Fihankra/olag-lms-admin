@@ -32,6 +32,15 @@ type Report = {
   devices?: { device_id: string } | null;
 };
 
+type HistoryEntry = {
+  id: string;
+  kiosk_status: boolean | null;
+  device_condition: string | null;
+  missing_status: boolean | null;
+  lms_status: string | null;
+  changed_at: string;
+};
+
 type ClassItem = { id: string; name: string };
 type StudentDevice = {
   studentId: string;
@@ -82,6 +91,12 @@ function ReportsPage() {
 
   // Deadline
   const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
+
+  // History modal
+  const [historyReportId, setHistoryReportId] = useState<string | null>(null);
+  const [historyDeviceLabel, setHistoryDeviceLabel] = useState("");
+  const [historyEntries, setHistoryEntries] = useState<HistoryEntry[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(false);
 
   // Load settings first, then set filterWeek
   useEffect(() => {
