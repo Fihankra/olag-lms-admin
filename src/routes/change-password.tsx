@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState, useMemo, type FormEvent } from "react";
 import { useAuth } from "../hooks/use-auth";
 import { supabase } from "../integrations/supabase/client";
 import { KeyRound } from "lucide-react";
