@@ -3,7 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2 } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2, History } from "lucide-react";
 import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
