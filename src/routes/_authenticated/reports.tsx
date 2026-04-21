@@ -112,9 +112,36 @@ function ReportsPage() {
   useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
   useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
 
+  // Devices that already have a report this week
+  const reportedDeviceIds = useMemo(
+    () => new Set(reports.map((r) => r.device_id)),
+    [reports],
+  );
+
+  const availableDevices = useMemo(
+    () => classDevices.filter((d) => !reportedDeviceIds.has(d.id)),
+    [classDevices, reportedDeviceIds],
+  );
+
   async function createReport() {
     if (!createForm.device_id || !teacherRecord || !assignedClassId) return;
     setSubmitting(true);
+
+    // Double-check no duplicate exists
+    const { data: existing } = await supabase
+      .from("reports")
+      .select("id")
+      .eq("device_id", createForm.device_id)
+      .eq("week_start", filterWeek)
+      .eq("class_id", assignedClassId)
+      .limit(1);
+
+    if (existing && existing.length > 0) {
+      alert("A report for this device already exists for the selected week.");
+      setSubmitting(false);
+      return;
+    }
+
     await supabase.from("reports").insert({
       teacher_id: teacherRecord.id,
       class_id: assignedClassId,
