@@ -87,6 +87,7 @@ export type Database = {
       files: {
         Row: {
           created_at: string
+          created_by: string | null
           file_name: string
           file_size: number | null
           file_type: string
@@ -96,6 +97,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          created_by?: string | null
           file_name: string
           file_size?: number | null
           file_type?: string
@@ -105,6 +107,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          created_by?: string | null
           file_name?: string
           file_size?: number | null
           file_type?: string
@@ -127,6 +130,7 @@ export type Database = {
           accessible_classes: string[] | null
           accessible_programs: string[] | null
           created_at: string
+          created_by: string | null
           id: string
           name: string
         }
@@ -134,6 +138,7 @@ export type Database = {
           accessible_classes?: string[] | null
           accessible_programs?: string[] | null
           created_at?: string
+          created_by?: string | null
           id?: string
           name: string
         }
@@ -141,6 +146,7 @@ export type Database = {
           accessible_classes?: string[] | null
           accessible_programs?: string[] | null
           created_at?: string
+          created_by?: string | null
           id?: string
           name?: string
         }
