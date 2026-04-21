@@ -65,13 +65,6 @@ function DevicesPage() {
     await supabase.from("devices").update({ kiosk_mode: !device.kiosk_mode }).eq("id", device.id);
   }
 
-  async function addDevice() {
-    if (!newDeviceId.trim()) return;
-    await supabase.from("devices").insert({ device_id: newDeviceId.trim() });
-    setNewDeviceId("");
-    setShowAddModal(false);
-    fetchDevices();
-  }
 
   async function assignStudent(deviceId: string, studentId: string) {
     // Update device
@@ -180,15 +173,7 @@ function DevicesPage() {
     <div>
       <PageHeader
         title="Devices"
-        description="Manage tablets and device configurations"
-        actions={
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-          >
-            Add Device
-          </button>
-        }
+        description="Devices are added automatically when assigned to students"
       />
 
       <div className="flex gap-2 mb-4 flex-wrap">
@@ -207,36 +192,6 @@ function DevicesPage() {
 
       <DataTable data={filtered as Record<string, unknown>[]} columns={columns as any} />
 
-      {/* Add Device Modal */}
-      {showAddModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-4">Add New Device</h2>
-            <input
-              type="text"
-              placeholder="Device ID (10-digit)"
-              value={newDeviceId}
-              onChange={(e) => setNewDeviceId(e.target.value)}
-              maxLength={10}
-              className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm mb-4"
-            />
-            <div className="flex gap-2 justify-end">
-              <button
-                onClick={() => setShowAddModal(false)}
-                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={addDevice}
-                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Assign Student Modal */}
       {assignDevice && (
