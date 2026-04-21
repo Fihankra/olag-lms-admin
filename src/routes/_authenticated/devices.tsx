@@ -3,7 +3,8 @@ import { PageHeader } from "../../components/PageHeader";
 import { DataTable } from "../../components/DataTable";
 import { StatusBadge } from "../../components/StatusBadge";
 import { supabase } from "../../integrations/supabase/client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { UserPlus, UserMinus } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/devices")({
   component: DevicesPage,
@@ -23,8 +24,10 @@ type Device = {
   network_name: string | null;
   kiosk_mode: boolean;
   last_seen: string | null;
-  students?: { name: string } | null;
+  students?: { name: string; student_id: string } | null;
 };
+
+type Student = { id: string; name: string; student_id: string };
 
 function DevicesPage() {
   const [devices, setDevices] = useState<Device[]>([]);
@@ -32,16 +35,27 @@ function DevicesPage() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [newDeviceId, setNewDeviceId] = useState("");
 
+  // Assign modal state
+  const [assignDevice, setAssignDevice] = useState<Device | null>(null);
+  const [allStudents, setAllStudents] = useState<Student[]>([]);
+  const [studentSearch, setStudentSearch] = useState("");
+
   async function fetchDevices() {
     const { data } = await supabase
       .from("devices")
-      .select("*, students(name)")
+      .select("*, students(name, student_id)")
       .order("created_at", { ascending: false });
     setDevices((data as Device[]) ?? []);
   }
 
+  async function fetchStudents() {
+    const { data } = await supabase.from("students").select("id, name, student_id");
+    setAllStudents(data ?? []);
+  }
+
   useEffect(() => {
     fetchDevices();
+    fetchStudents();
     const channel = supabase
       .channel("devices-list")
       .on("postgres_changes", { event: "*", schema: "public", table: "devices" }, () => fetchDevices())
@@ -61,6 +75,39 @@ function DevicesPage() {
     fetchDevices();
   }
 
+  async function assignStudent(deviceId: string, studentId: string) {
+    // Update device
+    await supabase.from("devices").update({ assigned_student_id: studentId }).eq("id", deviceId);
+    // Also update student's assigned_device_id
+    await supabase.from("students").update({ assigned_device_id: deviceId }).eq("id", studentId);
+    setAssignDevice(null);
+    setStudentSearch("");
+    fetchDevices();
+    fetchStudents();
+  }
+
+  async function unassignDevice(device: Device) {
+    if (!device.assigned_student_id) return;
+    // Clear both sides
+    await supabase.from("students").update({ assigned_device_id: null }).eq("id", device.assigned_student_id);
+    await supabase.from("devices").update({ assigned_student_id: null }).eq("id", device.id);
+    fetchDevices();
+    fetchStudents();
+  }
+
+  // Students not already assigned to a device
+  const assignedStudentIds = useMemo(
+    () => new Set(devices.filter((d) => d.assigned_student_id).map((d) => d.assigned_student_id!)),
+    [devices]
+  );
+
+  const availableStudents = useMemo(() => {
+    const q = studentSearch.toLowerCase();
+    return allStudents
+      .filter((s) => !assignedStudentIds.has(s.id))
+      .filter((s) => !q || s.name.toLowerCase().includes(q) || s.student_id.toLowerCase().includes(q));
+  }, [allStudents, assignedStudentIds, studentSearch]);
+
   const filtered = devices.filter((d) => {
     if (filter === "assigned") return d.assigned_student_id;
     if (filter === "unassigned") return !d.assigned_student_id;
@@ -79,7 +126,27 @@ function DevicesPage() {
     {
       key: "assigned_student_id",
       label: "Assigned To",
-      render: (d: Device) => d.students?.name ?? <span className="text-muted-foreground">—</span>,
+      render: (d: Device) =>
+        d.students ? (
+          <span className="flex items-center gap-2">
+            <span>{d.students.name}</span>
+            <button
+              onClick={(e) => { e.stopPropagation(); unassignDevice(d); }}
+              title="Unassign student"
+              className="p-0.5 rounded hover:bg-destructive/10 text-destructive transition-colors"
+            >
+              <UserMinus className="h-3.5 w-3.5" />
+            </button>
+          </span>
+        ) : (
+          <button
+            onClick={(e) => { e.stopPropagation(); setAssignDevice(d); setStudentSearch(""); }}
+            className="flex items-center gap-1.5 text-xs text-primary hover:underline"
+          >
+            <UserPlus className="h-3.5 w-3.5" />
+            Assign
+          </button>
+        ),
     },
     {
       key: "kiosk_mode",
@@ -142,6 +209,7 @@ function DevicesPage() {
 
       <DataTable data={filtered as Record<string, unknown>[]} columns={columns as any} />
 
+      {/* Add Device Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
@@ -166,6 +234,55 @@ function DevicesPage() {
                 className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Add
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Assign Student Modal */}
+      {assignDevice && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
+            <h2 className="text-lg font-semibold mb-1">Assign Student</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Device: <span className="font-medium text-foreground">{assignDevice.device_id}</span>
+            </p>
+
+            <input
+              type="text"
+              placeholder="Search by name or student ID…"
+              value={studentSearch}
+              onChange={(e) => setStudentSearch(e.target.value)}
+              autoFocus
+              className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm mb-3"
+            />
+
+            <div className="max-h-56 overflow-y-auto border border-border rounded-md divide-y divide-border">
+              {availableStudents.length === 0 ? (
+                <div className="px-3 py-4 text-center text-sm text-muted-foreground">
+                  No available students found
+                </div>
+              ) : (
+                availableStudents.map((s) => (
+                  <button
+                    key={s.id}
+                    onClick={() => assignStudent(assignDevice.id, s.id)}
+                    className="w-full text-left px-3 py-2.5 hover:bg-accent transition-colors flex items-center justify-between"
+                  >
+                    <span className="text-sm font-medium text-foreground">{s.name}</span>
+                    <span className="text-xs text-muted-foreground">{s.student_id}</span>
+                  </button>
+                ))
+              )}
+            </div>
+
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => { setAssignDevice(null); setStudentSearch(""); }}
+                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+              >
+                Cancel
               </button>
             </div>
           </div>
