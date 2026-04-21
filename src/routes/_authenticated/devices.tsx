@@ -32,8 +32,6 @@ type Student = { id: string; name: string; student_id: string };
 function DevicesPage() {
   const [devices, setDevices] = useState<Device[]>([]);
   const [filter, setFilter] = useState<"all" | "assigned" | "unassigned" | "online" | "offline">("all");
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [newDeviceId, setNewDeviceId] = useState("");
 
   // Assign modal state
   const [assignDevice, setAssignDevice] = useState<Device | null>(null);
