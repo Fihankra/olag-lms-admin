@@ -6,6 +6,8 @@ import {
   GraduationCap,
   BookOpen,
   FolderOpen,
+  UserCheck,
+  ClipboardList,
   Settings,
   ChevronLeft,
   ChevronRight,
@@ -18,9 +20,11 @@ const navItems = [
   { title: "Dashboard", to: "/", icon: LayoutDashboard },
   { title: "Devices", to: "/devices", icon: Tablet },
   { title: "Students", to: "/students", icon: Users },
+  { title: "Teachers", to: "/teachers", icon: UserCheck },
   { title: "Programs", to: "/programs", icon: GraduationCap },
   { title: "Classes", to: "/classes", icon: BookOpen },
   { title: "Materials", to: "/materials", icon: FolderOpen },
+  { title: "Reports", to: "/reports", icon: ClipboardList },
   { title: "Settings", to: "/settings", icon: Settings },
 ];
 
