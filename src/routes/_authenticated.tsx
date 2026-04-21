@@ -8,7 +8,7 @@ export const Route = createFileRoute("/_authenticated")({
 });
 
 function AuthenticatedLayout() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, user } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,6 +16,12 @@ function AuthenticatedLayout() {
       navigate({ to: "/login" });
     }
   }, [isLoading, isAuthenticated, navigate]);
+
+  useEffect(() => {
+    if (!isLoading && isAuthenticated && !user?.user_metadata?.password_changed) {
+      navigate({ to: "/change-password" });
+    }
+  }, [isLoading, isAuthenticated, user, navigate]);
 
   if (isLoading) {
     return (
@@ -25,7 +31,7 @@ function AuthenticatedLayout() {
     );
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated || !user?.user_metadata?.password_changed) {
     return null;
   }
 
