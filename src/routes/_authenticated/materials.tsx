@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo, useRef } from "react";
+import { useAuth } from "../../hooks/use-auth";
 import {
   FolderOpen,
   FolderPlus,
@@ -45,7 +46,7 @@ type FileItem = {
 };
 
 type Program = { id: string; name: string };
-type ClassItem = { id: string; name: string };
+type ClassItem = { id: string; name: string; program_id?: string };
 
 function fileIcon(type: string) {
   if (type.startsWith("image")) return FileImage;
@@ -62,11 +63,18 @@ function formatSize(bytes: number) {
 }
 
 function MaterialsPage() {
+  const { role, teacherRecord } = useAuth();
+  const isAdmin = role === "admin";
+  const isTeacher = role === "teacher";
+
   const [folders, setFolders] = useState<Folder[]>([]);
   const [files, setFiles] = useState<FileItem[]>([]);
   const [programs, setPrograms] = useState<Program[]>([]);
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [activeFolder, setActiveFolder] = useState<Folder | null>(null);
+
+  // Teacher's class program (for access filtering)
+  const [teacherProgramId, setTeacherProgramId] = useState<string | null>(null);
 
   // Modals
   const [showNewFolder, setShowNewFolder] = useState(false);
@@ -93,17 +101,52 @@ function MaterialsPage() {
   async function fetchMeta() {
     const [p, c] = await Promise.all([
       supabase.from("programs").select("id, name"),
-      supabase.from("classes").select("id, name"),
+      supabase.from("classes").select("id, name, program_id"),
     ]);
     setPrograms(p.data ?? []);
-    setClasses(c.data ?? []);
+    setClasses((c.data as ClassItem[]) ?? []);
+  }
+
+  // Fetch teacher's class program
+  async function fetchTeacherProgram() {
+    if (!isTeacher || !teacherRecord?.assigned_class_id) return;
+    const { data } = await supabase
+      .from("classes")
+      .select("program_id")
+      .eq("id", teacherRecord.assigned_class_id)
+      .single();
+    setTeacherProgramId((data as any)?.program_id ?? null);
   }
 
   useEffect(() => { fetchFolders(); fetchMeta(); }, []);
+  useEffect(() => { fetchTeacherProgram(); }, [teacherRecord?.assigned_class_id]);
 
   useEffect(() => {
     if (activeFolder) fetchFiles(activeFolder.id);
   }, [activeFolder]);
+
+  // Filter folders for teachers based on access rules
+  const visibleFolders = useMemo(() => {
+    if (isAdmin) return folders;
+
+    const classId = teacherRecord?.assigned_class_id;
+
+    return folders.filter((folder) => {
+      const hasPrograms = folder.accessible_programs?.length > 0;
+      const hasClasses = folder.accessible_classes?.length > 0;
+
+      // Empty = accessible to all
+      if (!hasPrograms && !hasClasses) return true;
+
+      // Check class match
+      if (hasClasses && classId && folder.accessible_classes.includes(classId)) return true;
+
+      // Check program match
+      if (hasPrograms && teacherProgramId && folder.accessible_programs.includes(teacherProgramId)) return true;
+
+      return false;
+    });
+  }, [folders, isAdmin, teacherRecord?.assigned_class_id, teacherProgramId]);
 
   async function createFolder() {
     if (!folderName.trim()) return;
@@ -114,7 +157,6 @@ function MaterialsPage() {
   }
 
   async function deleteFolder(id: string) {
-    // Delete storage objects first
     const { data: folderFiles } = await supabase.from("files").select("file_url").eq("folder_id", id);
     if (folderFiles?.length) {
       const paths = folderFiles.map((f) => {
@@ -157,7 +199,6 @@ function MaterialsPage() {
   }
 
   async function deleteFile(file: FileItem) {
-    // Extract storage path from URL
     const parts = file.file_url.split("/materials/");
     if (parts[1]) await supabase.storage.from("materials").remove([parts[1]]);
     await supabase.from("files").delete().eq("id", file.id);
@@ -178,7 +219,6 @@ function MaterialsPage() {
     }).eq("id", showAccessModal.id);
     setShowAccessModal(null);
     fetchFolders();
-    // Update activeFolder if it's the one being edited
     if (activeFolder?.id === showAccessModal.id) {
       setActiveFolder({ ...activeFolder, accessible_programs: editPrograms, accessible_classes: editClasses });
     }
@@ -188,7 +228,6 @@ function MaterialsPage() {
     return arr.includes(id) ? arr.filter((x) => x !== id) : [...arr, id];
   }
 
-  // Access labels
   const programMap = useMemo(() => new Map(programs.map((p) => [p.id, p.name])), [programs]);
   const classMap = useMemo(() => new Map(classes.map((c) => [c.id, c.name])), [classes]);
 
@@ -200,19 +239,20 @@ function MaterialsPage() {
     return parts.join(", ");
   }
 
-  // ---- Render ----
-
+  // ---- File view inside folder ----
   if (activeFolder) {
     return (
       <div>
         <PageHeader
           title={activeFolder.name}
-          description={`Access: ${accessLabel(activeFolder)}`}
+          description={isAdmin ? `Access: ${accessLabel(activeFolder)}` : "Learning materials"}
           actions={
             <div className="flex gap-2">
-              <button onClick={() => openAccessModal(activeFolder)} className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5">
-                <Settings2 className="h-4 w-4" /> Access
-              </button>
+              {isAdmin && (
+                <button onClick={() => openAccessModal(activeFolder)} className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5">
+                  <Settings2 className="h-4 w-4" /> Access
+                </button>
+              )}
               <button onClick={() => fileInputRef.current?.click()} disabled={uploading} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5 disabled:opacity-50">
                 <Upload className="h-4 w-4" /> {uploading ? "Uploading…" : "Upload Files"}
               </button>
@@ -255,56 +295,63 @@ function MaterialsPage() {
           </div>
         )}
 
-        {/* Access Modal */}
         {showAccessModal && <AccessModal programs={programs} classes={classes} editPrograms={editPrograms} editClasses={editClasses} setEditPrograms={setEditPrograms} setEditClasses={setEditClasses} toggleItem={toggleItem} onSave={saveAccess} onClose={() => setShowAccessModal(null)} folderName={showAccessModal.name} />}
       </div>
     );
   }
 
-  // Folder list view
+  // ---- Folder list view ----
   return (
     <div>
       <PageHeader
         title="Materials"
-        description="Organize and distribute learning materials"
+        description={isTeacher ? "Access learning materials for your class" : "Organize and distribute learning materials"}
         actions={
-          <button onClick={() => setShowNewFolder(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
-            <FolderPlus className="h-4 w-4" /> New Folder
-          </button>
+          isAdmin ? (
+            <button onClick={() => setShowNewFolder(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
+              <FolderPlus className="h-4 w-4" /> New Folder
+            </button>
+          ) : undefined
         }
       />
 
-      {folders.length === 0 ? (
+      {visibleFolders.length === 0 ? (
         <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
           <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">No folders yet</h2>
-          <p className="text-sm text-muted-foreground">Create a folder to start uploading materials.</p>
+          <h2 className="text-lg font-semibold mb-2">{isTeacher ? "No materials available" : "No folders yet"}</h2>
+          <p className="text-sm text-muted-foreground">
+            {isTeacher ? "No folders are accessible to your class yet." : "Create a folder to start uploading materials."}
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {folders.map((folder) => (
+          {visibleFolders.map((folder) => (
             <div key={folder.id} className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group">
               <div className="flex items-start justify-between mb-3">
                 <button onClick={() => setActiveFolder(folder)} className="flex items-center gap-2 text-left flex-1 min-w-0">
                   <FolderOpen className="h-5 w-5 text-primary shrink-0" />
                   <span className="font-medium text-foreground truncate">{folder.name}</span>
                 </button>
-                <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => openAccessModal(folder)} className="p-1 rounded hover:bg-accent text-muted-foreground" title="Access settings">
-                    <Settings2 className="h-3.5 w-3.5" />
-                  </button>
-                  <button onClick={() => deleteFolder(folder.id)} className="p-1 rounded hover:bg-destructive/10 text-destructive" title="Delete folder">
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </button>
-                </div>
+                {isAdmin && (
+                  <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onClick={() => openAccessModal(folder)} className="p-1 rounded hover:bg-accent text-muted-foreground" title="Access settings">
+                      <Settings2 className="h-3.5 w-3.5" />
+                    </button>
+                    <button onClick={() => deleteFolder(folder.id)} className="p-1 rounded hover:bg-destructive/10 text-destructive" title="Delete folder">
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                )}
               </div>
-              <p className="text-xs text-muted-foreground truncate">Access: {accessLabel(folder)}</p>
+              <p className="text-xs text-muted-foreground truncate">
+                {isAdmin ? `Access: ${accessLabel(folder)}` : ""}
+              </p>
             </div>
           ))}
         </div>
       )}
 
-      {/* New Folder Modal */}
+      {/* New Folder Modal (Admin only) */}
       {showNewFolder && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
@@ -318,7 +365,6 @@ function MaterialsPage() {
         </div>
       )}
 
-      {/* Access Modal */}
       {showAccessModal && <AccessModal programs={programs} classes={classes} editPrograms={editPrograms} editClasses={editClasses} setEditPrograms={setEditPrograms} setEditClasses={setEditClasses} toggleItem={toggleItem} onSave={saveAccess} onClose={() => setShowAccessModal(null)} folderName={showAccessModal.name} />}
     </div>
   );
