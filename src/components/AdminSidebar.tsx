@@ -5,6 +5,7 @@ import {
   Users,
   GraduationCap,
   BookOpen,
+  FolderOpen,
   Settings,
   ChevronLeft,
   ChevronRight,
