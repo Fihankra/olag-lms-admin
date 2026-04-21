@@ -177,7 +177,10 @@ function MaterialsPage() {
 
     for (const file of Array.from(e.target.files)) {
       const path = `${activeFolder.id}/${Date.now()}_${file.name}`;
-      const { error } = await supabase.storage.from("materials").upload(path, file);
+      const { error } = await supabase.storage.from("materials").upload(path, file, {
+        contentType: file.type || "application/octet-stream",
+        upsert: false,
+      });
       if (error) { console.error(error); continue; }
 
       const { data: urlData } = supabase.storage.from("materials").getPublicUrl(path);
