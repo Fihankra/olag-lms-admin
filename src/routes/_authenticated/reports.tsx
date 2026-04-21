@@ -52,8 +52,9 @@ function ReportsPage() {
   const [filterClass, setFilterClass] = useState("");
   const [filterWeek, setFilterWeek] = useState(getMonday(new Date()));
 
-  // Teacher report creation
+  // Teacher report creation / editing
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [editingReport, setEditingReport] = useState<Report | null>(null);
   const [classDevices, setClassDevices] = useState<DeviceOption[]>([]);
   const [createForm, setCreateForm] = useState({
     device_id: "",
