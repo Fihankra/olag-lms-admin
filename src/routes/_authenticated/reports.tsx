@@ -346,6 +346,13 @@ function ReportsPage() {
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
                       )}
                     </td>
+                    {canEditReports && (
+                      <td className="px-4 py-3">
+                        <button onClick={() => openEditModal(r)} className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors" title="Edit report">
+                          <Pencil className="h-3.5 w-3.5" />
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 );
               })}
