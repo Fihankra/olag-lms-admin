@@ -112,9 +112,36 @@ function ReportsPage() {
   useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
   useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
 
+  // Devices that already have a report this week
+  const reportedDeviceIds = useMemo(
+    () => new Set(reports.map((r) => r.device_id)),
+    [reports],
+  );
+
+  const availableDevices = useMemo(
+    () => classDevices.filter((d) => !reportedDeviceIds.has(d.id)),
+    [classDevices, reportedDeviceIds],
+  );
+
   async function createReport() {
     if (!createForm.device_id || !teacherRecord || !assignedClassId) return;
     setSubmitting(true);
+
+    // Double-check no duplicate exists
+    const { data: existing } = await supabase
+      .from("reports")
+      .select("id")
+      .eq("device_id", createForm.device_id)
+      .eq("week_start", filterWeek)
+      .eq("class_id", assignedClassId)
+      .limit(1);
+
+    if (existing && existing.length > 0) {
+      alert("A report for this device already exists for the selected week.");
+      setSubmitting(false);
+      return;
+    }
+
     await supabase.from("reports").insert({
       teacher_id: teacherRecord.id,
       class_id: assignedClassId,
@@ -306,8 +333,9 @@ function ReportsPage() {
                   onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
                   className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
                 >
-                  <option value="">Select device</option>
-                  {classDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
+                   <option value="">Select device</option>
+                   {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
+                   {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
                 </select>
               </div>
 
