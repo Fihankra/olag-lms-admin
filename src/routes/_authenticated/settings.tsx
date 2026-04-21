@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { Settings } from "lucide-react";
+import { AdminOnly } from "../../components/AdminOnly";
 
 export const Route = createFileRoute("/_authenticated/settings")({
   component: SettingsPage,

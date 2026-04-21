@@ -3,6 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { AdminOnly } from "../../components/AdminOnly";
 
 export const Route = createFileRoute("/_authenticated/programs")({
   component: ProgramsPage,
