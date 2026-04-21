@@ -489,6 +489,13 @@ function ReportsPage() {
               </div>
             </div>
 
+            {deadlineError && (
+              <div className="flex items-center gap-2 px-3 py-2 mt-3 rounded-md border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+                <Clock className="h-4 w-4 shrink-0" />
+                {deadlineError}
+              </div>
+            )}
+
             <div className="flex gap-2 justify-end mt-4">
               <button onClick={() => { setShowCreateModal(false); setEditingReport(null); setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" }); }} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
               <button
