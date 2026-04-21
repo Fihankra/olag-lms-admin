@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState, useMemo, type FormEvent } from "react";
 import { useAuth } from "../hooks/use-auth";
 import { supabase } from "../integrations/supabase/client";
 import { KeyRound } from "lucide-react";
@@ -13,6 +13,38 @@ export const Route = createFileRoute("/change-password")({
     ],
   }),
 });
+function getStrength(pw: string): { score: number; label: string; color: string } {
+  let score = 0;
+  if (pw.length >= 8) score++;
+  if (pw.length >= 12) score++;
+  if (/[a-z]/.test(pw) && /[A-Z]/.test(pw)) score++;
+  if (/\d/.test(pw)) score++;
+  if (/[^a-zA-Z0-9]/.test(pw)) score++;
+
+  if (score <= 1) return { score, label: "Weak", color: "bg-destructive" };
+  if (score <= 2) return { score, label: "Fair", color: "bg-amber-500" };
+  if (score <= 3) return { score, label: "Good", color: "bg-yellow-400" };
+  if (score <= 4) return { score, label: "Strong", color: "bg-emerald-500" };
+  return { score, label: "Very Strong", color: "bg-emerald-400" };
+}
+
+function PasswordStrength({ password }: { password: string }) {
+  const { score, label, color } = useMemo(() => getStrength(password), [password]);
+  if (!password) return null;
+  return (
+    <div className="mt-2 space-y-1">
+      <div className="flex gap-1">
+        {[1, 2, 3, 4, 5].map((i) => (
+          <div
+            key={i}
+            className={`h-1.5 flex-1 rounded-full transition-colors ${i <= score ? color : "bg-muted"}`}
+          />
+        ))}
+      </div>
+      <p className="text-xs text-muted-foreground">{label}</p>
+    </div>
+  );
+}
 
 function ChangePasswordPage() {
   const { isAuthenticated, isLoading, user } = useAuth();
@@ -102,6 +134,7 @@ function ChangePasswordPage() {
               placeholder="••••••••"
               className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
+            <PasswordStrength password={password} />
           </div>
 
           <div>
