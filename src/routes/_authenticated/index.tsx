@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "../components/PageHeader";
-import { StatsCard } from "../components/StatsCard";
+import { PageHeader } from "../../components/PageHeader";
+import { StatsCard } from "../../components/StatsCard";
 import { Tablet, Users, Wifi, WifiOff } from "lucide-react";
-import { supabase } from "../integrations/supabase/client";
+import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   component: DashboardPage,
   head: () => ({
     meta: [
@@ -50,7 +50,6 @@ function DashboardPage() {
 
     fetchStats();
 
-    // Realtime subscription for devices
     const channel = supabase
       .channel("devices-realtime")
       .on("postgres_changes", { event: "*", schema: "public", table: "devices" }, () => {

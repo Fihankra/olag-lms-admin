@@ -1,7 +1,7 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
-import { AdminLayout } from "../components/AdminLayout";
 import { Link } from "@tanstack/react-router";
+import { AuthProvider } from "../hooks/use-auth";
 
 function NotFoundComponent() {
   return (
@@ -60,8 +60,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <AdminLayout>
+    <AuthProvider>
       <Outlet />
-    </AdminLayout>
+    </AuthProvider>
   );
 }

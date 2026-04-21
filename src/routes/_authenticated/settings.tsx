@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "../components/PageHeader";
+import { PageHeader } from "../../components/PageHeader";
 import { Settings } from "lucide-react";
 
-export const Route = createFileRoute("/settings")({
+export const Route = createFileRoute("/_authenticated/settings")({
   component: SettingsPage,
   head: () => ({
     meta: [

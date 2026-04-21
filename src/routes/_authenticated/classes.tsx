@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "../components/PageHeader";
-import { DataTable } from "../components/DataTable";
-import { supabase } from "../integrations/supabase/client";
+import { PageHeader } from "../../components/PageHeader";
+import { DataTable } from "../../components/DataTable";
+import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 
-export const Route = createFileRoute("/classes")({
+export const Route = createFileRoute("/_authenticated/classes")({
   component: ClassesPage,
   head: () => ({
     meta: [

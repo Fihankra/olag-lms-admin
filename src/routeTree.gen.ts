@@ -9,154 +9,216 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StudentsRouteImport } from './routes/students'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as ProgramsRouteImport } from './routes/programs'
-import { Route as DevicesRouteImport } from './routes/devices'
-import { Route as ClassesRouteImport } from './routes/classes'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
+import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
+import { Route as AuthenticatedStudentsRouteImport } from './routes/_authenticated/students'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
+import { Route as AuthenticatedProgramsRouteImport } from './routes/_authenticated/programs'
+import { Route as AuthenticatedDevicesRouteImport } from './routes/_authenticated/devices'
+import { Route as AuthenticatedClassesRouteImport } from './routes/_authenticated/classes'
 
-const StudentsRoute = StudentsRouteImport.update({
-  id: '/students',
-  path: '/students',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
+const AuthenticatedRoute = AuthenticatedRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgramsRoute = ProgramsRouteImport.update({
-  id: '/programs',
-  path: '/programs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DevicesRoute = DevicesRouteImport.update({
-  id: '/devices',
-  path: '/devices',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClassesRoute = ClassesRouteImport.update({
-  id: '/classes',
-  path: '/classes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
+const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedStudentsRoute = AuthenticatedStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedProgramsRoute = AuthenticatedProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedDevicesRoute = AuthenticatedDevicesRouteImport.update({
+  id: '/devices',
+  path: '/devices',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedClassesRoute = AuthenticatedClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => AuthenticatedRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/classes': typeof ClassesRoute
-  '/devices': typeof DevicesRoute
-  '/programs': typeof ProgramsRoute
-  '/settings': typeof SettingsRoute
-  '/students': typeof StudentsRoute
+  '/': typeof AuthenticatedIndexRoute
+  '/login': typeof LoginRoute
+  '/classes': typeof AuthenticatedClassesRoute
+  '/devices': typeof AuthenticatedDevicesRoute
+  '/programs': typeof AuthenticatedProgramsRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/students': typeof AuthenticatedStudentsRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/classes': typeof ClassesRoute
-  '/devices': typeof DevicesRoute
-  '/programs': typeof ProgramsRoute
-  '/settings': typeof SettingsRoute
-  '/students': typeof StudentsRoute
+  '/login': typeof LoginRoute
+  '/classes': typeof AuthenticatedClassesRoute
+  '/devices': typeof AuthenticatedDevicesRoute
+  '/programs': typeof AuthenticatedProgramsRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/students': typeof AuthenticatedStudentsRoute
+  '/': typeof AuthenticatedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/classes': typeof ClassesRoute
-  '/devices': typeof DevicesRoute
-  '/programs': typeof ProgramsRoute
-  '/settings': typeof SettingsRoute
-  '/students': typeof StudentsRoute
+  '/_authenticated': typeof AuthenticatedRouteWithChildren
+  '/login': typeof LoginRoute
+  '/_authenticated/classes': typeof AuthenticatedClassesRoute
+  '/_authenticated/devices': typeof AuthenticatedDevicesRoute
+  '/_authenticated/programs': typeof AuthenticatedProgramsRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
+  '/_authenticated/students': typeof AuthenticatedStudentsRoute
+  '/_authenticated/': typeof AuthenticatedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/login'
     | '/classes'
     | '/devices'
     | '/programs'
     | '/settings'
     | '/students'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/classes' | '/devices' | '/programs' | '/settings' | '/students'
-  id:
-    | '__root__'
-    | '/'
+  to:
+    | '/login'
     | '/classes'
     | '/devices'
     | '/programs'
     | '/settings'
     | '/students'
+    | '/'
+  id:
+    | '__root__'
+    | '/_authenticated'
+    | '/login'
+    | '/_authenticated/classes'
+    | '/_authenticated/devices'
+    | '/_authenticated/programs'
+    | '/_authenticated/settings'
+    | '/_authenticated/students'
+    | '/_authenticated/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ClassesRoute: typeof ClassesRoute
-  DevicesRoute: typeof DevicesRoute
-  ProgramsRoute: typeof ProgramsRoute
-  SettingsRoute: typeof SettingsRoute
-  StudentsRoute: typeof StudentsRoute
+  AuthenticatedRoute: typeof AuthenticatedRouteWithChildren
+  LoginRoute: typeof LoginRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/students': {
-      id: '/students'
-      path: '/students'
-      fullPath: '/students'
-      preLoaderRoute: typeof StudentsRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programs': {
-      id: '/programs'
-      path: '/programs'
-      fullPath: '/programs'
-      preLoaderRoute: typeof ProgramsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/devices': {
-      id: '/devices'
-      path: '/devices'
-      fullPath: '/devices'
-      preLoaderRoute: typeof DevicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/classes': {
-      id: '/classes'
-      path: '/classes'
-      fullPath: '/classes'
-      preLoaderRoute: typeof ClassesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
+    '/_authenticated/': {
+      id: '/_authenticated/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AuthenticatedIndexRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/students': {
+      id: '/_authenticated/students'
+      path: '/students'
+      fullPath: '/students'
+      preLoaderRoute: typeof AuthenticatedStudentsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/programs': {
+      id: '/_authenticated/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof AuthenticatedProgramsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/devices': {
+      id: '/_authenticated/devices'
+      path: '/devices'
+      fullPath: '/devices'
+      preLoaderRoute: typeof AuthenticatedDevicesRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/classes': {
+      id: '/_authenticated/classes'
+      path: '/classes'
+      fullPath: '/classes'
+      preLoaderRoute: typeof AuthenticatedClassesRouteImport
+      parentRoute: typeof AuthenticatedRoute
     }
   }
 }
 
+interface AuthenticatedRouteChildren {
+  AuthenticatedClassesRoute: typeof AuthenticatedClassesRoute
+  AuthenticatedDevicesRoute: typeof AuthenticatedDevicesRoute
+  AuthenticatedProgramsRoute: typeof AuthenticatedProgramsRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
+  AuthenticatedStudentsRoute: typeof AuthenticatedStudentsRoute
+  AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
+}
+
+const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
+  AuthenticatedClassesRoute: AuthenticatedClassesRoute,
+  AuthenticatedDevicesRoute: AuthenticatedDevicesRoute,
+  AuthenticatedProgramsRoute: AuthenticatedProgramsRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
+  AuthenticatedStudentsRoute: AuthenticatedStudentsRoute,
+  AuthenticatedIndexRoute: AuthenticatedIndexRoute,
+}
+
+const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
+  AuthenticatedRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  ClassesRoute: ClassesRoute,
-  DevicesRoute: DevicesRoute,
-  ProgramsRoute: ProgramsRoute,
-  SettingsRoute: SettingsRoute,
-  StudentsRoute: StudentsRoute,
+  AuthenticatedRoute: AuthenticatedRouteWithChildren,
+  LoginRoute: LoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
