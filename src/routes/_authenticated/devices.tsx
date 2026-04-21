@@ -171,7 +171,7 @@ function DevicesPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Devices"
         description="Devices are added automatically when assigned to students"
