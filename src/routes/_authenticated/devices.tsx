@@ -242,6 +242,6 @@ function DevicesPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }
