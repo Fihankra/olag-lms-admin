@@ -84,6 +84,25 @@ export const updateReport = createServerFn({ method: "POST" })
     const deadlineError = await checkDeadline(supabase, data.week_start);
     if (deadlineError) return { error: deadlineError };
 
+    // Snapshot current values into report_history before updating
+    const { data: current } = await supabase
+      .from("reports")
+      .select("kiosk_status, device_condition, missing_status, lms_status")
+      .eq("id", data.report_id)
+      .eq("teacher_id", teacher.id)
+      .single();
+
+    if (current) {
+      await supabase.from("report_history").insert({
+        report_id: data.report_id,
+        kiosk_status: current.kiosk_status,
+        device_condition: current.device_condition,
+        missing_status: current.missing_status,
+        lms_status: current.lms_status,
+        changed_by: userId,
+      });
+    }
+
     const { error } = await supabase
       .from("reports")
       .update({
@@ -140,10 +159,8 @@ async function checkDeadline(
   const minute = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.minute ?? 59;
   const weekStartDay = (data?.find((r: any) => r.key === "report_week_start")?.value as any)?.day ?? 2;
 
-  // week_start is the date of the configured start day
   const startDate = new Date(weekStart + "T00:00:00Z");
 
-  // Calculate how many days from week start to deadline day
   let dayOffset = deadlineDay - weekStartDay;
   if (dayOffset < 0) dayOffset += 7;
 

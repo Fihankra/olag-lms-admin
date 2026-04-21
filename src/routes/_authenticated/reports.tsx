@@ -3,7 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2 } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2, History } from "lucide-react";
 import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
@@ -30,6 +30,15 @@ type Report = {
   teachers?: { name: string } | null;
   classes?: { name: string } | null;
   devices?: { device_id: string } | null;
+};
+
+type HistoryEntry = {
+  id: string;
+  kiosk_status: boolean | null;
+  device_condition: string | null;
+  missing_status: boolean | null;
+  lms_status: string | null;
+  changed_at: string;
 };
 
 type ClassItem = { id: string; name: string };
@@ -82,6 +91,12 @@ function ReportsPage() {
 
   // Deadline
   const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
+
+  // History modal
+  const [historyReportId, setHistoryReportId] = useState<string | null>(null);
+  const [historyDeviceLabel, setHistoryDeviceLabel] = useState("");
+  const [historyEntries, setHistoryEntries] = useState<HistoryEntry[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(false);
 
   // Load settings first, then set filterWeek
   useEffect(() => {
@@ -200,6 +215,19 @@ function ReportsPage() {
   async function getAuthHeaders() {
     const session = await supabase.auth.getSession();
     return { authorization: `Bearer ${session.data.session?.access_token}` };
+  }
+
+  async function openHistory(reportId: string, deviceLabel: string) {
+    setHistoryReportId(reportId);
+    setHistoryDeviceLabel(deviceLabel);
+    setHistoryLoading(true);
+    const { data } = await supabase
+      .from("report_history")
+      .select("id, kiosk_status, device_condition, missing_status, lms_status, changed_at")
+      .eq("report_id", reportId)
+      .order("changed_at", { ascending: false });
+    setHistoryEntries((data as HistoryEntry[]) ?? []);
+    setHistoryLoading(false);
   }
 
   function startReportForDevice(deviceUuid: string) {
@@ -373,7 +401,7 @@ function ReportsPage() {
                   <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
                   <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
                   <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
-                  {canEdit && <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>}
+                  <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -484,22 +512,97 @@ function ReportsPage() {
                           <td className="px-4 py-3 text-muted-foreground">—</td>
                         </>
                       )}
-                      {canEdit && (
-                        <td className="px-4 py-3">
-                          <button
-                            onClick={() => startReportForDevice(sd.deviceUuid)}
-                            className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
-                            title={hasReport ? "Edit report" : "Submit report"}
-                          >
-                            {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
-                          </button>
-                        </td>
-                      )}
+                      <td className="px-4 py-3">
+                        <div className="flex gap-1">
+                          {canEdit && (
+                            <button
+                              onClick={() => startReportForDevice(sd.deviceUuid)}
+                              className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                              title={hasReport ? "Edit report" : "Submit report"}
+                            >
+                              {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
+                            </button>
+                          )}
+                          {hasReport && (
+                            <button
+                              onClick={() => openHistory(report.id, sd.deviceLabel)}
+                              className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                              title="View history"
+                            >
+                              <History className="h-3.5 w-3.5" />
+                            </button>
+                          )}
+                        </div>
+                      </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
+          </div>
+        )}
+
+        {/* History Modal */}
+        {historyReportId && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
+              <h2 className="text-lg font-semibold mb-1">Report History</h2>
+              <p className="text-sm text-muted-foreground mb-4">Device: {historyDeviceLabel}</p>
+
+              {historyLoading ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+                </div>
+              ) : historyEntries.length === 0 ? (
+                <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
+              ) : (
+                <div className="space-y-3">
+                  {historyEntries.map((entry, idx) => (
+                    <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-muted-foreground">Version {historyEntries.length - idx}</span>
+                        <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div>
+                          <span className="text-muted-foreground">Kiosk: </span>
+                          <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                            {entry.kiosk_status === false ? "Off" : "On"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">Condition: </span>
+                          <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                            {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">Missing: </span>
+                          <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                            {entry.missing_status ? "Yes" : "No"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">LMS: </span>
+                          <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                            {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="flex justify-end mt-4">
+                <button
+                  onClick={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+                  className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -561,6 +664,7 @@ function ReportsPage() {
                 <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -601,11 +705,84 @@ function ReportsPage() {
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
                       )}
                     </td>
+                    <td className="px-4 py-3">
+                      <button
+                        onClick={() => openHistory(r.id, r.devices?.device_id ?? "Unknown")}
+                        className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                        title="View history"
+                      >
+                        <History className="h-3.5 w-3.5" />
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* History Modal */}
+      {historyReportId && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
+            <h2 className="text-lg font-semibold mb-1">Report History</h2>
+            <p className="text-sm text-muted-foreground mb-4">Device: {historyDeviceLabel}</p>
+
+            {historyLoading ? (
+              <div className="flex items-center justify-center py-8">
+                <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+              </div>
+            ) : historyEntries.length === 0 ? (
+              <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
+            ) : (
+              <div className="space-y-3">
+                {historyEntries.map((entry, idx) => (
+                  <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-medium text-muted-foreground">Version {historyEntries.length - idx}</span>
+                      <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div>
+                        <span className="text-muted-foreground">Kiosk: </span>
+                        <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                          {entry.kiosk_status === false ? "Off" : "On"}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">Condition: </span>
+                        <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                          {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">Missing: </span>
+                        <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                          {entry.missing_status ? "Yes" : "No"}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">LMS: </span>
+                        <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                          {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
