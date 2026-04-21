@@ -4,15 +4,6 @@ import { useAuth } from "../hooks/use-auth";
 import { supabase } from "../integrations/supabase/client";
 import { KeyRound } from "lucide-react";
 
-export const Route = createFileRoute("/change-password")({
-  component: ChangePasswordPage,
-  head: () => ({
-    meta: [
-      { title: "Change Password — OLAG LMS" },
-      { name: "description", content: "Update your default password" },
-    ],
-  }),
-});
 function getStrength(pw: string): { score: number; label: string; color: string } {
   let score = 0;
   if (pw.length >= 8) score++;
@@ -67,7 +58,6 @@ function ChangePasswordPage() {
     return null;
   }
 
-  // Already changed password — go to dashboard
   if (user?.user_metadata?.password_changed) {
     navigate({ to: "/" });
     return null;
@@ -164,3 +154,13 @@ function ChangePasswordPage() {
     </div>
   );
 }
+
+export const Route = createFileRoute("/change-password")({
+  component: ChangePasswordPage,
+  head: () => ({
+    meta: [
+      { title: "Change Password — OLAG LMS" },
+      { name: "description", content: "Update your default password" },
+    ],
+  }),
+});
