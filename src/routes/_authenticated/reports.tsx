@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil, Clock } from "lucide-react";
+import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
@@ -64,6 +65,8 @@ function ReportsPage() {
     lms_status: "active",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
+  const [deadlineError, setDeadlineError] = useState<string | null>(null);
 
   async function fetchReports() {
     let query = supabase
@@ -113,6 +116,35 @@ function ReportsPage() {
   useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
   useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
 
+  // Fetch deadline setting
+  useEffect(() => {
+    async function loadDeadline() {
+      try {
+        const session = await supabase.auth.getSession();
+        const token = session.data.session?.access_token;
+        if (!token) return;
+        const result = await getDeadlineSetting({
+          headers: { authorization: `Bearer ${token}` },
+        });
+        setDeadline(result);
+      } catch {
+        // use defaults
+        setDeadline({ day: 5, hour: 23, minute: 59 });
+      }
+    }
+    if (isTeacher) loadDeadline();
+  }, [isTeacher]);
+
+  // Calculate if past deadline for current viewed week
+  const pastDeadline = useMemo(() => {
+    if (!deadline) return false;
+    const monday = new Date(filterWeek + "T00:00:00Z");
+    const deadlineDate = new Date(monday);
+    deadlineDate.setUTCDate(monday.getUTCDate() + (deadline.day - 1));
+    deadlineDate.setUTCHours(deadline.hour, deadline.minute, 59, 999);
+    return new Date() > deadlineDate;
+  }, [deadline, filterWeek]);
+
   // Devices that already have a report this week
   const reportedDeviceIds = useMemo(
     () => new Set(reports.map((r) => r.device_id)),
@@ -124,44 +156,52 @@ function ReportsPage() {
     [classDevices, reportedDeviceIds],
   );
 
+  async function getAuthHeaders() {
+    const session = await supabase.auth.getSession();
+    return { authorization: `Bearer ${session.data.session?.access_token}` };
+  }
+
   async function createReport() {
     if (!createForm.device_id || !teacherRecord || !assignedClassId) return;
     setSubmitting(true);
+    setDeadlineError(null);
 
-    // Double-check no duplicate exists
-    const { data: existing } = await supabase
-      .from("reports")
-      .select("id")
-      .eq("device_id", createForm.device_id)
-      .eq("week_start", filterWeek)
-      .eq("class_id", assignedClassId)
-      .limit(1);
+    try {
+      const headers = await getAuthHeaders();
+      const result = await submitReportFn({
+        headers,
+        data: {
+          device_id: createForm.device_id,
+          week_start: filterWeek,
+          kiosk_status: createForm.kiosk_status === "true",
+          device_condition: createForm.device_condition,
+          missing_status: createForm.missing_status === "true",
+          lms_status: createForm.lms_status,
+        },
+      });
 
-    if (existing && existing.length > 0) {
-      alert("A report for this device already exists for the selected week.");
+      if (result.error) {
+        setDeadlineError(result.error);
+        setSubmitting(false);
+        return;
+      }
+    } catch {
+      setDeadlineError("Failed to submit report.");
       setSubmitting(false);
       return;
     }
 
-    await supabase.from("reports").insert({
-      teacher_id: teacherRecord.id,
-      class_id: assignedClassId,
-      device_id: createForm.device_id,
-      week_start: filterWeek,
-      kiosk_status: createForm.kiosk_status === "true",
-      device_condition: createForm.device_condition,
-      missing_status: createForm.missing_status === "true",
-      lms_status: createForm.lms_status,
-    });
     setSubmitting(false);
     setShowCreateModal(false);
     setEditingReport(null);
+    setDeadlineError(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
 
   function openEditModal(report: Report) {
     setEditingReport(report);
+    setDeadlineError(null);
     setCreateForm({
       device_id: report.device_id,
       kiosk_status: report.kiosk_status === true ? "true" : "false",
@@ -175,22 +215,44 @@ function ReportsPage() {
   async function updateReport() {
     if (!editingReport) return;
     setSubmitting(true);
-    await supabase.from("reports").update({
-      kiosk_status: createForm.kiosk_status === "true",
-      device_condition: createForm.device_condition,
-      missing_status: createForm.missing_status === "true",
-      lms_status: createForm.lms_status,
-    }).eq("id", editingReport.id);
+    setDeadlineError(null);
+
+    try {
+      const headers = await getAuthHeaders();
+      const result = await updateReportFn({
+        headers,
+        data: {
+          report_id: editingReport.id,
+          week_start: filterWeek,
+          kiosk_status: createForm.kiosk_status === "true",
+          device_condition: createForm.device_condition,
+          missing_status: createForm.missing_status === "true",
+          lms_status: createForm.lms_status,
+        },
+      });
+
+      if (result.error) {
+        setDeadlineError(result.error);
+        setSubmitting(false);
+        return;
+      }
+    } catch {
+      setDeadlineError("Failed to update report.");
+      setSubmitting(false);
+      return;
+    }
+
     setSubmitting(false);
     setShowCreateModal(false);
     setEditingReport(null);
+    setDeadlineError(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
 
-  // Deadline: teachers can only edit reports for the current week
+  // Teachers can only edit reports for the current week AND before deadline
   const currentMonday = getMonday(new Date());
-  const canEditReports = isTeacher && filterWeek === currentMonday;
+  const canEditReports = isTeacher && filterWeek === currentMonday && !pastDeadline;
 
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
@@ -240,9 +302,9 @@ function ReportsPage() {
         title={isTeacher ? `Reports — ${assignedClassName}` : "Weekly Reports"}
         description={isTeacher ? "Submit and view weekly device reports for your class" : "Form master device reports by class and week"}
         actions={
-          isTeacher ? (
+          isTeacher && !pastDeadline ? (
             <button
-              onClick={() => setShowCreateModal(true)}
+              onClick={() => { setDeadlineError(null); setShowCreateModal(true); }}
               className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
             >
               <Plus className="h-4 w-4" /> New Report
@@ -270,6 +332,14 @@ function ReportsPage() {
           <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
         </div>
       </div>
+
+      {/* Past deadline banner */}
+      {isTeacher && pastDeadline && filterWeek === currentMonday && (
+        <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+          <Clock className="h-4 w-4 shrink-0" />
+          The deadline for this week's reports has passed. Submissions are closed.
+        </div>
+      )}
 
       {/* Issue summary cards */}
       {reports.length > 0 && (
@@ -418,6 +488,13 @@ function ReportsPage() {
                 </select>
               </div>
             </div>
+
+            {deadlineError && (
+              <div className="flex items-center gap-2 px-3 py-2 mt-3 rounded-md border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+                <Clock className="h-4 w-4 shrink-0" />
+                {deadlineError}
+              </div>
+            )}
 
             <div className="flex gap-2 justify-end mt-4">
               <button onClick={() => { setShowCreateModal(false); setEditingReport(null); setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" }); }} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
