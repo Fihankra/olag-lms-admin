@@ -116,6 +116,35 @@ function ReportsPage() {
   useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
   useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
 
+  // Fetch deadline setting
+  useEffect(() => {
+    async function loadDeadline() {
+      try {
+        const session = await supabase.auth.getSession();
+        const token = session.data.session?.access_token;
+        if (!token) return;
+        const result = await getDeadlineSetting({
+          headers: { authorization: `Bearer ${token}` },
+        });
+        setDeadline(result);
+      } catch {
+        // use defaults
+        setDeadline({ day: 5, hour: 23, minute: 59 });
+      }
+    }
+    if (isTeacher) loadDeadline();
+  }, [isTeacher]);
+
+  // Calculate if past deadline for current viewed week
+  const pastDeadline = useMemo(() => {
+    if (!deadline) return false;
+    const monday = new Date(filterWeek + "T00:00:00Z");
+    const deadlineDate = new Date(monday);
+    deadlineDate.setUTCDate(monday.getUTCDate() + (deadline.day - 1));
+    deadlineDate.setUTCHours(deadline.hour, deadline.minute, 59, 999);
+    return new Date() > deadlineDate;
+  }, [deadline, filterWeek]);
+
   // Devices that already have a report this week
   const reportedDeviceIds = useMemo(
     () => new Set(reports.map((r) => r.device_id)),
@@ -127,44 +156,52 @@ function ReportsPage() {
     [classDevices, reportedDeviceIds],
   );
 
+  async function getAuthHeaders() {
+    const session = await supabase.auth.getSession();
+    return { authorization: `Bearer ${session.data.session?.access_token}` };
+  }
+
   async function createReport() {
     if (!createForm.device_id || !teacherRecord || !assignedClassId) return;
     setSubmitting(true);
+    setDeadlineError(null);
 
-    // Double-check no duplicate exists
-    const { data: existing } = await supabase
-      .from("reports")
-      .select("id")
-      .eq("device_id", createForm.device_id)
-      .eq("week_start", filterWeek)
-      .eq("class_id", assignedClassId)
-      .limit(1);
+    try {
+      const headers = await getAuthHeaders();
+      const result = await submitReportFn({
+        headers,
+        data: {
+          device_id: createForm.device_id,
+          week_start: filterWeek,
+          kiosk_status: createForm.kiosk_status === "true",
+          device_condition: createForm.device_condition,
+          missing_status: createForm.missing_status === "true",
+          lms_status: createForm.lms_status,
+        },
+      });
 
-    if (existing && existing.length > 0) {
-      alert("A report for this device already exists for the selected week.");
+      if (result.error) {
+        setDeadlineError(result.error);
+        setSubmitting(false);
+        return;
+      }
+    } catch {
+      setDeadlineError("Failed to submit report.");
       setSubmitting(false);
       return;
     }
 
-    await supabase.from("reports").insert({
-      teacher_id: teacherRecord.id,
-      class_id: assignedClassId,
-      device_id: createForm.device_id,
-      week_start: filterWeek,
-      kiosk_status: createForm.kiosk_status === "true",
-      device_condition: createForm.device_condition,
-      missing_status: createForm.missing_status === "true",
-      lms_status: createForm.lms_status,
-    });
     setSubmitting(false);
     setShowCreateModal(false);
     setEditingReport(null);
+    setDeadlineError(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
 
   function openEditModal(report: Report) {
     setEditingReport(report);
+    setDeadlineError(null);
     setCreateForm({
       device_id: report.device_id,
       kiosk_status: report.kiosk_status === true ? "true" : "false",
@@ -178,22 +215,44 @@ function ReportsPage() {
   async function updateReport() {
     if (!editingReport) return;
     setSubmitting(true);
-    await supabase.from("reports").update({
-      kiosk_status: createForm.kiosk_status === "true",
-      device_condition: createForm.device_condition,
-      missing_status: createForm.missing_status === "true",
-      lms_status: createForm.lms_status,
-    }).eq("id", editingReport.id);
+    setDeadlineError(null);
+
+    try {
+      const headers = await getAuthHeaders();
+      const result = await updateReportFn({
+        headers,
+        data: {
+          report_id: editingReport.id,
+          week_start: filterWeek,
+          kiosk_status: createForm.kiosk_status === "true",
+          device_condition: createForm.device_condition,
+          missing_status: createForm.missing_status === "true",
+          lms_status: createForm.lms_status,
+        },
+      });
+
+      if (result.error) {
+        setDeadlineError(result.error);
+        setSubmitting(false);
+        return;
+      }
+    } catch {
+      setDeadlineError("Failed to update report.");
+      setSubmitting(false);
+      return;
+    }
+
     setSubmitting(false);
     setShowCreateModal(false);
     setEditingReport(null);
+    setDeadlineError(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
 
-  // Deadline: teachers can only edit reports for the current week
+  // Teachers can only edit reports for the current week AND before deadline
   const currentMonday = getMonday(new Date());
-  const canEditReports = isTeacher && filterWeek === currentMonday;
+  const canEditReports = isTeacher && filterWeek === currentMonday && !pastDeadline;
 
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
