@@ -131,20 +131,6 @@ function ReportsPage() {
     fetchReports();
   }
 
-  // If teacher without assigned class, deny access
-  if (isTeacher && !assignedClassId) {
-    return (
-      <div>
-        <PageHeader title="Reports" description="You are not assigned as a form master for any class." />
-        <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
-          <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">No Class Assigned</h2>
-          <p className="text-sm text-muted-foreground">Contact the admin to be assigned as a form master.</p>
-        </div>
-      </div>
-    );
-  }
-
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
     for (const r of reports) {
@@ -172,6 +158,20 @@ function ReportsPage() {
   const assignedClassName = isTeacher && assignedClassId
     ? classes.find((c) => c.id === assignedClassId)?.name ?? "Your Class"
     : null;
+
+  // If teacher without assigned class, deny access
+  if (isTeacher && !assignedClassId) {
+    return (
+      <div>
+        <PageHeader title="Reports" description="You are not assigned as a form master for any class." />
+        <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
+          <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
+          <h2 className="text-lg font-semibold mb-2">No Class Assigned</h2>
+          <p className="text-sm text-muted-foreground">Contact the admin to be assigned as a form master.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -226,7 +226,7 @@ function ReportsPage() {
           <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
           <h2 className="text-lg font-semibold mb-2">No reports for this week</h2>
           <p className="text-sm text-muted-foreground">
-            {isTeacher ? "Click "New Report" to submit a device report." : "Try selecting a different week or class."}
+            {isTeacher ? 'Click "New Report" to submit a device report.' : "Try selecting a different week or class."}
           </p>
         </div>
       ) : (
