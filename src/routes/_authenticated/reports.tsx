@@ -217,6 +217,19 @@ function ReportsPage() {
     return { authorization: `Bearer ${session.data.session?.access_token}` };
   }
 
+  async function openHistory(reportId: string, deviceLabel: string) {
+    setHistoryReportId(reportId);
+    setHistoryDeviceLabel(deviceLabel);
+    setHistoryLoading(true);
+    const { data } = await supabase
+      .from("report_history")
+      .select("id, kiosk_status, device_condition, missing_status, lms_status, changed_at")
+      .eq("report_id", reportId)
+      .order("changed_at", { ascending: false });
+    setHistoryEntries((data as HistoryEntry[]) ?? []);
+    setHistoryLoading(false);
+  }
+
   function startReportForDevice(deviceUuid: string) {
     const existing = reportByDevice.get(deviceUuid);
     if (existing) {
