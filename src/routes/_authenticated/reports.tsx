@@ -333,6 +333,14 @@ function ReportsPage() {
         </div>
       </div>
 
+      {/* Past deadline banner */}
+      {isTeacher && pastDeadline && filterWeek === currentMonday && (
+        <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+          <Clock className="h-4 w-4 shrink-0" />
+          The deadline for this week's reports has passed. Submissions are closed.
+        </div>
+      )}
+
       {/* Issue summary cards */}
       {reports.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
