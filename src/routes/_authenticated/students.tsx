@@ -3,6 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { AdminOnly } from "../../components/AdminOnly";
 
 export const Route = createFileRoute("/_authenticated/students")({
   component: StudentsPage,
@@ -117,7 +118,7 @@ function StudentsPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Students"
         description="Manage student records and device assignments"
@@ -201,6 +202,6 @@ function StudentsPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }

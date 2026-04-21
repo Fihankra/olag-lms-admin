@@ -3,6 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { AdminOnly } from "../../components/AdminOnly";
 
 export const Route = createFileRoute("/_authenticated/classes")({
   component: ClassesPage,
@@ -62,7 +63,7 @@ function ClassesPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Classes"
         description="Manage classes linked to programs"
@@ -90,6 +91,6 @@ function ClassesPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }

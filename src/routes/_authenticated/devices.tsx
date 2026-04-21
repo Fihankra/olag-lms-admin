@@ -5,6 +5,7 @@ import { StatusBadge } from "../../components/StatusBadge";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { UserPlus, UserMinus } from "lucide-react";
+import { AdminOnly } from "../../components/AdminOnly";
 
 export const Route = createFileRoute("/_authenticated/devices")({
   component: DevicesPage,
@@ -170,7 +171,7 @@ function DevicesPage() {
   ];
 
   return (
-    <div>
+    <AdminOnly><div>
       <PageHeader
         title="Devices"
         description="Devices are added automatically when assigned to students"
@@ -241,6 +242,6 @@ function DevicesPage() {
           </div>
         </div>
       )}
-    </div>
+    </div></AdminOnly>
   );
 }
