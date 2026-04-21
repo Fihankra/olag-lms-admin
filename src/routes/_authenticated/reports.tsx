@@ -65,6 +65,8 @@ function ReportsPage() {
     lms_status: "active",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
+  const [deadlineError, setDeadlineError] = useState<string | null>(null);
 
   async function fetchReports() {
     let query = supabase
