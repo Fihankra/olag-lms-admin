@@ -3,7 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
@@ -52,8 +52,9 @@ function ReportsPage() {
   const [filterClass, setFilterClass] = useState("");
   const [filterWeek, setFilterWeek] = useState(getMonday(new Date()));
 
-  // Teacher report creation
+  // Teacher report creation / editing
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [editingReport, setEditingReport] = useState<Report | null>(null);
   const [classDevices, setClassDevices] = useState<DeviceOption[]>([]);
   const [createForm, setCreateForm] = useState({
     device_id: "",
@@ -154,9 +155,42 @@ function ReportsPage() {
     });
     setSubmitting(false);
     setShowCreateModal(false);
+    setEditingReport(null);
     setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
     fetchReports();
   }
+
+  function openEditModal(report: Report) {
+    setEditingReport(report);
+    setCreateForm({
+      device_id: report.device_id,
+      kiosk_status: report.kiosk_status === true ? "true" : "false",
+      device_condition: report.device_condition ?? "good",
+      missing_status: report.missing_status === true ? "true" : "false",
+      lms_status: report.lms_status ?? "active",
+    });
+    setShowCreateModal(true);
+  }
+
+  async function updateReport() {
+    if (!editingReport) return;
+    setSubmitting(true);
+    await supabase.from("reports").update({
+      kiosk_status: createForm.kiosk_status === "true",
+      device_condition: createForm.device_condition,
+      missing_status: createForm.missing_status === "true",
+      lms_status: createForm.lms_status,
+    }).eq("id", editingReport.id);
+    setSubmitting(false);
+    setShowCreateModal(false);
+    setEditingReport(null);
+    setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
+    fetchReports();
+  }
+
+  // Deadline: teachers can only edit reports for the current week
+  const currentMonday = getMonday(new Date());
+  const canEditReports = isTeacher && filterWeek === currentMonday;
 
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
@@ -268,6 +302,7 @@ function ReportsPage() {
                 <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
+                {canEditReports && <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -311,6 +346,13 @@ function ReportsPage() {
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
                       )}
                     </td>
+                    {canEditReports && (
+                      <td className="px-4 py-3">
+                        <button onClick={() => openEditModal(r)} className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors" title="Edit report">
+                          <Pencil className="h-3.5 w-3.5" />
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 );
               })}
@@ -319,25 +361,30 @@ function ReportsPage() {
         </div>
       )}
 
-      {/* Create Report Modal (Teacher only) */}
+      {/* Create/Edit Report Modal (Teacher only) */}
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-1">New Device Report</h2>
-            <p className="text-sm text-muted-foreground mb-4">Week of {formatWeek(filterWeek)}</p>
+            <h2 className="text-lg font-semibold mb-1">{editingReport ? "Edit Device Report" : "New Device Report"}</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Week of {formatWeek(filterWeek)}
+              {editingReport && ` · ${editingReport.devices?.device_id ?? ""}`}
+            </p>
             <div className="space-y-3">
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Device</label>
-                <select
-                  value={createForm.device_id}
-                  onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
-                  className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
-                >
-                   <option value="">Select device</option>
-                   {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
-                   {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
-                </select>
-              </div>
+              {!editingReport && (
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-1 block">Device</label>
+                  <select
+                    value={createForm.device_id}
+                    onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
+                    className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                  >
+                    <option value="">Select device</option>
+                    {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
+                    {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
+                  </select>
+                </div>
+              )}
 
               <div>
                 <label className="text-sm font-medium text-foreground mb-1 block">Kiosk Mode</label>
@@ -373,9 +420,13 @@ function ReportsPage() {
             </div>
 
             <div className="flex gap-2 justify-end mt-4">
-              <button onClick={() => setShowCreateModal(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={createReport} disabled={!createForm.device_id || submitting} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50">
-                {submitting ? "Submitting…" : "Submit Report"}
+              <button onClick={() => { setShowCreateModal(false); setEditingReport(null); setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" }); }} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
+              <button
+                onClick={editingReport ? updateReport : createReport}
+                disabled={(!editingReport && !createForm.device_id) || submitting}
+                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+              >
+                {submitting ? "Saving…" : editingReport ? "Update Report" : "Submit Report"}
               </button>
             </div>
           </div>
