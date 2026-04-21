@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Plus, Pencil, Clock } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2 } from "lucide-react";
 import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
@@ -33,13 +33,25 @@ type Report = {
 };
 
 type ClassItem = { id: string; name: string };
-type DeviceOption = { id: string; device_id: string };
+type StudentDevice = {
+  studentId: string;
+  studentName: string;
+  studentCode: string;
+  deviceUuid: string;
+  deviceLabel: string;
+};
 
-function getMonday(d: Date): string {
+/**
+ * Get the most recent occurrence of `targetDay` (1=Mon..7=Sun) on or before `d`.
+ */
+function getWeekStart(d: Date, startDay: number): string {
   const date = new Date(d);
-  const day = date.getDay();
-  const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-  date.setDate(diff);
+  // JS getDay: 0=Sun,1=Mon..6=Sat  →  convert to 1=Mon..7=Sun
+  const jsDay = date.getDay();
+  const isoDay = jsDay === 0 ? 7 : jsDay;
+  let diff = isoDay - startDay;
+  if (diff < 0) diff += 7;
+  date.setDate(date.getDate() - diff);
   return date.toISOString().split("T")[0];
 }
 
@@ -51,24 +63,66 @@ function ReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [filterClass, setFilterClass] = useState("");
-  const [filterWeek, setFilterWeek] = useState(getMonday(new Date()));
+  const [weekStartDay, setWeekStartDay] = useState(2); // default Tuesday
+  const [filterWeek, setFilterWeek] = useState("");
 
-  // Teacher report creation / editing
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [editingReport, setEditingReport] = useState<Report | null>(null);
-  const [classDevices, setClassDevices] = useState<DeviceOption[]>([]);
-  const [createForm, setCreateForm] = useState({
-    device_id: "",
+  // Checklist data (teacher)
+  const [studentDevices, setStudentDevices] = useState<StudentDevice[]>([]);
+
+  // Inline editing state (teacher)
+  const [editingDeviceId, setEditingDeviceId] = useState<string | null>(null);
+  const [editForm, setEditForm] = useState({
     kiosk_status: "true",
     device_condition: "good",
     missing_status: "false",
     lms_status: "active",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  // Deadline
   const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
-  const [deadlineError, setDeadlineError] = useState<string | null>(null);
+
+  // Load settings first, then set filterWeek
+  useEffect(() => {
+    async function init() {
+      try {
+        const session = await supabase.auth.getSession();
+        const token = session.data.session?.access_token;
+        if (!token) {
+          setFilterWeek(getWeekStart(new Date(), 2));
+          return;
+        }
+        const result = await getDeadlineSetting({
+          headers: { authorization: `Bearer ${token}` },
+        });
+        setWeekStartDay(result.weekStartDay);
+        setDeadline({ day: result.day, hour: result.hour, minute: result.minute });
+        setFilterWeek(getWeekStart(new Date(), result.weekStartDay));
+      } catch {
+        setDeadline({ day: 2, hour: 23, minute: 59 });
+        setFilterWeek(getWeekStart(new Date(), 2));
+      }
+    }
+    init();
+  }, []);
+
+  const pastDeadline = useMemo(() => {
+    if (!deadline || !filterWeek) return false;
+    const startDate = new Date(filterWeek + "T00:00:00Z");
+    let dayOffset = deadline.day - weekStartDay;
+    if (dayOffset < 0) dayOffset += 7;
+    const deadlineDate = new Date(startDate);
+    deadlineDate.setUTCDate(startDate.getUTCDate() + dayOffset);
+    deadlineDate.setUTCHours(deadline.hour, deadline.minute, 59, 999);
+    return new Date() > deadlineDate;
+  }, [deadline, filterWeek, weekStartDay]);
+
+  const currentWeekStart = useMemo(() => getWeekStart(new Date(), weekStartDay), [weekStartDay]);
+  const canEdit = isTeacher && filterWeek === currentWeekStart && !pastDeadline;
 
   async function fetchReports() {
+    if (!filterWeek) return;
     let query = supabase
       .from("reports")
       .select("*, teachers(name), classes(name), devices(device_id)")
@@ -90,205 +144,134 @@ function ReportsPage() {
     setClasses(data ?? []);
   }
 
-  async function fetchClassDevices() {
+  async function fetchStudentDevices() {
     if (!assignedClassId) return;
-    // Get students in assigned class, then their devices
     const { data: students } = await supabase
       .from("students")
-      .select("assigned_device_id")
+      .select("id, name, student_id, assigned_device_id")
       .eq("class_id", assignedClassId)
-      .not("assigned_device_id", "is", null);
+      .not("assigned_device_id", "is", null)
+      .order("name");
 
-    if (!students?.length) { setClassDevices([]); return; }
+    if (!students?.length) { setStudentDevices([]); return; }
 
     const deviceIds = students.map((s) => s.assigned_device_id).filter(Boolean) as string[];
-    if (!deviceIds.length) { setClassDevices([]); return; }
+    if (!deviceIds.length) { setStudentDevices([]); return; }
 
     const { data: devices } = await supabase
       .from("devices")
       .select("id, device_id")
       .in("id", deviceIds);
 
-    setClassDevices((devices as DeviceOption[]) ?? []);
+    const devMap = new Map((devices ?? []).map((d: any) => [d.id, d.device_id]));
+
+    setStudentDevices(
+      students.map((s) => ({
+        studentId: s.id,
+        studentName: s.name,
+        studentCode: s.student_id,
+        deviceUuid: s.assigned_device_id!,
+        deviceLabel: devMap.get(s.assigned_device_id!) ?? s.assigned_device_id!,
+      }))
+    );
   }
 
   useEffect(() => { fetchClasses(); }, []);
-  useEffect(() => { fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
-  useEffect(() => { if (isTeacher) fetchClassDevices(); }, [assignedClassId]);
+  useEffect(() => { if (filterWeek) fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
+  useEffect(() => { if (isTeacher) fetchStudentDevices(); }, [assignedClassId]);
 
-  // Realtime subscription for report inserts/updates
+  // Realtime
   useEffect(() => {
+    if (!filterWeek) return;
     const channel = supabase
       .channel(`reports-${filterWeek}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "reports",
-          filter: `week_start=eq.${filterWeek}`,
-        },
-        () => {
-          fetchReports();
-        }
-      )
+      .on("postgres_changes", { event: "*", schema: "public", table: "reports", filter: `week_start=eq.${filterWeek}` }, () => fetchReports())
       .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
+    return () => { supabase.removeChannel(channel); };
   }, [filterWeek, filterClass, assignedClassId]);
 
-  // Fetch deadline setting
-  useEffect(() => {
-    async function loadDeadline() {
-      try {
-        const session = await supabase.auth.getSession();
-        const token = session.data.session?.access_token;
-        if (!token) return;
-        const result = await getDeadlineSetting({
-          headers: { authorization: `Bearer ${token}` },
-        });
-        setDeadline(result);
-      } catch {
-        // use defaults
-        setDeadline({ day: 5, hour: 23, minute: 59 });
-      }
-    }
-    if (isTeacher) loadDeadline();
-  }, [isTeacher]);
-
-  // Calculate if past deadline for current viewed week
-  const pastDeadline = useMemo(() => {
-    if (!deadline) return false;
-    const monday = new Date(filterWeek + "T00:00:00Z");
-    const deadlineDate = new Date(monday);
-    deadlineDate.setUTCDate(monday.getUTCDate() + (deadline.day - 1));
-    deadlineDate.setUTCHours(deadline.hour, deadline.minute, 59, 999);
-    return new Date() > deadlineDate;
-  }, [deadline, filterWeek]);
-
-  // Devices that already have a report this week
-  const reportedDeviceIds = useMemo(
-    () => new Set(reports.map((r) => r.device_id)),
-    [reports],
-  );
-
-  const availableDevices = useMemo(
-    () => classDevices.filter((d) => !reportedDeviceIds.has(d.id)),
-    [classDevices, reportedDeviceIds],
-  );
+  // Map device_id -> report
+  const reportByDevice = useMemo(() => {
+    const map = new Map<string, Report>();
+    for (const r of reports) map.set(r.device_id, r);
+    return map;
+  }, [reports]);
 
   async function getAuthHeaders() {
     const session = await supabase.auth.getSession();
     return { authorization: `Bearer ${session.data.session?.access_token}` };
   }
 
-  async function createReport() {
-    if (!createForm.device_id || !teacherRecord || !assignedClassId) return;
+  function startReportForDevice(deviceUuid: string) {
+    const existing = reportByDevice.get(deviceUuid);
+    if (existing) {
+      setEditForm({
+        kiosk_status: existing.kiosk_status === true ? "true" : "false",
+        device_condition: existing.device_condition ?? "good",
+        missing_status: existing.missing_status === true ? "true" : "false",
+        lms_status: existing.lms_status ?? "active",
+      });
+    } else {
+      setEditForm({ kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
+    }
+    setEditingDeviceId(deviceUuid);
+    setErrorMsg(null);
+  }
+
+  async function saveReport() {
+    if (!editingDeviceId || !teacherRecord || !assignedClassId) return;
     setSubmitting(true);
-    setDeadlineError(null);
+    setErrorMsg(null);
+
+    const existing = reportByDevice.get(editingDeviceId);
+    const headers = await getAuthHeaders();
 
     try {
-      const headers = await getAuthHeaders();
-      const result = await submitReportFn({
-        headers,
-        data: {
-          device_id: createForm.device_id,
-          week_start: filterWeek,
-          kiosk_status: createForm.kiosk_status === "true",
-          device_condition: createForm.device_condition,
-          missing_status: createForm.missing_status === "true",
-          lms_status: createForm.lms_status,
-        },
-      });
+      let result;
+      if (existing) {
+        result = await updateReportFn({
+          headers,
+          data: {
+            report_id: existing.id,
+            week_start: filterWeek,
+            kiosk_status: editForm.kiosk_status === "true",
+            device_condition: editForm.device_condition,
+            missing_status: editForm.missing_status === "true",
+            lms_status: editForm.lms_status,
+          },
+        });
+      } else {
+        result = await submitReportFn({
+          headers,
+          data: {
+            device_id: editingDeviceId,
+            week_start: filterWeek,
+            kiosk_status: editForm.kiosk_status === "true",
+            device_condition: editForm.device_condition,
+            missing_status: editForm.missing_status === "true",
+            lms_status: editForm.lms_status,
+          },
+        });
+      }
 
       if (result.error) {
-        setDeadlineError(result.error);
+        setErrorMsg(result.error);
         setSubmitting(false);
         return;
       }
     } catch {
-      setDeadlineError("Failed to submit report.");
+      setErrorMsg("Failed to save report.");
       setSubmitting(false);
       return;
     }
 
     setSubmitting(false);
-    setShowCreateModal(false);
-    setEditingReport(null);
-    setDeadlineError(null);
-    setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
+    setEditingDeviceId(null);
     fetchReports();
   }
-
-  function openEditModal(report: Report) {
-    setEditingReport(report);
-    setDeadlineError(null);
-    setCreateForm({
-      device_id: report.device_id,
-      kiosk_status: report.kiosk_status === true ? "true" : "false",
-      device_condition: report.device_condition ?? "good",
-      missing_status: report.missing_status === true ? "true" : "false",
-      lms_status: report.lms_status ?? "active",
-    });
-    setShowCreateModal(true);
-  }
-
-  async function updateReport() {
-    if (!editingReport) return;
-    setSubmitting(true);
-    setDeadlineError(null);
-
-    try {
-      const headers = await getAuthHeaders();
-      const result = await updateReportFn({
-        headers,
-        data: {
-          report_id: editingReport.id,
-          week_start: filterWeek,
-          kiosk_status: createForm.kiosk_status === "true",
-          device_condition: createForm.device_condition,
-          missing_status: createForm.missing_status === "true",
-          lms_status: createForm.lms_status,
-        },
-      });
-
-      if (result.error) {
-        setDeadlineError(result.error);
-        setSubmitting(false);
-        return;
-      }
-    } catch {
-      setDeadlineError("Failed to update report.");
-      setSubmitting(false);
-      return;
-    }
-
-    setSubmitting(false);
-    setShowCreateModal(false);
-    setEditingReport(null);
-    setDeadlineError(null);
-    setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
-    fetchReports();
-  }
-
-  // Teachers can only edit reports for the current week AND before deadline
-  const currentMonday = getMonday(new Date());
-  const canEditReports = isTeacher && filterWeek === currentMonday && !pastDeadline;
-
-  const issues = useMemo(() => {
-    let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
-    for (const r of reports) {
-      if (r.device_condition === "faulty") faulty++;
-      if (r.missing_status) missing++;
-      if (r.kiosk_status === false) kioskOff++;
-      if (r.lms_status === "inactive") lmsInactive++;
-    }
-    return { faulty, missing, kioskOff, lmsInactive, total: reports.length };
-  }, [reports]);
 
   function shiftWeek(delta: number) {
+    if (!filterWeek) return;
     const d = new Date(filterWeek);
     d.setDate(d.getDate() + delta * 7);
     setFilterWeek(d.toISOString().split("T")[0]);
@@ -305,7 +288,18 @@ function ReportsPage() {
     ? classes.find((c) => c.id === assignedClassId)?.name ?? "Your Class"
     : null;
 
-  // If teacher without assigned class, deny access
+  // Summary stats
+  const issues = useMemo(() => {
+    let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
+    for (const r of reports) {
+      if (r.device_condition === "faulty") faulty++;
+      if (r.missing_status) missing++;
+      if (r.kiosk_status === false) kioskOff++;
+      if (r.lms_status === "inactive") lmsInactive++;
+    }
+    return { faulty, missing, kioskOff, lmsInactive, total: reports.length };
+  }, [reports]);
+
   if (isTeacher && !assignedClassId) {
     return (
       <div>
@@ -319,35 +313,217 @@ function ReportsPage() {
     );
   }
 
+  if (!filterWeek) return null;
+
+  // --------- TEACHER VIEW: Checklist ---------
+  if (isTeacher) {
+    const submittedCount = studentDevices.filter((sd) => reportByDevice.has(sd.deviceUuid)).length;
+    const totalCount = studentDevices.length;
+
+    return (
+      <div>
+        <PageHeader
+          title={`Reports — ${assignedClassName}`}
+          description={`${submittedCount}/${totalCount} devices reported this week`}
+        />
+
+        {/* Week nav */}
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <div className="flex items-center gap-1">
+            <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
+            <span className="px-3 py-2 text-sm font-medium text-foreground min-w-[200px] text-center">{formatWeek(filterWeek)}</span>
+            <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
+          </div>
+        </div>
+
+        {/* Past deadline banner */}
+        {pastDeadline && filterWeek === currentWeekStart && (
+          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+            <Clock className="h-4 w-4 shrink-0" />
+            The deadline for this week's reports has passed. Submissions are closed.
+          </div>
+        )}
+
+        {/* Summary cards */}
+        {reports.length > 0 && (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
+            <SummaryCard label="Missing Devices" count={issues.missing} total={issues.total} variant={issues.missing > 0 ? "danger" : "ok"} />
+            <SummaryCard label="Kiosk Off" count={issues.kioskOff} total={issues.total} variant={issues.kioskOff > 0 ? "warn" : "ok"} />
+            <SummaryCard label="LMS Inactive" count={issues.lmsInactive} total={issues.total} variant={issues.lmsInactive > 0 ? "warn" : "ok"} />
+          </div>
+        )}
+
+        {/* Student/Device Checklist */}
+        {studentDevices.length === 0 ? (
+          <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
+            <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
+            <h2 className="text-lg font-semibold mb-2">No students with devices</h2>
+            <p className="text-sm text-muted-foreground">No students in your class have assigned devices.</p>
+          </div>
+        ) : (
+          <div className="bg-card rounded-lg border border-border overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border text-left">
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Status</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Student</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
+                  {canEdit && <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {studentDevices.map((sd) => {
+                  const report = reportByDevice.get(sd.deviceUuid);
+                  const isEditing = editingDeviceId === sd.deviceUuid;
+                  const hasReport = !!report;
+
+                  if (isEditing && canEdit) {
+                    return (
+                      <tr key={sd.deviceUuid} className="bg-primary/5">
+                        <td className="px-4 py-3">
+                          <span className="inline-flex items-center gap-1 text-primary text-xs font-medium">
+                            <Pencil className="h-3.5 w-3.5" /> {hasReport ? "Editing" : "New"}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 font-medium text-foreground">{sd.studentName}</td>
+                        <td className="px-4 py-3 text-foreground">{sd.deviceLabel}</td>
+                        <td className="px-4 py-2">
+                          <select value={editForm.kiosk_status} onChange={(e) => setEditForm({ ...editForm, kiosk_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="true">On</option>
+                            <option value="false">Off</option>
+                          </select>
+                        </td>
+                        <td className="px-4 py-2">
+                          <select value={editForm.device_condition} onChange={(e) => setEditForm({ ...editForm, device_condition: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="good">Good</option>
+                            <option value="faulty">Faulty</option>
+                          </select>
+                        </td>
+                        <td className="px-4 py-2">
+                          <select value={editForm.missing_status} onChange={(e) => setEditForm({ ...editForm, missing_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                          </select>
+                        </td>
+                        <td className="px-4 py-2">
+                          <select value={editForm.lms_status} onChange={(e) => setEditForm({ ...editForm, lms_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                          </select>
+                        </td>
+                        <td className="px-4 py-2">
+                          <div className="flex gap-1">
+                            <button onClick={saveReport} disabled={submitting} className="p-1.5 rounded bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50" title="Save">
+                              {submitting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
+                            </button>
+                            <button onClick={() => { setEditingDeviceId(null); setErrorMsg(null); }} className="p-1.5 rounded bg-secondary text-secondary-foreground text-xs">✕</button>
+                          </div>
+                          {errorMsg && <p className="text-xs text-destructive mt-1 max-w-[120px]">{errorMsg}</p>}
+                        </td>
+                      </tr>
+                    );
+                  }
+
+                  // Display row
+                  const isFaulty = report?.device_condition === "faulty";
+                  const isMissing = report?.missing_status === true;
+                  const hasIssue = isFaulty || isMissing;
+
+                  return (
+                    <tr key={sd.deviceUuid} className={hasIssue ? "bg-destructive/5" : ""}>
+                      <td className="px-4 py-3">
+                        {hasReport ? (
+                          <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                        ) : (
+                          <span className="h-4 w-4 rounded-full border-2 border-muted-foreground/40 block" />
+                        )}
+                      </td>
+                      <td className="px-4 py-3 font-medium text-foreground">{sd.studentName}</td>
+                      <td className="px-4 py-3 text-foreground">{sd.deviceLabel}</td>
+                      {hasReport ? (
+                        <>
+                          <td className="px-4 py-3">
+                            {report.kiosk_status === false ? (
+                              <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            {isFaulty ? (
+                              <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            {isMissing ? (
+                              <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            {report.lms_status === "inactive" ? (
+                              <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                            )}
+                          </td>
+                        </>
+                      ) : (
+                        <>
+                          <td className="px-4 py-3 text-muted-foreground">—</td>
+                          <td className="px-4 py-3 text-muted-foreground">—</td>
+                          <td className="px-4 py-3 text-muted-foreground">—</td>
+                          <td className="px-4 py-3 text-muted-foreground">—</td>
+                        </>
+                      )}
+                      {canEdit && (
+                        <td className="px-4 py-3">
+                          <button
+                            onClick={() => startReportForDevice(sd.deviceUuid)}
+                            className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                            title={hasReport ? "Edit report" : "Submit report"}
+                          >
+                            {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
+                          </button>
+                        </td>
+                      )}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // --------- ADMIN VIEW ---------
   return (
     <div>
       <PageHeader
-        title={isTeacher ? `Reports — ${assignedClassName}` : "Weekly Reports"}
-        description={isTeacher ? "Submit and view weekly device reports for your class" : "Form master device reports by class and week"}
-        actions={
-          isTeacher && !pastDeadline ? (
-            <button
-              onClick={() => { setDeadlineError(null); setShowCreateModal(true); }}
-              className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
-            >
-              <Plus className="h-4 w-4" /> New Report
-            </button>
-          ) : undefined
-        }
+        title="Weekly Reports"
+        description="Form master device reports by class and week"
       />
 
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3 mb-6">
-        {!isTeacher && (
-          <select
-            value={filterClass}
-            onChange={(e) => setFilterClass(e.target.value)}
-            className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm border border-border"
-          >
-            <option value="">All Classes</option>
-            {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </select>
-        )}
+        <select
+          value={filterClass}
+          onChange={(e) => setFilterClass(e.target.value)}
+          className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm border border-border"
+        >
+          <option value="">All Classes</option>
+          {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+        </select>
 
         <div className="flex items-center gap-1">
           <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
@@ -356,15 +532,7 @@ function ReportsPage() {
         </div>
       </div>
 
-      {/* Past deadline banner */}
-      {isTeacher && pastDeadline && filterWeek === currentMonday && (
-        <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
-          <Clock className="h-4 w-4 shrink-0" />
-          The deadline for this week's reports has passed. Submissions are closed.
-        </div>
-      )}
-
-      {/* Issue summary cards */}
+      {/* Summary cards */}
       {reports.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
@@ -379,9 +547,7 @@ function ReportsPage() {
         <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
           <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
           <h2 className="text-lg font-semibold mb-2">No reports for this week</h2>
-          <p className="text-sm text-muted-foreground">
-            {isTeacher ? 'Click "New Report" to submit a device report.' : "Try selecting a different week or class."}
-          </p>
+          <p className="text-sm text-muted-foreground">Try selecting a different week or class.</p>
         </div>
       ) : (
         <div className="bg-card rounded-lg border border-border overflow-x-auto">
@@ -389,63 +555,52 @@ function ReportsPage() {
             <thead>
               <tr className="border-b border-border text-left">
                 <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
-                {!isTeacher && <th className="px-4 py-3 font-medium text-muted-foreground">Class</th>}
-                {!isTeacher && <th className="px-4 py-3 font-medium text-muted-foreground">Teacher</th>}
+                <th className="px-4 py-3 font-medium text-muted-foreground">Class</th>
+                <th className="px-4 py-3 font-medium text-muted-foreground">Teacher</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
                 <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
-                {canEditReports && <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {reports.map((r) => {
                 const isFaulty = r.device_condition === "faulty";
                 const isMissing = r.missing_status === true;
-                const kioskOff = r.kiosk_status === false;
-                const lmsInactive = r.lms_status === "inactive";
                 const hasIssue = isFaulty || isMissing;
-
                 return (
                   <tr key={r.id} className={hasIssue ? "bg-destructive/5" : ""}>
                     <td className="px-4 py-3 font-medium text-foreground">{r.devices?.device_id ?? "—"}</td>
-                    {!isTeacher && <td className="px-4 py-3 text-foreground">{r.classes?.name ?? "—"}</td>}
-                    {!isTeacher && <td className="px-4 py-3 text-foreground">{r.teachers?.name ?? "—"}</td>}
+                    <td className="px-4 py-3 text-foreground">{r.classes?.name ?? "—"}</td>
+                    <td className="px-4 py-3 text-foreground">{r.teachers?.name ?? "—"}</td>
                     <td className="px-4 py-3">
-                      {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : kioskOff ? (
+                      {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
                         <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
                       )}
                     </td>
                     <td className="px-4 py-3">
-                      {!r.device_condition ? <span className="text-muted-foreground">—</span> : isFaulty ? (
+                      {isFaulty ? (
                         <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
                       )}
                     </td>
                     <td className="px-4 py-3">
-                      {r.missing_status == null ? <span className="text-muted-foreground">—</span> : isMissing ? (
+                      {isMissing ? (
                         <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
                       )}
                     </td>
                     <td className="px-4 py-3">
-                      {!r.lms_status ? <span className="text-muted-foreground">—</span> : lmsInactive ? (
+                      {r.lms_status === "inactive" ? (
                         <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
                       )}
                     </td>
-                    {canEditReports && (
-                      <td className="px-4 py-3">
-                        <button onClick={() => openEditModal(r)} className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors" title="Edit report">
-                          <Pencil className="h-3.5 w-3.5" />
-                        </button>
-                      </td>
-                    )}
                   </tr>
                 );
               })}
@@ -453,96 +608,12 @@ function ReportsPage() {
           </table>
         </div>
       )}
-
-      {/* Create/Edit Report Modal (Teacher only) */}
-      {showCreateModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-1">{editingReport ? "Edit Device Report" : "New Device Report"}</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Week of {formatWeek(filterWeek)}
-              {editingReport && ` · ${editingReport.devices?.device_id ?? ""}`}
-            </p>
-            <div className="space-y-3">
-              {!editingReport && (
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1 block">Device</label>
-                  <select
-                    value={createForm.device_id}
-                    onChange={(e) => setCreateForm({ ...createForm, device_id: e.target.value })}
-                    className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
-                  >
-                    <option value="">Select device</option>
-                    {availableDevices.length === 0 && <option disabled>All devices reported this week</option>}
-                    {availableDevices.map((d) => <option key={d.id} value={d.id}>{d.device_id}</option>)}
-                  </select>
-                </div>
-              )}
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Kiosk Mode</label>
-                <select value={createForm.kiosk_status} onChange={(e) => setCreateForm({ ...createForm, kiosk_status: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm">
-                  <option value="true">On</option>
-                  <option value="false">Off</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Device Condition</label>
-                <select value={createForm.device_condition} onChange={(e) => setCreateForm({ ...createForm, device_condition: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm">
-                  <option value="good">Good</option>
-                  <option value="faulty">Faulty</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Missing?</label>
-                <select value={createForm.missing_status} onChange={(e) => setCreateForm({ ...createForm, missing_status: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm">
-                  <option value="false">No</option>
-                  <option value="true">Yes</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">LMS Status</label>
-                <select value={createForm.lms_status} onChange={(e) => setCreateForm({ ...createForm, lms_status: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm">
-                  <option value="active">Active</option>
-                  <option value="inactive">Inactive</option>
-                </select>
-              </div>
-            </div>
-
-            {deadlineError && (
-              <div className="flex items-center gap-2 px-3 py-2 mt-3 rounded-md border border-destructive/30 bg-destructive/10 text-sm text-destructive">
-                <Clock className="h-4 w-4 shrink-0" />
-                {deadlineError}
-              </div>
-            )}
-
-            <div className="flex gap-2 justify-end mt-4">
-              <button onClick={() => { setShowCreateModal(false); setEditingReport(null); setCreateForm({ device_id: "", kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" }); }} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button
-                onClick={editingReport ? updateReport : createReport}
-                disabled={(!editingReport && !createForm.device_id) || submitting}
-                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
-              >
-                {submitting ? "Saving…" : editingReport ? "Update Report" : "Submit Report"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 
 function SummaryCard({ label, count, total, variant }: { label: string; count: number; total: number; variant: "ok" | "warn" | "danger" }) {
-  const colors = {
-    ok: "text-emerald-400",
-    warn: "text-amber-400",
-    danger: "text-destructive",
-  };
-
+  const colors = { ok: "text-emerald-400", warn: "text-amber-400", danger: "text-destructive" };
   return (
     <div className="bg-card rounded-lg border border-border p-4">
       <p className="text-xs text-muted-foreground mb-1">{label}</p>
