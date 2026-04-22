@@ -127,14 +127,7 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
       const sidStatus = !row.student_id?.trim() ? "error" : isDuplicate("student_id", i) ? "warn" : "ok";
       fields.student_id = { value: row.student_id || "", status: sidStatus, ...(isDuplicate("student_id", i) && row.student_id?.trim() ? { resolvedLabel: "⚠ Duplicate student_id in file" } : {}) };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
-      const pKey = row.program_name?.trim().toLowerCase() ?? "";
-      const pMatch = programMap.get(pKey);
-      fields.program_name = {
-        value: row.program_name || "",
-        resolvedId: pMatch?.id,
-        resolvedLabel: pMatch ? `→ ${pMatch.name} (${pMatch.id.slice(0, 8)}…)` : undefined,
-        status: pMatch ? "ok" : pKey ? "error" : "warn",
-      };
+
       const cKey = row.class_name?.trim().toLowerCase() ?? "";
       const cMatch = classMap.get(cKey);
       fields.class_name = {
@@ -142,6 +135,20 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
         resolvedId: cMatch?.id,
         resolvedLabel: cMatch ? `→ ${cMatch.name} (${cMatch.id.slice(0, 8)}…)` : undefined,
         status: cMatch ? "ok" : cKey ? "error" : "warn",
+      };
+
+      const pKey = row.program_name?.trim().toLowerCase() ?? "";
+      let pMatch = programMap.get(pKey);
+      let programNote = "";
+      if (!pMatch && !pKey && cMatch?.programId) {
+        const resolved = [...programMap.values()].find((p) => p.id === cMatch.programId);
+        if (resolved) { pMatch = resolved; programNote = " (from class)"; }
+      }
+      fields.program_name = {
+        value: row.program_name || (pMatch && programNote ? pMatch.name : ""),
+        resolvedId: pMatch?.id,
+        resolvedLabel: pMatch ? `→ ${pMatch.name}${programNote} (${pMatch.id.slice(0, 8)}…)` : undefined,
+        status: pMatch ? "ok" : pKey ? "error" : "warn",
       };
       const validGenders = ["male", "female"];
       const gVal = row.gender?.trim().toLowerCase() ?? "";
