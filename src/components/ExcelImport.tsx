@@ -359,6 +359,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
   async function confirmImport() {
     setImporting(true);
+    setProgress({ done: 0, total: rawRows.length });
     const allErrors: string[] = [];
 
     if (resetMode) {
@@ -369,16 +370,20 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
         setPreview(null);
         setRawRows([]);
         setImporting(false);
+        setProgress(null);
         return;
       }
     }
 
-    const importResult = await processImport(entity, rawRows);
+    const importResult = await processImport(entity, rawRows, (done, total) => {
+      setProgress({ done, total });
+    });
     importResult.errors = [...allErrors, ...importResult.errors];
     setResult(importResult);
     setPreview(null);
     setRawRows([]);
     setImporting(false);
+    setProgress(null);
     if (importResult.success > 0) onImportComplete();
   }
 
