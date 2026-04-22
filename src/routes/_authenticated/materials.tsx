@@ -64,10 +64,13 @@ function formatSize(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
+type TeacherUser = { user_id: string; name: string };
+
 function MaterialsPage() {
   const { role, user } = useAuth();
   const isAdmin = role === "admin";
   const userId = user?.id ?? null;
+  const [creators, setCreators] = useState<Map<string, string>>(new Map());
 
   const [folders, setFolders] = useState<Folder[]>([]);
   const [files, setFiles] = useState<FileItem[]>([]);
