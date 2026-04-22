@@ -85,25 +85,19 @@ function ReportsPage() {
   const [weekStartDay, setWeekStartDay] = useState(2);
   const [filterWeek, setFilterWeek] = useState("");
 
-  // Checklist data (teacher)
   const [studentDevices, setStudentDevices] = useState<StudentDevice[]>([]);
-
-  // Batch checklist form: deviceUuid -> row values
   const [checklist, setChecklist] = useState<Record<string, ChecklistRow>>({});
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
-  // Deadline
   const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
 
-  // History modal
   const [historyReportId, setHistoryReportId] = useState<string | null>(null);
   const [historyDeviceLabel, setHistoryDeviceLabel] = useState("");
   const [historyEntries, setHistoryEntries] = useState<HistoryEntry[]>([]);
   const [historyLoading, setHistoryLoading] = useState(false);
 
-  // Load settings
   useEffect(() => {
     async function init() {
       try {
@@ -200,7 +194,6 @@ function ReportsPage() {
   useEffect(() => { if (filterWeek) fetchReports(); }, [filterWeek, filterClass, assignedClassId, fetchReports]);
   useEffect(() => { if (isTeacher) fetchStudentDevices(); }, [assignedClassId]);
 
-  // Initialize checklist from existing reports
   useEffect(() => {
     if (!isTeacher || studentDevices.length === 0) return;
     const reportMap = new Map<string, Report>();
@@ -223,7 +216,6 @@ function ReportsPage() {
     setChecklist(newChecklist);
   }, [isTeacher, studentDevices, reports]);
 
-  // Realtime
   useEffect(() => {
     if (!filterWeek) return;
     const channel = supabase
@@ -334,9 +326,9 @@ function ReportsPage() {
     return (
       <div>
         <PageHeader title="Reports" description="You are not assigned as a form master for any class." />
-        <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
-          <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">No Class Assigned</h2>
+        <div className="bg-card rounded-lg border border-border p-8 sm:p-12 flex flex-col items-center justify-center text-center">
+          <MinusCircle className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mb-4" />
+          <h2 className="text-base sm:text-lg font-semibold mb-2">No Class Assigned</h2>
           <p className="text-sm text-muted-foreground">Contact the admin to be assigned as a form master.</p>
         </div>
       </div>
@@ -345,7 +337,16 @@ function ReportsPage() {
 
   if (!filterWeek) return null;
 
-  // --------- TEACHER VIEW: Batch Checklist ---------
+  const weekNav = (
+    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
+      <div className="flex items-center gap-1">
+        <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
+        <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">{formatWeek(filterWeek)}</span>
+        <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
+      </div>
+    </div>
+  );
+
   if (isTeacher) {
     const submittedCount = studentDevices.filter((sd) => reportByDevice.has(sd.deviceUuid)).length;
     const totalCount = studentDevices.length;
@@ -357,26 +358,17 @@ function ReportsPage() {
           description={`${submittedCount}/${totalCount} devices reported this week`}
         />
 
-        {/* Week nav */}
-        <div className="flex flex-wrap items-center gap-3 mb-4">
-          <div className="flex items-center gap-1">
-            <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
-            <span className="px-3 py-2 text-sm font-medium text-foreground min-w-[200px] text-center">{formatWeek(filterWeek)}</span>
-            <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
-          </div>
-        </div>
+        {weekNav}
 
-        {/* Past deadline banner */}
         {pastDeadline && filterWeek === currentWeekStart && (
-          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+          <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-xs sm:text-sm text-destructive">
             <Clock className="h-4 w-4 shrink-0" />
-            The deadline for this week's reports has passed. Submissions are closed.
+            <span>The deadline for this week's reports has passed.</span>
           </div>
         )}
 
-        {/* Summary cards */}
         {reports.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
             <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
             <SummaryCard label="Missing Devices" count={issues.missing} total={issues.total} variant={issues.missing > 0 ? "danger" : "ok"} />
             <SummaryCard label="Kiosk Off" count={issues.kioskOff} total={issues.total} variant={issues.kioskOff > 0 ? "warn" : "ok"} />
@@ -384,28 +376,131 @@ function ReportsPage() {
           </div>
         )}
 
-        {/* Messages */}
         {errorMsg && (
-          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+          <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-xs sm:text-sm text-destructive">
             <AlertTriangle className="h-4 w-4 shrink-0" /> {errorMsg}
           </div>
         )}
         {successMsg && (
-          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-400">
+          <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 mb-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-xs sm:text-sm text-emerald-400">
             <CheckCircle2 className="h-4 w-4 shrink-0" /> {successMsg}
           </div>
         )}
 
-        {/* Checklist table */}
         {studentDevices.length === 0 ? (
-          <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
-            <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
-            <h2 className="text-lg font-semibold mb-2">No students with devices</h2>
+          <div className="bg-card rounded-lg border border-border p-8 sm:p-12 flex flex-col items-center justify-center text-center">
+            <MinusCircle className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mb-4" />
+            <h2 className="text-base sm:text-lg font-semibold mb-2">No students with devices</h2>
             <p className="text-sm text-muted-foreground">No students in your class have assigned devices.</p>
           </div>
         ) : (
           <>
-            <div className="bg-card rounded-lg border border-border overflow-x-auto">
+            <div className="space-y-3 sm:hidden">
+              {studentDevices.map((sd) => {
+                const report = reportByDevice.get(sd.deviceUuid);
+                const hasReport = !!report;
+                const row = checklist[sd.deviceUuid] ?? DEFAULT_ROW;
+                const isFaulty = row.device_condition === "faulty";
+                const isMissing = row.missing_status === "true";
+                const hasIssue = isFaulty || isMissing;
+
+                return (
+                  <div key={sd.deviceUuid} className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        {hasReport ? (
+                          <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                        ) : (
+                          <span className="h-4 w-4 rounded-full border-2 border-muted-foreground/40 block shrink-0" />
+                        )}
+                        <span className="text-sm font-medium text-foreground truncate">{sd.studentName}</span>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        <span className="text-xs text-muted-foreground">{sd.deviceLabel}</span>
+                        {hasReport && (
+                          <button
+                            onClick={() => openHistory(report.id, sd.deviceLabel)}
+                            className="p-1 rounded hover:bg-accent text-muted-foreground"
+                          >
+                            <History className="h-3.5 w-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {canEdit ? (
+                      <div className="grid grid-cols-2 gap-2">
+                        <label className="space-y-1">
+                          <span className="text-[11px] text-muted-foreground">Kiosk</span>
+                          <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="true">On</option>
+                            <option value="false">Off</option>
+                          </select>
+                        </label>
+                        <label className="space-y-1">
+                          <span className="text-[11px] text-muted-foreground">Condition</span>
+                          <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="good">Good</option>
+                            <option value="faulty">Faulty</option>
+                          </select>
+                        </label>
+                        <label className="space-y-1">
+                          <span className="text-[11px] text-muted-foreground">Missing</span>
+                          <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                          </select>
+                        </label>
+                        <label className="space-y-1">
+                          <span className="text-[11px] text-muted-foreground">LMS</span>
+                          <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                          </select>
+                        </label>
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                        <div className="flex items-center justify-between">
+                          <span className="text-muted-foreground">Kiosk</span>
+                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
+                            <span className="text-amber-400">Off</span>
+                          ) : (
+                            <span className="text-emerald-400">On</span>
+                          )}
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-muted-foreground">Condition</span>
+                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
+                            <span className="text-destructive font-medium">Faulty</span>
+                          ) : (
+                            <span className="text-emerald-400">Good</span>
+                          )}
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-muted-foreground">Missing</span>
+                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
+                            <span className="text-destructive font-medium">Yes</span>
+                          ) : (
+                            <span className="text-emerald-400">No</span>
+                          )}
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-muted-foreground">LMS</span>
+                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
+                            <span className="text-amber-400">Inactive</span>
+                          ) : (
+                            <span className="text-emerald-400">Active</span>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="hidden sm:block bg-card rounded-lg border border-border overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border text-left">
@@ -516,13 +611,12 @@ function ReportsPage() {
               </table>
             </div>
 
-            {/* Submit All button */}
             {canEdit && (
               <div className="flex justify-end mt-4">
                 <button
                   onClick={submitAll}
                   disabled={submitting}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-50 transition-colors w-full sm:w-auto justify-center"
                 >
                   {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
                   Submit All Reports
@@ -532,7 +626,6 @@ function ReportsPage() {
           </>
         )}
 
-        {/* History Modal */}
         <HistoryModal
           reportId={historyReportId}
           deviceLabel={historyDeviceLabel}
@@ -544,7 +637,6 @@ function ReportsPage() {
     );
   }
 
-  // --------- ADMIN VIEW ---------
   return (
     <div>
       <PageHeader
@@ -552,12 +644,11 @@ function ReportsPage() {
         description="Form master device reports by class and week"
       />
 
-      {/* Filters */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
         <select
           value={filterClass}
           onChange={(e) => setFilterClass(e.target.value)}
-          className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm border border-border"
+          className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-xs sm:text-sm border border-border w-full sm:w-auto"
         >
           <option value="">All Classes</option>
           {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -565,14 +656,13 @@ function ReportsPage() {
 
         <div className="flex items-center gap-1">
           <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
-          <span className="px-3 py-2 text-sm font-medium text-foreground min-w-[200px] text-center">{formatWeek(filterWeek)}</span>
+          <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">{formatWeek(filterWeek)}</span>
           <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
         </div>
       </div>
 
-      {/* Summary cards */}
       {reports.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
           <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
           <SummaryCard label="Missing Devices" count={issues.missing} total={issues.total} variant={issues.missing > 0 ? "danger" : "ok"} />
           <SummaryCard label="Kiosk Off" count={issues.kioskOff} total={issues.total} variant={issues.kioskOff > 0 ? "warn" : "ok"} />
@@ -580,84 +670,142 @@ function ReportsPage() {
         </div>
       )}
 
-      {/* Reports table */}
       {reports.length === 0 ? (
-        <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
-          <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">No reports for this week</h2>
+        <div className="bg-card rounded-lg border border-border p-8 sm:p-12 flex flex-col items-center justify-center text-center">
+          <MinusCircle className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mb-4" />
+          <h2 className="text-base sm:text-lg font-semibold mb-2">No reports for this week</h2>
           <p className="text-sm text-muted-foreground">Try selecting a different week or class.</p>
         </div>
       ) : (
-        <div className="bg-card rounded-lg border border-border overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border text-left">
-                <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">Class</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">Teacher</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
-                <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {reports.map((r) => {
-                const isFaulty = r.device_condition === "faulty";
-                const isMissing = r.missing_status === true;
-                const hasIssue = isFaulty || isMissing;
-                return (
-                  <tr key={r.id} className={hasIssue ? "bg-destructive/5" : ""}>
-                    <td className="px-4 py-3 font-medium text-foreground">{r.devices?.device_id ?? "—"}</td>
-                    <td className="px-4 py-3 text-foreground">{r.classes?.name ?? "—"}</td>
-                    <td className="px-4 py-3 text-foreground">{r.teachers?.name ?? "—"}</td>
-                    <td className="px-4 py-3">
+        <>
+          <div className="space-y-3 sm:hidden">
+            {reports.map((r) => {
+              const isFaulty = r.device_condition === "faulty";
+              const isMissing = r.missing_status === true;
+              const hasIssue = isFaulty || isMissing;
+              return (
+                <div key={r.id} className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-foreground truncate">{r.devices?.device_id ?? "—"}</p>
+                      <p className="text-[11px] text-muted-foreground truncate">{r.classes?.name ?? "—"} · {r.teachers?.name ?? "—"}</p>
+                    </div>
+                    <button
+                      onClick={() => openHistory(r.id, r.devices?.device_id ?? "Unknown")}
+                      className="p-1.5 rounded hover:bg-accent text-muted-foreground shrink-0"
+                    >
+                      <History className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="text-muted-foreground">Kiosk</span>
                       {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
-                        <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                        <span className="text-amber-400">Off</span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                        <span className="text-emerald-400">On</span>
                       )}
-                    </td>
-                    <td className="px-4 py-3">
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-muted-foreground">Condition</span>
                       {isFaulty ? (
-                        <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                        <span className="text-destructive font-medium">Faulty</span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
+                        <span className="text-emerald-400">Good</span>
                       )}
-                    </td>
-                    <td className="px-4 py-3">
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-muted-foreground">Missing</span>
                       {isMissing ? (
-                        <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                        <span className="text-destructive font-medium">Yes</span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                        <span className="text-emerald-400">No</span>
                       )}
-                    </td>
-                    <td className="px-4 py-3">
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-muted-foreground">LMS</span>
                       {r.lms_status === "inactive" ? (
-                        <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                        <span className="text-amber-400">Inactive</span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                        <span className="text-emerald-400">Active</span>
                       )}
-                    </td>
-                    <td className="px-4 py-3">
-                      <button
-                        onClick={() => openHistory(r.id, r.devices?.device_id ?? "Unknown")}
-                        className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
-                        title="View history"
-                      >
-                        <History className="h-3.5 w-3.5" />
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="hidden sm:block bg-card rounded-lg border border-border overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border text-left">
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Class</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Teacher</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
+                  <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {reports.map((r) => {
+                  const isFaulty = r.device_condition === "faulty";
+                  const isMissing = r.missing_status === true;
+                  const hasIssue = isFaulty || isMissing;
+                  return (
+                    <tr key={r.id} className={hasIssue ? "bg-destructive/5" : ""}>
+                      <td className="px-4 py-3 font-medium text-foreground">{r.devices?.device_id ?? "—"}</td>
+                      <td className="px-4 py-3 text-foreground">{r.classes?.name ?? "—"}</td>
+                      <td className="px-4 py-3 text-foreground">{r.teachers?.name ?? "—"}</td>
+                      <td className="px-4 py-3">
+                        {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
+                          <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3">
+                        {isFaulty ? (
+                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3">
+                        {isMissing ? (
+                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3">
+                        {r.lms_status === "inactive" ? (
+                          <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3">
+                        <button
+                          onClick={() => openHistory(r.id, r.devices?.device_id ?? "Unknown")}
+                          className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                          title="View history"
+                        >
+                          <History className="h-3.5 w-3.5" />
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
 
-      {/* History Modal */}
       <HistoryModal
         reportId={historyReportId}
         deviceLabel={historyDeviceLabel}
@@ -678,10 +826,10 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
 }) {
   if (!reportId) return null;
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
-        <h2 className="text-lg font-semibold mb-1">Report History</h2>
-        <p className="text-sm text-muted-foreground mb-4">Device: {deviceLabel}</p>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-card rounded-lg border border-border p-4 sm:p-6 w-full max-w-lg max-h-[80vh] overflow-y-auto">
+        <h2 className="text-base sm:text-lg font-semibold mb-1">Report History</h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mb-4">Device: {deviceLabel}</p>
 
         {loading ? (
           <div className="flex items-center justify-center py-8">
@@ -695,7 +843,7 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
               <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-medium text-muted-foreground">Version {entries.length - idx}</span>
-                  <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                  <span className="text-[11px] sm:text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div>
@@ -741,10 +889,10 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
 function SummaryCard({ label, count, total, variant }: { label: string; count: number; total: number; variant: "ok" | "warn" | "danger" }) {
   const colors = { ok: "text-emerald-400", warn: "text-amber-400", danger: "text-destructive" };
   return (
-    <div className="bg-card rounded-lg border border-border p-4">
-      <p className="text-xs text-muted-foreground mb-1">{label}</p>
-      <p className={`text-2xl font-bold ${colors[variant]}`}>{count}</p>
-      <p className="text-xs text-muted-foreground">of {total} reports</p>
+    <div className="bg-card rounded-lg border border-border p-3 sm:p-4">
+      <p className="text-[11px] sm:text-xs text-muted-foreground mb-0.5 sm:mb-1">{label}</p>
+      <p className={`text-xl sm:text-2xl font-bold ${colors[variant]}`}>{count}</p>
+      <p className="text-[11px] sm:text-xs text-muted-foreground">of {total} reports</p>
     </div>
   );
 }
