@@ -69,7 +69,7 @@ const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
 
 async function buildPreview(entity: EntityType, rows: Record<string, string>[]): Promise<PreviewRow[]> {
   let programMap = new Map<string, { id: string; name: string }>();
-  let classMap = new Map<string, { id: string; name: string }>();
+  let classMap = new Map<string, { id: string; name: string; programId?: string }>();
 
   if (["classes", "students"].includes(entity)) {
     const { data: programs } = await supabase.from("programs").select("id, name");
