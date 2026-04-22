@@ -24,7 +24,9 @@ type Report = {
   week_start: string;
   kiosk_status: boolean | null;
   device_condition: string | null;
+  fault_description: string | null;
   missing_status: boolean | null;
+  missing_accessories: string[] | null;
   lms_status: string | null;
   created_at: string;
   teachers?: { name: string } | null;
@@ -36,7 +38,9 @@ type HistoryEntry = {
   id: string;
   kiosk_status: boolean | null;
   device_condition: string | null;
+  fault_description: string | null;
   missing_status: boolean | null;
+  missing_accessories: string[] | null;
   lms_status: string | null;
   changed_at: string;
 };
@@ -53,9 +57,14 @@ type StudentDevice = {
 type ChecklistRow = {
   kiosk_status: string;
   device_condition: string;
+  fault_description: string;
   missing_status: string;
+  missing_accessories: string[];
   lms_status: string;
 };
+
+const ACCESSORY_OPTIONS = ["Charger", "Mouse", "Keyboard", "Cover", "Other"] as const;
+const FAULT_OPTIONS = ["Cracked Screen", "Battery Issue", "Not Powering On", "Speaker/Mic Issue", "Charging Port Damaged", "Software Issue", "Other"] as const;
 
 function getWeekStart(d: Date, startDay: number): string {
   const date = new Date(d);
@@ -70,7 +79,9 @@ function getWeekStart(d: Date, startDay: number): string {
 const DEFAULT_ROW: ChecklistRow = {
   kiosk_status: "true",
   device_condition: "good",
+  fault_description: "",
   missing_status: "false",
+  missing_accessories: [],
   lms_status: "active",
 };
 
@@ -206,7 +217,9 @@ function ReportsPage() {
         newChecklist[sd.deviceUuid] = {
           kiosk_status: r.kiosk_status === true ? "true" : "false",
           device_condition: r.device_condition ?? "good",
+          fault_description: r.fault_description ?? "",
           missing_status: r.missing_status === true ? "true" : "false",
+          missing_accessories: (r.missing_accessories as string[]) ?? [],
           lms_status: r.lms_status ?? "active",
         };
       } else {
@@ -250,7 +263,9 @@ function ReportsPage() {
         device_id: sd.deviceUuid,
         kiosk_status: row.kiosk_status === "true",
         device_condition: row.device_condition,
+        fault_description: row.device_condition === "faulty" ? (row.fault_description || null) : null,
         missing_status: row.missing_status === "true",
+        missing_accessories: row.missing_accessories ?? [],
         lms_status: row.lms_status,
       };
     });
