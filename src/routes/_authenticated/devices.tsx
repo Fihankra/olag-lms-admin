@@ -60,8 +60,9 @@ function DevicesPage() {
     fetchDevices();
     fetchStudents();
     const channel = supabase
-      .channel("devices-list")
-      .on("postgres_changes", { event: "*", schema: "public", table: "devices" }, () => fetchDevices())
+      .channel("devices-students-realtime")
+      .on("postgres_changes", { event: "*", schema: "public", table: "devices" }, () => { fetchDevices(); fetchStudents(); })
+      .on("postgres_changes", { event: "*", schema: "public", table: "students" }, () => { fetchDevices(); fetchStudents(); })
       .subscribe();
     return () => { supabase.removeChannel(channel); };
   }, []);
