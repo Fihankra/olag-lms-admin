@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle, RefreshCw, Trash2 } from "lucide-react";
 import * as XLSX from "xlsx";
 import { supabase } from "../integrations/supabase/client";
 
@@ -193,6 +193,33 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
   return result;
 }
 
+const ENTITY_LABELS: Record<EntityType, string> = {
+  programs: "Programs",
+  classes: "Classes",
+  students: "Students",
+  devices: "Devices",
+  teachers: "Teachers",
+};
+
+// Delete order matters due to foreign keys
+const DELETE_ORDER: Record<EntityType, EntityType[]> = {
+  programs: ["students", "classes", "programs"],
+  classes: ["students", "classes"],
+  students: ["students"],
+  devices: ["devices"],
+  teachers: ["teachers"],
+};
+
+async function clearEntity(entity: EntityType): Promise<string[]> {
+  const errors: string[] = [];
+  const toDelete = DELETE_ORDER[entity];
+  for (const table of toDelete) {
+    const { error } = await supabase.from(table).delete().neq("id", "00000000-0000-0000-0000-000000000000");
+    if (error) errors.push(`Failed to clear ${table}: ${error.message}`);
+  }
+  return errors;
+}
+
 interface ExcelImportProps {
   entity: EntityType;
   onImportComplete: () => void;
@@ -204,15 +231,20 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const [preview, setPreview] = useState<PreviewRow[] | null>(null);
   const [rawRows, setRawRows] = useState<Record<string, string>[]>([]);
   const [loading, setLoading] = useState(false);
+  const [resetMode, setResetMode] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const resetFileRef = useRef<HTMLInputElement>(null);
 
-  async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+  async function handleFile(e: React.ChangeEvent<HTMLInputElement>, isReset: boolean) {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setLoading(true);
     setResult(null);
     setPreview(null);
+    setResetMode(isReset);
+    setConfirmReset(false);
 
     try {
       const buffer = await file.arrayBuffer();
@@ -234,12 +266,28 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
     } finally {
       setLoading(false);
       if (fileRef.current) fileRef.current.value = "";
+      if (resetFileRef.current) resetFileRef.current.value = "";
     }
   }
 
   async function confirmImport() {
     setImporting(true);
+    const allErrors: string[] = [];
+
+    if (resetMode) {
+      const clearErrors = await clearEntity(entity);
+      allErrors.push(...clearErrors);
+      if (clearErrors.length > 0) {
+        setResult({ success: 0, errors: clearErrors });
+        setPreview(null);
+        setRawRows([]);
+        setImporting(false);
+        return;
+      }
+    }
+
     const importResult = await processImport(entity, rawRows);
+    importResult.errors = [...allErrors, ...importResult.errors];
     setResult(importResult);
     setPreview(null);
     setRawRows([]);
@@ -250,6 +298,8 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   function cancelPreview() {
     setPreview(null);
     setRawRows([]);
+    setResetMode(false);
+    setConfirmReset(false);
   }
 
   const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
@@ -278,7 +328,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
         className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
           loading ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
         }`}
-        title="Import from Excel"
+        title="Import from Excel (append)"
       >
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
         Import
@@ -286,7 +336,25 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
           ref={fileRef}
           type="file"
           accept=".xlsx,.xls"
-          onChange={handleFile}
+          onChange={(e) => handleFile(e, false)}
+          disabled={loading}
+          className="hidden"
+        />
+      </label>
+
+      <label
+        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+          loading ? "bg-muted text-muted-foreground" : "bg-destructive/10 text-destructive hover:bg-destructive/20"
+        }`}
+        title="Clear all existing records and reimport from file"
+      >
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
+        Reset & Import
+        <input
+          ref={resetFileRef}
+          type="file"
+          accept=".xlsx,.xls"
+          onChange={(e) => handleFile(e, true)}
           disabled={loading}
           className="hidden"
         />
@@ -306,6 +374,27 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                 <X className="h-4 w-4" />
               </button>
             </div>
+
+            {resetMode && (
+              <div className="rounded-md bg-destructive/10 border border-destructive/30 px-3 py-2 mb-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <Trash2 className="h-4 w-4 text-destructive shrink-0" />
+                  <p className="text-sm font-medium text-destructive">Reset & Recreate Mode</p>
+                </div>
+                <p className="text-xs text-destructive/80 mb-2">
+                  All existing {ENTITY_LABELS[entity].toLowerCase()} records{DELETE_ORDER[entity].length > 1 ? ` (and dependent ${DELETE_ORDER[entity].slice(0, -1).join(", ")})` : ""} will be permanently deleted before importing.
+                </p>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={confirmReset}
+                    onChange={(e) => setConfirmReset(e.target.checked)}
+                    className="rounded border-destructive"
+                  />
+                  <span className="text-xs text-destructive">I understand this will delete all existing data</span>
+                </label>
+              </div>
+            )}
 
             {hasErrors && (
               <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive mb-3">
@@ -372,11 +461,15 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                 </button>
                 <button
                   onClick={confirmImport}
-                  disabled={importing}
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                  disabled={importing || (resetMode && !confirmReset)}
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm rounded-md disabled:opacity-50 ${
+                    resetMode
+                      ? "bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  }`}
                 >
-                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
-                  {importing ? "Importing…" : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
+                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
+                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}` : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
                 </button>
               </div>
             </div>
