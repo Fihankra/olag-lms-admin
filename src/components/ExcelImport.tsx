@@ -443,6 +443,13 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
               </div>
             )}
 
+            {warnCount > 0 && (
+              <div className="rounded-md bg-amber-500/10 border border-amber-500/30 px-3 py-2 text-sm text-amber-400 mb-3 flex items-center gap-2">
+                <AlertTriangle className="h-4 w-4 shrink-0" />
+                {warnCount} duplicate key{warnCount !== 1 ? "s" : ""} found — these rows may cause conflicts during import.
+              </div>
+            )}
+
             {hasErrors && (
               <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive mb-3">
                 {errorCount} mapping error{errorCount !== 1 ? "s" : ""} found — rows with errors will fail on import.
