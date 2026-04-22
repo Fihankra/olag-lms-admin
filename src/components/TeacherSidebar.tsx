@@ -30,10 +30,10 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
   ];
 
   return (
-    <aside className={`flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-200 ${collapsed ? "w-16" : "w-60"}`}>
+    <aside className={`flex flex-col bg-sidebar border-r border-sidebar-border h-full transition-all duration-200 ${collapsed ? "w-16" : "w-60"}`}>
       <div className="flex items-center gap-2 px-4 h-14 border-b border-sidebar-border">
         {!collapsed && <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>}
-        <button onClick={() => setCollapsed(!collapsed)} className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground">
+        <button onClick={() => setCollapsed(!collapsed)} className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground hidden lg:block">
           {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </button>
       </div>
