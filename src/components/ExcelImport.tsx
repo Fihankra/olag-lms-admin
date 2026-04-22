@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Download, Upload, X, FileSpreadsheet, Loader2 } from "lucide-react";
+import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 import * as XLSX from "xlsx";
 import { supabase } from "../integrations/supabase/client";
 
@@ -44,10 +44,7 @@ function downloadTemplate(entity: EntityType) {
   const wb = XLSX.utils.book_new();
   const data = [config.headers, ...config.sampleData];
   const ws = XLSX.utils.aoa_to_sheet(data);
-
-  // Set column widths
   ws["!cols"] = config.headers.map(() => ({ wch: 20 }));
-
   XLSX.utils.book_append_sheet(wb, ws, config.sheetName);
   XLSX.writeFile(wb, `${entity}_template.xlsx`);
 }
@@ -55,6 +52,79 @@ function downloadTemplate(entity: EntityType) {
 interface ImportResult {
   success: number;
   errors: string[];
+}
+
+// Preview row with resolved mappings
+interface PreviewRow {
+  rowNum: number;
+  fields: Record<string, { value: string; resolvedId?: string; resolvedLabel?: string; status: "ok" | "warn" | "error" }>;
+}
+
+async function buildPreview(entity: EntityType, rows: Record<string, string>[]): Promise<PreviewRow[]> {
+  let programMap = new Map<string, { id: string; name: string }>();
+  let classMap = new Map<string, { id: string; name: string }>();
+
+  if (["classes", "students"].includes(entity)) {
+    const { data: programs } = await supabase.from("programs").select("id, name");
+    programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), { id: p.id, name: p.name }]));
+  }
+  if (entity === "students") {
+    const { data: classes } = await supabase.from("classes").select("id, name");
+    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name }]));
+  }
+
+  return rows.map((row, i) => {
+    const fields: PreviewRow["fields"] = {};
+
+    if (entity === "programs") {
+      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+      fields.description = { value: row.description || "", status: "ok" };
+    }
+
+    if (entity === "classes") {
+      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+      const key = row.program_name?.trim().toLowerCase() ?? "";
+      const match = programMap.get(key);
+      fields.program_name = {
+        value: row.program_name || "",
+        resolvedId: match?.id,
+        resolvedLabel: match ? `→ ${match.name} (${match.id.slice(0, 8)}…)` : undefined,
+        status: match ? "ok" : key ? "error" : "error",
+      };
+    }
+
+    if (entity === "students") {
+      fields.student_id = { value: row.student_id || "", status: row.student_id?.trim() ? "ok" : "error" };
+      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+      const pKey = row.program_name?.trim().toLowerCase() ?? "";
+      const pMatch = programMap.get(pKey);
+      fields.program_name = {
+        value: row.program_name || "",
+        resolvedId: pMatch?.id,
+        resolvedLabel: pMatch ? `→ ${pMatch.name} (${pMatch.id.slice(0, 8)}…)` : undefined,
+        status: pMatch ? "ok" : pKey ? "error" : "warn",
+      };
+      const cKey = row.class_name?.trim().toLowerCase() ?? "";
+      const cMatch = classMap.get(cKey);
+      fields.class_name = {
+        value: row.class_name || "",
+        resolvedId: cMatch?.id,
+        resolvedLabel: cMatch ? `→ ${cMatch.name} (${cMatch.id.slice(0, 8)}…)` : undefined,
+        status: cMatch ? "ok" : cKey ? "error" : "warn",
+      };
+    }
+
+    if (entity === "devices") {
+      fields.device_id = { value: row.device_id || "", status: row.device_id?.trim() ? "ok" : "error" };
+    }
+
+    if (entity === "teachers") {
+      fields.teacher_id = { value: row.teacher_id || "", status: row.teacher_id?.trim() ? "ok" : "error" };
+      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+    }
+
+    return { rowNum: i + 2, fields };
+  });
 }
 
 async function processImport(entity: EntityType, rows: Record<string, string>[]): Promise<ImportResult> {
@@ -72,7 +142,6 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
   if (entity === "classes") {
     const { data: programs } = await supabase.from("programs").select("id, name");
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
-
     for (const row of rows) {
       if (!row.name?.trim()) { result.errors.push("Missing name"); continue; }
       const programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "");
@@ -90,7 +159,6 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
     ]);
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
     const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), c.id]));
-
     for (const row of rows) {
       if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
       const { error } = await supabase.from("students").insert({
@@ -133,14 +201,18 @@ interface ExcelImportProps {
 export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const [importing, setImporting] = useState(false);
   const [result, setResult] = useState<ImportResult | null>(null);
+  const [preview, setPreview] = useState<PreviewRow[] | null>(null);
+  const [rawRows, setRawRows] = useState<Record<string, string>[]>([]);
+  const [loading, setLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    setImporting(true);
+    setLoading(true);
     setResult(null);
+    setPreview(null);
 
     try {
       const buffer = await file.arrayBuffer();
@@ -150,19 +222,46 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       if (rows.length === 0) {
         setResult({ success: 0, errors: ["File is empty or has no data rows"] });
+        setLoading(false);
         return;
       }
 
-      const importResult = await processImport(entity, rows);
-      setResult(importResult);
-      if (importResult.success > 0) onImportComplete();
+      setRawRows(rows);
+      const previewData = await buildPreview(entity, rows);
+      setPreview(previewData);
     } catch (err: any) {
       setResult({ success: 0, errors: [err?.message || "Failed to read file"] });
     } finally {
-      setImporting(false);
+      setLoading(false);
       if (fileRef.current) fileRef.current.value = "";
     }
   }
+
+  async function confirmImport() {
+    setImporting(true);
+    const importResult = await processImport(entity, rawRows);
+    setResult(importResult);
+    setPreview(null);
+    setRawRows([]);
+    setImporting(false);
+    if (importResult.success > 0) onImportComplete();
+  }
+
+  function cancelPreview() {
+    setPreview(null);
+    setRawRows([]);
+  }
+
+  const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
+  const errorCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "error").length, 0) ?? 0;
+
+  const statusIcon = (status: "ok" | "warn" | "error") => {
+    if (status === "ok") return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />;
+    if (status === "warn") return <AlertTriangle className="h-3.5 w-3.5 text-amber-400 shrink-0" />;
+    return <X className="h-3.5 w-3.5 text-destructive shrink-0" />;
+  };
+
+  const fieldHeaders = preview && preview.length > 0 ? Object.keys(preview[0].fields) : [];
 
   return (
     <div className="flex items-center gap-2">
@@ -177,22 +276,115 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       <label
         className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-          importing ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
+          loading ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
         }`}
         title="Import from Excel"
       >
-        {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
         Import
         <input
           ref={fileRef}
           type="file"
           accept=".xlsx,.xls"
           onChange={handleFile}
-          disabled={importing}
+          disabled={loading}
           className="hidden"
         />
       </label>
 
+      {/* Preview Modal */}
+      {preview && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-3xl mx-4 max-h-[80vh] flex flex-col">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <FileSpreadsheet className="h-5 w-5 text-primary" />
+                <h2 className="text-lg font-semibold">Import Preview</h2>
+                <span className="text-xs text-muted-foreground">({preview.length} row{preview.length !== 1 ? "s" : ""})</span>
+              </div>
+              <button onClick={cancelPreview} className="text-muted-foreground hover:text-foreground">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {hasErrors && (
+              <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive mb-3">
+                {errorCount} mapping error{errorCount !== 1 ? "s" : ""} found — rows with errors will fail on import.
+              </div>
+            )}
+
+            <div className="overflow-auto flex-1 border border-border rounded-md">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-muted/50 sticky top-0">
+                    <th className="px-3 py-2 text-left text-xs font-medium text-muted-foreground">Row</th>
+                    {fieldHeaders.map((h) => (
+                      <th key={h} className="px-3 py-2 text-left text-xs font-medium text-muted-foreground">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {preview.map((row) => (
+                    <tr key={row.rowNum} className="hover:bg-muted/30">
+                      <td className="px-3 py-2 text-xs text-muted-foreground">{row.rowNum}</td>
+                      {fieldHeaders.map((h) => {
+                        const f = row.fields[h];
+                        return (
+                          <td key={h} className="px-3 py-2">
+                            <div className="flex items-start gap-1.5">
+                              {statusIcon(f.status)}
+                              <div className="min-w-0">
+                                <span className="text-xs text-foreground">{f.value || <span className="text-muted-foreground italic">empty</span>}</span>
+                                {f.resolvedLabel && (
+                                  <p className={`text-[11px] mt-0.5 ${f.status === "ok" ? "text-emerald-400" : "text-destructive"}`}>
+                                    {f.resolvedLabel}
+                                  </p>
+                                )}
+                                {!f.resolvedLabel && f.status === "error" && f.value && (
+                                  <p className="text-[11px] mt-0.5 text-destructive">Not found in database</p>
+                                )}
+                                {!f.resolvedLabel && f.status === "error" && !f.value && (
+                                  <p className="text-[11px] mt-0.5 text-destructive">Required field</p>
+                                )}
+                                {f.status === "warn" && !f.value && (
+                                  <p className="text-[11px] mt-0.5 text-amber-400">Optional — will be empty</p>
+                                )}
+                              </div>
+                            </div>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="flex items-center justify-between mt-4">
+              <p className="text-xs text-muted-foreground">
+                {hasErrors
+                  ? "Fix errors in your spreadsheet and re-upload, or proceed with partial import."
+                  : "All rows validated — ready to import."}
+              </p>
+              <div className="flex gap-2">
+                <button onClick={cancelPreview} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmImport}
+                  disabled={importing}
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                >
+                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                  {importing ? "Importing…" : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Results Modal */}
       {result && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
