@@ -1,20 +1,22 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-const reportInput = {
-  device_id: "" as string,
-  week_start: "" as string,
-  kiosk_status: true as boolean,
-  device_condition: "" as string,
-  missing_status: false as boolean,
-  lms_status: "" as string,
+type DeviceReportEntry = {
+  device_id: string;
+  kiosk_status: boolean;
+  device_condition: string;
+  missing_status: boolean;
+  lms_status: string;
 };
 
-type ReportInput = typeof reportInput;
+type BatchReportInput = {
+  week_start: string;
+  entries: DeviceReportEntry[];
+};
 
-export const submitReport = createServerFn({ method: "POST" })
+export const submitBatchReport = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data: ReportInput) => data)
+  .inputValidator((data: BatchReportInput) => data)
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
 
@@ -31,91 +33,81 @@ export const submitReport = createServerFn({ method: "POST" })
     const deadlineError = await checkDeadline(supabase, data.week_start);
     if (deadlineError) return { error: deadlineError };
 
-    const { data: existing } = await supabase
+    // Fetch existing reports for this class/week
+    const { data: existingReports } = await supabase
       .from("reports")
-      .select("id")
-      .eq("device_id", data.device_id)
-      .eq("week_start", data.week_start)
+      .select("id, device_id, kiosk_status, device_condition, missing_status, lms_status")
       .eq("class_id", teacher.assigned_class_id)
-      .limit(1);
-
-    if (existing && existing.length > 0) {
-      return { error: "A report for this device already exists for the selected week." };
-    }
-
-    const { error } = await supabase.from("reports").insert({
-      teacher_id: teacher.id,
-      class_id: teacher.assigned_class_id,
-      device_id: data.device_id,
-      week_start: data.week_start,
-      kiosk_status: data.kiosk_status,
-      device_condition: data.device_condition,
-      missing_status: data.missing_status,
-      lms_status: data.lms_status,
-    });
-
-    if (error) return { error: error.message };
-    return { error: null };
-  });
-
-export const updateReport = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
-  .inputValidator(
-    (data: {
-      report_id: string;
-      week_start: string;
-      kiosk_status: boolean;
-      device_condition: string;
-      missing_status: boolean;
-      lms_status: string;
-    }) => data
-  )
-  .handler(async ({ data, context }) => {
-    const { supabase, userId } = context;
-
-    const { data: teacher } = await supabase
-      .from("teachers")
-      .select("id")
-      .eq("user_id", userId)
-      .single();
-
-    if (!teacher) return { error: "Teacher record not found." };
-
-    const deadlineError = await checkDeadline(supabase, data.week_start);
-    if (deadlineError) return { error: deadlineError };
-
-    // Snapshot current values into report_history before updating
-    const { data: current } = await supabase
-      .from("reports")
-      .select("kiosk_status, device_condition, missing_status, lms_status")
-      .eq("id", data.report_id)
-      .eq("teacher_id", teacher.id)
-      .single();
-
-    if (current) {
-      await supabase.from("report_history").insert({
-        report_id: data.report_id,
-        kiosk_status: current.kiosk_status,
-        device_condition: current.device_condition,
-        missing_status: current.missing_status,
-        lms_status: current.lms_status,
-        changed_by: userId,
-      });
-    }
-
-    const { error } = await supabase
-      .from("reports")
-      .update({
-        kiosk_status: data.kiosk_status,
-        device_condition: data.device_condition,
-        missing_status: data.missing_status,
-        lms_status: data.lms_status,
-      })
-      .eq("id", data.report_id)
+      .eq("week_start", data.week_start)
       .eq("teacher_id", teacher.id);
 
-    if (error) return { error: error.message };
-    return { error: null };
+    const existingMap = new Map(
+      (existingReports ?? []).map((r: any) => [r.device_id, r])
+    );
+
+    const toInsert: any[] = [];
+    const toUpdate: { id: string; entry: DeviceReportEntry; old: any }[] = [];
+
+    for (const entry of data.entries) {
+      const existing = existingMap.get(entry.device_id);
+      if (existing) {
+        // Check if anything changed
+        const changed =
+          existing.kiosk_status !== entry.kiosk_status ||
+          existing.device_condition !== entry.device_condition ||
+          existing.missing_status !== entry.missing_status ||
+          existing.lms_status !== entry.lms_status;
+        if (changed) {
+          toUpdate.push({ id: existing.id, entry, old: existing });
+        }
+      } else {
+        toInsert.push({
+          teacher_id: teacher.id,
+          class_id: teacher.assigned_class_id,
+          device_id: entry.device_id,
+          week_start: data.week_start,
+          kiosk_status: entry.kiosk_status,
+          device_condition: entry.device_condition,
+          missing_status: entry.missing_status,
+          lms_status: entry.lms_status,
+        });
+      }
+    }
+
+    // Insert new reports
+    if (toInsert.length > 0) {
+      const { error } = await supabase.from("reports").insert(toInsert);
+      if (error) return { error: error.message };
+    }
+
+    // Update changed reports (snapshot history first)
+    for (const item of toUpdate) {
+      await supabase.from("report_history").insert({
+        report_id: item.id,
+        kiosk_status: item.old.kiosk_status,
+        device_condition: item.old.device_condition,
+        missing_status: item.old.missing_status,
+        lms_status: item.old.lms_status,
+        changed_by: userId,
+      });
+
+      await supabase
+        .from("reports")
+        .update({
+          kiosk_status: item.entry.kiosk_status,
+          device_condition: item.entry.device_condition,
+          missing_status: item.entry.missing_status,
+          lms_status: item.entry.lms_status,
+        })
+        .eq("id", item.id)
+        .eq("teacher_id", teacher.id);
+    }
+
+    return {
+      error: null,
+      inserted: toInsert.length,
+      updated: toUpdate.length,
+    };
   });
 
 export const getDeadlineSetting = createServerFn({ method: "GET" })
