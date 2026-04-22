@@ -7,6 +7,7 @@ import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { parseSupabaseError } from "../../lib/supabase-errors";
 
 export const Route = createFileRoute("/_authenticated/students")({
   component: StudentsPage,
@@ -211,7 +212,7 @@ function StudentsPage() {
       gender: form.gender || null,
       form: form.form_level || null,
     } as any);
-    if (error) { toast.error(`Failed to add student: ${error.message}`); return; }
+    if (error) { toast.error(parseSupabaseError(error)); return; }
     toast.success("Student added successfully");
     setForm(emptyForm);
     setShowAddModal(false);
@@ -227,7 +228,7 @@ function StudentsPage() {
       gender: form.gender || null,
       form: form.form_level || null,
     } as any).eq("id", editingStudent.id);
-    if (error) { toast.error(`Failed to update student: ${error.message}`); return; }
+    if (error) { toast.error(parseSupabaseError(error)); return; }
     toast.success("Student updated successfully");
     setEditingStudent(null);
     setForm(emptyForm);
@@ -236,7 +237,7 @@ function StudentsPage() {
 
   async function deleteStudent(id: string) {
     const { error } = await supabase.from("students").delete().eq("id", id);
-    if (error) { toast.error(`Failed to delete student: ${error.message}`); return; }
+    if (error) { toast.error(parseSupabaseError(error)); return; }
     toast.success("Student deleted");
     fetchStudents();
   }
