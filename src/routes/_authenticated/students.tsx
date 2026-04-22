@@ -71,7 +71,7 @@ function StudentsPage() {
       class_id: form.class_id || null,
       gender: form.gender || null,
       form: form.form_level || null,
-    });
+    } as any);
     setForm({ student_id: "", name: "", program_id: "", class_id: "", gender: "", form_level: "" });
     setShowModal(false);
     fetchStudents();

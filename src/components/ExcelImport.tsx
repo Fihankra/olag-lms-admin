@@ -23,8 +23,8 @@ const TEMPLATES: Record<EntityType, TemplateConfig> = {
     sheetName: "Classes",
   },
   students: {
-    headers: ["student_id", "name", "program_name", "class_name"],
-    sampleData: [["S001", "John Doe", "General Arts", "1 Arts 1"], ["S002", "Jane Smith", "General Science", "1 Science 1"]],
+    headers: ["student_id", "name", "program_name", "class_name", "gender", "form"],
+    sampleData: [["S001", "John Doe", "General Arts", "1 Arts 1", "Male", "Form 1"], ["S002", "Jane Smith", "General Science", "1 Science 1", "Female", "Form 2"]],
     sheetName: "Students",
   },
   devices: {
