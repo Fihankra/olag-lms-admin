@@ -88,7 +88,7 @@ function TeachersPage() {
   async function toggleApproval(t: Teacher) {
     const { error } = await supabase.from("teachers").update({ approved: !t.approved }).eq("id", t.id);
     if (!toastResult(error)) return;
-    toast.success(t.approved ? "Teacher approval revoked" : "Teacher approved");
+    toastResult(null, t.approved ? "Teacher approval revoked" : "Teacher approved");
     fetchTeachers();
   }
 
