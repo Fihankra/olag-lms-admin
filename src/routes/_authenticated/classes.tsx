@@ -5,8 +5,8 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
-import { toast } from "sonner";
-import { parseSupabaseError } from "../../lib/supabase-errors";
+import { toastResult } from "../../lib/supabase-toast";
+
 
 export const Route = createFileRoute("/_authenticated/classes")({
   component: ClassesPage,
@@ -57,12 +57,12 @@ function ClassesPage() {
     const payload = { name: form.name.trim(), program_id: form.program_id };
     if (editClass) {
       const { error } = await supabase.from("classes").update(payload).eq("id", editClass.id);
-      if (error) { toast.error(parseSupabaseError(error)); return; }
-      toast.success("Class updated");
+      if (!toastResult(error)) return;
+      toastResult(null, "Class updated");
     } else {
       const { error } = await supabase.from("classes").insert(payload);
-      if (error) { toast.error(parseSupabaseError(error)); return; }
-      toast.success("Class added");
+      if (!toastResult(error)) return;
+      toastResult(null, "Class added");
     }
     setShowModal(false);
     fetchClasses();
@@ -70,8 +70,8 @@ function ClassesPage() {
 
   async function deleteClass(id: string) {
     const { error } = await supabase.from("classes").delete().eq("id", id);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
-    toast.success("Class deleted");
+    if (!toastResult(error)) return;
+    toastResult(null, "Class deleted");
     fetchClasses();
   }
 

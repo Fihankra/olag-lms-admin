@@ -5,8 +5,8 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/use-auth";
 import { ExcelImport } from "../../components/ExcelImport";
-import { toast } from "sonner";
-import { parseSupabaseError } from "../../lib/supabase-errors";
+import { toastResult } from "../../lib/supabase-toast";
+
 
 export const Route = createFileRoute("/_authenticated/teachers")({
   component: TeachersPage,
@@ -73,13 +73,13 @@ function TeachersPage() {
 
     if (editTeacher) {
       const { error } = await supabase.from("teachers").update(payload).eq("id", editTeacher.id);
-      if (error) { toast.error(parseSupabaseError(error)); return; }
-      toast.success("Teacher updated");
+      if (!toastResult(error)) return;
+      toastResult(null, "Teacher updated");
     } else {
       payload.approved = true;
       const { error } = await supabase.from("teachers").insert(payload);
-      if (error) { toast.error(parseSupabaseError(error)); return; }
-      toast.success("Teacher added");
+      if (!toastResult(error)) return;
+      toastResult(null, "Teacher added");
     }
     setShowModal(false);
     fetchTeachers();
@@ -87,15 +87,15 @@ function TeachersPage() {
 
   async function toggleApproval(t: Teacher) {
     const { error } = await supabase.from("teachers").update({ approved: !t.approved }).eq("id", t.id);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
+    if (!toastResult(error)) return;
     toast.success(t.approved ? "Teacher approval revoked" : "Teacher approved");
     fetchTeachers();
   }
 
   async function deleteTeacher(id: string) {
     const { error } = await supabase.from("teachers").delete().eq("id", id);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
-    toast.success("Teacher deleted");
+    if (!toastResult(error)) return;
+    toastResult(null, "Teacher deleted");
     fetchTeachers();
   }
 

@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { Pencil, Trash2 } from "lucide-react";
-import { toast } from "sonner";
-import { parseSupabaseError } from "../../lib/supabase-errors";
+import { toastResult } from "../../lib/supabase-toast";
+
 
 export const Route = createFileRoute("/_authenticated/students")({
   component: StudentsPage,
@@ -212,8 +212,8 @@ function StudentsPage() {
       gender: form.gender || null,
       form: form.form_level || null,
     } as any);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
-    toast.success("Student added successfully");
+    if (!toastResult(error)) return;
+    toastResult(null, "Student added successfully");
     setForm(emptyForm);
     setShowAddModal(false);
     fetchStudents();
@@ -228,8 +228,8 @@ function StudentsPage() {
       gender: form.gender || null,
       form: form.form_level || null,
     } as any).eq("id", editingStudent.id);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
-    toast.success("Student updated successfully");
+    if (!toastResult(error)) return;
+    toastResult(null, "Student updated successfully");
     setEditingStudent(null);
     setForm(emptyForm);
     fetchStudents();
@@ -237,8 +237,8 @@ function StudentsPage() {
 
   async function deleteStudent(id: string) {
     const { error } = await supabase.from("students").delete().eq("id", id);
-    if (error) { toast.error(parseSupabaseError(error)); return; }
-    toast.success("Student deleted");
+    if (!toastResult(error)) return;
+    toastResult(null, "Student deleted");
     fetchStudents();
   }
 
