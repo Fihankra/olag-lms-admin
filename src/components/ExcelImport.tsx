@@ -319,6 +319,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const [loading, setLoading] = useState(false);
   const [resetMode, setResetMode] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const resetFileRef = useRef<HTMLInputElement>(null);
 
