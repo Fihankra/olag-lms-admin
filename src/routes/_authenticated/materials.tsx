@@ -117,7 +117,21 @@ function MaterialsPage() {
     setClasses((c.data as ClassItem[]) ?? []);
   }
 
-  useEffect(() => { fetchFolders(); fetchMeta(); }, []);
+  async function fetchCreators() {
+    const { data } = await supabase.from("teachers").select("user_id, name").not("user_id", "is", null);
+    const map = new Map<string, string>();
+    if (data) for (const t of data as TeacherUser[]) map.set(t.user_id, t.name);
+    // Add admin fallback
+    if (userId && !map.has(userId)) map.set(userId, "Admin");
+    setCreators(map);
+  }
+
+  function creatorName(id: string | null) {
+    if (!id) return "Unknown";
+    return creators.get(id) ?? "Unknown";
+  }
+
+  useEffect(() => { fetchFolders(); fetchMeta(); fetchCreators(); }, []);
 
   useEffect(() => {
     if (activeFolder) fetchFiles(activeFolder.id);
