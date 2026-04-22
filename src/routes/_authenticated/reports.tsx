@@ -310,7 +310,7 @@ function ReportsPage() {
     setHistoryLoading(true);
     const { data } = await supabase
       .from("report_history")
-      .select("id, kiosk_status, device_condition, missing_status, lms_status, changed_at")
+      .select("id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status, changed_at")
       .eq("report_id", reportId)
       .order("changed_at", { ascending: false });
     setHistoryEntries((data as HistoryEntry[]) ?? []);
