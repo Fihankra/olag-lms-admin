@@ -64,10 +64,13 @@ function formatSize(bytes: number) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
+type TeacherUser = { user_id: string; name: string };
+
 function MaterialsPage() {
   const { role, user } = useAuth();
   const isAdmin = role === "admin";
   const userId = user?.id ?? null;
+  const [creators, setCreators] = useState<Map<string, string>>(new Map());
 
   const [folders, setFolders] = useState<Folder[]>([]);
   const [files, setFiles] = useState<FileItem[]>([]);
@@ -114,7 +117,21 @@ function MaterialsPage() {
     setClasses((c.data as ClassItem[]) ?? []);
   }
 
-  useEffect(() => { fetchFolders(); fetchMeta(); }, []);
+  async function fetchCreators() {
+    const { data } = await supabase.from("teachers").select("user_id, name").not("user_id", "is", null);
+    const map = new Map<string, string>();
+    if (data) for (const t of data as TeacherUser[]) map.set(t.user_id, t.name);
+    // Add admin fallback
+    if (userId && !map.has(userId)) map.set(userId, "Admin");
+    setCreators(map);
+  }
+
+  function creatorName(id: string | null) {
+    if (!id) return "Unknown";
+    return creators.get(id) ?? "Unknown";
+  }
+
+  useEffect(() => { fetchFolders(); fetchMeta(); fetchCreators(); }, []);
 
   useEffect(() => {
     if (activeFolder) fetchFiles(activeFolder.id);
@@ -260,7 +277,10 @@ function MaterialsPage() {
                   <Icon className="h-5 w-5 text-muted-foreground shrink-0" />
                   <div className="flex-1 min-w-0">
                     <a href={file.file_url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground hover:underline truncate block">{file.file_name}</a>
-                    <span className="text-xs text-muted-foreground">{formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}
+                      {isAdmin && ` · by ${creatorName(file.created_by)}`}
+                    </span>
                   </div>
                   {canManageFile(file) && (
                     <button onClick={() => deleteFile(file)} className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors" title="Delete file">
@@ -319,9 +339,10 @@ function MaterialsPage() {
                   )}
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground truncate">
-                {isAdmin ? `Access: ${accessLabel(folder)}` : ""}
-              </p>
+              <div className="text-xs text-muted-foreground space-y-0.5">
+                {isAdmin && <p>Access: {accessLabel(folder)}</p>}
+                {isAdmin && <p>Created by {creatorName(folder.created_by)} · {new Date(folder.created_at).toLocaleDateString()}</p>}
+              </div>
             </div>
           ))}
         </div>
