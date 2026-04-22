@@ -149,6 +149,7 @@ function StudentsPage() {
   const [editingStudent, setEditingStudent] = useState<Student | null>(null);
   const [form, setForm] = useState<FormState>(emptyForm);
   const [filterProgram, setFilterProgram] = useState("");
+  const [deletingStudent, setDeletingStudent] = useState<Student | null>(null);
   const [filterClass, setFilterClass] = useState("");
 
   async function fetchStudents() {
@@ -284,7 +285,7 @@ function StudentsPage() {
             <Pencil className="h-3.5 w-3.5" />
           </button>
           <button
-            onClick={(e) => { e.stopPropagation(); deleteStudent(s.id); }}
+            onClick={(e) => { e.stopPropagation(); setDeletingStudent(s); }}
             className="p-1 text-muted-foreground hover:text-destructive transition-colors"
             title="Delete"
           >
