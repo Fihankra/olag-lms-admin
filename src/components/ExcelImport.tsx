@@ -69,15 +69,15 @@ const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
 
 async function buildPreview(entity: EntityType, rows: Record<string, string>[]): Promise<PreviewRow[]> {
   let programMap = new Map<string, { id: string; name: string }>();
-  let classMap = new Map<string, { id: string; name: string }>();
+  let classMap = new Map<string, { id: string; name: string; programId?: string }>();
 
   if (["classes", "students"].includes(entity)) {
     const { data: programs } = await supabase.from("programs").select("id, name");
     programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), { id: p.id, name: p.name }]));
   }
   if (entity === "students") {
-    const { data: classes } = await supabase.from("classes").select("id, name");
-    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name }]));
+    const { data: classes } = await supabase.from("classes").select("id, name, program_id");
+    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name, programId: (c as any).program_id as string }]));
   }
 
   const duplicates = new Map<string, Set<number>>();
@@ -127,14 +127,7 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
       const sidStatus = !row.student_id?.trim() ? "error" : isDuplicate("student_id", i) ? "warn" : "ok";
       fields.student_id = { value: row.student_id || "", status: sidStatus, ...(isDuplicate("student_id", i) && row.student_id?.trim() ? { resolvedLabel: "⚠ Duplicate student_id in file" } : {}) };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
-      const pKey = row.program_name?.trim().toLowerCase() ?? "";
-      const pMatch = programMap.get(pKey);
-      fields.program_name = {
-        value: row.program_name || "",
-        resolvedId: pMatch?.id,
-        resolvedLabel: pMatch ? `→ ${pMatch.name} (${pMatch.id.slice(0, 8)}…)` : undefined,
-        status: pMatch ? "ok" : pKey ? "error" : "warn",
-      };
+
       const cKey = row.class_name?.trim().toLowerCase() ?? "";
       const cMatch = classMap.get(cKey);
       fields.class_name = {
@@ -142,6 +135,20 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
         resolvedId: cMatch?.id,
         resolvedLabel: cMatch ? `→ ${cMatch.name} (${cMatch.id.slice(0, 8)}…)` : undefined,
         status: cMatch ? "ok" : cKey ? "error" : "warn",
+      };
+
+      const pKey = row.program_name?.trim().toLowerCase() ?? "";
+      let pMatch = programMap.get(pKey);
+      let programNote = "";
+      if (!pMatch && !pKey && cMatch?.programId) {
+        const resolved = [...programMap.values()].find((p) => p.id === cMatch.programId);
+        if (resolved) { pMatch = resolved; programNote = " (from class)"; }
+      }
+      fields.program_name = {
+        value: row.program_name || (pMatch && programNote ? pMatch.name : ""),
+        resolvedId: pMatch?.id,
+        resolvedLabel: pMatch ? `→ ${pMatch.name}${programNote} (${pMatch.id.slice(0, 8)}…)` : undefined,
+        status: pMatch ? "ok" : pKey ? "error" : "warn",
       };
       const validGenders = ["male", "female"];
       const gVal = row.gender?.trim().toLowerCase() ?? "";
@@ -194,21 +201,24 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
   if (entity === "students") {
     const [{ data: programs }, { data: classes }] = await Promise.all([
       supabase.from("programs").select("id, name"),
-      supabase.from("classes").select("id, name"),
+      supabase.from("classes").select("id, name, program_id"),
     ]);
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
-    const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), c.id]));
+    const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, programId: (c as any).program_id as string }]));
     for (const row of rows) {
       if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
       const genderVal = row.gender?.trim();
       const formVal = row.form?.trim();
       const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
       const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
+      const classEntry = classMap.get(row.class_name?.trim().toLowerCase() ?? "");
+      let programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null;
+      if (!programId && classEntry?.programId) programId = classEntry.programId;
       const { error } = await supabase.from("students").insert({
         student_id: row.student_id.trim(),
         name: row.name.trim(),
-        program_id: programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null,
-        class_id: classMap.get(row.class_name?.trim().toLowerCase() ?? "") ?? null,
+        program_id: programId,
+        class_id: classEntry?.id ?? null,
         gender: validGender,
         form: validForm,
       } as any);
