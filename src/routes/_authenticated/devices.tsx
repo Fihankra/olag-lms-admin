@@ -6,6 +6,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
 import { UserPlus, UserMinus } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
+import { ExcelImport } from "../../components/ExcelImport";
 
 export const Route = createFileRoute("/_authenticated/devices")({
   component: DevicesPage,
@@ -174,7 +175,10 @@ function DevicesPage() {
     <AdminOnly><div>
       <PageHeader
         title="Devices"
-        description="Devices are added automatically when assigned to students"
+        description="Manage student tablets and device settings"
+        actions={
+          <ExcelImport entity="devices" onImportComplete={fetchDevices} />
+        }
       />
 
       <div className="flex gap-2 mb-4 flex-wrap">

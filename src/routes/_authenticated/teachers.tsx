@@ -4,6 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/use-auth";
+import { ExcelImport } from "../../components/ExcelImport";
 
 export const Route = createFileRoute("/_authenticated/teachers")({
   component: TeachersPage,
@@ -140,9 +141,12 @@ function TeachersPage() {
         title="Teachers"
         description="Manage teachers and assign form masters to classes"
         actions={
-          <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
-            Add Teacher
-          </button>
+          <div className="flex items-center gap-2">
+            <ExcelImport entity="teachers" onImportComplete={fetchTeachers} />
+            <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+              Add Teacher
+            </button>
+          </div>
         }
       />
       <DataTable data={teachers as Record<string, unknown>[]} columns={columns as any} />
