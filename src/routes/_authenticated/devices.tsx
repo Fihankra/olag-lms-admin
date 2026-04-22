@@ -7,6 +7,8 @@ import { useEffect, useState, useMemo } from "react";
 import { UserPlus, UserMinus } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
+import { toast } from "sonner";
+import { parseSupabaseError } from "../../lib/supabase-errors";
 
 export const Route = createFileRoute("/_authenticated/devices")({
   component: DevicesPage,
@@ -41,10 +43,11 @@ function DevicesPage() {
   const [studentSearch, setStudentSearch] = useState("");
 
   async function fetchDevices() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("devices")
       .select("*, students(name, student_id)")
       .order("created_at", { ascending: false });
+    if (error) { toast.error(parseSupabaseError(error)); return; }
     setDevices((data as Device[]) ?? []);
   }
 
@@ -64,15 +67,17 @@ function DevicesPage() {
   }, []);
 
   async function toggleKiosk(device: Device) {
-    await supabase.from("devices").update({ kiosk_mode: !device.kiosk_mode }).eq("id", device.id);
+    const { error } = await supabase.from("devices").update({ kiosk_mode: !device.kiosk_mode }).eq("id", device.id);
+    if (error) toast.error(parseSupabaseError(error));
   }
 
 
   async function assignStudent(deviceId: string, studentId: string) {
-    // Update device
-    await supabase.from("devices").update({ assigned_student_id: studentId }).eq("id", deviceId);
-    // Also update student's assigned_device_id
-    await supabase.from("students").update({ assigned_device_id: deviceId }).eq("id", studentId);
+    const { error: e1 } = await supabase.from("devices").update({ assigned_student_id: studentId }).eq("id", deviceId);
+    if (e1) { toast.error(parseSupabaseError(e1)); return; }
+    const { error: e2 } = await supabase.from("students").update({ assigned_device_id: deviceId }).eq("id", studentId);
+    if (e2) { toast.error(parseSupabaseError(e2)); return; }
+    toast.success("Device assigned");
     setAssignDevice(null);
     setStudentSearch("");
     fetchDevices();
@@ -81,9 +86,11 @@ function DevicesPage() {
 
   async function unassignDevice(device: Device) {
     if (!device.assigned_student_id) return;
-    // Clear both sides
-    await supabase.from("students").update({ assigned_device_id: null }).eq("id", device.assigned_student_id);
-    await supabase.from("devices").update({ assigned_student_id: null }).eq("id", device.id);
+    const { error: e1 } = await supabase.from("students").update({ assigned_device_id: null }).eq("id", device.assigned_student_id);
+    if (e1) { toast.error(parseSupabaseError(e1)); return; }
+    const { error: e2 } = await supabase.from("devices").update({ assigned_student_id: null }).eq("id", device.id);
+    if (e2) { toast.error(parseSupabaseError(e2)); return; }
+    toast.success("Device unassigned");
     fetchDevices();
     fetchStudents();
   }

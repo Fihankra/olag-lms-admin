@@ -16,6 +16,8 @@ import {
   File,
   Settings2,
 } from "lucide-react";
+import { toast } from "sonner";
+import { parseSupabaseError } from "../../lib/supabase-errors";
 
 export const Route = createFileRoute("/_authenticated/materials")({
   component: MaterialsPage,
@@ -139,7 +141,9 @@ function MaterialsPage() {
 
   async function createFolder() {
     if (!folderName.trim()) return;
-    await supabase.from("folders").insert({ name: folderName.trim(), created_by: userId });
+    const { error } = await supabase.from("folders").insert({ name: folderName.trim(), created_by: userId });
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("Folder created");
     setFolderName("");
     setShowNewFolder(false);
     fetchFolders();
@@ -154,7 +158,9 @@ function MaterialsPage() {
       }).filter(Boolean);
       if (paths.length) await supabase.storage.from("materials").remove(paths);
     }
-    await supabase.from("folders").delete().eq("id", id);
+    const { error } = await supabase.from("folders").delete().eq("id", id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("Folder deleted");
     if (activeFolder?.id === id) { setActiveFolder(null); setFiles([]); }
     fetchFolders();
   }
@@ -170,7 +176,7 @@ function MaterialsPage() {
         contentType: file.type || "application/octet-stream",
         upsert: false,
       });
-      if (error) { console.error(error); continue; }
+      if (error) { toast.error(parseSupabaseError(error)); continue; }
 
       const { data: urlData } = supabase.storage.from("materials").getPublicUrl(path);
 
@@ -194,7 +200,9 @@ function MaterialsPage() {
   async function deleteFile(file: FileItem) {
     const parts = file.file_url.split("/materials/");
     if (parts[1]) await supabase.storage.from("materials").remove([parts[1]]);
-    await supabase.from("files").delete().eq("id", file.id);
+    const { error } = await supabase.from("files").delete().eq("id", file.id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("File deleted");
     setFiles((prev) => prev.filter((f) => f.id !== file.id));
   }
 
@@ -206,10 +214,12 @@ function MaterialsPage() {
 
   async function saveAccess() {
     if (!showAccessModal) return;
-    await supabase.from("folders").update({
+    const { error } = await supabase.from("folders").update({
       accessible_programs: editPrograms,
       accessible_classes: editClasses,
     }).eq("id", showAccessModal.id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("Access settings saved");
     setShowAccessModal(null);
     fetchFolders();
     if (activeFolder?.id === showAccessModal.id) {
