@@ -17,7 +17,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 
       {/* Sidebar — hidden on mobile, slide-in when toggled */}
       <div className={`fixed inset-y-0 left-0 z-50 lg:static lg:z-auto transition-transform duration-200 ${mobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
-        {role === "teacher" ? <TeacherSidebar /> : <AdminSidebar onNavigate={() => setMobileOpen(false)} />}
+        {role === "teacher" ? <TeacherSidebar onNavigate={() => setMobileOpen(false)} /> : <AdminSidebar onNavigate={() => setMobileOpen(false)} />}
       </div>
 
       <main className="flex-1 overflow-auto min-w-0">

@@ -11,7 +11,11 @@ import {
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth";
 
-export function TeacherSidebar() {
+interface TeacherSidebarProps {
+  onNavigate?: () => void;
+}
+
+export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const { logout, user, teacherRecord } = useAuth();
