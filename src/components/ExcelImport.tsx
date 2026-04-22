@@ -375,6 +375,27 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
               </button>
             </div>
 
+            {resetMode && (
+              <div className="rounded-md bg-destructive/10 border border-destructive/30 px-3 py-2 mb-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <Trash2 className="h-4 w-4 text-destructive shrink-0" />
+                  <p className="text-sm font-medium text-destructive">Reset & Recreate Mode</p>
+                </div>
+                <p className="text-xs text-destructive/80 mb-2">
+                  All existing {ENTITY_LABELS[entity].toLowerCase()} records{DELETE_ORDER[entity].length > 1 ? ` (and dependent ${DELETE_ORDER[entity].slice(0, -1).join(", ")})` : ""} will be permanently deleted before importing.
+                </p>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={confirmReset}
+                    onChange={(e) => setConfirmReset(e.target.checked)}
+                    className="rounded border-destructive"
+                  />
+                  <span className="text-xs text-destructive">I understand this will delete all existing data</span>
+                </label>
+              </div>
+            )}
+
             {hasErrors && (
               <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive mb-3">
                 {errorCount} mapping error{errorCount !== 1 ? "s" : ""} found — rows with errors will fail on import.
@@ -440,11 +461,15 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                 </button>
                 <button
                   onClick={confirmImport}
-                  disabled={importing}
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                  disabled={importing || (resetMode && !confirmReset)}
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm rounded-md disabled:opacity-50 ${
+                    resetMode
+                      ? "bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  }`}
                 >
-                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
-                  {importing ? "Importing…" : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
+                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
+                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}` : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
                 </button>
               </div>
             </div>
