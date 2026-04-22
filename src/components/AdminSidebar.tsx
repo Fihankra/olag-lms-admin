@@ -39,6 +39,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const { logout, user } = useAuth();
+  const { theme, toggle: toggleTheme } = useTheme();
 
   return (
     <aside
@@ -83,6 +84,14 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
         {!collapsed && user && (
           <p className="text-xs text-muted-foreground truncate">{user.email}</p>
         )}
+        <button
+          onClick={toggleTheme}
+          className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
+          title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {theme === "dark" ? <Sun className="h-4 w-4 shrink-0" /> : <Moon className="h-4 w-4 shrink-0" />}
+          {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
+        </button>
         <button
           onClick={() => logout()}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-destructive transition-colors w-full"
