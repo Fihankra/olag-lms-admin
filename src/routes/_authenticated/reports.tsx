@@ -600,16 +600,35 @@ function ReportsPage() {
                               </select>
                             </td>
                             <td className="px-4 py-2">
-                              <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                                <option value="good">Good</option>
-                                <option value="faulty">Faulty</option>
-                              </select>
+                              <div className="space-y-1">
+                                <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                  <option value="good">Good</option>
+                                  <option value="faulty">Faulty</option>
+                                </select>
+                                {isFaulty && (
+                                  <select value={row.fault_description} onChange={(e) => updateRow(sd.deviceUuid, "fault_description", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                    <option value="">Select fault…</option>
+                                    {FAULT_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
+                                  </select>
+                                )}
+                              </div>
                             </td>
                             <td className="px-4 py-2">
-                              <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                                <option value="false">No</option>
-                                <option value="true">Yes</option>
-                              </select>
+                              <div className="space-y-1">
+                                <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                  <option value="false">No</option>
+                                  <option value="true">Yes</option>
+                                </select>
+                                {isMissing && (
+                                  <div className="flex flex-wrap gap-1">
+                                    {ACCESSORY_OPTIONS.map((acc) => (
+                                      <button key={acc} type="button" onClick={() => toggleAccessory(sd.deviceUuid, acc)}
+                                        className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${row.missing_accessories.includes(acc) ? "bg-destructive/20 text-destructive border border-destructive/30" : "bg-muted text-muted-foreground border border-border"}`}
+                                      >{acc}</button>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             </td>
                             <td className="px-4 py-2">
                               <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
@@ -629,14 +648,22 @@ function ReportsPage() {
                             </td>
                             <td className="px-4 py-3">
                               {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
-                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                                <div>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                                  {report.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{report.fault_description}</p>}
+                                </div>
                               ) : (
                                 <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
                               )}
                             </td>
                             <td className="px-4 py-3">
                               {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
-                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                                <div>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                                  {(report.missing_accessories as string[])?.length > 0 && (
+                                    <p className="text-[11px] text-muted-foreground mt-0.5">{(report.missing_accessories as string[]).join(", ")}</p>
+                                  )}
+                                </div>
                               ) : (
                                 <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
                               )}
