@@ -336,9 +336,10 @@ function MaterialsPage() {
                   )}
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground truncate">
-                {isAdmin ? `Access: ${accessLabel(folder)}` : ""}
-              </p>
+              <div className="text-xs text-muted-foreground space-y-0.5">
+                {isAdmin && <p>Access: {accessLabel(folder)}</p>}
+                {isAdmin && <p>Created by {creatorName(folder.created_by)} · {new Date(folder.created_at).toLocaleDateString()}</p>}
+              </div>
             </div>
           ))}
         </div>
