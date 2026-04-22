@@ -58,6 +58,16 @@ function StudentFormModal({
   submitLabel: string;
   disableStudentId?: boolean;
 }) {
+  const filteredClasses = classes.filter((c) => !form.program_id || c.program_id === form.program_id);
+  const mismatch = !!(form.class_id && form.program_id && !filteredClasses.some((c) => c.id === form.class_id));
+
+  // Auto-clear class if it doesn't belong to the selected program
+  const handleProgramChange = (programId: string) => {
+    const newFiltered = classes.filter((c) => !programId || c.program_id === programId);
+    const classStillValid = !form.class_id || newFiltered.some((c) => c.id === form.class_id);
+    setForm({ ...form, program_id: programId, class_id: classStillValid ? form.class_id : "" });
+  };
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
@@ -78,7 +88,7 @@ function StudentFormModal({
           />
           <select
             value={form.program_id}
-            onChange={(e) => setForm({ ...form, program_id: e.target.value })}
+            onChange={(e) => handleProgramChange(e.target.value)}
             className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
           >
             <option value="">Select Program</option>
@@ -86,16 +96,21 @@ function StudentFormModal({
               <option key={p.id} value={p.id}>{p.name}</option>
             ))}
           </select>
-          <select
-            value={form.class_id}
-            onChange={(e) => setForm({ ...form, class_id: e.target.value })}
-            className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
-          >
-            <option value="">Select Class</option>
-            {classes.filter((c) => !form.program_id || c.program_id === form.program_id).map((c) => (
-              <option key={c.id} value={c.id}>{c.name}</option>
-            ))}
-          </select>
+          <div>
+            <select
+              value={form.class_id}
+              onChange={(e) => setForm({ ...form, class_id: e.target.value })}
+              className={`w-full px-3 py-2 rounded-md bg-input border text-foreground text-sm ${mismatch ? "border-destructive" : "border-border"}`}
+            >
+              <option value="">Select Class</option>
+              {filteredClasses.map((c) => (
+                <option key={c.id} value={c.id}>{c.name}</option>
+              ))}
+            </select>
+            {mismatch && (
+              <p className="text-xs text-destructive mt-1">Selected class does not belong to the chosen program.</p>
+            )}
+          </div>
           <select
             value={form.gender}
             onChange={(e) => setForm({ ...form, gender: e.target.value })}
@@ -118,7 +133,7 @@ function StudentFormModal({
         </div>
         <div className="flex gap-2 justify-end mt-4">
           <button onClick={onCancel} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-          <button onClick={onSubmit} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">{submitLabel}</button>
+          <button onClick={onSubmit} disabled={mismatch} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50">{submitLabel}</button>
         </div>
       </div>
     </div>
