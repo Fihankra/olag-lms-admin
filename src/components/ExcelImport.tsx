@@ -76,8 +76,8 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), { id: p.id, name: p.name }]));
   }
   if (entity === "students") {
-    const { data: classes } = await supabase.from("classes").select("id, name");
-    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name }]));
+    const { data: classes } = await supabase.from("classes").select("id, name, program_id");
+    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name, programId: (c as any).program_id as string }]));
   }
 
   const duplicates = new Map<string, Set<number>>();
