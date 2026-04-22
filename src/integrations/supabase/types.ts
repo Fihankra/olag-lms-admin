@@ -369,6 +369,8 @@ export type Database = {
           assigned_device_id: string | null
           class_id: string | null
           created_at: string
+          form: Database["public"]["Enums"]["student_form"] | null
+          gender: Database["public"]["Enums"]["student_gender"] | null
           id: string
           name: string
           password_hash: string | null
@@ -379,6 +381,8 @@ export type Database = {
           assigned_device_id?: string | null
           class_id?: string | null
           created_at?: string
+          form?: Database["public"]["Enums"]["student_form"] | null
+          gender?: Database["public"]["Enums"]["student_gender"] | null
           id?: string
           name: string
           password_hash?: string | null
@@ -389,6 +393,8 @@ export type Database = {
           assigned_device_id?: string | null
           class_id?: string | null
           created_at?: string
+          form?: Database["public"]["Enums"]["student_form"] | null
+          gender?: Database["public"]["Enums"]["student_gender"] | null
           id?: string
           name?: string
           password_hash?: string | null
@@ -490,6 +496,8 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "teacher"
+      student_form: "Form 1" | "Form 2" | "Form 3"
+      student_gender: "Male" | "Female"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -618,6 +626,8 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "teacher"],
+      student_form: ["Form 1", "Form 2", "Form 3"],
+      student_gender: ["Male", "Female"],
     },
   },
 } as const
