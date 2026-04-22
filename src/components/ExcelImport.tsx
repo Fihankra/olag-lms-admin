@@ -60,6 +60,15 @@ interface PreviewRow {
   fields: Record<string, { value: string; resolvedId?: string; resolvedLabel?: string; status: "ok" | "warn" | "error" }>;
 }
 
+// Keys that must be unique per entity
+const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
+  students: ["student_id"],
+  devices: ["device_id"],
+  teachers: ["teacher_id"],
+  programs: ["name"],
+  classes: ["name"],
+};
+
 async function buildPreview(entity: EntityType, rows: Record<string, string>[]): Promise<PreviewRow[]> {
   let programMap = new Map<string, { id: string; name: string }>();
   let classMap = new Map<string, { id: string; name: string }>();
@@ -73,16 +82,50 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name }]));
   }
 
+  // Build duplicate maps for unique keys
+  const duplicates = new Map<string, Set<number>>();
+  const uniqueKeys = UNIQUE_KEYS[entity] ?? [];
+  for (const key of uniqueKeys) {
+    const seen = new Map<string, number[]>();
+    rows.forEach((row, i) => {
+      const val = row[key]?.trim().toLowerCase();
+      if (!val) return;
+      if (!seen.has(val)) seen.set(val, []);
+      seen.get(val)!.push(i);
+    });
+    for (const [, indices] of seen) {
+      if (indices.length > 1) {
+        for (const idx of indices) {
+          const k = `${key}:${idx}`;
+          if (!duplicates.has(k)) duplicates.set(k, new Set());
+          duplicates.get(k)!.add(idx);
+        }
+      }
+    }
+    // store which values are duped for quick lookup
+    for (const [val, indices] of seen) {
+      if (indices.length > 1) {
+        for (const idx of indices) {
+          duplicates.set(`${key}:${idx}`, new Set(indices));
+        }
+      }
+    }
+  }
+
+  const isDuplicate = (key: string, rowIdx: number) => duplicates.has(`${key}:${rowIdx}`);
+
   return rows.map((row, i) => {
     const fields: PreviewRow["fields"] = {};
 
     if (entity === "programs") {
-      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+      const nameStatus = !row.name?.trim() ? "error" : isDuplicate("name", i) ? "warn" : "ok";
+      fields.name = { value: row.name || "", status: nameStatus, ...(isDuplicate("name", i) && row.name?.trim() ? { resolvedLabel: "⚠ Duplicate name in file" } : {}) };
       fields.description = { value: row.description || "", status: "ok" };
     }
 
     if (entity === "classes") {
-      fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
+      const nameStatus = !row.name?.trim() ? "error" : isDuplicate("name", i) ? "warn" : "ok";
+      fields.name = { value: row.name || "", status: nameStatus, ...(isDuplicate("name", i) && row.name?.trim() ? { resolvedLabel: "⚠ Duplicate name in file" } : {}) };
       const key = row.program_name?.trim().toLowerCase() ?? "";
       const match = programMap.get(key);
       fields.program_name = {
@@ -94,7 +137,8 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     }
 
     if (entity === "students") {
-      fields.student_id = { value: row.student_id || "", status: row.student_id?.trim() ? "ok" : "error" };
+      const sidStatus = !row.student_id?.trim() ? "error" : isDuplicate("student_id", i) ? "warn" : "ok";
+      fields.student_id = { value: row.student_id || "", status: sidStatus, ...(isDuplicate("student_id", i) && row.student_id?.trim() ? { resolvedLabel: "⚠ Duplicate student_id in file" } : {}) };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
       const pKey = row.program_name?.trim().toLowerCase() ?? "";
       const pMatch = programMap.get(pKey);
@@ -115,11 +159,13 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     }
 
     if (entity === "devices") {
-      fields.device_id = { value: row.device_id || "", status: row.device_id?.trim() ? "ok" : "error" };
+      const didStatus = !row.device_id?.trim() ? "error" : isDuplicate("device_id", i) ? "warn" : "ok";
+      fields.device_id = { value: row.device_id || "", status: didStatus, ...(isDuplicate("device_id", i) && row.device_id?.trim() ? { resolvedLabel: "⚠ Duplicate device_id in file" } : {}) };
     }
 
     if (entity === "teachers") {
-      fields.teacher_id = { value: row.teacher_id || "", status: row.teacher_id?.trim() ? "ok" : "error" };
+      const tidStatus = !row.teacher_id?.trim() ? "error" : isDuplicate("teacher_id", i) ? "warn" : "ok";
+      fields.teacher_id = { value: row.teacher_id || "", status: tidStatus, ...(isDuplicate("teacher_id", i) && row.teacher_id?.trim() ? { resolvedLabel: "⚠ Duplicate teacher_id in file" } : {}) };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
     }
 
@@ -304,6 +350,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
   const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
   const errorCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "error").length, 0) ?? 0;
+  const warnCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "warn" && f.resolvedLabel?.startsWith("⚠")).length, 0) ?? 0;
 
   const statusIcon = (status: "ok" | "warn" | "error") => {
     if (status === "ok") return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />;
@@ -393,6 +440,13 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                   />
                   <span className="text-xs text-destructive">I understand this will delete all existing data</span>
                 </label>
+              </div>
+            )}
+
+            {warnCount > 0 && (
+              <div className="rounded-md bg-amber-500/10 border border-amber-500/30 px-3 py-2 text-sm text-amber-400 mb-3 flex items-center gap-2">
+                <AlertTriangle className="h-4 w-4 shrink-0" />
+                {warnCount} duplicate key{warnCount !== 1 ? "s" : ""} found — these rows may cause conflicts during import.
               </div>
             )}
 
