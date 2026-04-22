@@ -36,7 +36,7 @@ function StudentsPage() {
   const [programs, setPrograms] = useState<Program[]>([]);
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [showModal, setShowModal] = useState(false);
-  const [form, setForm] = useState({ student_id: "", name: "", program_id: "", class_id: "" });
+  const [form, setForm] = useState({ student_id: "", name: "", program_id: "", class_id: "", gender: "", form_level: "" });
   const [filterProgram, setFilterProgram] = useState("");
   const [filterClass, setFilterClass] = useState("");
 
@@ -69,8 +69,10 @@ function StudentsPage() {
       name: form.name.trim(),
       program_id: form.program_id || null,
       class_id: form.class_id || null,
+      gender: form.gender || null,
+      form: form.form_level || null,
     });
-    setForm({ student_id: "", name: "", program_id: "", class_id: "" });
+    setForm({ student_id: "", name: "", program_id: "", class_id: "", gender: "", form_level: "" });
     setShowModal(false);
     fetchStudents();
   }
@@ -98,6 +100,16 @@ function StudentsPage() {
       key: "class_id",
       label: "Class",
       render: (s: Student) => s.classes?.name ?? <span className="text-muted-foreground">—</span>,
+    },
+    {
+      key: "gender",
+      label: "Gender",
+      render: (s: Student) => (s as any).gender ?? <span className="text-muted-foreground">—</span>,
+    },
+    {
+      key: "form",
+      label: "Form",
+      render: (s: Student) => (s as any).form ?? <span className="text-muted-foreground">—</span>,
     },
     {
       key: "assigned_device_id",
@@ -197,6 +209,25 @@ function StudentsPage() {
                 {classes.filter((c) => !form.program_id || c.program_id === form.program_id).map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
+              </select>
+              <select
+                value={form.gender}
+                onChange={(e) => setForm({ ...form, gender: e.target.value })}
+                className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+              >
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <select
+                value={form.form_level}
+                onChange={(e) => setForm({ ...form, form_level: e.target.value })}
+                className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+              >
+                <option value="">Select Form</option>
+                <option value="Form 1">Form 1</option>
+                <option value="Form 2">Form 2</option>
+                <option value="Form 3">Form 3</option>
               </select>
             </div>
             <div className="flex gap-2 justify-end mt-4">
