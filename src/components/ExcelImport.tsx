@@ -328,7 +328,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
         className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
           loading ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
         }`}
-        title="Import from Excel"
+        title="Import from Excel (append)"
       >
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
         Import
@@ -336,7 +336,25 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
           ref={fileRef}
           type="file"
           accept=".xlsx,.xls"
-          onChange={handleFile}
+          onChange={(e) => handleFile(e, false)}
+          disabled={loading}
+          className="hidden"
+        />
+      </label>
+
+      <label
+        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+          loading ? "bg-muted text-muted-foreground" : "bg-destructive/10 text-destructive hover:bg-destructive/20"
+        }`}
+        title="Clear all existing records and reimport from file"
+      >
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
+        Reset & Import
+        <input
+          ref={resetFileRef}
+          type="file"
+          accept=".xlsx,.xls"
+          onChange={(e) => handleFile(e, true)}
           disabled={loading}
           className="hidden"
         />
