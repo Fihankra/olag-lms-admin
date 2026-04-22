@@ -1,7 +1,8 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { supabase } from "../integrations/supabase/client";
-import { UserPlus, Eye, EyeOff } from "lucide-react";
+import { UserPlus } from "lucide-react";
+import { PasswordInput } from "../components/PasswordInput";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -11,7 +12,6 @@ function RegisterPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -28,7 +28,6 @@ function RegisterPage() {
 
     setSubmitting(true);
     try {
-      // Sign up the user
       const { data: authData, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
@@ -39,10 +38,8 @@ function RegisterPage() {
 
       const userId = authData.user.id;
 
-      // Assign teacher role
       await supabase.from("user_roles").insert({ user_id: userId, role: "teacher" });
 
-      // Create teacher record linked to auth user
       await supabase.from("teachers").insert({
         teacher_id: teacherId.trim(),
         name: name.trim(),
@@ -50,7 +47,6 @@ function RegisterPage() {
         approved: false,
       });
 
-      // Navigate to login
       navigate({ to: "/login" });
     } catch (err: any) {
       setError(err?.message || "Registration failed");
@@ -92,12 +88,7 @@ function RegisterPage() {
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground">Password</label>
-            <div className="relative">
-              <input type={showPassword ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" className="w-full rounded-md border border-border bg-input px-3 py-2 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
-              <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
-                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              </button>
-            </div>
+            <PasswordInput required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
           </div>
 
           <button type="submit" disabled={submitting} className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50">
