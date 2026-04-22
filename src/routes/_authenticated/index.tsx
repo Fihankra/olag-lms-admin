@@ -62,11 +62,11 @@ function bucketDevicesByHour(devices: DeviceRow[]) {
 function DashboardPage() {
   const { role, teacherRecord } = useAuth();
 
-  if (role === "teacher") {
-    return <TeacherDashboard />;
+  if (role === "admin") {
+    return <AdminDashboard />;
   }
 
-  return <AdminDashboard />;
+  return <TeacherDashboard />;
 }
 
 function TeacherDashboard() {
