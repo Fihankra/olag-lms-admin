@@ -350,6 +350,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
   const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
   const errorCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "error").length, 0) ?? 0;
+  const warnCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "warn" && f.resolvedLabel?.startsWith("⚠")).length, 0) ?? 0;
 
   const statusIcon = (status: "ok" | "warn" | "error") => {
     if (status === "ok") return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />;
