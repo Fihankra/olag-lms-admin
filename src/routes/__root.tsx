@@ -1,5 +1,6 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
+import { Toaster } from "../components/ui/sonner";
 import { Link } from "@tanstack/react-router";
 import { AuthProvider } from "../hooks/use-auth";
 import { ThemeProvider } from "../hooks/use-theme";
@@ -64,6 +65,7 @@ function RootComponent() {
     <ThemeProvider>
       <AuthProvider>
         <Outlet />
+        <Toaster position="top-right" richColors />
       </AuthProvider>
     </ThemeProvider>
   );

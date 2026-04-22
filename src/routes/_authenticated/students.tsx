@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { Pencil, Trash2 } from "lucide-react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/students")({
   component: StudentsPage,
@@ -193,7 +194,7 @@ function StudentsPage() {
 
   async function addStudent() {
     if (!form.student_id.trim() || !form.name.trim()) return;
-    await supabase.from("students").insert({
+    const { error } = await supabase.from("students").insert({
       student_id: form.student_id.trim(),
       name: form.name.trim(),
       program_id: form.program_id || null,
@@ -201,6 +202,8 @@ function StudentsPage() {
       gender: form.gender || null,
       form: form.form_level || null,
     } as any);
+    if (error) { toast.error(`Failed to add student: ${error.message}`); return; }
+    toast.success("Student added successfully");
     setForm(emptyForm);
     setShowAddModal(false);
     fetchStudents();
@@ -208,20 +211,24 @@ function StudentsPage() {
 
   async function updateStudent() {
     if (!editingStudent || !form.name.trim()) return;
-    await supabase.from("students").update({
+    const { error } = await supabase.from("students").update({
       name: form.name.trim(),
       program_id: form.program_id || null,
       class_id: form.class_id || null,
       gender: form.gender || null,
       form: form.form_level || null,
     } as any).eq("id", editingStudent.id);
+    if (error) { toast.error(`Failed to update student: ${error.message}`); return; }
+    toast.success("Student updated successfully");
     setEditingStudent(null);
     setForm(emptyForm);
     fetchStudents();
   }
 
   async function deleteStudent(id: string) {
-    await supabase.from("students").delete().eq("id", id);
+    const { error } = await supabase.from("students").delete().eq("id", id);
+    if (error) { toast.error(`Failed to delete student: ${error.message}`); return; }
+    toast.success("Student deleted");
     fetchStudents();
   }
 
