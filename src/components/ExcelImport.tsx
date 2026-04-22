@@ -23,8 +23,8 @@ const TEMPLATES: Record<EntityType, TemplateConfig> = {
     sheetName: "Classes",
   },
   students: {
-    headers: ["student_id", "name", "program_name", "class_name"],
-    sampleData: [["S001", "John Doe", "General Arts", "1 Arts 1"], ["S002", "Jane Smith", "General Science", "1 Science 1"]],
+    headers: ["student_id", "name", "program_name", "class_name", "gender", "form"],
+    sampleData: [["S001", "John Doe", "General Arts", "1 Arts 1", "Male", "Form 1"], ["S002", "Jane Smith", "General Science", "1 Science 1", "Female", "Form 2"]],
     sheetName: "Students",
   },
   devices: {
@@ -143,6 +143,12 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
         resolvedLabel: cMatch ? `→ ${cMatch.name} (${cMatch.id.slice(0, 8)}…)` : undefined,
         status: cMatch ? "ok" : cKey ? "error" : "warn",
       };
+      const validGenders = ["male", "female"];
+      const gVal = row.gender?.trim().toLowerCase() ?? "";
+      fields.gender = { value: row.gender || "", status: gVal ? (validGenders.includes(gVal) ? "ok" : "error") : "warn" };
+      const validForms = ["form 1", "form 2", "form 3"];
+      const fVal = row.form?.trim().toLowerCase() ?? "";
+      fields.form = { value: row.form || "", status: fVal ? (validForms.includes(fVal) ? "ok" : "error") : "warn" };
     }
 
     if (entity === "devices") {
@@ -194,12 +200,18 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
     const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), c.id]));
     for (const row of rows) {
       if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
+      const genderVal = row.gender?.trim();
+      const formVal = row.form?.trim();
+      const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
+      const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
       const { error } = await supabase.from("students").insert({
         student_id: row.student_id.trim(),
         name: row.name.trim(),
         program_id: programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null,
         class_id: classMap.get(row.class_name?.trim().toLowerCase() ?? "") ?? null,
-      });
+        gender: validGender,
+        form: validForm,
+      } as any);
       if (error) result.errors.push(`"${row.student_id}": ${error.message}`);
       else result.success++;
     }
