@@ -12,9 +12,12 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth";
+import { useTheme } from "../hooks/use-theme";
 
 const navItems = [
   { title: "Dashboard", to: "/", icon: LayoutDashboard },
