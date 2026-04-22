@@ -193,6 +193,33 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
   return result;
 }
 
+const ENTITY_LABELS: Record<EntityType, string> = {
+  programs: "Programs",
+  classes: "Classes",
+  students: "Students",
+  devices: "Devices",
+  teachers: "Teachers",
+};
+
+// Delete order matters due to foreign keys
+const DELETE_ORDER: Record<EntityType, EntityType[]> = {
+  programs: ["students", "classes", "programs"],
+  classes: ["students", "classes"],
+  students: ["students"],
+  devices: ["devices"],
+  teachers: ["teachers"],
+};
+
+async function clearEntity(entity: EntityType): Promise<string[]> {
+  const errors: string[] = [];
+  const toDelete = DELETE_ORDER[entity];
+  for (const table of toDelete) {
+    const { error } = await supabase.from(table).delete().neq("id", "00000000-0000-0000-0000-000000000000");
+    if (error) errors.push(`Failed to clear ${table}: ${error.message}`);
+  }
+  return errors;
+}
+
 interface ExcelImportProps {
   entity: EntityType;
   onImportComplete: () => void;
@@ -204,15 +231,20 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const [preview, setPreview] = useState<PreviewRow[] | null>(null);
   const [rawRows, setRawRows] = useState<Record<string, string>[]>([]);
   const [loading, setLoading] = useState(false);
+  const [resetMode, setResetMode] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const resetFileRef = useRef<HTMLInputElement>(null);
 
-  async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+  async function handleFile(e: React.ChangeEvent<HTMLInputElement>, isReset: boolean) {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setLoading(true);
     setResult(null);
     setPreview(null);
+    setResetMode(isReset);
+    setConfirmReset(false);
 
     try {
       const buffer = await file.arrayBuffer();
@@ -234,12 +266,28 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
     } finally {
       setLoading(false);
       if (fileRef.current) fileRef.current.value = "";
+      if (resetFileRef.current) resetFileRef.current.value = "";
     }
   }
 
   async function confirmImport() {
     setImporting(true);
+    const allErrors: string[] = [];
+
+    if (resetMode) {
+      const clearErrors = await clearEntity(entity);
+      allErrors.push(...clearErrors);
+      if (clearErrors.length > 0) {
+        setResult({ success: 0, errors: clearErrors });
+        setPreview(null);
+        setRawRows([]);
+        setImporting(false);
+        return;
+      }
+    }
+
     const importResult = await processImport(entity, rawRows);
+    importResult.errors = [...allErrors, ...importResult.errors];
     setResult(importResult);
     setPreview(null);
     setRawRows([]);
@@ -250,6 +298,8 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   function cancelPreview() {
     setPreview(null);
     setRawRows([]);
+    setResetMode(false);
+    setConfirmReset(false);
   }
 
   const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
