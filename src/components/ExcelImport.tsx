@@ -201,21 +201,24 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
   if (entity === "students") {
     const [{ data: programs }, { data: classes }] = await Promise.all([
       supabase.from("programs").select("id, name"),
-      supabase.from("classes").select("id, name"),
+      supabase.from("classes").select("id, name, program_id"),
     ]);
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
-    const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), c.id]));
+    const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, programId: (c as any).program_id as string }]));
     for (const row of rows) {
       if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
       const genderVal = row.gender?.trim();
       const formVal = row.form?.trim();
       const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
       const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
+      const classEntry = classMap.get(row.class_name?.trim().toLowerCase() ?? "");
+      let programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null;
+      if (!programId && classEntry?.programId) programId = classEntry.programId;
       const { error } = await supabase.from("students").insert({
         student_id: row.student_id.trim(),
         name: row.name.trim(),
-        program_id: programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null,
-        class_id: classMap.get(row.class_name?.trim().toLowerCase() ?? "") ?? null,
+        program_id: programId,
+        class_id: classEntry?.id ?? null,
         gender: validGender,
         form: validForm,
       } as any);
