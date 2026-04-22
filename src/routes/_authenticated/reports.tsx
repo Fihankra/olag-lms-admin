@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Pencil, Clock, Save, Loader2, History } from "lucide-react";
-import { submitReport as submitReportFn, updateReport as updateReportFn, getDeadlineSetting } from "../../utils/reports.functions";
+import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Clock, Save, Loader2, History } from "lucide-react";
+import { submitBatchReport, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
@@ -50,12 +50,15 @@ type StudentDevice = {
   deviceLabel: string;
 };
 
-/**
- * Get the most recent occurrence of `targetDay` (1=Mon..7=Sun) on or before `d`.
- */
+type ChecklistRow = {
+  kiosk_status: string;
+  device_condition: string;
+  missing_status: string;
+  lms_status: string;
+};
+
 function getWeekStart(d: Date, startDay: number): string {
   const date = new Date(d);
-  // JS getDay: 0=Sun,1=Mon..6=Sat  →  convert to 1=Mon..7=Sun
   const jsDay = date.getDay();
   const isoDay = jsDay === 0 ? 7 : jsDay;
   let diff = isoDay - startDay;
@@ -63,6 +66,13 @@ function getWeekStart(d: Date, startDay: number): string {
   date.setDate(date.getDate() - diff);
   return date.toISOString().split("T")[0];
 }
+
+const DEFAULT_ROW: ChecklistRow = {
+  kiosk_status: "true",
+  device_condition: "good",
+  missing_status: "false",
+  lms_status: "active",
+};
 
 function ReportsPage() {
   const { role, teacherRecord } = useAuth();
@@ -72,22 +82,17 @@ function ReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [filterClass, setFilterClass] = useState("");
-  const [weekStartDay, setWeekStartDay] = useState(2); // default Tuesday
+  const [weekStartDay, setWeekStartDay] = useState(2);
   const [filterWeek, setFilterWeek] = useState("");
 
   // Checklist data (teacher)
   const [studentDevices, setStudentDevices] = useState<StudentDevice[]>([]);
 
-  // Inline editing state (teacher)
-  const [editingDeviceId, setEditingDeviceId] = useState<string | null>(null);
-  const [editForm, setEditForm] = useState({
-    kiosk_status: "true",
-    device_condition: "good",
-    missing_status: "false",
-    lms_status: "active",
-  });
+  // Batch checklist form: deviceUuid -> row values
+  const [checklist, setChecklist] = useState<Record<string, ChecklistRow>>({});
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   // Deadline
   const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
@@ -98,7 +103,7 @@ function ReportsPage() {
   const [historyEntries, setHistoryEntries] = useState<HistoryEntry[]>([]);
   const [historyLoading, setHistoryLoading] = useState(false);
 
-  // Load settings first, then set filterWeek
+  // Load settings
   useEffect(() => {
     async function init() {
       try {
@@ -136,7 +141,7 @@ function ReportsPage() {
   const currentWeekStart = useMemo(() => getWeekStart(new Date(), weekStartDay), [weekStartDay]);
   const canEdit = isTeacher && filterWeek === currentWeekStart && !pastDeadline;
 
-  async function fetchReports() {
+  const fetchReports = useCallback(async () => {
     if (!filterWeek) return;
     let query = supabase
       .from("reports")
@@ -152,7 +157,7 @@ function ReportsPage() {
 
     const { data } = await query;
     setReports((data as Report[]) ?? []);
-  }
+  }, [filterWeek, isTeacher, assignedClassId, filterClass]);
 
   async function fetchClasses() {
     const { data } = await supabase.from("classes").select("id, name");
@@ -192,8 +197,31 @@ function ReportsPage() {
   }
 
   useEffect(() => { fetchClasses(); }, []);
-  useEffect(() => { if (filterWeek) fetchReports(); }, [filterClass, filterWeek, assignedClassId]);
+  useEffect(() => { if (filterWeek) fetchReports(); }, [filterWeek, filterClass, assignedClassId, fetchReports]);
   useEffect(() => { if (isTeacher) fetchStudentDevices(); }, [assignedClassId]);
+
+  // Initialize checklist from existing reports
+  useEffect(() => {
+    if (!isTeacher || studentDevices.length === 0) return;
+    const reportMap = new Map<string, Report>();
+    for (const r of reports) reportMap.set(r.device_id, r);
+
+    const newChecklist: Record<string, ChecklistRow> = {};
+    for (const sd of studentDevices) {
+      const r = reportMap.get(sd.deviceUuid);
+      if (r) {
+        newChecklist[sd.deviceUuid] = {
+          kiosk_status: r.kiosk_status === true ? "true" : "false",
+          device_condition: r.device_condition ?? "good",
+          missing_status: r.missing_status === true ? "true" : "false",
+          lms_status: r.lms_status ?? "active",
+        };
+      } else {
+        newChecklist[sd.deviceUuid] = { ...DEFAULT_ROW };
+      }
+    }
+    setChecklist(newChecklist);
+  }, [isTeacher, studentDevices, reports]);
 
   // Realtime
   useEffect(() => {
@@ -203,18 +231,59 @@ function ReportsPage() {
       .on("postgres_changes", { event: "*", schema: "public", table: "reports", filter: `week_start=eq.${filterWeek}` }, () => fetchReports())
       .subscribe();
     return () => { supabase.removeChannel(channel); };
-  }, [filterWeek, filterClass, assignedClassId]);
+  }, [filterWeek, filterClass, assignedClassId, fetchReports]);
 
-  // Map device_id -> report
   const reportByDevice = useMemo(() => {
     const map = new Map<string, Report>();
     for (const r of reports) map.set(r.device_id, r);
     return map;
   }, [reports]);
 
-  async function getAuthHeaders() {
-    const session = await supabase.auth.getSession();
-    return { authorization: `Bearer ${session.data.session?.access_token}` };
+  function updateRow(deviceUuid: string, field: keyof ChecklistRow, value: string) {
+    setChecklist((prev) => ({
+      ...prev,
+      [deviceUuid]: { ...(prev[deviceUuid] ?? { ...DEFAULT_ROW }), [field]: value },
+    }));
+  }
+
+  async function submitAll() {
+    if (!teacherRecord || !assignedClassId) return;
+    setSubmitting(true);
+    setErrorMsg(null);
+    setSuccessMsg(null);
+
+    const entries = studentDevices.map((sd) => {
+      const row = checklist[sd.deviceUuid] ?? DEFAULT_ROW;
+      return {
+        device_id: sd.deviceUuid,
+        kiosk_status: row.kiosk_status === "true",
+        device_condition: row.device_condition,
+        missing_status: row.missing_status === "true",
+        lms_status: row.lms_status,
+      };
+    });
+
+    try {
+      const session = await supabase.auth.getSession();
+      const result = await submitBatchReport({
+        headers: { authorization: `Bearer ${session.data.session?.access_token}` },
+        data: { week_start: filterWeek, entries },
+      });
+
+      if (result.error) {
+        setErrorMsg(result.error);
+      } else {
+        const parts: string[] = [];
+        if (result.inserted) parts.push(`${result.inserted} new`);
+        if (result.updated) parts.push(`${result.updated} updated`);
+        setSuccessMsg(parts.length ? `Report submitted: ${parts.join(", ")}.` : "No changes to submit.");
+        fetchReports();
+      }
+    } catch {
+      setErrorMsg("Failed to submit report.");
+    }
+
+    setSubmitting(false);
   }
 
   async function openHistory(reportId: string, deviceLabel: string) {
@@ -230,79 +299,13 @@ function ReportsPage() {
     setHistoryLoading(false);
   }
 
-  function startReportForDevice(deviceUuid: string) {
-    const existing = reportByDevice.get(deviceUuid);
-    if (existing) {
-      setEditForm({
-        kiosk_status: existing.kiosk_status === true ? "true" : "false",
-        device_condition: existing.device_condition ?? "good",
-        missing_status: existing.missing_status === true ? "true" : "false",
-        lms_status: existing.lms_status ?? "active",
-      });
-    } else {
-      setEditForm({ kiosk_status: "true", device_condition: "good", missing_status: "false", lms_status: "active" });
-    }
-    setEditingDeviceId(deviceUuid);
-    setErrorMsg(null);
-  }
-
-  async function saveReport() {
-    if (!editingDeviceId || !teacherRecord || !assignedClassId) return;
-    setSubmitting(true);
-    setErrorMsg(null);
-
-    const existing = reportByDevice.get(editingDeviceId);
-    const headers = await getAuthHeaders();
-
-    try {
-      let result;
-      if (existing) {
-        result = await updateReportFn({
-          headers,
-          data: {
-            report_id: existing.id,
-            week_start: filterWeek,
-            kiosk_status: editForm.kiosk_status === "true",
-            device_condition: editForm.device_condition,
-            missing_status: editForm.missing_status === "true",
-            lms_status: editForm.lms_status,
-          },
-        });
-      } else {
-        result = await submitReportFn({
-          headers,
-          data: {
-            device_id: editingDeviceId,
-            week_start: filterWeek,
-            kiosk_status: editForm.kiosk_status === "true",
-            device_condition: editForm.device_condition,
-            missing_status: editForm.missing_status === "true",
-            lms_status: editForm.lms_status,
-          },
-        });
-      }
-
-      if (result.error) {
-        setErrorMsg(result.error);
-        setSubmitting(false);
-        return;
-      }
-    } catch {
-      setErrorMsg("Failed to save report.");
-      setSubmitting(false);
-      return;
-    }
-
-    setSubmitting(false);
-    setEditingDeviceId(null);
-    fetchReports();
-  }
-
   function shiftWeek(delta: number) {
     if (!filterWeek) return;
     const d = new Date(filterWeek);
     d.setDate(d.getDate() + delta * 7);
     setFilterWeek(d.toISOString().split("T")[0]);
+    setSuccessMsg(null);
+    setErrorMsg(null);
   }
 
   function formatWeek(dateStr: string) {
@@ -316,7 +319,6 @@ function ReportsPage() {
     ? classes.find((c) => c.id === assignedClassId)?.name ?? "Your Class"
     : null;
 
-  // Summary stats
   const issues = useMemo(() => {
     let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
     for (const r of reports) {
@@ -343,7 +345,7 @@ function ReportsPage() {
 
   if (!filterWeek) return null;
 
-  // --------- TEACHER VIEW: Checklist ---------
+  // --------- TEACHER VIEW: Batch Checklist ---------
   if (isTeacher) {
     const submittedCount = studentDevices.filter((sd) => reportByDevice.has(sd.deviceUuid)).length;
     const totalCount = studentDevices.length;
@@ -382,7 +384,19 @@ function ReportsPage() {
           </div>
         )}
 
-        {/* Student/Device Checklist */}
+        {/* Messages */}
+        {errorMsg && (
+          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-destructive/30 bg-destructive/10 text-sm text-destructive">
+            <AlertTriangle className="h-4 w-4 shrink-0" /> {errorMsg}
+          </div>
+        )}
+        {successMsg && (
+          <div className="flex items-center gap-2 px-4 py-3 mb-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-400">
+            <CheckCircle2 className="h-4 w-4 shrink-0" /> {successMsg}
+          </div>
+        )}
+
+        {/* Checklist table */}
         {studentDevices.length === 0 ? (
           <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
             <MinusCircle className="h-12 w-12 text-muted-foreground mb-4" />
@@ -390,139 +404,101 @@ function ReportsPage() {
             <p className="text-sm text-muted-foreground">No students in your class have assigned devices.</p>
           </div>
         ) : (
-          <div className="bg-card rounded-lg border border-border overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left">
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Status</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Student</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
-                  <th className="px-4 py-3 font-medium text-muted-foreground w-20"></th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {studentDevices.map((sd) => {
-                  const report = reportByDevice.get(sd.deviceUuid);
-                  const isEditing = editingDeviceId === sd.deviceUuid;
-                  const hasReport = !!report;
+          <>
+            <div className="bg-card rounded-lg border border-border overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left">
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Status</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Student</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Device</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Kiosk</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Condition</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">Missing</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground">LMS</th>
+                    <th className="px-4 py-3 font-medium text-muted-foreground w-10"></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {studentDevices.map((sd) => {
+                    const report = reportByDevice.get(sd.deviceUuid);
+                    const hasReport = !!report;
+                    const row = checklist[sd.deviceUuid] ?? DEFAULT_ROW;
+                    const isFaulty = row.device_condition === "faulty";
+                    const isMissing = row.missing_status === "true";
+                    const hasIssue = isFaulty || isMissing;
 
-                  if (isEditing && canEdit) {
                     return (
-                      <tr key={sd.deviceUuid} className="bg-primary/5">
+                      <tr key={sd.deviceUuid} className={hasIssue ? "bg-destructive/5" : ""}>
                         <td className="px-4 py-3">
-                          <span className="inline-flex items-center gap-1 text-primary text-xs font-medium">
-                            <Pencil className="h-3.5 w-3.5" /> {hasReport ? "Editing" : "New"}
-                          </span>
+                          {hasReport ? (
+                            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                          ) : (
+                            <span className="h-4 w-4 rounded-full border-2 border-muted-foreground/40 block" />
+                          )}
                         </td>
                         <td className="px-4 py-3 font-medium text-foreground">{sd.studentName}</td>
                         <td className="px-4 py-3 text-foreground">{sd.deviceLabel}</td>
-                        <td className="px-4 py-2">
-                          <select value={editForm.kiosk_status} onChange={(e) => setEditForm({ ...editForm, kiosk_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="true">On</option>
-                            <option value="false">Off</option>
-                          </select>
-                        </td>
-                        <td className="px-4 py-2">
-                          <select value={editForm.device_condition} onChange={(e) => setEditForm({ ...editForm, device_condition: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="good">Good</option>
-                            <option value="faulty">Faulty</option>
-                          </select>
-                        </td>
-                        <td className="px-4 py-2">
-                          <select value={editForm.missing_status} onChange={(e) => setEditForm({ ...editForm, missing_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                          </select>
-                        </td>
-                        <td className="px-4 py-2">
-                          <select value={editForm.lms_status} onChange={(e) => setEditForm({ ...editForm, lms_status: e.target.value })} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                          </select>
-                        </td>
-                        <td className="px-4 py-2">
-                          <div className="flex gap-1">
-                            <button onClick={saveReport} disabled={submitting} className="p-1.5 rounded bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50" title="Save">
-                              {submitting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
-                            </button>
-                            <button onClick={() => { setEditingDeviceId(null); setErrorMsg(null); }} className="p-1.5 rounded bg-secondary text-secondary-foreground text-xs">✕</button>
-                          </div>
-                          {errorMsg && <p className="text-xs text-destructive mt-1 max-w-[120px]">{errorMsg}</p>}
-                        </td>
-                      </tr>
-                    );
-                  }
-
-                  // Display row
-                  const isFaulty = report?.device_condition === "faulty";
-                  const isMissing = report?.missing_status === true;
-                  const hasIssue = isFaulty || isMissing;
-
-                  return (
-                    <tr key={sd.deviceUuid} className={hasIssue ? "bg-destructive/5" : ""}>
-                      <td className="px-4 py-3">
-                        {hasReport ? (
-                          <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                        {canEdit ? (
+                          <>
+                            <td className="px-4 py-2">
+                              <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <option value="true">On</option>
+                                <option value="false">Off</option>
+                              </select>
+                            </td>
+                            <td className="px-4 py-2">
+                              <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <option value="good">Good</option>
+                                <option value="faulty">Faulty</option>
+                              </select>
+                            </td>
+                            <td className="px-4 py-2">
+                              <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                              </select>
+                            </td>
+                            <td className="px-4 py-2">
+                              <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                              </select>
+                            </td>
+                          </>
                         ) : (
-                          <span className="h-4 w-4 rounded-full border-2 border-muted-foreground/40 block" />
+                          <>
+                            <td className="px-4 py-3">
+                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
+                                <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                              )}
+                            </td>
+                            <td className="px-4 py-3">
+                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
+                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
+                              )}
+                            </td>
+                            <td className="px-4 py-3">
+                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
+                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                              )}
+                            </td>
+                            <td className="px-4 py-3">
+                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
+                                <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                              )}
+                            </td>
+                          </>
                         )}
-                      </td>
-                      <td className="px-4 py-3 font-medium text-foreground">{sd.studentName}</td>
-                      <td className="px-4 py-3 text-foreground">{sd.deviceLabel}</td>
-                      {hasReport ? (
-                        <>
-                          <td className="px-4 py-3">
-                            {report.kiosk_status === false ? (
-                              <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
-                            )}
-                          </td>
-                          <td className="px-4 py-3">
-                            {isFaulty ? (
-                              <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
-                            )}
-                          </td>
-                          <td className="px-4 py-3">
-                            {isMissing ? (
-                              <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
-                            )}
-                          </td>
-                          <td className="px-4 py-3">
-                            {report.lms_status === "inactive" ? (
-                              <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
-                            ) : (
-                              <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
-                            )}
-                          </td>
-                        </>
-                      ) : (
-                        <>
-                          <td className="px-4 py-3 text-muted-foreground">—</td>
-                          <td className="px-4 py-3 text-muted-foreground">—</td>
-                          <td className="px-4 py-3 text-muted-foreground">—</td>
-                          <td className="px-4 py-3 text-muted-foreground">—</td>
-                        </>
-                      )}
-                      <td className="px-4 py-3">
-                        <div className="flex gap-1">
-                          {canEdit && (
-                            <button
-                              onClick={() => startReportForDevice(sd.deviceUuid)}
-                              className="p-1.5 rounded hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
-                              title={hasReport ? "Edit report" : "Submit report"}
-                            >
-                              {hasReport ? <Pencil className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
-                            </button>
-                          )}
+                        <td className="px-4 py-3">
                           {hasReport && (
                             <button
                               onClick={() => openHistory(report.id, sd.deviceLabel)}
@@ -532,79 +508,38 @@ function ReportsPage() {
                               <History className="h-3.5 w-3.5" />
                             </button>
                           )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Submit All button */}
+            {canEdit && (
+              <div className="flex justify-end mt-4">
+                <button
+                  onClick={submitAll}
+                  disabled={submitting}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-50 transition-colors"
+                >
+                  {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+                  Submit All Reports
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* History Modal */}
-        {historyReportId && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
-              <h2 className="text-lg font-semibold mb-1">Report History</h2>
-              <p className="text-sm text-muted-foreground mb-4">Device: {historyDeviceLabel}</p>
-
-              {historyLoading ? (
-                <div className="flex items-center justify-center py-8">
-                  <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
-                </div>
-              ) : historyEntries.length === 0 ? (
-                <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
-              ) : (
-                <div className="space-y-3">
-                  {historyEntries.map((entry, idx) => (
-                    <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-muted-foreground">Version {historyEntries.length - idx}</span>
-                        <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        <div>
-                          <span className="text-muted-foreground">Kiosk: </span>
-                          <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
-                            {entry.kiosk_status === false ? "Off" : "On"}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-muted-foreground">Condition: </span>
-                          <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
-                            {entry.device_condition === "faulty" ? "Faulty" : "Good"}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-muted-foreground">Missing: </span>
-                          <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
-                            {entry.missing_status ? "Yes" : "No"}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-muted-foreground">LMS: </span>
-                          <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
-                            {entry.lms_status === "inactive" ? "Inactive" : "Active"}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="flex justify-end mt-4">
-                <button
-                  onClick={() => { setHistoryReportId(null); setHistoryEntries([]); }}
-                  className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        <HistoryModal
+          reportId={historyReportId}
+          deviceLabel={historyDeviceLabel}
+          entries={historyEntries}
+          loading={historyLoading}
+          onClose={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+        />
       </div>
     );
   }
@@ -723,68 +658,82 @@ function ReportsPage() {
       )}
 
       {/* History Modal */}
-      {historyReportId && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
-            <h2 className="text-lg font-semibold mb-1">Report History</h2>
-            <p className="text-sm text-muted-foreground mb-4">Device: {historyDeviceLabel}</p>
+      <HistoryModal
+        reportId={historyReportId}
+        deviceLabel={historyDeviceLabel}
+        entries={historyEntries}
+        loading={historyLoading}
+        onClose={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+      />
+    </div>
+  );
+}
 
-            {historyLoading ? (
-              <div className="flex items-center justify-center py-8">
-                <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
-              </div>
-            ) : historyEntries.length === 0 ? (
-              <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
-            ) : (
-              <div className="space-y-3">
-                {historyEntries.map((entry, idx) => (
-                  <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-medium text-muted-foreground">Version {historyEntries.length - idx}</span>
-                      <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div>
-                        <span className="text-muted-foreground">Kiosk: </span>
-                        <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
-                          {entry.kiosk_status === false ? "Off" : "On"}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Condition: </span>
-                        <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
-                          {entry.device_condition === "faulty" ? "Faulty" : "Good"}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Missing: </span>
-                        <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
-                          {entry.missing_status ? "Yes" : "No"}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">LMS: </span>
-                        <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
-                          {entry.lms_status === "inactive" ? "Inactive" : "Active"}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
+  reportId: string | null;
+  deviceLabel: string;
+  entries: HistoryEntry[];
+  loading: boolean;
+  onClose: () => void;
+}) {
+  if (!reportId) return null;
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="bg-card rounded-lg border border-border p-6 w-full max-w-lg mx-4 max-h-[80vh] overflow-y-auto">
+        <h2 className="text-lg font-semibold mb-1">Report History</h2>
+        <p className="text-sm text-muted-foreground mb-4">Device: {deviceLabel}</p>
 
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={() => { setHistoryReportId(null); setHistoryEntries([]); }}
-                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
-              >
-                Close
-              </button>
-            </div>
+        {loading ? (
+          <div className="flex items-center justify-center py-8">
+            <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
           </div>
+        ) : entries.length === 0 ? (
+          <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
+        ) : (
+          <div className="space-y-3">
+            {entries.map((entry, idx) => (
+              <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-medium text-muted-foreground">Version {entries.length - idx}</span>
+                  <span className="text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <span className="text-muted-foreground">Kiosk: </span>
+                    <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                      {entry.kiosk_status === false ? "Off" : "On"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Condition: </span>
+                    <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                      {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">Missing: </span>
+                    <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                      {entry.missing_status ? "Yes" : "No"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">LMS: </span>
+                    <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                      {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="flex justify-end mt-4">
+          <button onClick={onClose} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
+            Close
+          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 }
