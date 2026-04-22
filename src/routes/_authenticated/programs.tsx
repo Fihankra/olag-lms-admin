@@ -5,6 +5,8 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
+import { toast } from "sonner";
+import { parseSupabaseError } from "../../lib/supabase-errors";
 
 export const Route = createFileRoute("/_authenticated/programs")({
   component: ProgramsPage,
@@ -47,16 +49,22 @@ function ProgramsPage() {
     if (!form.name.trim()) return;
     const payload = { name: form.name.trim(), description: form.description.trim() || null };
     if (editProgram) {
-      await supabase.from("programs").update(payload).eq("id", editProgram.id);
+      const { error } = await supabase.from("programs").update(payload).eq("id", editProgram.id);
+      if (error) { toast.error(parseSupabaseError(error)); return; }
+      toast.success("Program updated");
     } else {
-      await supabase.from("programs").insert(payload);
+      const { error } = await supabase.from("programs").insert(payload);
+      if (error) { toast.error(parseSupabaseError(error)); return; }
+      toast.success("Program added");
     }
     setShowModal(false);
     fetchPrograms();
   }
 
   async function deleteProgram(id: string) {
-    await supabase.from("programs").delete().eq("id", id);
+    const { error } = await supabase.from("programs").delete().eq("id", id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("Program deleted");
     fetchPrograms();
   }
 

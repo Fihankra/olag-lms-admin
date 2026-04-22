@@ -5,6 +5,8 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/use-auth";
 import { ExcelImport } from "../../components/ExcelImport";
+import { toast } from "sonner";
+import { parseSupabaseError } from "../../lib/supabase-errors";
 
 export const Route = createFileRoute("/_authenticated/teachers")({
   component: TeachersPage,
@@ -70,22 +72,30 @@ function TeachersPage() {
     };
 
     if (editTeacher) {
-      await supabase.from("teachers").update(payload).eq("id", editTeacher.id);
+      const { error } = await supabase.from("teachers").update(payload).eq("id", editTeacher.id);
+      if (error) { toast.error(parseSupabaseError(error)); return; }
+      toast.success("Teacher updated");
     } else {
-      payload.approved = true; // Admin-added teachers are auto-approved
-      await supabase.from("teachers").insert(payload);
+      payload.approved = true;
+      const { error } = await supabase.from("teachers").insert(payload);
+      if (error) { toast.error(parseSupabaseError(error)); return; }
+      toast.success("Teacher added");
     }
     setShowModal(false);
     fetchTeachers();
   }
 
   async function toggleApproval(t: Teacher) {
-    await supabase.from("teachers").update({ approved: !t.approved }).eq("id", t.id);
+    const { error } = await supabase.from("teachers").update({ approved: !t.approved }).eq("id", t.id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success(t.approved ? "Teacher approval revoked" : "Teacher approved");
     fetchTeachers();
   }
 
   async function deleteTeacher(id: string) {
-    await supabase.from("teachers").delete().eq("id", id);
+    const { error } = await supabase.from("teachers").delete().eq("id", id);
+    if (error) { toast.error(parseSupabaseError(error)); return; }
+    toast.success("Teacher deleted");
     fetchTeachers();
   }
 
