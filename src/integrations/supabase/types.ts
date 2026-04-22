@@ -246,9 +246,11 @@ export type Database = {
           changed_at: string
           changed_by: string | null
           device_condition: string | null
+          fault_description: string | null
           id: string
           kiosk_status: boolean | null
           lms_status: string | null
+          missing_accessories: string[] | null
           missing_status: boolean | null
           report_id: string
         }
@@ -256,9 +258,11 @@ export type Database = {
           changed_at?: string
           changed_by?: string | null
           device_condition?: string | null
+          fault_description?: string | null
           id?: string
           kiosk_status?: boolean | null
           lms_status?: string | null
+          missing_accessories?: string[] | null
           missing_status?: boolean | null
           report_id: string
         }
@@ -266,9 +270,11 @@ export type Database = {
           changed_at?: string
           changed_by?: string | null
           device_condition?: string | null
+          fault_description?: string | null
           id?: string
           kiosk_status?: boolean | null
           lms_status?: string | null
+          missing_accessories?: string[] | null
           missing_status?: boolean | null
           report_id?: string
         }
@@ -288,9 +294,11 @@ export type Database = {
           created_at: string
           device_condition: string | null
           device_id: string
+          fault_description: string | null
           id: string
           kiosk_status: boolean | null
           lms_status: string | null
+          missing_accessories: string[] | null
           missing_status: boolean | null
           teacher_id: string
           week_start: string
@@ -300,9 +308,11 @@ export type Database = {
           created_at?: string
           device_condition?: string | null
           device_id: string
+          fault_description?: string | null
           id?: string
           kiosk_status?: boolean | null
           lms_status?: string | null
+          missing_accessories?: string[] | null
           missing_status?: boolean | null
           teacher_id: string
           week_start: string
@@ -312,9 +322,11 @@ export type Database = {
           created_at?: string
           device_condition?: string | null
           device_id?: string
+          fault_description?: string | null
           id?: string
           kiosk_status?: boolean | null
           lms_status?: string | null
+          missing_accessories?: string[] | null
           missing_status?: boolean | null
           teacher_id?: string
           week_start?: string
