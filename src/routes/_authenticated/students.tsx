@@ -41,10 +41,11 @@ function StudentsPage() {
   const [filterClass, setFilterClass] = useState("");
 
   async function fetchStudents() {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("students")
-      .select("*, programs(name), classes(name), devices(device_id)")
+      .select("*, programs(name), classes(name), devices:assigned_device_id(device_id)")
       .order("created_at", { ascending: false });
+    if (error) console.error("fetchStudents error:", error);
     setStudents((data as Student[]) ?? []);
   }
 
