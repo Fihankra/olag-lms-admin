@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle, RefreshCw, Trash2 } from "lucide-react";
 import * as XLSX from "xlsx";
 import { supabase } from "../integrations/supabase/client";
 
