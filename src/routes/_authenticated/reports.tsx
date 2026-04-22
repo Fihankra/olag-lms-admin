@@ -945,31 +945,39 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
                   <span className="text-xs font-medium text-muted-foreground">Version {entries.length - idx}</span>
                   <span className="text-[11px] sm:text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>
-                    <span className="text-muted-foreground">Kiosk: </span>
-                    <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
-                      {entry.kiosk_status === false ? "Off" : "On"}
-                    </span>
+                <div className="space-y-1">
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                      <span className="text-muted-foreground">Kiosk: </span>
+                      <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                        {entry.kiosk_status === false ? "Off" : "On"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Condition: </span>
+                      <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                        {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Missing: </span>
+                      <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                        {entry.missing_status ? "Yes" : "No"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">LMS: </span>
+                      <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                        {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-muted-foreground">Condition: </span>
-                    <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
-                      {entry.device_condition === "faulty" ? "Faulty" : "Good"}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">Missing: </span>
-                    <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
-                      {entry.missing_status ? "Yes" : "No"}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">LMS: </span>
-                    <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
-                      {entry.lms_status === "inactive" ? "Inactive" : "Active"}
-                    </span>
-                  </div>
+                  {entry.device_condition === "faulty" && entry.fault_description && (
+                    <p className="text-[11px] text-muted-foreground">Fault: {entry.fault_description}</p>
+                  )}
+                  {entry.missing_status && (entry.missing_accessories as string[])?.length > 0 && (
+                    <p className="text-[11px] text-muted-foreground">Missing: {(entry.missing_accessories as string[]).join(", ")}</p>
+                  )}
                 </div>
               </div>
             ))}
