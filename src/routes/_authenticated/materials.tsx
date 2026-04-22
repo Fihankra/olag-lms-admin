@@ -277,7 +277,10 @@ function MaterialsPage() {
                   <Icon className="h-5 w-5 text-muted-foreground shrink-0" />
                   <div className="flex-1 min-w-0">
                     <a href={file.file_url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground hover:underline truncate block">{file.file_name}</a>
-                    <span className="text-xs text-muted-foreground">{formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}
+                      {isAdmin && ` · by ${creatorName(file.created_by)}`}
+                    </span>
                   </div>
                   {canManageFile(file) && (
                     <button onClick={() => deleteFile(file)} className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors" title="Delete file">
