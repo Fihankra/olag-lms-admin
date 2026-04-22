@@ -24,7 +24,9 @@ type Report = {
   week_start: string;
   kiosk_status: boolean | null;
   device_condition: string | null;
+  fault_description: string | null;
   missing_status: boolean | null;
+  missing_accessories: string[] | null;
   lms_status: string | null;
   created_at: string;
   teachers?: { name: string } | null;
@@ -36,7 +38,9 @@ type HistoryEntry = {
   id: string;
   kiosk_status: boolean | null;
   device_condition: string | null;
+  fault_description: string | null;
   missing_status: boolean | null;
+  missing_accessories: string[] | null;
   lms_status: string | null;
   changed_at: string;
 };
@@ -53,9 +57,14 @@ type StudentDevice = {
 type ChecklistRow = {
   kiosk_status: string;
   device_condition: string;
+  fault_description: string;
   missing_status: string;
+  missing_accessories: string[];
   lms_status: string;
 };
+
+const ACCESSORY_OPTIONS = ["Charger", "Mouse", "Keyboard", "Cover", "Other"] as const;
+const FAULT_OPTIONS = ["Cracked Screen", "Battery Issue", "Not Powering On", "Speaker/Mic Issue", "Charging Port Damaged", "Software Issue", "Other"] as const;
 
 function getWeekStart(d: Date, startDay: number): string {
   const date = new Date(d);
@@ -70,7 +79,9 @@ function getWeekStart(d: Date, startDay: number): string {
 const DEFAULT_ROW: ChecklistRow = {
   kiosk_status: "true",
   device_condition: "good",
+  fault_description: "",
   missing_status: "false",
+  missing_accessories: [],
   lms_status: "active",
 };
 
@@ -206,7 +217,9 @@ function ReportsPage() {
         newChecklist[sd.deviceUuid] = {
           kiosk_status: r.kiosk_status === true ? "true" : "false",
           device_condition: r.device_condition ?? "good",
+          fault_description: r.fault_description ?? "",
           missing_status: r.missing_status === true ? "true" : "false",
+          missing_accessories: (r.missing_accessories as string[]) ?? [],
           lms_status: r.lms_status ?? "active",
         };
       } else {
@@ -231,11 +244,22 @@ function ReportsPage() {
     return map;
   }, [reports]);
 
-  function updateRow(deviceUuid: string, field: keyof ChecklistRow, value: string) {
+  function updateRow(deviceUuid: string, field: keyof ChecklistRow, value: string | string[]) {
     setChecklist((prev) => ({
       ...prev,
       [deviceUuid]: { ...(prev[deviceUuid] ?? { ...DEFAULT_ROW }), [field]: value },
     }));
+  }
+
+  function toggleAccessory(deviceUuid: string, accessory: string) {
+    setChecklist((prev) => {
+      const row = prev[deviceUuid] ?? { ...DEFAULT_ROW };
+      const current = row.missing_accessories ?? [];
+      const next = current.includes(accessory)
+        ? current.filter((a) => a !== accessory)
+        : [...current, accessory];
+      return { ...prev, [deviceUuid]: { ...row, missing_accessories: next } };
+    });
   }
 
   async function submitAll() {
@@ -250,7 +274,9 @@ function ReportsPage() {
         device_id: sd.deviceUuid,
         kiosk_status: row.kiosk_status === "true",
         device_condition: row.device_condition,
+        fault_description: row.device_condition === "faulty" ? (row.fault_description || null) : null,
         missing_status: row.missing_status === "true",
+        missing_accessories: row.missing_accessories ?? [],
         lms_status: row.lms_status,
       };
     });
@@ -284,7 +310,7 @@ function ReportsPage() {
     setHistoryLoading(true);
     const { data } = await supabase
       .from("report_history")
-      .select("id, kiosk_status, device_condition, missing_status, lms_status, changed_at")
+      .select("id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status, changed_at")
       .eq("report_id", reportId)
       .order("changed_at", { ascending: false });
     setHistoryEntries((data as HistoryEntry[]) ?? []);
@@ -429,70 +455,101 @@ function ReportsPage() {
                     </div>
 
                     {canEdit ? (
-                      <div className="grid grid-cols-2 gap-2">
-                        <label className="space-y-1">
-                          <span className="text-[11px] text-muted-foreground">Kiosk</span>
-                          <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="true">On</option>
-                            <option value="false">Off</option>
-                          </select>
-                        </label>
-                        <label className="space-y-1">
-                          <span className="text-[11px] text-muted-foreground">Condition</span>
-                          <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="good">Good</option>
-                            <option value="faulty">Faulty</option>
-                          </select>
-                        </label>
-                        <label className="space-y-1">
-                          <span className="text-[11px] text-muted-foreground">Missing</span>
-                          <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                          </select>
-                        </label>
-                        <label className="space-y-1">
-                          <span className="text-[11px] text-muted-foreground">LMS</span>
-                          <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                          </select>
-                        </label>
+                      <div className="space-y-2">
+                        <div className="grid grid-cols-2 gap-2">
+                          <label className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">Kiosk</span>
+                            <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                              <option value="true">On</option>
+                              <option value="false">Off</option>
+                            </select>
+                          </label>
+                          <label className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">Condition</span>
+                            <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                              <option value="good">Good</option>
+                              <option value="faulty">Faulty</option>
+                            </select>
+                          </label>
+                          <label className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">Missing</span>
+                            <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                              <option value="false">No</option>
+                              <option value="true">Yes</option>
+                            </select>
+                          </label>
+                          <label className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">LMS</span>
+                            <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                              <option value="active">Active</option>
+                              <option value="inactive">Inactive</option>
+                            </select>
+                          </label>
+                        </div>
+                        {isFaulty && (
+                          <div className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">Fault Type</span>
+                            <select value={row.fault_description} onChange={(e) => updateRow(sd.deviceUuid, "fault_description", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                              <option value="">Select fault…</option>
+                              {FAULT_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
+                            </select>
+                          </div>
+                        )}
+                        {isMissing && (
+                          <div className="space-y-1">
+                            <span className="text-[11px] text-muted-foreground">Missing Accessories</span>
+                            <div className="flex flex-wrap gap-1.5">
+                              {ACCESSORY_OPTIONS.map((acc) => (
+                                <button key={acc} type="button" onClick={() => toggleAccessory(sd.deviceUuid, acc)}
+                                  className={`px-2 py-1 rounded text-[11px] font-medium transition-colors ${row.missing_accessories.includes(acc) ? "bg-destructive/20 text-destructive border border-destructive/30" : "bg-muted text-muted-foreground border border-border"}`}
+                                >{acc}</button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ) : (
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
-                        <div className="flex items-center justify-between">
-                          <span className="text-muted-foreground">Kiosk</span>
-                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
-                            <span className="text-amber-400">Off</span>
-                          ) : (
-                            <span className="text-emerald-400">On</span>
-                          )}
+                      <div className="space-y-1">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                          <div className="flex items-center justify-between">
+                            <span className="text-muted-foreground">Kiosk</span>
+                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
+                              <span className="text-amber-400">Off</span>
+                            ) : (
+                              <span className="text-emerald-400">On</span>
+                            )}
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-muted-foreground">Condition</span>
+                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
+                              <span className="text-destructive font-medium">Faulty</span>
+                            ) : (
+                              <span className="text-emerald-400">Good</span>
+                            )}
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-muted-foreground">Missing</span>
+                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
+                              <span className="text-destructive font-medium">Yes</span>
+                            ) : (
+                              <span className="text-emerald-400">No</span>
+                            )}
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-muted-foreground">LMS</span>
+                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
+                              <span className="text-amber-400">Inactive</span>
+                            ) : (
+                              <span className="text-emerald-400">Active</span>
+                            )}
+                          </div>
                         </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-muted-foreground">Condition</span>
-                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
-                            <span className="text-destructive font-medium">Faulty</span>
-                          ) : (
-                            <span className="text-emerald-400">Good</span>
-                          )}
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-muted-foreground">Missing</span>
-                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
-                            <span className="text-destructive font-medium">Yes</span>
-                          ) : (
-                            <span className="text-emerald-400">No</span>
-                          )}
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-muted-foreground">LMS</span>
-                          {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
-                            <span className="text-amber-400">Inactive</span>
-                          ) : (
-                            <span className="text-emerald-400">Active</span>
-                          )}
-                        </div>
+                        {hasReport && report.device_condition === "faulty" && report.fault_description && (
+                          <p className="text-[11px] text-destructive">Fault: {report.fault_description}</p>
+                        )}
+                        {hasReport && report.missing_status && (report.missing_accessories as string[])?.length > 0 && (
+                          <p className="text-[11px] text-destructive">Missing: {(report.missing_accessories as string[]).join(", ")}</p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -543,16 +600,35 @@ function ReportsPage() {
                               </select>
                             </td>
                             <td className="px-4 py-2">
-                              <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                                <option value="good">Good</option>
-                                <option value="faulty">Faulty</option>
-                              </select>
+                              <div className="space-y-1">
+                                <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                  <option value="good">Good</option>
+                                  <option value="faulty">Faulty</option>
+                                </select>
+                                {isFaulty && (
+                                  <select value={row.fault_description} onChange={(e) => updateRow(sd.deviceUuid, "fault_description", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                    <option value="">Select fault…</option>
+                                    {FAULT_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
+                                  </select>
+                                )}
+                              </div>
                             </td>
                             <td className="px-4 py-2">
-                              <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
-                                <option value="false">No</option>
-                                <option value="true">Yes</option>
-                              </select>
+                              <div className="space-y-1">
+                                <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                  <option value="false">No</option>
+                                  <option value="true">Yes</option>
+                                </select>
+                                {isMissing && (
+                                  <div className="flex flex-wrap gap-1">
+                                    {ACCESSORY_OPTIONS.map((acc) => (
+                                      <button key={acc} type="button" onClick={() => toggleAccessory(sd.deviceUuid, acc)}
+                                        className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${row.missing_accessories.includes(acc) ? "bg-destructive/20 text-destructive border border-destructive/30" : "bg-muted text-muted-foreground border border-border"}`}
+                                      >{acc}</button>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             </td>
                             <td className="px-4 py-2">
                               <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
@@ -572,14 +648,22 @@ function ReportsPage() {
                             </td>
                             <td className="px-4 py-3">
                               {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
-                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                                <div>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                                  {report.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{report.fault_description}</p>}
+                                </div>
                               ) : (
                                 <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
                               )}
                             </td>
                             <td className="px-4 py-3">
                               {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
-                                <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                                <div>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                                  {(report.missing_accessories as string[])?.length > 0 && (
+                                    <p className="text-[11px] text-muted-foreground mt-0.5">{(report.missing_accessories as string[]).join(", ")}</p>
+                                  )}
+                                </div>
                               ) : (
                                 <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
                               )}
@@ -697,39 +781,47 @@ function ReportsPage() {
                       <History className="h-3.5 w-3.5" />
                     </button>
                   </div>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Kiosk</span>
-                      {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
-                        <span className="text-amber-400">Off</span>
-                      ) : (
-                        <span className="text-emerald-400">On</span>
-                      )}
+                  <div className="space-y-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Kiosk</span>
+                        {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
+                          <span className="text-amber-400">Off</span>
+                        ) : (
+                          <span className="text-emerald-400">On</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Condition</span>
+                        {isFaulty ? (
+                          <span className="text-destructive font-medium">Faulty</span>
+                        ) : (
+                          <span className="text-emerald-400">Good</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Missing</span>
+                        {isMissing ? (
+                          <span className="text-destructive font-medium">Yes</span>
+                        ) : (
+                          <span className="text-emerald-400">No</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">LMS</span>
+                        {r.lms_status === "inactive" ? (
+                          <span className="text-amber-400">Inactive</span>
+                        ) : (
+                          <span className="text-emerald-400">Active</span>
+                        )}
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Condition</span>
-                      {isFaulty ? (
-                        <span className="text-destructive font-medium">Faulty</span>
-                      ) : (
-                        <span className="text-emerald-400">Good</span>
-                      )}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Missing</span>
-                      {isMissing ? (
-                        <span className="text-destructive font-medium">Yes</span>
-                      ) : (
-                        <span className="text-emerald-400">No</span>
-                      )}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">LMS</span>
-                      {r.lms_status === "inactive" ? (
-                        <span className="text-amber-400">Inactive</span>
-                      ) : (
-                        <span className="text-emerald-400">Active</span>
-                      )}
-                    </div>
+                    {isFaulty && r.fault_description && (
+                      <p className="text-[11px] text-destructive">Fault: {r.fault_description}</p>
+                    )}
+                    {isMissing && (r.missing_accessories as string[])?.length > 0 && (
+                      <p className="text-[11px] text-destructive">Missing: {(r.missing_accessories as string[]).join(", ")}</p>
+                    )}
                   </div>
                 </div>
               );
@@ -769,14 +861,22 @@ function ReportsPage() {
                       </td>
                       <td className="px-4 py-3">
                         {isFaulty ? (
-                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                          <div>
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                            {r.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{r.fault_description}</p>}
+                          </div>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
                         )}
                       </td>
                       <td className="px-4 py-3">
                         {isMissing ? (
-                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                          <div>
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                            {(r.missing_accessories as string[])?.length > 0 && (
+                              <p className="text-[11px] text-muted-foreground mt-0.5">{(r.missing_accessories as string[]).join(", ")}</p>
+                            )}
+                          </div>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
                         )}
@@ -845,31 +945,39 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
                   <span className="text-xs font-medium text-muted-foreground">Version {entries.length - idx}</span>
                   <span className="text-[11px] sm:text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>
-                    <span className="text-muted-foreground">Kiosk: </span>
-                    <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
-                      {entry.kiosk_status === false ? "Off" : "On"}
-                    </span>
+                <div className="space-y-1">
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                      <span className="text-muted-foreground">Kiosk: </span>
+                      <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                        {entry.kiosk_status === false ? "Off" : "On"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Condition: </span>
+                      <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                        {entry.device_condition === "faulty" ? "Faulty" : "Good"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Missing: </span>
+                      <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                        {entry.missing_status ? "Yes" : "No"}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">LMS: </span>
+                      <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                        {entry.lms_status === "inactive" ? "Inactive" : "Active"}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-muted-foreground">Condition: </span>
-                    <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
-                      {entry.device_condition === "faulty" ? "Faulty" : "Good"}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">Missing: </span>
-                    <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
-                      {entry.missing_status ? "Yes" : "No"}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">LMS: </span>
-                    <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
-                      {entry.lms_status === "inactive" ? "Inactive" : "Active"}
-                    </span>
-                  </div>
+                  {entry.device_condition === "faulty" && entry.fault_description && (
+                    <p className="text-[11px] text-muted-foreground">Fault: {entry.fault_description}</p>
+                  )}
+                  {entry.missing_status && (entry.missing_accessories as string[])?.length > 0 && (
+                    <p className="text-[11px] text-muted-foreground">Missing: {(entry.missing_accessories as string[]).join(", ")}</p>
+                  )}
                 </div>
               </div>
             ))}
