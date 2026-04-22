@@ -4,6 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
+import { ExcelImport } from "../../components/ExcelImport";
 
 export const Route = createFileRoute("/_authenticated/classes")({
   component: ClassesPage,
@@ -68,7 +69,10 @@ function ClassesPage() {
         title="Classes"
         description="Manage classes linked to programs"
         actions={
-          <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Class</button>
+          <div className="flex items-center gap-2">
+            <ExcelImport entity="classes" onImportComplete={fetchClasses} />
+            <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Class</button>
+          </div>
         }
       />
       <DataTable data={classes as Record<string, unknown>[]} columns={columns as any} />

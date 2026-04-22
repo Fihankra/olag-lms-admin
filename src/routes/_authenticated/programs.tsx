@@ -4,6 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
+import { ExcelImport } from "../../components/ExcelImport";
 
 export const Route = createFileRoute("/_authenticated/programs")({
   component: ProgramsPage,
@@ -65,7 +66,10 @@ function ProgramsPage() {
         title="Programs"
         description="Manage academic programs"
         actions={
-          <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Program</button>
+          <div className="flex items-center gap-2">
+            <ExcelImport entity="programs" onImportComplete={fetchPrograms} />
+            <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Program</button>
+          </div>
         }
       />
       <DataTable data={programs as Record<string, unknown>[]} columns={columns as any} />
