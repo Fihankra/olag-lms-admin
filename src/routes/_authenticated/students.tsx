@@ -173,6 +173,14 @@ function StudentsPage() {
   useEffect(() => {
     fetchStudents();
     fetchMeta();
+
+    const channel = supabase
+      .channel("meta-realtime")
+      .on("postgres_changes", { event: "*", schema: "public", table: "programs" }, () => fetchMeta())
+      .on("postgres_changes", { event: "*", schema: "public", table: "classes" }, () => fetchMeta())
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
   }, []);
 
   function openAdd() {
