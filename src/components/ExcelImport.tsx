@@ -570,7 +570,9 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                   }`}
                 >
                   {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
-                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
+                  {importing && progress
+                    ? `${progress.done} / ${progress.total} rows (${progress.total - progress.done} left)`
+                    : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
                 </button>
               </div>
             </div>
