@@ -173,15 +173,26 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
   });
 }
 
-async function processImport(entity: EntityType, rows: Record<string, string>[]): Promise<ImportResult> {
+async function processImport(
+  entity: EntityType,
+  rows: Record<string, string>[],
+  onProgress?: (done: number, total: number) => void,
+): Promise<ImportResult> {
   const result: ImportResult = { success: 0, errors: [] };
+  const total = rows.length;
+  const BATCH_SIZE = 50;
+
+  function reportProgress() {
+    onProgress?.(result.success + result.errors.length, total);
+  }
 
   if (entity === "programs") {
     for (const row of rows) {
-      if (!row.name?.trim()) { result.errors.push("Missing name"); continue; }
+      if (!row.name?.trim()) { result.errors.push("Missing name"); reportProgress(); continue; }
       const { error } = await supabase.from("programs").insert({ name: row.name.trim(), description: row.description?.trim() || null });
       if (error) result.errors.push(`"${row.name}": ${error.message}`);
       else result.success++;
+      reportProgress();
     }
   }
 
@@ -189,12 +200,13 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
     const { data: programs } = await supabase.from("programs").select("id, name");
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
     for (const row of rows) {
-      if (!row.name?.trim()) { result.errors.push("Missing name"); continue; }
+      if (!row.name?.trim()) { result.errors.push("Missing name"); reportProgress(); continue; }
       const programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "");
-      if (!programId) { result.errors.push(`"${row.name}": program "${row.program_name}" not found`); continue; }
+      if (!programId) { result.errors.push(`"${row.name}": program "${row.program_name}" not found`); reportProgress(); continue; }
       const { error } = await supabase.from("classes").insert({ name: row.name.trim(), program_id: programId });
       if (error) result.errors.push(`"${row.name}": ${error.message}`);
       else result.success++;
+      reportProgress();
     }
   }
 
@@ -205,43 +217,63 @@ async function processImport(entity: EntityType, rows: Record<string, string>[])
     ]);
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
     const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, programId: (c as any).program_id as string }]));
-    for (const row of rows) {
-      if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
-      const genderVal = row.gender?.trim();
-      const formVal = row.form?.trim();
-      const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
-      const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
-      const classEntry = classMap.get(row.class_name?.trim().toLowerCase() ?? "");
-      let programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null;
-      if (!programId && classEntry?.programId) programId = classEntry.programId;
-      const { error } = await supabase.from("students").insert({
-        student_id: row.student_id.trim(),
-        name: row.name.trim(),
-        program_id: programId,
-        class_id: classEntry?.id ?? null,
-        gender: validGender,
-        form: validForm,
-      } as any);
-      if (error) result.errors.push(`"${row.student_id}": ${error.message}`);
-      else result.success++;
+
+    for (let i = 0; i < rows.length; i += BATCH_SIZE) {
+      const batch = rows.slice(i, i + BATCH_SIZE);
+      const inserts: any[] = [];
+      for (const row of batch) {
+        if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
+        const genderVal = row.gender?.trim();
+        const formVal = row.form?.trim();
+        const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
+        const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
+        const classEntry = classMap.get(row.class_name?.trim().toLowerCase() ?? "");
+        let programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null;
+        if (!programId && classEntry?.programId) programId = classEntry.programId;
+        inserts.push({
+          student_id: row.student_id.trim(),
+          name: row.name.trim(),
+          program_id: programId,
+          class_id: classEntry?.id ?? null,
+          gender: validGender,
+          form: validForm,
+        });
+      }
+      if (inserts.length > 0) {
+        const { error, data } = await supabase.from("students").insert(inserts).select("id");
+        if (error) {
+          // Fallback: insert one by one
+          for (const ins of inserts) {
+            const { error: e2 } = await supabase.from("students").insert(ins);
+            if (e2) result.errors.push(`"${ins.student_id}": ${e2.message}`);
+            else result.success++;
+            reportProgress();
+          }
+        } else {
+          result.success += data?.length ?? inserts.length;
+          reportProgress();
+        }
+      }
     }
   }
 
   if (entity === "devices") {
     for (const row of rows) {
-      if (!row.device_id?.trim()) { result.errors.push("Missing device_id"); continue; }
+      if (!row.device_id?.trim()) { result.errors.push("Missing device_id"); reportProgress(); continue; }
       const { error } = await supabase.from("devices").insert({ device_id: row.device_id.trim() });
       if (error) result.errors.push(`"${row.device_id}": ${error.message}`);
       else result.success++;
+      reportProgress();
     }
   }
 
   if (entity === "teachers") {
     for (const row of rows) {
-      if (!row.teacher_id?.trim() || !row.name?.trim()) { result.errors.push("Missing teacher_id or name"); continue; }
+      if (!row.teacher_id?.trim() || !row.name?.trim()) { result.errors.push("Missing teacher_id or name"); reportProgress(); continue; }
       const { error } = await supabase.from("teachers").insert({ teacher_id: row.teacher_id.trim(), name: row.name.trim(), approved: true });
       if (error) result.errors.push(`"${row.teacher_id}": ${error.message}`);
       else result.success++;
+      reportProgress();
     }
   }
 
@@ -287,6 +319,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const [loading, setLoading] = useState(false);
   const [resetMode, setResetMode] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const resetFileRef = useRef<HTMLInputElement>(null);
 
@@ -326,6 +359,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
   async function confirmImport() {
     setImporting(true);
+    setProgress({ done: 0, total: rawRows.length });
     const allErrors: string[] = [];
 
     if (resetMode) {
@@ -336,16 +370,20 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
         setPreview(null);
         setRawRows([]);
         setImporting(false);
+        setProgress(null);
         return;
       }
     }
 
-    const importResult = await processImport(entity, rawRows);
+    const importResult = await processImport(entity, rawRows, (done, total) => {
+      setProgress({ done, total });
+    });
     importResult.errors = [...allErrors, ...importResult.errors];
     setResult(importResult);
     setPreview(null);
     setRawRows([]);
     setImporting(false);
+    setProgress(null);
     if (importResult.success > 0) onImportComplete();
   }
 
@@ -532,7 +570,9 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                   }`}
                 >
                   {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
-                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
+                  {importing && progress
+                    ? `${progress.done} / ${progress.total} rows (${progress.total - progress.done} left)`
+                    : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
                 </button>
               </div>
             </div>

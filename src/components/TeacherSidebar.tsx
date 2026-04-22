@@ -7,9 +7,12 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth";
+import { useTheme } from "../hooks/use-theme";
 
 interface TeacherSidebarProps {
   onNavigate?: () => void;
@@ -19,6 +22,7 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const { logout, user, teacherRecord } = useAuth();
+  const { theme, toggle: toggleTheme } = useTheme();
 
   const isFormMaster = !!teacherRecord?.assigned_class_id;
 
@@ -63,6 +67,13 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
         {!collapsed && user && (
           <p className="text-xs text-muted-foreground truncate">{user.email}</p>
         )}
+        <button
+          onClick={toggleTheme}
+          className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
+        >
+          {theme === "dark" ? <Sun className="h-4 w-4 shrink-0" /> : <Moon className="h-4 w-4 shrink-0" />}
+          {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
+        </button>
         <button
           onClick={() => logout()}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-destructive transition-colors w-full"
