@@ -781,39 +781,47 @@ function ReportsPage() {
                       <History className="h-3.5 w-3.5" />
                     </button>
                   </div>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Kiosk</span>
-                      {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
-                        <span className="text-amber-400">Off</span>
-                      ) : (
-                        <span className="text-emerald-400">On</span>
-                      )}
+                  <div className="space-y-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Kiosk</span>
+                        {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
+                          <span className="text-amber-400">Off</span>
+                        ) : (
+                          <span className="text-emerald-400">On</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Condition</span>
+                        {isFaulty ? (
+                          <span className="text-destructive font-medium">Faulty</span>
+                        ) : (
+                          <span className="text-emerald-400">Good</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Missing</span>
+                        {isMissing ? (
+                          <span className="text-destructive font-medium">Yes</span>
+                        ) : (
+                          <span className="text-emerald-400">No</span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">LMS</span>
+                        {r.lms_status === "inactive" ? (
+                          <span className="text-amber-400">Inactive</span>
+                        ) : (
+                          <span className="text-emerald-400">Active</span>
+                        )}
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Condition</span>
-                      {isFaulty ? (
-                        <span className="text-destructive font-medium">Faulty</span>
-                      ) : (
-                        <span className="text-emerald-400">Good</span>
-                      )}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Missing</span>
-                      {isMissing ? (
-                        <span className="text-destructive font-medium">Yes</span>
-                      ) : (
-                        <span className="text-emerald-400">No</span>
-                      )}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">LMS</span>
-                      {r.lms_status === "inactive" ? (
-                        <span className="text-amber-400">Inactive</span>
-                      ) : (
-                        <span className="text-emerald-400">Active</span>
-                      )}
-                    </div>
+                    {isFaulty && r.fault_description && (
+                      <p className="text-[11px] text-destructive">Fault: {r.fault_description}</p>
+                    )}
+                    {isMissing && (r.missing_accessories as string[])?.length > 0 && (
+                      <p className="text-[11px] text-destructive">Missing: {(r.missing_accessories as string[]).join(", ")}</p>
+                    )}
                   </div>
                 </div>
               );
