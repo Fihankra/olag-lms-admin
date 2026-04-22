@@ -861,14 +861,22 @@ function ReportsPage() {
                       </td>
                       <td className="px-4 py-3">
                         {isFaulty ? (
-                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                          <div>
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
+                            {r.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{r.fault_description}</p>}
+                          </div>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
                         )}
                       </td>
                       <td className="px-4 py-3">
                         {isMissing ? (
-                          <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                          <div>
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                            {(r.missing_accessories as string[])?.length > 0 && (
+                              <p className="text-[11px] text-muted-foreground mt-0.5">{(r.missing_accessories as string[]).join(", ")}</p>
+                            )}
+                          </div>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
                         )}
