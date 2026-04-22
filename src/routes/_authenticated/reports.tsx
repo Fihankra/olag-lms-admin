@@ -244,11 +244,22 @@ function ReportsPage() {
     return map;
   }, [reports]);
 
-  function updateRow(deviceUuid: string, field: keyof ChecklistRow, value: string) {
+  function updateRow(deviceUuid: string, field: keyof ChecklistRow, value: string | string[]) {
     setChecklist((prev) => ({
       ...prev,
       [deviceUuid]: { ...(prev[deviceUuid] ?? { ...DEFAULT_ROW }), [field]: value },
     }));
+  }
+
+  function toggleAccessory(deviceUuid: string, accessory: string) {
+    setChecklist((prev) => {
+      const row = prev[deviceUuid] ?? { ...DEFAULT_ROW };
+      const current = row.missing_accessories ?? [];
+      const next = current.includes(accessory)
+        ? current.filter((a) => a !== accessory)
+        : [...current, accessory];
+      return { ...prev, [deviceUuid]: { ...row, missing_accessories: next } };
+    });
   }
 
   async function submitAll() {
