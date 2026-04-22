@@ -5,7 +5,9 @@ type DeviceReportEntry = {
   device_id: string;
   kiosk_status: boolean;
   device_condition: string;
+  fault_description: string | null;
   missing_status: boolean;
+  missing_accessories: string[];
   lms_status: string;
 };
 
@@ -36,7 +38,7 @@ export const submitBatchReport = createServerFn({ method: "POST" })
     // Fetch existing reports for this class/week
     const { data: existingReports } = await supabase
       .from("reports")
-      .select("id, device_id, kiosk_status, device_condition, missing_status, lms_status")
+      .select("id, device_id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status")
       .eq("class_id", teacher.assigned_class_id)
       .eq("week_start", data.week_start)
       .eq("teacher_id", teacher.id);
@@ -51,11 +53,12 @@ export const submitBatchReport = createServerFn({ method: "POST" })
     for (const entry of data.entries) {
       const existing = existingMap.get(entry.device_id);
       if (existing) {
-        // Check if anything changed
         const changed =
           existing.kiosk_status !== entry.kiosk_status ||
           existing.device_condition !== entry.device_condition ||
+          existing.fault_description !== (entry.fault_description || null) ||
           existing.missing_status !== entry.missing_status ||
+          JSON.stringify(existing.missing_accessories ?? []) !== JSON.stringify(entry.missing_accessories ?? []) ||
           existing.lms_status !== entry.lms_status;
         if (changed) {
           toUpdate.push({ id: existing.id, entry, old: existing });
@@ -68,7 +71,9 @@ export const submitBatchReport = createServerFn({ method: "POST" })
           week_start: data.week_start,
           kiosk_status: entry.kiosk_status,
           device_condition: entry.device_condition,
+          fault_description: entry.fault_description || null,
           missing_status: entry.missing_status,
+          missing_accessories: entry.missing_accessories ?? [],
           lms_status: entry.lms_status,
         });
       }
@@ -86,7 +91,9 @@ export const submitBatchReport = createServerFn({ method: "POST" })
         report_id: item.id,
         kiosk_status: item.old.kiosk_status,
         device_condition: item.old.device_condition,
+        fault_description: item.old.fault_description,
         missing_status: item.old.missing_status,
+        missing_accessories: item.old.missing_accessories,
         lms_status: item.old.lms_status,
         changed_by: userId,
       });
@@ -96,7 +103,9 @@ export const submitBatchReport = createServerFn({ method: "POST" })
         .update({
           kiosk_status: item.entry.kiosk_status,
           device_condition: item.entry.device_condition,
+          fault_description: item.entry.fault_description || null,
           missing_status: item.entry.missing_status,
+          missing_accessories: item.entry.missing_accessories ?? [],
           lms_status: item.entry.lms_status,
         })
         .eq("id", item.id)
