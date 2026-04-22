@@ -54,13 +54,11 @@ interface ImportResult {
   errors: string[];
 }
 
-// Preview row with resolved mappings
 interface PreviewRow {
   rowNum: number;
   fields: Record<string, { value: string; resolvedId?: string; resolvedLabel?: string; status: "ok" | "warn" | "error" }>;
 }
 
-// Keys that must be unique per entity
 const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
   students: ["student_id"],
   devices: ["device_id"],
@@ -82,7 +80,6 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name }]));
   }
 
-  // Build duplicate maps for unique keys
   const duplicates = new Map<string, Set<number>>();
   const uniqueKeys = UNIQUE_KEYS[entity] ?? [];
   for (const key of uniqueKeys) {
@@ -94,16 +91,6 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
       seen.get(val)!.push(i);
     });
     for (const [, indices] of seen) {
-      if (indices.length > 1) {
-        for (const idx of indices) {
-          const k = `${key}:${idx}`;
-          if (!duplicates.has(k)) duplicates.set(k, new Set());
-          duplicates.get(k)!.add(idx);
-        }
-      }
-    }
-    // store which values are duped for quick lookup
-    for (const [val, indices] of seen) {
       if (indices.length > 1) {
         for (const idx of indices) {
           duplicates.set(`${key}:${idx}`, new Set(indices));
@@ -247,7 +234,6 @@ const ENTITY_LABELS: Record<EntityType, string> = {
   teachers: "Teachers",
 };
 
-// Delete order matters due to foreign keys
 const DELETE_ORDER: Record<EntityType, EntityType[]> = {
   programs: ["students", "classes", "programs"],
   classes: ["students", "classes"],
@@ -361,24 +347,25 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
   const fieldHeaders = preview && preview.length > 0 ? Object.keys(preview[0].fields) : [];
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2">
+      {/* Icon-only on mobile, icon+text on sm+ */}
       <button
         onClick={() => downloadTemplate(entity)}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+        className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
         title="Download Excel template"
       >
-        <Download className="h-4 w-4" />
-        Template
+        <Download className="h-4 w-4 shrink-0" />
+        <span className="hidden sm:inline">Template</span>
       </button>
 
       <label
-        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+        className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
           loading ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
         }`}
         title="Import from Excel (append)"
       >
-        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
-        Import
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4 shrink-0" />}
+        <span className="hidden sm:inline">Import</span>
         <input
           ref={fileRef}
           type="file"
@@ -390,13 +377,13 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
       </label>
 
       <label
-        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+        className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
           loading ? "bg-muted text-muted-foreground" : "bg-destructive/10 text-destructive hover:bg-destructive/20"
         }`}
         title="Clear all existing records and reimport from file"
       >
-        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
-        Reset & Import
+        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4 shrink-0" />}
+        <span className="hidden sm:inline">Reset & Import</span>
         <input
           ref={resetFileRef}
           type="file"
@@ -409,15 +396,15 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       {/* Preview Modal */}
       {preview && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-3xl mx-4 max-h-[80vh] flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <FileSpreadsheet className="h-5 w-5 text-primary" />
-                <h2 className="text-lg font-semibold">Import Preview</h2>
-                <span className="text-xs text-muted-foreground">({preview.length} row{preview.length !== 1 ? "s" : ""})</span>
+        <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50">
+          <div className="bg-card rounded-t-lg sm:rounded-lg border border-border p-4 sm:p-6 w-full sm:max-w-3xl sm:mx-4 max-h-[90vh] sm:max-h-[80vh] flex flex-col">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center gap-2 min-w-0">
+                <FileSpreadsheet className="h-5 w-5 text-primary shrink-0" />
+                <h2 className="text-base sm:text-lg font-semibold truncate">Import Preview</h2>
+                <span className="text-xs text-muted-foreground shrink-0">({preview.length})</span>
               </div>
-              <button onClick={cancelPreview} className="text-muted-foreground hover:text-foreground">
+              <button onClick={cancelPreview} className="text-muted-foreground hover:text-foreground p-1">
                 <X className="h-4 w-4" />
               </button>
             </div>
@@ -460,26 +447,26 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-muted/50 sticky top-0">
-                    <th className="px-3 py-2 text-left text-xs font-medium text-muted-foreground">Row</th>
+                    <th className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground">Row</th>
                     {fieldHeaders.map((h) => (
-                      <th key={h} className="px-3 py-2 text-left text-xs font-medium text-muted-foreground">{h}</th>
+                      <th key={h} className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground whitespace-nowrap">{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {preview.map((row) => (
                     <tr key={row.rowNum} className="hover:bg-muted/30">
-                      <td className="px-3 py-2 text-xs text-muted-foreground">{row.rowNum}</td>
+                      <td className="px-2 sm:px-3 py-2 text-xs text-muted-foreground">{row.rowNum}</td>
                       {fieldHeaders.map((h) => {
                         const f = row.fields[h];
                         return (
-                          <td key={h} className="px-3 py-2">
+                          <td key={h} className="px-2 sm:px-3 py-2">
                             <div className="flex items-start gap-1.5">
                               {statusIcon(f.status)}
                               <div className="min-w-0">
                                 <span className="text-xs text-foreground">{f.value || <span className="text-muted-foreground italic">empty</span>}</span>
                                 {f.resolvedLabel && (
-                                  <p className={`text-[11px] mt-0.5 ${f.status === "ok" ? "text-emerald-400" : "text-destructive"}`}>
+                                  <p className={`text-[11px] mt-0.5 ${f.status === "ok" ? "text-emerald-400" : f.status === "warn" ? "text-amber-400" : "text-destructive"}`}>
                                     {f.resolvedLabel}
                                   </p>
                                 )}
@@ -489,7 +476,7 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                                 {!f.resolvedLabel && f.status === "error" && !f.value && (
                                   <p className="text-[11px] mt-0.5 text-destructive">Required field</p>
                                 )}
-                                {f.status === "warn" && !f.value && (
+                                {f.status === "warn" && !f.resolvedLabel && !f.value && (
                                   <p className="text-[11px] mt-0.5 text-amber-400">Optional — will be empty</p>
                                 )}
                               </div>
@@ -503,27 +490,27 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
               </table>
             </div>
 
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-3 sm:mt-4 gap-3">
               <p className="text-xs text-muted-foreground">
                 {hasErrors
                   ? "Fix errors in your spreadsheet and re-upload, or proceed with partial import."
                   : "All rows validated — ready to import."}
               </p>
-              <div className="flex gap-2">
-                <button onClick={cancelPreview} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
+              <div className="flex gap-2 w-full sm:w-auto">
+                <button onClick={cancelPreview} className="flex-1 sm:flex-initial px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
                   Cancel
                 </button>
                 <button
                   onClick={confirmImport}
                   disabled={importing || (resetMode && !confirmReset)}
-                  className={`flex items-center gap-1.5 px-4 py-2 text-sm rounded-md disabled:opacity-50 ${
+                  className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 text-sm rounded-md disabled:opacity-50 ${
                     resetMode
                       ? "bg-destructive text-destructive-foreground hover:bg-destructive/90"
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
                   {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
-                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}` : `Import ${preview.length} Row${preview.length !== 1 ? "s" : ""}`}
+                  {importing ? "Processing…" : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
                 </button>
               </div>
             </div>
@@ -533,14 +520,14 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       {/* Results Modal */}
       {result && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
+        <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50">
+          <div className="bg-card rounded-t-lg sm:rounded-lg border border-border p-4 sm:p-6 w-full sm:max-w-md sm:mx-4">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <FileSpreadsheet className="h-5 w-5 text-primary" />
-                <h2 className="text-lg font-semibold">Import Results</h2>
+                <h2 className="text-base sm:text-lg font-semibold">Import Results</h2>
               </div>
-              <button onClick={() => setResult(null)} className="text-muted-foreground hover:text-foreground">
+              <button onClick={() => setResult(null)} className="text-muted-foreground hover:text-foreground p-1">
                 <X className="h-4 w-4" />
               </button>
             </div>
