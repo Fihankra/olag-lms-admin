@@ -365,6 +365,33 @@ function StudentsPage() {
           disableStudentId
         />
       )}
+
+      {deletingStudent && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-sm mx-4">
+            <h2 className="text-lg font-semibold mb-2">Delete Student</h2>
+            <p className="text-sm text-muted-foreground mb-1">
+              Are you sure you want to delete this student?
+            </p>
+            <p className="text-sm font-medium text-foreground mb-4">
+              {deletingStudent.name} ({deletingStudent.student_id})
+            </p>
+            <div className="flex gap-2 justify-end">
+              <button onClick={() => setDeletingStudent(null)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
+              <button
+                onClick={async () => {
+                  const id = deletingStudent.id;
+                  setDeletingStudent(null);
+                  await deleteStudent(id);
+                }}
+                className="px-4 py-2 text-sm rounded-md bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div></AdminOnly>
   );
 }
