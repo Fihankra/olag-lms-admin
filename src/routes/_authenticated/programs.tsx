@@ -21,6 +21,7 @@ type Program = { id: string; name: string; description: string | null; created_a
 function ProgramsPage() {
   const [programs, setPrograms] = useState<Program[]>([]);
   const [showModal, setShowModal] = useState(false);
+  const [editProgram, setEditProgram] = useState<Program | null>(null);
   const [form, setForm] = useState({ name: "", description: "" });
 
   async function fetchPrograms() {
@@ -30,10 +31,26 @@ function ProgramsPage() {
 
   useEffect(() => { fetchPrograms(); }, []);
 
-  async function addProgram() {
-    if (!form.name.trim()) return;
-    await supabase.from("programs").insert({ name: form.name.trim(), description: form.description.trim() || null });
+  function openAdd() {
+    setEditProgram(null);
     setForm({ name: "", description: "" });
+    setShowModal(true);
+  }
+
+  function openEdit(p: Program) {
+    setEditProgram(p);
+    setForm({ name: p.name, description: p.description ?? "" });
+    setShowModal(true);
+  }
+
+  async function saveProgram() {
+    if (!form.name.trim()) return;
+    const payload = { name: form.name.trim(), description: form.description.trim() || null };
+    if (editProgram) {
+      await supabase.from("programs").update(payload).eq("id", editProgram.id);
+    } else {
+      await supabase.from("programs").insert(payload);
+    }
     setShowModal(false);
     fetchPrograms();
   }
@@ -55,7 +72,10 @@ function ProgramsPage() {
       key: "actions",
       label: "",
       render: (p: Program) => (
-        <button onClick={(e) => { e.stopPropagation(); deleteProgram(p.id); }} className="text-xs text-destructive hover:underline">Delete</button>
+        <div className="flex gap-2">
+          <button onClick={(e) => { e.stopPropagation(); openEdit(p); }} className="text-xs text-primary hover:underline">Edit</button>
+          <button onClick={(e) => { e.stopPropagation(); deleteProgram(p.id); }} className="text-xs text-destructive hover:underline">Delete</button>
+        </div>
       ),
     },
   ];
@@ -68,7 +88,7 @@ function ProgramsPage() {
         actions={
           <div className="flex items-center gap-2">
             <ExcelImport entity="programs" onImportComplete={fetchPrograms} />
-            <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Program</button>
+            <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Program</button>
           </div>
         }
       />
@@ -77,14 +97,16 @@ function ProgramsPage() {
       {showModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-4">Add Program</h2>
+            <h2 className="text-lg font-semibold mb-4">{editProgram ? "Edit Program" : "Add Program"}</h2>
             <div className="space-y-3">
               <input placeholder="Program Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm" />
               <textarea placeholder="Description (optional)" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm" rows={3} />
             </div>
             <div className="flex gap-2 justify-end mt-4">
               <button onClick={() => setShowModal(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={addProgram} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">Add</button>
+              <button onClick={saveProgram} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">
+                {editProgram ? "Save" : "Add"}
+              </button>
             </div>
           </div>
         </div>
