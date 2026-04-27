@@ -334,33 +334,36 @@ export type Database = {
       }
       quizzes: {
         Row: {
+          class_id: string | null
           created_at: string
           created_by: string | null
           description: string | null
           duration_minutes: number | null
-          group_id: string
+          group_id: string | null
           id: string
           is_published: boolean
           questions: Json
           title: string
         }
         Insert: {
+          class_id?: string | null
           created_at?: string
           created_by?: string | null
           description?: string | null
           duration_minutes?: number | null
-          group_id: string
+          group_id?: string | null
           id?: string
           is_published?: boolean
           questions?: Json
           title: string
         }
         Update: {
+          class_id?: string | null
           created_at?: string
           created_by?: string | null
           description?: string | null
           duration_minutes?: number | null
-          group_id?: string
+          group_id?: string | null
           id?: string
           is_published?: boolean
           questions?: Json
