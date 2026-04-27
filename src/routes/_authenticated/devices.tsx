@@ -45,7 +45,7 @@ function DevicesPage() {
   async function fetchDevices() {
     const { data, error } = await supabase
       .from("devices")
-      .select("*, students(name, student_id)")
+      .select("*, students!devices_assigned_student_id_fkey(name, student_id)")
       .order("created_at", { ascending: false });
     if (!toastResult(error)) return;
     setDevices((data as Device[]) ?? []);
