@@ -647,7 +647,7 @@ export type Database = {
     }
     Functions: {
       get_student_for_login: {
-        Args: { _student_id: string }
+        Args: { _device_id: string; _raw_password: string; _student_id: string }
         Returns: {
           assigned_device_id: string
           class_id: string
@@ -655,7 +655,6 @@ export type Database = {
           gender: Database["public"]["Enums"]["student_gender"]
           id: string
           name: string
-          password_hash: string
           program_id: string
           student_id: string
         }[]
