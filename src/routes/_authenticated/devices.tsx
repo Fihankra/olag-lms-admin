@@ -103,6 +103,22 @@ function DevicesPage() {
     fetchStudents();
   }
 
+  async function deleteDevice(device: Device) {
+    if (!confirm(`Delete device "${device.device_id}"? This will also remove its assignment.`)) return;
+    if (device.assigned_student_id) {
+      const { error: e1 } = await supabase
+        .from("students")
+        .update({ assigned_device_id: null })
+        .eq("id", device.assigned_student_id);
+      if (!toastResult(e1)) return;
+    }
+    const { error: e2 } = await supabase.from("devices").delete().eq("id", device.id);
+    if (!toastResult(e2)) return;
+    toastResult(null, "Device deleted");
+    fetchDevices();
+    fetchStudents();
+  }
+
   // Students not already assigned to a device
   const assignedStudentIds = useMemo(
     () => new Set(devices.filter((d) => d.assigned_student_id).map((d) => d.assigned_student_id!)),
