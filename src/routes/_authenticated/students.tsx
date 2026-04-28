@@ -153,6 +153,16 @@ function StudentsPage() {
   const [filterProgram, setFilterProgram] = useState("");
   const [deletingStudent, setDeletingStudent] = useState<Student | null>(null);
   const [filterClass, setFilterClass] = useState("");
+  const [revealedPasswords, setRevealedPasswords] = useState<Set<string>>(new Set());
+  const [showAllPasswords, setShowAllPasswords] = useState(false);
+
+  function togglePassword(id: string) {
+    setRevealedPasswords((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  }
 
   async function fetchStudents() {
     const { data, error } = await supabase
