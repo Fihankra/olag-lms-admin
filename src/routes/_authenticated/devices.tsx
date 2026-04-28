@@ -192,6 +192,19 @@ function DevicesPage() {
       render: (d: Device) =>
         d.last_seen ? new Date(d.last_seen).toLocaleString() : "—",
     },
+    {
+      key: "actions",
+      label: "",
+      render: (d: Device) => (
+        <button
+          onClick={(e) => { e.stopPropagation(); deleteDevice(d); }}
+          title="Delete device"
+          className="p-1 rounded hover:bg-destructive/10 text-destructive transition-colors"
+        >
+          <Trash2 className="h-4 w-4" />
+        </button>
+      ),
+    },
   ];
 
   const filters: { label: string; value: typeof filter }[] = [
