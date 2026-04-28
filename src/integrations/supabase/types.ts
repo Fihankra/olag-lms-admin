@@ -533,7 +533,7 @@ export type Database = {
           gender: Database["public"]["Enums"]["student_gender"] | null
           id: string
           name: string
-          password_hash: string | null
+          password: string | null
           program_id: string | null
           student_id: string
         }
@@ -545,7 +545,7 @@ export type Database = {
           gender?: Database["public"]["Enums"]["student_gender"] | null
           id?: string
           name: string
-          password_hash?: string | null
+          password?: string | null
           program_id?: string | null
           student_id: string
         }
@@ -557,7 +557,7 @@ export type Database = {
           gender?: Database["public"]["Enums"]["student_gender"] | null
           id?: string
           name?: string
-          password_hash?: string | null
+          password?: string | null
           program_id?: string | null
           student_id?: string
         }
@@ -656,7 +656,7 @@ export type Database = {
           gender: Database["public"]["Enums"]["student_gender"] | null
           id: string
           name: string
-          password_hash: string | null
+          password: string | null
           program_id: string | null
           student_id: string
         }[]

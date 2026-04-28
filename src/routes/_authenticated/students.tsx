@@ -5,7 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Eye, EyeOff } from "lucide-react";
 import { toastResult } from "../../lib/supabase-toast";
 
 
@@ -23,6 +23,7 @@ type Student = {
   id: string;
   student_id: string;
   name: string;
+  password?: string | null;
   program_id: string | null;
   class_id: string | null;
   assigned_device_id: string | null;
@@ -152,6 +153,16 @@ function StudentsPage() {
   const [filterProgram, setFilterProgram] = useState("");
   const [deletingStudent, setDeletingStudent] = useState<Student | null>(null);
   const [filterClass, setFilterClass] = useState("");
+  const [revealedPasswords, setRevealedPasswords] = useState<Set<string>>(new Set());
+  const [showAllPasswords, setShowAllPasswords] = useState(false);
+
+  function togglePassword(id: string) {
+    setRevealedPasswords((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  }
 
   async function fetchStudents() {
     const { data, error } = await supabase
@@ -252,6 +263,27 @@ function StudentsPage() {
     { key: "student_id", label: "Student ID" },
     { key: "name", label: "Name" },
     {
+      key: "password",
+      label: "Password",
+      render: (s: Student) => {
+        const revealed = showAllPasswords || revealedPasswords.has(s.id);
+        return (
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs">
+              {revealed ? (s.password ?? "—") : "••••••••"}
+            </span>
+            <button
+              onClick={(e) => { e.stopPropagation(); togglePassword(s.id); }}
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              title={revealed ? "Hide" : "Show"}
+            >
+              {revealed ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+            </button>
+          </div>
+        );
+      },
+    },
+    {
       key: "program_id",
       label: "Program",
       render: (s: Student) => s.programs?.name ?? <span className="text-muted-foreground">—</span>,
@@ -312,6 +344,14 @@ function StudentsPage() {
         description="Manage student records and device assignments"
         actions={
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowAllPasswords((v) => !v)}
+              className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-xs font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5"
+              title={showAllPasswords ? "Hide all passwords" : "Show all passwords"}
+            >
+              {showAllPasswords ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+              {showAllPasswords ? "Hide passwords" : "Show passwords"}
+            </button>
             <ExcelImport entity="students" onImportComplete={fetchStudents} />
             <button
               onClick={openAdd}
