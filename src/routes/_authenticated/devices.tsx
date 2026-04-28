@@ -4,7 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { StatusBadge } from "../../components/StatusBadge";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
-import { UserPlus, UserMinus } from "lucide-react";
+import { UserPlus, UserMinus, Trash2 } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { toastResult } from "../../lib/supabase-toast";
