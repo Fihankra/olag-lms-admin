@@ -344,6 +344,14 @@ function StudentsPage() {
         description="Manage student records and device assignments"
         actions={
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowAllPasswords((v) => !v)}
+              className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-xs font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5"
+              title={showAllPasswords ? "Hide all passwords" : "Show all passwords"}
+            >
+              {showAllPasswords ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+              {showAllPasswords ? "Hide passwords" : "Show passwords"}
+            </button>
             <ExcelImport entity="students" onImportComplete={fetchStudents} />
             <button
               onClick={openAdd}
