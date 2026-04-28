@@ -5,7 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Eye, EyeOff } from "lucide-react";
 import { toastResult } from "../../lib/supabase-toast";
 
 
