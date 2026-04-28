@@ -45,6 +45,7 @@ export type Database = {
       }
       devices: {
         Row: {
+          assigned_student_code: string | null
           assigned_student_id: string | null
           created_at: string
           device_id: string
@@ -55,6 +56,7 @@ export type Database = {
           network_status: string
         }
         Insert: {
+          assigned_student_code?: string | null
           assigned_student_id?: string | null
           created_at?: string
           device_id: string
@@ -65,6 +67,7 @@ export type Database = {
           network_status?: string
         }
         Update: {
+          assigned_student_code?: string | null
           assigned_student_id?: string | null
           created_at?: string
           device_id?: string
