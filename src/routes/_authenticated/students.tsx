@@ -23,6 +23,7 @@ type Student = {
   id: string;
   student_id: string;
   name: string;
+  password?: string | null;
   program_id: string | null;
   class_id: string | null;
   assigned_device_id: string | null;
