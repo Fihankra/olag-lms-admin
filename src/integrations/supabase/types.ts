@@ -646,6 +646,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_student_for_login: {
+        Args: { _student_id: string }
+        Returns: {
+          assigned_device_id: string
+          class_id: string
+          form: Database["public"]["Enums"]["student_form"]
+          gender: Database["public"]["Enums"]["student_gender"]
+          id: string
+          name: string
+          password_hash: string
+          program_id: string
+          student_id: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
