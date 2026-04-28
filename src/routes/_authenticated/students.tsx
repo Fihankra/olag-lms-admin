@@ -263,6 +263,27 @@ function StudentsPage() {
     { key: "student_id", label: "Student ID" },
     { key: "name", label: "Name" },
     {
+      key: "password",
+      label: "Password",
+      render: (s: Student) => {
+        const revealed = showAllPasswords || revealedPasswords.has(s.id);
+        return (
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs">
+              {revealed ? (s.password ?? "—") : "••••••••"}
+            </span>
+            <button
+              onClick={(e) => { e.stopPropagation(); togglePassword(s.id); }}
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              title={revealed ? "Hide" : "Show"}
+            >
+              {revealed ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+            </button>
+          </div>
+        );
+      },
+    },
+    {
       key: "program_id",
       label: "Program",
       render: (s: Student) => s.programs?.name ?? <span className="text-muted-foreground">—</span>,
