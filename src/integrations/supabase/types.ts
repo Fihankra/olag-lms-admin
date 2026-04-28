@@ -651,10 +651,12 @@ export type Database = {
         Returns: {
           assigned_device_id: string
           class_id: string
+          created_at: string
           form: Database["public"]["Enums"]["student_form"]
           gender: Database["public"]["Enums"]["student_gender"]
           id: string
           name: string
+          password_hash: string
           program_id: string
           student_id: string
         }[]
