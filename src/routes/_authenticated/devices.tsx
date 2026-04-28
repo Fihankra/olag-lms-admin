@@ -4,7 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { StatusBadge } from "../../components/StatusBadge";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
-import { UserPlus, UserMinus } from "lucide-react";
+import { UserPlus, UserMinus, Trash2 } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { toastResult } from "../../lib/supabase-toast";
@@ -103,6 +103,22 @@ function DevicesPage() {
     fetchStudents();
   }
 
+  async function deleteDevice(device: Device) {
+    if (!confirm(`Delete device "${device.device_id}"? This will also remove its assignment.`)) return;
+    if (device.assigned_student_id) {
+      const { error: e1 } = await supabase
+        .from("students")
+        .update({ assigned_device_id: null })
+        .eq("id", device.assigned_student_id);
+      if (!toastResult(e1)) return;
+    }
+    const { error: e2 } = await supabase.from("devices").delete().eq("id", device.id);
+    if (!toastResult(e2)) return;
+    toastResult(null, "Device deleted");
+    fetchDevices();
+    fetchStudents();
+  }
+
   // Students not already assigned to a device
   const assignedStudentIds = useMemo(
     () => new Set(devices.filter((d) => d.assigned_student_id).map((d) => d.assigned_student_id!)),
@@ -175,6 +191,19 @@ function DevicesPage() {
       label: "Last Seen",
       render: (d: Device) =>
         d.last_seen ? new Date(d.last_seen).toLocaleString() : "—",
+    },
+    {
+      key: "actions",
+      label: "",
+      render: (d: Device) => (
+        <button
+          onClick={(e) => { e.stopPropagation(); deleteDevice(d); }}
+          title="Delete device"
+          className="p-1 rounded hover:bg-destructive/10 text-destructive transition-colors"
+        >
+          <Trash2 className="h-4 w-4" />
+        </button>
+      ),
     },
   ];
 
