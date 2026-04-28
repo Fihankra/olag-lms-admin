@@ -74,7 +74,11 @@ function DevicesPage() {
 
 
   async function assignStudent(deviceId: string, studentId: string) {
-    const { error: e1 } = await supabase.from("devices").update({ assigned_student_id: studentId }).eq("id", deviceId);
+    const student = allStudents.find((s) => s.id === studentId);
+    const { error: e1 } = await supabase
+      .from("devices")
+      .update({ assigned_student_id: studentId, assigned_student_code: student?.student_id ?? null })
+      .eq("id", deviceId);
     if (!toastResult(e1)) return;
     const { error: e2 } = await supabase.from("students").update({ assigned_device_id: deviceId }).eq("id", studentId);
     if (!toastResult(e2)) return;
@@ -89,7 +93,10 @@ function DevicesPage() {
     if (!device.assigned_student_id) return;
     const { error: e1 } = await supabase.from("students").update({ assigned_device_id: null }).eq("id", device.assigned_student_id);
     if (!toastResult(e1)) return;
-    const { error: e2 } = await supabase.from("devices").update({ assigned_student_id: null }).eq("id", device.id);
+    const { error: e2 } = await supabase
+      .from("devices")
+      .update({ assigned_student_id: null, assigned_student_code: null })
+      .eq("id", device.id);
     if (!toastResult(e2)) return;
     toastResult(null, "Device unassigned");
     fetchDevices();
