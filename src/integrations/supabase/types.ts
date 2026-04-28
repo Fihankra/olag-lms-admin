@@ -647,7 +647,7 @@ export type Database = {
     }
     Functions: {
       get_student_for_login: {
-        Args: { _device_id: string; _raw_password: string; _student_id: string }
+        Args: { _raw_password: string; _student_id: string }
         Returns: {
           assigned_device_id: string
           class_id: string
