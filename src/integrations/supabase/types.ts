@@ -649,17 +649,23 @@ export type Database = {
       get_student_for_login: {
         Args: { _raw_password: string; _student_id: string }
         Returns: {
-          assigned_device_id: string
-          class_id: string
+          assigned_device_id: string | null
+          class_id: string | null
           created_at: string
-          form: Database["public"]["Enums"]["student_form"]
-          gender: Database["public"]["Enums"]["student_gender"]
+          form: Database["public"]["Enums"]["student_form"] | null
+          gender: Database["public"]["Enums"]["student_gender"] | null
           id: string
           name: string
-          password_hash: string
-          program_id: string
+          password_hash: string | null
+          program_id: string | null
           student_id: string
         }[]
+        SetofOptions: {
+          from: "*"
+          to: "students"
+          isOneToOne: false
+          isSetofReturn: true
+        }
       }
       has_role: {
         Args: {
