@@ -5,6 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
+import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 
 
@@ -95,6 +96,11 @@ function ProgramsPage() {
         description="Manage academic programs"
         actions={
           <div className="flex items-center gap-2">
+            <ExcelExport
+                data={programs.map((p) => ({ name: p.name, description: p.description ?? "" }))}
+                filename="programs_export"
+                sheetName="Programs"
+              />
             <ExcelImport entity="programs" onImportComplete={fetchPrograms} />
             <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Program</button>
           </div>

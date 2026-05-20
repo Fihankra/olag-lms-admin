@@ -5,6 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/use-auth";
 import { ExcelImport } from "../../components/ExcelImport";
+import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 
 
@@ -152,6 +153,11 @@ function TeachersPage() {
         description="Manage teachers and assign form masters to classes"
         actions={
           <div className="flex items-center gap-2">
+            <ExcelExport
+                data={teachers.map((t) => ({ teacher_id: t.teacher_id, name: t.name }))}
+                filename="teachers_export"
+                sheetName="Teachers"
+              />
             <ExcelImport entity="teachers" onImportComplete={fetchTeachers} />
             <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
               Add Teacher

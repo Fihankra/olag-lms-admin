@@ -5,6 +5,7 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
+import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 
 
@@ -98,6 +99,11 @@ function ClassesPage() {
         description="Manage classes linked to programs"
         actions={
           <div className="flex items-center gap-2">
+            <ExcelExport
+                data={classes.map((c) => ({ name: c.name, program_name: c.programs?.name ?? "" }))}
+                filename="classes_export"
+                sheetName="Classes"
+              />
             <ExcelImport entity="classes" onImportComplete={fetchClasses} />
             <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Class</button>
           </div>

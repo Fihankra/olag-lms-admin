@@ -7,6 +7,7 @@ import { useEffect, useState, useMemo } from "react";
 import { UserPlus, UserMinus, Trash2 } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
+import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 
 
@@ -221,7 +222,21 @@ function DevicesPage() {
         title="Devices"
         description="Manage student tablets and device settings"
         actions={
-          <ExcelImport entity="devices" onImportComplete={fetchDevices} />
+          <div className="flex items-center gap-2">
+            <ExcelExport
+              data={filtered.map((d) => ({
+                device_id: d.device_id,
+                assigned_student_id: d.students?.student_id ?? "",
+                assigned_student_name: d.students?.name ?? "",
+                network_status: d.network_status,
+                kiosk_mode: d.kiosk_mode ? "true" : "false",
+                last_seen: d.last_seen ?? "",
+              }))}
+              filename="devices_export"
+              sheetName="Devices"
+            />
+            <ExcelImport entity="devices" onImportComplete={fetchDevices} />
+          </div>
         }
       />
 

@@ -8,7 +8,10 @@ CREATE POLICY "Users can insert own teacher role"
     AND role = 'teacher'::app_role
   );
 
--- Insert missing role for the teacher who registered
+-- Insert missing role for the teacher who registered (only if the user exists in auth.users)
 INSERT INTO public.user_roles (user_id, role)
-VALUES ('81409ec0-0d46-4dcc-bcae-45ce4a847ed7', 'teacher')
+SELECT '81409ec0-0d46-4dcc-bcae-45ce4a847ed7', 'teacher'
+WHERE EXISTS (
+  SELECT 1 FROM auth.users WHERE id = '81409ec0-0d46-4dcc-bcae-45ce4a847ed7'
+)
 ON CONFLICT (user_id, role) DO NOTHING;

@@ -5,8 +5,9 @@ import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
-import { Pencil, Trash2, Eye, EyeOff } from "lucide-react";
+import { Pencil, Trash2, Eye, EyeOff, Search } from "lucide-react";
 import { toastResult } from "../../lib/supabase-toast";
+import { ExcelExport } from "../../components/ExcelExport";
 
 
 export const Route = createFileRoute("/_authenticated/students")({
@@ -23,7 +24,7 @@ type Student = {
   id: string;
   student_id: string;
   name: string;
-  password?: string | null;
+  password_hash?: string | null;
   program_id: string | null;
   class_id: string | null;
   assigned_device_id: string | null;
@@ -153,6 +154,7 @@ function StudentsPage() {
   const [filterProgram, setFilterProgram] = useState("");
   const [deletingStudent, setDeletingStudent] = useState<Student | null>(null);
   const [filterClass, setFilterClass] = useState("");
+  const [search, setSearch] = useState("");
   const [revealedPasswords, setRevealedPasswords] = useState<Set<string>>(new Set());
   const [showAllPasswords, setShowAllPasswords] = useState(false);
 
@@ -256,6 +258,10 @@ function StudentsPage() {
   const filtered = students.filter((s) => {
     if (filterProgram && s.program_id !== filterProgram) return false;
     if (filterClass && s.class_id !== filterClass) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      if (!s.student_id.toLowerCase().includes(q) && !s.name.toLowerCase().includes(q)) return false;
+    }
     return true;
   });
 
@@ -270,7 +276,7 @@ function StudentsPage() {
         return (
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs">
-              {revealed ? (s.password ?? "—") : "••••••••"}
+              {revealed ? (s.password_hash ?? "—") : "••••••••"}
             </span>
             <button
               onClick={(e) => { e.stopPropagation(); togglePassword(s.id); }}
@@ -352,6 +358,19 @@ function StudentsPage() {
               {showAllPasswords ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
               {showAllPasswords ? "Hide passwords" : "Show passwords"}
             </button>
+            <ExcelExport
+                data={filtered.map((s) => ({
+                  student_id: s.student_id,
+                  name: s.name,
+                  program_name: s.programs?.name ?? "",
+                  class_name: s.classes?.name ?? "",
+                  gender: (s as any).gender ?? "",
+                  form: (s as any).form ?? "",
+                  password: s.password_hash ?? "",
+                }))}
+                filename="students_export"
+                sheetName="Students"
+              />
             <ExcelImport entity="students" onImportComplete={fetchStudents} />
             <button
               onClick={openAdd}
@@ -364,6 +383,16 @@ function StudentsPage() {
       />
 
       <div className="flex gap-2 mb-4 flex-wrap">
+        <div className="relative">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
+          <input
+            type="text"
+            placeholder="Search by name or ID…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-8 pr-3 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs border border-border w-52 focus:outline-none focus:ring-1 focus:ring-ring"
+          />
+        </div>
         <select
           value={filterProgram}
           onChange={(e) => setFilterProgram(e.target.value)}
