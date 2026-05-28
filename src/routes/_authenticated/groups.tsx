@@ -3,7 +3,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { Users2, Trash2, MessageCircle, X, UserPlus } from "lucide-react";
+import { Users2, Trash2, MessageCircle, X, UserPlus, GraduationCap } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/groups")({
   component: GroupsPage,
@@ -24,7 +24,8 @@ type Group = {
 };
 
 type Teacher = { id: string; name: string };
-type Student = { id: string; name: string; student_id: string };
+type ClassItem = { id: string; name: string };
+type Student = { id: string; name: string; student_id: string; class_id: string | null };
 type Member = { id: string; student_id: string; students: Student | null };
 type Message = {
   id: string;
@@ -41,6 +42,7 @@ function GroupsPage() {
   const isAdmin = role === "admin";
   const [groups, setGroups] = useState<(Group & { teacher_name?: string })[]>([]);
   const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [classes, setClasses] = useState<ClassItem[]>([]);
   const [students, setStudents] = useState<Student[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({
@@ -55,6 +57,7 @@ function GroupsPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [members, setMembers] = useState<Member[]>([]);
   const [addStudentId, setAddStudentId] = useState("");
+  const [addClassId, setAddClassId] = useState("");
 
   async function fetchGroups() {
     let query = supabase
@@ -71,11 +74,13 @@ function GroupsPage() {
   }
 
   async function fetchLookups() {
-    const [{ data: t }, { data: s }] = await Promise.all([
+    const [{ data: t }, { data: c }, { data: s }] = await Promise.all([
       supabase.from("teachers").select("id, name").eq("approved", true).order("name"),
-      supabase.from("students").select("id, name, student_id").order("name"),
+      supabase.from("classes").select("id, name").order("name"),
+      supabase.from("students").select("id, name, student_id, class_id").order("name"),
     ]);
     setTeachers((t as Teacher[]) ?? []);
+    setClasses((c as ClassItem[]) ?? []);
     setStudents((s as Student[]) ?? []);
   }
 
@@ -144,12 +149,45 @@ function GroupsPage() {
     openChat(openGroup);
   }
 
+  async function addClassMembers() {
+    if (!openGroup || !addClassId) return;
+    const classStudents = students.filter((s) => s.class_id === addClassId);
+    const existingIds = new Set(members.map((m) => m.student_id));
+    const newStudents = classStudents.filter((s) => !existingIds.has(s.id));
+    if (newStudents.length > 0) {
+      await supabase
+        .from("group_members")
+        .insert(newStudents.map((s) => ({ group_id: openGroup.id, student_id: s.id })));
+    }
+    setAddClassId("");
+    openChat(openGroup);
+  }
+
   async function removeMember(memberId: string) {
     await supabase.from("group_members").delete().eq("id", memberId);
     if (openGroup) openChat(openGroup);
   }
 
+  function toggleClassInForm(classId: string, checked: boolean) {
+    const classStudentIds = students.filter((s) => s.class_id === classId).map((s) => s.id);
+    setForm((prev) => ({
+      ...prev,
+      student_ids: checked
+        ? Array.from(new Set([...prev.student_ids, ...classStudentIds]))
+        : prev.student_ids.filter((id) => !classStudentIds.includes(id)),
+    }));
+  }
+
   const canCreate = isAdmin || !!teacherRecord;
+
+  const getClassCheckedState = (classId: string): boolean | "indeterminate" => {
+    const classStudentIds = students.filter((s) => s.class_id === classId).map((s) => s.id);
+    if (classStudentIds.length === 0) return false;
+    const selectedCount = classStudentIds.filter((id) => form.student_ids.includes(id)).length;
+    if (selectedCount === 0) return false;
+    if (selectedCount === classStudentIds.length) return true;
+    return "indeterminate";
+  };
 
   return (
     <div>
@@ -248,7 +286,40 @@ function GroupsPage() {
                 </select>
               )}
               <div>
-                <p className="text-xs text-muted-foreground mb-1">Students</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xs text-muted-foreground">Students</p>
+                  {form.student_ids.length > 0 && (
+                    <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded">
+                      {form.student_ids.length} selected
+                    </span>
+                  )}
+                </div>
+                {/* Add by class */}
+                <div className="mb-2 flex gap-2">
+                  <select
+                    value=""
+                    onChange={(e) => {
+                      if (e.target.value) toggleClassInForm(e.target.value, true);
+                      e.target.value = "";
+                    }}
+                    className="flex-1 px-2 py-1.5 rounded-md bg-input border border-border text-foreground text-xs"
+                  >
+                    <option value="">Add entire class…</option>
+                    {classes.map((c) => (
+                      <option key={c.id} value={c.id}>
+                        {c.name} ({students.filter((s) => s.class_id === c.id).length} students)
+                      </option>
+                    ))}
+                  </select>
+                  {form.student_ids.length > 0 && (
+                    <button
+                      onClick={() => setForm((prev) => ({ ...prev, student_ids: [] }))}
+                      className="px-2 py-1.5 text-xs rounded-md bg-secondary text-secondary-foreground whitespace-nowrap"
+                    >
+                      Clear all
+                    </button>
+                  )}
+                </div>
                 <div className="max-h-48 overflow-y-auto border border-border rounded-md divide-y divide-border">
                   {students.map((s) => {
                     const checked = form.student_ids.includes(s.id);
@@ -338,6 +409,37 @@ function GroupsPage() {
                   </span>
                 ))}
               </div>
+
+              {/* Add by class */}
+              <div className="flex gap-2 mb-2">
+                <select
+                  value={addClassId}
+                  onChange={(e) => setAddClassId(e.target.value)}
+                  className="flex-1 px-2 py-1.5 rounded-md bg-input border border-border text-xs"
+                >
+                  <option value="">Add entire class…</option>
+                  {classes.map((c) => {
+                    const classStudents = students.filter((s) => s.class_id === c.id);
+                    const existingIds = new Set(members.map((m) => m.student_id));
+                    const available = classStudents.filter((s) => !existingIds.has(s.id));
+                    if (available.length === 0) return null;
+                    return (
+                      <option key={c.id} value={c.id}>
+                        {c.name} ({available.length} available)
+                      </option>
+                    );
+                  })}
+                </select>
+                <button
+                  onClick={addClassMembers}
+                  disabled={!addClassId}
+                  className="px-2 py-1.5 rounded-md bg-primary text-primary-foreground text-xs disabled:opacity-50"
+                >
+                  <GraduationCap className="h-3.5 w-3.5" />
+                </button>
+              </div>
+
+              {/* Add individual */}
               <div className="flex gap-2">
                 <select
                   value={addStudentId}
