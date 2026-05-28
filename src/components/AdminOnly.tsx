@@ -26,7 +26,9 @@ export function AdminOnly({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <ShieldX className="h-12 w-12 text-muted-foreground mb-4" />
         <h2 className="text-lg font-semibold mb-2">Access Denied</h2>
-        <p className="text-sm text-muted-foreground">This page is only accessible to administrators.</p>
+        <p className="text-sm text-muted-foreground">
+          This page is only accessible to administrators.
+        </p>
       </div>
     );
   }

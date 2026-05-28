@@ -3,7 +3,16 @@ import { PageHeader } from "../../components/PageHeader";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { useAuth } from "../../hooks/use-auth";
-import { AlertTriangle, CheckCircle2, XCircle, MinusCircle, Clock, Save, Loader2, History } from "lucide-react";
+import {
+  AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  MinusCircle,
+  Clock,
+  Save,
+  Loader2,
+  History,
+} from "lucide-react";
 import { submitBatchReport, getDeadlineSetting } from "../../utils/reports.functions";
 
 export const Route = createFileRoute("/_authenticated/reports")({
@@ -64,7 +73,15 @@ type ChecklistRow = {
 };
 
 const ACCESSORY_OPTIONS = ["Charger", "Mouse", "Keyboard", "Cover", "Other"] as const;
-const FAULT_OPTIONS = ["Cracked Screen", "Battery Issue", "Not Powering On", "Speaker/Mic Issue", "Charging Port Damaged", "Software Issue", "Other"] as const;
+const FAULT_OPTIONS = [
+  "Cracked Screen",
+  "Battery Issue",
+  "Not Powering On",
+  "Speaker/Mic Issue",
+  "Charging Port Damaged",
+  "Software Issue",
+  "Other",
+] as const;
 
 function getWeekStart(d: Date, startDay: number): string {
   const date = new Date(d);
@@ -102,7 +119,9 @@ function ReportsPage() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
-  const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(null);
+  const [deadline, setDeadline] = useState<{ day: number; hour: number; minute: number } | null>(
+    null,
+  );
 
   const [historyReportId, setHistoryReportId] = useState<string | null>(null);
   const [historyDeviceLabel, setHistoryDeviceLabel] = useState("");
@@ -178,10 +197,16 @@ function ReportsPage() {
       .not("assigned_device_id", "is", null)
       .order("name");
 
-    if (!students?.length) { setStudentDevices([]); return; }
+    if (!students?.length) {
+      setStudentDevices([]);
+      return;
+    }
 
     const deviceIds = students.map((s) => s.assigned_device_id).filter(Boolean) as string[];
-    if (!deviceIds.length) { setStudentDevices([]); return; }
+    if (!deviceIds.length) {
+      setStudentDevices([]);
+      return;
+    }
 
     const { data: devices } = await supabase
       .from("devices")
@@ -197,13 +222,19 @@ function ReportsPage() {
         studentCode: s.student_id,
         deviceUuid: s.assigned_device_id!,
         deviceLabel: devMap.get(s.assigned_device_id!) ?? s.assigned_device_id!,
-      }))
+      })),
     );
   }
 
-  useEffect(() => { fetchClasses(); }, []);
-  useEffect(() => { if (filterWeek) fetchReports(); }, [filterWeek, filterClass, assignedClassId, fetchReports]);
-  useEffect(() => { if (isTeacher) fetchStudentDevices(); }, [assignedClassId]);
+  useEffect(() => {
+    fetchClasses();
+  }, []);
+  useEffect(() => {
+    if (filterWeek) fetchReports();
+  }, [filterWeek, filterClass, assignedClassId, fetchReports]);
+  useEffect(() => {
+    if (isTeacher) fetchStudentDevices();
+  }, [assignedClassId]);
 
   useEffect(() => {
     if (!isTeacher || studentDevices.length === 0) return;
@@ -233,9 +264,15 @@ function ReportsPage() {
     if (!filterWeek) return;
     const channel = supabase
       .channel(`reports-${filterWeek}`)
-      .on("postgres_changes", { event: "*", schema: "public", table: "reports", filter: `week_start=eq.${filterWeek}` }, () => fetchReports())
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "reports", filter: `week_start=eq.${filterWeek}` },
+        () => fetchReports(),
+      )
       .subscribe();
-    return () => { supabase.removeChannel(channel); };
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [filterWeek, filterClass, assignedClassId, fetchReports]);
 
   const reportByDevice = useMemo(() => {
@@ -274,7 +311,7 @@ function ReportsPage() {
         device_id: sd.deviceUuid,
         kiosk_status: row.kiosk_status === "true",
         device_condition: row.device_condition,
-        fault_description: row.device_condition === "faulty" ? (row.fault_description || null) : null,
+        fault_description: row.device_condition === "faulty" ? row.fault_description || null : null,
         missing_status: row.missing_status === "true",
         missing_accessories: row.missing_accessories ?? [],
         lms_status: row.lms_status,
@@ -294,7 +331,9 @@ function ReportsPage() {
         const parts: string[] = [];
         if (result.inserted) parts.push(`${result.inserted} new`);
         if (result.updated) parts.push(`${result.updated} updated`);
-        setSuccessMsg(parts.length ? `Report submitted: ${parts.join(", ")}.` : "No changes to submit.");
+        setSuccessMsg(
+          parts.length ? `Report submitted: ${parts.join(", ")}.` : "No changes to submit.",
+        );
         fetchReports();
       }
     } catch {
@@ -310,7 +349,9 @@ function ReportsPage() {
     setHistoryLoading(true);
     const { data } = await supabase
       .from("report_history")
-      .select("id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status, changed_at")
+      .select(
+        "id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status, changed_at",
+      )
       .eq("report_id", reportId)
       .order("changed_at", { ascending: false });
     setHistoryEntries((data as HistoryEntry[]) ?? []);
@@ -333,12 +374,16 @@ function ReportsPage() {
     return `${d.toLocaleDateString(undefined, { month: "short", day: "numeric" })} — ${end.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
   }
 
-  const assignedClassName = isTeacher && assignedClassId
-    ? classes.find((c) => c.id === assignedClassId)?.name ?? "Your Class"
-    : null;
+  const assignedClassName =
+    isTeacher && assignedClassId
+      ? (classes.find((c) => c.id === assignedClassId)?.name ?? "Your Class")
+      : null;
 
   const issues = useMemo(() => {
-    let faulty = 0, missing = 0, kioskOff = 0, lmsInactive = 0;
+    let faulty = 0,
+      missing = 0,
+      kioskOff = 0,
+      lmsInactive = 0;
     for (const r of reports) {
       if (r.device_condition === "faulty") faulty++;
       if (r.missing_status) missing++;
@@ -351,11 +396,16 @@ function ReportsPage() {
   if (isTeacher && !assignedClassId) {
     return (
       <div>
-        <PageHeader title="Reports" description="You are not assigned as a form master for any class." />
+        <PageHeader
+          title="Reports"
+          description="You are not assigned as a form master for any class."
+        />
         <div className="bg-card rounded-lg border border-border p-8 sm:p-12 flex flex-col items-center justify-center text-center">
           <MinusCircle className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mb-4" />
           <h2 className="text-base sm:text-lg font-semibold mb-2">No Class Assigned</h2>
-          <p className="text-sm text-muted-foreground">Contact the admin to be assigned as a form master.</p>
+          <p className="text-sm text-muted-foreground">
+            Contact the admin to be assigned as a form master.
+          </p>
         </div>
       </div>
     );
@@ -366,9 +416,21 @@ function ReportsPage() {
   const weekNav = (
     <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
       <div className="flex items-center gap-1">
-        <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
-        <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">{formatWeek(filterWeek)}</span>
-        <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
+        <button
+          onClick={() => shiftWeek(-1)}
+          className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors"
+        >
+          ←
+        </button>
+        <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">
+          {formatWeek(filterWeek)}
+        </span>
+        <button
+          onClick={() => shiftWeek(1)}
+          className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors"
+        >
+          →
+        </button>
       </div>
     </div>
   );
@@ -395,10 +457,30 @@ function ReportsPage() {
 
         {reports.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
-            <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
-            <SummaryCard label="Missing Devices" count={issues.missing} total={issues.total} variant={issues.missing > 0 ? "danger" : "ok"} />
-            <SummaryCard label="Kiosk Off" count={issues.kioskOff} total={issues.total} variant={issues.kioskOff > 0 ? "warn" : "ok"} />
-            <SummaryCard label="LMS Inactive" count={issues.lmsInactive} total={issues.total} variant={issues.lmsInactive > 0 ? "warn" : "ok"} />
+            <SummaryCard
+              label="Faulty Devices"
+              count={issues.faulty}
+              total={issues.total}
+              variant={issues.faulty > 0 ? "danger" : "ok"}
+            />
+            <SummaryCard
+              label="Missing Devices"
+              count={issues.missing}
+              total={issues.total}
+              variant={issues.missing > 0 ? "danger" : "ok"}
+            />
+            <SummaryCard
+              label="Kiosk Off"
+              count={issues.kioskOff}
+              total={issues.total}
+              variant={issues.kioskOff > 0 ? "warn" : "ok"}
+            />
+            <SummaryCard
+              label="LMS Inactive"
+              count={issues.lmsInactive}
+              total={issues.total}
+              variant={issues.lmsInactive > 0 ? "warn" : "ok"}
+            />
           </div>
         )}
 
@@ -417,7 +499,9 @@ function ReportsPage() {
           <div className="bg-card rounded-lg border border-border p-8 sm:p-12 flex flex-col items-center justify-center text-center">
             <MinusCircle className="h-10 w-10 sm:h-12 sm:w-12 text-muted-foreground mb-4" />
             <h2 className="text-base sm:text-lg font-semibold mb-2">No students with devices</h2>
-            <p className="text-sm text-muted-foreground">No students in your class have assigned devices.</p>
+            <p className="text-sm text-muted-foreground">
+              No students in your class have assigned devices.
+            </p>
           </div>
         ) : (
           <>
@@ -431,7 +515,10 @@ function ReportsPage() {
                 const hasIssue = isFaulty || isMissing;
 
                 return (
-                  <div key={sd.deviceUuid} className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}>
+                  <div
+                    key={sd.deviceUuid}
+                    className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}
+                  >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2 min-w-0">
                         {hasReport ? (
@@ -439,7 +526,9 @@ function ReportsPage() {
                         ) : (
                           <span className="h-4 w-4 rounded-full border-2 border-muted-foreground/40 block shrink-0" />
                         )}
-                        <span className="text-sm font-medium text-foreground truncate">{sd.studentName}</span>
+                        <span className="text-sm font-medium text-foreground truncate">
+                          {sd.studentName}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <span className="text-xs text-muted-foreground">{sd.deviceLabel}</span>
@@ -459,28 +548,52 @@ function ReportsPage() {
                         <div className="grid grid-cols-2 gap-2">
                           <label className="space-y-1">
                             <span className="text-[11px] text-muted-foreground">Kiosk</span>
-                            <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <select
+                              value={row.kiosk_status}
+                              onChange={(e) =>
+                                updateRow(sd.deviceUuid, "kiosk_status", e.target.value)
+                              }
+                              className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs"
+                            >
                               <option value="true">On</option>
                               <option value="false">Off</option>
                             </select>
                           </label>
                           <label className="space-y-1">
                             <span className="text-[11px] text-muted-foreground">Condition</span>
-                            <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <select
+                              value={row.device_condition}
+                              onChange={(e) =>
+                                updateRow(sd.deviceUuid, "device_condition", e.target.value)
+                              }
+                              className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs"
+                            >
                               <option value="good">Good</option>
                               <option value="faulty">Faulty</option>
                             </select>
                           </label>
                           <label className="space-y-1">
                             <span className="text-[11px] text-muted-foreground">Missing</span>
-                            <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <select
+                              value={row.missing_status}
+                              onChange={(e) =>
+                                updateRow(sd.deviceUuid, "missing_status", e.target.value)
+                              }
+                              className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs"
+                            >
                               <option value="false">No</option>
                               <option value="true">Yes</option>
                             </select>
                           </label>
                           <label className="space-y-1">
                             <span className="text-[11px] text-muted-foreground">LMS</span>
-                            <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <select
+                              value={row.lms_status}
+                              onChange={(e) =>
+                                updateRow(sd.deviceUuid, "lms_status", e.target.value)
+                              }
+                              className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs"
+                            >
                               <option value="active">Active</option>
                               <option value="inactive">Inactive</option>
                             </select>
@@ -489,20 +602,37 @@ function ReportsPage() {
                         {isFaulty && (
                           <div className="space-y-1">
                             <span className="text-[11px] text-muted-foreground">Fault Type</span>
-                            <select value={row.fault_description} onChange={(e) => updateRow(sd.deviceUuid, "fault_description", e.target.value)} className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs">
+                            <select
+                              value={row.fault_description}
+                              onChange={(e) =>
+                                updateRow(sd.deviceUuid, "fault_description", e.target.value)
+                              }
+                              className="w-full px-2 py-1.5 rounded bg-input border border-border text-foreground text-xs"
+                            >
                               <option value="">Select fault…</option>
-                              {FAULT_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
+                              {FAULT_OPTIONS.map((f) => (
+                                <option key={f} value={f}>
+                                  {f}
+                                </option>
+                              ))}
                             </select>
                           </div>
                         )}
                         {isMissing && (
                           <div className="space-y-1">
-                            <span className="text-[11px] text-muted-foreground">Missing Accessories</span>
+                            <span className="text-[11px] text-muted-foreground">
+                              Missing Accessories
+                            </span>
                             <div className="flex flex-wrap gap-1.5">
                               {ACCESSORY_OPTIONS.map((acc) => (
-                                <button key={acc} type="button" onClick={() => toggleAccessory(sd.deviceUuid, acc)}
+                                <button
+                                  key={acc}
+                                  type="button"
+                                  onClick={() => toggleAccessory(sd.deviceUuid, acc)}
                                   className={`px-2 py-1 rounded text-[11px] font-medium transition-colors ${row.missing_accessories.includes(acc) ? "bg-destructive/20 text-destructive border border-destructive/30" : "bg-muted text-muted-foreground border border-border"}`}
-                                >{acc}</button>
+                                >
+                                  {acc}
+                                </button>
                               ))}
                             </div>
                           </div>
@@ -513,7 +643,9 @@ function ReportsPage() {
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
                           <div className="flex items-center justify-between">
                             <span className="text-muted-foreground">Kiosk</span>
-                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
+                            {!hasReport ? (
+                              <span className="text-muted-foreground">—</span>
+                            ) : report.kiosk_status === false ? (
                               <span className="text-amber-400">Off</span>
                             ) : (
                               <span className="text-emerald-400">On</span>
@@ -521,7 +653,9 @@ function ReportsPage() {
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="text-muted-foreground">Condition</span>
-                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
+                            {!hasReport ? (
+                              <span className="text-muted-foreground">—</span>
+                            ) : report.device_condition === "faulty" ? (
                               <span className="text-destructive font-medium">Faulty</span>
                             ) : (
                               <span className="text-emerald-400">Good</span>
@@ -529,7 +663,9 @@ function ReportsPage() {
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="text-muted-foreground">Missing</span>
-                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
+                            {!hasReport ? (
+                              <span className="text-muted-foreground">—</span>
+                            ) : report.missing_status ? (
                               <span className="text-destructive font-medium">Yes</span>
                             ) : (
                               <span className="text-emerald-400">No</span>
@@ -537,19 +673,29 @@ function ReportsPage() {
                           </div>
                           <div className="flex items-center justify-between">
                             <span className="text-muted-foreground">LMS</span>
-                            {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
+                            {!hasReport ? (
+                              <span className="text-muted-foreground">—</span>
+                            ) : report.lms_status === "inactive" ? (
                               <span className="text-amber-400">Inactive</span>
                             ) : (
                               <span className="text-emerald-400">Active</span>
                             )}
                           </div>
                         </div>
-                        {hasReport && report.device_condition === "faulty" && report.fault_description && (
-                          <p className="text-[11px] text-destructive">Fault: {report.fault_description}</p>
-                        )}
-                        {hasReport && report.missing_status && (report.missing_accessories as string[])?.length > 0 && (
-                          <p className="text-[11px] text-destructive">Missing: {(report.missing_accessories as string[]).join(", ")}</p>
-                        )}
+                        {hasReport &&
+                          report.device_condition === "faulty" &&
+                          report.fault_description && (
+                            <p className="text-[11px] text-destructive">
+                              Fault: {report.fault_description}
+                            </p>
+                          )}
+                        {hasReport &&
+                          report.missing_status &&
+                          (report.missing_accessories as string[])?.length > 0 && (
+                            <p className="text-[11px] text-destructive">
+                              Missing: {(report.missing_accessories as string[]).join(", ")}
+                            </p>
+                          )}
                       </div>
                     )}
                   </div>
@@ -594,44 +740,83 @@ function ReportsPage() {
                         {canEdit ? (
                           <>
                             <td className="px-4 py-2">
-                              <select value={row.kiosk_status} onChange={(e) => updateRow(sd.deviceUuid, "kiosk_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                              <select
+                                value={row.kiosk_status}
+                                onChange={(e) =>
+                                  updateRow(sd.deviceUuid, "kiosk_status", e.target.value)
+                                }
+                                className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs"
+                              >
                                 <option value="true">On</option>
                                 <option value="false">Off</option>
                               </select>
                             </td>
                             <td className="px-4 py-2">
                               <div className="space-y-1">
-                                <select value={row.device_condition} onChange={(e) => updateRow(sd.deviceUuid, "device_condition", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <select
+                                  value={row.device_condition}
+                                  onChange={(e) =>
+                                    updateRow(sd.deviceUuid, "device_condition", e.target.value)
+                                  }
+                                  className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs"
+                                >
                                   <option value="good">Good</option>
                                   <option value="faulty">Faulty</option>
                                 </select>
                                 {isFaulty && (
-                                  <select value={row.fault_description} onChange={(e) => updateRow(sd.deviceUuid, "fault_description", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                  <select
+                                    value={row.fault_description}
+                                    onChange={(e) =>
+                                      updateRow(sd.deviceUuid, "fault_description", e.target.value)
+                                    }
+                                    className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs"
+                                  >
                                     <option value="">Select fault…</option>
-                                    {FAULT_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
+                                    {FAULT_OPTIONS.map((f) => (
+                                      <option key={f} value={f}>
+                                        {f}
+                                      </option>
+                                    ))}
                                   </select>
                                 )}
                               </div>
                             </td>
                             <td className="px-4 py-2">
                               <div className="space-y-1">
-                                <select value={row.missing_status} onChange={(e) => updateRow(sd.deviceUuid, "missing_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                                <select
+                                  value={row.missing_status}
+                                  onChange={(e) =>
+                                    updateRow(sd.deviceUuid, "missing_status", e.target.value)
+                                  }
+                                  className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs"
+                                >
                                   <option value="false">No</option>
                                   <option value="true">Yes</option>
                                 </select>
                                 {isMissing && (
                                   <div className="flex flex-wrap gap-1">
                                     {ACCESSORY_OPTIONS.map((acc) => (
-                                      <button key={acc} type="button" onClick={() => toggleAccessory(sd.deviceUuid, acc)}
+                                      <button
+                                        key={acc}
+                                        type="button"
+                                        onClick={() => toggleAccessory(sd.deviceUuid, acc)}
                                         className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${row.missing_accessories.includes(acc) ? "bg-destructive/20 text-destructive border border-destructive/30" : "bg-muted text-muted-foreground border border-border"}`}
-                                      >{acc}</button>
+                                      >
+                                        {acc}
+                                      </button>
                                     ))}
                                   </div>
                                 )}
                               </div>
                             </td>
                             <td className="px-4 py-2">
-                              <select value={row.lms_status} onChange={(e) => updateRow(sd.deviceUuid, "lms_status", e.target.value)} className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs">
+                              <select
+                                value={row.lms_status}
+                                onChange={(e) =>
+                                  updateRow(sd.deviceUuid, "lms_status", e.target.value)
+                                }
+                                className="w-full px-2 py-1 rounded bg-input border border-border text-foreground text-xs"
+                              >
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -640,39 +825,69 @@ function ReportsPage() {
                         ) : (
                           <>
                             <td className="px-4 py-3">
-                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.kiosk_status === false ? (
-                                <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                              {!hasReport ? (
+                                <span className="text-muted-foreground">—</span>
+                              ) : report.kiosk_status === false ? (
+                                <span className="inline-flex items-center gap-1 text-amber-400">
+                                  <XCircle className="h-3.5 w-3.5" /> Off
+                                </span>
                               ) : (
-                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                                <span className="inline-flex items-center gap-1 text-emerald-400">
+                                  <CheckCircle2 className="h-3.5 w-3.5" /> On
+                                </span>
                               )}
                             </td>
                             <td className="px-4 py-3">
-                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.device_condition === "faulty" ? (
+                              {!hasReport ? (
+                                <span className="text-muted-foreground">—</span>
+                              ) : report.device_condition === "faulty" ? (
                                 <div>
-                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
-                                  {report.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{report.fault_description}</p>}
-                                </div>
-                              ) : (
-                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
-                              )}
-                            </td>
-                            <td className="px-4 py-3">
-                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.missing_status ? (
-                                <div>
-                                  <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
-                                  {(report.missing_accessories as string[])?.length > 0 && (
-                                    <p className="text-[11px] text-muted-foreground mt-0.5">{(report.missing_accessories as string[]).join(", ")}</p>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium">
+                                    <AlertTriangle className="h-3.5 w-3.5" /> Faulty
+                                  </span>
+                                  {report.fault_description && (
+                                    <p className="text-[11px] text-muted-foreground mt-0.5">
+                                      {report.fault_description}
+                                    </p>
                                   )}
                                 </div>
                               ) : (
-                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                                <span className="inline-flex items-center gap-1 text-emerald-400">
+                                  <CheckCircle2 className="h-3.5 w-3.5" /> Good
+                                </span>
                               )}
                             </td>
                             <td className="px-4 py-3">
-                              {!hasReport ? <span className="text-muted-foreground">—</span> : report.lms_status === "inactive" ? (
-                                <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                              {!hasReport ? (
+                                <span className="text-muted-foreground">—</span>
+                              ) : report.missing_status ? (
+                                <div>
+                                  <span className="inline-flex items-center gap-1 text-destructive font-medium">
+                                    <AlertTriangle className="h-3.5 w-3.5" /> Yes
+                                  </span>
+                                  {(report.missing_accessories as string[])?.length > 0 && (
+                                    <p className="text-[11px] text-muted-foreground mt-0.5">
+                                      {(report.missing_accessories as string[]).join(", ")}
+                                    </p>
+                                  )}
+                                </div>
                               ) : (
-                                <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                                <span className="inline-flex items-center gap-1 text-emerald-400">
+                                  <CheckCircle2 className="h-3.5 w-3.5" /> No
+                                </span>
+                              )}
+                            </td>
+                            <td className="px-4 py-3">
+                              {!hasReport ? (
+                                <span className="text-muted-foreground">—</span>
+                              ) : report.lms_status === "inactive" ? (
+                                <span className="inline-flex items-center gap-1 text-amber-400">
+                                  <XCircle className="h-3.5 w-3.5" /> Inactive
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-emerald-400">
+                                  <CheckCircle2 className="h-3.5 w-3.5" /> Active
+                                </span>
                               )}
                             </td>
                           </>
@@ -702,7 +917,11 @@ function ReportsPage() {
                   disabled={submitting}
                   className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-50 transition-colors w-full sm:w-auto justify-center"
                 >
-                  {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+                  {submitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Save className="h-4 w-4" />
+                  )}
                   Submit All Reports
                 </button>
               </div>
@@ -715,7 +934,10 @@ function ReportsPage() {
           deviceLabel={historyDeviceLabel}
           entries={historyEntries}
           loading={historyLoading}
-          onClose={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+          onClose={() => {
+            setHistoryReportId(null);
+            setHistoryEntries([]);
+          }}
         />
       </div>
     );
@@ -735,22 +957,58 @@ function ReportsPage() {
           className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-xs sm:text-sm border border-border w-full sm:w-auto"
         >
           <option value="">All Classes</option>
-          {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+          {classes.map((c) => (
+            <option key={c.id} value={c.id}>
+              {c.name}
+            </option>
+          ))}
         </select>
 
         <div className="flex items-center gap-1">
-          <button onClick={() => shiftWeek(-1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">←</button>
-          <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">{formatWeek(filterWeek)}</span>
-          <button onClick={() => shiftWeek(1)} className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">→</button>
+          <button
+            onClick={() => shiftWeek(-1)}
+            className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors"
+          >
+            ←
+          </button>
+          <span className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-foreground min-w-0 text-center">
+            {formatWeek(filterWeek)}
+          </span>
+          <button
+            onClick={() => shiftWeek(1)}
+            className="px-2 py-2 rounded-md bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors"
+          >
+            →
+          </button>
         </div>
       </div>
 
       {reports.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
-          <SummaryCard label="Faulty Devices" count={issues.faulty} total={issues.total} variant={issues.faulty > 0 ? "danger" : "ok"} />
-          <SummaryCard label="Missing Devices" count={issues.missing} total={issues.total} variant={issues.missing > 0 ? "danger" : "ok"} />
-          <SummaryCard label="Kiosk Off" count={issues.kioskOff} total={issues.total} variant={issues.kioskOff > 0 ? "warn" : "ok"} />
-          <SummaryCard label="LMS Inactive" count={issues.lmsInactive} total={issues.total} variant={issues.lmsInactive > 0 ? "warn" : "ok"} />
+          <SummaryCard
+            label="Faulty Devices"
+            count={issues.faulty}
+            total={issues.total}
+            variant={issues.faulty > 0 ? "danger" : "ok"}
+          />
+          <SummaryCard
+            label="Missing Devices"
+            count={issues.missing}
+            total={issues.total}
+            variant={issues.missing > 0 ? "danger" : "ok"}
+          />
+          <SummaryCard
+            label="Kiosk Off"
+            count={issues.kioskOff}
+            total={issues.total}
+            variant={issues.kioskOff > 0 ? "warn" : "ok"}
+          />
+          <SummaryCard
+            label="LMS Inactive"
+            count={issues.lmsInactive}
+            total={issues.total}
+            variant={issues.lmsInactive > 0 ? "warn" : "ok"}
+          />
         </div>
       )}
 
@@ -768,11 +1026,18 @@ function ReportsPage() {
               const isMissing = r.missing_status === true;
               const hasIssue = isFaulty || isMissing;
               return (
-                <div key={r.id} className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}>
+                <div
+                  key={r.id}
+                  className={`bg-card rounded-lg border p-3 ${hasIssue ? "border-destructive/40 bg-destructive/5" : "border-border"}`}
+                >
                   <div className="flex items-center justify-between mb-2">
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground truncate">{r.devices?.device_id ?? "—"}</p>
-                      <p className="text-[11px] text-muted-foreground truncate">{r.classes?.name ?? "—"} · {r.teachers?.name ?? "—"}</p>
+                      <p className="text-sm font-medium text-foreground truncate">
+                        {r.devices?.device_id ?? "—"}
+                      </p>
+                      <p className="text-[11px] text-muted-foreground truncate">
+                        {r.classes?.name ?? "—"} · {r.teachers?.name ?? "—"}
+                      </p>
                     </div>
                     <button
                       onClick={() => openHistory(r.id, r.devices?.device_id ?? "Unknown")}
@@ -785,7 +1050,9 @@ function ReportsPage() {
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
                       <div className="flex items-center justify-between">
                         <span className="text-muted-foreground">Kiosk</span>
-                        {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
+                        {r.kiosk_status == null ? (
+                          <span className="text-muted-foreground">—</span>
+                        ) : r.kiosk_status === false ? (
                           <span className="text-amber-400">Off</span>
                         ) : (
                           <span className="text-emerald-400">On</span>
@@ -820,7 +1087,9 @@ function ReportsPage() {
                       <p className="text-[11px] text-destructive">Fault: {r.fault_description}</p>
                     )}
                     {isMissing && (r.missing_accessories as string[])?.length > 0 && (
-                      <p className="text-[11px] text-destructive">Missing: {(r.missing_accessories as string[]).join(", ")}</p>
+                      <p className="text-[11px] text-destructive">
+                        Missing: {(r.missing_accessories as string[]).join(", ")}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -849,43 +1118,69 @@ function ReportsPage() {
                   const hasIssue = isFaulty || isMissing;
                   return (
                     <tr key={r.id} className={hasIssue ? "bg-destructive/5" : ""}>
-                      <td className="px-4 py-3 font-medium text-foreground">{r.devices?.device_id ?? "—"}</td>
+                      <td className="px-4 py-3 font-medium text-foreground">
+                        {r.devices?.device_id ?? "—"}
+                      </td>
                       <td className="px-4 py-3 text-foreground">{r.classes?.name ?? "—"}</td>
                       <td className="px-4 py-3 text-foreground">{r.teachers?.name ?? "—"}</td>
                       <td className="px-4 py-3">
-                        {r.kiosk_status == null ? <span className="text-muted-foreground">—</span> : r.kiosk_status === false ? (
-                          <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Off</span>
+                        {r.kiosk_status == null ? (
+                          <span className="text-muted-foreground">—</span>
+                        ) : r.kiosk_status === false ? (
+                          <span className="inline-flex items-center gap-1 text-amber-400">
+                            <XCircle className="h-3.5 w-3.5" /> Off
+                          </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> On</span>
+                          <span className="inline-flex items-center gap-1 text-emerald-400">
+                            <CheckCircle2 className="h-3.5 w-3.5" /> On
+                          </span>
                         )}
                       </td>
                       <td className="px-4 py-3">
                         {isFaulty ? (
                           <div>
-                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Faulty</span>
-                            {r.fault_description && <p className="text-[11px] text-muted-foreground mt-0.5">{r.fault_description}</p>}
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium">
+                              <AlertTriangle className="h-3.5 w-3.5" /> Faulty
+                            </span>
+                            {r.fault_description && (
+                              <p className="text-[11px] text-muted-foreground mt-0.5">
+                                {r.fault_description}
+                              </p>
+                            )}
                           </div>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Good</span>
+                          <span className="inline-flex items-center gap-1 text-emerald-400">
+                            <CheckCircle2 className="h-3.5 w-3.5" /> Good
+                          </span>
                         )}
                       </td>
                       <td className="px-4 py-3">
                         {isMissing ? (
                           <div>
-                            <span className="inline-flex items-center gap-1 text-destructive font-medium"><AlertTriangle className="h-3.5 w-3.5" /> Yes</span>
+                            <span className="inline-flex items-center gap-1 text-destructive font-medium">
+                              <AlertTriangle className="h-3.5 w-3.5" /> Yes
+                            </span>
                             {(r.missing_accessories as string[])?.length > 0 && (
-                              <p className="text-[11px] text-muted-foreground mt-0.5">{(r.missing_accessories as string[]).join(", ")}</p>
+                              <p className="text-[11px] text-muted-foreground mt-0.5">
+                                {(r.missing_accessories as string[]).join(", ")}
+                              </p>
                             )}
                           </div>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> No</span>
+                          <span className="inline-flex items-center gap-1 text-emerald-400">
+                            <CheckCircle2 className="h-3.5 w-3.5" /> No
+                          </span>
                         )}
                       </td>
                       <td className="px-4 py-3">
                         {r.lms_status === "inactive" ? (
-                          <span className="inline-flex items-center gap-1 text-amber-400"><XCircle className="h-3.5 w-3.5" /> Inactive</span>
+                          <span className="inline-flex items-center gap-1 text-amber-400">
+                            <XCircle className="h-3.5 w-3.5" /> Inactive
+                          </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Active</span>
+                          <span className="inline-flex items-center gap-1 text-emerald-400">
+                            <CheckCircle2 className="h-3.5 w-3.5" /> Active
+                          </span>
                         )}
                       </td>
                       <td className="px-4 py-3">
@@ -911,13 +1206,22 @@ function ReportsPage() {
         deviceLabel={historyDeviceLabel}
         entries={historyEntries}
         loading={historyLoading}
-        onClose={() => { setHistoryReportId(null); setHistoryEntries([]); }}
+        onClose={() => {
+          setHistoryReportId(null);
+          setHistoryEntries([]);
+        }}
       />
     </div>
   );
 }
 
-function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
+function HistoryModal({
+  reportId,
+  deviceLabel,
+  entries,
+  loading,
+  onClose,
+}: {
   reportId: string | null;
   deviceLabel: string;
   entries: HistoryEntry[];
@@ -936,47 +1240,73 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
             <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
           </div>
         ) : entries.length === 0 ? (
-          <p className="text-sm text-muted-foreground py-4 text-center">No previous versions. This report has not been edited.</p>
+          <p className="text-sm text-muted-foreground py-4 text-center">
+            No previous versions. This report has not been edited.
+          </p>
         ) : (
           <div className="space-y-3">
             {entries.map((entry, idx) => (
               <div key={entry.id} className="bg-secondary/50 rounded-lg border border-border p-3">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-muted-foreground">Version {entries.length - idx}</span>
-                  <span className="text-[11px] sm:text-xs text-muted-foreground">{new Date(entry.changed_at).toLocaleString()}</span>
+                  <span className="text-xs font-medium text-muted-foreground">
+                    Version {entries.length - idx}
+                  </span>
+                  <span className="text-[11px] sm:text-xs text-muted-foreground">
+                    {new Date(entry.changed_at).toLocaleString()}
+                  </span>
                 </div>
                 <div className="space-y-1">
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-muted-foreground">Kiosk: </span>
-                      <span className={entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"}>
+                      <span
+                        className={
+                          entry.kiosk_status === false ? "text-amber-400" : "text-emerald-400"
+                        }
+                      >
                         {entry.kiosk_status === false ? "Off" : "On"}
                       </span>
                     </div>
                     <div>
                       <span className="text-muted-foreground">Condition: </span>
-                      <span className={entry.device_condition === "faulty" ? "text-destructive" : "text-emerald-400"}>
+                      <span
+                        className={
+                          entry.device_condition === "faulty"
+                            ? "text-destructive"
+                            : "text-emerald-400"
+                        }
+                      >
                         {entry.device_condition === "faulty" ? "Faulty" : "Good"}
                       </span>
                     </div>
                     <div>
                       <span className="text-muted-foreground">Missing: </span>
-                      <span className={entry.missing_status ? "text-destructive" : "text-emerald-400"}>
+                      <span
+                        className={entry.missing_status ? "text-destructive" : "text-emerald-400"}
+                      >
                         {entry.missing_status ? "Yes" : "No"}
                       </span>
                     </div>
                     <div>
                       <span className="text-muted-foreground">LMS: </span>
-                      <span className={entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"}>
+                      <span
+                        className={
+                          entry.lms_status === "inactive" ? "text-amber-400" : "text-emerald-400"
+                        }
+                      >
                         {entry.lms_status === "inactive" ? "Inactive" : "Active"}
                       </span>
                     </div>
                   </div>
                   {entry.device_condition === "faulty" && entry.fault_description && (
-                    <p className="text-[11px] text-muted-foreground">Fault: {entry.fault_description}</p>
+                    <p className="text-[11px] text-muted-foreground">
+                      Fault: {entry.fault_description}
+                    </p>
                   )}
                   {entry.missing_status && (entry.missing_accessories as string[])?.length > 0 && (
-                    <p className="text-[11px] text-muted-foreground">Missing: {(entry.missing_accessories as string[]).join(", ")}</p>
+                    <p className="text-[11px] text-muted-foreground">
+                      Missing: {(entry.missing_accessories as string[]).join(", ")}
+                    </p>
                   )}
                 </div>
               </div>
@@ -985,7 +1315,10 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
         )}
 
         <div className="flex justify-end mt-4">
-          <button onClick={onClose} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
+          <button
+            onClick={onClose}
+            className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+          >
             Close
           </button>
         </div>
@@ -994,7 +1327,17 @@ function HistoryModal({ reportId, deviceLabel, entries, loading, onClose }: {
   );
 }
 
-function SummaryCard({ label, count, total, variant }: { label: string; count: number; total: number; variant: "ok" | "warn" | "danger" }) {
+function SummaryCard({
+  label,
+  count,
+  total,
+  variant,
+}: {
+  label: string;
+  count: number;
+  total: number;
+  variant: "ok" | "warn" | "danger";
+}) {
   const colors = { ok: "text-emerald-400", warn: "text-amber-400", danger: "text-destructive" };
   return (
     <div className="bg-card rounded-lg border border-border p-3 sm:p-4">

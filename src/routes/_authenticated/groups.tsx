@@ -40,7 +40,9 @@ function GroupsPage() {
     setGroups((data as Group[]) ?? []);
   }
 
-  useEffect(() => { fetchGroups(); }, [teacherRecord]);
+  useEffect(() => {
+    fetchGroups();
+  }, [teacherRecord]);
 
   async function createGroup() {
     if (!form.name.trim() || !teacherRecord) return;
@@ -66,7 +68,10 @@ function GroupsPage() {
         description="Organize students into groups"
         actions={
           teacherRecord ? (
-            <button onClick={() => setShowModal(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+            <button
+              onClick={() => setShowModal(true)}
+              className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
               New Group
             </button>
           ) : undefined
@@ -82,18 +87,27 @@ function GroupsPage() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {groups.map((g) => (
-            <div key={g.id} className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group">
+            <div
+              key={g.id}
+              className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group"
+            >
               <div className="flex items-start justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <Users2 className="h-5 w-5 text-primary shrink-0" />
                   <span className="font-medium text-foreground">{g.name}</span>
                 </div>
-                <button onClick={() => deleteGroup(g.id)} className="p-1 rounded hover:bg-destructive/10 text-destructive opacity-0 group-hover:opacity-100 transition-opacity" title="Delete group">
+                <button
+                  onClick={() => deleteGroup(g.id)}
+                  className="p-1 rounded hover:bg-destructive/10 text-destructive opacity-0 group-hover:opacity-100 transition-opacity"
+                  title="Delete group"
+                >
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>
               </div>
               {g.description && <p className="text-xs text-muted-foreground">{g.description}</p>}
-              <p className="text-xs text-muted-foreground mt-2">{new Date(g.created_at).toLocaleDateString()}</p>
+              <p className="text-xs text-muted-foreground mt-2">
+                {new Date(g.created_at).toLocaleDateString()}
+              </p>
             </div>
           ))}
         </div>
@@ -104,12 +118,34 @@ function GroupsPage() {
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
             <h2 className="text-lg font-semibold mb-4">New Group</h2>
             <div className="space-y-3">
-              <input placeholder="Group Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm" autoFocus />
-              <textarea placeholder="Description (optional)" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm" rows={3} />
+              <input
+                placeholder="Group Name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                autoFocus
+              />
+              <textarea
+                placeholder="Description (optional)"
+                value={form.description}
+                onChange={(e) => setForm({ ...form, description: e.target.value })}
+                className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                rows={3}
+              />
             </div>
             <div className="flex gap-2 justify-end mt-4">
-              <button onClick={() => setShowModal(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={createGroup} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">Create</button>
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={createGroup}
+                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Create
+              </button>
             </div>
           </div>
         </div>

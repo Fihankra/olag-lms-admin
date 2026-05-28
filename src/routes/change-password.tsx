@@ -113,7 +113,10 @@ function ChangePasswordPage() {
           )}
 
           <div>
-            <label htmlFor="new-password" className="mb-1.5 block text-sm font-medium text-foreground">
+            <label
+              htmlFor="new-password"
+              className="mb-1.5 block text-sm font-medium text-foreground"
+            >
               New Password
             </label>
             <PasswordInput
@@ -127,7 +130,10 @@ function ChangePasswordPage() {
           </div>
 
           <div>
-            <label htmlFor="confirm-password" className="mb-1.5 block text-sm font-medium text-foreground">
+            <label
+              htmlFor="confirm-password"
+              className="mb-1.5 block text-sm font-medium text-foreground"
+            >
               Confirm Password
             </label>
             <PasswordInput

@@ -63,42 +63,76 @@ function RegisterPage() {
             <UserPlus className="h-7 w-7 text-primary" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">Teacher Registration</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Create your account — admin approval required</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Create your account — admin approval required
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</div>
+            <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              {error}
+            </div>
           )}
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground">Full Name</label>
-            <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="John Doe" className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
+            <input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="John Doe"
+              className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
           </div>
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground">Teacher ID</label>
-            <input required value={teacherId} onChange={(e) => setTeacherId(e.target.value)} placeholder="T001" className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
+            <input
+              required
+              value={teacherId}
+              onChange={(e) => setTeacherId(e.target.value)}
+              placeholder="T001"
+              className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
           </div>
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground">Email</label>
-            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="teacher@olag.edu" className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="teacher@olag.edu"
+              className="w-full rounded-md border border-border bg-input px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
           </div>
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground">Password</label>
-            <PasswordInput required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
+            <PasswordInput
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+            />
           </div>
 
-          <button type="submit" disabled={submitting} className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50">
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
+          >
             {submitting ? "Registering…" : "Register"}
           </button>
         </form>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
           Already have an account?{" "}
-          <Link to="/login" className="text-primary hover:underline">Sign in</Link>
+          <Link to="/login" className="text-primary hover:underline">
+            Sign in
+          </Link>
         </p>
       </div>
     </div>

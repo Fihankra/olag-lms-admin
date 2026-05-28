@@ -12,12 +12,21 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen w-full">
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setMobileOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
       )}
 
       {/* Sidebar — hidden on mobile, slide-in when toggled */}
-      <div className={`fixed inset-y-0 left-0 z-50 lg:static lg:z-auto transition-transform duration-200 ${mobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
-        {role === "admin" ? <AdminSidebar onNavigate={() => setMobileOpen(false)} /> : <TeacherSidebar onNavigate={() => setMobileOpen(false)} />}
+      <div
+        className={`fixed inset-y-0 left-0 z-50 lg:static lg:z-auto transition-transform duration-200 ${mobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+      >
+        {role === "admin" ? (
+          <AdminSidebar onNavigate={() => setMobileOpen(false)} />
+        ) : (
+          <TeacherSidebar onNavigate={() => setMobileOpen(false)} />
+        )}
       </div>
 
       <main className="flex-1 overflow-auto min-w-0">

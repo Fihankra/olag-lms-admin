@@ -106,7 +106,9 @@ function LoginPage() {
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
           Teacher?{" "}
-          <Link to="/register" className="text-primary hover:underline">Register here</Link>
+          <Link to="/register" className="text-primary hover:underline">
+            Register here
+          </Link>
         </p>
       </div>
     </div>

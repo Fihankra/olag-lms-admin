@@ -47,9 +47,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
     >
       <div className="flex items-center gap-2 px-4 h-14 border-b border-sidebar-border">
         {!collapsed && (
-          <span className="text-lg font-bold text-sidebar-primary tracking-tight">
-            OLAG LMS
-          </span>
+          <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>
         )}
         <button
           onClick={() => setCollapsed(!collapsed)}
@@ -89,7 +87,11 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
           title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {theme === "dark" ? <Sun className="h-4 w-4 shrink-0" /> : <Moon className="h-4 w-4 shrink-0" />}
+          {theme === "dark" ? (
+            <Sun className="h-4 w-4 shrink-0" />
+          ) : (
+            <Moon className="h-4 w-4 shrink-0" />
+          )}
           {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
         </button>
         <button

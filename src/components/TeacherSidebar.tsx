@@ -34,10 +34,17 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
   ];
 
   return (
-    <aside className={`flex flex-col bg-sidebar border-r border-sidebar-border h-full transition-all duration-200 ${collapsed ? "w-16" : "w-60"}`}>
+    <aside
+      className={`flex flex-col bg-sidebar border-r border-sidebar-border h-full transition-all duration-200 ${collapsed ? "w-16" : "w-60"}`}
+    >
       <div className="flex items-center gap-2 px-4 h-14 border-b border-sidebar-border">
-        {!collapsed && <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>}
-        <button onClick={() => setCollapsed(!collapsed)} className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground hidden lg:block">
+        {!collapsed && (
+          <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>
+        )}
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground hidden lg:block"
+        >
           {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </button>
       </div>
@@ -71,7 +78,11 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
           onClick={toggleTheme}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
         >
-          {theme === "dark" ? <Sun className="h-4 w-4 shrink-0" /> : <Moon className="h-4 w-4 shrink-0" />}
+          {theme === "dark" ? (
+            <Sun className="h-4 w-4 shrink-0" />
+          ) : (
+            <Moon className="h-4 w-4 shrink-0" />
+          )}
           {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
         </button>
         <button

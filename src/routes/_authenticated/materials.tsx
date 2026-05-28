@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { toastResult } from "../../lib/supabase-toast";
 
-
 export const Route = createFileRoute("/_authenticated/materials")({
   component: MaterialsPage,
   head: () => ({
@@ -101,12 +100,19 @@ function MaterialsPage() {
   }
 
   async function fetchFolders() {
-    const { data } = await supabase.from("folders").select("*").order("created_at", { ascending: false });
+    const { data } = await supabase
+      .from("folders")
+      .select("*")
+      .order("created_at", { ascending: false });
     setFolders((data as Folder[]) ?? []);
   }
 
   async function fetchFiles(folderId: string) {
-    const { data } = await supabase.from("files").select("*").eq("folder_id", folderId).order("created_at", { ascending: false });
+    const { data } = await supabase
+      .from("files")
+      .select("*")
+      .eq("folder_id", folderId)
+      .order("created_at", { ascending: false });
     setFiles((data as FileItem[]) ?? []);
   }
 
@@ -120,7 +126,10 @@ function MaterialsPage() {
   }
 
   async function fetchCreators() {
-    const { data } = await supabase.from("teachers").select("user_id, name").not("user_id", "is", null);
+    const { data } = await supabase
+      .from("teachers")
+      .select("user_id, name")
+      .not("user_id", "is", null);
     const map = new Map<string, string>();
     if (data) for (const t of data as TeacherUser[]) map.set(t.user_id, t.name);
     // Add admin fallback
@@ -133,7 +142,11 @@ function MaterialsPage() {
     return creators.get(id) ?? "Unknown";
   }
 
-  useEffect(() => { fetchFolders(); fetchMeta(); fetchCreators(); }, []);
+  useEffect(() => {
+    fetchFolders();
+    fetchMeta();
+    fetchCreators();
+  }, []);
 
   useEffect(() => {
     if (activeFolder) fetchFiles(activeFolder.id);
@@ -141,7 +154,9 @@ function MaterialsPage() {
 
   async function createFolder() {
     if (!folderName.trim()) return;
-    const { error } = await supabase.from("folders").insert({ name: folderName.trim(), created_by: userId });
+    const { error } = await supabase
+      .from("folders")
+      .insert({ name: folderName.trim(), created_by: userId });
     if (!toastResult(error)) return;
     toastResult(null, "Folder created");
     setFolderName("");
@@ -150,18 +165,26 @@ function MaterialsPage() {
   }
 
   async function deleteFolder(id: string) {
-    const { data: folderFiles } = await supabase.from("files").select("file_url").eq("folder_id", id);
+    const { data: folderFiles } = await supabase
+      .from("files")
+      .select("file_url")
+      .eq("folder_id", id);
     if (folderFiles?.length) {
-      const paths = folderFiles.map((f) => {
-        const url = new URL(f.file_url);
-        return url.pathname.split("/materials/")[1];
-      }).filter(Boolean);
+      const paths = folderFiles
+        .map((f) => {
+          const url = new URL(f.file_url);
+          return url.pathname.split("/materials/")[1];
+        })
+        .filter(Boolean);
       if (paths.length) await supabase.storage.from("materials").remove(paths);
     }
     const { error } = await supabase.from("folders").delete().eq("id", id);
     if (!toastResult(error)) return;
     toastResult(null, "Folder deleted");
-    if (activeFolder?.id === id) { setActiveFolder(null); setFiles([]); }
+    if (activeFolder?.id === id) {
+      setActiveFolder(null);
+      setFiles([]);
+    }
     fetchFolders();
   }
 
@@ -180,14 +203,18 @@ function MaterialsPage() {
 
       const { data: urlData } = supabase.storage.from("materials").getPublicUrl(path);
 
-      const { data: inserted } = await supabase.from("files").insert({
-        folder_id: activeFolder.id,
-        file_name: file.name,
-        file_url: urlData.publicUrl,
-        file_type: file.type || "unknown",
-        file_size: file.size,
-        created_by: userId,
-      }).select().single();
+      const { data: inserted } = await supabase
+        .from("files")
+        .insert({
+          folder_id: activeFolder.id,
+          file_name: file.name,
+          file_url: urlData.publicUrl,
+          file_type: file.type || "unknown",
+          file_size: file.size,
+          created_by: userId,
+        })
+        .select()
+        .single();
 
       if (inserted) uploadedFiles.push(inserted as FileItem);
     }
@@ -214,16 +241,23 @@ function MaterialsPage() {
 
   async function saveAccess() {
     if (!showAccessModal) return;
-    const { error } = await supabase.from("folders").update({
-      accessible_programs: editPrograms,
-      accessible_classes: editClasses,
-    }).eq("id", showAccessModal.id);
+    const { error } = await supabase
+      .from("folders")
+      .update({
+        accessible_programs: editPrograms,
+        accessible_classes: editClasses,
+      })
+      .eq("id", showAccessModal.id);
     if (!toastResult(error)) return;
     toastResult(null, "Access settings saved");
     setShowAccessModal(null);
     fetchFolders();
     if (activeFolder?.id === showAccessModal.id) {
-      setActiveFolder({ ...activeFolder, accessible_programs: editPrograms, accessible_classes: editClasses });
+      setActiveFolder({
+        ...activeFolder,
+        accessible_programs: editPrograms,
+        accessible_classes: editClasses,
+      });
     }
   }
 
@@ -235,7 +269,9 @@ function MaterialsPage() {
   const classMap = useMemo(() => new Map(classes.map((c) => [c.id, c.name])), [classes]);
 
   function accessLabel(folder: Folder) {
-    const pNames = (folder.accessible_programs ?? []).map((id) => programMap.get(id)).filter(Boolean);
+    const pNames = (folder.accessible_programs ?? [])
+      .map((id) => programMap.get(id))
+      .filter(Boolean);
     const cNames = (folder.accessible_classes ?? []).map((id) => classMap.get(id)).filter(Boolean);
     const parts = [...pNames, ...cNames];
     if (!parts.length) return "All";
@@ -252,18 +288,31 @@ function MaterialsPage() {
           actions={
             <div className="flex gap-2">
               {isAdmin && (
-                <button onClick={() => openAccessModal(activeFolder)} className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5">
+                <button
+                  onClick={() => openAccessModal(activeFolder)}
+                  className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5"
+                >
                   <Settings2 className="h-4 w-4" /> Access
                 </button>
               )}
-              <button onClick={() => fileInputRef.current?.click()} disabled={uploading} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5 disabled:opacity-50">
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+                className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5 disabled:opacity-50"
+              >
                 <Upload className="h-4 w-4" /> {uploading ? "Uploading…" : "Upload Files"}
               </button>
             </div>
           }
         />
 
-        <button onClick={() => { setActiveFolder(null); setFiles([]); }} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors">
+        <button
+          onClick={() => {
+            setActiveFolder(null);
+            setFiles([]);
+          }}
+          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
+        >
           <ArrowLeft className="h-4 w-4" /> Back to folders
         </button>
 
@@ -273,8 +322,13 @@ function MaterialsPage() {
           <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
             <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
             <h2 className="text-lg font-semibold mb-2">No files yet</h2>
-            <p className="text-sm text-muted-foreground mb-4">Upload files to this folder to get started.</p>
-            <button onClick={() => fileInputRef.current?.click()} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
+            <p className="text-sm text-muted-foreground mb-4">
+              Upload files to this folder to get started.
+            </p>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
+            >
               <Upload className="h-4 w-4" /> Upload Files
             </button>
           </div>
@@ -283,17 +337,32 @@ function MaterialsPage() {
             {files.map((file) => {
               const Icon = fileIcon(file.file_type);
               return (
-                <div key={file.id} className="flex items-center gap-3 px-4 py-3 hover:bg-accent/50 transition-colors">
+                <div
+                  key={file.id}
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-accent/50 transition-colors"
+                >
                   <Icon className="h-5 w-5 text-muted-foreground shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <a href={file.file_url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground hover:underline truncate block">{file.file_name}</a>
+                    <a
+                      href={file.file_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-foreground hover:underline truncate block"
+                    >
+                      {file.file_name}
+                    </a>
                     <span className="text-xs text-muted-foreground">
-                      {formatSize(file.file_size)} · {new Date(file.created_at).toLocaleDateString()}
+                      {formatSize(file.file_size)} ·{" "}
+                      {new Date(file.created_at).toLocaleDateString()}
                       {isAdmin && ` · by ${creatorName(file.created_by)}`}
                     </span>
                   </div>
                   {canManageFile(file) && (
-                    <button onClick={() => deleteFile(file)} className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors" title="Delete file">
+                    <button
+                      onClick={() => deleteFile(file)}
+                      className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors"
+                      title="Delete file"
+                    >
                       <Trash2 className="h-4 w-4" />
                     </button>
                   )}
@@ -303,7 +372,20 @@ function MaterialsPage() {
           </div>
         )}
 
-        {showAccessModal && <AccessModal programs={programs} classes={classes} editPrograms={editPrograms} editClasses={editClasses} setEditPrograms={setEditPrograms} setEditClasses={setEditClasses} toggleItem={toggleItem} onSave={saveAccess} onClose={() => setShowAccessModal(null)} folderName={showAccessModal.name} />}
+        {showAccessModal && (
+          <AccessModal
+            programs={programs}
+            classes={classes}
+            editPrograms={editPrograms}
+            editClasses={editClasses}
+            setEditPrograms={setEditPrograms}
+            setEditClasses={setEditClasses}
+            toggleItem={toggleItem}
+            onSave={saveAccess}
+            onClose={() => setShowAccessModal(null)}
+            folderName={showAccessModal.name}
+          />
+        )}
       </div>
     );
   }
@@ -315,7 +397,10 @@ function MaterialsPage() {
         title="Materials"
         description="Organize and distribute learning materials"
         actions={
-          <button onClick={() => setShowNewFolder(true)} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5">
+          <button
+            onClick={() => setShowNewFolder(true)}
+            className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
+          >
             <FolderPlus className="h-4 w-4" /> New Folder
           </button>
         }
@@ -325,25 +410,41 @@ function MaterialsPage() {
         <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
           <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
           <h2 className="text-lg font-semibold mb-2">No folders yet</h2>
-          <p className="text-sm text-muted-foreground">Create a folder to start uploading materials.</p>
+          <p className="text-sm text-muted-foreground">
+            Create a folder to start uploading materials.
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {folders.map((folder) => (
-            <div key={folder.id} className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group">
+            <div
+              key={folder.id}
+              className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group"
+            >
               <div className="flex items-start justify-between mb-3">
-                <button onClick={() => setActiveFolder(folder)} className="flex items-center gap-2 text-left flex-1 min-w-0">
+                <button
+                  onClick={() => setActiveFolder(folder)}
+                  className="flex items-center gap-2 text-left flex-1 min-w-0"
+                >
                   <FolderOpen className="h-5 w-5 text-primary shrink-0" />
                   <span className="font-medium text-foreground truncate">{folder.name}</span>
                 </button>
                 <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   {isAdmin && (
-                    <button onClick={() => openAccessModal(folder)} className="p-1 rounded hover:bg-accent text-muted-foreground" title="Access settings">
+                    <button
+                      onClick={() => openAccessModal(folder)}
+                      className="p-1 rounded hover:bg-accent text-muted-foreground"
+                      title="Access settings"
+                    >
                       <Settings2 className="h-3.5 w-3.5" />
                     </button>
                   )}
                   {canManageFolder(folder) && (
-                    <button onClick={() => deleteFolder(folder.id)} className="p-1 rounded hover:bg-destructive/10 text-destructive" title="Delete folder">
+                    <button
+                      onClick={() => deleteFolder(folder.id)}
+                      className="p-1 rounded hover:bg-destructive/10 text-destructive"
+                      title="Delete folder"
+                    >
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>
                   )}
@@ -351,7 +452,12 @@ function MaterialsPage() {
               </div>
               <div className="text-xs text-muted-foreground space-y-0.5">
                 {isAdmin && <p>Access: {accessLabel(folder)}</p>}
-                {isAdmin && <p>Created by {creatorName(folder.created_by)} · {new Date(folder.created_at).toLocaleDateString()}</p>}
+                {isAdmin && (
+                  <p>
+                    Created by {creatorName(folder.created_by)} ·{" "}
+                    {new Date(folder.created_at).toLocaleDateString()}
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -363,26 +469,71 @@ function MaterialsPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
             <h2 className="text-lg font-semibold mb-4">New Folder</h2>
-            <input placeholder="Folder name" value={folderName} onChange={(e) => setFolderName(e.target.value)} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm mb-4" autoFocus />
+            <input
+              placeholder="Folder name"
+              value={folderName}
+              onChange={(e) => setFolderName(e.target.value)}
+              className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm mb-4"
+              autoFocus
+            />
             <div className="flex gap-2 justify-end">
-              <button onClick={() => setShowNewFolder(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={createFolder} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">Create</button>
+              <button
+                onClick={() => setShowNewFolder(false)}
+                className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={createFolder}
+                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Create
+              </button>
             </div>
           </div>
         </div>
       )}
 
-      {showAccessModal && <AccessModal programs={programs} classes={classes} editPrograms={editPrograms} editClasses={editClasses} setEditPrograms={setEditPrograms} setEditClasses={setEditClasses} toggleItem={toggleItem} onSave={saveAccess} onClose={() => setShowAccessModal(null)} folderName={showAccessModal.name} />}
+      {showAccessModal && (
+        <AccessModal
+          programs={programs}
+          classes={classes}
+          editPrograms={editPrograms}
+          editClasses={editClasses}
+          setEditPrograms={setEditPrograms}
+          setEditClasses={setEditClasses}
+          toggleItem={toggleItem}
+          onSave={saveAccess}
+          onClose={() => setShowAccessModal(null)}
+          folderName={showAccessModal.name}
+        />
+      )}
     </div>
   );
 }
 
 function AccessModal({
-  programs, classes, editPrograms, editClasses, setEditPrograms, setEditClasses, toggleItem, onSave, onClose, folderName,
+  programs,
+  classes,
+  editPrograms,
+  editClasses,
+  setEditPrograms,
+  setEditClasses,
+  toggleItem,
+  onSave,
+  onClose,
+  folderName,
 }: {
-  programs: Program[]; classes: ClassItem[]; editPrograms: string[]; editClasses: string[];
-  setEditPrograms: (v: string[]) => void; setEditClasses: (v: string[]) => void;
-  toggleItem: (arr: string[], id: string) => string[]; onSave: () => void; onClose: () => void; folderName: string;
+  programs: Program[];
+  classes: ClassItem[];
+  editPrograms: string[];
+  editClasses: string[];
+  setEditPrograms: (v: string[]) => void;
+  setEditClasses: (v: string[]) => void;
+  toggleItem: (arr: string[], id: string) => string[];
+  onSave: () => void;
+  onClose: () => void;
+  folderName: string;
 }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -393,9 +544,15 @@ function AccessModal({
         <div className="mb-4">
           <h3 className="text-sm font-medium mb-2">Programs</h3>
           <div className="flex flex-wrap gap-2">
-            {programs.length === 0 && <span className="text-xs text-muted-foreground">No programs</span>}
+            {programs.length === 0 && (
+              <span className="text-xs text-muted-foreground">No programs</span>
+            )}
             {programs.map((p) => (
-              <button key={p.id} onClick={() => setEditPrograms(toggleItem(editPrograms, p.id))} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${editPrograms.includes(p.id) ? "bg-primary text-primary-foreground border-primary" : "bg-secondary text-secondary-foreground border-border"}`}>
+              <button
+                key={p.id}
+                onClick={() => setEditPrograms(toggleItem(editPrograms, p.id))}
+                className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${editPrograms.includes(p.id) ? "bg-primary text-primary-foreground border-primary" : "bg-secondary text-secondary-foreground border-border"}`}
+              >
                 {p.name}
               </button>
             ))}
@@ -405,20 +562,38 @@ function AccessModal({
         <div className="mb-4">
           <h3 className="text-sm font-medium mb-2">Classes</h3>
           <div className="flex flex-wrap gap-2">
-            {classes.length === 0 && <span className="text-xs text-muted-foreground">No classes</span>}
+            {classes.length === 0 && (
+              <span className="text-xs text-muted-foreground">No classes</span>
+            )}
             {classes.map((c) => (
-              <button key={c.id} onClick={() => setEditClasses(toggleItem(editClasses, c.id))} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${editClasses.includes(c.id) ? "bg-primary text-primary-foreground border-primary" : "bg-secondary text-secondary-foreground border-border"}`}>
+              <button
+                key={c.id}
+                onClick={() => setEditClasses(toggleItem(editClasses, c.id))}
+                className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${editClasses.includes(c.id) ? "bg-primary text-primary-foreground border-primary" : "bg-secondary text-secondary-foreground border-border"}`}
+              >
                 {c.name}
               </button>
             ))}
           </div>
         </div>
 
-        <p className="text-xs text-muted-foreground mb-4">Leave both empty to make the folder accessible to all.</p>
+        <p className="text-xs text-muted-foreground mb-4">
+          Leave both empty to make the folder accessible to all.
+        </p>
 
         <div className="flex gap-2 justify-end">
-          <button onClick={onClose} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-          <button onClick={onSave} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">Save</button>
+          <button
+            onClick={onClose}
+            className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onSave}
+            className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>

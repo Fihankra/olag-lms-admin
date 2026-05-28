@@ -27,7 +27,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [role, setRole] = useState<AppRole>(null);
   const [roleLoading, setRoleLoading] = useState(true);
   const [approved, setApproved] = useState<boolean | null>(null);
-  const [teacherRecord, setTeacherRecord] = useState<{ id: string; name: string; assigned_class_id: string | null } | null>(null);
+  const [teacherRecord, setTeacherRecord] = useState<{
+    id: string;
+    name: string;
+    assigned_class_id: string | null;
+  } | null>(null);
 
   async function fetchRole(userId: string) {
     setRoleLoading(true);
@@ -52,7 +56,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         if (teacher) {
           setApproved((teacher as any).approved ?? false);
-          setTeacherRecord({ id: teacher.id, name: teacher.name, assigned_class_id: teacher.assigned_class_id });
+          setTeacherRecord({
+            id: teacher.id,
+            name: teacher.name,
+            assigned_class_id: teacher.assigned_class_id,
+          });
         } else {
           setApproved(false);
           setTeacherRecord(null);
@@ -74,7 +82,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [user]);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
       setIsLoading(false);
@@ -112,12 +122,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{
-      isAuthenticated: !!session,
-      user, session, isLoading,
-      role, roleLoading, approved, teacherRecord,
-      login, logout, refreshRole,
-    }}>
+    <AuthContext.Provider
+      value={{
+        isAuthenticated: !!session,
+        user,
+        session,
+        isLoading,
+        role,
+        roleLoading,
+        approved,
+        teacherRecord,
+        login,
+        logout,
+        refreshRole,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

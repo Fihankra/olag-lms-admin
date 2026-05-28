@@ -38,14 +38,14 @@ export const submitBatchReport = createServerFn({ method: "POST" })
     // Fetch existing reports for this class/week
     const { data: existingReports } = await supabase
       .from("reports")
-      .select("id, device_id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status")
+      .select(
+        "id, device_id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status",
+      )
       .eq("class_id", teacher.assigned_class_id)
       .eq("week_start", data.week_start)
       .eq("teacher_id", teacher.id);
 
-    const existingMap = new Map(
-      (existingReports ?? []).map((r: any) => [r.device_id, r])
-    );
+    const existingMap = new Map((existingReports ?? []).map((r: any) => [r.device_id, r]));
 
     const toInsert: any[] = [];
     const toUpdate: { id: string; entry: DeviceReportEntry; old: any }[] = [];
@@ -58,7 +58,8 @@ export const submitBatchReport = createServerFn({ method: "POST" })
           existing.device_condition !== entry.device_condition ||
           existing.fault_description !== (entry.fault_description || null) ||
           existing.missing_status !== entry.missing_status ||
-          JSON.stringify(existing.missing_accessories ?? []) !== JSON.stringify(entry.missing_accessories ?? []) ||
+          JSON.stringify(existing.missing_accessories ?? []) !==
+            JSON.stringify(entry.missing_accessories ?? []) ||
           existing.lms_status !== entry.lms_status;
         if (changed) {
           toUpdate.push({ id: existing.id, entry, old: existing });
@@ -146,10 +147,7 @@ export const getDeadlineSetting = createServerFn({ method: "GET" })
     return result;
   });
 
-async function checkDeadline(
-  supabase: any,
-  weekStart: string
-): Promise<string | null> {
+async function checkDeadline(supabase: any, weekStart: string): Promise<string | null> {
   const { data } = await supabase
     .from("settings")
     .select("key, value")
@@ -158,7 +156,8 @@ async function checkDeadline(
   const deadlineDay = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.day ?? 2;
   const hour = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.hour ?? 23;
   const minute = (data?.find((r: any) => r.key === "report_deadline")?.value as any)?.minute ?? 59;
-  const weekStartDay = (data?.find((r: any) => r.key === "report_week_start")?.value as any)?.day ?? 2;
+  const weekStartDay =
+    (data?.find((r: any) => r.key === "report_week_start")?.value as any)?.day ?? 2;
 
   const startDate = new Date(weekStart + "T00:00:00Z");
 
@@ -171,7 +170,16 @@ async function checkDeadline(
 
   const now = new Date();
   if (now > deadlineDate) {
-    const dayNames = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const dayNames = [
+      "",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
     return `The deadline for this week's reports was ${dayNames[deadlineDay]} at ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}. Submissions are closed.`;
   }
 

@@ -15,10 +15,17 @@ export function StatsCard({ title, value, subtitle, icon: Icon, trend }: StatsCa
         <div className="min-w-0">
           <p className="text-xs sm:text-sm text-muted-foreground truncate">{title}</p>
           <p className="text-xl sm:text-2xl font-bold mt-0.5 sm:mt-1 tabular-nums">{value}</p>
-          {subtitle && <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 truncate">{subtitle}</p>}
+          {subtitle && (
+            <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 truncate">
+              {subtitle}
+            </p>
+          )}
           {trend && (
-            <p className={`text-[11px] sm:text-xs mt-0.5 ${trend.positive ? "text-success" : "text-destructive"}`}>
-              {trend.positive ? "+" : ""}{trend.value}% from last week
+            <p
+              className={`text-[11px] sm:text-xs mt-0.5 ${trend.positive ? "text-success" : "text-destructive"}`}
+            >
+              {trend.positive ? "+" : ""}
+              {trend.value}% from last week
             </p>
           )}
         </div>

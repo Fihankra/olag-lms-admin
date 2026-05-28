@@ -1,5 +1,13 @@
 interface StatusBadgeProps {
-  status: "online" | "offline" | "active" | "inactive" | "assigned" | "unassigned" | "good" | "faulty";
+  status:
+    | "online"
+    | "offline"
+    | "active"
+    | "inactive"
+    | "assigned"
+    | "unassigned"
+    | "good"
+    | "faulty";
 }
 
 const styles: Record<string, string> = {
@@ -15,8 +23,12 @@ const styles: Record<string, string> = {
 
 export function StatusBadge({ status }: StatusBadgeProps) {
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium capitalize ${styles[status] ?? "bg-muted text-muted-foreground"}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${status === "online" || status === "active" || status === "assigned" || status === "good" ? "bg-success" : status === "offline" || status === "faulty" ? "bg-destructive" : "bg-muted-foreground"}`} />
+    <span
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium capitalize ${styles[status] ?? "bg-muted text-muted-foreground"}`}
+    >
+      <span
+        className={`h-1.5 w-1.5 rounded-full ${status === "online" || status === "active" || status === "assigned" || status === "good" ? "bg-success" : status === "offline" || status === "faulty" ? "bg-destructive" : "bg-muted-foreground"}`}
+      />
       {status}
     </span>
   );

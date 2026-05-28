@@ -45,15 +45,26 @@ function bucketDevicesByHour(devices: DeviceRow[]) {
     let online = 0;
     let offline = 0;
     for (const d of devices) {
-      if (!d.last_seen) { offline++; continue; }
+      if (!d.last_seen) {
+        offline++;
+        continue;
+      }
       const lastSeen = new Date(d.last_seen);
       if (lastSeen >= bucketTime && lastSeen < bucketEnd) online++;
       else if (lastSeen < bucketTime) offline++;
-      else { if (d.network_status === "online") online++; else offline++; }
+      else {
+        if (d.network_status === "online") online++;
+        else offline++;
+      }
     }
     buckets.push({
-      time: bucketTime.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", hour12: false }),
-      online, offline,
+      time: bucketTime.toLocaleTimeString(undefined, {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+      online,
+      offline,
     });
   }
   return buckets;
@@ -74,16 +85,25 @@ function TeacherDashboard() {
 
   return (
     <div>
-      <PageHeader title={`Welcome, ${teacherRecord?.name ?? "Teacher"}`} description="Your teaching dashboard" />
+      <PageHeader
+        title={`Welcome, ${teacherRecord?.name ?? "Teacher"}`}
+        description="Your teaching dashboard"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a href="/materials" className="bg-card rounded-lg border border-border p-6 hover:border-primary/40 transition-colors flex items-center gap-4">
+        <a
+          href="/materials"
+          className="bg-card rounded-lg border border-border p-6 hover:border-primary/40 transition-colors flex items-center gap-4"
+        >
           <FolderOpen className="h-8 w-8 text-primary" />
           <div>
             <h3 className="font-semibold text-foreground">Materials</h3>
             <p className="text-sm text-muted-foreground">Access and manage learning materials</p>
           </div>
         </a>
-        <a href="/groups" className="bg-card rounded-lg border border-border p-6 hover:border-primary/40 transition-colors flex items-center gap-4">
+        <a
+          href="/groups"
+          className="bg-card rounded-lg border border-border p-6 hover:border-primary/40 transition-colors flex items-center gap-4"
+        >
           <Users2 className="h-8 w-8 text-primary" />
           <div>
             <h3 className="font-semibold text-foreground">Groups</h3>
@@ -103,7 +123,9 @@ function AdminDashboard() {
   async function fetchData() {
     const [studentsRes, devicesRes] = await Promise.all([
       supabase.from("students").select("id", { count: "exact", head: true }),
-      supabase.from("devices").select("id, device_id, network_status, last_seen, assigned_student_id"),
+      supabase
+        .from("devices")
+        .select("id, device_id, network_status, last_seen, assigned_student_id"),
     ]);
     setTotalStudents(studentsRes.count ?? 0);
     setDevices((devicesRes.data as DeviceRow[]) ?? []);
@@ -116,15 +138,20 @@ function AdminDashboard() {
       .channel("devices-dashboard")
       .on("postgres_changes", { event: "*", schema: "public", table: "devices" }, () => fetchData())
       .subscribe();
-    return () => { supabase.removeChannel(channel); };
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
-  const stats = useMemo(() => ({
-    totalStudents,
-    totalDevices: devices.length,
-    assignedDevices: devices.filter((d) => d.assigned_student_id).length,
-    onlineDevices: devices.filter((d) => d.network_status === "online").length,
-  }), [devices, totalStudents]);
+  const stats = useMemo(
+    () => ({
+      totalStudents,
+      totalDevices: devices.length,
+      assignedDevices: devices.filter((d) => d.assigned_student_id).length,
+      onlineDevices: devices.filter((d) => d.network_status === "online").length,
+    }),
+    [devices, totalStudents],
+  );
 
   const chartData = useMemo(() => bucketDevicesByHour(devices), [devices]);
 
@@ -132,20 +159,47 @@ function AdminDashboard() {
     <div>
       <PageHeader title="Dashboard" description="Overview of your learning environment" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <StatsCard title="Total Students" value={loading ? "..." : stats.totalStudents} icon={Users} />
-        <StatsCard title="Total Devices" value={loading ? "..." : stats.totalDevices} icon={Tablet} />
-        <StatsCard title="Assigned Devices" value={loading ? "..." : stats.assignedDevices} subtitle={`${stats.totalDevices - stats.assignedDevices} unassigned`} icon={Tablet} />
-        <StatsCard title="Online Devices" value={loading ? "..." : stats.onlineDevices} subtitle={`${stats.totalDevices - stats.onlineDevices} offline`} icon={stats.onlineDevices > 0 ? Wifi : WifiOff} />
+        <StatsCard
+          title="Total Students"
+          value={loading ? "..." : stats.totalStudents}
+          icon={Users}
+        />
+        <StatsCard
+          title="Total Devices"
+          value={loading ? "..." : stats.totalDevices}
+          icon={Tablet}
+        />
+        <StatsCard
+          title="Assigned Devices"
+          value={loading ? "..." : stats.assignedDevices}
+          subtitle={`${stats.totalDevices - stats.assignedDevices} unassigned`}
+          icon={Tablet}
+        />
+        <StatsCard
+          title="Online Devices"
+          value={loading ? "..." : stats.onlineDevices}
+          subtitle={`${stats.totalDevices - stats.onlineDevices} offline`}
+          icon={stats.onlineDevices > 0 ? Wifi : WifiOff}
+        />
       </div>
       <div className="bg-card rounded-lg border border-border p-4 sm:p-6">
         <h2 className="text-base sm:text-lg font-semibold mb-1">Device Activity</h2>
-        <p className="text-[11px] sm:text-xs text-muted-foreground mb-4">Online vs offline devices over the last 24 hours</p>
+        <p className="text-[11px] sm:text-xs text-muted-foreground mb-4">
+          Online vs offline devices over the last 24 hours
+        </p>
         {loading ? (
-          <div className="h-48 sm:h-64 flex items-center justify-center text-muted-foreground text-sm">Loading chart data…</div>
+          <div className="h-48 sm:h-64 flex items-center justify-center text-muted-foreground text-sm">
+            Loading chart data…
+          </div>
         ) : devices.length === 0 ? (
-          <div className="h-48 sm:h-64 flex items-center justify-center text-muted-foreground text-sm">No devices registered yet.</div>
+          <div className="h-48 sm:h-64 flex items-center justify-center text-muted-foreground text-sm">
+            No devices registered yet.
+          </div>
         ) : (
-          <ResponsiveContainer width="100%" height={typeof window !== "undefined" && window.innerWidth < 640 ? 200 : 280}>
+          <ResponsiveContainer
+            width="100%"
+            height={typeof window !== "undefined" && window.innerWidth < 640 ? 200 : 280}
+          >
             <AreaChart data={chartData} margin={{ top: 5, right: 5, left: -15, bottom: 0 }}>
               <defs>
                 <linearGradient id="gradOnline" x1="0" y1="0" x2="0" y2="1">
@@ -158,12 +212,48 @@ function AdminDashboard() {
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.25 0.01 260)" />
-              <XAxis dataKey="time" tick={{ fill: "oklch(0.55 0.02 260)", fontSize: 10 }} tickLine={false} axisLine={false} interval={typeof window !== "undefined" && window.innerWidth < 640 ? 5 : "preserveStartEnd"} />
-              <YAxis tick={{ fill: "oklch(0.55 0.02 260)", fontSize: 10 }} tickLine={false} axisLine={false} allowDecimals={false} width={30} />
-              <Tooltip contentStyle={{ backgroundColor: "oklch(0.17 0.02 260)", border: "1px solid oklch(0.25 0.01 260)", borderRadius: "8px", fontSize: "12px", color: "oklch(0.9 0.01 260)" }} />
+              <XAxis
+                dataKey="time"
+                tick={{ fill: "oklch(0.55 0.02 260)", fontSize: 10 }}
+                tickLine={false}
+                axisLine={false}
+                interval={
+                  typeof window !== "undefined" && window.innerWidth < 640 ? 5 : "preserveStartEnd"
+                }
+              />
+              <YAxis
+                tick={{ fill: "oklch(0.55 0.02 260)", fontSize: 10 }}
+                tickLine={false}
+                axisLine={false}
+                allowDecimals={false}
+                width={30}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "oklch(0.17 0.02 260)",
+                  border: "1px solid oklch(0.25 0.01 260)",
+                  borderRadius: "8px",
+                  fontSize: "12px",
+                  color: "oklch(0.9 0.01 260)",
+                }}
+              />
               <Legend wrapperStyle={{ fontSize: "11px", color: "oklch(0.55 0.02 260)" }} />
-              <Area type="monotone" dataKey="online" name="Online" stroke="oklch(0.72 0.19 142)" fill="url(#gradOnline)" strokeWidth={2} />
-              <Area type="monotone" dataKey="offline" name="Offline" stroke="oklch(0.58 0.16 254)" fill="url(#gradOffline)" strokeWidth={2} />
+              <Area
+                type="monotone"
+                dataKey="online"
+                name="Online"
+                stroke="oklch(0.72 0.19 142)"
+                fill="url(#gradOnline)"
+                strokeWidth={2}
+              />
+              <Area
+                type="monotone"
+                dataKey="offline"
+                name="Offline"
+                stroke="oklch(0.58 0.16 254)"
+                fill="url(#gradOffline)"
+                strokeWidth={2}
+              />
             </AreaChart>
           </ResponsiveContainer>
         )}

@@ -8,7 +8,6 @@ import { ExcelImport } from "../../components/ExcelImport";
 import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 
-
 export const Route = createFileRoute("/_authenticated/classes")({
   component: ClassesPage,
   head: () => ({
@@ -19,7 +18,13 @@ export const Route = createFileRoute("/_authenticated/classes")({
   }),
 });
 
-type ClassItem = { id: string; name: string; program_id: string; created_at: string; programs?: { name: string } | null };
+type ClassItem = {
+  id: string;
+  name: string;
+  program_id: string;
+  created_at: string;
+  programs?: { name: string } | null;
+};
 type Program = { id: string; name: string };
 
 function ClassesPage() {
@@ -30,7 +35,10 @@ function ClassesPage() {
   const [form, setForm] = useState({ name: "", program_id: "" });
 
   async function fetchClasses() {
-    const { data } = await supabase.from("classes").select("*, programs(name)").order("created_at", { ascending: false });
+    const { data } = await supabase
+      .from("classes")
+      .select("*, programs(name)")
+      .order("created_at", { ascending: false });
     setClasses((data as ClassItem[]) ?? []);
   }
 
@@ -39,7 +47,10 @@ function ClassesPage() {
     setPrograms(data ?? []);
   }
 
-  useEffect(() => { fetchClasses(); fetchPrograms(); }, []);
+  useEffect(() => {
+    fetchClasses();
+    fetchPrograms();
+  }, []);
 
   function openAdd() {
     setEditClass(null);
@@ -79,58 +90,108 @@ function ClassesPage() {
   const columns = [
     { key: "name", label: "Class Name" },
     { key: "program_id", label: "Program", render: (c: ClassItem) => c.programs?.name ?? "—" },
-    { key: "created_at", label: "Created", render: (c: ClassItem) => new Date(c.created_at).toLocaleDateString() },
+    {
+      key: "created_at",
+      label: "Created",
+      render: (c: ClassItem) => new Date(c.created_at).toLocaleDateString(),
+    },
     {
       key: "actions",
       label: "",
       render: (c: ClassItem) => (
         <div className="flex gap-2">
-          <button onClick={(e) => { e.stopPropagation(); openEdit(c); }} className="text-xs text-primary hover:underline">Edit</button>
-          <button onClick={(e) => { e.stopPropagation(); deleteClass(c.id); }} className="text-xs text-destructive hover:underline">Delete</button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              openEdit(c);
+            }}
+            className="text-xs text-primary hover:underline"
+          >
+            Edit
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              deleteClass(c.id);
+            }}
+            className="text-xs text-destructive hover:underline"
+          >
+            Delete
+          </button>
         </div>
       ),
     },
   ];
 
   return (
-    <AdminOnly><div>
-      <PageHeader
-        title="Classes"
-        description="Manage classes linked to programs"
-        actions={
-          <div className="flex items-center gap-2">
-            <ExcelExport
+    <AdminOnly>
+      <div>
+        <PageHeader
+          title="Classes"
+          description="Manage classes linked to programs"
+          actions={
+            <div className="flex items-center gap-2">
+              <ExcelExport
                 data={classes.map((c) => ({ name: c.name, program_name: c.programs?.name ?? "" }))}
                 filename="classes_export"
                 sheetName="Classes"
               />
-            <ExcelImport entity="classes" onImportComplete={fetchClasses} />
-            <button onClick={openAdd} className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Add Class</button>
-          </div>
-        }
-      />
-      <DataTable data={classes as Record<string, unknown>[]} columns={columns as any} />
-
-      {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
-            <h2 className="text-lg font-semibold mb-4">{editClass ? "Edit Class" : "Add Class"}</h2>
-            <div className="space-y-3">
-              <input placeholder="Class Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm" />
-              <select value={form.program_id} onChange={(e) => setForm({ ...form, program_id: e.target.value })} className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm">
-                <option value="">Select Program</option>
-                {programs.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
-              </select>
-            </div>
-            <div className="flex gap-2 justify-end mt-4">
-              <button onClick={() => setShowModal(false)} className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">Cancel</button>
-              <button onClick={saveClass} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">
-                {editClass ? "Save" : "Add"}
+              <ExcelImport entity="classes" onImportComplete={fetchClasses} />
+              <button
+                onClick={openAdd}
+                className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                Add Class
               </button>
             </div>
+          }
+        />
+        <DataTable data={classes as Record<string, unknown>[]} columns={columns as any} />
+
+        {showModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
+              <h2 className="text-lg font-semibold mb-4">
+                {editClass ? "Edit Class" : "Add Class"}
+              </h2>
+              <div className="space-y-3">
+                <input
+                  placeholder="Class Name"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                />
+                <select
+                  value={form.program_id}
+                  onChange={(e) => setForm({ ...form, program_id: e.target.value })}
+                  className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
+                >
+                  <option value="">Select Program</option>
+                  {programs.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex gap-2 justify-end mt-4">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={saveClass}
+                  className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  {editClass ? "Save" : "Add"}
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
-    </div></AdminOnly>
+        )}
+      </div>
+    </AdminOnly>
   );
 }

@@ -44,7 +44,10 @@ export function DataTable<T extends Record<string, unknown>>({
           <tbody>
             {paged.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-8 text-center text-muted-foreground">
+                <td
+                  colSpan={columns.length}
+                  className="px-4 py-8 text-center text-muted-foreground"
+                >
                   No data found
                 </td>
               </tr>

@@ -46,9 +46,13 @@ function AuthenticatedLayout() {
           </div>
           <h1 className="text-2xl font-bold text-foreground mb-2">Pending Approval</h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Your account is waiting for admin approval. You'll be able to access the system once approved.
+            Your account is waiting for admin approval. You'll be able to access the system once
+            approved.
           </p>
-          <button onClick={() => logout()} className="px-4 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors">
+          <button
+            onClick={() => logout()}
+            className="px-4 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+          >
             Sign Out
           </button>
         </div>

@@ -84,7 +84,10 @@ function SettingsPage() {
       .single();
 
     if (existingDeadline) {
-      await supabase.from("settings").update({ value: deadlineValue }).eq("id", existingDeadline.id);
+      await supabase
+        .from("settings")
+        .update({ value: deadlineValue })
+        .eq("id", existingDeadline.id);
     } else {
       await supabase.from("settings").insert({ key: "report_deadline", value: deadlineValue });
     }
@@ -114,7 +117,9 @@ function SettingsPage() {
                 className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
               >
                 {DAY_OPTIONS.map((d) => (
-                  <option key={d.value} value={d.value}>{d.label}</option>
+                  <option key={d.value} value={d.value}>
+                    {d.label}
+                  </option>
                 ))}
               </select>
             </div>
@@ -135,7 +140,9 @@ function SettingsPage() {
                   className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
                 >
                   {DAY_OPTIONS.map((d) => (
-                    <option key={d.value} value={d.value}>{d.label}</option>
+                    <option key={d.value} value={d.value}>
+                      {d.label}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -147,7 +154,9 @@ function SettingsPage() {
                   className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
                 >
                   {Array.from({ length: 24 }, (_, i) => (
-                    <option key={i} value={i}>{String(i).padStart(2, "0")}</option>
+                    <option key={i} value={i}>
+                      {String(i).padStart(2, "0")}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -159,7 +168,9 @@ function SettingsPage() {
                   className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm"
                 >
                   {[0, 15, 30, 45, 59].map((m) => (
-                    <option key={m} value={m}>{String(m).padStart(2, "0")}</option>
+                    <option key={m} value={m}>
+                      {String(m).padStart(2, "0")}
+                    </option>
                   ))}
                 </select>
               </div>

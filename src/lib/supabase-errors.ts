@@ -1,7 +1,11 @@
 /**
  * Parses Supabase/PostgreSQL error objects into user-friendly messages.
  */
-export function parseSupabaseError(error: { code?: string; message?: string; details?: string }): string {
+export function parseSupabaseError(error: {
+  code?: string;
+  message?: string;
+  details?: string;
+}): string {
   const code = error.code ?? "";
   const message = error.message ?? "An unknown error occurred";
   const details = error.details ?? "";
@@ -28,7 +32,9 @@ export function parseSupabaseError(error: { code?: string; message?: string; det
       const table = formatFieldName(insertMatch[3]);
       return `The selected ${field} does not exist in ${table}. Please choose a valid option.`;
     }
-    const deleteMatch = message.match(/Key \((\w+)\)=\((.+?)\) is still referenced from table "(\w+)"/);
+    const deleteMatch = message.match(
+      /Key \((\w+)\)=\((.+?)\) is still referenced from table "(\w+)"/,
+    );
     if (deleteMatch) {
       const table = formatFieldName(deleteMatch[3]);
       return `Cannot delete this record because it is still used by ${table}. Remove those references first.`;

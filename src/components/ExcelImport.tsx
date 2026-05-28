@@ -1,5 +1,15 @@
 import { useState, useRef } from "react";
-import { Download, Upload, X, FileSpreadsheet, Loader2, CheckCircle2, AlertTriangle, RefreshCw, Trash2 } from "lucide-react";
+import {
+  Download,
+  Upload,
+  X,
+  FileSpreadsheet,
+  Loader2,
+  CheckCircle2,
+  AlertTriangle,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
 import * as XLSX from "xlsx";
 import { supabase } from "../integrations/supabase/client";
 
@@ -14,17 +24,26 @@ interface TemplateConfig {
 const TEMPLATES: Record<EntityType, TemplateConfig> = {
   programs: {
     headers: ["name", "description"],
-    sampleData: [["General Arts", "Arts program"], ["General Science", "Science program"]],
+    sampleData: [
+      ["General Arts", "Arts program"],
+      ["General Science", "Science program"],
+    ],
     sheetName: "Programs",
   },
   classes: {
     headers: ["name", "program_name"],
-    sampleData: [["1 Arts 1", "General Arts"], ["1 Science 1", "General Science"]],
+    sampleData: [
+      ["1 Arts 1", "General Arts"],
+      ["1 Science 1", "General Science"],
+    ],
     sheetName: "Classes",
   },
   students: {
     headers: ["student_id", "name", "program_name", "class_name", "gender", "form", "password"],
-    sampleData: [["S001", "John Doe", "General Arts", "1 Arts 1", "Male", "Form 1", ""], ["S002", "Jane Smith", "General Science", "1 Science 1", "Female", "Form 2", ""]],
+    sampleData: [
+      ["S001", "John Doe", "General Arts", "1 Arts 1", "Male", "Form 1", ""],
+      ["S002", "Jane Smith", "General Science", "1 Science 1", "Female", "Form 2", ""],
+    ],
     sheetName: "Students",
   },
   devices: {
@@ -34,7 +53,10 @@ const TEMPLATES: Record<EntityType, TemplateConfig> = {
   },
   teachers: {
     headers: ["teacher_id", "name"],
-    sampleData: [["T001", "Mr. Smith"], ["T002", "Mrs. Johnson"]],
+    sampleData: [
+      ["T001", "Mr. Smith"],
+      ["T002", "Mrs. Johnson"],
+    ],
     sheetName: "Teachers",
   },
 };
@@ -56,7 +78,10 @@ interface ImportResult {
 
 interface PreviewRow {
   rowNum: number;
-  fields: Record<string, { value: string; resolvedId?: string; resolvedLabel?: string; status: "ok" | "warn" | "error" }>;
+  fields: Record<
+    string,
+    { value: string; resolvedId?: string; resolvedLabel?: string; status: "ok" | "warn" | "error" }
+  >;
 }
 
 const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
@@ -67,17 +92,27 @@ const UNIQUE_KEYS: Partial<Record<EntityType, string[]>> = {
   classes: ["name"],
 };
 
-async function buildPreview(entity: EntityType, rows: Record<string, string>[]): Promise<PreviewRow[]> {
+async function buildPreview(
+  entity: EntityType,
+  rows: Record<string, string>[],
+): Promise<PreviewRow[]> {
   let programMap = new Map<string, { id: string; name: string }>();
   let classMap = new Map<string, { id: string; name: string; programId?: string }>();
 
   if (["classes", "students"].includes(entity)) {
     const { data: programs } = await supabase.from("programs").select("id, name");
-    programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), { id: p.id, name: p.name }]));
+    programMap = new Map(
+      (programs ?? []).map((p) => [p.name.toLowerCase(), { id: p.id, name: p.name }]),
+    );
   }
   if (entity === "students") {
     const { data: classes } = await supabase.from("classes").select("id, name, program_id");
-    classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, name: c.name, programId: (c as any).program_id as string }]));
+    classMap = new Map(
+      (classes ?? []).map((c) => [
+        c.name.toLowerCase(),
+        { id: c.id, name: c.name, programId: (c as any).program_id as string },
+      ]),
+    );
   }
 
   const duplicates = new Map<string, Set<number>>();
@@ -106,13 +141,25 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
 
     if (entity === "programs") {
       const nameStatus = !row.name?.trim() ? "error" : isDuplicate("name", i) ? "warn" : "ok";
-      fields.name = { value: row.name || "", status: nameStatus, ...(isDuplicate("name", i) && row.name?.trim() ? { resolvedLabel: "⚠ Duplicate name in file" } : {}) };
+      fields.name = {
+        value: row.name || "",
+        status: nameStatus,
+        ...(isDuplicate("name", i) && row.name?.trim()
+          ? { resolvedLabel: "⚠ Duplicate name in file" }
+          : {}),
+      };
       fields.description = { value: row.description || "", status: "ok" };
     }
 
     if (entity === "classes") {
       const nameStatus = !row.name?.trim() ? "error" : isDuplicate("name", i) ? "warn" : "ok";
-      fields.name = { value: row.name || "", status: nameStatus, ...(isDuplicate("name", i) && row.name?.trim() ? { resolvedLabel: "⚠ Duplicate name in file" } : {}) };
+      fields.name = {
+        value: row.name || "",
+        status: nameStatus,
+        ...(isDuplicate("name", i) && row.name?.trim()
+          ? { resolvedLabel: "⚠ Duplicate name in file" }
+          : {}),
+      };
       const key = row.program_name?.trim().toLowerCase() ?? "";
       const match = programMap.get(key);
       fields.program_name = {
@@ -124,8 +171,18 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
     }
 
     if (entity === "students") {
-      const sidStatus = !row.student_id?.trim() ? "error" : isDuplicate("student_id", i) ? "warn" : "ok";
-      fields.student_id = { value: row.student_id || "", status: sidStatus, ...(isDuplicate("student_id", i) && row.student_id?.trim() ? { resolvedLabel: "⚠ Duplicate student_id in file" } : {}) };
+      const sidStatus = !row.student_id?.trim()
+        ? "error"
+        : isDuplicate("student_id", i)
+          ? "warn"
+          : "ok";
+      fields.student_id = {
+        value: row.student_id || "",
+        status: sidStatus,
+        ...(isDuplicate("student_id", i) && row.student_id?.trim()
+          ? { resolvedLabel: "⚠ Duplicate student_id in file" }
+          : {}),
+      };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
 
       const cKey = row.class_name?.trim().toLowerCase() ?? "";
@@ -142,30 +199,61 @@ async function buildPreview(entity: EntityType, rows: Record<string, string>[]):
       let programNote = "";
       if (!pMatch && !pKey && cMatch?.programId) {
         const resolved = [...programMap.values()].find((p) => p.id === cMatch.programId);
-        if (resolved) { pMatch = resolved; programNote = " (from class)"; }
+        if (resolved) {
+          pMatch = resolved;
+          programNote = " (from class)";
+        }
       }
       fields.program_name = {
         value: row.program_name || (pMatch && programNote ? pMatch.name : ""),
         resolvedId: pMatch?.id,
-        resolvedLabel: pMatch ? `→ ${pMatch.name}${programNote} (${pMatch.id.slice(0, 8)}…)` : undefined,
+        resolvedLabel: pMatch
+          ? `→ ${pMatch.name}${programNote} (${pMatch.id.slice(0, 8)}…)`
+          : undefined,
         status: pMatch ? "ok" : pKey ? "error" : "warn",
       };
       const validGenders = ["male", "female"];
       const gVal = row.gender?.trim().toLowerCase() ?? "";
-      fields.gender = { value: row.gender || "", status: gVal ? (validGenders.includes(gVal) ? "ok" : "error") : "warn" };
+      fields.gender = {
+        value: row.gender || "",
+        status: gVal ? (validGenders.includes(gVal) ? "ok" : "error") : "warn",
+      };
       const validForms = ["form 1", "form 2", "form 3"];
       const fVal = row.form?.trim().toLowerCase() ?? "";
-      fields.form = { value: row.form || "", status: fVal ? (validForms.includes(fVal) ? "ok" : "error") : "warn" };
+      fields.form = {
+        value: row.form || "",
+        status: fVal ? (validForms.includes(fVal) ? "ok" : "error") : "warn",
+      };
     }
 
     if (entity === "devices") {
-      const didStatus = !row.device_id?.trim() ? "error" : isDuplicate("device_id", i) ? "warn" : "ok";
-      fields.device_id = { value: row.device_id || "", status: didStatus, ...(isDuplicate("device_id", i) && row.device_id?.trim() ? { resolvedLabel: "⚠ Duplicate device_id in file" } : {}) };
+      const didStatus = !row.device_id?.trim()
+        ? "error"
+        : isDuplicate("device_id", i)
+          ? "warn"
+          : "ok";
+      fields.device_id = {
+        value: row.device_id || "",
+        status: didStatus,
+        ...(isDuplicate("device_id", i) && row.device_id?.trim()
+          ? { resolvedLabel: "⚠ Duplicate device_id in file" }
+          : {}),
+      };
     }
 
     if (entity === "teachers") {
-      const tidStatus = !row.teacher_id?.trim() ? "error" : isDuplicate("teacher_id", i) ? "warn" : "ok";
-      fields.teacher_id = { value: row.teacher_id || "", status: tidStatus, ...(isDuplicate("teacher_id", i) && row.teacher_id?.trim() ? { resolvedLabel: "⚠ Duplicate teacher_id in file" } : {}) };
+      const tidStatus = !row.teacher_id?.trim()
+        ? "error"
+        : isDuplicate("teacher_id", i)
+          ? "warn"
+          : "ok";
+      fields.teacher_id = {
+        value: row.teacher_id || "",
+        status: tidStatus,
+        ...(isDuplicate("teacher_id", i) && row.teacher_id?.trim()
+          ? { resolvedLabel: "⚠ Duplicate teacher_id in file" }
+          : {}),
+      };
       fields.name = { value: row.name || "", status: row.name?.trim() ? "ok" : "error" };
     }
 
@@ -188,8 +276,14 @@ async function processImport(
 
   if (entity === "programs") {
     for (const row of rows) {
-      if (!row.name?.trim()) { result.errors.push("Missing name"); reportProgress(); continue; }
-      const { error } = await supabase.from("programs").insert({ name: row.name.trim(), description: row.description?.trim() || null });
+      if (!row.name?.trim()) {
+        result.errors.push("Missing name");
+        reportProgress();
+        continue;
+      }
+      const { error } = await supabase
+        .from("programs")
+        .insert({ name: row.name.trim(), description: row.description?.trim() || null });
       if (error) result.errors.push(`"${row.name}": ${error.message}`);
       else result.success++;
       reportProgress();
@@ -200,10 +294,20 @@ async function processImport(
     const { data: programs } = await supabase.from("programs").select("id, name");
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
     for (const row of rows) {
-      if (!row.name?.trim()) { result.errors.push("Missing name"); reportProgress(); continue; }
+      if (!row.name?.trim()) {
+        result.errors.push("Missing name");
+        reportProgress();
+        continue;
+      }
       const programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "");
-      if (!programId) { result.errors.push(`"${row.name}": program "${row.program_name}" not found`); reportProgress(); continue; }
-      const { error } = await supabase.from("classes").insert({ name: row.name.trim(), program_id: programId });
+      if (!programId) {
+        result.errors.push(`"${row.name}": program "${row.program_name}" not found`);
+        reportProgress();
+        continue;
+      }
+      const { error } = await supabase
+        .from("classes")
+        .insert({ name: row.name.trim(), program_id: programId });
       if (error) result.errors.push(`"${row.name}": ${error.message}`);
       else result.success++;
       reportProgress();
@@ -216,17 +320,26 @@ async function processImport(
       supabase.from("classes").select("id, name, program_id"),
     ]);
     const programMap = new Map((programs ?? []).map((p) => [p.name.toLowerCase(), p.id]));
-    const classMap = new Map((classes ?? []).map((c) => [c.name.toLowerCase(), { id: c.id, programId: (c as any).program_id as string }]));
+    const classMap = new Map(
+      (classes ?? []).map((c) => [
+        c.name.toLowerCase(),
+        { id: c.id, programId: (c as any).program_id as string },
+      ]),
+    );
 
     for (let i = 0; i < rows.length; i += BATCH_SIZE) {
       const batch = rows.slice(i, i + BATCH_SIZE);
       const inserts: any[] = [];
       for (const row of batch) {
-        if (!row.student_id?.trim() || !row.name?.trim()) { result.errors.push("Missing student_id or name"); continue; }
+        if (!row.student_id?.trim() || !row.name?.trim()) {
+          result.errors.push("Missing student_id or name");
+          continue;
+        }
         const genderVal = row.gender?.trim();
         const formVal = row.form?.trim();
         const validGender = genderVal && ["Male", "Female"].includes(genderVal) ? genderVal : null;
-        const validForm = formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
+        const validForm =
+          formVal && ["Form 1", "Form 2", "Form 3"].includes(formVal) ? formVal : null;
         const classEntry = classMap.get(row.class_name?.trim().toLowerCase() ?? "");
         let programId = programMap.get(row.program_name?.trim().toLowerCase() ?? "") ?? null;
         if (!programId && classEntry?.programId) programId = classEntry.programId;
@@ -260,7 +373,11 @@ async function processImport(
 
   if (entity === "devices") {
     for (const row of rows) {
-      if (!row.device_id?.trim()) { result.errors.push("Missing device_id"); reportProgress(); continue; }
+      if (!row.device_id?.trim()) {
+        result.errors.push("Missing device_id");
+        reportProgress();
+        continue;
+      }
       const { error } = await supabase.from("devices").insert({ device_id: row.device_id.trim() });
       if (error) result.errors.push(`"${row.device_id}": ${error.message}`);
       else result.success++;
@@ -270,8 +387,14 @@ async function processImport(
 
   if (entity === "teachers") {
     for (const row of rows) {
-      if (!row.teacher_id?.trim() || !row.name?.trim()) { result.errors.push("Missing teacher_id or name"); reportProgress(); continue; }
-      const { error } = await supabase.from("teachers").insert({ teacher_id: row.teacher_id.trim(), name: row.name.trim(), approved: true });
+      if (!row.teacher_id?.trim() || !row.name?.trim()) {
+        result.errors.push("Missing teacher_id or name");
+        reportProgress();
+        continue;
+      }
+      const { error } = await supabase
+        .from("teachers")
+        .insert({ teacher_id: row.teacher_id.trim(), name: row.name.trim(), approved: true });
       if (error) result.errors.push(`"${row.teacher_id}": ${error.message}`);
       else result.success++;
       reportProgress();
@@ -301,7 +424,10 @@ async function clearEntity(entity: EntityType): Promise<string[]> {
   const errors: string[] = [];
   const toDelete = DELETE_ORDER[entity];
   for (const table of toDelete) {
-    const { error } = await supabase.from(table).delete().neq("id", "00000000-0000-0000-0000-000000000000");
+    const { error } = await supabase
+      .from(table)
+      .delete()
+      .neq("id", "00000000-0000-0000-0000-000000000000");
     if (error) errors.push(`Failed to clear ${table}: ${error.message}`);
   }
   return errors;
@@ -395,9 +521,22 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
     setConfirmReset(false);
   }
 
-  const hasErrors = preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
-  const errorCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "error").length, 0) ?? 0;
-  const warnCount = preview?.reduce((sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "warn" && f.resolvedLabel?.startsWith("⚠")).length, 0) ?? 0;
+  const hasErrors =
+    preview?.some((r) => Object.values(r.fields).some((f) => f.status === "error")) ?? false;
+  const errorCount =
+    preview?.reduce(
+      (sum, r) => sum + Object.values(r.fields).filter((f) => f.status === "error").length,
+      0,
+    ) ?? 0;
+  const warnCount =
+    preview?.reduce(
+      (sum, r) =>
+        sum +
+        Object.values(r.fields).filter(
+          (f) => f.status === "warn" && f.resolvedLabel?.startsWith("⚠"),
+        ).length,
+      0,
+    ) ?? 0;
 
   const statusIcon = (status: "ok" | "warn" | "error") => {
     if (status === "ok") return <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />;
@@ -421,11 +560,17 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       <label
         className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-          loading ? "bg-muted text-muted-foreground" : "bg-accent text-accent-foreground hover:bg-accent/80"
+          loading
+            ? "bg-muted text-muted-foreground"
+            : "bg-accent text-accent-foreground hover:bg-accent/80"
         }`}
         title="Import from Excel (append)"
       >
-        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4 shrink-0" />}
+        {loading ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : (
+          <Upload className="h-4 w-4 shrink-0" />
+        )}
         <span className="hidden sm:inline">Import</span>
         <input
           ref={fileRef}
@@ -439,11 +584,17 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
       <label
         className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-          loading ? "bg-muted text-muted-foreground" : "bg-destructive/10 text-destructive hover:bg-destructive/20"
+          loading
+            ? "bg-muted text-muted-foreground"
+            : "bg-destructive/10 text-destructive hover:bg-destructive/20"
         }`}
         title="Clear all existing records and reimport from file"
       >
-        {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4 shrink-0" />}
+        {loading ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : (
+          <RefreshCw className="h-4 w-4 shrink-0" />
+        )}
         <span className="hidden sm:inline">Reset & Import</span>
         <input
           ref={resetFileRef}
@@ -465,7 +616,10 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                 <h2 className="text-base sm:text-lg font-semibold truncate">Import Preview</h2>
                 <span className="text-xs text-muted-foreground shrink-0">({preview.length})</span>
               </div>
-              <button onClick={cancelPreview} className="text-muted-foreground hover:text-foreground p-1">
+              <button
+                onClick={cancelPreview}
+                className="text-muted-foreground hover:text-foreground p-1"
+              >
                 <X className="h-4 w-4" />
               </button>
             </div>
@@ -477,7 +631,11 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                   <p className="text-sm font-medium text-destructive">Reset & Recreate Mode</p>
                 </div>
                 <p className="text-xs text-destructive/80 mb-2">
-                  All existing {ENTITY_LABELS[entity].toLowerCase()} records{DELETE_ORDER[entity].length > 1 ? ` (and dependent ${DELETE_ORDER[entity].slice(0, -1).join(", ")})` : ""} will be permanently deleted before importing.
+                  All existing {ENTITY_LABELS[entity].toLowerCase()} records
+                  {DELETE_ORDER[entity].length > 1
+                    ? ` (and dependent ${DELETE_ORDER[entity].slice(0, -1).join(", ")})`
+                    : ""}{" "}
+                  will be permanently deleted before importing.
                 </p>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -486,7 +644,9 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                     onChange={(e) => setConfirmReset(e.target.checked)}
                     className="rounded border-destructive"
                   />
-                  <span className="text-xs text-destructive">I understand this will delete all existing data</span>
+                  <span className="text-xs text-destructive">
+                    I understand this will delete all existing data
+                  </span>
                 </label>
               </div>
             )}
@@ -494,13 +654,15 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
             {warnCount > 0 && (
               <div className="rounded-md bg-amber-500/10 border border-amber-500/30 px-3 py-2 text-sm text-amber-400 mb-3 flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4 shrink-0" />
-                {warnCount} duplicate key{warnCount !== 1 ? "s" : ""} found — these rows may cause conflicts during import.
+                {warnCount} duplicate key{warnCount !== 1 ? "s" : ""} found — these rows may cause
+                conflicts during import.
               </div>
             )}
 
             {hasErrors && (
               <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive mb-3">
-                {errorCount} mapping error{errorCount !== 1 ? "s" : ""} found — rows with errors will fail on import.
+                {errorCount} mapping error{errorCount !== 1 ? "s" : ""} found — rows with errors
+                will fail on import.
               </div>
             )}
 
@@ -508,16 +670,25 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-muted/50 sticky top-0">
-                    <th className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground">Row</th>
+                    <th className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground">
+                      Row
+                    </th>
                     {fieldHeaders.map((h) => (
-                      <th key={h} className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground whitespace-nowrap">{h}</th>
+                      <th
+                        key={h}
+                        className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-muted-foreground whitespace-nowrap"
+                      >
+                        {h}
+                      </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {preview.map((row) => (
                     <tr key={row.rowNum} className="hover:bg-muted/30">
-                      <td className="px-2 sm:px-3 py-2 text-xs text-muted-foreground">{row.rowNum}</td>
+                      <td className="px-2 sm:px-3 py-2 text-xs text-muted-foreground">
+                        {row.rowNum}
+                      </td>
                       {fieldHeaders.map((h) => {
                         const f = row.fields[h];
                         return (
@@ -525,20 +696,32 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                             <div className="flex items-start gap-1.5">
                               {statusIcon(f.status)}
                               <div className="min-w-0">
-                                <span className="text-xs text-foreground">{f.value || <span className="text-muted-foreground italic">empty</span>}</span>
+                                <span className="text-xs text-foreground">
+                                  {f.value || (
+                                    <span className="text-muted-foreground italic">empty</span>
+                                  )}
+                                </span>
                                 {f.resolvedLabel && (
-                                  <p className={`text-[11px] mt-0.5 ${f.status === "ok" ? "text-emerald-400" : f.status === "warn" ? "text-amber-400" : "text-destructive"}`}>
+                                  <p
+                                    className={`text-[11px] mt-0.5 ${f.status === "ok" ? "text-emerald-400" : f.status === "warn" ? "text-amber-400" : "text-destructive"}`}
+                                  >
                                     {f.resolvedLabel}
                                   </p>
                                 )}
                                 {!f.resolvedLabel && f.status === "error" && f.value && (
-                                  <p className="text-[11px] mt-0.5 text-destructive">Not found in database</p>
+                                  <p className="text-[11px] mt-0.5 text-destructive">
+                                    Not found in database
+                                  </p>
                                 )}
                                 {!f.resolvedLabel && f.status === "error" && !f.value && (
-                                  <p className="text-[11px] mt-0.5 text-destructive">Required field</p>
+                                  <p className="text-[11px] mt-0.5 text-destructive">
+                                    Required field
+                                  </p>
                                 )}
                                 {f.status === "warn" && !f.resolvedLabel && !f.value && (
-                                  <p className="text-[11px] mt-0.5 text-amber-400">Optional — will be empty</p>
+                                  <p className="text-[11px] mt-0.5 text-amber-400">
+                                    Optional — will be empty
+                                  </p>
                                 )}
                               </div>
                             </div>
@@ -558,7 +741,10 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                   : "All rows validated — ready to import."}
               </p>
               <div className="flex gap-2 w-full sm:w-auto">
-                <button onClick={cancelPreview} className="flex-1 sm:flex-initial px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground">
+                <button
+                  onClick={cancelPreview}
+                  className="flex-1 sm:flex-initial px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+                >
                   Cancel
                 </button>
                 <button
@@ -570,10 +756,18 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
                   }`}
                 >
-                  {importing ? <Loader2 className="h-4 w-4 animate-spin" /> : resetMode ? <RefreshCw className="h-4 w-4" /> : <Upload className="h-4 w-4" />}
+                  {importing ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : resetMode ? (
+                    <RefreshCw className="h-4 w-4" />
+                  ) : (
+                    <Upload className="h-4 w-4" />
+                  )}
                   {importing && progress
                     ? `${progress.done} / ${progress.total} rows (${progress.total - progress.done} left)`
-                    : resetMode ? `Reset & Import ${preview.length}` : `Import ${preview.length}`}
+                    : resetMode
+                      ? `Reset & Import ${preview.length}`
+                      : `Import ${preview.length}`}
                 </button>
               </div>
             </div>
@@ -590,7 +784,10 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
                 <FileSpreadsheet className="h-5 w-5 text-primary" />
                 <h2 className="text-base sm:text-lg font-semibold">Import Results</h2>
               </div>
-              <button onClick={() => setResult(null)} className="text-muted-foreground hover:text-foreground p-1">
+              <button
+                onClick={() => setResult(null)}
+                className="text-muted-foreground hover:text-foreground p-1"
+              >
                 <X className="h-4 w-4" />
               </button>
             </div>
@@ -603,17 +800,24 @@ export function ExcelImport({ entity, onImportComplete }: ExcelImportProps) {
 
             {result.errors.length > 0 && (
               <div className="space-y-1">
-                <p className="text-sm font-medium text-destructive">{result.errors.length} error{result.errors.length !== 1 ? "s" : ""}:</p>
+                <p className="text-sm font-medium text-destructive">
+                  {result.errors.length} error{result.errors.length !== 1 ? "s" : ""}:
+                </p>
                 <div className="max-h-40 overflow-y-auto rounded-md bg-destructive/10 px-3 py-2">
                   {result.errors.map((err, i) => (
-                    <p key={i} className="text-xs text-destructive">{err}</p>
+                    <p key={i} className="text-xs text-destructive">
+                      {err}
+                    </p>
                   ))}
                 </div>
               </div>
             )}
 
             <div className="flex justify-end mt-4">
-              <button onClick={() => setResult(null)} className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90">
+              <button
+                onClick={() => setResult(null)}
+                className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+              >
                 Close
               </button>
             </div>
