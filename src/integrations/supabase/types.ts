@@ -155,20 +155,102 @@ export type Database = {
         }
         Relationships: []
       }
+      game_questions: {
+        Row: {
+          id: string
+          subject: string
+          question_text: string
+          question_type: string
+          difficulty: string
+          source: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          subject: string
+          question_text: string
+          question_type: string
+          difficulty?: string
+          source?: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          subject?: string
+          question_text?: string
+          question_type?: string
+          difficulty?: string
+          source?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
+      game_question_options: {
+        Row: { id: string; question_id: string; option_text: string; is_correct: boolean }
+        Insert: { id?: string; question_id: string; option_text: string; is_correct?: boolean }
+        Update: { id?: string; question_id?: string; option_text?: string; is_correct?: boolean }
+        Relationships: [
+          {
+            foreignKeyName: "game_question_options_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "game_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      game_question_keywords: {
+        Row: { id: string; question_id: string; keyword: string }
+        Insert: { id?: string; question_id: string; keyword: string }
+        Update: { id?: string; question_id?: string; keyword?: string }
+        Relationships: [
+          {
+            foreignKeyName: "game_question_keywords_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "game_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_seen_questions: {
+        Row: { id: string; student_id: string; question_id: string; seen_at: string }
+        Insert: { id?: string; student_id: string; question_id: string; seen_at?: string }
+        Update: { id?: string; student_id?: string; question_id?: string; seen_at?: string }
+        Relationships: [
+          {
+            foreignKeyName: "student_seen_questions_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "student_seen_questions_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "game_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       group_members: {
         Row: {
+          blocked: boolean
           created_at: string
           group_id: string
           id: string
           student_id: string
         }
         Insert: {
+          blocked?: boolean
           created_at?: string
           group_id: string
           id?: string
           student_id: string
         }
         Update: {
+          blocked?: boolean
           created_at?: string
           group_id?: string
           id?: string
@@ -187,6 +269,42 @@ export type Database = {
             columns: ["student_id"]
             isOneToOne: false
             referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      group_teachers: {
+        Row: {
+          created_at: string
+          group_id: string
+          id: string
+          teacher_id: string
+        }
+        Insert: {
+          created_at?: string
+          group_id: string
+          id?: string
+          teacher_id: string
+        }
+        Update: {
+          created_at?: string
+          group_id?: string
+          id?: string
+          teacher_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "group_teachers_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "groups"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "group_teachers_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teachers"
             referencedColumns: ["id"]
           },
         ]
@@ -335,6 +453,219 @@ export type Database = {
           },
         ]
       }
+      quiz_attempts: {
+        Row: {
+          id: string
+          quiz_id: string
+          student_id: string
+          started_at: string
+          submitted_at: string | null
+          total_score: number | null
+        }
+        Insert: {
+          id?: string
+          quiz_id: string
+          student_id: string
+          started_at?: string
+          submitted_at?: string | null
+          total_score?: number | null
+        }
+        Update: {
+          id?: string
+          quiz_id?: string
+          student_id?: string
+          started_at?: string
+          submitted_at?: string | null
+          total_score?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_attempts_quiz_id_fkey"
+            columns: ["quiz_id"]
+            isOneToOne: false
+            referencedRelation: "quizzes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quiz_attempts_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quiz_keywords: {
+        Row: {
+          id: string
+          question_id: string
+          keyword: string
+        }
+        Insert: {
+          id?: string
+          question_id: string
+          keyword: string
+        }
+        Update: {
+          id?: string
+          question_id?: string
+          keyword?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_keywords_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "quiz_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quiz_options: {
+        Row: {
+          id: string
+          question_id: string
+          option_text: string
+          is_correct: boolean
+        }
+        Insert: {
+          id?: string
+          question_id: string
+          option_text: string
+          is_correct?: boolean
+        }
+        Update: {
+          id?: string
+          question_id?: string
+          option_text?: string
+          is_correct?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_options_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "quiz_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quiz_questions: {
+        Row: {
+          id: string
+          quiz_id: string
+          question_text: string
+          question_type: string
+          marks: number
+          order_index: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          quiz_id: string
+          question_text: string
+          question_type: string
+          marks?: number
+          order_index?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          quiz_id?: string
+          question_text?: string
+          question_type?: string
+          marks?: number
+          order_index?: number
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_questions_quiz_id_fkey"
+            columns: ["quiz_id"]
+            isOneToOne: false
+            referencedRelation: "quizzes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quiz_responses: {
+        Row: {
+          id: string
+          attempt_id: string
+          question_id: string
+          selected_option_id: string | null
+          text_answer: string | null
+          is_correct: boolean | null
+          marks_awarded: number | null
+        }
+        Insert: {
+          id?: string
+          attempt_id: string
+          question_id: string
+          selected_option_id?: string | null
+          text_answer?: string | null
+          is_correct?: boolean | null
+          marks_awarded?: number | null
+        }
+        Update: {
+          id?: string
+          attempt_id?: string
+          question_id?: string
+          selected_option_id?: string | null
+          text_answer?: string | null
+          is_correct?: boolean | null
+          marks_awarded?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_responses_attempt_id_fkey"
+            columns: ["attempt_id"]
+            isOneToOne: false
+            referencedRelation: "quiz_attempts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quiz_responses_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "quiz_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quiz_targets: {
+        Row: {
+          id: string
+          quiz_id: string
+          student_id: string
+        }
+        Insert: {
+          id?: string
+          quiz_id: string
+          student_id: string
+        }
+        Update: {
+          id?: string
+          quiz_id?: string
+          student_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_targets_quiz_id_fkey"
+            columns: ["quiz_id"]
+            isOneToOne: false
+            referencedRelation: "quizzes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quiz_targets_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quizzes: {
         Row: {
           class_id: string | null
@@ -346,6 +677,9 @@ export type Database = {
           id: string
           is_published: boolean
           questions: Json
+          scores_released: boolean
+          subject: string
+          teacher_id: string | null
           title: string
         }
         Insert: {
@@ -358,6 +692,9 @@ export type Database = {
           id?: string
           is_published?: boolean
           questions?: Json
+          scores_released?: boolean
+          subject?: string
+          teacher_id?: string | null
           title: string
         }
         Update: {
@@ -370,6 +707,9 @@ export type Database = {
           id?: string
           is_published?: boolean
           questions?: Json
+          scores_released?: boolean
+          subject?: string
+          teacher_id?: string | null
           title?: string
         }
         Relationships: [
@@ -385,6 +725,13 @@ export type Database = {
             columns: ["group_id"]
             isOneToOne: false
             referencedRelation: "groups"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quizzes_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teachers"
             referencedColumns: ["id"]
           },
         ]

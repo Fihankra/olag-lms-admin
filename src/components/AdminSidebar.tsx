@@ -6,6 +6,7 @@ import {
   Users2,
   GraduationCap,
   BookOpen,
+  Database,
   FolderOpen,
   UserCheck,
   ClipboardList,
@@ -15,6 +16,8 @@ import {
   LogOut,
   Sun,
   Moon,
+  PencilLine,
+  Gamepad2,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth";
@@ -28,6 +31,9 @@ const navItems = [
   { title: "Programs", to: "/programs", icon: GraduationCap },
   { title: "Classes", to: "/classes", icon: BookOpen },
   { title: "Groups", to: "/groups", icon: Users2 },
+  { title: "Quizzes", to: "/quizzes", icon: PencilLine },
+  { title: "Games", to: "/games", icon: Gamepad2 },
+  { title: "Question Bank", to: "/question-bank", icon: Database },
   { title: "Materials", to: "/materials", icon: FolderOpen },
   { title: "Reports", to: "/reports", icon: ClipboardList },
   { title: "Settings", to: "/settings", icon: Settings },
@@ -52,6 +58,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
           <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>
         )}
         <button
+          type="button"
           onClick={() => setCollapsed(!collapsed)}
           className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground hidden lg:block"
         >
@@ -85,6 +92,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
           <p className="text-xs text-muted-foreground truncate">{user.email}</p>
         )}
         <button
+          type="button"
           onClick={toggleTheme}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
           title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
@@ -97,6 +105,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
           {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
         </button>
         <button
+          type="button"
           onClick={() => logout()}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-destructive transition-colors w-full"
         >

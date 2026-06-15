@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(find /Users/olag/Development/Projects/olg_lms -name \"pubspec.yaml\" 2>/dev/null | head -5)",
+      "Read(//Users/olag/Development/Projects/olg_lms/**)",
+      "Bash(xargs ls)",
+      "Bash(grep -r \"package.json\" /Users/olag/Development/Projects/olag-lms-admin -maxdepth 1)"
+    ],
+    "additionalDirectories": [
+      "/Users/olag/Development/Projects/olg_lms/lib/features/quiz/data/models",
+      "/Users/olag/Development/Projects/olg_lms/lib/features/quiz/data/services"
+    ]
+  }
+}

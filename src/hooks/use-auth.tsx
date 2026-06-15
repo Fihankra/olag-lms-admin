@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, useCallback, type ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { User, Session } from "@supabase/supabase-js";
 
@@ -32,6 +32,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     name: string;
     assigned_class_id: string | null;
   } | null>(null);
+  const teacherRecordRef = useRef<typeof teacherRecord>(null);
 
   async function fetchRole(userId: string) {
     setRoleLoading(true);
@@ -56,14 +57,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         if (teacher) {
           setApproved((teacher as any).approved ?? false);
-          setTeacherRecord({
-            id: teacher.id,
-            name: teacher.name,
-            assigned_class_id: teacher.assigned_class_id,
-          });
+          const next = { id: teacher.id, name: teacher.name, assigned_class_id: teacher.assigned_class_id };
+          const prev = teacherRecordRef.current;
+          if (!prev || prev.id !== next.id || prev.name !== next.name || prev.assigned_class_id !== next.assigned_class_id) {
+            teacherRecordRef.current = next;
+            setTeacherRecord(next);
+          }
         } else {
           setApproved(false);
-          setTeacherRecord(null);
+          if (teacherRecordRef.current !== null) {
+            teacherRecordRef.current = null;
+            setTeacherRecord(null);
+          }
         }
       } else {
         setApproved(null);
@@ -72,6 +77,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch {
       setRole(null);
       setApproved(null);
+      teacherRecordRef.current = null;
       setTeacherRecord(null);
     }
     setRoleLoading(false);
@@ -84,13 +90,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "TOKEN_REFRESHED") {
+        // Only update session so API calls use the new access token.
+        // User data and role haven't changed — don't touch them or loading states.
+        setSession(session);
+        return;
+      }
+
       setSession(session);
       setUser(session?.user ?? null);
       setIsLoading(false);
+
       if (session?.user) {
         fetchRole(session.user.id);
       } else {
+        teacherRecordRef.current = null;
         setRole(null);
         setRoleLoading(false);
         setApproved(null);

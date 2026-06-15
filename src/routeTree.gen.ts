@@ -18,9 +18,12 @@ import { Route as AuthenticatedTeachersRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedStudentsRouteImport } from './routes/_authenticated/students'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
 import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
+import { Route as AuthenticatedQuizzesRouteImport } from './routes/_authenticated/quizzes'
+import { Route as AuthenticatedQuestionBankRouteImport } from './routes/_authenticated/question-bank'
 import { Route as AuthenticatedProgramsRouteImport } from './routes/_authenticated/programs'
 import { Route as AuthenticatedMaterialsRouteImport } from './routes/_authenticated/materials'
 import { Route as AuthenticatedGroupsRouteImport } from './routes/_authenticated/groups'
+import { Route as AuthenticatedGamesRouteImport } from './routes/_authenticated/games'
 import { Route as AuthenticatedDevicesRouteImport } from './routes/_authenticated/devices'
 import { Route as AuthenticatedClassesRouteImport } from './routes/_authenticated/classes'
 
@@ -68,6 +71,17 @@ const AuthenticatedReportsRoute = AuthenticatedReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
+const AuthenticatedQuizzesRoute = AuthenticatedQuizzesRouteImport.update({
+  id: '/quizzes',
+  path: '/quizzes',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedQuestionBankRoute =
+  AuthenticatedQuestionBankRouteImport.update({
+    id: '/question-bank',
+    path: '/question-bank',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const AuthenticatedProgramsRoute = AuthenticatedProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
@@ -81,6 +95,11 @@ const AuthenticatedMaterialsRoute = AuthenticatedMaterialsRouteImport.update({
 const AuthenticatedGroupsRoute = AuthenticatedGroupsRouteImport.update({
   id: '/groups',
   path: '/groups',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
+const AuthenticatedGamesRoute = AuthenticatedGamesRouteImport.update({
+  id: '/games',
+  path: '/games',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 const AuthenticatedDevicesRoute = AuthenticatedDevicesRouteImport.update({
@@ -101,9 +120,12 @@ export interface FileRoutesByFullPath {
   '/register': typeof RegisterRoute
   '/classes': typeof AuthenticatedClassesRoute
   '/devices': typeof AuthenticatedDevicesRoute
+  '/games': typeof AuthenticatedGamesRoute
   '/groups': typeof AuthenticatedGroupsRoute
   '/materials': typeof AuthenticatedMaterialsRoute
   '/programs': typeof AuthenticatedProgramsRoute
+  '/question-bank': typeof AuthenticatedQuestionBankRoute
+  '/quizzes': typeof AuthenticatedQuizzesRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/students': typeof AuthenticatedStudentsRoute
@@ -115,9 +137,12 @@ export interface FileRoutesByTo {
   '/register': typeof RegisterRoute
   '/classes': typeof AuthenticatedClassesRoute
   '/devices': typeof AuthenticatedDevicesRoute
+  '/games': typeof AuthenticatedGamesRoute
   '/groups': typeof AuthenticatedGroupsRoute
   '/materials': typeof AuthenticatedMaterialsRoute
   '/programs': typeof AuthenticatedProgramsRoute
+  '/question-bank': typeof AuthenticatedQuestionBankRoute
+  '/quizzes': typeof AuthenticatedQuizzesRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/students': typeof AuthenticatedStudentsRoute
@@ -132,9 +157,12 @@ export interface FileRoutesById {
   '/register': typeof RegisterRoute
   '/_authenticated/classes': typeof AuthenticatedClassesRoute
   '/_authenticated/devices': typeof AuthenticatedDevicesRoute
+  '/_authenticated/games': typeof AuthenticatedGamesRoute
   '/_authenticated/groups': typeof AuthenticatedGroupsRoute
   '/_authenticated/materials': typeof AuthenticatedMaterialsRoute
   '/_authenticated/programs': typeof AuthenticatedProgramsRoute
+  '/_authenticated/question-bank': typeof AuthenticatedQuestionBankRoute
+  '/_authenticated/quizzes': typeof AuthenticatedQuizzesRoute
   '/_authenticated/reports': typeof AuthenticatedReportsRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/students': typeof AuthenticatedStudentsRoute
@@ -150,9 +178,12 @@ export interface FileRouteTypes {
     | '/register'
     | '/classes'
     | '/devices'
+    | '/games'
     | '/groups'
     | '/materials'
     | '/programs'
+    | '/question-bank'
+    | '/quizzes'
     | '/reports'
     | '/settings'
     | '/students'
@@ -164,9 +195,12 @@ export interface FileRouteTypes {
     | '/register'
     | '/classes'
     | '/devices'
+    | '/games'
     | '/groups'
     | '/materials'
     | '/programs'
+    | '/question-bank'
+    | '/quizzes'
     | '/reports'
     | '/settings'
     | '/students'
@@ -180,9 +214,12 @@ export interface FileRouteTypes {
     | '/register'
     | '/_authenticated/classes'
     | '/_authenticated/devices'
+    | '/_authenticated/games'
     | '/_authenticated/groups'
     | '/_authenticated/materials'
     | '/_authenticated/programs'
+    | '/_authenticated/question-bank'
+    | '/_authenticated/quizzes'
     | '/_authenticated/reports'
     | '/_authenticated/settings'
     | '/_authenticated/students'
@@ -262,6 +299,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedReportsRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/quizzes': {
+      id: '/_authenticated/quizzes'
+      path: '/quizzes'
+      fullPath: '/quizzes'
+      preLoaderRoute: typeof AuthenticatedQuizzesRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/question-bank': {
+      id: '/_authenticated/question-bank'
+      path: '/question-bank'
+      fullPath: '/question-bank'
+      preLoaderRoute: typeof AuthenticatedQuestionBankRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_authenticated/programs': {
       id: '/_authenticated/programs'
       path: '/programs'
@@ -281,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/groups'
       fullPath: '/groups'
       preLoaderRoute: typeof AuthenticatedGroupsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/games': {
+      id: '/_authenticated/games'
+      path: '/games'
+      fullPath: '/games'
+      preLoaderRoute: typeof AuthenticatedGamesRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
     '/_authenticated/devices': {
@@ -303,9 +361,12 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedRouteChildren {
   AuthenticatedClassesRoute: typeof AuthenticatedClassesRoute
   AuthenticatedDevicesRoute: typeof AuthenticatedDevicesRoute
+  AuthenticatedGamesRoute: typeof AuthenticatedGamesRoute
   AuthenticatedGroupsRoute: typeof AuthenticatedGroupsRoute
   AuthenticatedMaterialsRoute: typeof AuthenticatedMaterialsRoute
   AuthenticatedProgramsRoute: typeof AuthenticatedProgramsRoute
+  AuthenticatedQuestionBankRoute: typeof AuthenticatedQuestionBankRoute
+  AuthenticatedQuizzesRoute: typeof AuthenticatedQuizzesRoute
   AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedStudentsRoute: typeof AuthenticatedStudentsRoute
@@ -316,9 +377,12 @@ interface AuthenticatedRouteChildren {
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedClassesRoute: AuthenticatedClassesRoute,
   AuthenticatedDevicesRoute: AuthenticatedDevicesRoute,
+  AuthenticatedGamesRoute: AuthenticatedGamesRoute,
   AuthenticatedGroupsRoute: AuthenticatedGroupsRoute,
   AuthenticatedMaterialsRoute: AuthenticatedMaterialsRoute,
   AuthenticatedProgramsRoute: AuthenticatedProgramsRoute,
+  AuthenticatedQuestionBankRoute: AuthenticatedQuestionBankRoute,
+  AuthenticatedQuizzesRoute: AuthenticatedQuizzesRoute,
   AuthenticatedReportsRoute: AuthenticatedReportsRoute,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedStudentsRoute: AuthenticatedStudentsRoute,
@@ -339,3 +403,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

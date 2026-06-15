@@ -1,7 +1,7 @@
 import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "../hooks/use-auth";
 import { AdminLayout } from "../components/AdminLayout";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Clock } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated")({
@@ -11,9 +11,14 @@ export const Route = createFileRoute("/_authenticated")({
 function AuthenticatedLayout() {
   const { isAuthenticated, isLoading, user, role, roleLoading, approved, logout } = useAuth();
   const navigate = useNavigate();
+  // Once we have successfully rendered the layout, never show the loading
+  // spinner again — any transient auth state (token refresh, etc.) would
+  // unmount children and lose all in-progress work (open dialogs, form state).
+  const hasRendered = useRef(false);
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
+      hasRendered.current = false;
       navigate({ to: "/login" });
     }
   }, [isLoading, isAuthenticated, navigate]);
@@ -24,7 +29,8 @@ function AuthenticatedLayout() {
     }
   }, [isLoading, isAuthenticated, user, navigate]);
 
-  if (isLoading || roleLoading) {
+  // Only show the loading screen on the very first load.
+  if (!hasRendered.current && (isLoading || roleLoading)) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-muted-foreground">Loading...</div>
@@ -60,6 +66,7 @@ function AuthenticatedLayout() {
     );
   }
 
+  hasRendered.current = true;
   return (
     <AdminLayout>
       <Outlet />

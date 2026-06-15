@@ -15,9 +15,15 @@ function createSupabaseClient() {
     );
   }
 
+  // Extract project ref from URL (e.g. "ofaxodkrvqkgiwlatwng") so the
+  // localStorage key is project-specific. Switching projects won't reuse a
+  // stale session from a previous project.
+  const projectRef = new URL(SUPABASE_URL).hostname.split(".")[0];
+
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
     auth: {
       storage: typeof window !== "undefined" ? localStorage : undefined,
+      storageKey: `sb-${projectRef}-auth`,
       persistSession: true,
       autoRefreshToken: true,
     },

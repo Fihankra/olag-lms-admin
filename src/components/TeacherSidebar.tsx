@@ -2,6 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import {
   LayoutDashboard,
   FolderOpen,
+  PencilLine,
   Users2,
   ClipboardList,
   LogOut,
@@ -29,6 +30,7 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
   const navItems = [
     { title: "Dashboard", to: "/", icon: LayoutDashboard },
     { title: "Materials", to: "/materials", icon: FolderOpen },
+    { title: "Quizzes", to: "/quizzes", icon: PencilLine },
     { title: "Groups", to: "/groups", icon: Users2 },
     ...(isFormMaster ? [{ title: "Reports", to: "/reports", icon: ClipboardList }] : []),
   ];
@@ -42,6 +44,7 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
           <span className="text-lg font-bold text-sidebar-primary tracking-tight">OLAG LMS</span>
         )}
         <button
+          type="button"
           onClick={() => setCollapsed(!collapsed)}
           className="ml-auto p-1.5 rounded-md hover:bg-sidebar-accent text-sidebar-foreground hidden lg:block"
         >
@@ -75,6 +78,7 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
           <p className="text-xs text-muted-foreground truncate">{user.email}</p>
         )}
         <button
+          type="button"
           onClick={toggleTheme}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent transition-colors w-full"
         >
@@ -86,6 +90,7 @@ export function TeacherSidebar({ onNavigate }: TeacherSidebarProps) {
           {!collapsed && <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>}
         </button>
         <button
+          type="button"
           onClick={() => logout()}
           className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-destructive transition-colors w-full"
         >

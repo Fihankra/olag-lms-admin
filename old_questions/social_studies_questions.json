@@ -1,0 +1,5904 @@
+[
+  {
+    "subject": "Social Studies",
+    "question": "What is the capital city of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Tamale",
+      "Takoradi",
+      "Kumasi",
+      "Accra"
+    ],
+    "answer": "Accra"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How many regions does Ghana have?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "10",
+      "16",
+      "14",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the largest region in Ghana by area?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Oti Region",
+      "Northern Region",
+      "Savannah Region",
+      "Greater Accra"
+    ],
+    "answer": "Northern Region"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the most populated region in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Northern",
+      "Ashanti",
+      "Greater Accra",
+      "Brong-Ahafo"
+    ],
+    "answer": "Greater Accra"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which river forms part of Ghana's eastern border?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Volta River",
+      "Pra River",
+      "Tano River",
+      "Oti River"
+    ],
+    "answer": "Volta River"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the largest lake in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Bui Lake",
+      "Volta Lake",
+      "Keta Lagoon",
+      "Lake Bosomtwe"
+    ],
+    "answer": "Volta Lake"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the highest mountain in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Mount Komenda",
+      "Mount Krobo",
+      "Mount Ejura",
+      "Mount Afadjato"
+    ],
+    "answer": "Mount Afadjato"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which country shares Ghana's northern border?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "C\u00f4te d'Ivoire",
+      "Togo",
+      "Benin",
+      "Burkina Faso"
+    ],
+    "answer": "Burkina Faso"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which country is to the east of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Togo",
+      "C\u00f4te d'Ivoire",
+      "Benin",
+      "Burkina Faso"
+    ],
+    "answer": "Togo"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which country is to the west of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Burkina Faso",
+      "Togo",
+      "Nigeria",
+      "C\u00f4te d'Ivoire"
+    ],
+    "answer": "C\u00f4te d'Ivoire"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What ocean borders Ghana to the south?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Red Sea"
+    ],
+    "answer": "Atlantic Ocean"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the climate of northern Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Tropical rainforest",
+      "Coastal tropical",
+      "Semi-arid/Savannah",
+      "Mediterranean"
+    ],
+    "answer": "Semi-arid/Savannah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the main vegetation zones in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Desert and savannah",
+      "Desert and rainforest",
+      "Forest and savannah",
+      "Tundra and forest"
+    ],
+    "answer": "Forest and savannah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the name of Ghana's major hydroelectric dam?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Bagre Dam",
+      "Kpong Dam",
+      "Akosombo Dam",
+      "Bui Dam"
+    ],
+    "answer": "Akosombo Dam"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What type of climate does most of Ghana have?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mediterranean",
+      "Tropical",
+      "Temperate",
+      "Polar"
+    ],
+    "answer": "Tropical"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's latitude range roughly?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Between 4\u00b0N and 11\u00b0N",
+      "Between 10\u00b0N and 20\u00b0N",
+      "Between 5\u00b0S and 5\u00b0N",
+      "Between 0\u00b0 and 5\u00b0N"
+    ],
+    "answer": "Between 4\u00b0N and 11\u00b0N"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Greenwich Meridian (0\u00b0 longitude)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Equator",
+      "Line of latitude",
+      "Line of longitude passing through Ghana",
+      "Tropic of Cancer"
+    ],
+    "answer": "Line of longitude passing through Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which city in Ghana sits on the Greenwich Meridian?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Sekondi",
+      "Accra",
+      "Tema",
+      "None \u2014 it passes through rural areas"
+    ],
+    "answer": "Tema"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Volta Basin?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A highland area",
+      "A coastal region",
+      "A forest reserve",
+      "A large drainage basin covering much of Ghana"
+    ],
+    "answer": "A large drainage basin covering much of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the main economic activity in northern Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Livestock rearing and crop farming",
+      "Fishing",
+      "Tourism",
+      "Mining"
+    ],
+    "answer": "Livestock rearing and crop farming"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which is Ghana's second largest city?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Kumasi",
+      "Takoradi",
+      "Tema",
+      "Tamale"
+    ],
+    "answer": "Kumasi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the regional capital of Ashanti Region?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Kumasi",
+      "Obuasi",
+      "Accra",
+      "Sunyani"
+    ],
+    "answer": "Kumasi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's total land area approximately?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "500,000 km\u00b2",
+      "138,000 km\u00b2",
+      "238,533 km\u00b2",
+      "98,000 km\u00b2"
+    ],
+    "answer": "238,533 km\u00b2"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What river system creates Ghana's largest lake?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Volta River system",
+      "Pra River system",
+      "Tano River",
+      "Black Volta"
+    ],
+    "answer": "Volta River system"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Sahel zone in relation to Ghana?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Within Ghana",
+      "Within Ghana's eastern coast",
+      "North of Ghana \u2014 influences climate in northern Ghana",
+      "South of Ghana"
+    ],
+    "answer": "North of Ghana \u2014 influences climate in northern Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "When did Ghana gain independence?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1957",
+      "1963",
+      "1960",
+      "1956"
+    ],
+    "answer": "1957"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who led Ghana to independence?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Kwame Nkrumah",
+      "Kofi Busia",
+      "Hilla Limann",
+      "J.B. Danquah"
+    ],
+    "answer": "Kwame Nkrumah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "On what date did Ghana gain independence?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1st January",
+      "1st December",
+      "6th March",
+      "4th July"
+    ],
+    "answer": "6th March"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was Ghana called before independence?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Slave Coast",
+      "British Togoland",
+      "Grain Coast",
+      "Gold Coast"
+    ],
+    "answer": "Gold Coast"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was Ghana the first sub-Saharan African country to do?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Host the African Cup",
+      "Form ECOWAS",
+      "Gain independence from colonial rule",
+      "Join the UN"
+    ],
+    "answer": "Gain independence from colonial rule"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who was the first President of the Republic of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "K.A. Busia",
+      "Kwame Nkrumah",
+      "Hilla Limann",
+      "J.A. Kufuor"
+    ],
+    "answer": "Kwame Nkrumah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "When did Ghana become a republic?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1957",
+      "1966",
+      "1969",
+      "1960"
+    ],
+    "answer": "1960"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the name of the first Ghanaian political party?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "National Liberation Movement",
+      "Action Congress",
+      "Convention People's Party",
+      "United Gold Coast Convention"
+    ],
+    "answer": "United Gold Coast Convention"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "When was the Convention People's Party (CPP) formed?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1945",
+      "1951",
+      "1949",
+      "1947"
+    ],
+    "answer": "1949"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What event sparked the 1948 riots in the Gold Coast?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A drought",
+      "A mine accident",
+      "The shooting of ex-servicemen by police",
+      "A football match"
+    ],
+    "answer": "The shooting of ex-servicemen by police"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who were the 'Big Six' in Ghana's independence movement?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Six British governors",
+      "The six military generals",
+      "Six traditional rulers",
+      "Six nationalist leaders including Nkrumah and Danquah"
+    ],
+    "answer": "Six nationalist leaders including Nkrumah and Danquah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was Operation Cold Chop?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A colonial tax policy",
+      "The 1966 military coup that ousted Nkrumah",
+      "A farming initiative",
+      "A trade agreement"
+    ],
+    "answer": "The 1966 military coup that ousted Nkrumah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What group overthrew Nkrumah in 1966?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Armed Forces Revolutionary Council",
+      "People's Defence Committee",
+      "National Liberation Movement",
+      "National Liberation Council"
+    ],
+    "answer": "National Liberation Council"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who led the 1979 coup in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Acheampong",
+      "Akwasi Afrifa",
+      "Jerry John Rawlings",
+      "Hilla Limann"
+    ],
+    "answer": "Jerry John Rawlings"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does PNDC stand for?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Progressive National Democratic Coalition",
+      "People's National Democratic Congress",
+      "Provisional National Defence Council",
+      "People's National Defence Committee"
+    ],
+    "answer": "Provisional National Defence Council"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "When did Ghana return to constitutional democracy?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1983",
+      "1992",
+      "2000",
+      "1979"
+    ],
+    "answer": "1992"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was Operation Feed Yourself?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Acheampong's farming initiative to achieve food self-sufficiency",
+      "An NGO food programme",
+      "A war on hunger",
+      "A food aid programme"
+    ],
+    "answer": "Acheampong's farming initiative to achieve food self-sufficiency"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the name of the railway built by the British in the Gold Coast?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Trans-Sahara Railway",
+      "Gold Coast Railway",
+      "Volta Railway",
+      "Western Railway Line"
+    ],
+    "answer": "Gold Coast Railway"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who was the last British Governor-General of the Gold Coast?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Sir Charles Noble Arden-Clarke",
+      "Lord Lugard",
+      "Lord Mountbatten",
+      "Lord Lister"
+    ],
+    "answer": "Sir Charles Noble Arden-Clarke"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What major international role did Kofi Annan hold?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "UN Secretary-General",
+      "Head of the World Bank",
+      "President of the African Union",
+      "Chair of the IMF"
+    ],
+    "answer": "UN Secretary-General"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Fourth Republic of Ghana established by?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1979 constitution",
+      "2000 elections",
+      "1969 constitution",
+      "1992 constitution"
+    ],
+    "answer": "1992 constitution"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which Ghanaian leader was known as 'Osagyefo'?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "J.B. Danquah",
+      "J.J. Rawlings",
+      "Kwame Nkrumah",
+      "Kofi Busia"
+    ],
+    "answer": "Kwame Nkrumah"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "When was the Economic Community of West African States (ECOWAS) formed?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1991",
+      "1975",
+      "1980",
+      "1963"
+    ],
+    "answer": "1975"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Where was ECOWAS headquartered?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Lagos",
+      "Dakar",
+      "Accra",
+      "Abuja"
+    ],
+    "answer": "Abuja"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Asante Confederacy?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A merchant association",
+      "A resistance group",
+      "A colonial council",
+      "The powerful Akan empire centred at Kumasi"
+    ],
+    "answer": "The powerful Akan empire centred at Kumasi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What type of government does Ghana operate?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Federal republic",
+      "Constitutional democracy",
+      "Monarchy",
+      "Military dictatorship"
+    ],
+    "answer": "Constitutional democracy"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How many branches of government does Ghana have?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "2"
+    ],
+    "answer": "3"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the three branches of government in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Executive, Legislative, Judiciary",
+      "Cabinet, Senate, Supreme Court",
+      "President, Parliament, Courts",
+      "Executive, Military, Judiciary"
+    ],
+    "answer": "Executive, Legislative, Judiciary"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the name of Ghana's parliament?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "National Assembly",
+      "Parliament of Ghana",
+      "People's Assembly",
+      "Senate"
+    ],
+    "answer": "Parliament of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How many seats are in Ghana's Parliament?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "275",
+      "230",
+      "300",
+      "200"
+    ],
+    "answer": "275"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How long is the term of Ghana's President?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5 years",
+      "7 years",
+      "4 years",
+      "6 years"
+    ],
+    "answer": "4 years"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How many terms can a Ghanaian President serve?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "2",
+      "Unlimited",
+      "3"
+    ],
+    "answer": "2"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the minimum voting age in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "25",
+      "21",
+      "18",
+      "16"
+    ],
+    "answer": "18"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What body conducts elections in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ministry of Interior",
+      "National Elections Board",
+      "Electoral Commission",
+      "Supreme Court"
+    ],
+    "answer": "Electoral Commission"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does NDC stand for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "New Democratic Coalition",
+      "National Democratic Congress",
+      "National Development Council",
+      "New Democratic Congress"
+    ],
+    "answer": "National Democratic Congress"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does NPP stand for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "New People's Party",
+      "National Progressive Party",
+      "National People's Party",
+      "New Patriotic Party"
+    ],
+    "answer": "New Patriotic Party"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Supreme Court in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Highest court",
+      "Administrative court",
+      "Lower court",
+      "Trial court"
+    ],
+    "answer": "Highest court"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the judiciary?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Make laws",
+      "Interpret laws and ensure justice",
+      "Enforce laws",
+      "Collect taxes"
+    ],
+    "answer": "Interpret laws and ensure justice"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of Parliament?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Execute laws",
+      "Conduct elections",
+      "Judge cases",
+      "Make laws and approve budget"
+    ],
+    "answer": "Make laws and approve budget"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a constituency?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of government",
+      "A local government area",
+      "A government ministry",
+      "An electoral district represented by one MP"
+    ],
+    "answer": "An electoral district represented by one MP"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the District Assembly?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A regional government body",
+      "A unit of Parliament",
+      "The main form of local government",
+      "A traditional council"
+    ],
+    "answer": "The main form of local government"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is citizenship?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Being born in Ghana only",
+      "Legal membership of a state with rights and duties",
+      "Living in a country for 10 years",
+      "Having a passport"
+    ],
+    "answer": "Legal membership of a state with rights and duties"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are fundamental human rights?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Rights only for adults",
+      "Rights only for citizens",
+      "Basic rights all humans are entitled to",
+      "Rights given by the government"
+    ],
+    "answer": "Basic rights all humans are entitled to"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Universal Declaration of Human Rights?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "An African Union treaty",
+      "A Ghanaian law",
+      "A UN document declaring rights of all people",
+      "An ECOWAS agreement"
+    ],
+    "answer": "A UN document declaring rights of all people"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the rule of law?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Rules made by kings",
+      "Military law",
+      "Principle that all are subject to the law equally",
+      "Religious law"
+    ],
+    "answer": "Principle that all are subject to the law equally"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is democracy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Rule by religious leaders",
+      "Rule by a king",
+      "Rule by the people through elected representatives",
+      "Rule by the military"
+    ],
+    "answer": "Rule by the people through elected representatives"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a constitution?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The supreme law defining how a country is governed",
+      "A set of tax laws",
+      "A military code",
+      "A list of citizens"
+    ],
+    "answer": "The supreme law defining how a country is governed"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the separation of powers?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Military oversight of government",
+      "Sharing power with other countries",
+      "Division of government into three separate branches",
+      "Giving power to local governments"
+    ],
+    "answer": "Division of government into three separate branches"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are checks and balances?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Tax collection system",
+      "System where branches of government limit each other's power",
+      "Police checkpoints",
+      "Financial audit of government"
+    ],
+    "answer": "System where branches of government limit each other's power"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ombudsman?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "An independent officer investigating complaints against government",
+      "A type of tax",
+      "A political party official",
+      "A court judge"
+    ],
+    "answer": "An independent officer investigating complaints against government"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Commission on Human Rights and Administrative Justice (CHRAJ)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "An NGO",
+      "A body investigating human rights violations and corruption in Ghana",
+      "A political party",
+      "A court"
+    ],
+    "answer": "A body investigating human rights violations and corruption in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What language group do the Akan belong to?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Niger-Congo (Kwa)",
+      "Hausa",
+      "Ewe",
+      "Ga-Dangme"
+    ],
+    "answer": "Niger-Congo (Kwa)"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the most widely spoken Ghanaian language?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Twi",
+      "Ga",
+      "Dagbani",
+      "Ewe"
+    ],
+    "answer": "Twi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a 'chief' called in Akan?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Aboakyer",
+      "Hohoe",
+      "Otumfuo",
+      "Nana"
+    ],
+    "answer": "Nana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Asante paramount ruler called?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Nana",
+      "Otumfuo",
+      "Okyenhene",
+      "Asantehene"
+    ],
+    "answer": "Asantehene"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is kente cloth?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of food",
+      "A type of drum",
+      "A traditional dance",
+      "A traditional woven cloth of the Akan"
+    ],
+    "answer": "A traditional woven cloth of the Akan"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are Adinkra symbols?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Types of food",
+      "A type of dance",
+      "A musical instrument",
+      "Visual symbols representing concepts and aphorisms in Akan culture"
+    ],
+    "answer": "Visual symbols representing concepts and aphorisms in Akan culture"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Homowo festival?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A Ga harvest festival",
+      "A Dagomba festival",
+      "An Ashanti harvest festival",
+      "An Ewe New Year celebration"
+    ],
+    "answer": "A Ga harvest festival"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Odwira festival?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A Ga festival",
+      "A northern festival",
+      "An Ewe fishing festival",
+      "An Ashanti purification and harvest festival"
+    ],
+    "answer": "An Ashanti purification and harvest festival"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Aboakyir festival?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A Volta region festival",
+      "A Fante deer-hunting festival",
+      "An Ashanti festival",
+      "A Ga festival"
+    ],
+    "answer": "A Fante deer-hunting festival"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the two main religious groups in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Islam and Traditional",
+      "Christianity and Islam",
+      "Christianity and Buddhism",
+      "Islam and Hinduism"
+    ],
+    "answer": "Christianity and Islam"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a lineage system?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "System tracing ancestry through one parent",
+      "A traditional court system",
+      "A type of government",
+      "A type of land ownership"
+    ],
+    "answer": "System tracing ancestry through one parent"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is matrilineal inheritance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Property passed through the male line",
+      "Equal inheritance",
+      "Property and status passed through the female line",
+      "Inheritance by the eldest child only"
+    ],
+    "answer": "Property and status passed through the female line"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is patrilineal inheritance?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Inheritance through male line",
+      "Equal inheritance",
+      "Inheritance through female line",
+      "Royal inheritance only"
+    ],
+    "answer": "Inheritance through male line"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the extended family system in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Nuclear family only",
+      "A type of marriage",
+      "A broad family structure including uncles aunts cousins and grandparents",
+      "A legal family arrangement"
+    ],
+    "answer": "A broad family structure including uncles aunts cousins and grandparents"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a nuclear family?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Extended family including grandparents",
+      "A family with many relatives",
+      "A family unit of parents and their children",
+      "A single-parent family"
+    ],
+    "answer": "A family unit of parents and their children"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the importance of chieftaincy in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Tax collection",
+      "Military command",
+      "International relations",
+      "Cultural identity, conflict resolution, and community leadership"
+    ],
+    "answer": "Cultural identity, conflict resolution, and community leadership"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Akan Golden Stool?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A golden throne",
+      "A traditional weapon",
+      "A type of currency",
+      "The sacred symbol of the Asante nation's soul and unity"
+    ],
+    "answer": "The sacred symbol of the Asante nation's soul and unity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What language is widely used in Ghanaian schools and government?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "English",
+      "Twi",
+      "Hausa",
+      "French"
+    ],
+    "answer": "English"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of naming ceremonies in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Religious only",
+      "Political ceremony",
+      "Tax registration",
+      "Welcoming a child into the community and family"
+    ],
+    "answer": "Welcoming a child into the community and family"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are some traditional Ghanaian foods?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only rice and bread",
+      "Pizza and pasta",
+      "Fufu, banku, kenkey, jollof rice",
+      "Sushi and ramen"
+    ],
+    "answer": "Fufu, banku, kenkey, jollof rice"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is population density?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Number of people per unit area",
+      "Total population of a country",
+      "Growth rate of population",
+      "Ratio of males to females"
+    ],
+    "answer": "Number of people per unit area"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is birth rate?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Number of deaths per 1000 per year",
+      "Infant mortality rate",
+      "Number of births per 1000 per year",
+      "Growth rate"
+    ],
+    "answer": "Number of births per 1000 per year"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is death rate?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Number of deaths per 1000 per year",
+      "Number of births per 1000 per year",
+      "Fertility rate",
+      "Migration rate"
+    ],
+    "answer": "Number of deaths per 1000 per year"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the natural rate of population growth?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Death rate minus birth rate",
+      "Birth rate only",
+      "Birth rate minus death rate",
+      "Immigration rate"
+    ],
+    "answer": "Birth rate minus death rate"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is urbanisation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Decrease in city population",
+      "Industrial growth",
+      "Forest clearing",
+      "Movement of people from rural to urban areas"
+    ],
+    "answer": "Movement of people from rural to urban areas"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is rural-urban migration?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "International migration",
+      "People moving within cities",
+      "Forced displacement",
+      "Movement of people from villages to cities"
+    ],
+    "answer": "Movement of people from villages to cities"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are push factors for migration?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Negative conditions forcing people to leave origin",
+      "Economic opportunities",
+      "Better schools",
+      "Attractive features of destination"
+    ],
+    "answer": "Negative conditions forcing people to leave origin"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are pull factors for migration?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Conflict",
+      "Attractive features drawing people to destination",
+      "Negative conditions at origin",
+      "Poverty"
+    ],
+    "answer": "Attractive features drawing people to destination"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is population explosion?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Decrease in population",
+      "Urban growth only",
+      "Rapid unsustainable increase in population",
+      "Normal population growth"
+    ],
+    "answer": "Rapid unsustainable increase in population"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the demographic transition model?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Model showing stages of population change from high to low birth and death rates",
+      "Economic development model",
+      "Agricultural growth model",
+      "Model of migration"
+    ],
+    "answer": "Model showing stages of population change from high to low birth and death rates"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is infant mortality rate?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Deaths of children under 1 year per 1000 live births",
+      "Birth rate",
+      "Maternal death rate",
+      "Deaths of all people per 1000"
+    ],
+    "answer": "Deaths of children under 1 year per 1000 live births"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is life expectancy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Working years",
+      "Average number of years a person is expected to live",
+      "Maximum age achieved",
+      "Average age at death"
+    ],
+    "answer": "Average number of years a person is expected to live"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the Sustainable Development Goals (SDGs)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "17 global goals to end poverty and protect the planet by 2030",
+      "Goals for Africa only",
+      "Economic goals only",
+      "Military goals"
+    ],
+    "answer": "17 global goals to end poverty and protect the planet by 2030"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Human Development Index (HDI)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A measure of GDP only",
+      "A measure of military strength",
+      "A composite measure of health, education, and income",
+      "An agricultural index"
+    ],
+    "answer": "A composite measure of health, education, and income"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is GDP?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Gross Domestic Product \u2014 the total value of goods and services produced",
+      "Ghana Development Programme",
+      "General Development Plan",
+      "Global Democratic Policy"
+    ],
+    "answer": "Gross Domestic Product \u2014 the total value of goods and services produced"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is deforestation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Reforestation",
+      "Forest conservation",
+      "Planting of new trees",
+      "Removal or destruction of forests"
+    ],
+    "answer": "Removal or destruction of forests"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is desertification?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Irrigation of dry land",
+      "Process by which fertile land becomes desert",
+      "Forest expansion",
+      "Creation of national parks"
+    ],
+    "answer": "Process by which fertile land becomes desert"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is soil erosion?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Removal of topsoil by wind or water",
+      "Building of soil",
+      "Soil improvement",
+      "Addition of fertiliser"
+    ],
+    "answer": "Removal of topsoil by wind or water"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is land degradation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Decline in land quality due to human activities",
+      "Natural soil formation",
+      "Forest regeneration",
+      "Improvement of land"
+    ],
+    "answer": "Decline in land quality due to human activities"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'galamsey' in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Illegal artisanal gold mining",
+      "Legal large-scale mining",
+      "A fishing method",
+      "An agricultural practice"
+    ],
+    "answer": "Illegal artisanal gold mining"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What environmental problem does galamsey cause?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Increased crop yield",
+      "Pollution of water bodies and land degradation",
+      "Improved soil quality",
+      "Forest regeneration"
+    ],
+    "answer": "Pollution of water bodies and land degradation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is climate change?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Long-term changes in global temperature and weather patterns",
+      "A short-term weather event",
+      "Natural seasonal variation",
+      "Only rainfall changes"
+    ],
+    "answer": "Long-term changes in global temperature and weather patterns"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is global warming?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only tropical heating",
+      "Cooling of the planet",
+      "Seasonal temperature changes",
+      "Rise in Earth's average temperature due to greenhouse gases"
+    ],
+    "answer": "Rise in Earth's average temperature due to greenhouse gases"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the main causes of climate change?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ocean currents",
+      "Volcanic activity only",
+      "Natural disasters",
+      "Burning of fossil fuels and deforestation"
+    ],
+    "answer": "Burning of fossil fuels and deforestation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the effects of climate change in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Better rainfall",
+      "Cooler temperatures",
+      "No effects",
+      "Floods, droughts, reduced food security, coastal erosion"
+    ],
+    "answer": "Floods, droughts, reduced food security, coastal erosion"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is conservation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Protection and wise use of natural resources",
+      "Urban development",
+      "Destruction of habitats",
+      "Industrialisation"
+    ],
+    "answer": "Protection and wise use of natural resources"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a national park?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A sports stadium",
+      "A government forest for logging",
+      "A city park",
+      "Protected area preserving wildlife and ecosystems"
+    ],
+    "answer": "Protected area preserving wildlife and ecosystems"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Kakum National Park known for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mining",
+      "Military training",
+      "Fishing",
+      "A famous canopy walk and forest conservation"
+    ],
+    "answer": "A famous canopy walk and forest conservation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Mole National Park?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A mine site",
+      "A coastal park",
+      "Ghana's largest national park for wildlife conservation",
+      "Ghana's only oil refinery"
+    ],
+    "answer": "Ghana's largest national park for wildlife conservation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Environmental Protection Agency (EPA) in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A government body protecting the environment",
+      "An agricultural body",
+      "A government body responsible for protecting the environment",
+      "A political party"
+    ],
+    "answer": "A government body protecting the environment"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "How many countries are in West Africa?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "16",
+      "20",
+      "15",
+      "10"
+    ],
+    "answer": "16"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the largest country in West Africa by area?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Nigeria",
+      "Ghana",
+      "Niger",
+      "Senegal"
+    ],
+    "answer": "Niger"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the most populous country in Africa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Nigeria",
+      "Egypt",
+      "Ethiopia",
+      "South Africa"
+    ],
+    "answer": "Nigeria"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the African Union?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A trade zone only",
+      "A military alliance",
+      "A football association",
+      "A continental organisation of African states"
+    ],
+    "answer": "A continental organisation of African states"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Where is the African Union headquartered?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Addis Ababa",
+      "Dakar",
+      "Cairo",
+      "Nairobi"
+    ],
+    "answer": "Addis Ababa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is ECOWAS?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "East Community of West African States",
+      "Economic Community of West African States",
+      "Economic Conference on West African Security",
+      "East Coast West Africa Strategy"
+    ],
+    "answer": "Economic Community of West African States"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the main purpose of ECOWAS?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Political elections",
+      "Military cooperation only",
+      "UN membership",
+      "Promote trade and economic integration in West Africa"
+    ],
+    "answer": "Promote trade and economic integration in West Africa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Sahara Desert?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "World's largest hot desert located in North Africa",
+      "Africa's largest forest",
+      "A desert in South Africa",
+      "A grassland area"
+    ],
+    "answer": "World's largest hot desert located in North Africa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the main natural resources of West Africa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Coal and iron",
+      "Only farmland",
+      "Only fish",
+      "Gold, oil, cocoa, timber, diamonds"
+    ],
+    "answer": "Gold, oil, cocoa, timber, diamonds"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's main cash crop?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cotton",
+      "Sugar",
+      "Cocoa",
+      "Coffee"
+    ],
+    "answer": "Cocoa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Trans-Saharan trade route known for?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Slave trade only",
+      "Trade in gold, salt, and other goods across the Sahara",
+      "Food trade",
+      "Oil trade"
+    ],
+    "answer": "Trade in gold, salt, and other goods across the Sahara"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Mali Empire known for?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Being a coastal empire",
+      "Farming only",
+      "Military power only",
+      "Great wealth, trade (especially gold and salt), and learning"
+    ],
+    "answer": "Great wealth, trade (especially gold and salt), and learning"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who was the most famous ruler of the Mali Empire?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Mansa Musa",
+      "Samori Tour\u00e9",
+      "Shaka Zulu",
+      "Sundiata Keita"
+    ],
+    "answer": "Mansa Musa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Songhai Empire?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A powerful West African empire that replaced Mali",
+      "A desert kingdom",
+      "A Portuguese colony",
+      "A coastal fishing empire"
+    ],
+    "answer": "A powerful West African empire that replaced Mali"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of Timbuktu?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A port city",
+      "An ancient city of learning and trade in Mali",
+      "A modern city with no historical significance",
+      "A desert"
+    ],
+    "answer": "An ancient city of learning and trade in Mali"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is colonialism?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cultural exchange",
+      "Control of one country over another, exploiting its resources",
+      "International trade",
+      "Independence of nations"
+    ],
+    "answer": "Control of one country over another, exploiting its resources"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Berlin Conference of 1884-85?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A sports event",
+      "A peace conference",
+      "A trade negotiation",
+      "A meeting where European powers divided Africa among themselves"
+    ],
+    "answer": "A meeting where European powers divided Africa among themselves"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Pan-Africanism?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A military alliance",
+      "A religious movement",
+      "Movement for political and cultural unity of African peoples worldwide",
+      "Movement for African economic isolation"
+    ],
+    "answer": "Movement for political and cultural unity of African peoples worldwide"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is neo-colonialism?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Direct colonial rule",
+      "Military occupation",
+      "Indirect control of developing nations through economic and political means",
+      "Trade union"
+    ],
+    "answer": "Indirect control of developing nations through economic and political means"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the slave trade?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Forced removal and trading of Africans as property",
+      "A trading company",
+      "A voluntary migration",
+      "Exchange of goods between Africans"
+    ],
+    "answer": "Forced removal and trading of Africans as property"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the triangular trade?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A type of ship",
+      "Ocean current patterns",
+      "Trade between three African nations",
+      "Trade route between Europe, Africa, and the Americas involving slaves and goods"
+    ],
+    "answer": "Trade route between Europe, Africa, and the Americas involving slaves and goods"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is gender equality?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Equal rights and opportunities for all genders",
+      "Women being superior",
+      "Males having more power",
+      "Women only working at home"
+    ],
+    "answer": "Equal rights and opportunities for all genders"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is child labour?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Children doing light chores",
+      "Children in schools",
+      "Work that deprives children of childhood and education",
+      "Youth employment"
+    ],
+    "answer": "Work that deprives children of childhood and education"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is child trafficking?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Legal adoption",
+      "Legal movement of children",
+      "School exchange programmes",
+      "Illegal movement or exploitation of children"
+    ],
+    "answer": "Illegal movement or exploitation of children"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Female Genital Mutilation (FGM)?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A harmful traditional practice involving cutting of female genitals",
+      "A medical procedure",
+      "A naming ceremony",
+      "A beneficial cultural practice"
+    ],
+    "answer": "A harmful traditional practice involving cutting of female genitals"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Convention on the Rights of the Child (CRC)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A Ghanaian law",
+      "An ECOWAS policy",
+      "A UN treaty defining children's rights",
+      "An African Union document"
+    ],
+    "answer": "A UN treaty defining children's rights"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is discrimination?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Promotion of diversity",
+      "Treating all people equally",
+      "Unfair treatment of a person based on characteristics like race or gender",
+      "Providing equal opportunities"
+    ],
+    "answer": "Unfair treatment of a person based on characteristics like race or gender"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is poverty?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "High food prices",
+      "State of lacking basic necessities and income",
+      "A type of disease",
+      "Having too much money"
+    ],
+    "answer": "State of lacking basic necessities and income"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is absolute poverty?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Moderate poverty",
+      "Urban poverty",
+      "Living below the minimum to meet basic survival needs",
+      "Relative shortage"
+    ],
+    "answer": "Living below the minimum to meet basic survival needs"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is corruption?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Economic recession",
+      "A type of disease",
+      "Good governance",
+      "Dishonest or fraudulent conduct by those in power"
+    ],
+    "answer": "Dishonest or fraudulent conduct by those in power"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of civil society?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Non-governmental organisations and citizens working for public good",
+      "Military oversight",
+      "International relations",
+      "Replace government"
+    ],
+    "answer": "Non-governmental organisations and citizens working for public good"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are NGOs?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Military groups",
+      "Government agencies",
+      "International corporations",
+      "Non-Governmental Organisations \u2014 independent groups serving social causes"
+    ],
+    "answer": "Non-Governmental Organisations \u2014 independent groups serving social causes"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Health Insurance Scheme (NHIS) in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A disease prevention campaign",
+      "A private hospital",
+      "Government health insurance for Ghanaian citizens",
+      "A foreign aid programme"
+    ],
+    "answer": "Government health insurance for Ghanaian citizens"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Education Trust Fund (GETFund)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A fund for educational infrastructure development in Ghana",
+      "A foreign scholarship",
+      "A student loan",
+      "An NGO"
+    ],
+    "answer": "A fund for educational infrastructure development in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is free Senior High School (SHS) policy in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Policy charging fees at SHS",
+      "A scholarship programme",
+      "A private school policy",
+      "Government policy providing free secondary education"
+    ],
+    "answer": "Government policy providing free secondary education"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of the 4th Republic Constitution?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Replaced military rule",
+      "Created ECOWAS",
+      "Restored multiparty democracy and set out rights and governance in Ghana",
+      "Introduced colonial rule"
+    ],
+    "answer": "Restored multiparty democracy and set out rights and governance in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is decentralisation?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Transfer of authority to local governments",
+      "Military restructuring",
+      "Centralising power in Accra",
+      "Reducing government size"
+    ],
+    "answer": "Transfer of authority to local governments"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the media in democracy?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Conduct elections",
+      "Inform citizens, hold government accountable, and enable public debate",
+      "Enforce laws",
+      "Collect taxes"
+    ],
+    "answer": "Inform citizens, hold government accountable, and enable public debate"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is civic responsibility?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The duties citizens have toward their community and state",
+      "Military service only",
+      "Only voting",
+      "Paying any fine"
+    ],
+    "answer": "The duties citizens have toward their community and state"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is taxation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Voluntary donations to government",
+      "A loan to government",
+      "Compulsory contributions collected by government to fund public services",
+      "A fine"
+    ],
+    "answer": "Compulsory contributions collected by government to fund public services"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Revenue Authority (GRA)?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A ministry",
+      "A development bank",
+      "A court",
+      "The body responsible for collecting taxes in Ghana"
+    ],
+    "answer": "The body responsible for collecting taxes in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the main religion introduced by the Portuguese traders to Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Islam",
+      "Hinduism",
+      "Christianity",
+      "Traditional religion"
+    ],
+    "answer": "Christianity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of 'woyome' in Ghanaian political discourse?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A musical term",
+      "An Ewe festival",
+      "A controversial judgment debt scandal",
+      "A traditional ceremony"
+    ],
+    "answer": "A controversial judgment debt scandal"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the meaning of 'Ghana' in the context of the ancient Ghana Empire?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Forest land",
+      "River name",
+      "War chief or king",
+      "Golden land"
+    ],
+    "answer": "War chief or king"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the three main traditional states of the Akan?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Brong, Kwahu, Sefwi",
+      "Ashanti, Fante, Akwapim",
+      "Krobo, Akwapim, Akyem",
+      "Akyem, Denkyira, Adansi"
+    ],
+    "answer": "Ashanti, Fante, Akwapim"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'chieftaincy' mean in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Military command",
+      "Political party system",
+      "Traditional system of governance through hereditary chiefs",
+      "A type of judicial court"
+    ],
+    "answer": "Traditional system of governance through hereditary chiefs"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National House of Chiefs?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A cultural NGO",
+      "A national body for traditional rulers",
+      "Parliament",
+      "A museum"
+    ],
+    "answer": "A national body for traditional rulers"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'destoolment' of a chief?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Crowning of a chief",
+      "A succession ceremony",
+      "Removal of a chief from power",
+      "A traditional dance"
+    ],
+    "answer": "Removal of a chief from power"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Accra Metropolitan Assembly?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Parliament's committee",
+      "A business association",
+      "A traditional council",
+      "The local government authority for the Accra metropolis"
+    ],
+    "answer": "The local government authority for the Accra metropolis"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does NADMO stand for?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "National Agency for Disaster Management Operations",
+      "National Agricultural Development and Management Office",
+      "North Africa Development Mission Organisation",
+      "National Association of District Municipal Officers"
+    ],
+    "answer": "National Agency for Disaster Management Operations"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's national anthem?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ghana the Bright and Beautiful",
+      "God Bless Africa",
+      "Arise and Advance",
+      "God Bless Our Homeland Ghana"
+    ],
+    "answer": "God Bless Our Homeland Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are Ghana's national colours?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Red, gold, green with black star",
+      "Blue, white, red",
+      "Yellow, black, green",
+      "Green, white, gold"
+    ],
+    "answer": "Red, gold, green with black star"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does the black star on Ghana's flag represent?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Wealth",
+      "African emancipation and unity",
+      "Military strength",
+      "Agriculture"
+    ],
+    "answer": "African emancipation and unity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does the red in Ghana's flag symbolise?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Blood of those who died for independence",
+      "Royalty",
+      "Courage",
+      "Natural resources"
+    ],
+    "answer": "Blood of those who died for independence"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does the gold in Ghana's flag symbolise?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Peace",
+      "Sunshine",
+      "Mineral wealth",
+      "Royalty"
+    ],
+    "answer": "Mineral wealth"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does the green in Ghana's flag symbolise?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ghana's forests and natural wealth",
+      "Peace",
+      "Military",
+      "Money"
+    ],
+    "answer": "Ghana's forests and natural wealth"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's national pledge?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A promise to serve Ghana",
+      "A prayer",
+      "An oath of loyalty to the nation and its values",
+      "An ECOWAS declaration"
+    ],
+    "answer": "An oath of loyalty to the nation and its values"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's coat of arms?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A military symbol",
+      "The president's seal only",
+      "The national flag",
+      "The official emblem of Ghana"
+    ],
+    "answer": "The official emblem of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of 6th March in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "National Day of Prayer",
+      "Independence Day",
+      "Republic Day",
+      "Army Day"
+    ],
+    "answer": "Independence Day"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 1st July significant in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Army Day",
+      "Independence Day",
+      "Republic Day \u2014 Ghana became a republic",
+      "Labour Day"
+    ],
+    "answer": "Republic Day \u2014 Ghana became a republic"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Labour Day in Ghana celebrated on?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6th March",
+      "1st January",
+      "4th August",
+      "1st May"
+    ],
+    "answer": "1st May"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the term of a Member of Parliament in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6 years",
+      "4 years",
+      "2 years",
+      "5 years"
+    ],
+    "answer": "4 years"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Democratic Institute?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "An international democracy support organisation",
+      "A Ghanaian NGO",
+      "A government ministry",
+      "A UN body"
+    ],
+    "answer": "An international democracy support organisation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is CHRAJ?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Commission on Higher Rights and Administration of Justice",
+      "Commission for Human Rights and Administrative Justice",
+      "Committee on Human Rights and Administrative Justice",
+      "Civil and Human Rights Advisory Justice"
+    ],
+    "answer": "Commission for Human Rights and Administrative Justice"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Serious Fraud Office in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The Supreme Court",
+      "Ghana Revenue Authority",
+      "Office investigating and prosecuting economic crimes",
+      "CHRAJ"
+    ],
+    "answer": "Office investigating and prosecuting economic crimes"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of Ghana's first multiparty elections in the Fourth Republic?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "They were held in 1992",
+      "Started a new era of democratic governance",
+      "NDC won but there was controversy",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the term 'puberty rites'?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "School graduation",
+      "A naming ceremony",
+      "A wedding ceremony",
+      "Traditional ceremonies marking transition to adulthood"
+    ],
+    "answer": "Traditional ceremonies marking transition to adulthood"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the Dipo rites?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Ewe funeral rites",
+      "Krobo female puberty rites",
+      "Ga naming ceremony",
+      "Akan puberty rites"
+    ],
+    "answer": "Krobo female puberty rites"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'outward migration' mean?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "People coming into a country",
+      "People leaving a country",
+      "Movement within a city",
+      "Seasonal movement"
+    ],
+    "answer": "People leaving a country"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'brain drain'?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Loss of intelligence due to illness",
+      "Emigration of skilled or educated people to other countries",
+      "Unemployment",
+      "Loss of young people"
+    ],
+    "answer": "Emigration of skilled or educated people to other countries"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is remittance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Trade income",
+      "Agricultural subsidy",
+      "Government grant",
+      "Money sent home by migrants to their families"
+    ],
+    "answer": "Money sent home by migrants to their families"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'sustainable development'?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Only economic development",
+      "Development meeting current needs without compromising future generations",
+      "Development that does not consider the environment",
+      "Industrial growth"
+    ],
+    "answer": "Development meeting current needs without compromising future generations"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the Millennium Development Goals (MDGs)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "8 UN goals to address global poverty by 2015",
+      "Goals for West Africa",
+      "Goals set by Ghana",
+      "Military development goals"
+    ],
+    "answer": "8 UN goals to address global poverty by 2015"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is family planning?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Methods to control timing and number of children",
+      "Only abstinence",
+      "Planning family gatherings",
+      "A government policy"
+    ],
+    "answer": "Methods to control timing and number of children"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the benefits of small family size?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Higher status",
+      "More labour",
+      "More children to farm",
+      "Better care and education for each child"
+    ],
+    "answer": "Better care and education for each child"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is teenage pregnancy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Late pregnancy",
+      "Normal pregnancy",
+      "Pregnancy in women over 30",
+      "Pregnancy in girls below 20"
+    ],
+    "answer": "Pregnancy in girls below 20"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is peer pressure?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Influence from age-mates to behave in certain ways",
+      "Teacher's influence",
+      "Pressure from parents",
+      "Government pressure"
+    ],
+    "answer": "Influence from age-mates to behave in certain ways"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is HIV/AIDS in the context of social studies?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A childhood illness",
+      "A type of malaria",
+      "A bacterial infection",
+      "A sexually transmitted disease with major social and economic impacts"
+    ],
+    "answer": "A sexually transmitted disease with major social and economic impacts"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is ABC in HIV prevention?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "AIDS Basic Care",
+      "Annual Blood Check",
+      "Abstain, Be faithful, use Condom",
+      "Avoid Bodily Contact"
+    ],
+    "answer": "Abstain, Be faithful, use Condom"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of education in development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Increases inequality",
+      "Causes urban migration only",
+      "Provides human capital, reduces poverty, improves health",
+      "No role"
+    ],
+    "answer": "Provides human capital, reduces poverty, improves health"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is literacy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Being educated to university level",
+      "Having ICT skills",
+      "Ability to read and write",
+      "Being multilingual"
+    ],
+    "answer": "Ability to read and write"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the difference between formal and informal sectors?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "They are the same",
+      "Formal: regulated, taxed; Informal: unregistered, untaxed",
+      "Informal is illegal",
+      "Formal is smaller"
+    ],
+    "answer": "Formal: regulated, taxed; Informal: unregistered, untaxed"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is entrepreneurship?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of investment",
+      "Government employment",
+      "Working for a company",
+      "Starting and managing a business venture"
+    ],
+    "answer": "Starting and managing a business venture"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is cooperative farming?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Subsistence farming",
+      "A group of farmers working together to share resources",
+      "Individual farming",
+      "Government farming"
+    ],
+    "answer": "A group of farmers working together to share resources"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the importance of agriculture to Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only for food",
+      "Not important",
+      "Only a small part of economy",
+      "Provides employment, food, and export earnings"
+    ],
+    "answer": "Provides employment, food, and export earnings"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is subsistence farming?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Large commercial farming",
+      "Farming primarily for the farmer's own consumption",
+      "Farming for export",
+      "Government farming"
+    ],
+    "answer": "Farming primarily for the farmer's own consumption"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is cash crop farming?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Subsistence farming",
+      "Government farming",
+      "Farming crops primarily for sale",
+      "Farming for food only"
+    ],
+    "answer": "Farming crops primarily for sale"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are Ghana's major minerals?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only gold",
+      "Gold, diamonds, bauxite, manganese, oil",
+      "Coal and iron",
+      "Only cocoa"
+    ],
+    "answer": "Gold, diamonds, bauxite, manganese, oil"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the importance of oil discovery to Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "No impact",
+      "Only for export",
+      "Provides energy revenue for development",
+      "No social impact"
+    ],
+    "answer": "Provides energy revenue for development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Jubilee Oil Field?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A fishing ground",
+      "Ghana's first oil discovery site off the Western Region coast",
+      "A gold mine",
+      "An agricultural scheme"
+    ],
+    "answer": "Ghana's first oil discovery site off the Western Region coast"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Tema?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A regional capital",
+      "A mining town",
+      "Ghana's main industrial and port city near Accra",
+      "Ghana's capital city"
+    ],
+    "answer": "Ghana's main industrial and port city near Accra"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Takoradi known for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A major port and oil industry hub",
+      "Cocoa farming",
+      "Gold mining",
+      "A tourist destination"
+    ],
+    "answer": "A major port and oil industry hub"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of the Accra-Tema Motorway?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ghana's only toll road connecting Accra to Tema",
+      "A rural road",
+      "A historic railway",
+      "An international airport road"
+    ],
+    "answer": "Ghana's only toll road connecting Accra to Tema"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Identification Authority in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A census body",
+      "A passport office",
+      "An electoral body",
+      "Body responsible for national ID card registration"
+    ],
+    "answer": "Body responsible for national ID card registration"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the 1992 Constitution of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A military document",
+      "The current supreme law of Ghana",
+      "A colonial charter",
+      "Ghana's first constitution"
+    ],
+    "answer": "The current supreme law of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of Article 3 of Ghana's 1992 Constitution?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Defines citizenship",
+      "Defines voting rights",
+      "Protects the constitution from overthrow",
+      "Establishes Parliament"
+    ],
+    "answer": "Protects the constitution from overthrow"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Reconciliation Commission?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A sports body",
+      "A religious body",
+      "A trade union",
+      "A body set up to address human rights abuses under military regimes"
+    ],
+    "answer": "A body set up to address human rights abuses under military regimes"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Electoral Commission's main duty?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Govern Ghana",
+      "Collect taxes",
+      "Register businesses",
+      "Organise and supervise elections in Ghana"
+    ],
+    "answer": "Organise and supervise elections in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is community development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "NGO activities only",
+      "Government spending",
+      "Development only in cities",
+      "Improvement of the living standards of a community"
+    ],
+    "answer": "Improvement of the living standards of a community"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is volunteer work?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Unpaid work done for the benefit of others",
+      "Military service",
+      "Paid government service",
+      "Forced labour"
+    ],
+    "answer": "Unpaid work done for the benefit of others"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Youth Authority?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government body responsible for youth development in Ghana",
+      "A university",
+      "An NGO",
+      "A sports body"
+    ],
+    "answer": "Government body responsible for youth development in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is international trade?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Exchange of goods and services between countries",
+      "Local market trade",
+      "Barter exchange",
+      "Trade within a country"
+    ],
+    "answer": "Exchange of goods and services between countries"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is balance of trade?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Balance of government budget",
+      "Difference between value of exports and imports",
+      "Exchange rate",
+      "Total foreign debt"
+    ],
+    "answer": "Difference between value of exports and imports"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a trade deficit?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "No trade",
+      "Balanced trade",
+      "Imports exceed exports",
+      "Exports exceed imports"
+    ],
+    "answer": "Imports exceed exports"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a trade surplus?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Exports exceed imports",
+      "No international trade",
+      "Imports exceed exports",
+      "Equal trade"
+    ],
+    "answer": "Exports exceed imports"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is foreign aid?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Loans only",
+      "Financial or material assistance given by one country to another",
+      "Trade between countries",
+      "Remittances"
+    ],
+    "answer": "Financial or material assistance given by one country to another"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the World Bank and IMF?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "International financial institutions supporting development",
+      "West African banks",
+      "NGOs",
+      "Private banks"
+    ],
+    "answer": "International financial institutions supporting development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the United Nations?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An African body",
+      "A trade union",
+      "International organisation promoting peace, security, and cooperation",
+      "A western military alliance"
+    ],
+    "answer": "International organisation promoting peace, security, and cooperation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the UN Security Council?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A general assembly",
+      "A human rights body",
+      "The UN body responsible for international peace and security",
+      "An economic body"
+    ],
+    "answer": "The UN body responsible for international peace and security"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is peacekeeping?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Deployment of forces to maintain or restore peace in conflict areas",
+      "Humanitarian aid only",
+      "War operations",
+      "Military training"
+    ],
+    "answer": "Deployment of forces to maintain or restore peace in conflict areas"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's reputation in UN peacekeeping?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Not involved",
+      "Ghana is among the top UN peacekeeping troop contributors",
+      "Ghana has never contributed",
+      "Ghana recently started"
+    ],
+    "answer": "Ghana is among the top UN peacekeeping troop contributors"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Commonwealth of Nations?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Only British nations",
+      "An international organisation of countries mostly former British territories",
+      "A West African group",
+      "A military alliance"
+    ],
+    "answer": "An international organisation of countries mostly former British territories"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is globalisation?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Only cultural exchange",
+      "Increasing interconnection of countries through trade, culture, and communication",
+      "Only economic integration",
+      "Isolation of countries"
+    ],
+    "answer": "Increasing interconnection of countries through trade, culture, and communication"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is cultural imperialism?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Preservation of indigenous culture",
+      "Celebration of all cultures",
+      "Cultural exchange",
+      "Dominance of one culture over others, especially through media"
+    ],
+    "answer": "Dominance of one culture over others, especially through media"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is acculturation?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Loss of all tradition",
+      "Cultural isolation",
+      "Rejection of other cultures",
+      "Process of adopting elements of another culture"
+    ],
+    "answer": "Process of adopting elements of another culture"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a referendum?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A census",
+      "A direct vote by citizens on a specific question",
+      "A type of election for a president",
+      "A parliamentary session"
+    ],
+    "answer": "A direct vote by citizens on a specific question"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a by-election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Local election",
+      "Election to fill a seat made vacant before the next general election",
+      "General election",
+      "Presidential election"
+    ],
+    "answer": "Election to fill a seat made vacant before the next general election"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Speaker of Parliament?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The presiding officer of Parliament",
+      "The Chief Justice",
+      "The President",
+      "The Attorney General"
+    ],
+    "answer": "The presiding officer of Parliament"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who is the Attorney General in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Finance Minister",
+      "Electoral Commissioner",
+      "Chief Justice",
+      "Government's chief legal adviser and minister responsible for justice"
+    ],
+    "answer": "Government's chief legal adviser and minister responsible for justice"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Council of State?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A court",
+      "Parliament",
+      "A type of cabinet",
+      "Advisory body that counsels the President on national matters"
+    ],
+    "answer": "Advisory body that counsels the President on national matters"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Public Accounts Committee of Parliament?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A cabinet committee",
+      "Parliament's committee that oversees government expenditure",
+      "A finance ministry",
+      "A court"
+    ],
+    "answer": "Parliament's committee that oversees government expenditure"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Auditor-General's role?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Prosecute fraud",
+      "Collect taxes",
+      "Audit government accounts and report to Parliament",
+      "Investigate corruption"
+    ],
+    "answer": "Audit government accounts and report to Parliament"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Bank of Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A development bank",
+      "A foreign bank",
+      "A commercial bank",
+      "Ghana's central bank responsible for monetary policy"
+    ],
+    "answer": "Ghana's central bank responsible for monetary policy"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is monetary policy?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Tax policy",
+      "Government spending policy",
+      "Central bank's management of money supply and interest rates",
+      "Trade policy"
+    ],
+    "answer": "Central bank's management of money supply and interest rates"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is fiscal policy?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Central bank policy",
+      "Trade policy",
+      "Government's use of spending and taxation to influence economy",
+      "Monetary policy"
+    ],
+    "answer": "Government's use of spending and taxation to influence economy"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is inflation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Decrease in prices",
+      "Increase in wages only",
+      "General rise in price level over time",
+      "Economic growth"
+    ],
+    "answer": "General rise in price level over time"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the exchange rate?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Price of goods",
+      "Interest rate",
+      "Rate at which one currency can be exchanged for another",
+      "Inflation rate"
+    ],
+    "answer": "Rate at which one currency can be exchanged for another"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's currency?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Pound",
+      "Franc",
+      "Naira",
+      "Cedi"
+    ],
+    "answer": "Cedi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of political parties?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Represent different viewpoints and compete for power through elections",
+      "No significance",
+      "Cause conflict",
+      "Control the economy"
+    ],
+    "answer": "Represent different viewpoints and compete for power through elections"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are pressure groups?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "NGOs only",
+      "Military groups",
+      "Types of political parties",
+      "Organisations influencing government without seeking election"
+    ],
+    "answer": "Organisations influencing government without seeking election"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a trade union?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of cooperative",
+      "A government body",
+      "An organisation protecting workers' rights",
+      "A business association"
+    ],
+    "answer": "An organisation protecting workers' rights"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Trades Union Congress (GTUC)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A government ministry",
+      "A political party",
+      "The national trade union federation in Ghana",
+      "A business group"
+    ],
+    "answer": "The national trade union federation in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is affirmative action?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A type of election",
+      "Gender segregation",
+      "Discrimination",
+      "Policies favouring underrepresented groups to address inequality"
+    ],
+    "answer": "Policies favouring underrepresented groups to address inequality"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the gender gap?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Equal pay",
+      "Gap in literacy only",
+      "Differences in opportunities and outcomes between men and women",
+      "Voting differences"
+    ],
+    "answer": "Differences in opportunities and outcomes between men and women"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the main cause of rapid urbanisation in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government policy forcing migration",
+      "Better weather in cities",
+      "Rural-urban migration in search of better opportunities",
+      "Natural population growth only"
+    ],
+    "answer": "Rural-urban migration in search of better opportunities"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are urban problems in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Improved sanitation only",
+      "No problems",
+      "Better employment only",
+      "Traffic congestion, slums, pollution, inadequate housing"
+    ],
+    "answer": "Traffic congestion, slums, pollution, inadequate housing"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a slum?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A middle-class area",
+      "A new town",
+      "A planned residential area",
+      "An area of poor housing with overcrowding and poor sanitation"
+    ],
+    "answer": "An area of poor housing with overcrowding and poor sanitation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Nima?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A mining town",
+      "A fishing village",
+      "A suburb in Kumasi",
+      "A densely populated low-income area in Accra"
+    ],
+    "answer": "A densely populated low-income area in Accra"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of public health in development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Not important",
+      "Only for children",
+      "Healthy population is more productive and contributes to economic growth",
+      "Only social benefit"
+    ],
+    "answer": "Healthy population is more productive and contributes to economic growth"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is malnutrition?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Eating too much",
+      "Deficiency or excess of nutrients impeding health",
+      "Normal diet",
+      "Vegetarianism"
+    ],
+    "answer": "Deficiency or excess of nutrients impeding health"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is sanitation?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Housing only",
+      "Roads and transport",
+      "Conditions and practices relating to health, especially sewage and clean water",
+      "Food production"
+    ],
+    "answer": "Conditions and practices relating to health, especially sewage and clean water"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the importance of clean water?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only for drinking",
+      "Only for agriculture",
+      "Not important",
+      "Prevents waterborne diseases and supports health and development"
+    ],
+    "answer": "Prevents waterborne diseases and supports health and development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are waterborne diseases?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Diseases from polluted air",
+      "Diseases spread through contaminated water",
+      "Genetic diseases",
+      "Diseases from food"
+    ],
+    "answer": "Diseases spread through contaminated water"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Open Defecation Free (ODF) status?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Areas with no public toilets",
+      "Designation for clean cities only",
+      "A type of toilet",
+      "Areas where no one defecates in the open \u2014 a sanitation milestone"
+    ],
+    "answer": "Areas where no one defecates in the open \u2014 a sanitation milestone"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a census?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of election",
+      "A type of survey about opinions",
+      "An official count of a country's population",
+      "A land survey"
+    ],
+    "answer": "An official count of a country's population"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Statistical Service?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An NGO",
+      "A census committee",
+      "Government body responsible for collecting and analysing national data",
+      "Government body collecting and analysing national data"
+    ],
+    "answer": "Government body collecting and analysing national data"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is food security?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Reliable access to sufficient, nutritious food",
+      "Growing food for export",
+      "Surplus food production",
+      "Government food reserves only"
+    ],
+    "answer": "Reliable access to sufficient, nutritious food"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's LEAP programme?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Livelihood Empowerment Against Poverty \u2014 cash transfers to poor households",
+      "A sports programme",
+      "A UN programme",
+      "A farming initiative"
+    ],
+    "answer": "Livelihood Empowerment Against Poverty \u2014 cash transfers to poor households"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is social protection?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Policies and programmes protecting individuals from poverty and risk",
+      "Only pensions",
+      "Only health insurance",
+      "Only unemployment benefits"
+    ],
+    "answer": "Policies and programmes protecting individuals from poverty and risk"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of women in Ghanaian development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "No significant role",
+      "Women contribute in agriculture, trade, family care, and increasingly in politics",
+      "Only in agriculture",
+      "Only domestic roles"
+    ],
+    "answer": "Women contribute in agriculture, trade, family care, and increasingly in politics"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is moral education?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Teaching values, ethics, and good character",
+      "History teaching",
+      "Civic education",
+      "Religious instruction only"
+    ],
+    "answer": "Teaching values, ethics, and good character"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is patriotism?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Political party loyalty",
+      "Hatred of other nations",
+      "Love of one's country and willingness to serve it",
+      "Supporting wars"
+    ],
+    "answer": "Love of one's country and willingness to serve it"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are civic virtues?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Private values only",
+      "Qualities such as honesty, responsibility, and respect for others and the law",
+      "Military discipline",
+      "Religious virtues only"
+    ],
+    "answer": "Qualities such as honesty, responsibility, and respect for others and the law"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is social cohesion?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Religious practice",
+      "Economic growth",
+      "The bonds that hold a community together in solidarity",
+      "Conflict in society"
+    ],
+    "answer": "The bonds that hold a community together in solidarity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is national unity?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Religious unity only",
+      "The coming together of all people in a nation for common goals",
+      "Only ethnic unity",
+      "Political unity only"
+    ],
+    "answer": "The coming together of all people in a nation for common goals"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is ethnicity?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A nationality",
+      "A language group",
+      "A racial category only",
+      "Shared cultural identity, ancestry, language, or tradition"
+    ],
+    "answer": "Shared cultural identity, ancestry, language, or tradition"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the main ethnic groups in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only Ewe and Ga",
+      "Only northern groups",
+      "Only Akan",
+      "Akan, Mole-Dagbani, Ewe, Ga-Dangme, and others"
+    ],
+    "answer": "Akan, Mole-Dagbani, Ewe, Ga-Dangme, and others"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is tribalism?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A form of farming",
+      "Loyalty to a tribe that leads to unfair treatment of others",
+      "A cultural celebration",
+      "Ethnic diversity"
+    ],
+    "answer": "Loyalty to a tribe that leads to unfair treatment of others"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is xenophobia?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cultural exchange",
+      "Fear or hatred of foreigners",
+      "Immigration",
+      "Love of foreigners"
+    ],
+    "answer": "Fear or hatred of foreigners"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is tolerance?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Agreement with everything",
+      "Silence",
+      "Ignoring others",
+      "Acceptance of people with different views or backgrounds"
+    ],
+    "answer": "Acceptance of people with different views or backgrounds"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is conflict resolution?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ignoring problems",
+      "Going to war",
+      "Police action only",
+      "Process of resolving disagreements peacefully"
+    ],
+    "answer": "Process of resolving disagreements peacefully"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is mediation?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Police investigation",
+      "Third-party assisted negotiation to resolve disputes",
+      "Government ruling",
+      "A type of court"
+    ],
+    "answer": "Third-party assisted negotiation to resolve disputes"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is arbitration?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A type of election",
+      "Informal dispute resolution",
+      "Mediation with a judge",
+      "Formal dispute resolution where an arbitrator makes a binding decision"
+    ],
+    "answer": "Formal dispute resolution where an arbitrator makes a binding decision"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the difference between a monarchy and a republic?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Monarchy is elected",
+      "No difference",
+      "Both are democracies",
+      "Monarchy: hereditary head of state; Republic: elected head of state"
+    ],
+    "answer": "Monarchy: hereditary head of state; Republic: elected head of state"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a traditional ruler's 'palace' called in Akan?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Ahenfi",
+      "Durbar",
+      "Stool house",
+      "Ahenfie"
+    ],
+    "answer": "Ahenfie"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a 'durbar'?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A farming event",
+      "A gathering in honour of a chief",
+      "A dance",
+      "A funeral"
+    ],
+    "answer": "A gathering in honour of a chief"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Armed Forces?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A paramilitary",
+      "A police force",
+      "The military forces of Ghana including army, navy, and air force",
+      "Only the army"
+    ],
+    "answer": "The military forces of Ghana including army, navy, and air force"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Police Service?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A national guard",
+      "The civilian law enforcement agency of Ghana",
+      "Military body",
+      "A court"
+    ],
+    "answer": "The civilian law enforcement agency of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the immigration service in Ghana responsible for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Collecting taxes",
+      "Elections",
+      "Managing entry and exit of people across Ghana's borders",
+      "Healthcare"
+    ],
+    "answer": "Managing entry and exit of people across Ghana's borders"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a passport?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A voter ID",
+      "A national ID card",
+      "An official travel document issued by a government",
+      "A driving licence"
+    ],
+    "answer": "An official travel document issued by a government"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a visa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A national ID card",
+      "A birth certificate",
+      "Permission to enter a foreign country",
+      "A travel document"
+    ],
+    "answer": "Permission to enter a foreign country"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is NEPAD?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "North and East Pan-African Development",
+      "National Economic Planning and Development",
+      "New Economic Plan for Africa's Development",
+      "New Partnership for Africa's Development"
+    ],
+    "answer": "New Partnership for Africa's Development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Agenda 2063?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Africa's 50-year development blueprint by the African Union",
+      "Ghana's development plan",
+      "An ECOWAS plan",
+      "A UN plan"
+    ],
+    "answer": "Africa's 50-year development blueprint by the African Union"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the aims of the United Nations?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Control of resources",
+      "Maintain international peace, promote human rights, foster development",
+      "Economic competition",
+      "Military conquest"
+    ],
+    "answer": "Maintain international peace, promote human rights, foster development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is UNESCO?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "UN Emergency Security Council",
+      "Union of Nations for Education and Culture",
+      "United Nations Educational, Scientific and Cultural Organisation",
+      "United Nations Economic Support Commission"
+    ],
+    "answer": "United Nations Educational, Scientific and Cultural Organisation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is UNICEF?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "UN Committee for Education",
+      "United Children's International Fund",
+      "UN International Centre for Education",
+      "United Nations International Children's Emergency Fund"
+    ],
+    "answer": "United Nations International Children's Emergency Fund"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is WHO?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Western Hemisphere Organisation",
+      "World Highway Organisation",
+      "World Health Organisation",
+      "World Heritage Office"
+    ],
+    "answer": "World Health Organisation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is FAO?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Foreign Agricultural Office",
+      "Food Aid Organisation",
+      "Federal Agriculture Office",
+      "Food and Agriculture Organisation"
+    ],
+    "answer": "Food and Agriculture Organisation"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the ICC?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "International Conflict Commission",
+      "International Criminal Court",
+      "International Commerce Commission",
+      "International Communications Council"
+    ],
+    "answer": "International Criminal Court"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the function of the International Criminal Court?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Manage international debt",
+      "Issue passports",
+      "Try individuals accused of war crimes and crimes against humanity",
+      "Settle trade disputes"
+    ],
+    "answer": "Try individuals accused of war crimes and crimes against humanity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Non-Aligned Movement?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A group of nations not formally aligned with major power blocs",
+      "A military alliance",
+      "An African alliance",
+      "An economic union"
+    ],
+    "answer": "A group of nations not formally aligned with major power blocs"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is bilateral aid?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Aid given from one country directly to another",
+      "Multilateral aid",
+      "Aid from many countries",
+      "NGO aid"
+    ],
+    "answer": "Aid given from one country directly to another"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is multilateral aid?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Aid from one country",
+      "Private aid",
+      "Aid given through international organisations like the UN",
+      "Military aid"
+    ],
+    "answer": "Aid given through international organisations like the UN"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is conditionality in aid?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Aid with no strings",
+      "Requirements attached to receiving foreign aid",
+      "Unconditional loans",
+      "Humanitarian assistance"
+    ],
+    "answer": "Requirements attached to receiving foreign aid"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the debt burden?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Trade surplus",
+      "Amount of savings",
+      "Large accumulation of national debt that hampers development",
+      "Low taxes"
+    ],
+    "answer": "Large accumulation of national debt that hampers development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is structural adjustment?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Economic reforms required by IMF/World Bank for loans",
+      "Government reforms only",
+      "Agricultural policy",
+      "Infrastructure improvement"
+    ],
+    "answer": "Economic reforms required by IMF/World Bank for loans"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Washington Consensus?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A military strategy",
+      "US foreign policy",
+      "A trade agreement",
+      "A set of free-market policy prescriptions promoted by IMF and World Bank"
+    ],
+    "answer": "A set of free-market policy prescriptions promoted by IMF and World Bank"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is fair trade?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Trade system ensuring better prices and rights for producers in developing countries",
+      "Free international trade",
+      "Trade without tariffs",
+      "Trade with no conditions"
+    ],
+    "answer": "Trade system ensuring better prices and rights for producers in developing countries"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is protectionism?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Environmental protection",
+      "Consumer protection",
+      "Free trade",
+      "Policy of protecting domestic industries from foreign competition through tariffs"
+    ],
+    "answer": "Policy of protecting domestic industries from foreign competition through tariffs"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a tariff?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A tax on imported goods",
+      "A trade agreement",
+      "A currency exchange rate",
+      "An export subsidy"
+    ],
+    "answer": "A tax on imported goods"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a quota in trade?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A limit on the amount of a product that can be imported",
+      "A tax",
+      "A subsidy",
+      "An export ban"
+    ],
+    "answer": "A limit on the amount of a product that can be imported"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is comparative advantage in trade?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Large population",
+      "Military power",
+      "Ability to produce goods at lower opportunity cost than others",
+      "Having the most resources"
+    ],
+    "answer": "Ability to produce goods at lower opportunity cost than others"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Gold Coast's main export under colonial rule?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Gold, cocoa, and timber",
+      "Only diamonds",
+      "Only fish",
+      "Cotton and coffee"
+    ],
+    "answer": "Gold, cocoa, and timber"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Cape Coast Castle?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A colonial government building",
+      "A former slave trading post and now a museum in Ghana",
+      "A chief's palace",
+      "A modern hotel"
+    ],
+    "answer": "A former slave trading post and now a museum in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Elmina Castle?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A tourist hotel",
+      "A fishing port",
+      "A military fort",
+      "The oldest European building in sub-Saharan Africa and former slave fort in Ghana"
+    ],
+    "answer": "The oldest European building in sub-Saharan Africa and former slave fort in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What European nation built Elmina Castle?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Portuguese",
+      "French",
+      "British",
+      "Dutch"
+    ],
+    "answer": "Portuguese"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the 'Door of No Return'?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A door in Ghana's parliament",
+      "The door slaves passed through when boarded onto ships",
+      "A border crossing",
+      "A historical door in Accra"
+    ],
+    "answer": "The door slaves passed through when boarded onto ships"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the economic motive behind European colonialism in Africa?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Exploitation of Africa's natural resources and markets",
+      "Missionary work",
+      "Cultural exchange",
+      "Education"
+    ],
+    "answer": "Exploitation of Africa's natural resources and markets"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the term 'indirect rule'?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "British colonial policy governing through existing local leaders",
+      "Direct colonial control",
+      "Military rule",
+      "Democratic rule"
+    ],
+    "answer": "British colonial policy governing through existing local leaders"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Yaa Asantewaa War?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "An inter-ethnic conflict",
+      "A war between Ghana and Togo",
+      "The 1900 Asante uprising against British rule led by Queen Mother Yaa Asantewaa",
+      "A civil war"
+    ],
+    "answer": "The 1900 Asante uprising against British rule led by Queen Mother Yaa Asantewaa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who was Yaa Asantewaa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Queen Mother of Ejisu who led the Asante resistance against British colonialism",
+      "A modern politician",
+      "The first female MP",
+      "A religious leader"
+    ],
+    "answer": "Queen Mother of Ejisu who led the Asante resistance against British colonialism"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the Aborigines' Rights Protection Society?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A religious group",
+      "A trade union",
+      "A Gold Coast organisation that resisted colonial land policies",
+      "A farming group"
+    ],
+    "answer": "A Gold Coast organisation that resisted colonial land policies"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of J.B. Danquah?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A military officer",
+      "A founding nationalist leader and scholar who advocated for Gold Coast independence",
+      "A traditional ruler",
+      "First President"
+    ],
+    "answer": "A founding nationalist leader and scholar who advocated for Gold Coast independence"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the National Liberation Council (NLC)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A political party",
+      "The military government that ruled Ghana from 1966 to 1969",
+      "A traditional council",
+      "A civil society group"
+    ],
+    "answer": "The military government that ruled Ghana from 1966 to 1969"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was AFRC?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "An agricultural body",
+      "An NGO",
+      "A political party",
+      "Armed Forces Revolutionary Council \u2014 Rawlings' 1979 military coup government"
+    ],
+    "answer": "Armed Forces Revolutionary Council \u2014 Rawlings' 1979 military coup government"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of the 1992 presidential election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Military election",
+      "Jerry Rawlings won and Ghana transitioned to civilian constitutional rule",
+      "First election ever",
+      "Local government election"
+    ],
+    "answer": "Jerry Rawlings won and Ghana transitioned to civilian constitutional rule"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the NDC-NPP two-party system in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A parliamentary coalition",
+      "Two military organisations",
+      "The two dominant political parties alternating power in Ghana's democracy",
+      "An NGO partnership"
+    ],
+    "answer": "The two dominant political parties alternating power in Ghana's democracy"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the significance of Ghana's 2000 election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "First peaceful transfer of power from one party to another in Ghana's history",
+      "No significance",
+      "NDC won again",
+      "Military intervention"
+    ],
+    "answer": "First peaceful transfer of power from one party to another in Ghana's history"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who won Ghana's 2000 election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "John Atta Mills",
+      "Jerry Rawlings",
+      "Atta Danquah",
+      "John Agyekum Kufuor"
+    ],
+    "answer": "John Agyekum Kufuor"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the HIPC initiative?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Highly Industrialised Poor Countries",
+      "High Income Poor Countries",
+      "Human International Programme for Capacity",
+      "Heavily Indebted Poor Countries initiative for debt relief"
+    ],
+    "answer": "Heavily Indebted Poor Countries initiative for debt relief"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's position on democracy in Africa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Often cited as a model of democratic governance in Africa",
+      "Not democratic",
+      "Unstable",
+      "Not important"
+    ],
+    "answer": "Often cited as a model of democratic governance in Africa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the presidential oath in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Oath to defend the constitution, the law, and the people of Ghana",
+      "A promise to serve the military",
+      "An informal pledge",
+      "A religious vow"
+    ],
+    "answer": "Oath to defend the constitution, the law, and the people of Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the Vice President in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Head of Parliament",
+      "Assists the President and assumes presidency if the President is unable to serve",
+      "Chief Justice",
+      "Finance Minister"
+    ],
+    "answer": "Assists the President and assumes presidency if the President is unable to serve"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of Cabinet in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Makes laws",
+      "The principal advisory body to the President for national policy",
+      "Conducts elections",
+      "Manages courts"
+    ],
+    "answer": "The principal advisory body to the President for national policy"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Attorney General's most important role?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "As the government's chief legal adviser and public prosecutor",
+      "As Speaker of Parliament",
+      "Make laws",
+      "As head of the judiciary"
+    ],
+    "answer": "As the government's chief legal adviser and public prosecutor"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is decentralisation aimed at in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Concentrating power",
+      "Bringing government closer to the people and enabling local governance",
+      "Increasing central power",
+      "Reducing democracy"
+    ],
+    "answer": "Bringing government closer to the people and enabling local governance"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a Metropolitan, Municipal, and District Assembly (MMDA)?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of court",
+      "A traditional council",
+      "The main local government unit in Ghana",
+      "A national body"
+    ],
+    "answer": "The main local government unit in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What percentage of national revenue is allocated to District Assemblies?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "5%",
+      "2%",
+      "7.5%",
+      "10%"
+    ],
+    "answer": "7.5%"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the DACF?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "District Assemblies Common Fund",
+      "District Agricultural Credit Fund",
+      "District Administrative Central Fund",
+      "Development and Construction Fund"
+    ],
+    "answer": "District Assemblies Common Fund"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is youth unemployment?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Youth in school",
+      "Situation where young people of working age cannot find employment",
+      "Lack of young people",
+      "Employment of young people"
+    ],
+    "answer": "Situation where young people of working age cannot find employment"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is vocational training?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Military training",
+      "Practical skills training for specific trades",
+      "General academic education",
+      "University education"
+    ],
+    "answer": "Practical skills training for specific trades"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is TVET?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Trade Vocational Education Trust",
+      "Technical and Vocational Education and Training",
+      "Technical and Vocational Enterprise Training",
+      "Traditional Vocational and Educational Training"
+    ],
+    "answer": "Technical and Vocational Education and Training"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is GETFund used for?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Educational infrastructure development in Ghana",
+      "Government salaries",
+      "Paying teachers",
+      "Military spending"
+    ],
+    "answer": "Educational infrastructure development in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is capitation grant?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Per-pupil funding provided by government to basic schools",
+      "University scholarship",
+      "School building fund",
+      "Teacher's salary"
+    ],
+    "answer": "Per-pupil funding provided by government to basic schools"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of access to education?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Reduces poverty, improves health, and enables economic development",
+      "Only for GDP growth",
+      "Not important",
+      "Affects employment only"
+    ],
+    "answer": "Reduces poverty, improves health, and enables economic development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the school feeding programme in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government programme providing meals to basic school pupils",
+      "A lunch box scheme",
+      "A scholarship",
+      "A school uniform scheme"
+    ],
+    "answer": "Government programme providing meals to basic school pupils"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is internet access important for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "No importance",
+      "Entertainment only",
+      "Education, business, communication, and economic development",
+      "Social media only"
+    ],
+    "answer": "Education, business, communication, and economic development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is e-governance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government TV",
+      "Use of electronic and digital technology to deliver government services",
+      "Traditional governance",
+      "Social media for government"
+    ],
+    "answer": "Use of electronic and digital technology to deliver government services"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of mobile money?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only for urban areas",
+      "No significance",
+      "Financial inclusion for those without bank accounts",
+      "Only for business"
+    ],
+    "answer": "Financial inclusion for those without bank accounts"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is MTN Mobile Money?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A government service",
+      "A bank",
+      "A telecommunications company only",
+      "A mobile-based payment service"
+    ],
+    "answer": "A mobile-based payment service"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is digital literacy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ability to code",
+      "Skills to use digital technology effectively",
+      "IT degree",
+      "Ability to read and write"
+    ],
+    "answer": "Skills to use digital technology effectively"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are the effects of corruption on development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Helps development",
+      "Improves services",
+      "No effects",
+      "Reduces investment, wastes resources, and undermines public trust"
+    ],
+    "answer": "Reduces investment, wastes resources, and undermines public trust"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is accountability?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Secrecy in governance",
+      "Only financial reporting",
+      "Responsibility to explain and justify actions to others",
+      "Personal responsibility only"
+    ],
+    "answer": "Responsibility to explain and justify actions to others"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is transparency in governance?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Private budgeting",
+      "Hidden decision-making",
+      "Openness in government processes and decision-making",
+      "Secret voting"
+    ],
+    "answer": "Openness in government processes and decision-making"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is good governance?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Technocratic rule",
+      "Colonial rule",
+      "Military rule",
+      "Governance that is effective, accountable, transparent, and responsive to citizens"
+    ],
+    "answer": "Governance that is effective, accountable, transparent, and responsive to citizens"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the purpose of Ghana's National Development Planning Commission?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Conduct elections",
+      "Coordinate national development planning",
+      "Manage courts",
+      "Collect taxes"
+    ],
+    "answer": "Coordinate national development planning"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is NDPC?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "National Defence Planning Committee",
+      "New Democratic Process Centre",
+      "National Democratic Planning Commission",
+      "National Development Planning Commission"
+    ],
+    "answer": "National Development Planning Commission"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Poverty Reduction Strategy?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A World Bank loan",
+      "An NGO plan",
+      "A welfare payment",
+      "Government strategy to reduce poverty through economic and social policies"
+    ],
+    "answer": "Government strategy to reduce poverty through economic and social policies"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a social audit?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A private company audit",
+      "Government financial audit",
+      "An NGO report",
+      "Community review of how public funds are used"
+    ],
+    "answer": "Community review of how public funds are used"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is citizen journalism?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "NGO media",
+      "Government press",
+      "Professional journalism",
+      "Reporting of news by ordinary citizens using social media and other tools"
+    ],
+    "answer": "Reporting of news by ordinary citizens using social media and other tools"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is freedom of the press?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Paid journalism",
+      "Right of media to operate without government interference or censorship",
+      "State media",
+      "Government control of media"
+    ],
+    "answer": "Right of media to operate without government interference or censorship"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Journalists Association?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A media company",
+      "Professional organisation representing journalists in Ghana",
+      "A government body",
+      "A government press"
+    ],
+    "answer": "Professional organisation representing journalists in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Communication Authority?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Ghana Broadcasting Corporation",
+      "Government regulator of telecommunications and broadcasting in Ghana",
+      "Ministry of Communication",
+      "A media company"
+    ],
+    "answer": "Government regulator of telecommunications and broadcasting in Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is population ageing?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Increasing proportion of older people due to declining birth rates and longer life",
+      "Decreasing population",
+      "Rising youth population",
+      "Population decline"
+    ],
+    "answer": "Increasing proportion of older people due to declining birth rates and longer life"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is dependency ratio?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Ratio of non-working age population to working-age population",
+      "Number of workers",
+      "Ratio of men to women",
+      "Birth to death ratio"
+    ],
+    "answer": "Ratio of non-working age population to working-age population"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is national development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "GDP growth only",
+      "Military strength",
+      "Improvement in the economic, social, and political well-being of a country",
+      "Infrastructure only"
+    ],
+    "answer": "Improvement in the economic, social, and political well-being of a country"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is human capital?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Financial capital",
+      "Physical labour",
+      "Natural resources",
+      "Skills, knowledge, and abilities of a country's population"
+    ],
+    "answer": "Skills, knowledge, and abilities of a country's population"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is social capital?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Networks, trust, and norms that facilitate cooperation within a community",
+      "Government savings",
+      "Physical resources",
+      "Financial investments"
+    ],
+    "answer": "Networks, trust, and norms that facilitate cooperation within a community"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was the HIPC programme Ghana used?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Debt relief programme for heavily indebted poor countries",
+      "A defence strategy",
+      "A trade agreement",
+      "A World Bank agricultural programme"
+    ],
+    "answer": "Debt relief programme for heavily indebted poor countries"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of traditional medicine in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Used only for ceremonies",
+      "Provides primary healthcare, especially in rural areas",
+      "Replaces modern medicine",
+      "No role"
+    ],
+    "answer": "Provides primary healthcare, especially in rural areas"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is indigenous knowledge?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Knowledge developed by local communities over generations",
+      "Western science",
+      "Academic knowledge",
+      "Foreign knowledge"
+    ],
+    "answer": "Knowledge developed by local communities over generations"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is '\u0186kraman ho hia' in Akan philosophy?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A legal principle",
+      "A farming technique",
+      "A festival",
+      "A proverb about community solidarity"
+    ],
+    "answer": "A proverb about community solidarity"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'onipa na ohia onipa' mean?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A person needs money",
+      "A person needs food",
+      "A person needs land",
+      "A person needs another person \u2014 emphasising human interdependence"
+    ],
+    "answer": "A person needs another person \u2014 emphasising human interdependence"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the church in Ghanaian society?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Provides education, healthcare, and social support in addition to spiritual guidance",
+      "Only charity",
+      "No role",
+      "Only religious"
+    ],
+    "answer": "Provides education, healthcare, and social support in addition to spiritual guidance"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of Islam in northern Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only spiritual",
+      "Shapes cultural practices, education (madrasas), and social values",
+      "No role",
+      "Only trade"
+    ],
+    "answer": "Shapes cultural practices, education (madrasas), and social values"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Fulani people known for in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Fishing",
+      "Farming cocoa",
+      "Nomadic cattle herding",
+      "Mining"
+    ],
+    "answer": "Nomadic cattle herding"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Tamale?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A lake in Ghana",
+      "A type of drum",
+      "A Ghanaian food",
+      "The capital of the Northern Region"
+    ],
+    "answer": "The capital of the Northern Region"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Bonfire Festival?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A religious festival",
+      "Celebrated in some Ghanaian communities to mark occasions",
+      "A Ga festival",
+      "A national holiday"
+    ],
+    "answer": "Celebrated in some Ghanaian communities to mark occasions"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Kundum festival?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A Ga festival",
+      "A harvest festival celebrated by the Ahanta and Nzema people",
+      "A national holiday",
+      "An Ashanti festival"
+    ],
+    "answer": "A harvest festival celebrated by the Ahanta and Nzema people"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Bakatue festival?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "An Ewe festival",
+      "A Dagomba festival",
+      "An Ashanti festival",
+      "A Fante fishing festival opening the fishing season in Elmina"
+    ],
+    "answer": "A Fante fishing festival opening the fishing season in Elmina"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Damba festival?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A harvest festival",
+      "A Muslim festival celebrated by Dagomba, Gonja, and others in northern Ghana",
+      "An Ashanti festival",
+      "A Ga festival"
+    ],
+    "answer": "A Muslim festival celebrated by Dagomba, Gonja, and others in northern Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a 'nana' in Ghanaian society?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A respectful title for an elder or traditional ruler",
+      "A musical instrument",
+      "A festival",
+      "A type of food"
+    ],
+    "answer": "A respectful title for an elder or traditional ruler"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Twi word for 'love'?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Odo",
+      "Medaase",
+      "Akwaaba",
+      "Yaa"
+    ],
+    "answer": "Odo"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'Akwaaba' mean?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Thank you",
+      "Goodbye",
+      "How are you",
+      "You are welcome"
+    ],
+    "answer": "You are welcome"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'Medaase'?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Goodbye",
+      "Good morning",
+      "Welcome",
+      "Thank you in Twi"
+    ],
+    "answer": "Thank you in Twi"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ga language spoken in?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Greater Accra Region",
+      "Kumasi area",
+      "Northern Region",
+      "Volta Region"
+    ],
+    "answer": "Greater Accra Region"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ewe language primarily spoken in?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Northern Region",
+      "Volta Region and parts of Oti Region",
+      "Western Region",
+      "Ashanti Region"
+    ],
+    "answer": "Volta Region and parts of Oti Region"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Dagbani?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "An Ashanti dialect",
+      "A Volta Region language",
+      "The language of the Dagomba people of northern Ghana",
+      "A Ga dialect"
+    ],
+    "answer": "The language of the Dagomba people of northern Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'fufu' consist of?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only cassava",
+      "Only yam",
+      "Only cocoyam",
+      "Pounded cassava and plantain, or yam"
+    ],
+    "answer": "Pounded cassava and plantain, or yam"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is banku?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of stew",
+      "A porridge made from millet",
+      "A soup",
+      "Fermented corn and cassava dough cooked with water"
+    ],
+    "answer": "Fermented corn and cassava dough cooked with water"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is kenkey?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of rice",
+      "A soup",
+      "Fermented corn dough wrapped in corn husks and cooked",
+      "A vegetable dish"
+    ],
+    "answer": "Fermented corn dough wrapped in corn husks and cooked"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Ghana's most famous cultural export worldwide?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Football",
+      "Music",
+      "Kente cloth",
+      "Fufu"
+    ],
+    "answer": "Kente cloth"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Where is kente cloth originally from?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Volta Region",
+      "Northern Region",
+      "Bonwire in Ashanti Region",
+      "Greater Accra"
+    ],
+    "answer": "Bonwire in Ashanti Region"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Highlife music?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Traditional drumming only",
+      "A Ghanaian music genre blending African rhythms and Western instruments",
+      "A northern Ghana genre",
+      "A foreign music genre"
+    ],
+    "answer": "A Ghanaian music genre blending African rhythms and Western instruments"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is Azonto?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A popular Ghanaian dance style",
+      "A musical instrument",
+      "A traditional funeral rite",
+      "A type of food"
+    ],
+    "answer": "A popular Ghanaian dance style"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does 'GPRTU' stand for?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Ghana Passenger Railway Transport Unit",
+      "General Private Road Transport Union",
+      "Ghana Private Road Transport Union",
+      "Ghana Public Road Transport Union"
+    ],
+    "answer": "Ghana Private Road Transport Union"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of trotro in Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A government bus",
+      "A shared mini-bus system serving as major public transport",
+      "A taxi service",
+      "A type of food"
+    ],
+    "answer": "A shared mini-bus system serving as major public transport"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is 'susu' in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A type of funeral",
+      "A musical instrument",
+      "An informal savings group where members contribute regularly",
+      "A type of food"
+    ],
+    "answer": "An informal savings group where members contribute regularly"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is microfinance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government grants",
+      "International aid",
+      "Large bank loans",
+      "Small financial services for low-income individuals and entrepreneurs"
+    ],
+    "answer": "Small financial services for low-income individuals and entrepreneurs"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Grameen Bank model?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A development bank",
+      "An NGO",
+      "A traditional bank",
+      "Microfinance model for lending to the poor, especially women"
+    ],
+    "answer": "Microfinance model for lending to the poor, especially women"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a cooperative?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of government",
+      "A private company",
+      "An NGO",
+      "An organisation owned and managed by its members for their benefit"
+    ],
+    "answer": "An organisation owned and managed by its members for their benefit"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of the Akosombo Dam to Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Flood control only",
+      "A tourist attraction",
+      "Supplies water to Accra only",
+      "Provides hydroelectric power and created the Volta Lake"
+    ],
+    "answer": "Provides hydroelectric power and created the Volta Lake"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is VALCO?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Volta Aluminium Company \u2014 uses Akosombo power to process aluminium",
+      "A fishing company",
+      "A mining company",
+      "Volta Artisanal Labour Corporation"
+    ],
+    "answer": "Volta Aluminium Company \u2014 uses Akosombo power to process aluminium"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the cocoa industry's importance to Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only domestic use",
+      "Major source of export earnings and employment for millions",
+      "A minor crop",
+      "Not important"
+    ],
+    "answer": "Major source of export earnings and employment for millions"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is COCOBOD?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Ghana Cocoa Board \u2014 regulates the cocoa sector",
+      "Ministry of Cocoa",
+      "A cooperative",
+      "An NGO"
+    ],
+    "answer": "Ghana Cocoa Board \u2014 regulates the cocoa sector"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is value addition in agriculture?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Improving seeds",
+      "Reducing crop quality",
+      "Growing more crops",
+      "Processing raw materials to increase their value before export"
+    ],
+    "answer": "Processing raw materials to increase their value before export"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of Ghana's port of Tema?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Main gateway for Ghana's international trade",
+      "Tourism",
+      "Military port",
+      "Fishing only"
+    ],
+    "answer": "Main gateway for Ghana's international trade"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is GPHA?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government Planning and Housing Authority",
+      "Ghana Public Health Authority",
+      "Ghana Police Headquarters Association",
+      "Ghana Ports and Harbours Authority"
+    ],
+    "answer": "Ghana Ports and Harbours Authority"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is GIPC?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government Investment Planning Committee",
+      "Ghana International Partnership Council",
+      "Ghana Immigration Processing Centre",
+      "Ghana Investment Promotion Centre"
+    ],
+    "answer": "Ghana Investment Promotion Centre"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of FDI?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Causes inflation",
+      "Only for large companies",
+      "Foreign Direct Investment brings capital, jobs, and technology",
+      "No significance"
+    ],
+    "answer": "Foreign Direct Investment brings capital, jobs, and technology"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is brain gain?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Attracting skilled talent from other countries or return of emigrants",
+      "Immigration of unskilled workers",
+      "Brain drain",
+      "Loss of educated people"
+    ],
+    "answer": "Attracting skilled talent from other countries or return of emigrants"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Diaspora?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "People living in their home country",
+      "People of Ghanaian origin living outside Ghana",
+      "Only skilled workers abroad",
+      "Only students abroad"
+    ],
+    "answer": "People of Ghanaian origin living outside Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Year of Return initiative?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A military return programme",
+      "A tourism and heritage programme inviting African diaspora to visit Ghana",
+      "A scholarship scheme",
+      "A repatriation scheme"
+    ],
+    "answer": "A tourism and heritage programme inviting African diaspora to visit Ghana"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is social stratification?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A type of government",
+      "Random social organisation",
+      "Division of society into hierarchical layers based on wealth, status, or power",
+      "Equal society"
+    ],
+    "answer": "Division of society into hierarchical layers based on wealth, status, or power"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is social mobility?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Movement of individuals between different social levels",
+      "Population movement",
+      "No change in social status",
+      "Only economic change"
+    ],
+    "answer": "Movement of individuals between different social levels"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are Millennium Villages in Ghana?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "UN refugee camps",
+      "NGO offices",
+      "Community development projects testing integrated rural development approaches",
+      "Government housing"
+    ],
+    "answer": "Community development projects testing integrated rural development approaches"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is rural development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Agricultural subsidy",
+      "Deforestation",
+      "Improvement of living conditions and economic opportunities in rural areas",
+      "City expansion"
+    ],
+    "answer": "Improvement of living conditions and economic opportunities in rural areas"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is urban planning?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Building homes only",
+      "Zoning only",
+      "Government housing",
+      "Process of designing and managing urban areas for orderly development"
+    ],
+    "answer": "Process of designing and managing urban areas for orderly development"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What are Internally Displaced Persons (IDPs)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "International migrants",
+      "Economic migrants",
+      "People forced to flee their homes but remain in their own country",
+      "Refugees abroad"
+    ],
+    "answer": "People forced to flee their homes but remain in their own country"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a refugee?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An economic migrant",
+      "A tourist",
+      "A diplomat",
+      "A person who has fled their country due to persecution or conflict"
+    ],
+    "answer": "A person who has fled their country due to persecution or conflict"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is UNHCR?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "United Nations Human Capital Regime",
+      "United Nations High Commissioner for Refugees",
+      "United Nations Human Rights Committee",
+      "UN Healthcare and Refugee Centre"
+    ],
+    "answer": "United Nations High Commissioner for Refugees"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the difference between emigration and immigration?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Emigration: leaving a country; Immigration: entering a country",
+      "Immigration: leaving; Emigration: entering",
+      "No difference",
+      "Same process"
+    ],
+    "answer": "Emigration: leaving a country; Immigration: entering a country"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is voluntary migration?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Displacement by conflict",
+      "Migration by choice for better opportunities",
+      "Deportation",
+      "Forced movement"
+    ],
+    "answer": "Migration by choice for better opportunities"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is forced migration?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Voluntary movement",
+      "Economic migration",
+      "Movement forced by conflict, persecution, or disaster",
+      "Education migration"
+    ],
+    "answer": "Movement forced by conflict, persecution, or disaster"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of social media in governance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Enables citizen engagement, transparency, and rapid information sharing",
+      "Only for entertainment",
+      "No significance",
+      "Creates more corruption"
+    ],
+    "answer": "Enables citizen engagement, transparency, and rapid information sharing"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of youth in national development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Youth are a vital human resource driving innovation and future leadership",
+      "Only in sports",
+      "No role",
+      "Only students"
+    ],
+    "answer": "Youth are a vital human resource driving innovation and future leadership"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the National Service Scheme?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "One-year compulsory national service for Ghanaian graduates",
+      "Military service",
+      "A scholarship",
+      "A government internship"
+    ],
+    "answer": "One-year compulsory national service for Ghanaian graduates"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is community service?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government employment",
+      "Paid labour",
+      "Military duty",
+      "Voluntary work done to benefit the local community"
+    ],
+    "answer": "Voluntary work done to benefit the local community"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the meaning of development?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "GDP growth",
+      "Improvement in the overall quality of life of a people",
+      "Building roads only",
+      "Only economic growth"
+    ],
+    "answer": "Improvement in the overall quality of life of a people"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is infant mortality?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Deaths of children under one year of age per 1000 live births",
+      "Deaths of elderly people",
+      "Death rate of young adults",
+      "Maternal deaths"
+    ],
+    "answer": "Deaths of children under one year of age per 1000 live births"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is maternal mortality?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Death of a woman during pregnancy or childbirth",
+      "Deaths of elderly women",
+      "Infant deaths",
+      "Death rate of all women"
+    ],
+    "answer": "Death of a woman during pregnancy or childbirth"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of health education?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "No role",
+      "Informs and empowers people to make healthy choices",
+      "Only disease treatment",
+      "Only for doctors"
+    ],
+    "answer": "Informs and empowers people to make healthy choices"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is an epidemic?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A widespread occurrence of a disease in a community",
+      "A disease affecting one person",
+      "A global outbreak",
+      "A minor illness"
+    ],
+    "answer": "A widespread occurrence of a disease in a community"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is a pandemic?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A global outbreak of a disease affecting many countries",
+      "An animal disease",
+      "A regional epidemic",
+      "A local disease outbreak"
+    ],
+    "answer": "A global outbreak of a disease affecting many countries"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What was COVID-19's impact on Ghana?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "No social impact",
+      "Only affected Accra",
+      "Caused deaths, economic disruption, and public health measures",
+      "No impact"
+    ],
+    "answer": "Caused deaths, economic disruption, and public health measures"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of the 2016 Ghanaian election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "NPP won, showing continued democratic transfer of power",
+      "First election ever",
+      "Military intervention",
+      "NDC retained power"
+    ],
+    "answer": "NPP won, showing continued democratic transfer of power"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who became President of Ghana after the 2016 election?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Nana Akufo-Addo",
+      "John Kufuor",
+      "Kwesi Amissah-Arthur",
+      "John Mahama"
+    ],
+    "answer": "Nana Akufo-Addo"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the African Continental Free Trade Area (AfCFTA)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "An educational programme",
+      "A continental military alliance",
+      "A trade agreement creating the world's largest free trade area in Africa",
+      "An environmental treaty"
+    ],
+    "answer": "A trade agreement creating the world's largest free trade area in Africa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Where is AfCFTA secretariat located?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Addis Ababa",
+      "Lagos",
+      "Accra",
+      "Nairobi"
+    ],
+    "answer": "Accra"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the significance of Ghana hosting the AfCFTA secretariat?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "No significance",
+      "A financial burden",
+      "A political gesture only",
+      "Positions Ghana as a hub for African trade integration"
+    ],
+    "answer": "Positions Ghana as a hub for African trade integration"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is WAEC?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Western African Electoral Commission",
+      "West African Education Council",
+      "West African Examinations Council",
+      "West Africa Economic Community"
+    ],
+    "answer": "West African Examinations Council"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the function of WAEC?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Train teachers",
+      "Provide scholarships",
+      "Conduct and certify secondary examinations across West Africa",
+      "Govern West Africa"
+    ],
+    "answer": "Conduct and certify secondary examinations across West Africa"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the BECE?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Basic Education Certificate Examination \u2014 written at end of JHS",
+      "A professional examination",
+      "A university entrance exam",
+      "Bachelor of Education Certificate Examination"
+    ],
+    "answer": "Basic Education Certificate Examination \u2014 written at end of JHS"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the WASSCE?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "West Africa School Certificate Examination",
+      "Western Africa Senior Certificate Examination",
+      "West African Senior Secondary Certificate Examination",
+      "West African Secondary School Curriculum Examination"
+    ],
+    "answer": "West African Senior Secondary Certificate Examination"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the Ghana Education Service?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government body overseeing public basic and secondary education",
+      "An NGO",
+      "A union",
+      "A private company"
+    ],
+    "answer": "Government body overseeing public basic and secondary education"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What does GES stand for?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ghana Examination Service",
+      "Ghana Education Service",
+      "General Education System",
+      "Ghana Education System"
+    ],
+    "answer": "Ghana Education Service"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the structure of Ghana's education system?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only basic school",
+      "Kindergarten, Primary, JHS, SHS, Tertiary",
+      "Only SHS and University",
+      "Primary only"
+    ],
+    "answer": "Kindergarten, Primary, JHS, SHS, Tertiary"
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What age group does basic education cover in Ghana?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "16-18 years",
+      "3-6 years",
+      "0-5 years",
+      "6-15 years roughly (KG through JHS)"
+    ],
+    "answer": "6-15 years roughly (KG through JHS)"
+  }
+]
