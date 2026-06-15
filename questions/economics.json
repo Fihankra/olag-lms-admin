@@ -1,181 +1,3045 @@
 [
-  {"subject":"Economics","question":"Economics is best defined as the study of","type":"mcq","difficulty":"easy","options":["How to make money","How scarce resources are allocated to satisfy unlimited wants","How governments spend money","How businesses make profits"],"answer":"How scarce resources are allocated to satisfy unlimited wants"},
-  {"subject":"Economics","question":"Scarcity in economics means","type":"mcq","difficulty":"easy","options":["There is no money in the economy","Resources are limited relative to unlimited human wants","Goods are very expensive","Only rich people have access to goods"],"answer":"Resources are limited relative to unlimited human wants"},
-  {"subject":"Economics","question":"The opportunity cost of a decision is","type":"mcq","difficulty":"easy","options":["The total money spent","The value of the next best alternative forgone","The time taken to decide","The cost of all alternatives"],"answer":"The value of the next best alternative forgone"},
-  {"subject":"Economics","question":"The three basic economic questions are: What to produce, How to produce, and","type":"mcq","difficulty":"easy","options":["When to produce","Where to produce","For whom to produce","Why to produce"],"answer":"For whom to produce"},
-  {"subject":"Economics","question":"A free market economy makes resource allocation decisions through","type":"mcq","difficulty":"easy","options":["Government planning","The price mechanism (demand and supply)","Tradition and customs","International trade"],"answer":"The price mechanism (demand and supply)"},
-  {"subject":"Economics","question":"A command (planned) economy is one in which","type":"mcq","difficulty":"easy","options":["Consumers decide everything","The government makes all key economic decisions","Firms decide freely","Prices are set by demand"],"answer":"The government makes all key economic decisions"},
-  {"subject":"Economics","question":"A mixed economy combines elements of","type":"mcq","difficulty":"easy","options":["Barter and money systems","Free market and planned economies","Primary and secondary sectors","Local and international trade"],"answer":"Free market and planned economies"},
-  {"subject":"Economics","question":"The four factors of production are land, labour, capital, and","type":"mcq","difficulty":"easy","options":["Money","Management","Enterprise","Profit"],"answer":"Enterprise"},
-  {"subject":"Economics","question":"The reward for enterprise (entrepreneurship) is","type":"mcq","difficulty":"easy","options":["Wages","Rent","Interest","Profit"],"answer":"Profit"},
-  {"subject":"Economics","question":"The reward for labour is","type":"mcq","difficulty":"easy","options":["Rent","Wages and salaries","Interest","Profit"],"answer":"Wages and salaries"},
-  {"subject":"Economics","question":"The law of demand states that, all else equal, as price increases","type":"mcq","difficulty":"easy","options":["Demand increases","Supply increases","Demand decreases","Demand stays the same"],"answer":"Demand decreases"},
-  {"subject":"Economics","question":"A demand curve slopes","type":"mcq","difficulty":"easy","options":["Upward from left to right","Downward from left to right","Horizontally","Vertically"],"answer":"Downward from left to right"},
-  {"subject":"Economics","question":"The law of supply states that, all else equal, as price increases","type":"mcq","difficulty":"easy","options":["Supply decreases","Supply increases","Demand falls","Quantity demanded rises"],"answer":"Supply increases"},
-  {"subject":"Economics","question":"A supply curve slopes","type":"mcq","difficulty":"easy","options":["Downward from left to right","Upward from left to right","Horizontally","Vertically"],"answer":"Upward from left to right"},
-  {"subject":"Economics","question":"Market equilibrium occurs when","type":"mcq","difficulty":"easy","options":["Price is at its highest","Quantity demanded equals quantity supplied","Supply exceeds demand","The government fixes the price"],"answer":"Quantity demanded equals quantity supplied"},
-  {"subject":"Economics","question":"If demand increases and supply is unchanged, the equilibrium price","type":"mcq","difficulty":"medium","options":["Falls","Stays the same","Rises","Becomes unpredictable"],"answer":"Rises"},
-  {"subject":"Economics","question":"Which of the following will shift the demand curve to the right?","type":"mcq","difficulty":"medium","options":["A fall in consumer income for a normal good","An increase in the price of the good","A rise in consumer income for a normal good","An increase in supply"],"answer":"A rise in consumer income for a normal good"},
-  {"subject":"Economics","question":"Which of the following will shift the supply curve to the left?","type":"mcq","difficulty":"medium","options":["Lower production costs","Better technology","A rise in the price of inputs","Government subsidies"],"answer":"A rise in the price of inputs"},
-  {"subject":"Economics","question":"Price elasticity of demand (PED) measures","type":"mcq","difficulty":"medium","options":["How much supply changes with income","The responsiveness of quantity demanded to a change in price","The time it takes price to change","How much profit a firm makes"],"answer":"The responsiveness of quantity demanded to a change in price"},
-  {"subject":"Economics","question":"If PED > 1, demand is said to be","type":"mcq","difficulty":"medium","options":["Inelastic","Perfectly inelastic","Elastic","Unit elastic"],"answer":"Elastic"},
-  {"subject":"Economics","question":"A good with PED = 0 has","type":"mcq","difficulty":"medium","options":["Perfectly elastic demand","Unit elastic demand","Perfectly inelastic demand","Elastic demand"],"answer":"Perfectly inelastic demand"},
-  {"subject":"Economics","question":"Which type of goods are likely to have inelastic demand?","type":"mcq","difficulty":"medium","options":["Luxury goods","Goods with many close substitutes","Necessities and addictive goods","Expensive items"],"answer":"Necessities and addictive goods"},
-  {"subject":"Economics","question":"Income elasticity of demand is positive for","type":"mcq","difficulty":"medium","options":["Inferior goods","Normal goods","Giffen goods","Complementary goods"],"answer":"Normal goods"},
-  {"subject":"Economics","question":"An inferior good is one whose demand","type":"mcq","difficulty":"medium","options":["Increases as income rises","Decreases as income rises","Is always inelastic","Has no substitutes"],"answer":"Decreases as income rises"},
-  {"subject":"Economics","question":"Cross elasticity of demand between complements is","type":"mcq","difficulty":"hard","options":["Positive","Zero","Negative","Greater than 1"],"answer":"Negative"},
-  {"subject":"Economics","question":"Cross elasticity of demand between substitute goods is","type":"mcq","difficulty":"hard","options":["Negative","Zero","Positive","Equal to −1"],"answer":"Positive"},
-  {"subject":"Economics","question":"Substitute goods are those that can be","type":"mcq","difficulty":"easy","options":["Used together","Used in place of each other","Only bought together","Produced simultaneously"],"answer":"Used in place of each other"},
-  {"subject":"Economics","question":"Complementary goods are those that are","type":"mcq","difficulty":"easy","options":["Substitutes for each other","Used together (joint demand)","Luxury items","Only sold to governments"],"answer":"Used together (joint demand)"},
-  {"subject":"Economics","question":"Total revenue = Price ×","type":"mcq","difficulty":"easy","options":["Cost","Quantity sold","Profit","Number of firms"],"answer":"Quantity sold"},
-  {"subject":"Economics","question":"Profit = Total Revenue −","type":"mcq","difficulty":"easy","options":["Fixed costs","Total costs","Variable costs","Opportunity cost"],"answer":"Total costs"},
-  {"subject":"Economics","question":"Fixed costs are those that","type":"mcq","difficulty":"easy","options":["Change with output","Do not change with output in the short run","Are zero at zero output","Include materials and labour"],"answer":"Do not change with output in the short run"},
-  {"subject":"Economics","question":"Variable costs change","type":"mcq","difficulty":"easy","options":["Never","With the level of output","When interest rates rise","Only in the long run"],"answer":"With the level of output"},
-  {"subject":"Economics","question":"Marginal cost is the cost of producing","type":"mcq","difficulty":"medium","options":["The first unit","One more (extra) unit","The average unit","All units together"],"answer":"One more (extra) unit"},
-  {"subject":"Economics","question":"Average total cost = Total cost ÷","type":"mcq","difficulty":"easy","options":["Number of workers","Output (quantity produced)","Price","Fixed cost"],"answer":"Output (quantity produced)"},
-  {"subject":"Economics","question":"A profit-maximising firm produces where","type":"mcq","difficulty":"hard","options":["Price equals average cost","Total revenue is maximised","Marginal cost equals marginal revenue","Fixed cost is minimised"],"answer":"Marginal cost equals marginal revenue"},
-  {"subject":"Economics","question":"Economies of scale occur when a firm's average cost","type":"mcq","difficulty":"medium","options":["Rises as output increases","Falls as output increases","Stays constant","Is equal to fixed cost"],"answer":"Falls as output increases"},
-  {"subject":"Economics","question":"Diseconomies of scale occur when","type":"mcq","difficulty":"medium","options":["Average costs fall with increased output","Average costs rise as output increases beyond an optimal size","Total costs decrease","Fixed costs rise"],"answer":"Average costs rise as output increases beyond an optimal size"},
-  {"subject":"Economics","question":"A monopoly is a market with","type":"mcq","difficulty":"easy","options":["Many competing firms","A few dominant firms","One seller and many buyers","Perfect information"],"answer":"One seller and many buyers"},
-  {"subject":"Economics","question":"Perfect competition involves","type":"mcq","difficulty":"medium","options":["One dominant firm","A few large firms","Many small firms selling identical products","Government control of prices"],"answer":"Many small firms selling identical products"},
-  {"subject":"Economics","question":"In perfect competition, firms are price","type":"mcq","difficulty":"medium","options":["Makers","Takers","Setters","Controllers"],"answer":"Takers"},
-  {"subject":"Economics","question":"An oligopoly is a market dominated by","type":"mcq","difficulty":"easy","options":["One firm","Two firms","A few large firms","Hundreds of firms"],"answer":"A few large firms"},
-  {"subject":"Economics","question":"A duopoly is a market with how many dominant firms?","type":"mcq","difficulty":"medium","options":["One","Two","Three","Four"],"answer":"Two"},
-  {"subject":"Economics","question":"Price discrimination occurs when a firm","type":"mcq","difficulty":"hard","options":["Lowers prices for everyone","Charges different prices to different groups for the same product","Produces at minimum average cost","Colludes with competitors"],"answer":"Charges different prices to different groups for the same product"},
-  {"subject":"Economics","question":"National income (GDP) measures","type":"mcq","difficulty":"easy","options":["Government revenue","The total value of goods and services produced in a country in a year","Exports minus imports","Total household income"],"answer":"The total value of goods and services produced in a country in a year"},
-  {"subject":"Economics","question":"GDP stands for","type":"mcq","difficulty":"easy","options":["General Domestic Production","Gross Domestic Product","Growth and Development Plan","Government Development Programme"],"answer":"Gross Domestic Product"},
-  {"subject":"Economics","question":"GNP (Gross National Product) differs from GDP in that it also includes","type":"mcq","difficulty":"hard","options":["Government spending only","Net income from abroad (income earned overseas by residents minus income paid to foreign residents)","Import values","Depreciation"],"answer":"Net income from abroad (income earned overseas by residents minus income paid to foreign residents)"},
-  {"subject":"Economics","question":"Real GDP adjusts nominal GDP for","type":"mcq","difficulty":"medium","options":["Population growth","Inflation","Exchange rates","Government spending"],"answer":"Inflation"},
-  {"subject":"Economics","question":"Economic growth is measured by","type":"mcq","difficulty":"easy","options":["Change in the price level","Percentage change in real GDP over time","Government budget","Trade surplus"],"answer":"Percentage change in real GDP over time"},
-  {"subject":"Economics","question":"Inflation is defined as","type":"mcq","difficulty":"easy","options":["An increase in government spending","A sustained rise in the general price level","A fall in interest rates","An increase in wages"],"answer":"A sustained rise in the general price level"},
-  {"subject":"Economics","question":"The Consumer Price Index (CPI) measures","type":"mcq","difficulty":"medium","options":["GDP growth","Changes in the average prices paid by consumers for a basket of goods","Interest rates","Government expenditure"],"answer":"Changes in the average prices paid by consumers for a basket of goods"},
-  {"subject":"Economics","question":"Demand-pull inflation is caused by","type":"mcq","difficulty":"medium","options":["Rising production costs","Excess demand in the economy","Falling interest rates only","Tax increases"],"answer":"Excess demand in the economy"},
-  {"subject":"Economics","question":"Cost-push inflation results from","type":"mcq","difficulty":"medium","options":["Too much money in circulation","Higher input costs like wages and raw materials","Consumer overspending","Government printing money"],"answer":"Higher input costs like wages and raw materials"},
-  {"subject":"Economics","question":"Unemployment rate = (unemployed ÷ labour force) ×","type":"mcq","difficulty":"easy","options":["100","1,000","Total population","GDP"],"answer":"100"},
-  {"subject":"Economics","question":"Structural unemployment is caused by","type":"mcq","difficulty":"medium","options":["Seasonal fluctuations","A decline in demand for a particular type of worker due to structural change","The trade cycle","Wage negotiations"],"answer":"A decline in demand for a particular type of worker due to structural change"},
-  {"subject":"Economics","question":"Cyclical (demand-deficient) unemployment occurs during","type":"mcq","difficulty":"medium","options":["Economic booms","Periods of high investment","Economic recessions and downturns","Times of skills shortage"],"answer":"Economic recessions and downturns"},
-  {"subject":"Economics","question":"Frictional unemployment refers to","type":"mcq","difficulty":"medium","options":["Workers displaced by technology","Workers between jobs while searching","Workers laid off in winter","Workers who never had a job"],"answer":"Workers between jobs while searching"},
-  {"subject":"Economics","question":"Seasonal unemployment is caused by","type":"mcq","difficulty":"easy","options":["Technological change","The trade cycle","Fluctuations in demand related to the time of year","Lack of skills"],"answer":"Fluctuations in demand related to the time of year"},
-  {"subject":"Economics","question":"Fiscal policy involves changing","type":"mcq","difficulty":"medium","options":["Interest rates and money supply","Government spending and taxation","Exchange rates","Trade policies"],"answer":"Government spending and taxation"},
-  {"subject":"Economics","question":"Monetary policy involves changing","type":"mcq","difficulty":"medium","options":["Tax rates","Government spending","Interest rates and money supply","Export subsidies"],"answer":"Interest rates and money supply"},
-  {"subject":"Economics","question":"An expansionary fiscal policy to stimulate the economy involves","type":"mcq","difficulty":"medium","options":["Raising taxes and cutting spending","Cutting taxes and/or increasing government spending","Raising interest rates","Reducing money supply"],"answer":"Cutting taxes and/or increasing government spending"},
-  {"subject":"Economics","question":"A contractionary fiscal policy is used to","type":"mcq","difficulty":"medium","options":["Stimulate growth","Combat unemployment","Reduce inflation by decreasing aggregate demand","Increase government debt"],"answer":"Reduce inflation by decreasing aggregate demand"},
-  {"subject":"Economics","question":"A budget deficit means the government","type":"mcq","difficulty":"easy","options":["Spends less than it receives","Receives more than it spends","Spends more than it receives in revenue","Has a balanced budget"],"answer":"Spends more than it receives in revenue"},
-  {"subject":"Economics","question":"A budget surplus means","type":"mcq","difficulty":"easy","options":["Government spending exceeds revenue","Revenue exceeds government spending","The budget is balanced","GDP is growing"],"answer":"Revenue exceeds government spending"},
-  {"subject":"Economics","question":"The Bank of Ghana is Ghana's","type":"mcq","difficulty":"easy","options":["Commercial bank","Investment bank","Central bank","Development bank"],"answer":"Central bank"},
-  {"subject":"Economics","question":"A central bank's main functions include","type":"mcq","difficulty":"medium","options":["Providing loans to households","Issuing currency and acting as banker to government and commercial banks","Selling goods internationally","Building infrastructure"],"answer":"Issuing currency and acting as banker to government and commercial banks"},
-  {"subject":"Economics","question":"When interest rates rise, borrowing becomes","type":"mcq","difficulty":"easy","options":["Cheaper","More attractive","More expensive","The same cost"],"answer":"More expensive"},
-  {"subject":"Economics","question":"Rising interest rates tend to","type":"mcq","difficulty":"medium","options":["Increase consumer spending","Encourage borrowing","Reduce inflation and slow economic growth","Increase the money supply"],"answer":"Reduce inflation and slow economic growth"},
-  {"subject":"Economics","question":"The money multiplier effect describes how","type":"mcq","difficulty":"hard","options":["Inflation reduces purchasing power","An initial deposit leads to a larger increase in total deposits through lending","Interest rates affect savings","Government bonds reduce inflation"],"answer":"An initial deposit leads to a larger increase in total deposits through lending"},
-  {"subject":"Economics","question":"International trade is beneficial because of the principle of","type":"mcq","difficulty":"medium","options":["Absolute advantage","Comparative advantage","Trade deficits","Protectionism"],"answer":"Comparative advantage"},
-  {"subject":"Economics","question":"A tariff is a","type":"mcq","difficulty":"easy","options":["Tax on exports","Tax on imports","Quota on goods","Subsidy to local producers"],"answer":"Tax on imports"},
-  {"subject":"Economics","question":"A quota limits the","type":"mcq","difficulty":"easy","options":["Price of imports","Quantity of imports allowed into a country","Tariff on goods","Number of exporters"],"answer":"Quantity of imports allowed into a country"},
-  {"subject":"Economics","question":"A trade surplus occurs when a country's","type":"mcq","difficulty":"easy","options":["Exports exceed imports","Imports exceed exports","Exports equal imports","Government spends more than it earns"],"answer":"Exports exceed imports"},
-  {"subject":"Economics","question":"A trade deficit occurs when","type":"mcq","difficulty":"easy","options":["Exports exceed imports","Imports exceed exports","GDP rises","The budget is balanced"],"answer":"Imports exceed exports"},
-  {"subject":"Economics","question":"The balance of payments records all","type":"mcq","difficulty":"medium","options":["Domestic transactions","Financial transactions between a country and the rest of the world","Government tax revenues","Firm profits"],"answer":"Financial transactions between a country and the rest of the world"},
-  {"subject":"Economics","question":"The current account of the balance of payments includes","type":"mcq","difficulty":"hard","options":["Foreign direct investment flows","Trade in goods and services plus income transfers","Only exports of goods","Government borrowing"],"answer":"Trade in goods and services plus income transfers"},
-  {"subject":"Economics","question":"Foreign direct investment (FDI) is investment by","type":"mcq","difficulty":"medium","options":["Government into local firms","Foreign firms into a country's businesses and assets","Locals into foreign currencies","Banks into government bonds"],"answer":"Foreign firms into a country's businesses and assets"},
-  {"subject":"Economics","question":"Which institution provides loans to developing countries and promotes global economic stability?","type":"mcq","difficulty":"medium","options":["WTO","IMF (International Monetary Fund)","ECOWAS","African Union"],"answer":"IMF (International Monetary Fund)"},
-  {"subject":"Economics","question":"ECOWAS stands for","type":"mcq","difficulty":"easy","options":["East and Central Organisation of West African States","Economic Community of West African States","European Community on West African Support","Eastern Community of Western Atlantic States"],"answer":"Economic Community of West African States"},
-  {"subject":"Economics","question":"The World Trade Organisation (WTO) promotes","type":"mcq","difficulty":"medium","options":["Protectionism among members","Free and fair international trade by reducing barriers","Regional economic blocs only","Bilateral trade deals"],"answer":"Free and fair international trade by reducing barriers"},
-  {"subject":"Economics","question":"A public good has the characteristics of being non-excludable and","type":"mcq","difficulty":"hard","options":["Expensive","Rival","Non-rival","Only available to citizens"],"answer":"Non-rival"},
-  {"subject":"Economics","question":"An example of a public good is","type":"mcq","difficulty":"medium","options":["A private hospital","A loaf of bread","A lighthouse or national defence","A luxury car"],"answer":"A lighthouse or national defence"},
-  {"subject":"Economics","question":"Market failure occurs when","type":"mcq","difficulty":"medium","options":["Firms make losses","Markets fail to allocate resources efficiently","The government raises taxes","Demand exceeds supply"],"answer":"Markets fail to allocate resources efficiently"},
-  {"subject":"Economics","question":"A negative externality occurs when a third party suffers a cost from","type":"mcq","difficulty":"medium","options":["Their own consumption","A transaction they are not part of","Government policy","Rising wages"],"answer":"A transaction they are not part of"},
-  {"subject":"Economics","question":"A positive externality occurs when a third party benefits from","type":"mcq","difficulty":"medium","options":["Their own production","A transaction they are not involved in","Higher tax rates","Import restrictions"],"answer":"A transaction they are not involved in"},
-  {"subject":"Economics","question":"Pollution is an example of a","type":"mcq","difficulty":"easy","options":["Positive externality","Public good","Merit good","Negative externality"],"answer":"Negative externality"},
-  {"subject":"Economics","question":"Education is often cited as a merit good because","type":"mcq","difficulty":"medium","options":["It is provided by the private sector","It creates positive externalities and is under-consumed without subsidies","It is free to all","It benefits no one but the student"],"answer":"It creates positive externalities and is under-consumed without subsidies"},
-  {"subject":"Economics","question":"Demand for labour is a","type":"mcq","difficulty":"hard","options":["Primary demand","Derived demand (from demand for goods and services)","Autonomous demand","Inelastic supply"],"answer":"Derived demand (from demand for goods and services)"},
-  {"subject":"Economics","question":"The minimum wage is a type of","type":"mcq","difficulty":"medium","options":["Price ceiling","Price floor","Subsidy","Tax"],"answer":"Price floor"},
-  {"subject":"Economics","question":"A price ceiling set below the equilibrium price leads to","type":"mcq","difficulty":"hard","options":["A surplus","A shortage","No effect","An increase in supply"],"answer":"A shortage"},
-  {"subject":"Economics","question":"A price floor set above the equilibrium price leads to","type":"mcq","difficulty":"hard","options":["A shortage","No effect","A surplus","Inflation"],"answer":"A surplus"},
-  {"subject":"Economics","question":"Subsistence farming refers to","type":"mcq","difficulty":"easy","options":["Farming for export","Growing only enough food for the farmer's own needs","Large-scale commercial agriculture","Irrigation farming"],"answer":"Growing only enough food for the farmer's own needs"},
-  {"subject":"Economics","question":"Cash crop farming in Ghana includes growing","type":"mcq","difficulty":"easy","options":["Maize and cassava","Cocoa, coffee, and oil palm","Beans and tomatoes","Plantain only"],"answer":"Cocoa, coffee, and oil palm"},
-  {"subject":"Economics","question":"Ghana's historically largest export commodity by value is","type":"mcq","difficulty":"easy","options":["Cocoa","Timber","Gold","Oil"],"answer":"Gold"},
-  {"subject":"Economics","question":"Ghana became an oil producer when oil was discovered in the","type":"mcq","difficulty":"medium","options":["Volta Basin","Jubilee Field offshore in the Gulf of Guinea","Northern savanna","Eastern Region"],"answer":"Jubilee Field offshore in the Gulf of Guinea"},
-  {"subject":"Economics","question":"The Human Development Index (HDI) measures a country's development using","type":"mcq","difficulty":"medium","options":["GDP only","Income, education, and life expectancy","Government spending and military size","Export earnings"],"answer":"Income, education, and life expectancy"},
-  {"subject":"Economics","question":"A developing country typically has","type":"mcq","difficulty":"easy","options":["High GDP per capita","Low standards of living and limited industrialisation","Excellent infrastructure","High life expectancy"],"answer":"Low standards of living and limited industrialisation"},
-  {"subject":"Economics","question":"Import substitution is an industrialisation strategy that aims to","type":"mcq","difficulty":"hard","options":["Increase imports","Replace imports with domestically produced goods","Reduce domestic production","Specialise in primary goods"],"answer":"Replace imports with domestically produced goods"},
-  {"subject":"Economics","question":"Nationalisation is when","type":"mcq","difficulty":"medium","options":["Private firms buy government assets","The government takes ownership of private sector assets","Firms move production abroad","A company expands internationally"],"answer":"The government takes ownership of private sector assets"},
-  {"subject":"Economics","question":"Privatisation involves transferring","type":"mcq","difficulty":"medium","options":["Government assets to private ownership","Private firms to government","Taxes to businesses","Land from farmers to state"],"answer":"Government assets to private ownership"},
-  {"subject":"Economics","question":"A progressive tax is one where","type":"mcq","difficulty":"medium","options":["Everyone pays the same amount","Higher income earners pay a higher percentage of income","Lower income earners pay more","All goods are taxed equally"],"answer":"Higher income earners pay a higher percentage of income"},
-  {"subject":"Economics","question":"A regressive tax takes a higher percentage from","type":"mcq","difficulty":"medium","options":["Higher income earners","Lower income earners","Corporations","All earners equally"],"answer":"Lower income earners"},
-  {"subject":"Economics","question":"A proportional (flat) tax means every taxpayer pays","type":"mcq","difficulty":"medium","options":["The same absolute amount","A higher rate as income rises","The same percentage of income","Less as income rises"],"answer":"The same percentage of income"},
-  {"subject":"Economics","question":"Value Added Tax (VAT) is an example of a","type":"mcq","difficulty":"medium","options":["Direct tax","Progressive income tax","Indirect tax on spending","Capital gains tax"],"answer":"Indirect tax on spending"},
-  {"subject":"Economics","question":"Income tax is a type of","type":"mcq","difficulty":"easy","options":["Indirect tax","Direct tax","Trade tariff","Subsidy"],"answer":"Direct tax"},
-  {"subject":"Economics","question":"Deflation is","type":"mcq","difficulty":"medium","options":["A sustained rise in prices","A sustained fall in the general price level","A rise in interest rates","An increase in money supply"],"answer":"A sustained fall in the general price level"},
-  {"subject":"Economics","question":"Hyperinflation refers to","type":"mcq","difficulty":"medium","options":["Moderate price increases","Very rapid and uncontrolled inflation","A fall in prices","Government overspending"],"answer":"Very rapid and uncontrolled inflation"},
-  {"subject":"Economics","question":"Stagflation is a combination of","type":"mcq","difficulty":"hard","options":["Growth and low prices","High inflation and high unemployment (stagnation)","Deflation and high growth","Low interest rates and unemployment"],"answer":"High inflation and high unemployment (stagnation)"},
-  {"subject":"Economics","question":"The multiplier effect in Keynesian economics describes how","type":"mcq","difficulty":"hard","options":["Prices rise with demand","An initial injection into the economy leads to a larger overall increase in income","Savings reduce investment","Government borrowing causes inflation"],"answer":"An initial injection into the economy leads to a larger overall increase in income"},
-  {"subject":"Economics","question":"The circular flow of income involves households and","type":"mcq","difficulty":"easy","options":["Banks only","Governments only","Firms, and optionally government, financial sector, and overseas sector","Only international trade"],"answer":"Firms, and optionally government, financial sector, and overseas sector"},
-  {"subject":"Economics","question":"When households save instead of spend, this is a __ in the circular flow.","type":"mcq","difficulty":"medium","options":["Injection","Withdrawal (leakage)","Multiplier","Boost"],"answer":"Withdrawal (leakage)"},
-  {"subject":"Economics","question":"Government spending is an __ into the circular flow of income.","type":"mcq","difficulty":"medium","options":["Withdrawal","Injection","Deflation","Equilibrium"],"answer":"Injection"},
-  {"subject":"Economics","question":"A trade union is an organisation that","type":"mcq","difficulty":"easy","options":["Controls prices","Represents workers to negotiate wages and conditions","Manages government budgets","Provides trade finance"],"answer":"Represents workers to negotiate wages and conditions"},
-  {"subject":"Economics","question":"Collective bargaining refers to","type":"mcq","difficulty":"medium","options":["Group shopping for lower prices","Negotiation between trade unions and employers about wages and conditions","A form of taxation","Government price control"],"answer":"Negotiation between trade unions and employers about wages and conditions"},
-  {"subject":"Economics","question":"The production possibility frontier (PPF) shows","type":"mcq","difficulty":"medium","options":["How demand changes with price","The maximum combinations of two goods an economy can produce with given resources","A firm's cost structure","A country's imports and exports"],"answer":"The maximum combinations of two goods an economy can produce with given resources"},
-  {"subject":"Economics","question":"A point inside the PPF indicates","type":"mcq","difficulty":"medium","options":["Full employment","Productive efficiency","Productive inefficiency (underuse of resources)","Impossibility"],"answer":"Productive inefficiency (underuse of resources)"},
-  {"subject":"Economics","question":"A point outside the PPF is","type":"mcq","difficulty":"medium","options":["Attainable with current resources","Unattainable with current resources","The most efficient","The equilibrium point"],"answer":"Unattainable with current resources"},
-  {"subject":"Economics","question":"Economic development is broader than economic growth because it also considers","type":"mcq","difficulty":"medium","options":["GDP alone","Improvements in living standards, education, health, and freedom","Population only","Industrial output"],"answer":"Improvements in living standards, education, health, and freedom"},
-  {"subject":"Economics","question":"The Gini coefficient measures","type":"mcq","difficulty":"hard","options":["Economic growth rate","GDP per capita","Income inequality within a country","Inflation rate"],"answer":"Income inequality within a country"},
-  {"subject":"Economics","question":"A Gini coefficient of 0 means","type":"mcq","difficulty":"hard","options":["Complete inequality","No data available","Perfect equality of income","Extreme poverty"],"answer":"Perfect equality of income"},
-  {"subject":"Economics","question":"Foreign aid can be in the form of","type":"mcq","difficulty":"easy","options":["Military equipment only","Financial grants, loans, or technical assistance","Trade restrictions","Tourism"],"answer":"Financial grants, loans, or technical assistance"},
-  {"subject":"Economics","question":"Microeconomics deals with","type":"mcq","difficulty":"easy","options":["National income","Individual consumers and firms","Government budgets","International trade"],"answer":"Individual consumers and firms"},
-  {"subject":"Economics","question":"Macroeconomics deals with","type":"mcq","difficulty":"easy","options":["A single firm's decisions","Individual prices","The economy as a whole (GDP, inflation, unemployment)","Only government spending"],"answer":"The economy as a whole (GDP, inflation, unemployment)"},
-  {"subject":"Economics","question":"The primary sector of the economy involves","type":"mcq","difficulty":"easy","options":["Manufacturing goods","Providing services","Extracting raw materials (farming, mining, fishing)","Banking and finance"],"answer":"Extracting raw materials (farming, mining, fishing)"},
-  {"subject":"Economics","question":"The secondary sector of the economy involves","type":"mcq","difficulty":"easy","options":["Agriculture","Manufacturing and construction","Services","Raw material extraction"],"answer":"Manufacturing and construction"},
-  {"subject":"Economics","question":"The tertiary sector of the economy involves","type":"mcq","difficulty":"easy","options":["Mining","Manufacturing","Service industries","Construction"],"answer":"Service industries"},
-  {"subject":"Economics","question":"GDP per capita is calculated as","type":"mcq","difficulty":"easy","options":["GDP + population","GDP × population","GDP ÷ population","GDP − imports"],"answer":"GDP ÷ population"},
-  {"subject":"Economics","question":"Purchasing Power Parity (PPP) is used to compare incomes by adjusting for","type":"mcq","difficulty":"hard","options":["Population differences","Differences in price levels across countries","Exchange rate speculation","Tax systems"],"answer":"Differences in price levels across countries"},
-  {"subject":"Economics","question":"A recession is formally defined as","type":"mcq","difficulty":"medium","options":["One quarter of negative GDP growth","Two consecutive quarters of negative GDP growth","Three years of slow growth","A budget deficit"],"answer":"Two consecutive quarters of negative GDP growth"},
-  {"subject":"Economics","question":"The business (trade) cycle describes the","type":"mcq","difficulty":"medium","options":["Profit cycle of individual firms","Pattern of boom, slowdown, recession, and recovery in GDP","Day-to-day price changes","Long-run growth trend"],"answer":"Pattern of boom, slowdown, recession, and recovery in GDP"},
-  {"subject":"Economics","question":"Aggregate demand (AD) = C + I + G + (X − M). What does X − M represent?","type":"mcq","difficulty":"medium","options":["Government surplus","Consumer minus investment","Net exports (exports minus imports)","Tax revenues"],"answer":"Net exports (exports minus imports)"},
-  {"subject":"Economics","question":"Supply-side policies aim to","type":"mcq","difficulty":"hard","options":["Increase government spending","Reduce aggregate demand","Increase the productive capacity (aggregate supply) of the economy","Raise interest rates"],"answer":"Increase the productive capacity (aggregate supply) of the economy"},
-  {"subject":"Economics","question":"Examples of supply-side policies include","type":"mcq","difficulty":"hard","options":["Higher income taxes","Reducing interest rates","Improving education and training, privatisation, and reducing regulation","Increasing government spending"],"answer":"Improving education and training, privatisation, and reducing regulation"},
-  {"subject":"Economics","question":"The difference between a grant and a loan is that","type":"mcq","difficulty":"easy","options":["Both must be repaid","A grant does not need to be repaid; a loan does","A loan is never repaid","Grants carry interest"],"answer":"A grant does not need to be repaid; a loan does"},
-  {"subject":"Economics","question":"Devaluation of a currency means its value","type":"mcq","difficulty":"medium","options":["Rises against other currencies","Falls relative to other currencies","Stays the same","Is pegged to gold"],"answer":"Falls relative to other currencies"},
-  {"subject":"Economics","question":"When a country's currency depreciates, its exports become","type":"mcq","difficulty":"medium","options":["More expensive","The same price","Cheaper for foreign buyers","Unavailable"],"answer":"Cheaper for foreign buyers"},
-  {"subject":"Economics","question":"A fixed exchange rate is one that is","type":"mcq","difficulty":"medium","options":["Determined entirely by market forces","Set and maintained by the government or central bank","Changed daily by demand and supply","Linked to inflation"],"answer":"Set and maintained by the government or central bank"},
-  {"subject":"Economics","question":"A floating exchange rate is determined by","type":"mcq","difficulty":"medium","options":["Government decree","Demand and supply in the foreign exchange market","The IMF","Gold reserves"],"answer":"Demand and supply in the foreign exchange market"},
-  {"subject":"Economics","question":"Cocoa's contribution to Ghana's GDP makes Ghana one of the world's","type":"mcq","difficulty":"easy","options":["Largest gold producers","Largest cocoa producers","Largest oil exporters","Largest manufacturing nations"],"answer":"Largest cocoa producers"},
-  {"subject":"Economics","question":"The informal sector of an economy consists of","type":"mcq","difficulty":"medium","options":["Only agricultural activities","Unregistered, untaxed economic activities","Only illegal activities","Large multinational firms"],"answer":"Unregistered, untaxed economic activities"},
-  {"subject":"Economics","question":"Remittances are","type":"mcq","difficulty":"medium","options":["Government grants to businesses","Money sent home by workers living abroad","Import tariff revenues","Dividends from state enterprises"],"answer":"Money sent home by workers living abroad"},
-  {"subject":"Economics","question":"Brain drain refers to","type":"mcq","difficulty":"medium","options":["Loss of natural resources","Migration of highly skilled workers from developing to developed countries","A drop in the birth rate","Reduction in education funding"],"answer":"Migration of highly skilled workers from developing to developing countries"},
-  {"subject":"Economics","question":"Technological unemployment is caused by","type":"mcq","difficulty":"medium","options":["Seasonal demand changes","Technology replacing workers","Workers changing jobs","A recession"],"answer":"Technology replacing workers"},
-  {"subject":"Economics","question":"The Phillips curve suggests a trade-off between","type":"mcq","difficulty":"hard","options":["Growth and imports","Inflation and unemployment","Interest rates and investment","Exports and GDP"],"answer":"Inflation and unemployment"},
-  {"subject":"Economics","question":"Quantitative easing is a monetary policy that involves","type":"mcq","difficulty":"hard","options":["Raising interest rates","The central bank buying assets to increase money supply","Cutting government spending","Raising VAT rates"],"answer":"The central bank buying assets to increase money supply"},
-  {"subject":"Economics","question":"Which of the following is an example of a direct tax?","type":"mcq","difficulty":"easy","options":["VAT","Excise duty","Income tax","Customs duty"],"answer":"Income tax"},
-  {"subject":"Economics","question":"Which of the following is an example of an indirect tax?","type":"mcq","difficulty":"easy","options":["Income tax","Capital gains tax","Corporation tax","VAT"],"answer":"VAT"},
-  {"subject":"Economics","question":"A subsidy given to producers will","type":"mcq","difficulty":"medium","options":["Increase production costs and reduce supply","Shift the supply curve to the right and lower price","Shift the demand curve right","Reduce output"],"answer":"Shift the supply curve to the right and lower price"},
-  {"subject":"Economics","question":"Absolute poverty is defined as","type":"mcq","difficulty":"medium","options":["Earning less than your neighbour","Living below the minimum income necessary to meet basic needs","Having less than 50% of median income","Not owning a house"],"answer":"Living below the minimum income necessary to meet basic needs"},
-  {"subject":"Economics","question":"Relative poverty is measured in relation to","type":"mcq","difficulty":"medium","options":["Absolute minimum survival costs","The average or median income of a society","Global poverty lines","Government spending"],"answer":"The average or median income of a society"},
-  {"subject":"Economics","question":"What is opportunity cost?","type":"short_answer","difficulty":"easy","keywords":["next best alternative","forgone","choice","sacrifice","value"]},
-  {"subject":"Economics","question":"Explain the law of demand.","type":"short_answer","difficulty":"easy","keywords":["price rises","demand falls","inverse relationship","ceteris paribus","quantity demanded"]},
-  {"subject":"Economics","question":"What is the difference between a change in demand and a change in quantity demanded?","type":"short_answer","difficulty":"medium","keywords":["change in demand","shift","entire curve","non-price factors","change in quantity demanded","movement along curve","price change"]},
-  {"subject":"Economics","question":"Define 'price elasticity of demand' (PED) and state its formula.","type":"short_answer","difficulty":"medium","keywords":["responsiveness","quantity demanded","change in price","percentage change","ratio","PED = % change QD / % change P"]},
-  {"subject":"Economics","question":"What are the main determinants of demand?","type":"short_answer","difficulty":"medium","keywords":["price","income","taste","substitutes","complements","population","expectations","advertising"]},
-  {"subject":"Economics","question":"Distinguish between fixed and variable costs.","type":"short_answer","difficulty":"easy","keywords":["fixed","does not change","output","variable","changes with output","short run"]},
-  {"subject":"Economics","question":"What is GDP and why is it used to compare countries?","type":"short_answer","difficulty":"easy","keywords":["Gross Domestic Product","total value","goods and services","country","year","income","standard of living"]},
-  {"subject":"Economics","question":"Explain two causes of inflation.","type":"short_answer","difficulty":"medium","keywords":["demand-pull","excess demand","cost-push","rising costs","wages","raw materials","money supply"]},
-  {"subject":"Economics","question":"What are the costs of unemployment to an individual and to the economy?","type":"short_answer","difficulty":"medium","keywords":["loss of income","lower living standards","loss of skills","reduced GDP","government spending","tax revenue","social problems"]},
-  {"subject":"Economics","question":"What is fiscal policy and how can it be used to reduce unemployment?","type":"short_answer","difficulty":"medium","keywords":["government spending","taxation","increase spending","cut taxes","expansionary","aggregate demand","create jobs"]},
-  {"subject":"Economics","question":"What is a trade deficit and what can a government do about it?","type":"short_answer","difficulty":"hard","keywords":["imports exceed exports","current account","reduce imports","tariff","quota","increase exports","devalue currency","attract investment"]},
-  {"subject":"Economics","question":"Explain the concept of comparative advantage.","type":"short_answer","difficulty":"hard","keywords":["lower opportunity cost","specialise","trade","benefit","even if absolute advantage","Ricardo","efficient","mutually beneficial"]},
-  {"subject":"Economics","question":"What is a monopoly and why might it be bad for consumers?","type":"short_answer","difficulty":"medium","keywords":["single seller","no competition","higher prices","less choice","no incentive to innovate","exploit consumers"]},
-  {"subject":"Economics","question":"Define 'market failure' and give two examples.","type":"short_answer","difficulty":"medium","keywords":["markets fail","allocate efficiently","externalities","public goods","monopoly","information failure","pollution","under-provision"]},
-  {"subject":"Economics","question":"What is the difference between a tariff and a quota?","type":"short_answer","difficulty":"medium","keywords":["tariff","tax on imports","raises price","quota","limit quantity","restrict volume","protectionism"]},
-  {"subject":"Economics","question":"What is the Human Development Index (HDI)?","type":"short_answer","difficulty":"medium","keywords":["income","education","life expectancy","composite","measure","development","living standards","UNDP"]},
-  {"subject":"Economics","question":"Explain the circular flow of income.","type":"short_answer","difficulty":"medium","keywords":["households","firms","income","spending","goods","services","factor payments","injections","withdrawals","leakages"]},
-  {"subject":"Economics","question":"What is the role of the central bank in an economy?","type":"short_answer","difficulty":"medium","keywords":["issue currency","lender of last resort","monetary policy","regulate banks","interest rates","financial stability","government banker"]},
-  {"subject":"Economics","question":"Define 'subsidy' and explain how it affects the market for a good.","type":"short_answer","difficulty":"medium","keywords":["government payment","producers","lower cost","supply increases","price falls","quantity rises","merit good"]},
-  {"subject":"Economics","question":"What is the production possibility frontier (PPF) and what does a shift outward represent?","type":"short_answer","difficulty":"medium","keywords":["maximum output","two goods","resources","outward shift","economic growth","technology","more resources","efficiency"]},
-  {"subject":"Economics","question":"Describe the three main goals of macroeconomic policy.","type":"short_answer","difficulty":"medium","keywords":["economic growth","low inflation","low unemployment","balance of payments","stable prices","full employment"]},
-  {"subject":"Economics","question":"What is the difference between economic growth and economic development?","type":"short_answer","difficulty":"medium","keywords":["growth","increase GDP","development","quality of life","education","health","environment","broader","income distribution"]},
-  {"subject":"Economics","question":"What are the functions of money?","type":"short_answer","difficulty":"easy","keywords":["medium of exchange","store of value","unit of account","standard of deferred payment","four functions"]},
-  {"subject":"Economics","question":"Explain what is meant by 'economies of scale'.","type":"short_answer","difficulty":"medium","keywords":["average cost falls","output increases","larger scale","bulk buying","specialisation","spreading fixed costs"]},
-  {"subject":"Economics","question":"Define 'externality' and explain why it leads to market failure.","type":"short_answer","difficulty":"hard","keywords":["cost or benefit","third party","not involved","overproduction","negative","underproduction","positive","social optimum","market optimum differ"]},
-  {"subject":"Economics","question":"What is barter and what are its disadvantages?","type":"short_answer","difficulty":"easy","keywords":["exchange goods","without money","double coincidence of wants","difficult","indivisibility","lack of store of value"]},
-  {"subject":"Economics","question":"What does GDP per capita measure and what are its limitations?","type":"short_answer","difficulty":"medium","keywords":["income per person","average","ignore inequality","does not measure","health","education","leisure","environment","distribution"]},
-  {"subject":"Economics","question":"State three advantages of international trade.","type":"short_answer","difficulty":"medium","keywords":["comparative advantage","specialisation","lower prices","variety","competition","economies of scale","foreign exchange"]},
-  {"subject":"Economics","question":"What is the difference between a recession and a depression?","type":"short_answer","difficulty":"medium","keywords":["recession","two quarters","negative growth","depression","severe","prolonged","long period","economic decline"]},
-  {"subject":"Economics","question":"Describe two negative effects of inflation on an economy.","type":"short_answer","difficulty":"medium","keywords":["erodes savings","uncertainty","reduces investment","competitiveness","redistributes income","fixed income earners","worse off"]}
+  {
+    "subject": "Economics",
+    "question": "Economics is best defined as the study of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "How to make money",
+      "How scarce resources are allocated to satisfy unlimited wants",
+      "How governments spend money",
+      "How businesses make profits"
+    ],
+    "answer": [
+      "How scarce resources are allocated to satisfy unlimited wants"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Scarcity in economics means",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "There is no money in the economy",
+      "Resources are limited relative to unlimited human wants",
+      "Goods are very expensive",
+      "Only rich people have access to goods"
+    ],
+    "answer": [
+      "Resources are limited relative to unlimited human wants"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The opportunity cost of a decision is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The total money spent",
+      "The value of the next best alternative forgone",
+      "The time taken to decide",
+      "The cost of all alternatives"
+    ],
+    "answer": [
+      "The value of the next best alternative forgone"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The three basic economic questions are: What to produce, How to produce, and",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "When to produce",
+      "Where to produce",
+      "For whom to produce",
+      "Why to produce"
+    ],
+    "answer": [
+      "For whom to produce"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A free market economy makes resource allocation decisions through",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government planning",
+      "The price mechanism (demand and supply)",
+      "Tradition and customs",
+      "International trade"
+    ],
+    "answer": [
+      "The price mechanism (demand and supply)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A command (planned) economy is one in which",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Consumers decide everything",
+      "The government makes all key economic decisions",
+      "Firms decide freely",
+      "Prices are set by demand"
+    ],
+    "answer": [
+      "The government makes all key economic decisions"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A mixed economy combines elements of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Barter and money systems",
+      "Free market and planned economies",
+      "Primary and secondary sectors",
+      "Local and international trade"
+    ],
+    "answer": [
+      "Free market and planned economies"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The four factors of production are land, labour, capital, and",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Money",
+      "Management",
+      "Enterprise",
+      "Profit"
+    ],
+    "answer": [
+      "Enterprise"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The reward for enterprise (entrepreneurship) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Wages",
+      "Rent",
+      "Interest",
+      "Profit"
+    ],
+    "answer": [
+      "Profit"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The reward for labour is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Rent",
+      "Wages and salaries",
+      "Interest",
+      "Profit"
+    ],
+    "answer": [
+      "Wages and salaries"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The law of demand states that, all else equal, as price increases",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Demand increases",
+      "Supply increases",
+      "Demand decreases",
+      "Demand stays the same"
+    ],
+    "answer": [
+      "Demand decreases"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A demand curve slopes",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Upward from left to right",
+      "Downward from left to right",
+      "Horizontally",
+      "Vertically"
+    ],
+    "answer": [
+      "Downward from left to right"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The law of supply states that, all else equal, as price increases",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Supply decreases",
+      "Supply increases",
+      "Demand falls",
+      "Quantity demanded rises"
+    ],
+    "answer": [
+      "Supply increases"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A supply curve slopes",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Downward from left to right",
+      "Upward from left to right",
+      "Horizontally",
+      "Vertically"
+    ],
+    "answer": [
+      "Upward from left to right"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Market equilibrium occurs when",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Price is at its highest",
+      "Quantity demanded equals quantity supplied",
+      "Supply exceeds demand",
+      "The government fixes the price"
+    ],
+    "answer": [
+      "Quantity demanded equals quantity supplied"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "If demand increases and supply is unchanged, the equilibrium price",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Falls",
+      "Stays the same",
+      "Rises",
+      "Becomes unpredictable"
+    ],
+    "answer": [
+      "Rises"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which of the following will shift the demand curve to the right?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A fall in consumer income for a normal good",
+      "An increase in the price of the good",
+      "A rise in consumer income for a normal good",
+      "An increase in supply"
+    ],
+    "answer": [
+      "A rise in consumer income for a normal good"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which of the following will shift the supply curve to the left?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Lower production costs",
+      "Better technology",
+      "A rise in the price of inputs",
+      "Government subsidies"
+    ],
+    "answer": [
+      "A rise in the price of inputs"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Price elasticity of demand (PED) measures",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "How much supply changes with income",
+      "The responsiveness of quantity demanded to a change in price",
+      "The time it takes price to change",
+      "How much profit a firm makes"
+    ],
+    "answer": [
+      "The responsiveness of quantity demanded to a change in price"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "If PED > 1, demand is said to be",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Inelastic",
+      "Perfectly inelastic",
+      "Elastic",
+      "Unit elastic"
+    ],
+    "answer": [
+      "Elastic"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A good with PED = 0 has",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Perfectly elastic demand",
+      "Unit elastic demand",
+      "Perfectly inelastic demand",
+      "Elastic demand"
+    ],
+    "answer": [
+      "Perfectly inelastic demand"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which type of goods are likely to have inelastic demand?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Luxury goods",
+      "Goods with many close substitutes",
+      "Necessities and addictive goods",
+      "Expensive items"
+    ],
+    "answer": [
+      "Necessities and addictive goods"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Income elasticity of demand is positive for",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Inferior goods",
+      "Normal goods",
+      "Giffen goods",
+      "Complementary goods"
+    ],
+    "answer": [
+      "Normal goods"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "An inferior good is one whose demand",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increases as income rises",
+      "Decreases as income rises",
+      "Is always inelastic",
+      "Has no substitutes"
+    ],
+    "answer": [
+      "Decreases as income rises"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cross elasticity of demand between complements is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Positive",
+      "Zero",
+      "Negative",
+      "Greater than 1"
+    ],
+    "answer": [
+      "Negative"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cross elasticity of demand between substitute goods is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Negative",
+      "Zero",
+      "Positive",
+      "Equal to −1"
+    ],
+    "answer": [
+      "Positive"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Substitute goods are those that can be",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Used together",
+      "Used in place of each other",
+      "Only bought together",
+      "Produced simultaneously"
+    ],
+    "answer": [
+      "Used in place of each other"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Complementary goods are those that are",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Substitutes for each other",
+      "Used together (joint demand)",
+      "Luxury items",
+      "Only sold to governments"
+    ],
+    "answer": [
+      "Used together (joint demand)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Total revenue = Price ×",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cost",
+      "Quantity sold",
+      "Profit",
+      "Number of firms"
+    ],
+    "answer": [
+      "Quantity sold"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Profit = Total Revenue −",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Fixed costs",
+      "Total costs",
+      "Variable costs",
+      "Opportunity cost"
+    ],
+    "answer": [
+      "Total costs"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Fixed costs are those that",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Change with output",
+      "Do not change with output in the short run",
+      "Are zero at zero output",
+      "Include materials and labour"
+    ],
+    "answer": [
+      "Do not change with output in the short run"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Variable costs change",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Never",
+      "With the level of output",
+      "When interest rates rise",
+      "Only in the long run"
+    ],
+    "answer": [
+      "With the level of output"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Marginal cost is the cost of producing",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The first unit",
+      "One more (extra) unit",
+      "The average unit",
+      "All units together"
+    ],
+    "answer": [
+      "One more (extra) unit"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Average total cost = Total cost ÷",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Number of workers",
+      "Output (quantity produced)",
+      "Price",
+      "Fixed cost"
+    ],
+    "answer": [
+      "Output (quantity produced)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A profit-maximising firm produces where",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Price equals average cost",
+      "Total revenue is maximised",
+      "Marginal cost equals marginal revenue",
+      "Fixed cost is minimised"
+    ],
+    "answer": [
+      "Marginal cost equals marginal revenue"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Economies of scale occur when a firm's average cost",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Rises as output increases",
+      "Falls as output increases",
+      "Stays constant",
+      "Is equal to fixed cost"
+    ],
+    "answer": [
+      "Falls as output increases"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Diseconomies of scale occur when",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Average costs fall with increased output",
+      "Average costs rise as output increases beyond an optimal size",
+      "Total costs decrease",
+      "Fixed costs rise"
+    ],
+    "answer": [
+      "Average costs rise as output increases beyond an optimal size"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A monopoly is a market with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Many competing firms",
+      "A few dominant firms",
+      "One seller and many buyers",
+      "Perfect information"
+    ],
+    "answer": [
+      "One seller and many buyers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Perfect competition involves",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "One dominant firm",
+      "A few large firms",
+      "Many small firms selling identical products",
+      "Government control of prices"
+    ],
+    "answer": [
+      "Many small firms selling identical products"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "In perfect competition, firms are price",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Makers",
+      "Takers",
+      "Setters",
+      "Controllers"
+    ],
+    "answer": [
+      "Takers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "An oligopoly is a market dominated by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "One firm",
+      "Two firms",
+      "A few large firms",
+      "Hundreds of firms"
+    ],
+    "answer": [
+      "A few large firms"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A duopoly is a market with how many dominant firms?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "answer": [
+      "Two"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Price discrimination occurs when a firm",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Lowers prices for everyone",
+      "Charges different prices to different groups for the same product",
+      "Produces at minimum average cost",
+      "Colludes with competitors"
+    ],
+    "answer": [
+      "Charges different prices to different groups for the same product"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "National income (GDP) measures",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government revenue",
+      "The total value of goods and services produced in a country in a year",
+      "Exports minus imports",
+      "Total household income"
+    ],
+    "answer": [
+      "The total value of goods and services produced in a country in a year"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "GDP stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "General Domestic Production",
+      "Gross Domestic Product",
+      "Growth and Development Plan",
+      "Government Development Programme"
+    ],
+    "answer": [
+      "Gross Domestic Product"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "GNP (Gross National Product) differs from GDP in that it also includes",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Government spending only",
+      "Net income from abroad (income earned overseas by residents minus income paid to foreign residents)",
+      "Import values",
+      "Depreciation"
+    ],
+    "answer": [
+      "Net income from abroad (income earned overseas by residents minus income paid to foreign residents)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Real GDP adjusts nominal GDP for",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Population growth",
+      "Inflation",
+      "Exchange rates",
+      "Government spending"
+    ],
+    "answer": [
+      "Inflation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Economic growth is measured by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Change in the price level",
+      "Percentage change in real GDP over time",
+      "Government budget",
+      "Trade surplus"
+    ],
+    "answer": [
+      "Percentage change in real GDP over time"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Inflation is defined as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An increase in government spending",
+      "A sustained rise in the general price level",
+      "A fall in interest rates",
+      "An increase in wages"
+    ],
+    "answer": [
+      "A sustained rise in the general price level"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The Consumer Price Index (CPI) measures",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "GDP growth",
+      "Changes in the average prices paid by consumers for a basket of goods",
+      "Interest rates",
+      "Government expenditure"
+    ],
+    "answer": [
+      "Changes in the average prices paid by consumers for a basket of goods"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Demand-pull inflation is caused by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Rising production costs",
+      "Excess demand in the economy",
+      "Falling interest rates only",
+      "Tax increases"
+    ],
+    "answer": [
+      "Excess demand in the economy"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cost-push inflation results from",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Too much money in circulation",
+      "Higher input costs like wages and raw materials",
+      "Consumer overspending",
+      "Government printing money"
+    ],
+    "answer": [
+      "Higher input costs like wages and raw materials"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Unemployment rate = (unemployed ÷ labour force) ×",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "100",
+      "1,000",
+      "Total population",
+      "GDP"
+    ],
+    "answer": [
+      "100"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Structural unemployment is caused by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Seasonal fluctuations",
+      "A decline in demand for a particular type of worker due to structural change",
+      "The trade cycle",
+      "Wage negotiations"
+    ],
+    "answer": [
+      "A decline in demand for a particular type of worker due to structural change"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cyclical (demand-deficient) unemployment occurs during",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Economic booms",
+      "Periods of high investment",
+      "Economic recessions and downturns",
+      "Times of skills shortage"
+    ],
+    "answer": [
+      "Economic recessions and downturns"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Frictional unemployment refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Workers displaced by technology",
+      "Workers between jobs while searching",
+      "Workers laid off in winter",
+      "Workers who never had a job"
+    ],
+    "answer": [
+      "Workers between jobs while searching"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Seasonal unemployment is caused by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Technological change",
+      "The trade cycle",
+      "Fluctuations in demand related to the time of year",
+      "Lack of skills"
+    ],
+    "answer": [
+      "Fluctuations in demand related to the time of year"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Fiscal policy involves changing",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Interest rates and money supply",
+      "Government spending and taxation",
+      "Exchange rates",
+      "Trade policies"
+    ],
+    "answer": [
+      "Government spending and taxation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Monetary policy involves changing",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Tax rates",
+      "Government spending",
+      "Interest rates and money supply",
+      "Export subsidies"
+    ],
+    "answer": [
+      "Interest rates and money supply"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "An expansionary fiscal policy to stimulate the economy involves",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Raising taxes and cutting spending",
+      "Cutting taxes and/or increasing government spending",
+      "Raising interest rates",
+      "Reducing money supply"
+    ],
+    "answer": [
+      "Cutting taxes and/or increasing government spending"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A contractionary fiscal policy is used to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Stimulate growth",
+      "Combat unemployment",
+      "Reduce inflation by decreasing aggregate demand",
+      "Increase government debt"
+    ],
+    "answer": [
+      "Reduce inflation by decreasing aggregate demand"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A budget deficit means the government",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Spends less than it receives",
+      "Receives more than it spends",
+      "Spends more than it receives in revenue",
+      "Has a balanced budget"
+    ],
+    "answer": [
+      "Spends more than it receives in revenue"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A budget surplus means",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Government spending exceeds revenue",
+      "Revenue exceeds government spending",
+      "The budget is balanced",
+      "GDP is growing"
+    ],
+    "answer": [
+      "Revenue exceeds government spending"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The Bank of Ghana is Ghana's",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Commercial bank",
+      "Investment bank",
+      "Central bank",
+      "Development bank"
+    ],
+    "answer": [
+      "Central bank"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A central bank's main functions include",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Providing loans to households",
+      "Issuing currency and acting as banker to government and commercial banks",
+      "Selling goods internationally",
+      "Building infrastructure"
+    ],
+    "answer": [
+      "Issuing currency and acting as banker to government and commercial banks"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "When interest rates rise, borrowing becomes",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cheaper",
+      "More attractive",
+      "More expensive",
+      "The same cost"
+    ],
+    "answer": [
+      "More expensive"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Rising interest rates tend to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increase consumer spending",
+      "Encourage borrowing",
+      "Reduce inflation and slow economic growth",
+      "Increase the money supply"
+    ],
+    "answer": [
+      "Reduce inflation and slow economic growth"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The money multiplier effect describes how",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Inflation reduces purchasing power",
+      "An initial deposit leads to a larger increase in total deposits through lending",
+      "Interest rates affect savings",
+      "Government bonds reduce inflation"
+    ],
+    "answer": [
+      "An initial deposit leads to a larger increase in total deposits through lending"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "International trade is beneficial because of the principle of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Absolute advantage",
+      "Comparative advantage",
+      "Trade deficits",
+      "Protectionism"
+    ],
+    "answer": [
+      "Comparative advantage"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A tariff is a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Tax on exports",
+      "Tax on imports",
+      "Quota on goods",
+      "Subsidy to local producers"
+    ],
+    "answer": [
+      "Tax on imports"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A quota limits the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Price of imports",
+      "Quantity of imports allowed into a country",
+      "Tariff on goods",
+      "Number of exporters"
+    ],
+    "answer": [
+      "Quantity of imports allowed into a country"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A trade surplus occurs when a country's",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Exports exceed imports",
+      "Imports exceed exports",
+      "Exports equal imports",
+      "Government spends more than it earns"
+    ],
+    "answer": [
+      "Exports exceed imports"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A trade deficit occurs when",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Exports exceed imports",
+      "Imports exceed exports",
+      "GDP rises",
+      "The budget is balanced"
+    ],
+    "answer": [
+      "Imports exceed exports"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The balance of payments records all",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Domestic transactions",
+      "Financial transactions between a country and the rest of the world",
+      "Government tax revenues",
+      "Firm profits"
+    ],
+    "answer": [
+      "Financial transactions between a country and the rest of the world"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The current account of the balance of payments includes",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Foreign direct investment flows",
+      "Trade in goods and services plus income transfers",
+      "Only exports of goods",
+      "Government borrowing"
+    ],
+    "answer": [
+      "Trade in goods and services plus income transfers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Foreign direct investment (FDI) is investment by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government into local firms",
+      "Foreign firms into a country's businesses and assets",
+      "Locals into foreign currencies",
+      "Banks into government bonds"
+    ],
+    "answer": [
+      "Foreign firms into a country's businesses and assets"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which institution provides loans to developing countries and promotes global economic stability?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "WTO",
+      "IMF (International Monetary Fund)",
+      "ECOWAS",
+      "African Union"
+    ],
+    "answer": [
+      "IMF (International Monetary Fund)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "ECOWAS stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "East and Central Organisation of West African States",
+      "Economic Community of West African States",
+      "European Community on West African Support",
+      "Eastern Community of Western Atlantic States"
+    ],
+    "answer": [
+      "Economic Community of West African States"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The World Trade Organisation (WTO) promotes",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Protectionism among members",
+      "Free and fair international trade by reducing barriers",
+      "Regional economic blocs only",
+      "Bilateral trade deals"
+    ],
+    "answer": [
+      "Free and fair international trade by reducing barriers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A public good has the characteristics of being non-excludable and",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Expensive",
+      "Rival",
+      "Non-rival",
+      "Only available to citizens"
+    ],
+    "answer": [
+      "Non-rival"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "An example of a public good is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A private hospital",
+      "A loaf of bread",
+      "A lighthouse or national defence",
+      "A luxury car"
+    ],
+    "answer": [
+      "A lighthouse or national defence"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Market failure occurs when",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Firms make losses",
+      "Markets fail to allocate resources efficiently",
+      "The government raises taxes",
+      "Demand exceeds supply"
+    ],
+    "answer": [
+      "Markets fail to allocate resources efficiently"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A negative externality occurs when a third party suffers a cost from",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Their own consumption",
+      "A transaction they are not part of",
+      "Government policy",
+      "Rising wages"
+    ],
+    "answer": [
+      "A transaction they are not part of"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A positive externality occurs when a third party benefits from",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Their own production",
+      "A transaction they are not involved in",
+      "Higher tax rates",
+      "Import restrictions"
+    ],
+    "answer": [
+      "A transaction they are not involved in"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Pollution is an example of a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Positive externality",
+      "Public good",
+      "Merit good",
+      "Negative externality"
+    ],
+    "answer": [
+      "Negative externality"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Education is often cited as a merit good because",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "It is provided by the private sector",
+      "It creates positive externalities and is under-consumed without subsidies",
+      "It is free to all",
+      "It benefits no one but the student"
+    ],
+    "answer": [
+      "It creates positive externalities and is under-consumed without subsidies"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Demand for labour is a",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Primary demand",
+      "Derived demand (from demand for goods and services)",
+      "Autonomous demand",
+      "Inelastic supply"
+    ],
+    "answer": [
+      "Derived demand (from demand for goods and services)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The minimum wage is a type of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Price ceiling",
+      "Price floor",
+      "Subsidy",
+      "Tax"
+    ],
+    "answer": [
+      "Price floor"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A price ceiling set below the equilibrium price leads to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A surplus",
+      "A shortage",
+      "No effect",
+      "An increase in supply"
+    ],
+    "answer": [
+      "A shortage"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A price floor set above the equilibrium price leads to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A shortage",
+      "No effect",
+      "A surplus",
+      "Inflation"
+    ],
+    "answer": [
+      "A surplus"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Subsistence farming refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Farming for export",
+      "Growing only enough food for the farmer's own needs",
+      "Large-scale commercial agriculture",
+      "Irrigation farming"
+    ],
+    "answer": [
+      "Growing only enough food for the farmer's own needs"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cash crop farming in Ghana includes growing",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Maize and cassava",
+      "Cocoa, coffee, and oil palm",
+      "Beans and tomatoes",
+      "Plantain only"
+    ],
+    "answer": [
+      "Cocoa, coffee, and oil palm"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Ghana's historically largest export commodity by value is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cocoa",
+      "Timber",
+      "Gold",
+      "Oil"
+    ],
+    "answer": [
+      "Gold"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Ghana became an oil producer when oil was discovered in the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Volta Basin",
+      "Jubilee Field offshore in the Gulf of Guinea",
+      "Northern savanna",
+      "Eastern Region"
+    ],
+    "answer": [
+      "Jubilee Field offshore in the Gulf of Guinea"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The Human Development Index (HDI) measures a country's development using",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "GDP only",
+      "Income, education, and life expectancy",
+      "Government spending and military size",
+      "Export earnings"
+    ],
+    "answer": [
+      "Income, education, and life expectancy"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A developing country typically has",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "High GDP per capita",
+      "Low standards of living and limited industrialisation",
+      "Excellent infrastructure",
+      "High life expectancy"
+    ],
+    "answer": [
+      "Low standards of living and limited industrialisation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Import substitution is an industrialisation strategy that aims to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Increase imports",
+      "Replace imports with domestically produced goods",
+      "Reduce domestic production",
+      "Specialise in primary goods"
+    ],
+    "answer": [
+      "Replace imports with domestically produced goods"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Nationalisation is when",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Private firms buy government assets",
+      "The government takes ownership of private sector assets",
+      "Firms move production abroad",
+      "A company expands internationally"
+    ],
+    "answer": [
+      "The government takes ownership of private sector assets"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Privatisation involves transferring",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government assets to private ownership",
+      "Private firms to government",
+      "Taxes to businesses",
+      "Land from farmers to state"
+    ],
+    "answer": [
+      "Government assets to private ownership"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A progressive tax is one where",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Everyone pays the same amount",
+      "Higher income earners pay a higher percentage of income",
+      "Lower income earners pay more",
+      "All goods are taxed equally"
+    ],
+    "answer": [
+      "Higher income earners pay a higher percentage of income"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A regressive tax takes a higher percentage from",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Higher income earners",
+      "Lower income earners",
+      "Corporations",
+      "All earners equally"
+    ],
+    "answer": [
+      "Lower income earners"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A proportional (flat) tax means every taxpayer pays",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The same absolute amount",
+      "A higher rate as income rises",
+      "The same percentage of income",
+      "Less as income rises"
+    ],
+    "answer": [
+      "The same percentage of income"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Value Added Tax (VAT) is an example of a",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Direct tax",
+      "Progressive income tax",
+      "Indirect tax on spending",
+      "Capital gains tax"
+    ],
+    "answer": [
+      "Indirect tax on spending"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Income tax is a type of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Indirect tax",
+      "Direct tax",
+      "Trade tariff",
+      "Subsidy"
+    ],
+    "answer": [
+      "Direct tax"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Deflation is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A sustained rise in prices",
+      "A sustained fall in the general price level",
+      "A rise in interest rates",
+      "An increase in money supply"
+    ],
+    "answer": [
+      "A sustained fall in the general price level"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Hyperinflation refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Moderate price increases",
+      "Very rapid and uncontrolled inflation",
+      "A fall in prices",
+      "Government overspending"
+    ],
+    "answer": [
+      "Very rapid and uncontrolled inflation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Stagflation is a combination of",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Growth and low prices",
+      "High inflation and high unemployment (stagnation)",
+      "Deflation and high growth",
+      "Low interest rates and unemployment"
+    ],
+    "answer": [
+      "High inflation and high unemployment (stagnation)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The multiplier effect in Keynesian economics describes how",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Prices rise with demand",
+      "An initial injection into the economy leads to a larger overall increase in income",
+      "Savings reduce investment",
+      "Government borrowing causes inflation"
+    ],
+    "answer": [
+      "An initial injection into the economy leads to a larger overall increase in income"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The circular flow of income involves households and",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Banks only",
+      "Governments only",
+      "Firms, and optionally government, financial sector, and overseas sector",
+      "Only international trade"
+    ],
+    "answer": [
+      "Firms, and optionally government, financial sector, and overseas sector"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "When households save instead of spend, this is a __ in the circular flow.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Injection",
+      "Withdrawal (leakage)",
+      "Multiplier",
+      "Boost"
+    ],
+    "answer": [
+      "Withdrawal (leakage)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Government spending is an __ into the circular flow of income.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Withdrawal",
+      "Injection",
+      "Deflation",
+      "Equilibrium"
+    ],
+    "answer": [
+      "Injection"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A trade union is an organisation that",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Controls prices",
+      "Represents workers to negotiate wages and conditions",
+      "Manages government budgets",
+      "Provides trade finance"
+    ],
+    "answer": [
+      "Represents workers to negotiate wages and conditions"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Collective bargaining refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Group shopping for lower prices",
+      "Negotiation between trade unions and employers about wages and conditions",
+      "A form of taxation",
+      "Government price control"
+    ],
+    "answer": [
+      "Negotiation between trade unions and employers about wages and conditions"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The production possibility frontier (PPF) shows",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "How demand changes with price",
+      "The maximum combinations of two goods an economy can produce with given resources",
+      "A firm's cost structure",
+      "A country's imports and exports"
+    ],
+    "answer": [
+      "The maximum combinations of two goods an economy can produce with given resources"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A point inside the PPF indicates",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Full employment",
+      "Productive efficiency",
+      "Productive inefficiency (underuse of resources)",
+      "Impossibility"
+    ],
+    "answer": [
+      "Productive inefficiency (underuse of resources)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A point outside the PPF is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Attainable with current resources",
+      "Unattainable with current resources",
+      "The most efficient",
+      "The equilibrium point"
+    ],
+    "answer": [
+      "Unattainable with current resources"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Economic development is broader than economic growth because it also considers",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "GDP alone",
+      "Improvements in living standards, education, health, and freedom",
+      "Population only",
+      "Industrial output"
+    ],
+    "answer": [
+      "Improvements in living standards, education, health, and freedom"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The Gini coefficient measures",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Economic growth rate",
+      "GDP per capita",
+      "Income inequality within a country",
+      "Inflation rate"
+    ],
+    "answer": [
+      "Income inequality within a country"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A Gini coefficient of 0 means",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Complete inequality",
+      "No data available",
+      "Perfect equality of income",
+      "Extreme poverty"
+    ],
+    "answer": [
+      "Perfect equality of income"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Foreign aid can be in the form of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Military equipment only",
+      "Financial grants, loans, or technical assistance",
+      "Trade restrictions",
+      "Tourism"
+    ],
+    "answer": [
+      "Financial grants, loans, or technical assistance"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Microeconomics deals with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "National income",
+      "Individual consumers and firms",
+      "Government budgets",
+      "International trade"
+    ],
+    "answer": [
+      "Individual consumers and firms"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Macroeconomics deals with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A single firm's decisions",
+      "Individual prices",
+      "The economy as a whole (GDP, inflation, unemployment)",
+      "Only government spending"
+    ],
+    "answer": [
+      "The economy as a whole (GDP, inflation, unemployment)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The primary sector of the economy involves",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Manufacturing goods",
+      "Providing services",
+      "Extracting raw materials (farming, mining, fishing)",
+      "Banking and finance"
+    ],
+    "answer": [
+      "Extracting raw materials (farming, mining, fishing)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The secondary sector of the economy involves",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Agriculture",
+      "Manufacturing and construction",
+      "Services",
+      "Raw material extraction"
+    ],
+    "answer": [
+      "Manufacturing and construction"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The tertiary sector of the economy involves",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mining",
+      "Manufacturing",
+      "Service industries",
+      "Construction"
+    ],
+    "answer": [
+      "Service industries"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "GDP per capita is calculated as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "GDP + population",
+      "GDP × population",
+      "GDP ÷ population",
+      "GDP − imports"
+    ],
+    "answer": [
+      "GDP ÷ population"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Purchasing Power Parity (PPP) is used to compare incomes by adjusting for",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Population differences",
+      "Differences in price levels across countries",
+      "Exchange rate speculation",
+      "Tax systems"
+    ],
+    "answer": [
+      "Differences in price levels across countries"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A recession is formally defined as",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "One quarter of negative GDP growth",
+      "Two consecutive quarters of negative GDP growth",
+      "Three years of slow growth",
+      "A budget deficit"
+    ],
+    "answer": [
+      "Two consecutive quarters of negative GDP growth"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The business (trade) cycle describes the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Profit cycle of individual firms",
+      "Pattern of boom, slowdown, recession, and recovery in GDP",
+      "Day-to-day price changes",
+      "Long-run growth trend"
+    ],
+    "answer": [
+      "Pattern of boom, slowdown, recession, and recovery in GDP"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Aggregate demand (AD) = C + I + G + (X − M). What does X − M represent?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government surplus",
+      "Consumer minus investment",
+      "Net exports (exports minus imports)",
+      "Tax revenues"
+    ],
+    "answer": [
+      "Net exports (exports minus imports)"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Supply-side policies aim to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Increase government spending",
+      "Reduce aggregate demand",
+      "Increase the productive capacity (aggregate supply) of the economy",
+      "Raise interest rates"
+    ],
+    "answer": [
+      "Increase the productive capacity (aggregate supply) of the economy"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Examples of supply-side policies include",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Higher income taxes",
+      "Reducing interest rates",
+      "Improving education and training, privatisation, and reducing regulation",
+      "Increasing government spending"
+    ],
+    "answer": [
+      "Improving education and training, privatisation, and reducing regulation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The difference between a grant and a loan is that",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Both must be repaid",
+      "A grant does not need to be repaid; a loan does",
+      "A loan is never repaid",
+      "Grants carry interest"
+    ],
+    "answer": [
+      "A grant does not need to be repaid; a loan does"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Devaluation of a currency means its value",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Rises against other currencies",
+      "Falls relative to other currencies",
+      "Stays the same",
+      "Is pegged to gold"
+    ],
+    "answer": [
+      "Falls relative to other currencies"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "When a country's currency depreciates, its exports become",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "More expensive",
+      "The same price",
+      "Cheaper for foreign buyers",
+      "Unavailable"
+    ],
+    "answer": [
+      "Cheaper for foreign buyers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A fixed exchange rate is one that is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Determined entirely by market forces",
+      "Set and maintained by the government or central bank",
+      "Changed daily by demand and supply",
+      "Linked to inflation"
+    ],
+    "answer": [
+      "Set and maintained by the government or central bank"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A floating exchange rate is determined by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government decree",
+      "Demand and supply in the foreign exchange market",
+      "The IMF",
+      "Gold reserves"
+    ],
+    "answer": [
+      "Demand and supply in the foreign exchange market"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Cocoa's contribution to Ghana's GDP makes Ghana one of the world's",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Largest gold producers",
+      "Largest cocoa producers",
+      "Largest oil exporters",
+      "Largest manufacturing nations"
+    ],
+    "answer": [
+      "Largest cocoa producers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The informal sector of an economy consists of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Only agricultural activities",
+      "Unregistered, untaxed economic activities",
+      "Only illegal activities",
+      "Large multinational firms"
+    ],
+    "answer": [
+      "Unregistered, untaxed economic activities"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Remittances are",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Government grants to businesses",
+      "Money sent home by workers living abroad",
+      "Import tariff revenues",
+      "Dividends from state enterprises"
+    ],
+    "answer": [
+      "Money sent home by workers living abroad"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Brain drain refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Loss of natural resources",
+      "Migration of highly skilled workers from developing to developed countries",
+      "A drop in the birth rate",
+      "Reduction in education funding"
+    ],
+    "answer": [
+      "Migration of highly skilled workers from developing to developing countries"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Technological unemployment is caused by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Seasonal demand changes",
+      "Technology replacing workers",
+      "Workers changing jobs",
+      "A recession"
+    ],
+    "answer": [
+      "Technology replacing workers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "The Phillips curve suggests a trade-off between",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Growth and imports",
+      "Inflation and unemployment",
+      "Interest rates and investment",
+      "Exports and GDP"
+    ],
+    "answer": [
+      "Inflation and unemployment"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Quantitative easing is a monetary policy that involves",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Raising interest rates",
+      "The central bank buying assets to increase money supply",
+      "Cutting government spending",
+      "Raising VAT rates"
+    ],
+    "answer": [
+      "The central bank buying assets to increase money supply"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which of the following is an example of a direct tax?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "VAT",
+      "Excise duty",
+      "Income tax",
+      "Customs duty"
+    ],
+    "answer": [
+      "Income tax"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Which of the following is an example of an indirect tax?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Income tax",
+      "Capital gains tax",
+      "Corporation tax",
+      "VAT"
+    ],
+    "answer": [
+      "VAT"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "A subsidy given to producers will",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increase production costs and reduce supply",
+      "Shift the supply curve to the right and lower price",
+      "Shift the demand curve right",
+      "Reduce output"
+    ],
+    "answer": [
+      "Shift the supply curve to the right and lower price"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Absolute poverty is defined as",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Earning less than your neighbour",
+      "Living below the minimum income necessary to meet basic needs",
+      "Having less than 50% of median income",
+      "Not owning a house"
+    ],
+    "answer": [
+      "Living below the minimum income necessary to meet basic needs"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Relative poverty is measured in relation to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Absolute minimum survival costs",
+      "The average or median income of a society",
+      "Global poverty lines",
+      "Government spending"
+    ],
+    "answer": [
+      "The average or median income of a society"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is opportunity cost?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "next best alternative",
+      "forgone",
+      "choice",
+      "sacrifice",
+      "value",
+      "is forgone",
+      "are forgone",
+      "it is forgone",
+      "they are forgone",
+      "is choice",
+      "are choice",
+      "it is choice",
+      "they are choice",
+      "is sacrifice",
+      "are sacrifice",
+      "it is sacrifice",
+      "they are sacrifice",
+      "is value",
+      "are value",
+      "it is value",
+      "they are value"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Explain the law of demand.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "price rises",
+      "demand falls",
+      "inverse relationship",
+      "ceteris paribus",
+      "quantity demanded"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the difference between a change in demand and a change in quantity demanded?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "change in demand",
+      "shift",
+      "entire curve",
+      "non-price factors",
+      "change in quantity demanded",
+      "movement along curve",
+      "price change",
+      "is shift",
+      "are shift",
+      "it is shift",
+      "they are shift",
+      "nonprice factors"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Define 'price elasticity of demand' (PED) and state its formula.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "responsiveness",
+      "quantity demanded",
+      "change in price",
+      "percentage change",
+      "ratio",
+      "PED = % change QD / % change P",
+      "is responsiveness",
+      "are responsiveness",
+      "it is responsiveness",
+      "they are responsiveness",
+      "is ratio",
+      "are ratio",
+      "it is ratio",
+      "they are ratio",
+      "ped   change qd   change p"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What are the main determinants of demand?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "price",
+      "income",
+      "taste",
+      "substitutes",
+      "complements",
+      "population",
+      "expectations",
+      "advertising",
+      "is price",
+      "are price",
+      "it is price",
+      "they are price",
+      "is income",
+      "are income",
+      "it is income",
+      "they are income",
+      "is taste",
+      "are taste",
+      "it is taste",
+      "they are taste",
+      "is substitutes",
+      "are substitutes",
+      "it is substitutes",
+      "they are substitutes",
+      "is complements",
+      "are complements",
+      "it is complements",
+      "they are complements",
+      "is population",
+      "are population",
+      "it is population",
+      "they are population",
+      "is expectations",
+      "are expectations",
+      "it is expectations",
+      "they are expectations",
+      "is advertising",
+      "are advertising",
+      "it is advertising",
+      "they are advertising"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Distinguish between fixed and variable costs.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "fixed",
+      "does not change",
+      "output",
+      "variable",
+      "changes with output",
+      "short run",
+      "is fixed",
+      "are fixed",
+      "it is fixed",
+      "they are fixed",
+      "is output",
+      "are output",
+      "it is output",
+      "they are output",
+      "is variable",
+      "are variable",
+      "it is variable",
+      "they are variable"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is GDP and why is it used to compare countries?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Gross Domestic Product",
+      "total value",
+      "goods and services",
+      "country",
+      "year",
+      "income",
+      "standard of living",
+      "gdp",
+      "is country",
+      "are country",
+      "it is country",
+      "they are country",
+      "is year",
+      "are year",
+      "it is year",
+      "they are year",
+      "is income",
+      "are income",
+      "it is income",
+      "they are income"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Explain two causes of inflation.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "demand-pull",
+      "excess demand",
+      "cost-push",
+      "rising costs",
+      "wages",
+      "raw materials",
+      "money supply",
+      "demandpull",
+      "is demand-pull",
+      "are demand-pull",
+      "it is demand-pull",
+      "they are demand-pull",
+      "costpush",
+      "is cost-push",
+      "are cost-push",
+      "it is cost-push",
+      "they are cost-push",
+      "is wages",
+      "are wages",
+      "it is wages",
+      "they are wages"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What are the costs of unemployment to an individual and to the economy?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "loss of income",
+      "lower living standards",
+      "loss of skills",
+      "reduced GDP",
+      "government spending",
+      "tax revenue",
+      "social problems"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is fiscal policy and how can it be used to reduce unemployment?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "government spending",
+      "taxation",
+      "increase spending",
+      "cut taxes",
+      "expansionary",
+      "aggregate demand",
+      "create jobs",
+      "is taxation",
+      "are taxation",
+      "it is taxation",
+      "they are taxation",
+      "is expansionary",
+      "are expansionary",
+      "it is expansionary",
+      "they are expansionary"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is a trade deficit and what can a government do about it?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "imports exceed exports",
+      "current account",
+      "reduce imports",
+      "tariff",
+      "quota",
+      "increase exports",
+      "devalue currency",
+      "attract investment",
+      "is tariff",
+      "are tariff",
+      "it is tariff",
+      "they are tariff",
+      "is quota",
+      "are quota",
+      "it is quota",
+      "they are quota"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Explain the concept of comparative advantage.",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "lower opportunity cost",
+      "specialise",
+      "trade",
+      "benefit",
+      "even if absolute advantage",
+      "Ricardo",
+      "efficient",
+      "mutually beneficial",
+      "is specialise",
+      "are specialise",
+      "it is specialise",
+      "they are specialise",
+      "is trade",
+      "are trade",
+      "it is trade",
+      "they are trade",
+      "is benefit",
+      "are benefit",
+      "it is benefit",
+      "they are benefit",
+      "is ricardo",
+      "are ricardo",
+      "it is ricardo",
+      "they are ricardo",
+      "is efficient",
+      "are efficient",
+      "it is efficient",
+      "they are efficient"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is a monopoly and why might it be bad for consumers?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "single seller",
+      "no competition",
+      "higher prices",
+      "less choice",
+      "no incentive to innovate",
+      "exploit consumers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Define 'market failure' and give two examples.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "markets fail",
+      "allocate efficiently",
+      "externalities",
+      "public goods",
+      "monopoly",
+      "information failure",
+      "pollution",
+      "under-provision",
+      "is externalities",
+      "are externalities",
+      "it is externalities",
+      "they are externalities",
+      "is monopoly",
+      "are monopoly",
+      "it is monopoly",
+      "they are monopoly",
+      "is pollution",
+      "are pollution",
+      "it is pollution",
+      "they are pollution",
+      "underprovision",
+      "is under-provision",
+      "are under-provision",
+      "it is under-provision",
+      "they are under-provision"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the difference between a tariff and a quota?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "tariff",
+      "tax on imports",
+      "raises price",
+      "quota",
+      "limit quantity",
+      "restrict volume",
+      "protectionism",
+      "is tariff",
+      "are tariff",
+      "it is tariff",
+      "they are tariff",
+      "is quota",
+      "are quota",
+      "it is quota",
+      "they are quota",
+      "is protectionism",
+      "are protectionism",
+      "it is protectionism",
+      "they are protectionism"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the Human Development Index (HDI)?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "income",
+      "education",
+      "life expectancy",
+      "composite",
+      "measure",
+      "development",
+      "living standards",
+      "UNDP",
+      "is income",
+      "are income",
+      "it is income",
+      "they are income",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is composite",
+      "are composite",
+      "it is composite",
+      "they are composite",
+      "is measure",
+      "are measure",
+      "it is measure",
+      "they are measure",
+      "is development",
+      "are development",
+      "it is development",
+      "they are development",
+      "is undp",
+      "are undp",
+      "it is undp",
+      "they are undp"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Explain the circular flow of income.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "households",
+      "firms",
+      "income",
+      "spending",
+      "goods",
+      "services",
+      "factor payments",
+      "injections",
+      "withdrawals",
+      "leakages",
+      "is households",
+      "are households",
+      "it is households",
+      "they are households",
+      "is firms",
+      "are firms",
+      "it is firms",
+      "they are firms",
+      "is income",
+      "are income",
+      "it is income",
+      "they are income",
+      "is spending",
+      "are spending",
+      "it is spending",
+      "they are spending",
+      "is goods",
+      "are goods",
+      "it is goods",
+      "they are goods",
+      "is services",
+      "are services",
+      "it is services",
+      "they are services",
+      "is injections",
+      "are injections",
+      "it is injections",
+      "they are injections",
+      "is withdrawals",
+      "are withdrawals",
+      "it is withdrawals",
+      "they are withdrawals",
+      "is leakages",
+      "are leakages",
+      "it is leakages",
+      "they are leakages"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the role of the central bank in an economy?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "issue currency",
+      "lender of last resort",
+      "monetary policy",
+      "regulate banks",
+      "interest rates",
+      "financial stability",
+      "government banker"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Define 'subsidy' and explain how it affects the market for a good.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "government payment",
+      "producers",
+      "lower cost",
+      "supply increases",
+      "price falls",
+      "quantity rises",
+      "merit good",
+      "is producers",
+      "are producers",
+      "it is producers",
+      "they are producers"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the production possibility frontier (PPF) and what does a shift outward represent?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "maximum output",
+      "two goods",
+      "resources",
+      "outward shift",
+      "economic growth",
+      "technology",
+      "more resources",
+      "efficiency",
+      "is resources",
+      "are resources",
+      "it is resources",
+      "they are resources",
+      "is technology",
+      "are technology",
+      "it is technology",
+      "they are technology",
+      "is efficiency",
+      "are efficiency",
+      "it is efficiency",
+      "they are efficiency"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Describe the three main goals of macroeconomic policy.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "economic growth",
+      "low inflation",
+      "low unemployment",
+      "balance of payments",
+      "stable prices",
+      "full employment"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the difference between economic growth and economic development?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "growth",
+      "increase GDP",
+      "development",
+      "quality of life",
+      "education",
+      "health",
+      "environment",
+      "broader",
+      "income distribution",
+      "is growth",
+      "are growth",
+      "it is growth",
+      "they are growth",
+      "is development",
+      "are development",
+      "it is development",
+      "they are development",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is health",
+      "are health",
+      "it is health",
+      "they are health",
+      "is environment",
+      "are environment",
+      "it is environment",
+      "they are environment",
+      "is broader",
+      "are broader",
+      "it is broader",
+      "they are broader"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What are the functions of money?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "medium of exchange",
+      "store of value",
+      "unit of account",
+      "standard of deferred payment",
+      "four functions"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Explain what is meant by 'economies of scale'.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "average cost falls",
+      "output increases",
+      "larger scale",
+      "bulk buying",
+      "specialisation",
+      "spreading fixed costs",
+      "is specialisation",
+      "are specialisation",
+      "it is specialisation",
+      "they are specialisation"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Define 'externality' and explain why it leads to market failure.",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "cost or benefit",
+      "third party",
+      "not involved",
+      "overproduction",
+      "negative",
+      "underproduction",
+      "positive",
+      "social optimum",
+      "market optimum differ",
+      "is overproduction",
+      "are overproduction",
+      "it is overproduction",
+      "they are overproduction",
+      "is negative",
+      "are negative",
+      "it is negative",
+      "they are negative",
+      "is underproduction",
+      "are underproduction",
+      "it is underproduction",
+      "they are underproduction",
+      "is positive",
+      "are positive",
+      "it is positive",
+      "they are positive"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is barter and what are its disadvantages?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "exchange goods",
+      "without money",
+      "double coincidence of wants",
+      "difficult",
+      "indivisibility",
+      "lack of store of value",
+      "is difficult",
+      "are difficult",
+      "it is difficult",
+      "they are difficult",
+      "is indivisibility",
+      "are indivisibility",
+      "it is indivisibility",
+      "they are indivisibility"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What does GDP per capita measure and what are its limitations?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "income per person",
+      "average",
+      "ignore inequality",
+      "does not measure",
+      "health",
+      "education",
+      "leisure",
+      "environment",
+      "distribution",
+      "is average",
+      "are average",
+      "it is average",
+      "they are average",
+      "is health",
+      "are health",
+      "it is health",
+      "they are health",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is leisure",
+      "are leisure",
+      "it is leisure",
+      "they are leisure",
+      "is environment",
+      "are environment",
+      "it is environment",
+      "they are environment",
+      "is distribution",
+      "are distribution",
+      "it is distribution",
+      "they are distribution"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "State three advantages of international trade.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "comparative advantage",
+      "specialisation",
+      "lower prices",
+      "variety",
+      "competition",
+      "economies of scale",
+      "foreign exchange",
+      "is specialisation",
+      "are specialisation",
+      "it is specialisation",
+      "they are specialisation",
+      "is variety",
+      "are variety",
+      "it is variety",
+      "they are variety",
+      "is competition",
+      "are competition",
+      "it is competition",
+      "they are competition"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "What is the difference between a recession and a depression?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "recession",
+      "two quarters",
+      "negative growth",
+      "depression",
+      "severe",
+      "prolonged",
+      "long period",
+      "economic decline",
+      "is recession",
+      "are recession",
+      "it is recession",
+      "they are recession",
+      "is depression",
+      "are depression",
+      "it is depression",
+      "they are depression",
+      "is severe",
+      "are severe",
+      "it is severe",
+      "they are severe",
+      "is prolonged",
+      "are prolonged",
+      "it is prolonged",
+      "they are prolonged"
+    ]
+  },
+  {
+    "subject": "Economics",
+    "question": "Describe two negative effects of inflation on an economy.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "erodes savings",
+      "uncertainty",
+      "reduces investment",
+      "competitiveness",
+      "redistributes income",
+      "fixed income earners",
+      "worse off",
+      "is uncertainty",
+      "are uncertainty",
+      "it is uncertainty",
+      "they are uncertainty",
+      "is competitiveness",
+      "are competitiveness",
+      "it is competitiveness",
+      "they are competitiveness"
+    ]
+  }
 ]

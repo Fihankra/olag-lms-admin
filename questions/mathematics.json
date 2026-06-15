@@ -1,251 +1,3982 @@
 [
-  {"subject":"Mathematics","question":"What is the value of 3² + 4²?","type":"mcq","difficulty":"easy","options":["14","25","49","12"],"answer":"25"},
-  {"subject":"Mathematics","question":"Simplify: 2x + 3x − x","type":"mcq","difficulty":"easy","options":["4x","5x","6x","3x"],"answer":"4x"},
-  {"subject":"Mathematics","question":"What is the HCF of 12 and 18?","type":"mcq","difficulty":"easy","options":["3","6","9","12"],"answer":"6"},
-  {"subject":"Mathematics","question":"What is the LCM of 4 and 6?","type":"mcq","difficulty":"easy","options":["8","12","24","6"],"answer":"12"},
-  {"subject":"Mathematics","question":"Express 0.75 as a fraction in its simplest form.","type":"mcq","difficulty":"easy","options":["3/5","3/4","7/10","1/2"],"answer":"3/4"},
-  {"subject":"Mathematics","question":"What is 15% of 200?","type":"mcq","difficulty":"easy","options":["30","25","40","15"],"answer":"30"},
-  {"subject":"Mathematics","question":"A number is increased by 20% to give 120. What was the original number?","type":"mcq","difficulty":"medium","options":["96","100","90","80"],"answer":"100"},
-  {"subject":"Mathematics","question":"Evaluate 2³ × 2²","type":"mcq","difficulty":"easy","options":["2⁵","2⁶","4⁵","10"],"answer":"2⁵"},
-  {"subject":"Mathematics","question":"Simplify: (x²y³) ÷ (xy)","type":"mcq","difficulty":"medium","options":["xy²","x²y","xy","y²"],"answer":"xy²"},
-  {"subject":"Mathematics","question":"Factorise: x² − 9","type":"mcq","difficulty":"medium","options":["(x−3)(x−3)","(x+3)(x+3)","(x+3)(x−3)","(x−9)(x+1)"],"answer":"(x+3)(x−3)"},
-  {"subject":"Mathematics","question":"Solve for x: 2x + 5 = 13","type":"mcq","difficulty":"easy","options":["4","5","6","3"],"answer":"4"},
-  {"subject":"Mathematics","question":"Solve: 3x − 2 = x + 6","type":"mcq","difficulty":"easy","options":["4","3","5","2"],"answer":"4"},
-  {"subject":"Mathematics","question":"What is the gradient of the line y = 3x + 7?","type":"mcq","difficulty":"easy","options":["7","3","−3","1"],"answer":"3"},
-  {"subject":"Mathematics","question":"The equation of a line through the origin with gradient 2 is","type":"mcq","difficulty":"easy","options":["y = 2","y = x + 2","y = 2x","x = 2"],"answer":"y = 2x"},
-  {"subject":"Mathematics","question":"What is the y-intercept of y = 4x − 5?","type":"mcq","difficulty":"easy","options":["4","−5","5","−4"],"answer":"−5"},
-  {"subject":"Mathematics","question":"Two lines are perpendicular if the product of their gradients is","type":"mcq","difficulty":"medium","options":["0","1","−1","2"],"answer":"−1"},
-  {"subject":"Mathematics","question":"Expand: (x + 3)(x − 2)","type":"mcq","difficulty":"medium","options":["x² + x − 6","x² − x + 6","x² + 5x − 6","x² − 6"],"answer":"x² + x − 6"},
-  {"subject":"Mathematics","question":"Solve the quadratic equation x² − 5x + 6 = 0","type":"mcq","difficulty":"medium","options":["x = 2 and x = 3","x = −2 and x = −3","x = 1 and x = 6","x = 5 and x = 1"],"answer":"x = 2 and x = 3"},
-  {"subject":"Mathematics","question":"The discriminant b² − 4ac < 0 means the quadratic has","type":"mcq","difficulty":"hard","options":["Two real roots","One repeated real root","No real roots","Three roots"],"answer":"No real roots"},
-  {"subject":"Mathematics","question":"The sum of interior angles of a triangle is","type":"mcq","difficulty":"easy","options":["90°","180°","270°","360°"],"answer":"180°"},
-  {"subject":"Mathematics","question":"The sum of interior angles of a hexagon is","type":"mcq","difficulty":"medium","options":["540°","720°","900°","360°"],"answer":"720°"},
-  {"subject":"Mathematics","question":"Pythagoras' theorem states that in a right-angled triangle c² =","type":"mcq","difficulty":"easy","options":["a + b","a² − b²","a² + b²","(a+b)²"],"answer":"a² + b²"},
-  {"subject":"Mathematics","question":"sin 30° equals","type":"mcq","difficulty":"easy","options":["1/2","√3/2","1/√2","√3"],"answer":"1/2"},
-  {"subject":"Mathematics","question":"cos 60° equals","type":"mcq","difficulty":"easy","options":["√3/2","1/2","1","0"],"answer":"1/2"},
-  {"subject":"Mathematics","question":"tan 45° equals","type":"mcq","difficulty":"easy","options":["0","1/2","1","√3"],"answer":"1"},
-  {"subject":"Mathematics","question":"The area of a circle with radius r is","type":"mcq","difficulty":"easy","options":["2πr","πr²","πd","2πr²"],"answer":"πr²"},
-  {"subject":"Mathematics","question":"The circumference of a circle with diameter d is","type":"mcq","difficulty":"easy","options":["πd²","2πr²","πd","πr"],"answer":"πd"},
-  {"subject":"Mathematics","question":"The volume of a cylinder with radius r and height h is","type":"mcq","difficulty":"easy","options":["2πrh","πr²h","πrh","2πr²h"],"answer":"πr²h"},
-  {"subject":"Mathematics","question":"The volume of a cone with base radius r and height h is","type":"mcq","difficulty":"medium","options":["πr²h","(1/2)πr²h","(1/3)πr²h","(2/3)πr³"],"answer":"(1/3)πr²h"},
-  {"subject":"Mathematics","question":"The mean of 3, 7, 5, 9, 6 is","type":"mcq","difficulty":"easy","options":["5","6","7","8"],"answer":"6"},
-  {"subject":"Mathematics","question":"The median of the data set {2, 4, 6, 8, 10} is","type":"mcq","difficulty":"easy","options":["4","5","6","7"],"answer":"6"},
-  {"subject":"Mathematics","question":"The mode of {3, 5, 3, 7, 3, 5, 2} is","type":"mcq","difficulty":"easy","options":["5","7","2","3"],"answer":"3"},
-  {"subject":"Mathematics","question":"The range of {12, 7, 19, 4, 15} is","type":"mcq","difficulty":"easy","options":["7","12","15","19"],"answer":"15"},
-  {"subject":"Mathematics","question":"Probability of an impossible event is","type":"mcq","difficulty":"easy","options":["1","0.5","0","-1"],"answer":"0"},
-  {"subject":"Mathematics","question":"A die is rolled. What is the probability of getting a number greater than 4?","type":"mcq","difficulty":"easy","options":["1/6","1/3","1/2","2/3"],"answer":"1/3"},
-  {"subject":"Mathematics","question":"The nth term of an arithmetic progression with first term a and common difference d is","type":"mcq","difficulty":"medium","options":["a + (n−1)d","a × rⁿ⁻¹","a + nd","dn − a"],"answer":"a + (n−1)d"},
-  {"subject":"Mathematics","question":"The sum of the first n terms of an arithmetic series is","type":"mcq","difficulty":"medium","options":["n(a+l)/2","a(rⁿ−1)/(r−1)","na + d","n²d"],"answer":"n(a+l)/2"},
-  {"subject":"Mathematics","question":"log₁₀ 1000 equals","type":"mcq","difficulty":"easy","options":["10","100","3","4"],"answer":"3"},
-  {"subject":"Mathematics","question":"log_a(xy) equals","type":"mcq","difficulty":"medium","options":["log_a x − log_a y","log_a x × log_a y","log_a x + log_a y","log_a x ÷ log_a y"],"answer":"log_a x + log_a y"},
-  {"subject":"Mathematics","question":"The derivative of y = x³ is","type":"mcq","difficulty":"medium","options":["x²","3x","3x²","x⁴/4"],"answer":"3x²"},
-  {"subject":"Mathematics","question":"∫2x dx equals","type":"mcq","difficulty":"medium","options":["2","x²","x² + C","2x + C"],"answer":"x² + C"},
-  {"subject":"Mathematics","question":"The number of ways to arrange 5 different objects in a row is","type":"mcq","difficulty":"medium","options":["5","10","120","25"],"answer":"120"},
-  {"subject":"Mathematics","question":"⁵C₂ (5 choose 2) equals","type":"mcq","difficulty":"medium","options":["10","20","5","15"],"answer":"10"},
-  {"subject":"Mathematics","question":"If a vector a = (3, 4), what is its magnitude |a|?","type":"mcq","difficulty":"medium","options":["7","3.5","5","12"],"answer":"5"},
-  {"subject":"Mathematics","question":"The bearing of North-East is","type":"mcq","difficulty":"easy","options":["045°","090°","135°","315°"],"answer":"045°"},
-  {"subject":"Mathematics","question":"Two angles are supplementary if they add up to","type":"mcq","difficulty":"easy","options":["90°","180°","270°","360°"],"answer":"180°"},
-  {"subject":"Mathematics","question":"What is the set of all natural numbers less than 5?","type":"mcq","difficulty":"easy","options":["{1,2,3,4,5}","{0,1,2,3,4}","{1,2,3,4}","{0,1,2,3}"],"answer":"{1,2,3,4}"},
-  {"subject":"Mathematics","question":"The intersection of sets A = {1,2,3,4} and B = {3,4,5,6} is","type":"mcq","difficulty":"easy","options":["{1,2,3,4,5,6}","{3,4}","{1,2,5,6}","{}"],"answer":"{3,4}"},
-  {"subject":"Mathematics","question":"The union of A = {a,b,c} and B = {c,d,e} is","type":"mcq","difficulty":"easy","options":["{c}","{a,b,c,d,e}","{a,b}","{d,e}"],"answer":"{a,b,c,d,e}"},
-  {"subject":"Mathematics","question":"A set with no elements is called a","type":"mcq","difficulty":"easy","options":["Universal set","Singleton set","Empty (null) set","Complement set"],"answer":"Empty (null) set"},
-  {"subject":"Mathematics","question":"If n(A) = 10, n(B) = 8, and n(A∩B) = 3, then n(A∪B) =","type":"mcq","difficulty":"medium","options":["18","15","21","13"],"answer":"15"},
-  {"subject":"Mathematics","question":"What is the complement of set A in the universal set U?","type":"mcq","difficulty":"easy","options":["A ∩ U","Elements in U but not in A","A ∪ U","Elements only in A"],"answer":"Elements in U but not in A"},
-  {"subject":"Mathematics","question":"Which of the following is an irrational number?","type":"mcq","difficulty":"easy","options":["0.5","√4","√2","3/4"],"answer":"√2"},
-  {"subject":"Mathematics","question":"The number π (pi) is classified as","type":"mcq","difficulty":"easy","options":["A rational number","An integer","An irrational number","A whole number"],"answer":"An irrational number"},
-  {"subject":"Mathematics","question":"Which of the following is NOT a real number?","type":"mcq","difficulty":"medium","options":["√5","−3","√−4","0.333..."],"answer":"√−4"},
-  {"subject":"Mathematics","question":"Simplify: 5³ ÷ 5²","type":"mcq","difficulty":"easy","options":["5⁵","5¹","25","1"],"answer":"5¹"},
-  {"subject":"Mathematics","question":"What is the value of (2/3)⁻²?","type":"mcq","difficulty":"medium","options":["4/9","9/4","−4/9","2/9"],"answer":"9/4"},
-  {"subject":"Mathematics","question":"Simplify: √48","type":"mcq","difficulty":"medium","options":["4√3","6√2","8√3","2√12"],"answer":"4√3"},
-  {"subject":"Mathematics","question":"Rationalise the denominator: 1/√5","type":"mcq","difficulty":"medium","options":["√5/5","1/5","5/√5","√5"],"answer":"√5/5"},
-  {"subject":"Mathematics","question":"Simplify: (2√3)²","type":"mcq","difficulty":"easy","options":["6","12","4√3","√12"],"answer":"12"},
-  {"subject":"Mathematics","question":"Express 72 as a product of its prime factors.","type":"mcq","difficulty":"medium","options":["2³ × 3²","2² × 3³","2 × 6²","8 × 9"],"answer":"2³ × 3²"},
-  {"subject":"Mathematics","question":"What is 3/8 + 1/4?","type":"mcq","difficulty":"easy","options":["4/12","1/2","5/8","4/8"],"answer":"5/8"},
-  {"subject":"Mathematics","question":"What is 5/6 − 1/3?","type":"mcq","difficulty":"easy","options":["4/3","1/2","4/6","1/3"],"answer":"1/2"},
-  {"subject":"Mathematics","question":"Multiply: (3/4) × (8/9)","type":"mcq","difficulty":"easy","options":["11/36","3/9","2/3","24/36"],"answer":"2/3"},
-  {"subject":"Mathematics","question":"What is 2/5 ÷ 4/15?","type":"mcq","difficulty":"medium","options":["8/75","3/2","5/3","2/3"],"answer":"3/2"},
-  {"subject":"Mathematics","question":"Convert 0.36 to a fraction in simplest form.","type":"mcq","difficulty":"easy","options":["36/10","9/25","18/50","4/11"],"answer":"9/25"},
-  {"subject":"Mathematics","question":"What is 12.5% expressed as a decimal?","type":"mcq","difficulty":"easy","options":["1.25","0.0125","0.125","12.5"],"answer":"0.125"},
-  {"subject":"Mathematics","question":"A shirt costs GH₵80. After a 25% discount, the sale price is","type":"mcq","difficulty":"easy","options":["GH₵55","GH₵60","GH₵65","GH₵20"],"answer":"GH₵60"},
-  {"subject":"Mathematics","question":"If 3 pens cost GH₵9, how much do 7 pens cost?","type":"mcq","difficulty":"easy","options":["GH₵18","GH₵21","GH₵24","GH₵27"],"answer":"GH₵21"},
-  {"subject":"Mathematics","question":"A map has a scale of 1:50,000. A road 3 cm on the map is actually","type":"mcq","difficulty":"medium","options":["150 m","1.5 km","15 km","150 km"],"answer":"1.5 km"},
-  {"subject":"Mathematics","question":"In a ratio of 3:5, if the total is 40, the larger share is","type":"mcq","difficulty":"medium","options":["15","20","25","24"],"answer":"25"},
-  {"subject":"Mathematics","question":"If x varies directly as y, and x = 6 when y = 2, find x when y = 5.","type":"mcq","difficulty":"medium","options":["10","12","15","20"],"answer":"15"},
-  {"subject":"Mathematics","question":"If y varies inversely as x, and y = 4 when x = 3, find y when x = 6.","type":"mcq","difficulty":"medium","options":["8","2","12","1"],"answer":"2"},
-  {"subject":"Mathematics","question":"Simple interest on GH₵500 at 8% per annum for 3 years is","type":"mcq","difficulty":"medium","options":["GH₵120","GH₵80","GH₵40","GH₵160"],"answer":"GH₵120"},
-  {"subject":"Mathematics","question":"What is the formula for compound interest amount?","type":"mcq","difficulty":"medium","options":["A = P + PRT","A = P(1+r)ⁿ","A = P/n","A = P(1−r)ⁿ"],"answer":"A = P(1+r)ⁿ"},
-  {"subject":"Mathematics","question":"Factorise completely: 3x² + 9x","type":"mcq","difficulty":"easy","options":["3x(x+3)","3(x²+9x)","x(3x+9)","3x(x+9)"],"answer":"3x(x+3)"},
-  {"subject":"Mathematics","question":"Factorise: x² + 7x + 12","type":"mcq","difficulty":"medium","options":["(x+3)(x+4)","(x+6)(x+2)","(x+12)(x+1)","(x+3)(x+5)"],"answer":"(x+3)(x+4)"},
-  {"subject":"Mathematics","question":"Factorise: 2x² − 8","type":"mcq","difficulty":"medium","options":["2(x−2)(x+2)","2(x²−4)","(2x−4)(x+2)","2(x−4)(x+4)"],"answer":"2(x−2)(x+2)"},
-  {"subject":"Mathematics","question":"Expand and simplify: (2x + 1)²","type":"mcq","difficulty":"medium","options":["4x² + 1","4x² + 4x + 1","4x² + 2x + 1","2x² + 4x + 1"],"answer":"4x² + 4x + 1"},
-  {"subject":"Mathematics","question":"Solve: x/3 + 2 = 5","type":"mcq","difficulty":"easy","options":["6","9","12","3"],"answer":"9"},
-  {"subject":"Mathematics","question":"Solve: 2(x − 3) = 4x − 10","type":"mcq","difficulty":"medium","options":["2","−2","4","−4"],"answer":"2"},
-  {"subject":"Mathematics","question":"Solve the simultaneous equations: x + y = 7 and x − y = 3","type":"mcq","difficulty":"medium","options":["x=4, y=3","x=5, y=2","x=3, y=4","x=6, y=1"],"answer":"x=5, y=2"},
-  {"subject":"Mathematics","question":"Solve: 2x + y = 8 and x + 2y = 7","type":"mcq","difficulty":"medium","options":["x=3, y=2","x=2, y=3","x=3, y=3","x=4, y=0"],"answer":"x=3, y=2"},
-  {"subject":"Mathematics","question":"Solve the inequality: 2x − 4 ≥ 6","type":"mcq","difficulty":"easy","options":["x ≥ 1","x ≥ 5","x ≥ 4","x ≥ 10"],"answer":"x ≥ 5"},
-  {"subject":"Mathematics","question":"The solution set of x² < 9 is","type":"mcq","difficulty":"hard","options":["x < 3","x > −3","−3 < x < 3","x < −3 or x > 3"],"answer":"−3 < x < 3"},
-  {"subject":"Mathematics","question":"If f(x) = 2x² − 3x + 1, find f(2).","type":"mcq","difficulty":"easy","options":["3","5","7","1"],"answer":"3"},
-  {"subject":"Mathematics","question":"A function f is one-to-one (injective) if","type":"mcq","difficulty":"hard","options":["Every output has at least one input","Different inputs always give different outputs","Every input has the same output","The function is always increasing"],"answer":"Different inputs always give different outputs"},
-  {"subject":"Mathematics","question":"The inverse of f(x) = 2x + 4 is","type":"mcq","difficulty":"medium","options":["f⁻¹(x) = x/2 − 2","f⁻¹(x) = 2x − 4","f⁻¹(x) = (x−4)/2","f⁻¹(x) = x/2 + 4"],"answer":"f⁻¹(x) = (x−4)/2"},
-  {"subject":"Mathematics","question":"The graph of y = x² is a","type":"mcq","difficulty":"easy","options":["Straight line","Circle","Parabola","Hyperbola"],"answer":"Parabola"},
-  {"subject":"Mathematics","question":"The vertex of the parabola y = (x − 3)² + 2 is at","type":"mcq","difficulty":"medium","options":["(3, 2)","(−3, 2)","(3, −2)","(−3, −2)"],"answer":"(3, 2)"},
-  {"subject":"Mathematics","question":"The midpoint of the line joining (2, 4) and (6, 10) is","type":"mcq","difficulty":"easy","options":["(4, 7)","(8, 14)","(3, 5)","(4, 6)"],"answer":"(4, 7)"},
-  {"subject":"Mathematics","question":"The distance between (1, 2) and (4, 6) is","type":"mcq","difficulty":"medium","options":["5","7","3","√7"],"answer":"5"},
-  {"subject":"Mathematics","question":"The equation of a line with gradient −2 passing through (0, 5) is","type":"mcq","difficulty":"easy","options":["y = 5x − 2","y = −2x + 5","y = 2x + 5","y = −5x + 2"],"answer":"y = −2x + 5"},
-  {"subject":"Mathematics","question":"Two lines y = 2x + 1 and y = 2x − 3 are","type":"mcq","difficulty":"easy","options":["Perpendicular","The same line","Parallel","Intersecting at one point"],"answer":"Parallel"},
-  {"subject":"Mathematics","question":"An angle of 90° is called a","type":"mcq","difficulty":"easy","options":["Acute angle","Obtuse angle","Right angle","Reflex angle"],"answer":"Right angle"},
-  {"subject":"Mathematics","question":"An angle greater than 180° but less than 360° is called a","type":"mcq","difficulty":"easy","options":["Obtuse angle","Acute angle","Straight angle","Reflex angle"],"answer":"Reflex angle"},
-  {"subject":"Mathematics","question":"Vertically opposite angles are","type":"mcq","difficulty":"easy","options":["Supplementary","Complementary","Equal","Always 90°"],"answer":"Equal"},
-  {"subject":"Mathematics","question":"The exterior angle of a triangle equals the sum of","type":"mcq","difficulty":"medium","options":["The two adjacent interior angles","The two non-adjacent interior angles","All three interior angles","The adjacent interior angle"],"answer":"The two non-adjacent interior angles"},
-  {"subject":"Mathematics","question":"An isosceles triangle has","type":"mcq","difficulty":"easy","options":["All three sides equal","All three angles equal","Two equal sides and two equal base angles","No equal sides"],"answer":"Two equal sides and two equal base angles"},
-  {"subject":"Mathematics","question":"In a right-angled triangle, the two acute angles add up to","type":"mcq","difficulty":"easy","options":["90°","180°","60°","45°"],"answer":"90°"},
-  {"subject":"Mathematics","question":"The angle subtended by a diameter at the circumference of a circle is","type":"mcq","difficulty":"medium","options":["45°","60°","90°","180°"],"answer":"90°"},
-  {"subject":"Mathematics","question":"Angles in the same segment of a circle are","type":"mcq","difficulty":"medium","options":["Supplementary","Complementary","Equal","Right angles"],"answer":"Equal"},
-  {"subject":"Mathematics","question":"The angle at the centre of a circle is __ the angle at the circumference subtended by the same arc.","type":"mcq","difficulty":"medium","options":["Half","Equal to","Twice","Three times"],"answer":"Twice"},
-  {"subject":"Mathematics","question":"Opposite angles of a cyclic quadrilateral add up to","type":"mcq","difficulty":"medium","options":["90°","360°","180°","270°"],"answer":"180°"},
-  {"subject":"Mathematics","question":"A tangent to a circle is perpendicular to the","type":"mcq","difficulty":"medium","options":["Chord","Diameter","Radius at the point of contact","Arc"],"answer":"Radius at the point of contact"},
-  {"subject":"Mathematics","question":"The sum of exterior angles of any convex polygon is","type":"mcq","difficulty":"medium","options":["180°","360°","540°","720°"],"answer":"360°"},
-  {"subject":"Mathematics","question":"Each interior angle of a regular hexagon is","type":"mcq","difficulty":"medium","options":["108°","120°","135°","150°"],"answer":"120°"},
-  {"subject":"Mathematics","question":"The number of diagonals in a pentagon is","type":"mcq","difficulty":"medium","options":["3","4","5","6"],"answer":"5"},
-  {"subject":"Mathematics","question":"sin θ = opposite/hypotenuse. If opposite = 6 and hypotenuse = 10, sin θ =","type":"mcq","difficulty":"easy","options":["0.4","0.6","0.8","0.5"],"answer":"0.6"},
-  {"subject":"Mathematics","question":"In a right triangle, if sin θ = 3/5, then cos θ =","type":"mcq","difficulty":"medium","options":["4/5","3/4","5/4","4/3"],"answer":"4/5"},
-  {"subject":"Mathematics","question":"sin²θ + cos²θ =","type":"mcq","difficulty":"medium","options":["0","2","−1","1"],"answer":"1"},
-  {"subject":"Mathematics","question":"The sine rule states that a/sin A =","type":"mcq","difficulty":"medium","options":["b/cos B","b/sin B = c/sin C","b/tan B","c/cos C"],"answer":"b/sin B = c/sin C"},
-  {"subject":"Mathematics","question":"The cosine rule gives c² =","type":"mcq","difficulty":"medium","options":["a² + b²","a² + b² − 2ab cos C","a² + b² + 2ab cos C","2ab cos C − a² − b²"],"answer":"a² + b² − 2ab cos C"},
-  {"subject":"Mathematics","question":"A ship sails 30 km due East then 40 km due North. How far is it from the start?","type":"mcq","difficulty":"medium","options":["70 km","50 km","35 km","45 km"],"answer":"50 km"},
-  {"subject":"Mathematics","question":"Convert 60° to radians.","type":"mcq","difficulty":"medium","options":["π/2","π/3","π/4","2π/3"],"answer":"π/3"},
-  {"subject":"Mathematics","question":"The area of a triangle with sides a and b and included angle C is","type":"mcq","difficulty":"medium","options":["ab sin C","(1/2)ab sin C","ab cos C","(1/2)ab cos C"],"answer":"(1/2)ab sin C"},
-  {"subject":"Mathematics","question":"The perimeter of a rectangle with length 8 cm and width 5 cm is","type":"mcq","difficulty":"easy","options":["13 cm","26 cm","40 cm","16 cm"],"answer":"26 cm"},
-  {"subject":"Mathematics","question":"Area of a trapezium with parallel sides 6 cm and 10 cm, height 4 cm, is","type":"mcq","difficulty":"medium","options":["64 cm²","32 cm²","24 cm²","48 cm²"],"answer":"32 cm²"},
-  {"subject":"Mathematics","question":"The total surface area of a cube with side 3 cm is","type":"mcq","difficulty":"easy","options":["18 cm²","27 cm²","54 cm²","9 cm²"],"answer":"54 cm²"},
-  {"subject":"Mathematics","question":"Volume of a sphere with radius r is","type":"mcq","difficulty":"medium","options":["4πr²","(4/3)πr³","(1/3)πr²h","2πr³"],"answer":"(4/3)πr³"},
-  {"subject":"Mathematics","question":"A cylinder has radius 7 cm and height 10 cm. Its volume is (π ≈ 22/7)","type":"mcq","difficulty":"medium","options":["440 cm³","1540 cm³","220 cm³","770 cm³"],"answer":"1540 cm³"},
-  {"subject":"Mathematics","question":"The area of a sector of a circle with radius 6 and angle 60° is","type":"mcq","difficulty":"hard","options":["6π","18π","3π","12π"],"answer":"6π"},
-  {"subject":"Mathematics","question":"Arc length of a sector with radius r and angle θ (in degrees) is","type":"mcq","difficulty":"hard","options":["θr/360","(θ/360) × 2πr","2πrθ","θ × πr²/360"],"answer":"(θ/360) × 2πr"},
-  {"subject":"Mathematics","question":"The column vector from A(1,2) to B(4,6) is","type":"mcq","difficulty":"easy","options":["(3, 4)","(4, 3)","(−3, −4)","(5, 8)"],"answer":"(3, 4)"},
-  {"subject":"Mathematics","question":"If a = (2, 5) and b = (−1, 3), then a + b =","type":"mcq","difficulty":"easy","options":["(1, 8)","(3, 2)","(1, 2)","(2, 8)"],"answer":"(1, 8)"},
-  {"subject":"Mathematics","question":"The scalar multiple 3 × (2, −1) =","type":"mcq","difficulty":"easy","options":["(6, −3)","(5, 2)","(2, −3)","(6, −1)"],"answer":"(6, −3)"},
-  {"subject":"Mathematics","question":"Two vectors are parallel if one is a __ of the other.","type":"mcq","difficulty":"medium","options":["Sum","Scalar multiple","Inverse","Complement"],"answer":"Scalar multiple"},
-  {"subject":"Mathematics","question":"The determinant of matrix [[a, b], [c, d]] is","type":"mcq","difficulty":"medium","options":["ac − bd","ad + bc","ad − bc","ab − cd"],"answer":"ad − bc"},
-  {"subject":"Mathematics","question":"The determinant of [[2, 3], [1, 4]] is","type":"mcq","difficulty":"medium","options":["11","5","8","−5"],"answer":"5"},
-  {"subject":"Mathematics","question":"A matrix with equal number of rows and columns is called a","type":"mcq","difficulty":"easy","options":["Row matrix","Column matrix","Square matrix","Identity matrix"],"answer":"Square matrix"},
-  {"subject":"Mathematics","question":"The identity matrix for 2×2 multiplication is","type":"mcq","difficulty":"medium","options":["[[0,1],[1,0]]","[[1,0],[0,1]]","[[1,1],[1,1]]","[[0,0],[0,0]]"],"answer":"[[1,0],[0,1]]"},
-  {"subject":"Mathematics","question":"If A = [[1,2],[3,4]] and B = [[5,6],[7,8]], then A + B =","type":"mcq","difficulty":"easy","options":["[[6,8],[10,12]]","[[6,8],[9,12]]","[[5,12],[21,32]]","[[4,4],[4,4]]"],"answer":"[[6,8],[10,12]]"},
-  {"subject":"Mathematics","question":"A rotation of 90° anticlockwise about the origin maps (x, y) to","type":"mcq","difficulty":"hard","options":["(y, x)","(−y, x)","(y, −x)","(−x, −y)"],"answer":"(−y, x)"},
-  {"subject":"Mathematics","question":"A reflection in the y-axis maps (x, y) to","type":"mcq","difficulty":"medium","options":["(x, −y)","(−x, y)","(−x, −y)","(y, x)"],"answer":"(−x, y)"},
-  {"subject":"Mathematics","question":"An enlargement with scale factor 3 centred at the origin maps (2, 4) to","type":"mcq","difficulty":"medium","options":["(5, 7)","(6, 12)","(2/3, 4/3)","(9, 12)"],"answer":"(6, 12)"},
-  {"subject":"Mathematics","question":"A translation by vector (3, −2) maps (1, 5) to","type":"mcq","difficulty":"easy","options":["(4, 3)","(4, 7)","(−2, 7)","(3, 5)"],"answer":"(4, 3)"},
-  {"subject":"Mathematics","question":"In the GP 2, 6, 18, 54, ..., the common ratio is","type":"mcq","difficulty":"easy","options":["2","3","4","6"],"answer":"3"},
-  {"subject":"Mathematics","question":"The 5th term of the GP with first term 3 and common ratio 2 is","type":"mcq","difficulty":"medium","options":["48","96","24","32"],"answer":"48"},
-  {"subject":"Mathematics","question":"The sum of an infinite GP with a = 10 and r = 0.5 is","type":"mcq","difficulty":"medium","options":["10","15","20","25"],"answer":"20"},
-  {"subject":"Mathematics","question":"The sum of the first 10 terms of the AP 1, 3, 5, 7, ... is","type":"mcq","difficulty":"medium","options":["55","100","50","90"],"answer":"100"},
-  {"subject":"Mathematics","question":"log_a a =","type":"mcq","difficulty":"easy","options":["0","a","1","a²"],"answer":"1"},
-  {"subject":"Mathematics","question":"log_a 1 =","type":"mcq","difficulty":"easy","options":["1","0","a","−1"],"answer":"0"},
-  {"subject":"Mathematics","question":"log(x/y) equals","type":"mcq","difficulty":"medium","options":["log x + log y","log x − log y","log x × log y","log x / log y"],"answer":"log x − log y"},
-  {"subject":"Mathematics","question":"log x³ equals","type":"mcq","difficulty":"medium","options":["3 + log x","3 × log x","log x + 3","(log x)³"],"answer":"3 × log x"},
-  {"subject":"Mathematics","question":"If log₂ x = 4, then x =","type":"mcq","difficulty":"medium","options":["8","16","6","32"],"answer":"16"},
-  {"subject":"Mathematics","question":"Solve: log₃(x) = 2","type":"mcq","difficulty":"medium","options":["6","8","9","27"],"answer":"9"},
-  {"subject":"Mathematics","question":"The derivative of y = 5x² is","type":"mcq","difficulty":"easy","options":["5x","10x","10","2x"],"answer":"10x"},
-  {"subject":"Mathematics","question":"The derivative of y = 3x³ − 2x + 7 is","type":"mcq","difficulty":"medium","options":["9x² − 2","3x² − 2x","9x² + 2","3x² − 2"],"answer":"9x² − 2"},
-  {"subject":"Mathematics","question":"At a turning point on a curve, dy/dx =","type":"mcq","difficulty":"medium","options":["1","∞","0","−1"],"answer":"0"},
-  {"subject":"Mathematics","question":"∫x³ dx =","type":"mcq","difficulty":"medium","options":["3x²","x⁴/4 + C","4x⁴ + C","x²/2 + C"],"answer":"x⁴/4 + C"},
-  {"subject":"Mathematics","question":"Evaluate ∫₀² 2x dx","type":"mcq","difficulty":"medium","options":["2","4","8","0"],"answer":"4"},
-  {"subject":"Mathematics","question":"The gradient of y = x² at x = 3 is","type":"mcq","difficulty":"medium","options":["3","6","9","12"],"answer":"6"},
-  {"subject":"Mathematics","question":"A coin is tossed twice. P(both heads) =","type":"mcq","difficulty":"easy","options":["1/2","1/4","1/3","3/4"],"answer":"1/4"},
-  {"subject":"Mathematics","question":"Two events are mutually exclusive if they","type":"mcq","difficulty":"medium","options":["Always occur together","Cannot occur at the same time","Are equally likely","Are complementary"],"answer":"Cannot occur at the same time"},
-  {"subject":"Mathematics","question":"P(A') = 1 − P(A) where A' is the","type":"mcq","difficulty":"easy","options":["Union of A","Intersection of A","Complement of A","Subset of A"],"answer":"Complement of A"},
-  {"subject":"Mathematics","question":"A bag has 3 red, 4 blue, 5 green balls. P(blue) =","type":"mcq","difficulty":"easy","options":["4/9","1/3","4/12","1/4"],"answer":"1/3"},
-  {"subject":"Mathematics","question":"The mean of a frequency distribution is Σfx ÷","type":"mcq","difficulty":"medium","options":["n","Σf","Σx","f"],"answer":"Σf"},
-  {"subject":"Mathematics","question":"The interquartile range (IQR) is","type":"mcq","difficulty":"medium","options":["Q3 − Q1","Q3 + Q1","Q2 − Q1","Q3 − Q2"],"answer":"Q3 − Q1"},
-  {"subject":"Mathematics","question":"Variance is the","type":"mcq","difficulty":"medium","options":["Square of standard deviation","Square root of standard deviation","Mean of deviations","Sum of squared deviations"],"answer":"Square of standard deviation"},
-  {"subject":"Mathematics","question":"In a histogram, frequency density =","type":"mcq","difficulty":"hard","options":["Frequency × class width","Frequency + class width","Frequency ÷ class width","Class width ÷ frequency"],"answer":"Frequency ÷ class width"},
-  {"subject":"Mathematics","question":"A cumulative frequency graph is also called an","type":"mcq","difficulty":"medium","options":["Histogram","Ogive","Bar chart","Pie chart"],"answer":"Ogive"},
-  {"subject":"Mathematics","question":"Which of the following always lies between Q1 and Q3?","type":"mcq","difficulty":"medium","options":["Mode","Range","Median","Mean"],"answer":"Median"},
-  {"subject":"Mathematics","question":"The standard deviation measures","type":"mcq","difficulty":"medium","options":["The centre of a data set","How spread out values are from the mean","The highest value in a set","The total of all values"],"answer":"How spread out values are from the mean"},
-  {"subject":"Mathematics","question":"If P(A) = 0.6 and P(B) = 0.4 and they are independent, then P(A and B) =","type":"mcq","difficulty":"medium","options":["1.0","0.2","0.24","0.96"],"answer":"0.24"},
-  {"subject":"Mathematics","question":"A tree diagram is used to find probabilities of","type":"mcq","difficulty":"easy","options":["Single events","Combined sequential events","Continuous distributions","Only independent events"],"answer":"Combined sequential events"},
-  {"subject":"Mathematics","question":"A linear graph passing through (0, 0) and (4, 8) has gradient","type":"mcq","difficulty":"easy","options":["4","2","0.5","8"],"answer":"2"},
-  {"subject":"Mathematics","question":"The equation y = mx + c is the __ form of a straight line.","type":"mcq","difficulty":"easy","options":["Standard","Gradient-intercept","Point-slope","General"],"answer":"Gradient-intercept"},
-  {"subject":"Mathematics","question":"Which of the following represents a function?","type":"mcq","difficulty":"medium","options":["A circle","A vertical line test failure","One y for every x","Multiple y values for one x"],"answer":"One y for every x"},
-  {"subject":"Mathematics","question":"The range of a function is the set of all","type":"mcq","difficulty":"medium","options":["Input values","Output values","Undefined values","Domain values"],"answer":"Output values"},
-  {"subject":"Mathematics","question":"Simplify: (3a²b)(2ab³)","type":"mcq","difficulty":"medium","options":["5a³b⁴","6a³b⁴","6a²b³","5a²b⁴"],"answer":"6a³b⁴"},
-  {"subject":"Mathematics","question":"If x = 2 and y = −3, evaluate 2x² − y","type":"mcq","difficulty":"easy","options":["5","11","1","−3"],"answer":"11"},
-  {"subject":"Mathematics","question":"Make r the subject of the formula A = πr²","type":"mcq","difficulty":"medium","options":["r = A/π","r = √(A/π)","r = A²/π","r = π/A"],"answer":"r = √(A/π)"},
-  {"subject":"Mathematics","question":"Make h the subject of V = πr²h","type":"mcq","difficulty":"easy","options":["h = V/r²","h = V/(πr²)","h = Vπr²","h = πr²/V"],"answer":"h = V/(πr²)"},
-  {"subject":"Mathematics","question":"If P = 2(l + w), express l in terms of P and w.","type":"mcq","difficulty":"medium","options":["l = P/2 − w","l = (P − w)/2","l = P/2 + w","l = P − 2w"],"answer":"l = P/2 − w"},
-  {"subject":"Mathematics","question":"The quadratic x² − 4x + 4 = 0 has","type":"mcq","difficulty":"medium","options":["Two distinct real roots","No real roots","One repeated root x = 2","One root x = 4"],"answer":"One repeated root x = 2"},
-  {"subject":"Mathematics","question":"If 5ˣ = 125, then x =","type":"mcq","difficulty":"easy","options":["2","3","4","5"],"answer":"3"},
-  {"subject":"Mathematics","question":"2ˣ = 32. What is x?","type":"mcq","difficulty":"easy","options":["4","5","6","3"],"answer":"5"},
-  {"subject":"Mathematics","question":"The image of the point (3, −1) after reflection in the x-axis is","type":"mcq","difficulty":"easy","options":["(−3, 1)","(3, 1)","(1, −3)","(−3, −1)"],"answer":"(3, 1)"},
-  {"subject":"Mathematics","question":"Angle on a straight line sums to","type":"mcq","difficulty":"easy","options":["90°","180°","270°","360°"],"answer":"180°"},
-  {"subject":"Mathematics","question":"Two parallel lines cut by a transversal form alternate angles that are","type":"mcq","difficulty":"easy","options":["Supplementary","Complementary","Equal","Reflex"],"answer":"Equal"},
-  {"subject":"Mathematics","question":"Co-interior (same-side interior) angles formed by parallel lines and a transversal are","type":"mcq","difficulty":"medium","options":["Equal","Complementary","Supplementary","Right angles"],"answer":"Supplementary"},
-  {"subject":"Mathematics","question":"The number of lines of symmetry of a square is","type":"mcq","difficulty":"easy","options":["2","3","4","8"],"answer":"4"},
-  {"subject":"Mathematics","question":"An equilateral triangle has how many lines of symmetry?","type":"mcq","difficulty":"easy","options":["1","2","3","6"],"answer":"3"},
-  {"subject":"Mathematics","question":"Rounding 4.756 to 2 decimal places gives","type":"mcq","difficulty":"easy","options":["4.75","4.76","4.8","4.7"],"answer":"4.76"},
-  {"subject":"Mathematics","question":"Write 0.000456 in standard form.","type":"mcq","difficulty":"medium","options":["4.56 × 10⁻⁴","4.56 × 10⁴","45.6 × 10⁻⁵","4.56 × 10⁻³"],"answer":"4.56 × 10⁻⁴"},
-  {"subject":"Mathematics","question":"Evaluate: 3.2 × 10³ + 4.5 × 10²","type":"mcq","difficulty":"medium","options":["3650","7700","3245","4520"],"answer":"3650"},
-  {"subject":"Mathematics","question":"The equation of the x-axis is","type":"mcq","difficulty":"easy","options":["x = 0","y = 0","x = y","y = 1"],"answer":"y = 0"},
-  {"subject":"Mathematics","question":"The equation of the y-axis is","type":"mcq","difficulty":"easy","options":["y = 0","x = 1","x = 0","y = x"],"answer":"x = 0"},
-  {"subject":"Mathematics","question":"At x = 0, f(x) = 5. This point is called the","type":"mcq","difficulty":"easy","options":["x-intercept","Vertex","y-intercept","Maximum"],"answer":"y-intercept"},
-  {"subject":"Mathematics","question":"A function f(x) = c (constant) has a gradient of","type":"mcq","difficulty":"easy","options":["c","1","0","undefined"],"answer":"0"},
-  {"subject":"Mathematics","question":"Which sequence is arithmetic: 2, 5, 8, 11, ... or 1, 2, 4, 8?","type":"mcq","difficulty":"easy","options":["1,2,4,8","Both","2,5,8,11","Neither"],"answer":"2,5,8,11"},
-  {"subject":"Mathematics","question":"The 10th term of the AP 3, 7, 11, 15, ... is","type":"mcq","difficulty":"medium","options":["39","43","47","51"],"answer":"39"},
-  {"subject":"Mathematics","question":"A circle has centre (0,0) and passes through (3,4). Its radius is","type":"mcq","difficulty":"medium","options":["7","5","√7","√5"],"answer":"5"},
-  {"subject":"Mathematics","question":"The equation of a circle with centre (0,0) and radius 6 is","type":"mcq","difficulty":"medium","options":["x + y = 6","x² + y² = 36","x² + y² = 6","x² − y² = 36"],"answer":"x² + y² = 36"},
-  {"subject":"Mathematics","question":"Gradient of a horizontal line is","type":"mcq","difficulty":"easy","options":["1","−1","0","undefined"],"answer":"0"},
-  {"subject":"Mathematics","question":"Gradient of a vertical line is","type":"mcq","difficulty":"easy","options":["1","0","−1","undefined"],"answer":"undefined"},
-  {"subject":"Mathematics","question":"Solve: |x − 2| = 5","type":"mcq","difficulty":"medium","options":["x = 3 or x = −3","x = 7 or x = −3","x = 7 or x = 3","x = 5 or x = 2"],"answer":"x = 7 or x = −3"},
-  {"subject":"Mathematics","question":"If set A has 4 elements, the number of subsets of A is","type":"mcq","difficulty":"medium","options":["4","8","16","12"],"answer":"16"},
-  {"subject":"Mathematics","question":"n! (n factorial) for n = 0 equals","type":"mcq","difficulty":"easy","options":["0","1","n","undefined"],"answer":"1"},
-  {"subject":"Mathematics","question":"⁸P₂ (8 permutations taken 2) =","type":"mcq","difficulty":"medium","options":["28","56","16","40"],"answer":"56"},
-  {"subject":"Mathematics","question":"A regular polygon has all sides equal AND all __ equal.","type":"mcq","difficulty":"easy","options":["Diagonals","Areas","Angles","Arcs"],"answer":"Angles"},
-  {"subject":"Mathematics","question":"The interior angle sum of an octagon (8 sides) is","type":"mcq","difficulty":"medium","options":["720°","900°","1080°","1260°"],"answer":"1080°"},
-  {"subject":"Mathematics","question":"Differentiate y = 1/x with respect to x.","type":"mcq","difficulty":"hard","options":["1/x²","−1/x²","ln x","x⁻²"],"answer":"−1/x²"},
-  {"subject":"Mathematics","question":"The second derivative d²y/dx² tells us about the __ of a curve.","type":"mcq","difficulty":"hard","options":["Gradient","Concavity (nature of turning points)","Y-intercept","Speed"],"answer":"Concavity (nature of turning points)"},
-  {"subject":"Mathematics","question":"If d²y/dx² > 0 at a turning point, it is a","type":"mcq","difficulty":"hard","options":["Maximum","Minimum","Point of inflection","Saddle point"],"answer":"Minimum"},
-  {"subject":"Mathematics","question":"The equation y = ab^x represents","type":"mcq","difficulty":"medium","options":["A linear function","A quadratic function","An exponential function","A logarithmic function"],"answer":"An exponential function"},
-  {"subject":"Mathematics","question":"If log y = log a + x log b, then y =","type":"mcq","difficulty":"hard","options":["a + bx","a × bˣ","aˣ × b","a/bˣ"],"answer":"a × bˣ"},
-  {"subject":"Mathematics","question":"The cosine of an obtuse angle is","type":"mcq","difficulty":"medium","options":["Positive","Zero","Negative","Undefined"],"answer":"Negative"},
-  {"subject":"Mathematics","question":"tan 90° is","type":"mcq","difficulty":"medium","options":["0","1","−1","Undefined"],"answer":"Undefined"},
-  {"subject":"Mathematics","question":"An angle of elevation is measured","type":"mcq","difficulty":"easy","options":["Below the horizontal","Above the horizontal","Perpendicular to the vertical","Along the horizontal"],"answer":"Above the horizontal"},
-  {"subject":"Mathematics","question":"In 3D, the surface area of a cuboid with dimensions l, w, h is","type":"mcq","difficulty":"medium","options":["lwh","2(lw + lh + wh)","l + w + h","2lwh"],"answer":"2(lw + lh + wh)"},
-  {"subject":"Mathematics","question":"The cross-section of a prism determines its","type":"mcq","difficulty":"easy","options":["Height","Volume formula","Surface colour","Name"],"answer":"Name"},
-  {"subject":"Mathematics","question":"Volume of a triangular prism = area of triangle ×","type":"mcq","difficulty":"easy","options":["Perimeter","Height of prism","Surface area","Width"],"answer":"Height of prism"},
-  {"subject":"Mathematics","question":"Pythagoras in 3D: The space diagonal of a cuboid l×w×h is","type":"mcq","difficulty":"hard","options":["l + w + h","√(l + w + h)","√(l² + w² + h²)","l² + w² + h²"],"answer":"√(l² + w² + h²)"},
-  {"subject":"Mathematics","question":"The reciprocal of sin θ is","type":"mcq","difficulty":"medium","options":["cos θ","tan θ","csc θ","sec θ"],"answer":"csc θ"},
-  {"subject":"Mathematics","question":"What is the Pythagorean triple that includes 5 and 13?","type":"mcq","difficulty":"medium","options":["5, 12, 13","5, 10, 13","5, 11, 13","5, 8, 13"],"answer":"5, 12, 13"},
-  {"subject":"Mathematics","question":"A frequency polygon is drawn by connecting","type":"mcq","difficulty":"medium","options":["Bar tops","Midpoints of class intervals plotted against frequency","Cumulative frequencies","All individual data points"],"answer":"Midpoints of class intervals plotted against frequency"},
-  {"subject":"Mathematics","question":"If a set A = {2, 4, 6, 8} and B = {4, 8, 12}, then A − B (A minus B) =","type":"mcq","difficulty":"medium","options":["{2,6}","{4,8}","{4,8,12}","{2,4,6,8,12}"],"answer":"{2,6}"},
-  {"subject":"Mathematics","question":"The universal set in a Venn diagram contains","type":"mcq","difficulty":"easy","options":["Only the intersection","All elements under consideration","Only the complement","Elements outside A and B"],"answer":"All elements under consideration"},
-  {"subject":"Mathematics","question":"State the Pythagorean theorem.","type":"short_answer","difficulty":"easy","keywords":["right angle","c² = a² + b²","hypotenuse","sum of squares"]},
-  {"subject":"Mathematics","question":"What is the formula for the area of a trapezium?","type":"short_answer","difficulty":"easy","keywords":["half","sum of parallel sides","height","A = ½(a+b)h"]},
-  {"subject":"Mathematics","question":"Define the term 'prime number'.","type":"short_answer","difficulty":"easy","keywords":["exactly two","factors","1 and itself","divisible","only"]},
-  {"subject":"Mathematics","question":"What does the gradient of a straight-line graph represent?","type":"short_answer","difficulty":"easy","keywords":["slope","rate of change","rise over run","change in y","change in x"]},
-  {"subject":"Mathematics","question":"Explain the difference between permutation and combination.","type":"short_answer","difficulty":"medium","keywords":["permutation","order matters","combination","order does not matter","arrangement","selection"]},
-  {"subject":"Mathematics","question":"What is the formula for the sum of an infinite geometric series? State when it applies.","type":"short_answer","difficulty":"hard","keywords":["S = a/(1−r)","|r| < 1","first term","common ratio","converge"]},
-  {"subject":"Mathematics","question":"If f(x) = 2x + 3, find f(4).","type":"short_answer","difficulty":"easy","keywords":["11","f(4) = 11"]},
-  {"subject":"Mathematics","question":"What is a rational number?","type":"short_answer","difficulty":"easy","keywords":["fraction","p/q","integers","q not zero","ratio"]},
-  {"subject":"Mathematics","question":"Differentiate y = 5x⁴ with respect to x.","type":"short_answer","difficulty":"medium","keywords":["20x³","dy/dx = 20x³"]},
-  {"subject":"Mathematics","question":"What is the relationship between degrees and radians?","type":"short_answer","difficulty":"medium","keywords":["180 degrees","π radians","multiply by π/180","divide","convert"]},
-  {"subject":"Mathematics","question":"State the quadratic formula.","type":"short_answer","difficulty":"medium","keywords":["x = (−b ± √(b²−4ac)) / 2a","discriminant","±","roots"]},
-  {"subject":"Mathematics","question":"What does it mean for two matrices to be conformable for multiplication?","type":"short_answer","difficulty":"hard","keywords":["columns of first","rows of second","equal","m×n by n×p","order"]},
-  {"subject":"Mathematics","question":"Define 'mutually exclusive events'.","type":"short_answer","difficulty":"medium","keywords":["cannot occur simultaneously","P(A and B) = 0","no overlap","at the same time"]},
-  {"subject":"Mathematics","question":"What is the sum of all interior angles in any quadrilateral?","type":"short_answer","difficulty":"easy","keywords":["360°","360 degrees","four-sided"]},
-  {"subject":"Mathematics","question":"State two conditions for a triangle to be congruent using the SAS rule.","type":"short_answer","difficulty":"medium","keywords":["two sides","included angle","equal","SAS","side-angle-side"]},
-  {"subject":"Mathematics","question":"What is the mode, and when is it the most appropriate average to use?","type":"short_answer","difficulty":"medium","keywords":["most frequent","qualitative","categorical","non-numeric","appears most"]},
-  {"subject":"Mathematics","question":"A car travels at 80 km/h for 2.5 hours. How far does it travel?","type":"short_answer","difficulty":"easy","keywords":["200 km","200","distance = speed × time"]},
-  {"subject":"Mathematics","question":"What is the difference between an equation and an identity?","type":"short_answer","difficulty":"medium","keywords":["equation","specific values","identity","true for all values","always equal"]},
-  {"subject":"Mathematics","question":"Explain what is meant by the 'domain' of a function.","type":"short_answer","difficulty":"medium","keywords":["input values","x values","valid","set of all","allowed inputs"]},
-  {"subject":"Mathematics","question":"State two properties of a rhombus.","type":"short_answer","difficulty":"easy","keywords":["all sides equal","diagonals bisect","perpendicular","opposite angles equal","parallelogram"]},
-  {"subject":"Mathematics","question":"Calculate the simple interest on GH₵1,200 at 5% p.a. for 3 years.","type":"short_answer","difficulty":"easy","keywords":["GH₵180","180","SI = PRT/100","principal × rate × time"]},
-  {"subject":"Mathematics","question":"What is a zero matrix?","type":"short_answer","difficulty":"easy","keywords":["all entries are zero","null matrix","0","additive identity"]},
-  {"subject":"Mathematics","question":"Describe the transformation that maps (x, y) to (−x, −y).","type":"short_answer","difficulty":"medium","keywords":["rotation","180 degrees","origin","half turn","point symmetry"]},
-  {"subject":"Mathematics","question":"If the variance of a data set is 16, what is the standard deviation?","type":"short_answer","difficulty":"easy","keywords":["4","√16","square root of variance"]},
-  {"subject":"Mathematics","question":"What is a perfect square number? Give three examples.","type":"short_answer","difficulty":"easy","keywords":["square of integer","1","4","9","16","25","36","49","64","81","100"]},
-  {"subject":"Mathematics","question":"Solve for x: log₅(x) = 3","type":"short_answer","difficulty":"medium","keywords":["125","x = 125","5³"]},
-  {"subject":"Mathematics","question":"What is the reciprocal of 2/5?","type":"short_answer","difficulty":"easy","keywords":["5/2","2.5","flip the fraction"]},
-  {"subject":"Mathematics","question":"State the angle sum property of a polygon with n sides.","type":"short_answer","difficulty":"medium","keywords":["(n−2) × 180","sum","interior angles","n sides","formula"]},
-  {"subject":"Mathematics","question":"What does a negative gradient on a distance-time graph indicate?","type":"short_answer","difficulty":"medium","keywords":["returning","moving back","decreasing distance","negative velocity","reverse direction"]},
-  {"subject":"Mathematics","question":"What is a chord in a circle?","type":"short_answer","difficulty":"easy","keywords":["line segment","two points","circumference","not necessarily diameter","joins two points on circle"]}
+  {
+    "subject": "Mathematics",
+    "question": "What is the value of 3² + 4²?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "14",
+      "25",
+      "49",
+      "12"
+    ],
+    "answer": [
+      "25"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: 2x + 3x − x",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4x",
+      "5x",
+      "6x",
+      "3x"
+    ],
+    "answer": [
+      "4x"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the HCF of 12 and 18?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the LCM of 4 and 6?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "8",
+      "12",
+      "24",
+      "6"
+    ],
+    "answer": [
+      "12"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Express 0.75 as a fraction in its simplest form.",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "3/5",
+      "3/4",
+      "7/10",
+      "1/2"
+    ],
+    "answer": [
+      "3/4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is 15% of 200?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "30",
+      "25",
+      "40",
+      "15"
+    ],
+    "answer": [
+      "30"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A number is increased by 20% to give 120. What was the original number?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "96",
+      "100",
+      "90",
+      "80"
+    ],
+    "answer": [
+      "100"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Evaluate 2³ × 2²",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2⁵",
+      "2⁶",
+      "4⁵",
+      "10"
+    ],
+    "answer": [
+      "2⁵"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: (x²y³) ÷ (xy)",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "xy²",
+      "x²y",
+      "xy",
+      "y²"
+    ],
+    "answer": [
+      "xy²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Factorise: x² − 9",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "(x−3)(x−3)",
+      "(x+3)(x+3)",
+      "(x+3)(x−3)",
+      "(x−9)(x+1)"
+    ],
+    "answer": [
+      "(x+3)(x−3)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve for x: 2x + 5 = 13",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: 3x − 2 = x + 6",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "2"
+    ],
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the gradient of the line y = 3x + 7?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "7",
+      "3",
+      "−3",
+      "1"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation of a line through the origin with gradient 2 is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "y = 2",
+      "y = x + 2",
+      "y = 2x",
+      "x = 2"
+    ],
+    "answer": [
+      "y = 2x"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the y-intercept of y = 4x − 5?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "−5",
+      "5",
+      "−4"
+    ],
+    "answer": [
+      "−5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two lines are perpendicular if the product of their gradients is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "0",
+      "1",
+      "−1",
+      "2"
+    ],
+    "answer": [
+      "−1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Expand: (x + 3)(x − 2)",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x² + x − 6",
+      "x² − x + 6",
+      "x² + 5x − 6",
+      "x² − 6"
+    ],
+    "answer": [
+      "x² + x − 6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve the quadratic equation x² − 5x + 6 = 0",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x = 2 and x = 3",
+      "x = −2 and x = −3",
+      "x = 1 and x = 6",
+      "x = 5 and x = 1"
+    ],
+    "answer": [
+      "x = 2 and x = 3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The discriminant b² − 4ac < 0 means the quadratic has",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Two real roots",
+      "One repeated real root",
+      "No real roots",
+      "Three roots"
+    ],
+    "answer": [
+      "No real roots"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of interior angles of a triangle is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "answer": [
+      "180°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of interior angles of a hexagon is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "540°",
+      "720°",
+      "900°",
+      "360°"
+    ],
+    "answer": [
+      "720°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Pythagoras' theorem states that in a right-angled triangle c² =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "a + b",
+      "a² − b²",
+      "a² + b²",
+      "(a+b)²"
+    ],
+    "answer": [
+      "a² + b²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "sin 30° equals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1/2",
+      "√3/2",
+      "1/√2",
+      "√3"
+    ],
+    "answer": [
+      "1/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "cos 60° equals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "√3/2",
+      "1/2",
+      "1",
+      "0"
+    ],
+    "answer": [
+      "1/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "tan 45° equals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0",
+      "1/2",
+      "1",
+      "√3"
+    ],
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The area of a circle with radius r is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2πr",
+      "πr²",
+      "πd",
+      "2πr²"
+    ],
+    "answer": [
+      "πr²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The circumference of a circle with diameter d is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "πd²",
+      "2πr²",
+      "πd",
+      "πr"
+    ],
+    "answer": [
+      "πd"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The volume of a cylinder with radius r and height h is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2πrh",
+      "πr²h",
+      "πrh",
+      "2πr²h"
+    ],
+    "answer": [
+      "πr²h"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The volume of a cone with base radius r and height h is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "πr²h",
+      "(1/2)πr²h",
+      "(1/3)πr²h",
+      "(2/3)πr³"
+    ],
+    "answer": [
+      "(1/3)πr²h"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The mean of 3, 7, 5, 9, 6 is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The median of the data set {2, 4, 6, 8, 10} is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The mode of {3, 5, 3, 7, 3, 5, 2} is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5",
+      "7",
+      "2",
+      "3"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The range of {12, 7, 19, 4, 15} is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "7",
+      "12",
+      "15",
+      "19"
+    ],
+    "answer": [
+      "15"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Probability of an impossible event is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "0.5",
+      "0",
+      "-1"
+    ],
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A die is rolled. What is the probability of getting a number greater than 4?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1/6",
+      "1/3",
+      "1/2",
+      "2/3"
+    ],
+    "answer": [
+      "1/3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The nth term of an arithmetic progression with first term a and common difference d is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "a + (n−1)d",
+      "a × rⁿ⁻¹",
+      "a + nd",
+      "dn − a"
+    ],
+    "answer": [
+      "a + (n−1)d"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of the first n terms of an arithmetic series is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "n(a+l)/2",
+      "a(rⁿ−1)/(r−1)",
+      "na + d",
+      "n²d"
+    ],
+    "answer": [
+      "n(a+l)/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log₁₀ 1000 equals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "10",
+      "100",
+      "3",
+      "4"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log_a(xy) equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "log_a x − log_a y",
+      "log_a x × log_a y",
+      "log_a x + log_a y",
+      "log_a x ÷ log_a y"
+    ],
+    "answer": [
+      "log_a x + log_a y"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The derivative of y = x³ is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x²",
+      "3x",
+      "3x²",
+      "x⁴/4"
+    ],
+    "answer": [
+      "3x²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "∫2x dx equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2",
+      "x²",
+      "x² + C",
+      "2x + C"
+    ],
+    "answer": [
+      "x² + C"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The number of ways to arrange 5 different objects in a row is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "5",
+      "10",
+      "120",
+      "25"
+    ],
+    "answer": [
+      "120"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "⁵C₂ (5 choose 2) equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "10",
+      "20",
+      "5",
+      "15"
+    ],
+    "answer": [
+      "10"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If a vector a = (3, 4), what is its magnitude |a|?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "7",
+      "3.5",
+      "5",
+      "12"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The bearing of North-East is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "045°",
+      "090°",
+      "135°",
+      "315°"
+    ],
+    "answer": [
+      "045°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two angles are supplementary if they add up to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "answer": [
+      "180°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the set of all natural numbers less than 5?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "{1,2,3,4,5}",
+      "{0,1,2,3,4}",
+      "{1,2,3,4}",
+      "{0,1,2,3}"
+    ],
+    "answer": [
+      "{1,2,3,4}"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The intersection of sets A = {1,2,3,4} and B = {3,4,5,6} is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "{1,2,3,4,5,6}",
+      "{3,4}",
+      "{1,2,5,6}",
+      "{}"
+    ],
+    "answer": [
+      "{3,4}"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The union of A = {a,b,c} and B = {c,d,e} is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "{c}",
+      "{a,b,c,d,e}",
+      "{a,b}",
+      "{d,e}"
+    ],
+    "answer": [
+      "{a,b,c,d,e}"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A set with no elements is called a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Universal set",
+      "Singleton set",
+      "Empty (null) set",
+      "Complement set"
+    ],
+    "answer": [
+      "Empty (null) set"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If n(A) = 10, n(B) = 8, and n(A∩B) = 3, then n(A∪B) =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "18",
+      "15",
+      "21",
+      "13"
+    ],
+    "answer": [
+      "15"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the complement of set A in the universal set U?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A ∩ U",
+      "Elements in U but not in A",
+      "A ∪ U",
+      "Elements only in A"
+    ],
+    "answer": [
+      "Elements in U but not in A"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Which of the following is an irrational number?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0.5",
+      "√4",
+      "√2",
+      "3/4"
+    ],
+    "answer": [
+      "√2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The number π (pi) is classified as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A rational number",
+      "An integer",
+      "An irrational number",
+      "A whole number"
+    ],
+    "answer": [
+      "An irrational number"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Which of the following is NOT a real number?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "√5",
+      "−3",
+      "√−4",
+      "0.333..."
+    ],
+    "answer": [
+      "√−4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: 5³ ÷ 5²",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5⁵",
+      "5¹",
+      "25",
+      "1"
+    ],
+    "answer": [
+      "5¹"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the value of (2/3)⁻²?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4/9",
+      "9/4",
+      "−4/9",
+      "2/9"
+    ],
+    "answer": [
+      "9/4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: √48",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4√3",
+      "6√2",
+      "8√3",
+      "2√12"
+    ],
+    "answer": [
+      "4√3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Rationalise the denominator: 1/√5",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "√5/5",
+      "1/5",
+      "5/√5",
+      "√5"
+    ],
+    "answer": [
+      "√5/5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: (2√3)²",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6",
+      "12",
+      "4√3",
+      "√12"
+    ],
+    "answer": [
+      "12"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Express 72 as a product of its prime factors.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2³ × 3²",
+      "2² × 3³",
+      "2 × 6²",
+      "8 × 9"
+    ],
+    "answer": [
+      "2³ × 3²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is 3/8 + 1/4?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4/12",
+      "1/2",
+      "5/8",
+      "4/8"
+    ],
+    "answer": [
+      "5/8"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is 5/6 − 1/3?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4/3",
+      "1/2",
+      "4/6",
+      "1/3"
+    ],
+    "answer": [
+      "1/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Multiply: (3/4) × (8/9)",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "11/36",
+      "3/9",
+      "2/3",
+      "24/36"
+    ],
+    "answer": [
+      "2/3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is 2/5 ÷ 4/15?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "8/75",
+      "3/2",
+      "5/3",
+      "2/3"
+    ],
+    "answer": [
+      "3/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Convert 0.36 to a fraction in simplest form.",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "36/10",
+      "9/25",
+      "18/50",
+      "4/11"
+    ],
+    "answer": [
+      "9/25"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is 12.5% expressed as a decimal?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1.25",
+      "0.0125",
+      "0.125",
+      "12.5"
+    ],
+    "answer": [
+      "0.125"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A shirt costs GH₵80. After a 25% discount, the sale price is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "GH₵55",
+      "GH₵60",
+      "GH₵65",
+      "GH₵20"
+    ],
+    "answer": [
+      "GH₵60"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If 3 pens cost GH₵9, how much do 7 pens cost?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "GH₵18",
+      "GH₵21",
+      "GH₵24",
+      "GH₵27"
+    ],
+    "answer": [
+      "GH₵21"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A map has a scale of 1:50,000. A road 3 cm on the map is actually",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "150 m",
+      "1.5 km",
+      "15 km",
+      "150 km"
+    ],
+    "answer": [
+      "1.5 km"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In a ratio of 3:5, if the total is 40, the larger share is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "24"
+    ],
+    "answer": [
+      "25"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If x varies directly as y, and x = 6 when y = 2, find x when y = 5.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "20"
+    ],
+    "answer": [
+      "15"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If y varies inversely as x, and y = 4 when x = 3, find y when x = 6.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "8",
+      "2",
+      "12",
+      "1"
+    ],
+    "answer": [
+      "2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simple interest on GH₵500 at 8% per annum for 3 years is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "GH₵120",
+      "GH₵80",
+      "GH₵40",
+      "GH₵160"
+    ],
+    "answer": [
+      "GH₵120"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the formula for compound interest amount?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A = P + PRT",
+      "A = P(1+r)ⁿ",
+      "A = P/n",
+      "A = P(1−r)ⁿ"
+    ],
+    "answer": [
+      "A = P(1+r)ⁿ"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Factorise completely: 3x² + 9x",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "3x(x+3)",
+      "3(x²+9x)",
+      "x(3x+9)",
+      "3x(x+9)"
+    ],
+    "answer": [
+      "3x(x+3)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Factorise: x² + 7x + 12",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "(x+3)(x+4)",
+      "(x+6)(x+2)",
+      "(x+12)(x+1)",
+      "(x+3)(x+5)"
+    ],
+    "answer": [
+      "(x+3)(x+4)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Factorise: 2x² − 8",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2(x−2)(x+2)",
+      "2(x²−4)",
+      "(2x−4)(x+2)",
+      "2(x−4)(x+4)"
+    ],
+    "answer": [
+      "2(x−2)(x+2)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Expand and simplify: (2x + 1)²",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4x² + 1",
+      "4x² + 4x + 1",
+      "4x² + 2x + 1",
+      "2x² + 4x + 1"
+    ],
+    "answer": [
+      "4x² + 4x + 1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: x/3 + 2 = 5",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6",
+      "9",
+      "12",
+      "3"
+    ],
+    "answer": [
+      "9"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: 2(x − 3) = 4x − 10",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2",
+      "−2",
+      "4",
+      "−4"
+    ],
+    "answer": [
+      "2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve the simultaneous equations: x + y = 7 and x − y = 3",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x=4, y=3",
+      "x=5, y=2",
+      "x=3, y=4",
+      "x=6, y=1"
+    ],
+    "answer": [
+      "x=5, y=2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: 2x + y = 8 and x + 2y = 7",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x=3, y=2",
+      "x=2, y=3",
+      "x=3, y=3",
+      "x=4, y=0"
+    ],
+    "answer": [
+      "x=3, y=2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve the inequality: 2x − 4 ≥ 6",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "x ≥ 1",
+      "x ≥ 5",
+      "x ≥ 4",
+      "x ≥ 10"
+    ],
+    "answer": [
+      "x ≥ 5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The solution set of x² < 9 is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "x < 3",
+      "x > −3",
+      "−3 < x < 3",
+      "x < −3 or x > 3"
+    ],
+    "answer": [
+      "−3 < x < 3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If f(x) = 2x² − 3x + 1, find f(2).",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "1"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A function f is one-to-one (injective) if",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Every output has at least one input",
+      "Different inputs always give different outputs",
+      "Every input has the same output",
+      "The function is always increasing"
+    ],
+    "answer": [
+      "Different inputs always give different outputs"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The inverse of f(x) = 2x + 4 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "f⁻¹(x) = x/2 − 2",
+      "f⁻¹(x) = 2x − 4",
+      "f⁻¹(x) = (x−4)/2",
+      "f⁻¹(x) = x/2 + 4"
+    ],
+    "answer": [
+      "f⁻¹(x) = (x−4)/2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The graph of y = x² is a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Straight line",
+      "Circle",
+      "Parabola",
+      "Hyperbola"
+    ],
+    "answer": [
+      "Parabola"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The vertex of the parabola y = (x − 3)² + 2 is at",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "(3, 2)",
+      "(−3, 2)",
+      "(3, −2)",
+      "(−3, −2)"
+    ],
+    "answer": [
+      "(3, 2)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The midpoint of the line joining (2, 4) and (6, 10) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(4, 7)",
+      "(8, 14)",
+      "(3, 5)",
+      "(4, 6)"
+    ],
+    "answer": [
+      "(4, 7)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The distance between (1, 2) and (4, 6) is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "5",
+      "7",
+      "3",
+      "√7"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation of a line with gradient −2 passing through (0, 5) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "y = 5x − 2",
+      "y = −2x + 5",
+      "y = 2x + 5",
+      "y = −5x + 2"
+    ],
+    "answer": [
+      "y = −2x + 5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two lines y = 2x + 1 and y = 2x − 3 are",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Perpendicular",
+      "The same line",
+      "Parallel",
+      "Intersecting at one point"
+    ],
+    "answer": [
+      "Parallel"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An angle of 90° is called a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Acute angle",
+      "Obtuse angle",
+      "Right angle",
+      "Reflex angle"
+    ],
+    "answer": [
+      "Right angle"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An angle greater than 180° but less than 360° is called a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Obtuse angle",
+      "Acute angle",
+      "Straight angle",
+      "Reflex angle"
+    ],
+    "answer": [
+      "Reflex angle"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Vertically opposite angles are",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Supplementary",
+      "Complementary",
+      "Equal",
+      "Always 90°"
+    ],
+    "answer": [
+      "Equal"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The exterior angle of a triangle equals the sum of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The two adjacent interior angles",
+      "The two non-adjacent interior angles",
+      "All three interior angles",
+      "The adjacent interior angle"
+    ],
+    "answer": [
+      "The two non-adjacent interior angles"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An isosceles triangle has",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "All three sides equal",
+      "All three angles equal",
+      "Two equal sides and two equal base angles",
+      "No equal sides"
+    ],
+    "answer": [
+      "Two equal sides and two equal base angles"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In a right-angled triangle, the two acute angles add up to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "90°",
+      "180°",
+      "60°",
+      "45°"
+    ],
+    "answer": [
+      "90°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The angle subtended by a diameter at the circumference of a circle is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "45°",
+      "60°",
+      "90°",
+      "180°"
+    ],
+    "answer": [
+      "90°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Angles in the same segment of a circle are",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Supplementary",
+      "Complementary",
+      "Equal",
+      "Right angles"
+    ],
+    "answer": [
+      "Equal"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The angle at the centre of a circle is __ the angle at the circumference subtended by the same arc.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Half",
+      "Equal to",
+      "Twice",
+      "Three times"
+    ],
+    "answer": [
+      "Twice"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Opposite angles of a cyclic quadrilateral add up to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "90°",
+      "360°",
+      "180°",
+      "270°"
+    ],
+    "answer": [
+      "180°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A tangent to a circle is perpendicular to the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Chord",
+      "Diameter",
+      "Radius at the point of contact",
+      "Arc"
+    ],
+    "answer": [
+      "Radius at the point of contact"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of exterior angles of any convex polygon is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "180°",
+      "360°",
+      "540°",
+      "720°"
+    ],
+    "answer": [
+      "360°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Each interior angle of a regular hexagon is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "108°",
+      "120°",
+      "135°",
+      "150°"
+    ],
+    "answer": [
+      "120°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The number of diagonals in a pentagon is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "sin θ = opposite/hypotenuse. If opposite = 6 and hypotenuse = 10, sin θ =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.5"
+    ],
+    "answer": [
+      "0.6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In a right triangle, if sin θ = 3/5, then cos θ =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4/5",
+      "3/4",
+      "5/4",
+      "4/3"
+    ],
+    "answer": [
+      "4/5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "sin²θ + cos²θ =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "0",
+      "2",
+      "−1",
+      "1"
+    ],
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sine rule states that a/sin A =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "b/cos B",
+      "b/sin B = c/sin C",
+      "b/tan B",
+      "c/cos C"
+    ],
+    "answer": [
+      "b/sin B = c/sin C"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The cosine rule gives c² =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "a² + b²",
+      "a² + b² − 2ab cos C",
+      "a² + b² + 2ab cos C",
+      "2ab cos C − a² − b²"
+    ],
+    "answer": [
+      "a² + b² − 2ab cos C"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A ship sails 30 km due East then 40 km due North. How far is it from the start?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "70 km",
+      "50 km",
+      "35 km",
+      "45 km"
+    ],
+    "answer": [
+      "50 km"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Convert 60° to radians.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "π/2",
+      "π/3",
+      "π/4",
+      "2π/3"
+    ],
+    "answer": [
+      "π/3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The area of a triangle with sides a and b and included angle C is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "ab sin C",
+      "(1/2)ab sin C",
+      "ab cos C",
+      "(1/2)ab cos C"
+    ],
+    "answer": [
+      "(1/2)ab sin C"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The perimeter of a rectangle with length 8 cm and width 5 cm is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "13 cm",
+      "26 cm",
+      "40 cm",
+      "16 cm"
+    ],
+    "answer": [
+      "26 cm"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Area of a trapezium with parallel sides 6 cm and 10 cm, height 4 cm, is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "64 cm²",
+      "32 cm²",
+      "24 cm²",
+      "48 cm²"
+    ],
+    "answer": [
+      "32 cm²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The total surface area of a cube with side 3 cm is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "18 cm²",
+      "27 cm²",
+      "54 cm²",
+      "9 cm²"
+    ],
+    "answer": [
+      "54 cm²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Volume of a sphere with radius r is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4πr²",
+      "(4/3)πr³",
+      "(1/3)πr²h",
+      "2πr³"
+    ],
+    "answer": [
+      "(4/3)πr³"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A cylinder has radius 7 cm and height 10 cm. Its volume is (π ≈ 22/7)",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "440 cm³",
+      "1540 cm³",
+      "220 cm³",
+      "770 cm³"
+    ],
+    "answer": [
+      "1540 cm³"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The area of a sector of a circle with radius 6 and angle 60° is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "6π",
+      "18π",
+      "3π",
+      "12π"
+    ],
+    "answer": [
+      "6π"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Arc length of a sector with radius r and angle θ (in degrees) is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "θr/360",
+      "(θ/360) × 2πr",
+      "2πrθ",
+      "θ × πr²/360"
+    ],
+    "answer": [
+      "(θ/360) × 2πr"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The column vector from A(1,2) to B(4,6) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(3, 4)",
+      "(4, 3)",
+      "(−3, −4)",
+      "(5, 8)"
+    ],
+    "answer": [
+      "(3, 4)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If a = (2, 5) and b = (−1, 3), then a + b =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(1, 8)",
+      "(3, 2)",
+      "(1, 2)",
+      "(2, 8)"
+    ],
+    "answer": [
+      "(1, 8)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The scalar multiple 3 × (2, −1) =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(6, −3)",
+      "(5, 2)",
+      "(2, −3)",
+      "(6, −1)"
+    ],
+    "answer": [
+      "(6, −3)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two vectors are parallel if one is a __ of the other.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Sum",
+      "Scalar multiple",
+      "Inverse",
+      "Complement"
+    ],
+    "answer": [
+      "Scalar multiple"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The determinant of matrix [[a, b], [c, d]] is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "ac − bd",
+      "ad + bc",
+      "ad − bc",
+      "ab − cd"
+    ],
+    "answer": [
+      "ad − bc"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The determinant of [[2, 3], [1, 4]] is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "11",
+      "5",
+      "8",
+      "−5"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A matrix with equal number of rows and columns is called a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Row matrix",
+      "Column matrix",
+      "Square matrix",
+      "Identity matrix"
+    ],
+    "answer": [
+      "Square matrix"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The identity matrix for 2×2 multiplication is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "[[0,1],[1,0]]",
+      "[[1,0],[0,1]]",
+      "[[1,1],[1,1]]",
+      "[[0,0],[0,0]]"
+    ],
+    "answer": [
+      "[[1,0],[0,1]]"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If A = [[1,2],[3,4]] and B = [[5,6],[7,8]], then A + B =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "[[6,8],[10,12]]",
+      "[[6,8],[9,12]]",
+      "[[5,12],[21,32]]",
+      "[[4,4],[4,4]]"
+    ],
+    "answer": [
+      "[[6,8],[10,12]]"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A rotation of 90° anticlockwise about the origin maps (x, y) to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "(y, x)",
+      "(−y, x)",
+      "(y, −x)",
+      "(−x, −y)"
+    ],
+    "answer": [
+      "(−y, x)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A reflection in the y-axis maps (x, y) to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "(x, −y)",
+      "(−x, y)",
+      "(−x, −y)",
+      "(y, x)"
+    ],
+    "answer": [
+      "(−x, y)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An enlargement with scale factor 3 centred at the origin maps (2, 4) to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "(5, 7)",
+      "(6, 12)",
+      "(2/3, 4/3)",
+      "(9, 12)"
+    ],
+    "answer": [
+      "(6, 12)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A translation by vector (3, −2) maps (1, 5) to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(4, 3)",
+      "(4, 7)",
+      "(−2, 7)",
+      "(3, 5)"
+    ],
+    "answer": [
+      "(4, 3)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In the GP 2, 6, 18, 54, ..., the common ratio is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The 5th term of the GP with first term 3 and common ratio 2 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "48",
+      "96",
+      "24",
+      "32"
+    ],
+    "answer": [
+      "48"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of an infinite GP with a = 10 and r = 0.5 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
+    "answer": [
+      "20"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The sum of the first 10 terms of the AP 1, 3, 5, 7, ... is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "55",
+      "100",
+      "50",
+      "90"
+    ],
+    "answer": [
+      "100"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log_a a =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0",
+      "a",
+      "1",
+      "a²"
+    ],
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log_a 1 =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "0",
+      "a",
+      "−1"
+    ],
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log(x/y) equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "log x + log y",
+      "log x − log y",
+      "log x × log y",
+      "log x / log y"
+    ],
+    "answer": [
+      "log x − log y"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "log x³ equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "3 + log x",
+      "3 × log x",
+      "log x + 3",
+      "(log x)³"
+    ],
+    "answer": [
+      "3 × log x"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If log₂ x = 4, then x =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "8",
+      "16",
+      "6",
+      "32"
+    ],
+    "answer": [
+      "16"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: log₃(x) = 2",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "27"
+    ],
+    "answer": [
+      "9"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The derivative of y = 5x² is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5x",
+      "10x",
+      "10",
+      "2x"
+    ],
+    "answer": [
+      "10x"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The derivative of y = 3x³ − 2x + 7 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "9x² − 2",
+      "3x² − 2x",
+      "9x² + 2",
+      "3x² − 2"
+    ],
+    "answer": [
+      "9x² − 2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "At a turning point on a curve, dy/dx =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1",
+      "∞",
+      "0",
+      "−1"
+    ],
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "∫x³ dx =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "3x²",
+      "x⁴/4 + C",
+      "4x⁴ + C",
+      "x²/2 + C"
+    ],
+    "answer": [
+      "x⁴/4 + C"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Evaluate ∫₀² 2x dx",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "0"
+    ],
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The gradient of y = x² at x = 3 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A coin is tossed twice. P(both heads) =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1/2",
+      "1/4",
+      "1/3",
+      "3/4"
+    ],
+    "answer": [
+      "1/4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two events are mutually exclusive if they",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Always occur together",
+      "Cannot occur at the same time",
+      "Are equally likely",
+      "Are complementary"
+    ],
+    "answer": [
+      "Cannot occur at the same time"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "P(A') = 1 − P(A) where A' is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Union of A",
+      "Intersection of A",
+      "Complement of A",
+      "Subset of A"
+    ],
+    "answer": [
+      "Complement of A"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A bag has 3 red, 4 blue, 5 green balls. P(blue) =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4/9",
+      "1/3",
+      "4/12",
+      "1/4"
+    ],
+    "answer": [
+      "1/3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The mean of a frequency distribution is Σfx ÷",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "n",
+      "Σf",
+      "Σx",
+      "f"
+    ],
+    "answer": [
+      "Σf"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The interquartile range (IQR) is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Q3 − Q1",
+      "Q3 + Q1",
+      "Q2 − Q1",
+      "Q3 − Q2"
+    ],
+    "answer": [
+      "Q3 − Q1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Variance is the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Square of standard deviation",
+      "Square root of standard deviation",
+      "Mean of deviations",
+      "Sum of squared deviations"
+    ],
+    "answer": [
+      "Square of standard deviation"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In a histogram, frequency density =",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Frequency × class width",
+      "Frequency + class width",
+      "Frequency ÷ class width",
+      "Class width ÷ frequency"
+    ],
+    "answer": [
+      "Frequency ÷ class width"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A cumulative frequency graph is also called an",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Histogram",
+      "Ogive",
+      "Bar chart",
+      "Pie chart"
+    ],
+    "answer": [
+      "Ogive"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Which of the following always lies between Q1 and Q3?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Mode",
+      "Range",
+      "Median",
+      "Mean"
+    ],
+    "answer": [
+      "Median"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The standard deviation measures",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The centre of a data set",
+      "How spread out values are from the mean",
+      "The highest value in a set",
+      "The total of all values"
+    ],
+    "answer": [
+      "How spread out values are from the mean"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If P(A) = 0.6 and P(B) = 0.4 and they are independent, then P(A and B) =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1.0",
+      "0.2",
+      "0.24",
+      "0.96"
+    ],
+    "answer": [
+      "0.24"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A tree diagram is used to find probabilities of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Single events",
+      "Combined sequential events",
+      "Continuous distributions",
+      "Only independent events"
+    ],
+    "answer": [
+      "Combined sequential events"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A linear graph passing through (0, 0) and (4, 8) has gradient",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "2",
+      "0.5",
+      "8"
+    ],
+    "answer": [
+      "2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation y = mx + c is the __ form of a straight line.",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Standard",
+      "Gradient-intercept",
+      "Point-slope",
+      "General"
+    ],
+    "answer": [
+      "Gradient-intercept"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Which of the following represents a function?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A circle",
+      "A vertical line test failure",
+      "One y for every x",
+      "Multiple y values for one x"
+    ],
+    "answer": [
+      "One y for every x"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The range of a function is the set of all",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Input values",
+      "Output values",
+      "Undefined values",
+      "Domain values"
+    ],
+    "answer": [
+      "Output values"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Simplify: (3a²b)(2ab³)",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "5a³b⁴",
+      "6a³b⁴",
+      "6a²b³",
+      "5a²b⁴"
+    ],
+    "answer": [
+      "6a³b⁴"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If x = 2 and y = −3, evaluate 2x² − y",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "5",
+      "11",
+      "1",
+      "−3"
+    ],
+    "answer": [
+      "11"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Make r the subject of the formula A = πr²",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "r = A/π",
+      "r = √(A/π)",
+      "r = A²/π",
+      "r = π/A"
+    ],
+    "answer": [
+      "r = √(A/π)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Make h the subject of V = πr²h",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "h = V/r²",
+      "h = V/(πr²)",
+      "h = Vπr²",
+      "h = πr²/V"
+    ],
+    "answer": [
+      "h = V/(πr²)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If P = 2(l + w), express l in terms of P and w.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "l = P/2 − w",
+      "l = (P − w)/2",
+      "l = P/2 + w",
+      "l = P − 2w"
+    ],
+    "answer": [
+      "l = P/2 − w"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The quadratic x² − 4x + 4 = 0 has",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Two distinct real roots",
+      "No real roots",
+      "One repeated root x = 2",
+      "One root x = 4"
+    ],
+    "answer": [
+      "One repeated root x = 2"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If 5ˣ = 125, then x =",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "2ˣ = 32. What is x?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The image of the point (3, −1) after reflection in the x-axis is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "(−3, 1)",
+      "(3, 1)",
+      "(1, −3)",
+      "(−3, −1)"
+    ],
+    "answer": [
+      "(3, 1)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Angle on a straight line sums to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "answer": [
+      "180°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Two parallel lines cut by a transversal form alternate angles that are",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Supplementary",
+      "Complementary",
+      "Equal",
+      "Reflex"
+    ],
+    "answer": [
+      "Equal"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Co-interior (same-side interior) angles formed by parallel lines and a transversal are",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Equal",
+      "Complementary",
+      "Supplementary",
+      "Right angles"
+    ],
+    "answer": [
+      "Supplementary"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The number of lines of symmetry of a square is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "answer": [
+      "4"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An equilateral triangle has how many lines of symmetry?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "6"
+    ],
+    "answer": [
+      "3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Rounding 4.756 to 2 decimal places gives",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4.75",
+      "4.76",
+      "4.8",
+      "4.7"
+    ],
+    "answer": [
+      "4.76"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Write 0.000456 in standard form.",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4.56 × 10⁻⁴",
+      "4.56 × 10⁴",
+      "45.6 × 10⁻⁵",
+      "4.56 × 10⁻³"
+    ],
+    "answer": [
+      "4.56 × 10⁻⁴"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Evaluate: 3.2 × 10³ + 4.5 × 10²",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "3650",
+      "7700",
+      "3245",
+      "4520"
+    ],
+    "answer": [
+      "3650"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation of the x-axis is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "x = 0",
+      "y = 0",
+      "x = y",
+      "y = 1"
+    ],
+    "answer": [
+      "y = 0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation of the y-axis is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "y = 0",
+      "x = 1",
+      "x = 0",
+      "y = x"
+    ],
+    "answer": [
+      "x = 0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "At x = 0, f(x) = 5. This point is called the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "x-intercept",
+      "Vertex",
+      "y-intercept",
+      "Maximum"
+    ],
+    "answer": [
+      "y-intercept"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A function f(x) = c (constant) has a gradient of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "c",
+      "1",
+      "0",
+      "undefined"
+    ],
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Which sequence is arithmetic: 2, 5, 8, 11, ... or 1, 2, 4, 8?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1,2,4,8",
+      "Both",
+      "2,5,8,11",
+      "Neither"
+    ],
+    "answer": [
+      "2,5,8,11"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The 10th term of the AP 3, 7, 11, 15, ... is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "39",
+      "43",
+      "47",
+      "51"
+    ],
+    "answer": [
+      "39"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A circle has centre (0,0) and passes through (3,4). Its radius is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "7",
+      "5",
+      "√7",
+      "√5"
+    ],
+    "answer": [
+      "5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation of a circle with centre (0,0) and radius 6 is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x + y = 6",
+      "x² + y² = 36",
+      "x² + y² = 6",
+      "x² − y² = 36"
+    ],
+    "answer": [
+      "x² + y² = 36"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Gradient of a horizontal line is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "−1",
+      "0",
+      "undefined"
+    ],
+    "answer": [
+      "0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Gradient of a vertical line is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1",
+      "0",
+      "−1",
+      "undefined"
+    ],
+    "answer": [
+      "undefined"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve: |x − 2| = 5",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "x = 3 or x = −3",
+      "x = 7 or x = −3",
+      "x = 7 or x = 3",
+      "x = 5 or x = 2"
+    ],
+    "answer": [
+      "x = 7 or x = −3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If set A has 4 elements, the number of subsets of A is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "4",
+      "8",
+      "16",
+      "12"
+    ],
+    "answer": [
+      "16"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "n! (n factorial) for n = 0 equals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0",
+      "1",
+      "n",
+      "undefined"
+    ],
+    "answer": [
+      "1"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "⁸P₂ (8 permutations taken 2) =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "28",
+      "56",
+      "16",
+      "40"
+    ],
+    "answer": [
+      "56"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A regular polygon has all sides equal AND all __ equal.",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Diagonals",
+      "Areas",
+      "Angles",
+      "Arcs"
+    ],
+    "answer": [
+      "Angles"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The interior angle sum of an octagon (8 sides) is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "720°",
+      "900°",
+      "1080°",
+      "1260°"
+    ],
+    "answer": [
+      "1080°"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Differentiate y = 1/x with respect to x.",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "1/x²",
+      "−1/x²",
+      "ln x",
+      "x⁻²"
+    ],
+    "answer": [
+      "−1/x²"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The second derivative d²y/dx² tells us about the __ of a curve.",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Gradient",
+      "Concavity (nature of turning points)",
+      "Y-intercept",
+      "Speed"
+    ],
+    "answer": [
+      "Concavity (nature of turning points)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If d²y/dx² > 0 at a turning point, it is a",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Maximum",
+      "Minimum",
+      "Point of inflection",
+      "Saddle point"
+    ],
+    "answer": [
+      "Minimum"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The equation y = ab^x represents",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A linear function",
+      "A quadratic function",
+      "An exponential function",
+      "A logarithmic function"
+    ],
+    "answer": [
+      "An exponential function"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If log y = log a + x log b, then y =",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "a + bx",
+      "a × bˣ",
+      "aˣ × b",
+      "a/bˣ"
+    ],
+    "answer": [
+      "a × bˣ"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The cosine of an obtuse angle is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Positive",
+      "Zero",
+      "Negative",
+      "Undefined"
+    ],
+    "answer": [
+      "Negative"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "tan 90° is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "0",
+      "1",
+      "−1",
+      "Undefined"
+    ],
+    "answer": [
+      "Undefined"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "An angle of elevation is measured",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Below the horizontal",
+      "Above the horizontal",
+      "Perpendicular to the vertical",
+      "Along the horizontal"
+    ],
+    "answer": [
+      "Above the horizontal"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "In 3D, the surface area of a cuboid with dimensions l, w, h is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "lwh",
+      "2(lw + lh + wh)",
+      "l + w + h",
+      "2lwh"
+    ],
+    "answer": [
+      "2(lw + lh + wh)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The cross-section of a prism determines its",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Height",
+      "Volume formula",
+      "Surface colour",
+      "Name"
+    ],
+    "answer": [
+      "Name"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Volume of a triangular prism = area of triangle ×",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Perimeter",
+      "Height of prism",
+      "Surface area",
+      "Width"
+    ],
+    "answer": [
+      "Height of prism"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Pythagoras in 3D: The space diagonal of a cuboid l×w×h is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "l + w + h",
+      "√(l + w + h)",
+      "√(l² + w² + h²)",
+      "l² + w² + h²"
+    ],
+    "answer": [
+      "√(l² + w² + h²)"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The reciprocal of sin θ is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "cos θ",
+      "tan θ",
+      "csc θ",
+      "sec θ"
+    ],
+    "answer": [
+      "csc θ"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the Pythagorean triple that includes 5 and 13?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "5, 12, 13",
+      "5, 10, 13",
+      "5, 11, 13",
+      "5, 8, 13"
+    ],
+    "answer": [
+      "5, 12, 13"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A frequency polygon is drawn by connecting",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Bar tops",
+      "Midpoints of class intervals plotted against frequency",
+      "Cumulative frequencies",
+      "All individual data points"
+    ],
+    "answer": [
+      "Midpoints of class intervals plotted against frequency"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If a set A = {2, 4, 6, 8} and B = {4, 8, 12}, then A − B (A minus B) =",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "{2,6}",
+      "{4,8}",
+      "{4,8,12}",
+      "{2,4,6,8,12}"
+    ],
+    "answer": [
+      "{2,6}"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "The universal set in a Venn diagram contains",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only the intersection",
+      "All elements under consideration",
+      "Only the complement",
+      "Elements outside A and B"
+    ],
+    "answer": [
+      "All elements under consideration"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "State the Pythagorean theorem.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "right angle",
+      "c² = a² + b²",
+      "hypotenuse",
+      "sum of squares",
+      "c  a  b",
+      "c2 = a2 + b2",
+      "c2  a2  b2",
+      "is hypotenuse",
+      "are hypotenuse",
+      "it is hypotenuse",
+      "they are hypotenuse"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the formula for the area of a trapezium?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "half",
+      "sum of parallel sides",
+      "height",
+      "A = ½(a+b)h",
+      "is half",
+      "are half",
+      "it is half",
+      "they are half",
+      "is height",
+      "are height",
+      "it is height",
+      "they are height",
+      "a  abh",
+      "= ½(a+b)h"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Define the term 'prime number'.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "exactly two",
+      "factors",
+      "1 and itself",
+      "divisible",
+      "only",
+      "is factors",
+      "are factors",
+      "it is factors",
+      "they are factors",
+      "is divisible",
+      "are divisible",
+      "it is divisible",
+      "they are divisible",
+      "is only",
+      "are only",
+      "it is only",
+      "they are only"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What does the gradient of a straight-line graph represent?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "slope",
+      "rate of change",
+      "rise over run",
+      "change in y",
+      "change in x",
+      "is slope",
+      "are slope",
+      "it is slope",
+      "they are slope"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Explain the difference between permutation and combination.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "permutation",
+      "order matters",
+      "combination",
+      "order does not matter",
+      "arrangement",
+      "selection",
+      "is permutation",
+      "are permutation",
+      "it is permutation",
+      "they are permutation",
+      "is combination",
+      "are combination",
+      "it is combination",
+      "they are combination",
+      "is arrangement",
+      "are arrangement",
+      "it is arrangement",
+      "they are arrangement",
+      "is selection",
+      "are selection",
+      "it is selection",
+      "they are selection"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the formula for the sum of an infinite geometric series? State when it applies.",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "S = a/(1−r)",
+      "|r| < 1",
+      "first term",
+      "common ratio",
+      "converge",
+      "s  a1r",
+      "r  1",
+      "is converge",
+      "are converge",
+      "it is converge",
+      "they are converge"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If f(x) = 2x + 3, find f(4).",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "11",
+      "f(4) = 11",
+      "= 11",
+      "=11",
+      "x = 11",
+      "x=11",
+      "eleven",
+      "f4  11"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is a rational number?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "fraction",
+      "p/q",
+      "integers",
+      "q not zero",
+      "ratio",
+      "is fraction",
+      "are fraction",
+      "it is fraction",
+      "they are fraction",
+      "pq",
+      "is p/q",
+      "are p/q",
+      "it is p/q",
+      "they are p/q",
+      "is integers",
+      "are integers",
+      "it is integers",
+      "they are integers",
+      "is ratio",
+      "are ratio",
+      "it is ratio",
+      "they are ratio"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Differentiate y = 5x⁴ with respect to x.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "20x³",
+      "dy/dx = 20x³",
+      "20x",
+      "20x3",
+      "is 20x³",
+      "are 20x³",
+      "it is 20x³",
+      "they are 20x³",
+      "dydx  20x",
+      "dy/dx = 20x3",
+      "dydx  20x3"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the relationship between degrees and radians?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "180 degrees",
+      "π radians",
+      "multiply by π/180",
+      "divide",
+      "convert",
+      "radians",
+      "pi radians",
+      "multiply by 180",
+      "multiply by pi/180",
+      "multiply by pi180",
+      "is divide",
+      "are divide",
+      "it is divide",
+      "they are divide",
+      "is convert",
+      "are convert",
+      "it is convert",
+      "they are convert"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "State the quadratic formula.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "x = (−b ± √(b²−4ac)) / 2a",
+      "discriminant",
+      "±",
+      "roots",
+      "x  b  b4ac  2a",
+      "x = (−b ± sqrt(b2−4ac)) / 2a",
+      "x  b  sqrtb24ac  2a",
+      "is discriminant",
+      "are discriminant",
+      "it is discriminant",
+      "they are discriminant",
+      "is roots",
+      "are roots",
+      "it is roots",
+      "they are roots"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What does it mean for two matrices to be conformable for multiplication?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "columns of first",
+      "rows of second",
+      "equal",
+      "m×n by n×p",
+      "order",
+      "is equal",
+      "are equal",
+      "it is equal",
+      "they are equal",
+      "mn by np",
+      "mxn by nxp",
+      "is order",
+      "are order",
+      "it is order",
+      "they are order"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Define 'mutually exclusive events'.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "cannot occur simultaneously",
+      "P(A and B) = 0",
+      "no overlap",
+      "at the same time",
+      "pa and b  0"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the sum of all interior angles in any quadrilateral?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "360°",
+      "360 degrees",
+      "four-sided",
+      "360",
+      "is 360°",
+      "are 360°",
+      "it is 360°",
+      "they are 360°",
+      "foursided",
+      "is four-sided",
+      "are four-sided",
+      "it is four-sided",
+      "they are four-sided"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "State two conditions for a triangle to be congruent using the SAS rule.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "two sides",
+      "included angle",
+      "equal",
+      "SAS",
+      "side-angle-side",
+      "is equal",
+      "are equal",
+      "it is equal",
+      "they are equal",
+      "is sas",
+      "are sas",
+      "it is sas",
+      "they are sas",
+      "sideangleside",
+      "is side-angle-side",
+      "are side-angle-side",
+      "it is side-angle-side",
+      "they are side-angle-side"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the mode, and when is it the most appropriate average to use?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "most frequent",
+      "qualitative",
+      "categorical",
+      "non-numeric",
+      "appears most",
+      "is qualitative",
+      "are qualitative",
+      "it is qualitative",
+      "they are qualitative",
+      "is categorical",
+      "are categorical",
+      "it is categorical",
+      "they are categorical",
+      "nonnumeric",
+      "is non-numeric",
+      "are non-numeric",
+      "it is non-numeric",
+      "they are non-numeric"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "A car travels at 80 km/h for 2.5 hours. How far does it travel?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "200 km",
+      "200",
+      "distance = speed × time",
+      "= 200",
+      "=200",
+      "x = 200",
+      "x=200",
+      "is 200",
+      "are 200",
+      "it is 200",
+      "they are 200",
+      "distance  speed  time",
+      "distance = speed x time",
+      "distance  speed x time"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the difference between an equation and an identity?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "equation",
+      "specific values",
+      "identity",
+      "true for all values",
+      "always equal",
+      "is equation",
+      "are equation",
+      "it is equation",
+      "they are equation",
+      "is identity",
+      "are identity",
+      "it is identity",
+      "they are identity"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Explain what is meant by the 'domain' of a function.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "input values",
+      "x values",
+      "valid",
+      "set of all",
+      "allowed inputs",
+      "is valid",
+      "are valid",
+      "it is valid",
+      "they are valid"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "State two properties of a rhombus.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "all sides equal",
+      "diagonals bisect",
+      "perpendicular",
+      "opposite angles equal",
+      "parallelogram",
+      "is perpendicular",
+      "are perpendicular",
+      "it is perpendicular",
+      "they are perpendicular",
+      "is parallelogram",
+      "are parallelogram",
+      "it is parallelogram",
+      "they are parallelogram"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Calculate the simple interest on GH₵1,200 at 5% p.a. for 3 years.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "GH₵180",
+      "180",
+      "SI = PRT/100",
+      "principal × rate × time",
+      "gh180",
+      "is gh₵180",
+      "are gh₵180",
+      "it is gh₵180",
+      "they are gh₵180",
+      "= 180",
+      "=180",
+      "x = 180",
+      "x=180",
+      "is 180",
+      "are 180",
+      "it is 180",
+      "they are 180",
+      "si  prt100",
+      "principal  rate  time",
+      "principal x rate x time"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is a zero matrix?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "all entries are zero",
+      "null matrix",
+      "0",
+      "additive identity",
+      "= 0",
+      "=0",
+      "x = 0",
+      "x=0",
+      "zero"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Describe the transformation that maps (x, y) to (−x, −y).",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "rotation",
+      "180 degrees",
+      "origin",
+      "half turn",
+      "point symmetry",
+      "is rotation",
+      "are rotation",
+      "it is rotation",
+      "they are rotation",
+      "is origin",
+      "are origin",
+      "it is origin",
+      "they are origin"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "If the variance of a data set is 16, what is the standard deviation?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "4",
+      "√16",
+      "square root of variance",
+      "= 4",
+      "=4",
+      "x = 4",
+      "x=4",
+      "four",
+      "16",
+      "sqrt16",
+      "is √16",
+      "are √16",
+      "it is √16",
+      "they are √16"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is a perfect square number? Give three examples.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "square of integer",
+      "1",
+      "4",
+      "9",
+      "16",
+      "25",
+      "36",
+      "49",
+      "64",
+      "81",
+      "100",
+      "= 1",
+      "=1",
+      "x = 1",
+      "x=1",
+      "one",
+      "= 4",
+      "=4",
+      "x = 4",
+      "x=4",
+      "four",
+      "= 9",
+      "=9",
+      "x = 9",
+      "x=9",
+      "nine",
+      "= 16",
+      "=16",
+      "x = 16",
+      "x=16",
+      "sixteen",
+      "= 25",
+      "=25",
+      "x = 25",
+      "x=25",
+      "= 36",
+      "=36",
+      "x = 36",
+      "x=36",
+      "= 49",
+      "=49",
+      "x = 49",
+      "x=49",
+      "= 64",
+      "=64",
+      "x = 64",
+      "x=64",
+      "= 81",
+      "=81",
+      "x = 81",
+      "x=81",
+      "= 100",
+      "=100",
+      "x = 100",
+      "x=100",
+      "is 100",
+      "are 100",
+      "it is 100",
+      "they are 100"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "Solve for x: log₅(x) = 3",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "125",
+      "x = 125",
+      "5³",
+      "= 125",
+      "=125",
+      "x=125",
+      "is 125",
+      "are 125",
+      "it is 125",
+      "they are 125",
+      "x  125",
+      "5",
+      "53"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is the reciprocal of 2/5?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "5/2",
+      "2.5",
+      "flip the fraction",
+      "52",
+      "is 5/2",
+      "are 5/2",
+      "it is 5/2",
+      "they are 5/2",
+      "25",
+      "= 2.5",
+      "=2.5",
+      "x = 2.5",
+      "x=2.5",
+      "is 2.5",
+      "are 2.5",
+      "it is 2.5",
+      "they are 2.5"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "State the angle sum property of a polygon with n sides.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "(n−2) × 180",
+      "sum",
+      "interior angles",
+      "n sides",
+      "formula",
+      "n2  180",
+      "(n−2) x 180",
+      "n2 x 180",
+      "is sum",
+      "are sum",
+      "it is sum",
+      "they are sum",
+      "is formula",
+      "are formula",
+      "it is formula",
+      "they are formula"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What does a negative gradient on a distance-time graph indicate?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "returning",
+      "moving back",
+      "decreasing distance",
+      "negative velocity",
+      "reverse direction",
+      "is returning",
+      "are returning",
+      "it is returning",
+      "they are returning"
+    ]
+  },
+  {
+    "subject": "Mathematics",
+    "question": "What is a chord in a circle?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "line segment",
+      "two points",
+      "circumference",
+      "not necessarily diameter",
+      "joins two points on circle",
+      "is circumference",
+      "are circumference",
+      "it is circumference",
+      "they are circumference"
+    ]
+  }
 ]

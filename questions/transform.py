@@ -125,6 +125,10 @@ def expand_keywords(raw_keywords):
     # Step 1: normalise — split any comma-separated items
     base = []
     for item in raw_keywords:
+        # Flatten any accidentally nested lists
+        if isinstance(item, list):
+            raw_keywords = raw_keywords + item
+            continue
         item = item.strip()
         if not item:
             continue

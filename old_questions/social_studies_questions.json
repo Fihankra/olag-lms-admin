@@ -10,7 +10,9 @@
       "Kumasi",
       "Accra"
     ],
-    "answer": "Accra"
+    "answer": [
+      "Accra"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -23,7 +25,9 @@
       "14",
       "20"
     ],
-    "answer": "16"
+    "answer": [
+      "16"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -36,7 +40,9 @@
       "Savannah Region",
       "Greater Accra"
     ],
-    "answer": "Northern Region"
+    "answer": [
+      "Northern Region"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -49,7 +55,9 @@
       "Greater Accra",
       "Brong-Ahafo"
     ],
-    "answer": "Greater Accra"
+    "answer": [
+      "Greater Accra"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -62,7 +70,9 @@
       "Tano River",
       "Oti River"
     ],
-    "answer": "Volta River"
+    "answer": [
+      "Volta River"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -75,7 +85,9 @@
       "Keta Lagoon",
       "Lake Bosomtwe"
     ],
-    "answer": "Volta Lake"
+    "answer": [
+      "Volta Lake"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -88,7 +100,9 @@
       "Mount Ejura",
       "Mount Afadjato"
     ],
-    "answer": "Mount Afadjato"
+    "answer": [
+      "Mount Afadjato"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -96,12 +110,14 @@
     "type": "mcq",
     "difficulty": "easy",
     "options": [
-      "C\u00f4te d'Ivoire",
+      "Côte d'Ivoire",
       "Togo",
       "Benin",
       "Burkina Faso"
     ],
-    "answer": "Burkina Faso"
+    "answer": [
+      "Burkina Faso"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -110,11 +126,13 @@
     "difficulty": "easy",
     "options": [
       "Togo",
-      "C\u00f4te d'Ivoire",
+      "Côte d'Ivoire",
       "Benin",
       "Burkina Faso"
     ],
-    "answer": "Togo"
+    "answer": [
+      "Togo"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -125,9 +143,11 @@
       "Burkina Faso",
       "Togo",
       "Nigeria",
-      "C\u00f4te d'Ivoire"
+      "Côte d'Ivoire"
     ],
-    "answer": "C\u00f4te d'Ivoire"
+    "answer": [
+      "Côte d'Ivoire"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -140,7 +160,9 @@
       "Indian Ocean",
       "Red Sea"
     ],
-    "answer": "Atlantic Ocean"
+    "answer": [
+      "Atlantic Ocean"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -153,7 +175,9 @@
       "Semi-arid/Savannah",
       "Mediterranean"
     ],
-    "answer": "Semi-arid/Savannah"
+    "answer": [
+      "Semi-arid/Savannah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -166,7 +190,9 @@
       "Forest and savannah",
       "Tundra and forest"
     ],
-    "answer": "Forest and savannah"
+    "answer": [
+      "Forest and savannah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -179,7 +205,9 @@
       "Akosombo Dam",
       "Bui Dam"
     ],
-    "answer": "Akosombo Dam"
+    "answer": [
+      "Akosombo Dam"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -192,7 +220,9 @@
       "Temperate",
       "Polar"
     ],
-    "answer": "Tropical"
+    "answer": [
+      "Tropical"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -200,16 +230,18 @@
     "type": "mcq",
     "difficulty": "medium",
     "options": [
-      "Between 4\u00b0N and 11\u00b0N",
-      "Between 10\u00b0N and 20\u00b0N",
-      "Between 5\u00b0S and 5\u00b0N",
-      "Between 0\u00b0 and 5\u00b0N"
+      "Between 4°N and 11°N",
+      "Between 10°N and 20°N",
+      "Between 5°S and 5°N",
+      "Between 0° and 5°N"
     ],
-    "answer": "Between 4\u00b0N and 11\u00b0N"
+    "answer": [
+      "Between 4°N and 11°N"
+    ]
   },
   {
     "subject": "Social Studies",
-    "question": "What is the Greenwich Meridian (0\u00b0 longitude)?",
+    "question": "What is the Greenwich Meridian (0° longitude)?",
     "type": "mcq",
     "difficulty": "medium",
     "options": [
@@ -218,7 +250,9 @@
       "Line of longitude passing through Ghana",
       "Tropic of Cancer"
     ],
-    "answer": "Line of longitude passing through Ghana"
+    "answer": [
+      "Line of longitude passing through Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -229,9 +263,11 @@
       "Sekondi",
       "Accra",
       "Tema",
-      "None \u2014 it passes through rural areas"
+      "None — it passes through rural areas"
     ],
-    "answer": "Tema"
+    "answer": [
+      "Tema"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -244,7 +280,9 @@
       "A forest reserve",
       "A large drainage basin covering much of Ghana"
     ],
-    "answer": "A large drainage basin covering much of Ghana"
+    "answer": [
+      "A large drainage basin covering much of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -257,7 +295,9 @@
       "Tourism",
       "Mining"
     ],
-    "answer": "Livestock rearing and crop farming"
+    "answer": [
+      "Livestock rearing and crop farming"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -270,7 +310,9 @@
       "Tema",
       "Tamale"
     ],
-    "answer": "Kumasi"
+    "answer": [
+      "Kumasi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -283,7 +325,9 @@
       "Accra",
       "Sunyani"
     ],
-    "answer": "Kumasi"
+    "answer": [
+      "Kumasi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -291,12 +335,14 @@
     "type": "mcq",
     "difficulty": "medium",
     "options": [
-      "500,000 km\u00b2",
-      "138,000 km\u00b2",
-      "238,533 km\u00b2",
-      "98,000 km\u00b2"
+      "500,000 km²",
+      "138,000 km²",
+      "238,533 km²",
+      "98,000 km²"
     ],
-    "answer": "238,533 km\u00b2"
+    "answer": [
+      "238,533 km²"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -309,7 +355,9 @@
       "Tano River",
       "Black Volta"
     ],
-    "answer": "Volta River system"
+    "answer": [
+      "Volta River system"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -319,10 +367,12 @@
     "options": [
       "Within Ghana",
       "Within Ghana's eastern coast",
-      "North of Ghana \u2014 influences climate in northern Ghana",
+      "North of Ghana — influences climate in northern Ghana",
       "South of Ghana"
     ],
-    "answer": "North of Ghana \u2014 influences climate in northern Ghana"
+    "answer": [
+      "North of Ghana — influences climate in northern Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -335,7 +385,9 @@
       "1960",
       "1956"
     ],
-    "answer": "1957"
+    "answer": [
+      "1957"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -348,7 +400,9 @@
       "Hilla Limann",
       "J.B. Danquah"
     ],
-    "answer": "Kwame Nkrumah"
+    "answer": [
+      "Kwame Nkrumah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -361,7 +415,9 @@
       "6th March",
       "4th July"
     ],
-    "answer": "6th March"
+    "answer": [
+      "6th March"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -374,7 +430,9 @@
       "Grain Coast",
       "Gold Coast"
     ],
-    "answer": "Gold Coast"
+    "answer": [
+      "Gold Coast"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -387,7 +445,9 @@
       "Gain independence from colonial rule",
       "Join the UN"
     ],
-    "answer": "Gain independence from colonial rule"
+    "answer": [
+      "Gain independence from colonial rule"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -400,7 +460,9 @@
       "Hilla Limann",
       "J.A. Kufuor"
     ],
-    "answer": "Kwame Nkrumah"
+    "answer": [
+      "Kwame Nkrumah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -413,7 +475,9 @@
       "1969",
       "1960"
     ],
-    "answer": "1960"
+    "answer": [
+      "1960"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -426,7 +490,9 @@
       "Convention People's Party",
       "United Gold Coast Convention"
     ],
-    "answer": "United Gold Coast Convention"
+    "answer": [
+      "United Gold Coast Convention"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -439,7 +505,9 @@
       "1949",
       "1947"
     ],
-    "answer": "1949"
+    "answer": [
+      "1949"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -452,7 +520,9 @@
       "The shooting of ex-servicemen by police",
       "A football match"
     ],
-    "answer": "The shooting of ex-servicemen by police"
+    "answer": [
+      "The shooting of ex-servicemen by police"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -465,7 +535,9 @@
       "Six traditional rulers",
       "Six nationalist leaders including Nkrumah and Danquah"
     ],
-    "answer": "Six nationalist leaders including Nkrumah and Danquah"
+    "answer": [
+      "Six nationalist leaders including Nkrumah and Danquah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -478,7 +550,9 @@
       "A farming initiative",
       "A trade agreement"
     ],
-    "answer": "The 1966 military coup that ousted Nkrumah"
+    "answer": [
+      "The 1966 military coup that ousted Nkrumah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -491,7 +565,9 @@
       "National Liberation Movement",
       "National Liberation Council"
     ],
-    "answer": "National Liberation Council"
+    "answer": [
+      "National Liberation Council"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -504,7 +580,9 @@
       "Jerry John Rawlings",
       "Hilla Limann"
     ],
-    "answer": "Jerry John Rawlings"
+    "answer": [
+      "Jerry John Rawlings"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -517,7 +595,9 @@
       "Provisional National Defence Council",
       "People's National Defence Committee"
     ],
-    "answer": "Provisional National Defence Council"
+    "answer": [
+      "Provisional National Defence Council"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -530,7 +610,9 @@
       "2000",
       "1979"
     ],
-    "answer": "1992"
+    "answer": [
+      "1992"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -543,7 +625,9 @@
       "A war on hunger",
       "A food aid programme"
     ],
-    "answer": "Acheampong's farming initiative to achieve food self-sufficiency"
+    "answer": [
+      "Acheampong's farming initiative to achieve food self-sufficiency"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -556,7 +640,9 @@
       "Volta Railway",
       "Western Railway Line"
     ],
-    "answer": "Gold Coast Railway"
+    "answer": [
+      "Gold Coast Railway"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -569,7 +655,9 @@
       "Lord Mountbatten",
       "Lord Lister"
     ],
-    "answer": "Sir Charles Noble Arden-Clarke"
+    "answer": [
+      "Sir Charles Noble Arden-Clarke"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -582,7 +670,9 @@
       "President of the African Union",
       "Chair of the IMF"
     ],
-    "answer": "UN Secretary-General"
+    "answer": [
+      "UN Secretary-General"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -595,7 +685,9 @@
       "1969 constitution",
       "1992 constitution"
     ],
-    "answer": "1992 constitution"
+    "answer": [
+      "1992 constitution"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -608,7 +700,9 @@
       "Kwame Nkrumah",
       "Kofi Busia"
     ],
-    "answer": "Kwame Nkrumah"
+    "answer": [
+      "Kwame Nkrumah"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -621,7 +715,9 @@
       "1980",
       "1963"
     ],
-    "answer": "1975"
+    "answer": [
+      "1975"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -634,7 +730,9 @@
       "Accra",
       "Abuja"
     ],
-    "answer": "Abuja"
+    "answer": [
+      "Abuja"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -647,7 +745,9 @@
       "A colonial council",
       "The powerful Akan empire centred at Kumasi"
     ],
-    "answer": "The powerful Akan empire centred at Kumasi"
+    "answer": [
+      "The powerful Akan empire centred at Kumasi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -660,7 +760,9 @@
       "Monarchy",
       "Military dictatorship"
     ],
-    "answer": "Constitutional democracy"
+    "answer": [
+      "Constitutional democracy"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -673,7 +775,9 @@
       "3",
       "2"
     ],
-    "answer": "3"
+    "answer": [
+      "3"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -686,7 +790,9 @@
       "President, Parliament, Courts",
       "Executive, Military, Judiciary"
     ],
-    "answer": "Executive, Legislative, Judiciary"
+    "answer": [
+      "Executive, Legislative, Judiciary"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -699,7 +805,9 @@
       "People's Assembly",
       "Senate"
     ],
-    "answer": "Parliament of Ghana"
+    "answer": [
+      "Parliament of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -712,7 +820,9 @@
       "300",
       "200"
     ],
-    "answer": "275"
+    "answer": [
+      "275"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -725,7 +835,9 @@
       "4 years",
       "6 years"
     ],
-    "answer": "4 years"
+    "answer": [
+      "4 years"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -738,7 +850,9 @@
       "Unlimited",
       "3"
     ],
-    "answer": "2"
+    "answer": [
+      "2"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -751,7 +865,9 @@
       "18",
       "16"
     ],
-    "answer": "18"
+    "answer": [
+      "18"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -764,7 +880,9 @@
       "Electoral Commission",
       "Supreme Court"
     ],
-    "answer": "Electoral Commission"
+    "answer": [
+      "Electoral Commission"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -777,7 +895,9 @@
       "National Development Council",
       "New Democratic Congress"
     ],
-    "answer": "National Democratic Congress"
+    "answer": [
+      "National Democratic Congress"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -790,7 +910,9 @@
       "National People's Party",
       "New Patriotic Party"
     ],
-    "answer": "New Patriotic Party"
+    "answer": [
+      "New Patriotic Party"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -803,7 +925,9 @@
       "Lower court",
       "Trial court"
     ],
-    "answer": "Highest court"
+    "answer": [
+      "Highest court"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -816,7 +940,9 @@
       "Enforce laws",
       "Collect taxes"
     ],
-    "answer": "Interpret laws and ensure justice"
+    "answer": [
+      "Interpret laws and ensure justice"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -829,7 +955,9 @@
       "Judge cases",
       "Make laws and approve budget"
     ],
-    "answer": "Make laws and approve budget"
+    "answer": [
+      "Make laws and approve budget"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -842,7 +970,9 @@
       "A government ministry",
       "An electoral district represented by one MP"
     ],
-    "answer": "An electoral district represented by one MP"
+    "answer": [
+      "An electoral district represented by one MP"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -855,7 +985,9 @@
       "The main form of local government",
       "A traditional council"
     ],
-    "answer": "The main form of local government"
+    "answer": [
+      "The main form of local government"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -868,7 +1000,9 @@
       "Living in a country for 10 years",
       "Having a passport"
     ],
-    "answer": "Legal membership of a state with rights and duties"
+    "answer": [
+      "Legal membership of a state with rights and duties"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -881,7 +1015,9 @@
       "Basic rights all humans are entitled to",
       "Rights given by the government"
     ],
-    "answer": "Basic rights all humans are entitled to"
+    "answer": [
+      "Basic rights all humans are entitled to"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -894,7 +1030,9 @@
       "A UN document declaring rights of all people",
       "An ECOWAS agreement"
     ],
-    "answer": "A UN document declaring rights of all people"
+    "answer": [
+      "A UN document declaring rights of all people"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -907,7 +1045,9 @@
       "Principle that all are subject to the law equally",
       "Religious law"
     ],
-    "answer": "Principle that all are subject to the law equally"
+    "answer": [
+      "Principle that all are subject to the law equally"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -920,7 +1060,9 @@
       "Rule by the people through elected representatives",
       "Rule by the military"
     ],
-    "answer": "Rule by the people through elected representatives"
+    "answer": [
+      "Rule by the people through elected representatives"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -933,7 +1075,9 @@
       "A military code",
       "A list of citizens"
     ],
-    "answer": "The supreme law defining how a country is governed"
+    "answer": [
+      "The supreme law defining how a country is governed"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -946,7 +1090,9 @@
       "Division of government into three separate branches",
       "Giving power to local governments"
     ],
-    "answer": "Division of government into three separate branches"
+    "answer": [
+      "Division of government into three separate branches"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -959,7 +1105,9 @@
       "Police checkpoints",
       "Financial audit of government"
     ],
-    "answer": "System where branches of government limit each other's power"
+    "answer": [
+      "System where branches of government limit each other's power"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -972,7 +1120,9 @@
       "A political party official",
       "A court judge"
     ],
-    "answer": "An independent officer investigating complaints against government"
+    "answer": [
+      "An independent officer investigating complaints against government"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -985,7 +1135,9 @@
       "A political party",
       "A court"
     ],
-    "answer": "A body investigating human rights violations and corruption in Ghana"
+    "answer": [
+      "A body investigating human rights violations and corruption in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -998,7 +1150,9 @@
       "Ewe",
       "Ga-Dangme"
     ],
-    "answer": "Niger-Congo (Kwa)"
+    "answer": [
+      "Niger-Congo (Kwa)"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1011,7 +1165,9 @@
       "Dagbani",
       "Ewe"
     ],
-    "answer": "Twi"
+    "answer": [
+      "Twi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1024,7 +1180,9 @@
       "Otumfuo",
       "Nana"
     ],
-    "answer": "Nana"
+    "answer": [
+      "Nana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1037,7 +1195,9 @@
       "Okyenhene",
       "Asantehene"
     ],
-    "answer": "Asantehene"
+    "answer": [
+      "Asantehene"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1050,7 +1210,9 @@
       "A traditional dance",
       "A traditional woven cloth of the Akan"
     ],
-    "answer": "A traditional woven cloth of the Akan"
+    "answer": [
+      "A traditional woven cloth of the Akan"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1063,7 +1225,9 @@
       "A musical instrument",
       "Visual symbols representing concepts and aphorisms in Akan culture"
     ],
-    "answer": "Visual symbols representing concepts and aphorisms in Akan culture"
+    "answer": [
+      "Visual symbols representing concepts and aphorisms in Akan culture"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1076,7 +1240,9 @@
       "An Ashanti harvest festival",
       "An Ewe New Year celebration"
     ],
-    "answer": "A Ga harvest festival"
+    "answer": [
+      "A Ga harvest festival"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1089,7 +1255,9 @@
       "An Ewe fishing festival",
       "An Ashanti purification and harvest festival"
     ],
-    "answer": "An Ashanti purification and harvest festival"
+    "answer": [
+      "An Ashanti purification and harvest festival"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1102,7 +1270,9 @@
       "An Ashanti festival",
       "A Ga festival"
     ],
-    "answer": "A Fante deer-hunting festival"
+    "answer": [
+      "A Fante deer-hunting festival"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1115,7 +1285,9 @@
       "Christianity and Buddhism",
       "Islam and Hinduism"
     ],
-    "answer": "Christianity and Islam"
+    "answer": [
+      "Christianity and Islam"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1128,7 +1300,9 @@
       "A type of government",
       "A type of land ownership"
     ],
-    "answer": "System tracing ancestry through one parent"
+    "answer": [
+      "System tracing ancestry through one parent"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1141,7 +1315,9 @@
       "Property and status passed through the female line",
       "Inheritance by the eldest child only"
     ],
-    "answer": "Property and status passed through the female line"
+    "answer": [
+      "Property and status passed through the female line"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1154,7 +1330,9 @@
       "Inheritance through female line",
       "Royal inheritance only"
     ],
-    "answer": "Inheritance through male line"
+    "answer": [
+      "Inheritance through male line"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1167,7 +1345,9 @@
       "A broad family structure including uncles aunts cousins and grandparents",
       "A legal family arrangement"
     ],
-    "answer": "A broad family structure including uncles aunts cousins and grandparents"
+    "answer": [
+      "A broad family structure including uncles aunts cousins and grandparents"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1180,7 +1360,9 @@
       "A family unit of parents and their children",
       "A single-parent family"
     ],
-    "answer": "A family unit of parents and their children"
+    "answer": [
+      "A family unit of parents and their children"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1193,7 +1375,9 @@
       "International relations",
       "Cultural identity, conflict resolution, and community leadership"
     ],
-    "answer": "Cultural identity, conflict resolution, and community leadership"
+    "answer": [
+      "Cultural identity, conflict resolution, and community leadership"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1206,7 +1390,9 @@
       "A type of currency",
       "The sacred symbol of the Asante nation's soul and unity"
     ],
-    "answer": "The sacred symbol of the Asante nation's soul and unity"
+    "answer": [
+      "The sacred symbol of the Asante nation's soul and unity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1219,7 +1405,9 @@
       "Hausa",
       "French"
     ],
-    "answer": "English"
+    "answer": [
+      "English"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1232,7 +1420,9 @@
       "Tax registration",
       "Welcoming a child into the community and family"
     ],
-    "answer": "Welcoming a child into the community and family"
+    "answer": [
+      "Welcoming a child into the community and family"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1245,7 +1435,9 @@
       "Fufu, banku, kenkey, jollof rice",
       "Sushi and ramen"
     ],
-    "answer": "Fufu, banku, kenkey, jollof rice"
+    "answer": [
+      "Fufu, banku, kenkey, jollof rice"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1258,7 +1450,9 @@
       "Growth rate of population",
       "Ratio of males to females"
     ],
-    "answer": "Number of people per unit area"
+    "answer": [
+      "Number of people per unit area"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1271,7 +1465,9 @@
       "Number of births per 1000 per year",
       "Growth rate"
     ],
-    "answer": "Number of births per 1000 per year"
+    "answer": [
+      "Number of births per 1000 per year"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1284,7 +1480,9 @@
       "Fertility rate",
       "Migration rate"
     ],
-    "answer": "Number of deaths per 1000 per year"
+    "answer": [
+      "Number of deaths per 1000 per year"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1297,7 +1495,9 @@
       "Birth rate minus death rate",
       "Immigration rate"
     ],
-    "answer": "Birth rate minus death rate"
+    "answer": [
+      "Birth rate minus death rate"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1310,7 +1510,9 @@
       "Forest clearing",
       "Movement of people from rural to urban areas"
     ],
-    "answer": "Movement of people from rural to urban areas"
+    "answer": [
+      "Movement of people from rural to urban areas"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1323,7 +1525,9 @@
       "Forced displacement",
       "Movement of people from villages to cities"
     ],
-    "answer": "Movement of people from villages to cities"
+    "answer": [
+      "Movement of people from villages to cities"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1336,7 +1540,9 @@
       "Better schools",
       "Attractive features of destination"
     ],
-    "answer": "Negative conditions forcing people to leave origin"
+    "answer": [
+      "Negative conditions forcing people to leave origin"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1349,7 +1555,9 @@
       "Negative conditions at origin",
       "Poverty"
     ],
-    "answer": "Attractive features drawing people to destination"
+    "answer": [
+      "Attractive features drawing people to destination"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1362,7 +1570,9 @@
       "Rapid unsustainable increase in population",
       "Normal population growth"
     ],
-    "answer": "Rapid unsustainable increase in population"
+    "answer": [
+      "Rapid unsustainable increase in population"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1375,7 +1585,9 @@
       "Agricultural growth model",
       "Model of migration"
     ],
-    "answer": "Model showing stages of population change from high to low birth and death rates"
+    "answer": [
+      "Model showing stages of population change from high to low birth and death rates"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1388,7 +1600,9 @@
       "Maternal death rate",
       "Deaths of all people per 1000"
     ],
-    "answer": "Deaths of children under 1 year per 1000 live births"
+    "answer": [
+      "Deaths of children under 1 year per 1000 live births"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1401,7 +1615,9 @@
       "Maximum age achieved",
       "Average age at death"
     ],
-    "answer": "Average number of years a person is expected to live"
+    "answer": [
+      "Average number of years a person is expected to live"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1414,7 +1630,9 @@
       "Economic goals only",
       "Military goals"
     ],
-    "answer": "17 global goals to end poverty and protect the planet by 2030"
+    "answer": [
+      "17 global goals to end poverty and protect the planet by 2030"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1427,7 +1645,9 @@
       "A composite measure of health, education, and income",
       "An agricultural index"
     ],
-    "answer": "A composite measure of health, education, and income"
+    "answer": [
+      "A composite measure of health, education, and income"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1435,12 +1655,14 @@
     "type": "mcq",
     "difficulty": "easy",
     "options": [
-      "Gross Domestic Product \u2014 the total value of goods and services produced",
+      "Gross Domestic Product — the total value of goods and services produced",
       "Ghana Development Programme",
       "General Development Plan",
       "Global Democratic Policy"
     ],
-    "answer": "Gross Domestic Product \u2014 the total value of goods and services produced"
+    "answer": [
+      "Gross Domestic Product — the total value of goods and services produced"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1453,7 +1675,9 @@
       "Planting of new trees",
       "Removal or destruction of forests"
     ],
-    "answer": "Removal or destruction of forests"
+    "answer": [
+      "Removal or destruction of forests"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1466,7 +1690,9 @@
       "Forest expansion",
       "Creation of national parks"
     ],
-    "answer": "Process by which fertile land becomes desert"
+    "answer": [
+      "Process by which fertile land becomes desert"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1479,7 +1705,9 @@
       "Soil improvement",
       "Addition of fertiliser"
     ],
-    "answer": "Removal of topsoil by wind or water"
+    "answer": [
+      "Removal of topsoil by wind or water"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1492,7 +1720,9 @@
       "Forest regeneration",
       "Improvement of land"
     ],
-    "answer": "Decline in land quality due to human activities"
+    "answer": [
+      "Decline in land quality due to human activities"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1505,7 +1735,9 @@
       "A fishing method",
       "An agricultural practice"
     ],
-    "answer": "Illegal artisanal gold mining"
+    "answer": [
+      "Illegal artisanal gold mining"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1518,7 +1750,9 @@
       "Improved soil quality",
       "Forest regeneration"
     ],
-    "answer": "Pollution of water bodies and land degradation"
+    "answer": [
+      "Pollution of water bodies and land degradation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1531,7 +1765,9 @@
       "Natural seasonal variation",
       "Only rainfall changes"
     ],
-    "answer": "Long-term changes in global temperature and weather patterns"
+    "answer": [
+      "Long-term changes in global temperature and weather patterns"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1544,7 +1780,9 @@
       "Seasonal temperature changes",
       "Rise in Earth's average temperature due to greenhouse gases"
     ],
-    "answer": "Rise in Earth's average temperature due to greenhouse gases"
+    "answer": [
+      "Rise in Earth's average temperature due to greenhouse gases"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1557,7 +1795,9 @@
       "Natural disasters",
       "Burning of fossil fuels and deforestation"
     ],
-    "answer": "Burning of fossil fuels and deforestation"
+    "answer": [
+      "Burning of fossil fuels and deforestation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1570,7 +1810,9 @@
       "No effects",
       "Floods, droughts, reduced food security, coastal erosion"
     ],
-    "answer": "Floods, droughts, reduced food security, coastal erosion"
+    "answer": [
+      "Floods, droughts, reduced food security, coastal erosion"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1583,7 +1825,9 @@
       "Destruction of habitats",
       "Industrialisation"
     ],
-    "answer": "Protection and wise use of natural resources"
+    "answer": [
+      "Protection and wise use of natural resources"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1596,7 +1840,9 @@
       "A city park",
       "Protected area preserving wildlife and ecosystems"
     ],
-    "answer": "Protected area preserving wildlife and ecosystems"
+    "answer": [
+      "Protected area preserving wildlife and ecosystems"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1609,7 +1855,9 @@
       "Fishing",
       "A famous canopy walk and forest conservation"
     ],
-    "answer": "A famous canopy walk and forest conservation"
+    "answer": [
+      "A famous canopy walk and forest conservation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1622,7 +1870,9 @@
       "Ghana's largest national park for wildlife conservation",
       "Ghana's only oil refinery"
     ],
-    "answer": "Ghana's largest national park for wildlife conservation"
+    "answer": [
+      "Ghana's largest national park for wildlife conservation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1635,7 +1885,9 @@
       "A government body responsible for protecting the environment",
       "A political party"
     ],
-    "answer": "A government body protecting the environment"
+    "answer": [
+      "A government body protecting the environment"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1648,7 +1900,9 @@
       "15",
       "10"
     ],
-    "answer": "16"
+    "answer": [
+      "16"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1661,7 +1915,9 @@
       "Niger",
       "Senegal"
     ],
-    "answer": "Niger"
+    "answer": [
+      "Niger"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1674,7 +1930,9 @@
       "Ethiopia",
       "South Africa"
     ],
-    "answer": "Nigeria"
+    "answer": [
+      "Nigeria"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1687,7 +1945,9 @@
       "A football association",
       "A continental organisation of African states"
     ],
-    "answer": "A continental organisation of African states"
+    "answer": [
+      "A continental organisation of African states"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1700,7 +1960,9 @@
       "Cairo",
       "Nairobi"
     ],
-    "answer": "Addis Ababa"
+    "answer": [
+      "Addis Ababa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1713,7 +1975,9 @@
       "Economic Conference on West African Security",
       "East Coast West Africa Strategy"
     ],
-    "answer": "Economic Community of West African States"
+    "answer": [
+      "Economic Community of West African States"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1726,7 +1990,9 @@
       "UN membership",
       "Promote trade and economic integration in West Africa"
     ],
-    "answer": "Promote trade and economic integration in West Africa"
+    "answer": [
+      "Promote trade and economic integration in West Africa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1739,7 +2005,9 @@
       "A desert in South Africa",
       "A grassland area"
     ],
-    "answer": "World's largest hot desert located in North Africa"
+    "answer": [
+      "World's largest hot desert located in North Africa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1752,7 +2020,9 @@
       "Only fish",
       "Gold, oil, cocoa, timber, diamonds"
     ],
-    "answer": "Gold, oil, cocoa, timber, diamonds"
+    "answer": [
+      "Gold, oil, cocoa, timber, diamonds"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1765,7 +2035,9 @@
       "Cocoa",
       "Coffee"
     ],
-    "answer": "Cocoa"
+    "answer": [
+      "Cocoa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1778,7 +2050,9 @@
       "Food trade",
       "Oil trade"
     ],
-    "answer": "Trade in gold, salt, and other goods across the Sahara"
+    "answer": [
+      "Trade in gold, salt, and other goods across the Sahara"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1791,7 +2065,9 @@
       "Military power only",
       "Great wealth, trade (especially gold and salt), and learning"
     ],
-    "answer": "Great wealth, trade (especially gold and salt), and learning"
+    "answer": [
+      "Great wealth, trade (especially gold and salt), and learning"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1800,11 +2076,13 @@
     "difficulty": "medium",
     "options": [
       "Mansa Musa",
-      "Samori Tour\u00e9",
+      "Samori Touré",
       "Shaka Zulu",
       "Sundiata Keita"
     ],
-    "answer": "Mansa Musa"
+    "answer": [
+      "Mansa Musa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1817,7 +2095,9 @@
       "A Portuguese colony",
       "A coastal fishing empire"
     ],
-    "answer": "A powerful West African empire that replaced Mali"
+    "answer": [
+      "A powerful West African empire that replaced Mali"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1830,7 +2110,9 @@
       "A modern city with no historical significance",
       "A desert"
     ],
-    "answer": "An ancient city of learning and trade in Mali"
+    "answer": [
+      "An ancient city of learning and trade in Mali"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1843,7 +2125,9 @@
       "International trade",
       "Independence of nations"
     ],
-    "answer": "Control of one country over another, exploiting its resources"
+    "answer": [
+      "Control of one country over another, exploiting its resources"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1856,7 +2140,9 @@
       "A trade negotiation",
       "A meeting where European powers divided Africa among themselves"
     ],
-    "answer": "A meeting where European powers divided Africa among themselves"
+    "answer": [
+      "A meeting where European powers divided Africa among themselves"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1869,7 +2155,9 @@
       "Movement for political and cultural unity of African peoples worldwide",
       "Movement for African economic isolation"
     ],
-    "answer": "Movement for political and cultural unity of African peoples worldwide"
+    "answer": [
+      "Movement for political and cultural unity of African peoples worldwide"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1882,7 +2170,9 @@
       "Indirect control of developing nations through economic and political means",
       "Trade union"
     ],
-    "answer": "Indirect control of developing nations through economic and political means"
+    "answer": [
+      "Indirect control of developing nations through economic and political means"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1895,7 +2185,9 @@
       "A voluntary migration",
       "Exchange of goods between Africans"
     ],
-    "answer": "Forced removal and trading of Africans as property"
+    "answer": [
+      "Forced removal and trading of Africans as property"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1908,7 +2200,9 @@
       "Trade between three African nations",
       "Trade route between Europe, Africa, and the Americas involving slaves and goods"
     ],
-    "answer": "Trade route between Europe, Africa, and the Americas involving slaves and goods"
+    "answer": [
+      "Trade route between Europe, Africa, and the Americas involving slaves and goods"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1921,7 +2215,9 @@
       "Males having more power",
       "Women only working at home"
     ],
-    "answer": "Equal rights and opportunities for all genders"
+    "answer": [
+      "Equal rights and opportunities for all genders"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1934,7 +2230,9 @@
       "Work that deprives children of childhood and education",
       "Youth employment"
     ],
-    "answer": "Work that deprives children of childhood and education"
+    "answer": [
+      "Work that deprives children of childhood and education"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1947,7 +2245,9 @@
       "School exchange programmes",
       "Illegal movement or exploitation of children"
     ],
-    "answer": "Illegal movement or exploitation of children"
+    "answer": [
+      "Illegal movement or exploitation of children"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1960,7 +2260,9 @@
       "A naming ceremony",
       "A beneficial cultural practice"
     ],
-    "answer": "A harmful traditional practice involving cutting of female genitals"
+    "answer": [
+      "A harmful traditional practice involving cutting of female genitals"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1973,7 +2275,9 @@
       "A UN treaty defining children's rights",
       "An African Union document"
     ],
-    "answer": "A UN treaty defining children's rights"
+    "answer": [
+      "A UN treaty defining children's rights"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1986,7 +2290,9 @@
       "Unfair treatment of a person based on characteristics like race or gender",
       "Providing equal opportunities"
     ],
-    "answer": "Unfair treatment of a person based on characteristics like race or gender"
+    "answer": [
+      "Unfair treatment of a person based on characteristics like race or gender"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -1999,7 +2305,9 @@
       "A type of disease",
       "Having too much money"
     ],
-    "answer": "State of lacking basic necessities and income"
+    "answer": [
+      "State of lacking basic necessities and income"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2012,7 +2320,9 @@
       "Living below the minimum to meet basic survival needs",
       "Relative shortage"
     ],
-    "answer": "Living below the minimum to meet basic survival needs"
+    "answer": [
+      "Living below the minimum to meet basic survival needs"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2025,7 +2335,9 @@
       "Good governance",
       "Dishonest or fraudulent conduct by those in power"
     ],
-    "answer": "Dishonest or fraudulent conduct by those in power"
+    "answer": [
+      "Dishonest or fraudulent conduct by those in power"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2038,7 +2350,9 @@
       "International relations",
       "Replace government"
     ],
-    "answer": "Non-governmental organisations and citizens working for public good"
+    "answer": [
+      "Non-governmental organisations and citizens working for public good"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2049,9 +2363,11 @@
       "Military groups",
       "Government agencies",
       "International corporations",
-      "Non-Governmental Organisations \u2014 independent groups serving social causes"
+      "Non-Governmental Organisations — independent groups serving social causes"
     ],
-    "answer": "Non-Governmental Organisations \u2014 independent groups serving social causes"
+    "answer": [
+      "Non-Governmental Organisations — independent groups serving social causes"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2064,7 +2380,9 @@
       "Government health insurance for Ghanaian citizens",
       "A foreign aid programme"
     ],
-    "answer": "Government health insurance for Ghanaian citizens"
+    "answer": [
+      "Government health insurance for Ghanaian citizens"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2077,7 +2395,9 @@
       "A student loan",
       "An NGO"
     ],
-    "answer": "A fund for educational infrastructure development in Ghana"
+    "answer": [
+      "A fund for educational infrastructure development in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2090,7 +2410,9 @@
       "A private school policy",
       "Government policy providing free secondary education"
     ],
-    "answer": "Government policy providing free secondary education"
+    "answer": [
+      "Government policy providing free secondary education"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2103,7 +2425,9 @@
       "Restored multiparty democracy and set out rights and governance in Ghana",
       "Introduced colonial rule"
     ],
-    "answer": "Restored multiparty democracy and set out rights and governance in Ghana"
+    "answer": [
+      "Restored multiparty democracy and set out rights and governance in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2116,7 +2440,9 @@
       "Centralising power in Accra",
       "Reducing government size"
     ],
-    "answer": "Transfer of authority to local governments"
+    "answer": [
+      "Transfer of authority to local governments"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2129,7 +2455,9 @@
       "Enforce laws",
       "Collect taxes"
     ],
-    "answer": "Inform citizens, hold government accountable, and enable public debate"
+    "answer": [
+      "Inform citizens, hold government accountable, and enable public debate"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2142,7 +2470,9 @@
       "Only voting",
       "Paying any fine"
     ],
-    "answer": "The duties citizens have toward their community and state"
+    "answer": [
+      "The duties citizens have toward their community and state"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2155,7 +2485,9 @@
       "Compulsory contributions collected by government to fund public services",
       "A fine"
     ],
-    "answer": "Compulsory contributions collected by government to fund public services"
+    "answer": [
+      "Compulsory contributions collected by government to fund public services"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2168,7 +2500,9 @@
       "A court",
       "The body responsible for collecting taxes in Ghana"
     ],
-    "answer": "The body responsible for collecting taxes in Ghana"
+    "answer": [
+      "The body responsible for collecting taxes in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2181,7 +2515,9 @@
       "Christianity",
       "Traditional religion"
     ],
-    "answer": "Christianity"
+    "answer": [
+      "Christianity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2194,7 +2530,9 @@
       "A controversial judgment debt scandal",
       "A traditional ceremony"
     ],
-    "answer": "A controversial judgment debt scandal"
+    "answer": [
+      "A controversial judgment debt scandal"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2207,7 +2545,9 @@
       "War chief or king",
       "Golden land"
     ],
-    "answer": "War chief or king"
+    "answer": [
+      "War chief or king"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2220,7 +2560,9 @@
       "Krobo, Akwapim, Akyem",
       "Akyem, Denkyira, Adansi"
     ],
-    "answer": "Ashanti, Fante, Akwapim"
+    "answer": [
+      "Ashanti, Fante, Akwapim"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2233,7 +2575,9 @@
       "Traditional system of governance through hereditary chiefs",
       "A type of judicial court"
     ],
-    "answer": "Traditional system of governance through hereditary chiefs"
+    "answer": [
+      "Traditional system of governance through hereditary chiefs"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2246,7 +2590,9 @@
       "Parliament",
       "A museum"
     ],
-    "answer": "A national body for traditional rulers"
+    "answer": [
+      "A national body for traditional rulers"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2259,7 +2605,9 @@
       "Removal of a chief from power",
       "A traditional dance"
     ],
-    "answer": "Removal of a chief from power"
+    "answer": [
+      "Removal of a chief from power"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2272,7 +2620,9 @@
       "A traditional council",
       "The local government authority for the Accra metropolis"
     ],
-    "answer": "The local government authority for the Accra metropolis"
+    "answer": [
+      "The local government authority for the Accra metropolis"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2285,7 +2635,9 @@
       "North Africa Development Mission Organisation",
       "National Association of District Municipal Officers"
     ],
-    "answer": "National Agency for Disaster Management Operations"
+    "answer": [
+      "National Agency for Disaster Management Operations"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2298,7 +2650,9 @@
       "Arise and Advance",
       "God Bless Our Homeland Ghana"
     ],
-    "answer": "God Bless Our Homeland Ghana"
+    "answer": [
+      "God Bless Our Homeland Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2311,7 +2665,9 @@
       "Yellow, black, green",
       "Green, white, gold"
     ],
-    "answer": "Red, gold, green with black star"
+    "answer": [
+      "Red, gold, green with black star"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2324,7 +2680,9 @@
       "Military strength",
       "Agriculture"
     ],
-    "answer": "African emancipation and unity"
+    "answer": [
+      "African emancipation and unity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2337,7 +2695,9 @@
       "Courage",
       "Natural resources"
     ],
-    "answer": "Blood of those who died for independence"
+    "answer": [
+      "Blood of those who died for independence"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2350,7 +2710,9 @@
       "Mineral wealth",
       "Royalty"
     ],
-    "answer": "Mineral wealth"
+    "answer": [
+      "Mineral wealth"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2363,7 +2725,9 @@
       "Military",
       "Money"
     ],
-    "answer": "Ghana's forests and natural wealth"
+    "answer": [
+      "Ghana's forests and natural wealth"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2376,7 +2740,9 @@
       "An oath of loyalty to the nation and its values",
       "An ECOWAS declaration"
     ],
-    "answer": "An oath of loyalty to the nation and its values"
+    "answer": [
+      "An oath of loyalty to the nation and its values"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2389,7 +2755,9 @@
       "The national flag",
       "The official emblem of Ghana"
     ],
-    "answer": "The official emblem of Ghana"
+    "answer": [
+      "The official emblem of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2402,7 +2770,9 @@
       "Republic Day",
       "Army Day"
     ],
-    "answer": "Independence Day"
+    "answer": [
+      "Independence Day"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2412,10 +2782,12 @@
     "options": [
       "Army Day",
       "Independence Day",
-      "Republic Day \u2014 Ghana became a republic",
+      "Republic Day — Ghana became a republic",
       "Labour Day"
     ],
-    "answer": "Republic Day \u2014 Ghana became a republic"
+    "answer": [
+      "Republic Day — Ghana became a republic"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2428,7 +2800,9 @@
       "4th August",
       "1st May"
     ],
-    "answer": "1st May"
+    "answer": [
+      "1st May"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2441,7 +2815,9 @@
       "2 years",
       "5 years"
     ],
-    "answer": "4 years"
+    "answer": [
+      "4 years"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2454,7 +2830,9 @@
       "A government ministry",
       "A UN body"
     ],
-    "answer": "An international democracy support organisation"
+    "answer": [
+      "An international democracy support organisation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2467,7 +2845,9 @@
       "Committee on Human Rights and Administrative Justice",
       "Civil and Human Rights Advisory Justice"
     ],
-    "answer": "Commission for Human Rights and Administrative Justice"
+    "answer": [
+      "Commission for Human Rights and Administrative Justice"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2480,7 +2860,9 @@
       "Office investigating and prosecuting economic crimes",
       "CHRAJ"
     ],
-    "answer": "Office investigating and prosecuting economic crimes"
+    "answer": [
+      "Office investigating and prosecuting economic crimes"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2493,7 +2875,9 @@
       "NDC won but there was controversy",
       "All of the above"
     ],
-    "answer": "All of the above"
+    "answer": [
+      "All of the above"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2506,7 +2890,9 @@
       "A wedding ceremony",
       "Traditional ceremonies marking transition to adulthood"
     ],
-    "answer": "Traditional ceremonies marking transition to adulthood"
+    "answer": [
+      "Traditional ceremonies marking transition to adulthood"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2519,7 +2905,9 @@
       "Ga naming ceremony",
       "Akan puberty rites"
     ],
-    "answer": "Krobo female puberty rites"
+    "answer": [
+      "Krobo female puberty rites"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2532,7 +2920,9 @@
       "Movement within a city",
       "Seasonal movement"
     ],
-    "answer": "People leaving a country"
+    "answer": [
+      "People leaving a country"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2545,7 +2935,9 @@
       "Unemployment",
       "Loss of young people"
     ],
-    "answer": "Emigration of skilled or educated people to other countries"
+    "answer": [
+      "Emigration of skilled or educated people to other countries"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2558,7 +2950,9 @@
       "Government grant",
       "Money sent home by migrants to their families"
     ],
-    "answer": "Money sent home by migrants to their families"
+    "answer": [
+      "Money sent home by migrants to their families"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2571,7 +2965,9 @@
       "Development that does not consider the environment",
       "Industrial growth"
     ],
-    "answer": "Development meeting current needs without compromising future generations"
+    "answer": [
+      "Development meeting current needs without compromising future generations"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2584,7 +2980,9 @@
       "Goals set by Ghana",
       "Military development goals"
     ],
-    "answer": "8 UN goals to address global poverty by 2015"
+    "answer": [
+      "8 UN goals to address global poverty by 2015"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2597,7 +2995,9 @@
       "Planning family gatherings",
       "A government policy"
     ],
-    "answer": "Methods to control timing and number of children"
+    "answer": [
+      "Methods to control timing and number of children"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2610,7 +3010,9 @@
       "More children to farm",
       "Better care and education for each child"
     ],
-    "answer": "Better care and education for each child"
+    "answer": [
+      "Better care and education for each child"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2623,7 +3025,9 @@
       "Pregnancy in women over 30",
       "Pregnancy in girls below 20"
     ],
-    "answer": "Pregnancy in girls below 20"
+    "answer": [
+      "Pregnancy in girls below 20"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2636,7 +3040,9 @@
       "Pressure from parents",
       "Government pressure"
     ],
-    "answer": "Influence from age-mates to behave in certain ways"
+    "answer": [
+      "Influence from age-mates to behave in certain ways"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2649,7 +3055,9 @@
       "A bacterial infection",
       "A sexually transmitted disease with major social and economic impacts"
     ],
-    "answer": "A sexually transmitted disease with major social and economic impacts"
+    "answer": [
+      "A sexually transmitted disease with major social and economic impacts"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2662,7 +3070,9 @@
       "Abstain, Be faithful, use Condom",
       "Avoid Bodily Contact"
     ],
-    "answer": "Abstain, Be faithful, use Condom"
+    "answer": [
+      "Abstain, Be faithful, use Condom"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2675,7 +3085,9 @@
       "Provides human capital, reduces poverty, improves health",
       "No role"
     ],
-    "answer": "Provides human capital, reduces poverty, improves health"
+    "answer": [
+      "Provides human capital, reduces poverty, improves health"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2688,7 +3100,9 @@
       "Ability to read and write",
       "Being multilingual"
     ],
-    "answer": "Ability to read and write"
+    "answer": [
+      "Ability to read and write"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2701,7 +3115,9 @@
       "Informal is illegal",
       "Formal is smaller"
     ],
-    "answer": "Formal: regulated, taxed; Informal: unregistered, untaxed"
+    "answer": [
+      "Formal: regulated, taxed; Informal: unregistered, untaxed"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2714,7 +3130,9 @@
       "Working for a company",
       "Starting and managing a business venture"
     ],
-    "answer": "Starting and managing a business venture"
+    "answer": [
+      "Starting and managing a business venture"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2727,7 +3145,9 @@
       "Individual farming",
       "Government farming"
     ],
-    "answer": "A group of farmers working together to share resources"
+    "answer": [
+      "A group of farmers working together to share resources"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2740,7 +3160,9 @@
       "Only a small part of economy",
       "Provides employment, food, and export earnings"
     ],
-    "answer": "Provides employment, food, and export earnings"
+    "answer": [
+      "Provides employment, food, and export earnings"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2753,7 +3175,9 @@
       "Farming for export",
       "Government farming"
     ],
-    "answer": "Farming primarily for the farmer's own consumption"
+    "answer": [
+      "Farming primarily for the farmer's own consumption"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2766,7 +3190,9 @@
       "Farming crops primarily for sale",
       "Farming for food only"
     ],
-    "answer": "Farming crops primarily for sale"
+    "answer": [
+      "Farming crops primarily for sale"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2779,7 +3205,9 @@
       "Coal and iron",
       "Only cocoa"
     ],
-    "answer": "Gold, diamonds, bauxite, manganese, oil"
+    "answer": [
+      "Gold, diamonds, bauxite, manganese, oil"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2792,7 +3220,9 @@
       "Provides energy revenue for development",
       "No social impact"
     ],
-    "answer": "Provides energy revenue for development"
+    "answer": [
+      "Provides energy revenue for development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2805,7 +3235,9 @@
       "A gold mine",
       "An agricultural scheme"
     ],
-    "answer": "Ghana's first oil discovery site off the Western Region coast"
+    "answer": [
+      "Ghana's first oil discovery site off the Western Region coast"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2818,7 +3250,9 @@
       "Ghana's main industrial and port city near Accra",
       "Ghana's capital city"
     ],
-    "answer": "Ghana's main industrial and port city near Accra"
+    "answer": [
+      "Ghana's main industrial and port city near Accra"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2831,7 +3265,9 @@
       "Gold mining",
       "A tourist destination"
     ],
-    "answer": "A major port and oil industry hub"
+    "answer": [
+      "A major port and oil industry hub"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2844,7 +3280,9 @@
       "A historic railway",
       "An international airport road"
     ],
-    "answer": "Ghana's only toll road connecting Accra to Tema"
+    "answer": [
+      "Ghana's only toll road connecting Accra to Tema"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2857,7 +3295,9 @@
       "An electoral body",
       "Body responsible for national ID card registration"
     ],
-    "answer": "Body responsible for national ID card registration"
+    "answer": [
+      "Body responsible for national ID card registration"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2870,7 +3310,9 @@
       "A colonial charter",
       "Ghana's first constitution"
     ],
-    "answer": "The current supreme law of Ghana"
+    "answer": [
+      "The current supreme law of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2883,7 +3325,9 @@
       "Protects the constitution from overthrow",
       "Establishes Parliament"
     ],
-    "answer": "Protects the constitution from overthrow"
+    "answer": [
+      "Protects the constitution from overthrow"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2896,7 +3340,9 @@
       "A trade union",
       "A body set up to address human rights abuses under military regimes"
     ],
-    "answer": "A body set up to address human rights abuses under military regimes"
+    "answer": [
+      "A body set up to address human rights abuses under military regimes"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2909,7 +3355,9 @@
       "Register businesses",
       "Organise and supervise elections in Ghana"
     ],
-    "answer": "Organise and supervise elections in Ghana"
+    "answer": [
+      "Organise and supervise elections in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2922,7 +3370,9 @@
       "Development only in cities",
       "Improvement of the living standards of a community"
     ],
-    "answer": "Improvement of the living standards of a community"
+    "answer": [
+      "Improvement of the living standards of a community"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2935,7 +3385,9 @@
       "Paid government service",
       "Forced labour"
     ],
-    "answer": "Unpaid work done for the benefit of others"
+    "answer": [
+      "Unpaid work done for the benefit of others"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2948,7 +3400,9 @@
       "An NGO",
       "A sports body"
     ],
-    "answer": "Government body responsible for youth development in Ghana"
+    "answer": [
+      "Government body responsible for youth development in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2961,7 +3415,9 @@
       "Barter exchange",
       "Trade within a country"
     ],
-    "answer": "Exchange of goods and services between countries"
+    "answer": [
+      "Exchange of goods and services between countries"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2974,7 +3430,9 @@
       "Exchange rate",
       "Total foreign debt"
     ],
-    "answer": "Difference between value of exports and imports"
+    "answer": [
+      "Difference between value of exports and imports"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -2987,7 +3445,9 @@
       "Imports exceed exports",
       "Exports exceed imports"
     ],
-    "answer": "Imports exceed exports"
+    "answer": [
+      "Imports exceed exports"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3000,7 +3460,9 @@
       "Imports exceed exports",
       "Equal trade"
     ],
-    "answer": "Exports exceed imports"
+    "answer": [
+      "Exports exceed imports"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3013,7 +3475,9 @@
       "Trade between countries",
       "Remittances"
     ],
-    "answer": "Financial or material assistance given by one country to another"
+    "answer": [
+      "Financial or material assistance given by one country to another"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3026,7 +3490,9 @@
       "NGOs",
       "Private banks"
     ],
-    "answer": "International financial institutions supporting development"
+    "answer": [
+      "International financial institutions supporting development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3039,7 +3505,9 @@
       "International organisation promoting peace, security, and cooperation",
       "A western military alliance"
     ],
-    "answer": "International organisation promoting peace, security, and cooperation"
+    "answer": [
+      "International organisation promoting peace, security, and cooperation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3052,7 +3520,9 @@
       "The UN body responsible for international peace and security",
       "An economic body"
     ],
-    "answer": "The UN body responsible for international peace and security"
+    "answer": [
+      "The UN body responsible for international peace and security"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3065,7 +3535,9 @@
       "War operations",
       "Military training"
     ],
-    "answer": "Deployment of forces to maintain or restore peace in conflict areas"
+    "answer": [
+      "Deployment of forces to maintain or restore peace in conflict areas"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3078,7 +3550,9 @@
       "Ghana has never contributed",
       "Ghana recently started"
     ],
-    "answer": "Ghana is among the top UN peacekeeping troop contributors"
+    "answer": [
+      "Ghana is among the top UN peacekeeping troop contributors"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3091,7 +3565,9 @@
       "A West African group",
       "A military alliance"
     ],
-    "answer": "An international organisation of countries mostly former British territories"
+    "answer": [
+      "An international organisation of countries mostly former British territories"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3104,7 +3580,9 @@
       "Only economic integration",
       "Isolation of countries"
     ],
-    "answer": "Increasing interconnection of countries through trade, culture, and communication"
+    "answer": [
+      "Increasing interconnection of countries through trade, culture, and communication"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3117,7 +3595,9 @@
       "Cultural exchange",
       "Dominance of one culture over others, especially through media"
     ],
-    "answer": "Dominance of one culture over others, especially through media"
+    "answer": [
+      "Dominance of one culture over others, especially through media"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3130,7 +3610,9 @@
       "Rejection of other cultures",
       "Process of adopting elements of another culture"
     ],
-    "answer": "Process of adopting elements of another culture"
+    "answer": [
+      "Process of adopting elements of another culture"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3143,7 +3625,9 @@
       "A type of election for a president",
       "A parliamentary session"
     ],
-    "answer": "A direct vote by citizens on a specific question"
+    "answer": [
+      "A direct vote by citizens on a specific question"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3156,7 +3640,9 @@
       "General election",
       "Presidential election"
     ],
-    "answer": "Election to fill a seat made vacant before the next general election"
+    "answer": [
+      "Election to fill a seat made vacant before the next general election"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3169,7 +3655,9 @@
       "The President",
       "The Attorney General"
     ],
-    "answer": "The presiding officer of Parliament"
+    "answer": [
+      "The presiding officer of Parliament"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3182,7 +3670,9 @@
       "Chief Justice",
       "Government's chief legal adviser and minister responsible for justice"
     ],
-    "answer": "Government's chief legal adviser and minister responsible for justice"
+    "answer": [
+      "Government's chief legal adviser and minister responsible for justice"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3195,7 +3685,9 @@
       "A type of cabinet",
       "Advisory body that counsels the President on national matters"
     ],
-    "answer": "Advisory body that counsels the President on national matters"
+    "answer": [
+      "Advisory body that counsels the President on national matters"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3208,7 +3700,9 @@
       "A finance ministry",
       "A court"
     ],
-    "answer": "Parliament's committee that oversees government expenditure"
+    "answer": [
+      "Parliament's committee that oversees government expenditure"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3221,7 +3715,9 @@
       "Audit government accounts and report to Parliament",
       "Investigate corruption"
     ],
-    "answer": "Audit government accounts and report to Parliament"
+    "answer": [
+      "Audit government accounts and report to Parliament"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3234,7 +3730,9 @@
       "A commercial bank",
       "Ghana's central bank responsible for monetary policy"
     ],
-    "answer": "Ghana's central bank responsible for monetary policy"
+    "answer": [
+      "Ghana's central bank responsible for monetary policy"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3247,7 +3745,9 @@
       "Central bank's management of money supply and interest rates",
       "Trade policy"
     ],
-    "answer": "Central bank's management of money supply and interest rates"
+    "answer": [
+      "Central bank's management of money supply and interest rates"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3260,7 +3760,9 @@
       "Government's use of spending and taxation to influence economy",
       "Monetary policy"
     ],
-    "answer": "Government's use of spending and taxation to influence economy"
+    "answer": [
+      "Government's use of spending and taxation to influence economy"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3273,7 +3775,9 @@
       "General rise in price level over time",
       "Economic growth"
     ],
-    "answer": "General rise in price level over time"
+    "answer": [
+      "General rise in price level over time"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3286,7 +3790,9 @@
       "Rate at which one currency can be exchanged for another",
       "Inflation rate"
     ],
-    "answer": "Rate at which one currency can be exchanged for another"
+    "answer": [
+      "Rate at which one currency can be exchanged for another"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3299,7 +3805,9 @@
       "Naira",
       "Cedi"
     ],
-    "answer": "Cedi"
+    "answer": [
+      "Cedi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3312,7 +3820,9 @@
       "Cause conflict",
       "Control the economy"
     ],
-    "answer": "Represent different viewpoints and compete for power through elections"
+    "answer": [
+      "Represent different viewpoints and compete for power through elections"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3325,7 +3835,9 @@
       "Types of political parties",
       "Organisations influencing government without seeking election"
     ],
-    "answer": "Organisations influencing government without seeking election"
+    "answer": [
+      "Organisations influencing government without seeking election"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3338,7 +3850,9 @@
       "An organisation protecting workers' rights",
       "A business association"
     ],
-    "answer": "An organisation protecting workers' rights"
+    "answer": [
+      "An organisation protecting workers' rights"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3351,7 +3865,9 @@
       "The national trade union federation in Ghana",
       "A business group"
     ],
-    "answer": "The national trade union federation in Ghana"
+    "answer": [
+      "The national trade union federation in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3364,7 +3880,9 @@
       "Discrimination",
       "Policies favouring underrepresented groups to address inequality"
     ],
-    "answer": "Policies favouring underrepresented groups to address inequality"
+    "answer": [
+      "Policies favouring underrepresented groups to address inequality"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3377,7 +3895,9 @@
       "Differences in opportunities and outcomes between men and women",
       "Voting differences"
     ],
-    "answer": "Differences in opportunities and outcomes between men and women"
+    "answer": [
+      "Differences in opportunities and outcomes between men and women"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3390,7 +3910,9 @@
       "Rural-urban migration in search of better opportunities",
       "Natural population growth only"
     ],
-    "answer": "Rural-urban migration in search of better opportunities"
+    "answer": [
+      "Rural-urban migration in search of better opportunities"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3403,7 +3925,9 @@
       "Better employment only",
       "Traffic congestion, slums, pollution, inadequate housing"
     ],
-    "answer": "Traffic congestion, slums, pollution, inadequate housing"
+    "answer": [
+      "Traffic congestion, slums, pollution, inadequate housing"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3416,7 +3940,9 @@
       "A planned residential area",
       "An area of poor housing with overcrowding and poor sanitation"
     ],
-    "answer": "An area of poor housing with overcrowding and poor sanitation"
+    "answer": [
+      "An area of poor housing with overcrowding and poor sanitation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3429,7 +3955,9 @@
       "A suburb in Kumasi",
       "A densely populated low-income area in Accra"
     ],
-    "answer": "A densely populated low-income area in Accra"
+    "answer": [
+      "A densely populated low-income area in Accra"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3442,7 +3970,9 @@
       "Healthy population is more productive and contributes to economic growth",
       "Only social benefit"
     ],
-    "answer": "Healthy population is more productive and contributes to economic growth"
+    "answer": [
+      "Healthy population is more productive and contributes to economic growth"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3455,7 +3985,9 @@
       "Normal diet",
       "Vegetarianism"
     ],
-    "answer": "Deficiency or excess of nutrients impeding health"
+    "answer": [
+      "Deficiency or excess of nutrients impeding health"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3468,7 +4000,9 @@
       "Conditions and practices relating to health, especially sewage and clean water",
       "Food production"
     ],
-    "answer": "Conditions and practices relating to health, especially sewage and clean water"
+    "answer": [
+      "Conditions and practices relating to health, especially sewage and clean water"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3481,7 +4015,9 @@
       "Not important",
       "Prevents waterborne diseases and supports health and development"
     ],
-    "answer": "Prevents waterborne diseases and supports health and development"
+    "answer": [
+      "Prevents waterborne diseases and supports health and development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3494,7 +4030,9 @@
       "Genetic diseases",
       "Diseases from food"
     ],
-    "answer": "Diseases spread through contaminated water"
+    "answer": [
+      "Diseases spread through contaminated water"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3505,9 +4043,11 @@
       "Areas with no public toilets",
       "Designation for clean cities only",
       "A type of toilet",
-      "Areas where no one defecates in the open \u2014 a sanitation milestone"
+      "Areas where no one defecates in the open — a sanitation milestone"
     ],
-    "answer": "Areas where no one defecates in the open \u2014 a sanitation milestone"
+    "answer": [
+      "Areas where no one defecates in the open — a sanitation milestone"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3520,7 +4060,9 @@
       "An official count of a country's population",
       "A land survey"
     ],
-    "answer": "An official count of a country's population"
+    "answer": [
+      "An official count of a country's population"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3533,7 +4075,9 @@
       "Government body responsible for collecting and analysing national data",
       "Government body collecting and analysing national data"
     ],
-    "answer": "Government body collecting and analysing national data"
+    "answer": [
+      "Government body collecting and analysing national data"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3546,7 +4090,9 @@
       "Surplus food production",
       "Government food reserves only"
     ],
-    "answer": "Reliable access to sufficient, nutritious food"
+    "answer": [
+      "Reliable access to sufficient, nutritious food"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3554,12 +4100,14 @@
     "type": "mcq",
     "difficulty": "medium",
     "options": [
-      "Livelihood Empowerment Against Poverty \u2014 cash transfers to poor households",
+      "Livelihood Empowerment Against Poverty — cash transfers to poor households",
       "A sports programme",
       "A UN programme",
       "A farming initiative"
     ],
-    "answer": "Livelihood Empowerment Against Poverty \u2014 cash transfers to poor households"
+    "answer": [
+      "Livelihood Empowerment Against Poverty — cash transfers to poor households"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3572,7 +4120,9 @@
       "Only health insurance",
       "Only unemployment benefits"
     ],
-    "answer": "Policies and programmes protecting individuals from poverty and risk"
+    "answer": [
+      "Policies and programmes protecting individuals from poverty and risk"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3585,7 +4135,9 @@
       "Only in agriculture",
       "Only domestic roles"
     ],
-    "answer": "Women contribute in agriculture, trade, family care, and increasingly in politics"
+    "answer": [
+      "Women contribute in agriculture, trade, family care, and increasingly in politics"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3598,7 +4150,9 @@
       "Civic education",
       "Religious instruction only"
     ],
-    "answer": "Teaching values, ethics, and good character"
+    "answer": [
+      "Teaching values, ethics, and good character"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3611,7 +4165,9 @@
       "Love of one's country and willingness to serve it",
       "Supporting wars"
     ],
-    "answer": "Love of one's country and willingness to serve it"
+    "answer": [
+      "Love of one's country and willingness to serve it"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3624,7 +4180,9 @@
       "Military discipline",
       "Religious virtues only"
     ],
-    "answer": "Qualities such as honesty, responsibility, and respect for others and the law"
+    "answer": [
+      "Qualities such as honesty, responsibility, and respect for others and the law"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3637,7 +4195,9 @@
       "The bonds that hold a community together in solidarity",
       "Conflict in society"
     ],
-    "answer": "The bonds that hold a community together in solidarity"
+    "answer": [
+      "The bonds that hold a community together in solidarity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3650,7 +4210,9 @@
       "Only ethnic unity",
       "Political unity only"
     ],
-    "answer": "The coming together of all people in a nation for common goals"
+    "answer": [
+      "The coming together of all people in a nation for common goals"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3663,7 +4225,9 @@
       "A racial category only",
       "Shared cultural identity, ancestry, language, or tradition"
     ],
-    "answer": "Shared cultural identity, ancestry, language, or tradition"
+    "answer": [
+      "Shared cultural identity, ancestry, language, or tradition"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3676,7 +4240,9 @@
       "Only Akan",
       "Akan, Mole-Dagbani, Ewe, Ga-Dangme, and others"
     ],
-    "answer": "Akan, Mole-Dagbani, Ewe, Ga-Dangme, and others"
+    "answer": [
+      "Akan, Mole-Dagbani, Ewe, Ga-Dangme, and others"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3689,7 +4255,9 @@
       "A cultural celebration",
       "Ethnic diversity"
     ],
-    "answer": "Loyalty to a tribe that leads to unfair treatment of others"
+    "answer": [
+      "Loyalty to a tribe that leads to unfair treatment of others"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3702,7 +4270,9 @@
       "Immigration",
       "Love of foreigners"
     ],
-    "answer": "Fear or hatred of foreigners"
+    "answer": [
+      "Fear or hatred of foreigners"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3715,7 +4285,9 @@
       "Ignoring others",
       "Acceptance of people with different views or backgrounds"
     ],
-    "answer": "Acceptance of people with different views or backgrounds"
+    "answer": [
+      "Acceptance of people with different views or backgrounds"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3728,7 +4300,9 @@
       "Police action only",
       "Process of resolving disagreements peacefully"
     ],
-    "answer": "Process of resolving disagreements peacefully"
+    "answer": [
+      "Process of resolving disagreements peacefully"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3741,7 +4315,9 @@
       "Government ruling",
       "A type of court"
     ],
-    "answer": "Third-party assisted negotiation to resolve disputes"
+    "answer": [
+      "Third-party assisted negotiation to resolve disputes"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3754,7 +4330,9 @@
       "Mediation with a judge",
       "Formal dispute resolution where an arbitrator makes a binding decision"
     ],
-    "answer": "Formal dispute resolution where an arbitrator makes a binding decision"
+    "answer": [
+      "Formal dispute resolution where an arbitrator makes a binding decision"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3767,7 +4345,9 @@
       "Both are democracies",
       "Monarchy: hereditary head of state; Republic: elected head of state"
     ],
-    "answer": "Monarchy: hereditary head of state; Republic: elected head of state"
+    "answer": [
+      "Monarchy: hereditary head of state; Republic: elected head of state"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3780,7 +4360,9 @@
       "Stool house",
       "Ahenfie"
     ],
-    "answer": "Ahenfie"
+    "answer": [
+      "Ahenfie"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3793,7 +4375,9 @@
       "A dance",
       "A funeral"
     ],
-    "answer": "A gathering in honour of a chief"
+    "answer": [
+      "A gathering in honour of a chief"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3806,7 +4390,9 @@
       "The military forces of Ghana including army, navy, and air force",
       "Only the army"
     ],
-    "answer": "The military forces of Ghana including army, navy, and air force"
+    "answer": [
+      "The military forces of Ghana including army, navy, and air force"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3819,7 +4405,9 @@
       "Military body",
       "A court"
     ],
-    "answer": "The civilian law enforcement agency of Ghana"
+    "answer": [
+      "The civilian law enforcement agency of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3832,7 +4420,9 @@
       "Managing entry and exit of people across Ghana's borders",
       "Healthcare"
     ],
-    "answer": "Managing entry and exit of people across Ghana's borders"
+    "answer": [
+      "Managing entry and exit of people across Ghana's borders"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3845,7 +4435,9 @@
       "An official travel document issued by a government",
       "A driving licence"
     ],
-    "answer": "An official travel document issued by a government"
+    "answer": [
+      "An official travel document issued by a government"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3858,7 +4450,9 @@
       "Permission to enter a foreign country",
       "A travel document"
     ],
-    "answer": "Permission to enter a foreign country"
+    "answer": [
+      "Permission to enter a foreign country"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3871,7 +4465,9 @@
       "New Economic Plan for Africa's Development",
       "New Partnership for Africa's Development"
     ],
-    "answer": "New Partnership for Africa's Development"
+    "answer": [
+      "New Partnership for Africa's Development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3884,7 +4480,9 @@
       "An ECOWAS plan",
       "A UN plan"
     ],
-    "answer": "Africa's 50-year development blueprint by the African Union"
+    "answer": [
+      "Africa's 50-year development blueprint by the African Union"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3897,7 +4495,9 @@
       "Economic competition",
       "Military conquest"
     ],
-    "answer": "Maintain international peace, promote human rights, foster development"
+    "answer": [
+      "Maintain international peace, promote human rights, foster development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3910,7 +4510,9 @@
       "United Nations Educational, Scientific and Cultural Organisation",
       "United Nations Economic Support Commission"
     ],
-    "answer": "United Nations Educational, Scientific and Cultural Organisation"
+    "answer": [
+      "United Nations Educational, Scientific and Cultural Organisation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3923,7 +4525,9 @@
       "UN International Centre for Education",
       "United Nations International Children's Emergency Fund"
     ],
-    "answer": "United Nations International Children's Emergency Fund"
+    "answer": [
+      "United Nations International Children's Emergency Fund"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3936,7 +4540,9 @@
       "World Health Organisation",
       "World Heritage Office"
     ],
-    "answer": "World Health Organisation"
+    "answer": [
+      "World Health Organisation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3949,7 +4555,9 @@
       "Federal Agriculture Office",
       "Food and Agriculture Organisation"
     ],
-    "answer": "Food and Agriculture Organisation"
+    "answer": [
+      "Food and Agriculture Organisation"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3962,7 +4570,9 @@
       "International Commerce Commission",
       "International Communications Council"
     ],
-    "answer": "International Criminal Court"
+    "answer": [
+      "International Criminal Court"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3975,7 +4585,9 @@
       "Try individuals accused of war crimes and crimes against humanity",
       "Settle trade disputes"
     ],
-    "answer": "Try individuals accused of war crimes and crimes against humanity"
+    "answer": [
+      "Try individuals accused of war crimes and crimes against humanity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -3988,7 +4600,9 @@
       "An African alliance",
       "An economic union"
     ],
-    "answer": "A group of nations not formally aligned with major power blocs"
+    "answer": [
+      "A group of nations not formally aligned with major power blocs"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4001,7 +4615,9 @@
       "Aid from many countries",
       "NGO aid"
     ],
-    "answer": "Aid given from one country directly to another"
+    "answer": [
+      "Aid given from one country directly to another"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4014,7 +4630,9 @@
       "Aid given through international organisations like the UN",
       "Military aid"
     ],
-    "answer": "Aid given through international organisations like the UN"
+    "answer": [
+      "Aid given through international organisations like the UN"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4027,7 +4645,9 @@
       "Unconditional loans",
       "Humanitarian assistance"
     ],
-    "answer": "Requirements attached to receiving foreign aid"
+    "answer": [
+      "Requirements attached to receiving foreign aid"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4040,7 +4660,9 @@
       "Large accumulation of national debt that hampers development",
       "Low taxes"
     ],
-    "answer": "Large accumulation of national debt that hampers development"
+    "answer": [
+      "Large accumulation of national debt that hampers development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4053,7 +4675,9 @@
       "Agricultural policy",
       "Infrastructure improvement"
     ],
-    "answer": "Economic reforms required by IMF/World Bank for loans"
+    "answer": [
+      "Economic reforms required by IMF/World Bank for loans"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4066,7 +4690,9 @@
       "A trade agreement",
       "A set of free-market policy prescriptions promoted by IMF and World Bank"
     ],
-    "answer": "A set of free-market policy prescriptions promoted by IMF and World Bank"
+    "answer": [
+      "A set of free-market policy prescriptions promoted by IMF and World Bank"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4079,7 +4705,9 @@
       "Trade without tariffs",
       "Trade with no conditions"
     ],
-    "answer": "Trade system ensuring better prices and rights for producers in developing countries"
+    "answer": [
+      "Trade system ensuring better prices and rights for producers in developing countries"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4092,7 +4720,9 @@
       "Free trade",
       "Policy of protecting domestic industries from foreign competition through tariffs"
     ],
-    "answer": "Policy of protecting domestic industries from foreign competition through tariffs"
+    "answer": [
+      "Policy of protecting domestic industries from foreign competition through tariffs"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4105,7 +4735,9 @@
       "A currency exchange rate",
       "An export subsidy"
     ],
-    "answer": "A tax on imported goods"
+    "answer": [
+      "A tax on imported goods"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4118,7 +4750,9 @@
       "A subsidy",
       "An export ban"
     ],
-    "answer": "A limit on the amount of a product that can be imported"
+    "answer": [
+      "A limit on the amount of a product that can be imported"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4131,7 +4765,9 @@
       "Ability to produce goods at lower opportunity cost than others",
       "Having the most resources"
     ],
-    "answer": "Ability to produce goods at lower opportunity cost than others"
+    "answer": [
+      "Ability to produce goods at lower opportunity cost than others"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4144,7 +4780,9 @@
       "Only fish",
       "Cotton and coffee"
     ],
-    "answer": "Gold, cocoa, and timber"
+    "answer": [
+      "Gold, cocoa, and timber"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4157,7 +4795,9 @@
       "A chief's palace",
       "A modern hotel"
     ],
-    "answer": "A former slave trading post and now a museum in Ghana"
+    "answer": [
+      "A former slave trading post and now a museum in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4170,7 +4810,9 @@
       "A military fort",
       "The oldest European building in sub-Saharan Africa and former slave fort in Ghana"
     ],
-    "answer": "The oldest European building in sub-Saharan Africa and former slave fort in Ghana"
+    "answer": [
+      "The oldest European building in sub-Saharan Africa and former slave fort in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4183,7 +4825,9 @@
       "British",
       "Dutch"
     ],
-    "answer": "Portuguese"
+    "answer": [
+      "Portuguese"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4196,7 +4840,9 @@
       "A border crossing",
       "A historical door in Accra"
     ],
-    "answer": "The door slaves passed through when boarded onto ships"
+    "answer": [
+      "The door slaves passed through when boarded onto ships"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4209,7 +4855,9 @@
       "Cultural exchange",
       "Education"
     ],
-    "answer": "Exploitation of Africa's natural resources and markets"
+    "answer": [
+      "Exploitation of Africa's natural resources and markets"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4222,7 +4870,9 @@
       "Military rule",
       "Democratic rule"
     ],
-    "answer": "British colonial policy governing through existing local leaders"
+    "answer": [
+      "British colonial policy governing through existing local leaders"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4235,7 +4885,9 @@
       "The 1900 Asante uprising against British rule led by Queen Mother Yaa Asantewaa",
       "A civil war"
     ],
-    "answer": "The 1900 Asante uprising against British rule led by Queen Mother Yaa Asantewaa"
+    "answer": [
+      "The 1900 Asante uprising against British rule led by Queen Mother Yaa Asantewaa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4248,7 +4900,9 @@
       "The first female MP",
       "A religious leader"
     ],
-    "answer": "Queen Mother of Ejisu who led the Asante resistance against British colonialism"
+    "answer": [
+      "Queen Mother of Ejisu who led the Asante resistance against British colonialism"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4261,7 +4915,9 @@
       "A Gold Coast organisation that resisted colonial land policies",
       "A farming group"
     ],
-    "answer": "A Gold Coast organisation that resisted colonial land policies"
+    "answer": [
+      "A Gold Coast organisation that resisted colonial land policies"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4274,7 +4930,9 @@
       "A traditional ruler",
       "First President"
     ],
-    "answer": "A founding nationalist leader and scholar who advocated for Gold Coast independence"
+    "answer": [
+      "A founding nationalist leader and scholar who advocated for Gold Coast independence"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4287,7 +4945,9 @@
       "A traditional council",
       "A civil society group"
     ],
-    "answer": "The military government that ruled Ghana from 1966 to 1969"
+    "answer": [
+      "The military government that ruled Ghana from 1966 to 1969"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4298,9 +4958,11 @@
       "An agricultural body",
       "An NGO",
       "A political party",
-      "Armed Forces Revolutionary Council \u2014 Rawlings' 1979 military coup government"
+      "Armed Forces Revolutionary Council — Rawlings' 1979 military coup government"
     ],
-    "answer": "Armed Forces Revolutionary Council \u2014 Rawlings' 1979 military coup government"
+    "answer": [
+      "Armed Forces Revolutionary Council — Rawlings' 1979 military coup government"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4313,7 +4975,9 @@
       "First election ever",
       "Local government election"
     ],
-    "answer": "Jerry Rawlings won and Ghana transitioned to civilian constitutional rule"
+    "answer": [
+      "Jerry Rawlings won and Ghana transitioned to civilian constitutional rule"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4326,7 +4990,9 @@
       "The two dominant political parties alternating power in Ghana's democracy",
       "An NGO partnership"
     ],
-    "answer": "The two dominant political parties alternating power in Ghana's democracy"
+    "answer": [
+      "The two dominant political parties alternating power in Ghana's democracy"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4339,7 +5005,9 @@
       "NDC won again",
       "Military intervention"
     ],
-    "answer": "First peaceful transfer of power from one party to another in Ghana's history"
+    "answer": [
+      "First peaceful transfer of power from one party to another in Ghana's history"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4352,7 +5020,9 @@
       "Atta Danquah",
       "John Agyekum Kufuor"
     ],
-    "answer": "John Agyekum Kufuor"
+    "answer": [
+      "John Agyekum Kufuor"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4365,7 +5035,9 @@
       "Human International Programme for Capacity",
       "Heavily Indebted Poor Countries initiative for debt relief"
     ],
-    "answer": "Heavily Indebted Poor Countries initiative for debt relief"
+    "answer": [
+      "Heavily Indebted Poor Countries initiative for debt relief"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4378,7 +5050,9 @@
       "Unstable",
       "Not important"
     ],
-    "answer": "Often cited as a model of democratic governance in Africa"
+    "answer": [
+      "Often cited as a model of democratic governance in Africa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4391,7 +5065,9 @@
       "An informal pledge",
       "A religious vow"
     ],
-    "answer": "Oath to defend the constitution, the law, and the people of Ghana"
+    "answer": [
+      "Oath to defend the constitution, the law, and the people of Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4404,7 +5080,9 @@
       "Chief Justice",
       "Finance Minister"
     ],
-    "answer": "Assists the President and assumes presidency if the President is unable to serve"
+    "answer": [
+      "Assists the President and assumes presidency if the President is unable to serve"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4417,7 +5095,9 @@
       "Conducts elections",
       "Manages courts"
     ],
-    "answer": "The principal advisory body to the President for national policy"
+    "answer": [
+      "The principal advisory body to the President for national policy"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4430,7 +5110,9 @@
       "Make laws",
       "As head of the judiciary"
     ],
-    "answer": "As the government's chief legal adviser and public prosecutor"
+    "answer": [
+      "As the government's chief legal adviser and public prosecutor"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4443,7 +5125,9 @@
       "Increasing central power",
       "Reducing democracy"
     ],
-    "answer": "Bringing government closer to the people and enabling local governance"
+    "answer": [
+      "Bringing government closer to the people and enabling local governance"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4456,7 +5140,9 @@
       "The main local government unit in Ghana",
       "A national body"
     ],
-    "answer": "The main local government unit in Ghana"
+    "answer": [
+      "The main local government unit in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4469,7 +5155,9 @@
       "7.5%",
       "10%"
     ],
-    "answer": "7.5%"
+    "answer": [
+      "7.5%"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4482,7 +5170,9 @@
       "District Administrative Central Fund",
       "Development and Construction Fund"
     ],
-    "answer": "District Assemblies Common Fund"
+    "answer": [
+      "District Assemblies Common Fund"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4495,7 +5185,9 @@
       "Lack of young people",
       "Employment of young people"
     ],
-    "answer": "Situation where young people of working age cannot find employment"
+    "answer": [
+      "Situation where young people of working age cannot find employment"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4508,7 +5200,9 @@
       "General academic education",
       "University education"
     ],
-    "answer": "Practical skills training for specific trades"
+    "answer": [
+      "Practical skills training for specific trades"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4521,7 +5215,9 @@
       "Technical and Vocational Enterprise Training",
       "Traditional Vocational and Educational Training"
     ],
-    "answer": "Technical and Vocational Education and Training"
+    "answer": [
+      "Technical and Vocational Education and Training"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4534,7 +5230,9 @@
       "Paying teachers",
       "Military spending"
     ],
-    "answer": "Educational infrastructure development in Ghana"
+    "answer": [
+      "Educational infrastructure development in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4547,7 +5245,9 @@
       "School building fund",
       "Teacher's salary"
     ],
-    "answer": "Per-pupil funding provided by government to basic schools"
+    "answer": [
+      "Per-pupil funding provided by government to basic schools"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4560,7 +5260,9 @@
       "Not important",
       "Affects employment only"
     ],
-    "answer": "Reduces poverty, improves health, and enables economic development"
+    "answer": [
+      "Reduces poverty, improves health, and enables economic development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4573,7 +5275,9 @@
       "A scholarship",
       "A school uniform scheme"
     ],
-    "answer": "Government programme providing meals to basic school pupils"
+    "answer": [
+      "Government programme providing meals to basic school pupils"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4586,7 +5290,9 @@
       "Education, business, communication, and economic development",
       "Social media only"
     ],
-    "answer": "Education, business, communication, and economic development"
+    "answer": [
+      "Education, business, communication, and economic development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4599,7 +5305,9 @@
       "Traditional governance",
       "Social media for government"
     ],
-    "answer": "Use of electronic and digital technology to deliver government services"
+    "answer": [
+      "Use of electronic and digital technology to deliver government services"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4612,7 +5320,9 @@
       "Financial inclusion for those without bank accounts",
       "Only for business"
     ],
-    "answer": "Financial inclusion for those without bank accounts"
+    "answer": [
+      "Financial inclusion for those without bank accounts"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4625,7 +5335,9 @@
       "A telecommunications company only",
       "A mobile-based payment service"
     ],
-    "answer": "A mobile-based payment service"
+    "answer": [
+      "A mobile-based payment service"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4638,7 +5350,9 @@
       "IT degree",
       "Ability to read and write"
     ],
-    "answer": "Skills to use digital technology effectively"
+    "answer": [
+      "Skills to use digital technology effectively"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4651,7 +5365,9 @@
       "No effects",
       "Reduces investment, wastes resources, and undermines public trust"
     ],
-    "answer": "Reduces investment, wastes resources, and undermines public trust"
+    "answer": [
+      "Reduces investment, wastes resources, and undermines public trust"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4664,7 +5380,9 @@
       "Responsibility to explain and justify actions to others",
       "Personal responsibility only"
     ],
-    "answer": "Responsibility to explain and justify actions to others"
+    "answer": [
+      "Responsibility to explain and justify actions to others"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4677,7 +5395,9 @@
       "Openness in government processes and decision-making",
       "Secret voting"
     ],
-    "answer": "Openness in government processes and decision-making"
+    "answer": [
+      "Openness in government processes and decision-making"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4690,7 +5410,9 @@
       "Military rule",
       "Governance that is effective, accountable, transparent, and responsive to citizens"
     ],
-    "answer": "Governance that is effective, accountable, transparent, and responsive to citizens"
+    "answer": [
+      "Governance that is effective, accountable, transparent, and responsive to citizens"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4703,7 +5425,9 @@
       "Manage courts",
       "Collect taxes"
     ],
-    "answer": "Coordinate national development planning"
+    "answer": [
+      "Coordinate national development planning"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4716,7 +5440,9 @@
       "National Democratic Planning Commission",
       "National Development Planning Commission"
     ],
-    "answer": "National Development Planning Commission"
+    "answer": [
+      "National Development Planning Commission"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4729,7 +5455,9 @@
       "A welfare payment",
       "Government strategy to reduce poverty through economic and social policies"
     ],
-    "answer": "Government strategy to reduce poverty through economic and social policies"
+    "answer": [
+      "Government strategy to reduce poverty through economic and social policies"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4742,7 +5470,9 @@
       "An NGO report",
       "Community review of how public funds are used"
     ],
-    "answer": "Community review of how public funds are used"
+    "answer": [
+      "Community review of how public funds are used"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4755,7 +5485,9 @@
       "Professional journalism",
       "Reporting of news by ordinary citizens using social media and other tools"
     ],
-    "answer": "Reporting of news by ordinary citizens using social media and other tools"
+    "answer": [
+      "Reporting of news by ordinary citizens using social media and other tools"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4768,7 +5500,9 @@
       "State media",
       "Government control of media"
     ],
-    "answer": "Right of media to operate without government interference or censorship"
+    "answer": [
+      "Right of media to operate without government interference or censorship"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4781,7 +5515,9 @@
       "A government body",
       "A government press"
     ],
-    "answer": "Professional organisation representing journalists in Ghana"
+    "answer": [
+      "Professional organisation representing journalists in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4794,7 +5530,9 @@
       "Ministry of Communication",
       "A media company"
     ],
-    "answer": "Government regulator of telecommunications and broadcasting in Ghana"
+    "answer": [
+      "Government regulator of telecommunications and broadcasting in Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4807,7 +5545,9 @@
       "Rising youth population",
       "Population decline"
     ],
-    "answer": "Increasing proportion of older people due to declining birth rates and longer life"
+    "answer": [
+      "Increasing proportion of older people due to declining birth rates and longer life"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4820,7 +5560,9 @@
       "Ratio of men to women",
       "Birth to death ratio"
     ],
-    "answer": "Ratio of non-working age population to working-age population"
+    "answer": [
+      "Ratio of non-working age population to working-age population"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4833,7 +5575,9 @@
       "Improvement in the economic, social, and political well-being of a country",
       "Infrastructure only"
     ],
-    "answer": "Improvement in the economic, social, and political well-being of a country"
+    "answer": [
+      "Improvement in the economic, social, and political well-being of a country"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4846,7 +5590,9 @@
       "Natural resources",
       "Skills, knowledge, and abilities of a country's population"
     ],
-    "answer": "Skills, knowledge, and abilities of a country's population"
+    "answer": [
+      "Skills, knowledge, and abilities of a country's population"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4859,7 +5605,9 @@
       "Physical resources",
       "Financial investments"
     ],
-    "answer": "Networks, trust, and norms that facilitate cooperation within a community"
+    "answer": [
+      "Networks, trust, and norms that facilitate cooperation within a community"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4872,7 +5620,9 @@
       "A trade agreement",
       "A World Bank agricultural programme"
     ],
-    "answer": "Debt relief programme for heavily indebted poor countries"
+    "answer": [
+      "Debt relief programme for heavily indebted poor countries"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4885,7 +5635,9 @@
       "Replaces modern medicine",
       "No role"
     ],
-    "answer": "Provides primary healthcare, especially in rural areas"
+    "answer": [
+      "Provides primary healthcare, especially in rural areas"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4898,11 +5650,13 @@
       "Academic knowledge",
       "Foreign knowledge"
     ],
-    "answer": "Knowledge developed by local communities over generations"
+    "answer": [
+      "Knowledge developed by local communities over generations"
+    ]
   },
   {
     "subject": "Social Studies",
-    "question": "What is '\u0186kraman ho hia' in Akan philosophy?",
+    "question": "What is 'Ɔkraman ho hia' in Akan philosophy?",
     "type": "mcq",
     "difficulty": "hard",
     "options": [
@@ -4911,7 +5665,9 @@
       "A festival",
       "A proverb about community solidarity"
     ],
-    "answer": "A proverb about community solidarity"
+    "answer": [
+      "A proverb about community solidarity"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4922,9 +5678,11 @@
       "A person needs money",
       "A person needs food",
       "A person needs land",
-      "A person needs another person \u2014 emphasising human interdependence"
+      "A person needs another person — emphasising human interdependence"
     ],
-    "answer": "A person needs another person \u2014 emphasising human interdependence"
+    "answer": [
+      "A person needs another person — emphasising human interdependence"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4937,7 +5695,9 @@
       "No role",
       "Only religious"
     ],
-    "answer": "Provides education, healthcare, and social support in addition to spiritual guidance"
+    "answer": [
+      "Provides education, healthcare, and social support in addition to spiritual guidance"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4950,7 +5710,9 @@
       "No role",
       "Only trade"
     ],
-    "answer": "Shapes cultural practices, education (madrasas), and social values"
+    "answer": [
+      "Shapes cultural practices, education (madrasas), and social values"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4963,7 +5725,9 @@
       "Nomadic cattle herding",
       "Mining"
     ],
-    "answer": "Nomadic cattle herding"
+    "answer": [
+      "Nomadic cattle herding"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4976,7 +5740,9 @@
       "A Ghanaian food",
       "The capital of the Northern Region"
     ],
-    "answer": "The capital of the Northern Region"
+    "answer": [
+      "The capital of the Northern Region"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -4989,7 +5755,9 @@
       "A Ga festival",
       "A national holiday"
     ],
-    "answer": "Celebrated in some Ghanaian communities to mark occasions"
+    "answer": [
+      "Celebrated in some Ghanaian communities to mark occasions"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5002,7 +5770,9 @@
       "A national holiday",
       "An Ashanti festival"
     ],
-    "answer": "A harvest festival celebrated by the Ahanta and Nzema people"
+    "answer": [
+      "A harvest festival celebrated by the Ahanta and Nzema people"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5015,7 +5785,9 @@
       "An Ashanti festival",
       "A Fante fishing festival opening the fishing season in Elmina"
     ],
-    "answer": "A Fante fishing festival opening the fishing season in Elmina"
+    "answer": [
+      "A Fante fishing festival opening the fishing season in Elmina"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5028,7 +5800,9 @@
       "An Ashanti festival",
       "A Ga festival"
     ],
-    "answer": "A Muslim festival celebrated by Dagomba, Gonja, and others in northern Ghana"
+    "answer": [
+      "A Muslim festival celebrated by Dagomba, Gonja, and others in northern Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5041,7 +5815,9 @@
       "A festival",
       "A type of food"
     ],
-    "answer": "A respectful title for an elder or traditional ruler"
+    "answer": [
+      "A respectful title for an elder or traditional ruler"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5054,7 +5830,9 @@
       "Akwaaba",
       "Yaa"
     ],
-    "answer": "Odo"
+    "answer": [
+      "Odo"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5067,7 +5845,9 @@
       "How are you",
       "You are welcome"
     ],
-    "answer": "You are welcome"
+    "answer": [
+      "You are welcome"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5080,7 +5860,9 @@
       "Welcome",
       "Thank you in Twi"
     ],
-    "answer": "Thank you in Twi"
+    "answer": [
+      "Thank you in Twi"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5093,7 +5875,9 @@
       "Northern Region",
       "Volta Region"
     ],
-    "answer": "Greater Accra Region"
+    "answer": [
+      "Greater Accra Region"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5106,7 +5890,9 @@
       "Western Region",
       "Ashanti Region"
     ],
-    "answer": "Volta Region and parts of Oti Region"
+    "answer": [
+      "Volta Region and parts of Oti Region"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5119,7 +5905,9 @@
       "The language of the Dagomba people of northern Ghana",
       "A Ga dialect"
     ],
-    "answer": "The language of the Dagomba people of northern Ghana"
+    "answer": [
+      "The language of the Dagomba people of northern Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5132,7 +5920,9 @@
       "Only cocoyam",
       "Pounded cassava and plantain, or yam"
     ],
-    "answer": "Pounded cassava and plantain, or yam"
+    "answer": [
+      "Pounded cassava and plantain, or yam"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5145,7 +5935,9 @@
       "A soup",
       "Fermented corn and cassava dough cooked with water"
     ],
-    "answer": "Fermented corn and cassava dough cooked with water"
+    "answer": [
+      "Fermented corn and cassava dough cooked with water"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5158,7 +5950,9 @@
       "Fermented corn dough wrapped in corn husks and cooked",
       "A vegetable dish"
     ],
-    "answer": "Fermented corn dough wrapped in corn husks and cooked"
+    "answer": [
+      "Fermented corn dough wrapped in corn husks and cooked"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5171,7 +5965,9 @@
       "Kente cloth",
       "Fufu"
     ],
-    "answer": "Kente cloth"
+    "answer": [
+      "Kente cloth"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5184,7 +5980,9 @@
       "Bonwire in Ashanti Region",
       "Greater Accra"
     ],
-    "answer": "Bonwire in Ashanti Region"
+    "answer": [
+      "Bonwire in Ashanti Region"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5197,7 +5995,9 @@
       "A northern Ghana genre",
       "A foreign music genre"
     ],
-    "answer": "A Ghanaian music genre blending African rhythms and Western instruments"
+    "answer": [
+      "A Ghanaian music genre blending African rhythms and Western instruments"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5210,7 +6010,9 @@
       "A traditional funeral rite",
       "A type of food"
     ],
-    "answer": "A popular Ghanaian dance style"
+    "answer": [
+      "A popular Ghanaian dance style"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5223,7 +6025,9 @@
       "Ghana Private Road Transport Union",
       "Ghana Public Road Transport Union"
     ],
-    "answer": "Ghana Private Road Transport Union"
+    "answer": [
+      "Ghana Private Road Transport Union"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5236,7 +6040,9 @@
       "A taxi service",
       "A type of food"
     ],
-    "answer": "A shared mini-bus system serving as major public transport"
+    "answer": [
+      "A shared mini-bus system serving as major public transport"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5249,7 +6055,9 @@
       "An informal savings group where members contribute regularly",
       "A type of food"
     ],
-    "answer": "An informal savings group where members contribute regularly"
+    "answer": [
+      "An informal savings group where members contribute regularly"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5262,7 +6070,9 @@
       "Large bank loans",
       "Small financial services for low-income individuals and entrepreneurs"
     ],
-    "answer": "Small financial services for low-income individuals and entrepreneurs"
+    "answer": [
+      "Small financial services for low-income individuals and entrepreneurs"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5275,7 +6085,9 @@
       "A traditional bank",
       "Microfinance model for lending to the poor, especially women"
     ],
-    "answer": "Microfinance model for lending to the poor, especially women"
+    "answer": [
+      "Microfinance model for lending to the poor, especially women"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5288,7 +6100,9 @@
       "An NGO",
       "An organisation owned and managed by its members for their benefit"
     ],
-    "answer": "An organisation owned and managed by its members for their benefit"
+    "answer": [
+      "An organisation owned and managed by its members for their benefit"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5301,7 +6115,9 @@
       "Supplies water to Accra only",
       "Provides hydroelectric power and created the Volta Lake"
     ],
-    "answer": "Provides hydroelectric power and created the Volta Lake"
+    "answer": [
+      "Provides hydroelectric power and created the Volta Lake"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5309,12 +6125,14 @@
     "type": "mcq",
     "difficulty": "hard",
     "options": [
-      "Volta Aluminium Company \u2014 uses Akosombo power to process aluminium",
+      "Volta Aluminium Company — uses Akosombo power to process aluminium",
       "A fishing company",
       "A mining company",
       "Volta Artisanal Labour Corporation"
     ],
-    "answer": "Volta Aluminium Company \u2014 uses Akosombo power to process aluminium"
+    "answer": [
+      "Volta Aluminium Company — uses Akosombo power to process aluminium"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5327,7 +6145,9 @@
       "A minor crop",
       "Not important"
     ],
-    "answer": "Major source of export earnings and employment for millions"
+    "answer": [
+      "Major source of export earnings and employment for millions"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5335,12 +6155,14 @@
     "type": "mcq",
     "difficulty": "medium",
     "options": [
-      "Ghana Cocoa Board \u2014 regulates the cocoa sector",
+      "Ghana Cocoa Board — regulates the cocoa sector",
       "Ministry of Cocoa",
       "A cooperative",
       "An NGO"
     ],
-    "answer": "Ghana Cocoa Board \u2014 regulates the cocoa sector"
+    "answer": [
+      "Ghana Cocoa Board — regulates the cocoa sector"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5353,7 +6175,9 @@
       "Growing more crops",
       "Processing raw materials to increase their value before export"
     ],
-    "answer": "Processing raw materials to increase their value before export"
+    "answer": [
+      "Processing raw materials to increase their value before export"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5366,7 +6190,9 @@
       "Military port",
       "Fishing only"
     ],
-    "answer": "Main gateway for Ghana's international trade"
+    "answer": [
+      "Main gateway for Ghana's international trade"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5379,7 +6205,9 @@
       "Ghana Police Headquarters Association",
       "Ghana Ports and Harbours Authority"
     ],
-    "answer": "Ghana Ports and Harbours Authority"
+    "answer": [
+      "Ghana Ports and Harbours Authority"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5392,7 +6220,9 @@
       "Ghana Immigration Processing Centre",
       "Ghana Investment Promotion Centre"
     ],
-    "answer": "Ghana Investment Promotion Centre"
+    "answer": [
+      "Ghana Investment Promotion Centre"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5405,7 +6235,9 @@
       "Foreign Direct Investment brings capital, jobs, and technology",
       "No significance"
     ],
-    "answer": "Foreign Direct Investment brings capital, jobs, and technology"
+    "answer": [
+      "Foreign Direct Investment brings capital, jobs, and technology"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5418,7 +6250,9 @@
       "Brain drain",
       "Loss of educated people"
     ],
-    "answer": "Attracting skilled talent from other countries or return of emigrants"
+    "answer": [
+      "Attracting skilled talent from other countries or return of emigrants"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5431,7 +6265,9 @@
       "Only skilled workers abroad",
       "Only students abroad"
     ],
-    "answer": "People of Ghanaian origin living outside Ghana"
+    "answer": [
+      "People of Ghanaian origin living outside Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5444,7 +6280,9 @@
       "A scholarship scheme",
       "A repatriation scheme"
     ],
-    "answer": "A tourism and heritage programme inviting African diaspora to visit Ghana"
+    "answer": [
+      "A tourism and heritage programme inviting African diaspora to visit Ghana"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5457,7 +6295,9 @@
       "Division of society into hierarchical layers based on wealth, status, or power",
       "Equal society"
     ],
-    "answer": "Division of society into hierarchical layers based on wealth, status, or power"
+    "answer": [
+      "Division of society into hierarchical layers based on wealth, status, or power"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5470,7 +6310,9 @@
       "No change in social status",
       "Only economic change"
     ],
-    "answer": "Movement of individuals between different social levels"
+    "answer": [
+      "Movement of individuals between different social levels"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5483,7 +6325,9 @@
       "Community development projects testing integrated rural development approaches",
       "Government housing"
     ],
-    "answer": "Community development projects testing integrated rural development approaches"
+    "answer": [
+      "Community development projects testing integrated rural development approaches"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5496,7 +6340,9 @@
       "Improvement of living conditions and economic opportunities in rural areas",
       "City expansion"
     ],
-    "answer": "Improvement of living conditions and economic opportunities in rural areas"
+    "answer": [
+      "Improvement of living conditions and economic opportunities in rural areas"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5509,7 +6355,9 @@
       "Government housing",
       "Process of designing and managing urban areas for orderly development"
     ],
-    "answer": "Process of designing and managing urban areas for orderly development"
+    "answer": [
+      "Process of designing and managing urban areas for orderly development"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5522,7 +6370,9 @@
       "People forced to flee their homes but remain in their own country",
       "Refugees abroad"
     ],
-    "answer": "People forced to flee their homes but remain in their own country"
+    "answer": [
+      "People forced to flee their homes but remain in their own country"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5535,7 +6385,9 @@
       "A diplomat",
       "A person who has fled their country due to persecution or conflict"
     ],
-    "answer": "A person who has fled their country due to persecution or conflict"
+    "answer": [
+      "A person who has fled their country due to persecution or conflict"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5548,7 +6400,9 @@
       "United Nations Human Rights Committee",
       "UN Healthcare and Refugee Centre"
     ],
-    "answer": "United Nations High Commissioner for Refugees"
+    "answer": [
+      "United Nations High Commissioner for Refugees"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5561,7 +6415,9 @@
       "No difference",
       "Same process"
     ],
-    "answer": "Emigration: leaving a country; Immigration: entering a country"
+    "answer": [
+      "Emigration: leaving a country; Immigration: entering a country"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5574,7 +6430,9 @@
       "Deportation",
       "Forced movement"
     ],
-    "answer": "Migration by choice for better opportunities"
+    "answer": [
+      "Migration by choice for better opportunities"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5587,7 +6445,9 @@
       "Movement forced by conflict, persecution, or disaster",
       "Education migration"
     ],
-    "answer": "Movement forced by conflict, persecution, or disaster"
+    "answer": [
+      "Movement forced by conflict, persecution, or disaster"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5600,7 +6460,9 @@
       "No significance",
       "Creates more corruption"
     ],
-    "answer": "Enables citizen engagement, transparency, and rapid information sharing"
+    "answer": [
+      "Enables citizen engagement, transparency, and rapid information sharing"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5613,7 +6475,9 @@
       "No role",
       "Only students"
     ],
-    "answer": "Youth are a vital human resource driving innovation and future leadership"
+    "answer": [
+      "Youth are a vital human resource driving innovation and future leadership"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5626,7 +6490,9 @@
       "A scholarship",
       "A government internship"
     ],
-    "answer": "One-year compulsory national service for Ghanaian graduates"
+    "answer": [
+      "One-year compulsory national service for Ghanaian graduates"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5639,7 +6505,9 @@
       "Military duty",
       "Voluntary work done to benefit the local community"
     ],
-    "answer": "Voluntary work done to benefit the local community"
+    "answer": [
+      "Voluntary work done to benefit the local community"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5652,7 +6520,9 @@
       "Building roads only",
       "Only economic growth"
     ],
-    "answer": "Improvement in the overall quality of life of a people"
+    "answer": [
+      "Improvement in the overall quality of life of a people"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5665,7 +6535,9 @@
       "Death rate of young adults",
       "Maternal deaths"
     ],
-    "answer": "Deaths of children under one year of age per 1000 live births"
+    "answer": [
+      "Deaths of children under one year of age per 1000 live births"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5678,7 +6550,9 @@
       "Infant deaths",
       "Death rate of all women"
     ],
-    "answer": "Death of a woman during pregnancy or childbirth"
+    "answer": [
+      "Death of a woman during pregnancy or childbirth"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5691,7 +6565,9 @@
       "Only disease treatment",
       "Only for doctors"
     ],
-    "answer": "Informs and empowers people to make healthy choices"
+    "answer": [
+      "Informs and empowers people to make healthy choices"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5704,7 +6580,9 @@
       "A global outbreak",
       "A minor illness"
     ],
-    "answer": "A widespread occurrence of a disease in a community"
+    "answer": [
+      "A widespread occurrence of a disease in a community"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5717,7 +6595,9 @@
       "A regional epidemic",
       "A local disease outbreak"
     ],
-    "answer": "A global outbreak of a disease affecting many countries"
+    "answer": [
+      "A global outbreak of a disease affecting many countries"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5730,7 +6610,9 @@
       "Caused deaths, economic disruption, and public health measures",
       "No impact"
     ],
-    "answer": "Caused deaths, economic disruption, and public health measures"
+    "answer": [
+      "Caused deaths, economic disruption, and public health measures"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5743,7 +6625,9 @@
       "Military intervention",
       "NDC retained power"
     ],
-    "answer": "NPP won, showing continued democratic transfer of power"
+    "answer": [
+      "NPP won, showing continued democratic transfer of power"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5756,7 +6640,9 @@
       "Kwesi Amissah-Arthur",
       "John Mahama"
     ],
-    "answer": "Nana Akufo-Addo"
+    "answer": [
+      "Nana Akufo-Addo"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5769,7 +6655,9 @@
       "A trade agreement creating the world's largest free trade area in Africa",
       "An environmental treaty"
     ],
-    "answer": "A trade agreement creating the world's largest free trade area in Africa"
+    "answer": [
+      "A trade agreement creating the world's largest free trade area in Africa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5782,7 +6670,9 @@
       "Accra",
       "Nairobi"
     ],
-    "answer": "Accra"
+    "answer": [
+      "Accra"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5795,7 +6685,9 @@
       "A political gesture only",
       "Positions Ghana as a hub for African trade integration"
     ],
-    "answer": "Positions Ghana as a hub for African trade integration"
+    "answer": [
+      "Positions Ghana as a hub for African trade integration"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5808,7 +6700,9 @@
       "West African Examinations Council",
       "West Africa Economic Community"
     ],
-    "answer": "West African Examinations Council"
+    "answer": [
+      "West African Examinations Council"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5821,7 +6715,9 @@
       "Conduct and certify secondary examinations across West Africa",
       "Govern West Africa"
     ],
-    "answer": "Conduct and certify secondary examinations across West Africa"
+    "answer": [
+      "Conduct and certify secondary examinations across West Africa"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5829,12 +6725,14 @@
     "type": "mcq",
     "difficulty": "easy",
     "options": [
-      "Basic Education Certificate Examination \u2014 written at end of JHS",
+      "Basic Education Certificate Examination — written at end of JHS",
       "A professional examination",
       "A university entrance exam",
       "Bachelor of Education Certificate Examination"
     ],
-    "answer": "Basic Education Certificate Examination \u2014 written at end of JHS"
+    "answer": [
+      "Basic Education Certificate Examination — written at end of JHS"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5847,7 +6745,9 @@
       "West African Senior Secondary Certificate Examination",
       "West African Secondary School Curriculum Examination"
     ],
-    "answer": "West African Senior Secondary Certificate Examination"
+    "answer": [
+      "West African Senior Secondary Certificate Examination"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5860,7 +6760,9 @@
       "A union",
       "A private company"
     ],
-    "answer": "Government body overseeing public basic and secondary education"
+    "answer": [
+      "Government body overseeing public basic and secondary education"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5873,7 +6775,9 @@
       "General Education System",
       "Ghana Education System"
     ],
-    "answer": "Ghana Education Service"
+    "answer": [
+      "Ghana Education Service"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5886,7 +6790,9 @@
       "Only SHS and University",
       "Primary only"
     ],
-    "answer": "Kindergarten, Primary, JHS, SHS, Tertiary"
+    "answer": [
+      "Kindergarten, Primary, JHS, SHS, Tertiary"
+    ]
   },
   {
     "subject": "Social Studies",
@@ -5899,6 +6805,8 @@
       "0-5 years",
       "6-15 years roughly (KG through JHS)"
     ],
-    "answer": "6-15 years roughly (KG through JHS)"
+    "answer": [
+      "6-15 years roughly (KG through JHS)"
+    ]
   }
 ]

@@ -1,133 +1,2168 @@
 [
-  {"subject":"Chemistry","question":"What is the atomic number of carbon?","type":"mcq","difficulty":"easy","options":["4","6","8","12"],"answer":"6"},
-  {"subject":"Chemistry","question":"Which subatomic particle has no electric charge?","type":"mcq","difficulty":"easy","options":["Proton","Electron","Neutron","Positron"],"answer":"Neutron"},
-  {"subject":"Chemistry","question":"The number of protons in the nucleus of an atom is called the","type":"mcq","difficulty":"easy","options":["Mass number","Atomic number","Neutron number","Isotope number"],"answer":"Atomic number"},
-  {"subject":"Chemistry","question":"How many electrons can the second shell of an atom hold?","type":"mcq","difficulty":"easy","options":["2","8","18","32"],"answer":"8"},
-  {"subject":"Chemistry","question":"Isotopes are atoms of the same element that differ in their number of","type":"mcq","difficulty":"easy","options":["Protons","Electrons","Neutrons","Quarks"],"answer":"Neutrons"},
-  {"subject":"Chemistry","question":"What is the mass number of an atom with 6 protons and 6 neutrons?","type":"mcq","difficulty":"easy","options":["6","12","18","24"],"answer":"12"},
-  {"subject":"Chemistry","question":"Which scientist proposed the nuclear model of the atom?","type":"mcq","difficulty":"medium","options":["John Dalton","J.J. Thomson","Ernest Rutherford","Niels Bohr"],"answer":"Ernest Rutherford"},
-  {"subject":"Chemistry","question":"In Bohr's model of the atom, electrons travel in","type":"mcq","difficulty":"medium","options":["Random paths","Fixed circular orbits","Elliptical orbits","Straight lines"],"answer":"Fixed circular orbits"},
-  {"subject":"Chemistry","question":"The electronic configuration of sodium (Na, atomic number 11) is","type":"mcq","difficulty":"medium","options":["2,9","2,8,1","2,8,3","3,8"],"answer":"2,8,1"},
-  {"subject":"Chemistry","question":"Which of the following particles has the smallest mass?","type":"mcq","difficulty":"medium","options":["Proton","Neutron","Electron","Alpha particle"],"answer":"Electron"},
-  {"subject":"Chemistry","question":"The element with the electronic configuration 2,8,7 is in which group of the periodic table?","type":"mcq","difficulty":"medium","options":["Group I","Group VI","Group VII","Group VIII"],"answer":"Group VII"},
-  {"subject":"Chemistry","question":"What type of bond is formed when electrons are completely transferred from one atom to another?","type":"mcq","difficulty":"easy","options":["Covalent bond","Ionic bond","Metallic bond","Hydrogen bond"],"answer":"Ionic bond"},
-  {"subject":"Chemistry","question":"Which of the following compounds contains a covalent bond?","type":"mcq","difficulty":"easy","options":["NaCl","KBr","H₂O","MgO"],"answer":"H₂O"},
-  {"subject":"Chemistry","question":"How many covalent bonds does a nitrogen molecule (N₂) contain?","type":"mcq","difficulty":"medium","options":["One single bond","One double bond","One triple bond","Two double bonds"],"answer":"One triple bond"},
-  {"subject":"Chemistry","question":"Electronegativity is the ability of an atom to","type":"mcq","difficulty":"medium","options":["Lose electrons in a reaction","Attract electrons in a bond","Form ions","Conduct electricity"],"answer":"Attract electrons in a bond"},
-  {"subject":"Chemistry","question":"Which element is in Period 3 and Group II of the periodic table?","type":"mcq","difficulty":"medium","options":["Sodium","Magnesium","Aluminium","Silicon"],"answer":"Magnesium"},
-  {"subject":"Chemistry","question":"Elements in the same group of the periodic table have the same","type":"mcq","difficulty":"easy","options":["Mass number","Number of neutrons","Number of valence electrons","Atomic radius"],"answer":"Number of valence electrons"},
-  {"subject":"Chemistry","question":"Across a period from left to right, atomic radius generally","type":"mcq","difficulty":"medium","options":["Increases","Decreases","Remains the same","First increases then decreases"],"answer":"Decreases"},
-  {"subject":"Chemistry","question":"The halogens are found in which group of the periodic table?","type":"mcq","difficulty":"easy","options":["Group I","Group II","Group VII","Group VIII"],"answer":"Group VII"},
-  {"subject":"Chemistry","question":"Which of the following is a noble gas?","type":"mcq","difficulty":"easy","options":["Nitrogen","Oxygen","Argon","Chlorine"],"answer":"Argon"},
-  {"subject":"Chemistry","question":"What is the chemical formula for sulphuric acid?","type":"mcq","difficulty":"easy","options":["HCl","HNO₃","H₂SO₄","H₃PO₄"],"answer":"H₂SO₄"},
-  {"subject":"Chemistry","question":"A substance that turns blue litmus paper red is","type":"mcq","difficulty":"easy","options":["An acid","A base","A salt","A neutral substance"],"answer":"An acid"},
-  {"subject":"Chemistry","question":"The reaction between an acid and a base is called","type":"mcq","difficulty":"easy","options":["Oxidation","Neutralisation","Decomposition","Precipitation"],"answer":"Neutralisation"},
-  {"subject":"Chemistry","question":"What is the pH of a neutral solution?","type":"mcq","difficulty":"easy","options":["0","7","14","1"],"answer":"7"},
-  {"subject":"Chemistry","question":"Which indicator is used to find the end point in a neutralisation titration?","type":"mcq","difficulty":"medium","options":["Universal indicator","Phenolphthalein","Benedict's solution","Iodine solution"],"answer":"Phenolphthalein"},
-  {"subject":"Chemistry","question":"Sodium hydroxide is classified as","type":"mcq","difficulty":"easy","options":["An acid","A weak base","A strong base","A neutral salt"],"answer":"A strong base"},
-  {"subject":"Chemistry","question":"The product of the reaction between sodium hydroxide and hydrochloric acid is","type":"mcq","difficulty":"easy","options":["Sodium carbonate and water","Sodium chloride and water","Sodium oxide and water","Sodium sulphate and water"],"answer":"Sodium chloride and water"},
-  {"subject":"Chemistry","question":"What is the molar mass of water (H₂O)?","type":"mcq","difficulty":"easy","options":["16 g/mol","18 g/mol","20 g/mol","34 g/mol"],"answer":"18 g/mol"},
-  {"subject":"Chemistry","question":"Avogadro's number is approximately","type":"mcq","difficulty":"medium","options":["6.02 × 10²³","6.02 × 10²¹","3.01 × 10²³","1.20 × 10²⁴"],"answer":"6.02 × 10²³"},
-  {"subject":"Chemistry","question":"One mole of any substance contains how many particles?","type":"mcq","difficulty":"medium","options":["6.02 × 10²²","6.02 × 10²³","6.02 × 10²⁴","6.02 × 10²⁵"],"answer":"6.02 × 10²³"},
-  {"subject":"Chemistry","question":"What is the concentration of a solution containing 2 moles of NaCl dissolved in 500 cm³ of water?","type":"mcq","difficulty":"hard","options":["1 mol/dm³","2 mol/dm³","4 mol/dm³","0.5 mol/dm³"],"answer":"4 mol/dm³"},
-  {"subject":"Chemistry","question":"In the equation 2H₂ + O₂ → 2H₂O, how many moles of oxygen are needed to react with 4 moles of hydrogen?","type":"mcq","difficulty":"medium","options":["1","2","4","8"],"answer":"2"},
-  {"subject":"Chemistry","question":"Which of the following increases the rate of a chemical reaction?","type":"mcq","difficulty":"easy","options":["Decreasing temperature","Decreasing concentration","Using a catalyst","Removing a catalyst"],"answer":"Using a catalyst"},
-  {"subject":"Chemistry","question":"A catalyst works by","type":"mcq","difficulty":"medium","options":["Increasing activation energy","Decreasing activation energy","Changing the products","Increasing temperature"],"answer":"Decreasing activation energy"},
-  {"subject":"Chemistry","question":"According to Le Chatelier's principle, increasing pressure on a gaseous equilibrium will shift the equilibrium towards the side with","type":"mcq","difficulty":"hard","options":["More moles of gas","Fewer moles of gas","Equal moles of gas","No change"],"answer":"Fewer moles of gas"},
-  {"subject":"Chemistry","question":"In a reversible reaction at equilibrium, the rate of the forward reaction is","type":"mcq","difficulty":"medium","options":["Greater than the reverse reaction","Less than the reverse reaction","Equal to the reverse reaction","Zero"],"answer":"Equal to the reverse reaction"},
-  {"subject":"Chemistry","question":"The process by which a solid is converted directly into a gas is called","type":"mcq","difficulty":"medium","options":["Evaporation","Condensation","Sublimation","Deposition"],"answer":"Sublimation"},
-  {"subject":"Chemistry","question":"Which of the following is an exothermic reaction?","type":"mcq","difficulty":"medium","options":["Photosynthesis","Thermal decomposition of limestone","Combustion of wood","Dissolving ammonium nitrate in water"],"answer":"Combustion of wood"},
-  {"subject":"Chemistry","question":"In electrolysis of brine (NaCl solution), what is produced at the cathode?","type":"mcq","difficulty":"hard","options":["Chlorine gas","Oxygen gas","Hydrogen gas","Sodium metal"],"answer":"Hydrogen gas"},
-  {"subject":"Chemistry","question":"Oxidation in terms of electrons means","type":"mcq","difficulty":"medium","options":["Gain of electrons","Loss of electrons","Gain of protons","Loss of protons"],"answer":"Loss of electrons"},
-  {"subject":"Chemistry","question":"In a galvanic cell, oxidation occurs at the","type":"mcq","difficulty":"hard","options":["Cathode","Anode","Both electrodes","Electrolyte"],"answer":"Anode"},
-  {"subject":"Chemistry","question":"The general formula for alkanes is","type":"mcq","difficulty":"medium","options":["CₙH₂ₙ","CₙH₂ₙ₊₂","CₙH₂ₙ₋₂","CₙH₂ₙ₊₁"],"answer":"CₙH₂ₙ₊₂"},
-  {"subject":"Chemistry","question":"Which functional group is present in alcohols?","type":"mcq","difficulty":"medium","options":["-COOH","-OH","-CHO","-NH₂"],"answer":"-OH"},
-  {"subject":"Chemistry","question":"Ethanol has the molecular formula","type":"mcq","difficulty":"easy","options":["CH₃OH","C₂H₅OH","C₃H₇OH","C₄H₉OH"],"answer":"C₂H₅OH"},
-  {"subject":"Chemistry","question":"The process of breaking large hydrocarbon molecules into smaller ones is called","type":"mcq","difficulty":"medium","options":["Polymerisation","Fermentation","Cracking","Distillation"],"answer":"Cracking"},
-  {"subject":"Chemistry","question":"Which type of organic reaction involves the addition of a halogen across a double bond?","type":"mcq","difficulty":"hard","options":["Substitution","Elimination","Addition","Condensation"],"answer":"Addition"},
-  {"subject":"Chemistry","question":"Crude oil is separated into fractions by the process of","type":"mcq","difficulty":"easy","options":["Filtration","Fractional distillation","Crystallisation","Chromatography"],"answer":"Fractional distillation"},
-  {"subject":"Chemistry","question":"Which of the following is used as fuel in cars?","type":"mcq","difficulty":"easy","options":["Bitumen","Lubricating oil","Petrol","Paraffin wax"],"answer":"Petrol"},
-  {"subject":"Chemistry","question":"The ore of iron is","type":"mcq","difficulty":"easy","options":["Bauxite","Haematite","Galena","Chalcopyrite"],"answer":"Haematite"},
-  {"subject":"Chemistry","question":"In the blast furnace, iron ore is reduced by","type":"mcq","difficulty":"medium","options":["Oxygen","Carbon monoxide","Hydrogen","Carbon dioxide"],"answer":"Carbon monoxide"},
-  {"subject":"Chemistry","question":"The ore from which aluminium is extracted is called","type":"mcq","difficulty":"easy","options":["Haematite","Galena","Bauxite","Malachite"],"answer":"Bauxite"},
-  {"subject":"Chemistry","question":"Aluminium is extracted from its ore by","type":"mcq","difficulty":"medium","options":["Smelting","Electrolysis","Reduction with carbon","Heating alone"],"answer":"Electrolysis"},
-  {"subject":"Chemistry","question":"Which of the following is a radioactive emission that has the same nature as X-rays?","type":"mcq","difficulty":"hard","options":["Alpha particles","Beta particles","Gamma rays","Neutrons"],"answer":"Gamma rays"},
-  {"subject":"Chemistry","question":"An alpha particle consists of","type":"mcq","difficulty":"medium","options":["2 protons and 1 neutron","2 protons and 2 neutrons","1 proton and 2 neutrons","4 protons"],"answer":"2 protons and 2 neutrons"},
-  {"subject":"Chemistry","question":"Half-life is defined as the time taken for","type":"mcq","difficulty":"medium","options":["All atoms to decay","Half the atoms in a sample to decay","The activity to double","The mass to double"],"answer":"Half the atoms in a sample to decay"},
-  {"subject":"Chemistry","question":"What type of reaction produces a polymer from many small monomer units?","type":"mcq","difficulty":"medium","options":["Cracking","Polymerisation","Esterification","Fermentation"],"answer":"Polymerisation"},
-  {"subject":"Chemistry","question":"The main greenhouse gas produced by burning fossil fuels is","type":"mcq","difficulty":"easy","options":["Nitrogen","Carbon dioxide","Oxygen","Hydrogen"],"answer":"Carbon dioxide"},
-  {"subject":"Chemistry","question":"Acid rain is mainly caused by oxides of","type":"mcq","difficulty":"easy","options":["Carbon and hydrogen","Sulphur and nitrogen","Calcium and iron","Magnesium and zinc"],"answer":"Sulphur and nitrogen"},
-  {"subject":"Chemistry","question":"Water pollution caused by excess fertiliser runoff leading to excessive algae growth is called","type":"mcq","difficulty":"hard","options":["Eutrophication","Bioaccumulation","Photosynthesis","Desertification"],"answer":"Eutrophication"},
-  {"subject":"Chemistry","question":"Rusting of iron is an example of","type":"mcq","difficulty":"easy","options":["Physical change","Reduction","Oxidation","Sublimation"],"answer":"Oxidation"},
-  {"subject":"Chemistry","question":"The chemical formula for rust is","type":"mcq","difficulty":"medium","options":["Fe₂O₃","Fe₃O₄","Fe₂O₃·xH₂O","FeO"],"answer":"Fe₂O₃·xH₂O"},
-  {"subject":"Chemistry","question":"Which of the following is not a method of preventing rusting?","type":"mcq","difficulty":"medium","options":["Galvanising","Painting","Oiling","Heating"],"answer":"Heating"},
-  {"subject":"Chemistry","question":"Galvanising is the process of coating iron with","type":"mcq","difficulty":"easy","options":["Tin","Zinc","Aluminium","Copper"],"answer":"Zinc"},
-  {"subject":"Chemistry","question":"What is the name of the process by which plants make their food?","type":"short_answer","difficulty":"easy","keywords":["Photosynthesis","photosynthesis"]},
-  {"subject":"Chemistry","question":"Name the three subatomic particles found in an atom.","type":"short_answer","difficulty":"easy","keywords":["proton","neutron","electron","protons","neutrons","electrons"]},
-  {"subject":"Chemistry","question":"What type of bonding holds sodium chloride (NaCl) together?","type":"short_answer","difficulty":"easy","keywords":["ionic","ionic bonding","electrostatic"]},
-  {"subject":"Chemistry","question":"State the law of conservation of mass.","type":"short_answer","difficulty":"medium","keywords":["mass","created","destroyed","conserved","constant","total mass"]},
-  {"subject":"Chemistry","question":"What is a catalyst?","type":"short_answer","difficulty":"easy","keywords":["catalyst","speed up","rate","activation energy","unchanged","not consumed"]},
-  {"subject":"Chemistry","question":"Define oxidation in terms of electron transfer.","type":"short_answer","difficulty":"medium","keywords":["loss","electrons","electron","OIL"]},
-  {"subject":"Chemistry","question":"What is the name of the electrode at which reduction occurs during electrolysis?","type":"short_answer","difficulty":"medium","keywords":["cathode","Cathode"]},
-  {"subject":"Chemistry","question":"Name the process used to separate crude oil into its fractions.","type":"short_answer","difficulty":"easy","keywords":["fractional distillation","distillation"]},
-  {"subject":"Chemistry","question":"What is the half-life of a radioactive isotope if 100g is reduced to 25g after 20 years?","type":"short_answer","difficulty":"hard","keywords":["10","10 years"]},
-  {"subject":"Chemistry","question":"State one use of radioactive isotopes in medicine.","type":"short_answer","difficulty":"medium","keywords":["cancer treatment","radiotherapy","tracing","diagnosis","sterilisation","imaging"]},
-  {"subject":"Chemistry","question":"What is the IUPAC name of the compound with formula C₂H₅OH?","type":"short_answer","difficulty":"medium","keywords":["ethanol","Ethanol"]},
-  {"subject":"Chemistry","question":"Name the type of chemical reaction that releases energy to the surroundings.","type":"short_answer","difficulty":"easy","keywords":["exothermic","Exothermic"]},
-  {"subject":"Chemistry","question":"What is the formula for calculating concentration of a solution?","type":"short_answer","difficulty":"medium","keywords":["moles divided by volume","mol/dm3","moles per litre","n/V"]},
-  {"subject":"Chemistry","question":"Name the gas produced when zinc reacts with dilute hydrochloric acid.","type":"short_answer","difficulty":"easy","keywords":["hydrogen","Hydrogen","H2"]},
-  {"subject":"Chemistry","question":"What is the term for the minimum energy needed for a reaction to occur?","type":"short_answer","difficulty":"medium","keywords":["activation energy","Activation energy"]},
-  {"subject":"Chemistry","question":"In a blast furnace, what raw material provides the carbon monoxide that reduces iron ore?","type":"short_answer","difficulty":"medium","keywords":["coke","Coke","coal","carbon"]},
-  {"subject":"Chemistry","question":"What does pH stand for and what scale does it use?","type":"short_answer","difficulty":"easy","keywords":["hydrogen","0 to 14","power of hydrogen","0-14"]},
-  {"subject":"Chemistry","question":"What is the charge on an electron?","type":"mcq","difficulty":"easy","options":["+1","-1","0","+2"],"answer":"-1"},
-  {"subject":"Chemistry","question":"Which gas is produced when calcium carbonate is heated strongly?","type":"mcq","difficulty":"easy","options":["Oxygen","Carbon monoxide","Carbon dioxide","Sulphur dioxide"],"answer":"Carbon dioxide"},
-  {"subject":"Chemistry","question":"The process of adding chlorine to drinking water to kill germs is called","type":"mcq","difficulty":"easy","options":["Filtration","Chlorination","Fluoridation","Sedimentation"],"answer":"Chlorination"},
-  {"subject":"Chemistry","question":"Which of the following is an alloy of copper and zinc?","type":"mcq","difficulty":"medium","options":["Bronze","Brass","Stainless steel","Duralumin"],"answer":"Brass"},
-  {"subject":"Chemistry","question":"Steel is an alloy of iron and","type":"mcq","difficulty":"easy","options":["Zinc","Aluminium","Carbon","Copper"],"answer":"Carbon"},
-  {"subject":"Chemistry","question":"Which of the following fuels produces the most energy per gram when burned?","type":"mcq","difficulty":"hard","options":["Coal","Natural gas","Wood","Peat"],"answer":"Natural gas"},
-  {"subject":"Chemistry","question":"The process by which nitrogen in the atmosphere is converted to ammonia by bacteria is called","type":"mcq","difficulty":"hard","options":["Denitrification","Nitrification","Nitrogen fixation","Ammonification"],"answer":"Nitrogen fixation"},
-  {"subject":"Chemistry","question":"Ammonia is manufactured industrially by the","type":"mcq","difficulty":"medium","options":["Contact process","Haber process","Ostwald process","Bayer process"],"answer":"Haber process"},
-  {"subject":"Chemistry","question":"In the Haber process, what are the two reactants used to make ammonia?","type":"mcq","difficulty":"medium","options":["Nitrogen and oxygen","Nitrogen and hydrogen","Hydrogen and carbon","Oxygen and hydrogen"],"answer":"Nitrogen and hydrogen"},
-  {"subject":"Chemistry","question":"What is the role of iron in the Haber process?","type":"mcq","difficulty":"medium","options":["Reactant","Product","Catalyst","Solvent"],"answer":"Catalyst"},
-  {"subject":"Chemistry","question":"Which of the following is a property of metals?","type":"mcq","difficulty":"easy","options":["Poor electrical conductors","Brittle","Lustrous and malleable","Non-conductors of heat"],"answer":"Lustrous and malleable"},
-  {"subject":"Chemistry","question":"The reactivity series is used to predict","type":"mcq","difficulty":"medium","options":["The colour of metals","Whether a metal can displace another from solution","The melting point of metals","The hardness of metals"],"answer":"Whether a metal can displace another from solution"},
-  {"subject":"Chemistry","question":"Which of the following metals is the most reactive?","type":"mcq","difficulty":"medium","options":["Gold","Iron","Zinc","Potassium"],"answer":"Potassium"},
-  {"subject":"Chemistry","question":"The empirical formula of a compound gives","type":"mcq","difficulty":"medium","options":["The actual number of atoms","The simplest whole number ratio of atoms","The 3D arrangement of atoms","The molecular mass"],"answer":"The simplest whole number ratio of atoms"},
-  {"subject":"Chemistry","question":"A solution with a pH of 2 is","type":"mcq","difficulty":"easy","options":["Strongly alkaline","Weakly alkaline","Neutral","Strongly acidic"],"answer":"Strongly acidic"},
-  {"subject":"Chemistry","question":"Which of the following processes occurs at the anode during electrolysis of copper sulphate solution using copper electrodes?","type":"mcq","difficulty":"hard","options":["Copper deposits","Copper dissolves","Oxygen is released","Hydrogen is released"],"answer":"Copper dissolves"},
-  {"subject":"Chemistry","question":"Esterification is a reaction between an acid and","type":"mcq","difficulty":"medium","options":["A ketone","An alkane","An alcohol","A base"],"answer":"An alcohol"},
-  {"subject":"Chemistry","question":"The functional group -COOH is found in","type":"mcq","difficulty":"medium","options":["Alcohols","Aldehydes","Carboxylic acids","Esters"],"answer":"Carboxylic acids"},
-  {"subject":"Chemistry","question":"Which of these is a saturated hydrocarbon?","type":"mcq","difficulty":"easy","options":["Ethene","Propyne","Butane","Benzene"],"answer":"Butane"},
-  {"subject":"Chemistry","question":"What is produced when ethene reacts with bromine water?","type":"mcq","difficulty":"hard","options":["Ethane","1,2-dibromoethane","Bromoethane","Ethanol"],"answer":"1,2-dibromoethane"},
-  {"subject":"Chemistry","question":"Fermentation of glucose produces ethanol and which other substance?","type":"mcq","difficulty":"medium","options":["Oxygen","Carbon dioxide","Methane","Hydrogen"],"answer":"Carbon dioxide"},
-  {"subject":"Chemistry","question":"The contact process is used to manufacture","type":"mcq","difficulty":"medium","options":["Ammonia","Nitric acid","Sulphuric acid","Hydrochloric acid"],"answer":"Sulphuric acid"},
-  {"subject":"Chemistry","question":"Which gas has the smell of rotten eggs?","type":"mcq","difficulty":"easy","options":["Chlorine","Ammonia","Hydrogen sulphide","Sulphur dioxide"],"answer":"Hydrogen sulphide"},
-  {"subject":"Chemistry","question":"A buffer solution resists changes in","type":"mcq","difficulty":"hard","options":["Temperature","Pressure","pH","Concentration"],"answer":"pH"},
-  {"subject":"Chemistry","question":"Which of the following best describes a homogeneous mixture?","type":"mcq","difficulty":"medium","options":["A mixture where components are clearly visible","A mixture with uniform composition throughout","A mixture that cannot be separated","A pure substance"],"answer":"A mixture with uniform composition throughout"},
-  {"subject":"Chemistry","question":"The process of obtaining a pure solid from its solution by cooling is called","type":"mcq","difficulty":"easy","options":["Distillation","Chromatography","Crystallisation","Filtration"],"answer":"Crystallisation"},
-  {"subject":"Chemistry","question":"Paper chromatography separates mixtures based on differences in","type":"mcq","difficulty":"medium","options":["Density","Boiling point","Solubility and adsorption","Colour alone"],"answer":"Solubility and adsorption"},
-  {"subject":"Chemistry","question":"The Rf value in chromatography is calculated as","type":"mcq","difficulty":"medium","options":["Distance moved by solvent ÷ distance moved by spot","Distance moved by spot ÷ distance moved by solvent","Mass of spot ÷ mass of solvent","Volume of solvent ÷ volume of solution"],"answer":"Distance moved by spot ÷ distance moved by solvent"},
-  {"subject":"Chemistry","question":"Which of the following is a physical change?","type":"mcq","difficulty":"easy","options":["Burning wood","Rusting iron","Melting ice","Cooking an egg"],"answer":"Melting ice"},
-  {"subject":"Chemistry","question":"What volume does one mole of any gas occupy at STP?","type":"mcq","difficulty":"medium","options":["22.4 dm³","24.0 dm³","11.2 dm³","44.8 dm³"],"answer":"22.4 dm³"},
-  {"subject":"Chemistry","question":"The bond angle in a water molecule is approximately","type":"mcq","difficulty":"medium","options":["90°","109.5°","104.5°","120°"],"answer":"104.5°"},
-  {"subject":"Chemistry","question":"Which of the following has a tetrahedral shape?","type":"mcq","difficulty":"hard","options":["CO₂","H₂O","NH₃","CH₄"],"answer":"CH₄"},
-  {"subject":"Chemistry","question":"Electronegativity increases across a period because","type":"mcq","difficulty":"hard","options":["Atomic radius increases","Nuclear charge increases while shielding stays similar","More electrons are added","The number of neutrons increases"],"answer":"Nuclear charge increases while shielding stays similar"},
-  {"subject":"Chemistry","question":"Which gas is produced when dilute sulphuric acid reacts with sodium carbonate?","type":"mcq","difficulty":"easy","options":["Oxygen","Hydrogen","Carbon dioxide","Sulphur dioxide"],"answer":"Carbon dioxide"},
-  {"subject":"Chemistry","question":"Limewater turns milky when carbon dioxide is bubbled through it because","type":"mcq","difficulty":"easy","options":["It forms calcium oxide","It forms calcium carbonate precipitate","It forms carbonic acid","It forms calcium hydroxide"],"answer":"It forms calcium carbonate precipitate"},
-  {"subject":"Chemistry","question":"Which of the following is an example of a metalloid?","type":"mcq","difficulty":"medium","options":["Sodium","Silicon","Sulphur","Selenium"],"answer":"Silicon"},
-  {"subject":"Chemistry","question":"The process by which iron is protected by connecting it to a more reactive metal is called","type":"mcq","difficulty":"hard","options":["Galvanising","Electroplating","Sacrificial protection","Passivation"],"answer":"Sacrificial protection"},
-  {"subject":"Chemistry","question":"In a redox reaction, the substance that gains electrons is","type":"mcq","difficulty":"medium","options":["Oxidised","Reduced","The reducing agent","Unchanged"],"answer":"Reduced"},
-  {"subject":"Chemistry","question":"Which of the following is the strongest oxidising agent?","type":"mcq","difficulty":"hard","options":["Fluorine","Chlorine","Bromine","Iodine"],"answer":"Fluorine"},
-  {"subject":"Chemistry","question":"The test for an alkene is that it","type":"mcq","difficulty":"medium","options":["Burns with a blue flame","Decolourises bromine water","Turns lime water milky","Reacts with sodium to give hydrogen"],"answer":"Decolourises bromine water"},
-  {"subject":"Chemistry","question":"The reaction of ethene with water in the presence of an acid catalyst to form ethanol is called","type":"mcq","difficulty":"hard","options":["Fermentation","Substitution","Hydration","Dehydration"],"answer":"Hydration"},
-  {"subject":"Chemistry","question":"Nylon is an example of a","type":"mcq","difficulty":"medium","options":["Natural polymer","Condensation polymer","Addition polymer","Biopolymer"],"answer":"Condensation polymer"},
-  {"subject":"Chemistry","question":"Poly(ethene) is made by the addition polymerisation of","type":"mcq","difficulty":"easy","options":["Ethane","Ethanol","Ethene","Ethanal"],"answer":"Ethene"},
-  {"subject":"Chemistry","question":"The empirical formula of a compound that is 40% C, 6.7% H, and 53.3% O by mass is","type":"mcq","difficulty":"hard","options":["CH₂O","C₂H₄O₂","C₃H₆O₃","CHO"],"answer":"CH₂O"},
-  {"subject":"Chemistry","question":"Name the product when sodium reacts with water.","type":"short_answer","difficulty":"easy","keywords":["sodium hydroxide","hydrogen","NaOH","hydrogen gas"]},
-  {"subject":"Chemistry","question":"State two uses of chlorine.","type":"short_answer","difficulty":"medium","keywords":["water treatment","disinfectant","PVC","bleach","plastics","swimming pools","manufacture"]},
-  {"subject":"Chemistry","question":"Explain why noble gases are unreactive.","type":"short_answer","difficulty":"medium","keywords":["full outer shell","stable","octet","8 electrons","complete","valence shell"]},
-  {"subject":"Chemistry","question":"What is a displacement reaction? Give an example.","type":"short_answer","difficulty":"medium","keywords":["more reactive","displaces","less reactive","iron","copper sulphate","zinc","example"]},
-  {"subject":"Chemistry","question":"State the condition required for the Haber process to produce ammonia.","type":"short_answer","difficulty":"medium","keywords":["450","iron catalyst","200 atm","temperature","pressure","catalyst"]},
-  {"subject":"Chemistry","question":"Describe the test for hydrogen gas.","type":"short_answer","difficulty":"easy","keywords":["lit splint","squeaky pop","burns","flame","pop"]},
-  {"subject":"Chemistry","question":"Define the term 'relative atomic mass'.","type":"short_answer","difficulty":"medium","keywords":["average mass","carbon-12","isotopes","abundance","weighted","12","scale"]}
+  {
+    "subject": "Chemistry",
+    "question": "What is the atomic number of carbon?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "12"
+    ],
+    "answer": [
+      "6"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which subatomic particle has no electric charge?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Proton",
+      "Electron",
+      "Neutron",
+      "Positron"
+    ],
+    "answer": [
+      "Neutron"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The number of protons in the nucleus of an atom is called the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass number",
+      "Atomic number",
+      "Neutron number",
+      "Isotope number"
+    ],
+    "answer": [
+      "Atomic number"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "How many electrons can the second shell of an atom hold?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "2",
+      "8",
+      "18",
+      "32"
+    ],
+    "answer": [
+      "8"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Isotopes are atoms of the same element that differ in their number of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Protons",
+      "Electrons",
+      "Neutrons",
+      "Quarks"
+    ],
+    "answer": [
+      "Neutrons"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the mass number of an atom with 6 protons and 6 neutrons?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6",
+      "12",
+      "18",
+      "24"
+    ],
+    "answer": [
+      "12"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which scientist proposed the nuclear model of the atom?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "John Dalton",
+      "J.J. Thomson",
+      "Ernest Rutherford",
+      "Niels Bohr"
+    ],
+    "answer": [
+      "Ernest Rutherford"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In Bohr's model of the atom, electrons travel in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Random paths",
+      "Fixed circular orbits",
+      "Elliptical orbits",
+      "Straight lines"
+    ],
+    "answer": [
+      "Fixed circular orbits"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The electronic configuration of sodium (Na, atomic number 11) is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2,9",
+      "2,8,1",
+      "2,8,3",
+      "3,8"
+    ],
+    "answer": [
+      "2,8,1"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following particles has the smallest mass?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Alpha particle"
+    ],
+    "answer": [
+      "Electron"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The element with the electronic configuration 2,8,7 is in which group of the periodic table?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Group I",
+      "Group VI",
+      "Group VII",
+      "Group VIII"
+    ],
+    "answer": [
+      "Group VII"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What type of bond is formed when electrons are completely transferred from one atom to another?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Covalent bond",
+      "Ionic bond",
+      "Metallic bond",
+      "Hydrogen bond"
+    ],
+    "answer": [
+      "Ionic bond"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following compounds contains a covalent bond?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "NaCl",
+      "KBr",
+      "H₂O",
+      "MgO"
+    ],
+    "answer": [
+      "H₂O"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "How many covalent bonds does a nitrogen molecule (N₂) contain?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "One single bond",
+      "One double bond",
+      "One triple bond",
+      "Two double bonds"
+    ],
+    "answer": [
+      "One triple bond"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Electronegativity is the ability of an atom to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Lose electrons in a reaction",
+      "Attract electrons in a bond",
+      "Form ions",
+      "Conduct electricity"
+    ],
+    "answer": [
+      "Attract electrons in a bond"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which element is in Period 3 and Group II of the periodic table?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Sodium",
+      "Magnesium",
+      "Aluminium",
+      "Silicon"
+    ],
+    "answer": [
+      "Magnesium"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Elements in the same group of the periodic table have the same",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass number",
+      "Number of neutrons",
+      "Number of valence electrons",
+      "Atomic radius"
+    ],
+    "answer": [
+      "Number of valence electrons"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Across a period from left to right, atomic radius generally",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increases",
+      "Decreases",
+      "Remains the same",
+      "First increases then decreases"
+    ],
+    "answer": [
+      "Decreases"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The halogens are found in which group of the periodic table?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Group I",
+      "Group II",
+      "Group VII",
+      "Group VIII"
+    ],
+    "answer": [
+      "Group VII"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is a noble gas?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Nitrogen",
+      "Oxygen",
+      "Argon",
+      "Chlorine"
+    ],
+    "answer": [
+      "Argon"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the chemical formula for sulphuric acid?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "HCl",
+      "HNO₃",
+      "H₂SO₄",
+      "H₃PO₄"
+    ],
+    "answer": [
+      "H₂SO₄"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "A substance that turns blue litmus paper red is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An acid",
+      "A base",
+      "A salt",
+      "A neutral substance"
+    ],
+    "answer": [
+      "An acid"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The reaction between an acid and a base is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Oxidation",
+      "Neutralisation",
+      "Decomposition",
+      "Precipitation"
+    ],
+    "answer": [
+      "Neutralisation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the pH of a neutral solution?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0",
+      "7",
+      "14",
+      "1"
+    ],
+    "answer": [
+      "7"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which indicator is used to find the end point in a neutralisation titration?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Universal indicator",
+      "Phenolphthalein",
+      "Benedict's solution",
+      "Iodine solution"
+    ],
+    "answer": [
+      "Phenolphthalein"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Sodium hydroxide is classified as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "An acid",
+      "A weak base",
+      "A strong base",
+      "A neutral salt"
+    ],
+    "answer": [
+      "A strong base"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The product of the reaction between sodium hydroxide and hydrochloric acid is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Sodium carbonate and water",
+      "Sodium chloride and water",
+      "Sodium oxide and water",
+      "Sodium sulphate and water"
+    ],
+    "answer": [
+      "Sodium chloride and water"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the molar mass of water (H₂O)?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "16 g/mol",
+      "18 g/mol",
+      "20 g/mol",
+      "34 g/mol"
+    ],
+    "answer": [
+      "18 g/mol"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Avogadro's number is approximately",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "6.02 × 10²³",
+      "6.02 × 10²¹",
+      "3.01 × 10²³",
+      "1.20 × 10²⁴"
+    ],
+    "answer": [
+      "6.02 × 10²³"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "One mole of any substance contains how many particles?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "6.02 × 10²²",
+      "6.02 × 10²³",
+      "6.02 × 10²⁴",
+      "6.02 × 10²⁵"
+    ],
+    "answer": [
+      "6.02 × 10²³"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the concentration of a solution containing 2 moles of NaCl dissolved in 500 cm³ of water?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "1 mol/dm³",
+      "2 mol/dm³",
+      "4 mol/dm³",
+      "0.5 mol/dm³"
+    ],
+    "answer": [
+      "4 mol/dm³"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In the equation 2H₂ + O₂ → 2H₂O, how many moles of oxygen are needed to react with 4 moles of hydrogen?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "answer": [
+      "2"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following increases the rate of a chemical reaction?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Decreasing temperature",
+      "Decreasing concentration",
+      "Using a catalyst",
+      "Removing a catalyst"
+    ],
+    "answer": [
+      "Using a catalyst"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "A catalyst works by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increasing activation energy",
+      "Decreasing activation energy",
+      "Changing the products",
+      "Increasing temperature"
+    ],
+    "answer": [
+      "Decreasing activation energy"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "According to Le Chatelier's principle, increasing pressure on a gaseous equilibrium will shift the equilibrium towards the side with",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "More moles of gas",
+      "Fewer moles of gas",
+      "Equal moles of gas",
+      "No change"
+    ],
+    "answer": [
+      "Fewer moles of gas"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In a reversible reaction at equilibrium, the rate of the forward reaction is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Greater than the reverse reaction",
+      "Less than the reverse reaction",
+      "Equal to the reverse reaction",
+      "Zero"
+    ],
+    "answer": [
+      "Equal to the reverse reaction"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process by which a solid is converted directly into a gas is called",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Evaporation",
+      "Condensation",
+      "Sublimation",
+      "Deposition"
+    ],
+    "answer": [
+      "Sublimation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is an exothermic reaction?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Photosynthesis",
+      "Thermal decomposition of limestone",
+      "Combustion of wood",
+      "Dissolving ammonium nitrate in water"
+    ],
+    "answer": [
+      "Combustion of wood"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In electrolysis of brine (NaCl solution), what is produced at the cathode?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Chlorine gas",
+      "Oxygen gas",
+      "Hydrogen gas",
+      "Sodium metal"
+    ],
+    "answer": [
+      "Hydrogen gas"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Oxidation in terms of electrons means",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Gain of electrons",
+      "Loss of electrons",
+      "Gain of protons",
+      "Loss of protons"
+    ],
+    "answer": [
+      "Loss of electrons"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In a galvanic cell, oxidation occurs at the",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Cathode",
+      "Anode",
+      "Both electrodes",
+      "Electrolyte"
+    ],
+    "answer": [
+      "Anode"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The general formula for alkanes is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "CₙH₂ₙ",
+      "CₙH₂ₙ₊₂",
+      "CₙH₂ₙ₋₂",
+      "CₙH₂ₙ₊₁"
+    ],
+    "answer": [
+      "CₙH₂ₙ₊₂"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which functional group is present in alcohols?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "-COOH",
+      "-OH",
+      "-CHO",
+      "-NH₂"
+    ],
+    "answer": [
+      "-OH"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Ethanol has the molecular formula",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "CH₃OH",
+      "C₂H₅OH",
+      "C₃H₇OH",
+      "C₄H₉OH"
+    ],
+    "answer": [
+      "C₂H₅OH"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process of breaking large hydrocarbon molecules into smaller ones is called",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Polymerisation",
+      "Fermentation",
+      "Cracking",
+      "Distillation"
+    ],
+    "answer": [
+      "Cracking"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which type of organic reaction involves the addition of a halogen across a double bond?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Substitution",
+      "Elimination",
+      "Addition",
+      "Condensation"
+    ],
+    "answer": [
+      "Addition"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Crude oil is separated into fractions by the process of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Filtration",
+      "Fractional distillation",
+      "Crystallisation",
+      "Chromatography"
+    ],
+    "answer": [
+      "Fractional distillation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is used as fuel in cars?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Bitumen",
+      "Lubricating oil",
+      "Petrol",
+      "Paraffin wax"
+    ],
+    "answer": [
+      "Petrol"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The ore of iron is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Bauxite",
+      "Haematite",
+      "Galena",
+      "Chalcopyrite"
+    ],
+    "answer": [
+      "Haematite"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In the blast furnace, iron ore is reduced by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Oxygen",
+      "Carbon monoxide",
+      "Hydrogen",
+      "Carbon dioxide"
+    ],
+    "answer": [
+      "Carbon monoxide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The ore from which aluminium is extracted is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Haematite",
+      "Galena",
+      "Bauxite",
+      "Malachite"
+    ],
+    "answer": [
+      "Bauxite"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Aluminium is extracted from its ore by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Smelting",
+      "Electrolysis",
+      "Reduction with carbon",
+      "Heating alone"
+    ],
+    "answer": [
+      "Electrolysis"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is a radioactive emission that has the same nature as X-rays?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Alpha particles",
+      "Beta particles",
+      "Gamma rays",
+      "Neutrons"
+    ],
+    "answer": [
+      "Gamma rays"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "An alpha particle consists of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "2 protons and 1 neutron",
+      "2 protons and 2 neutrons",
+      "1 proton and 2 neutrons",
+      "4 protons"
+    ],
+    "answer": [
+      "2 protons and 2 neutrons"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Half-life is defined as the time taken for",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "All atoms to decay",
+      "Half the atoms in a sample to decay",
+      "The activity to double",
+      "The mass to double"
+    ],
+    "answer": [
+      "Half the atoms in a sample to decay"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What type of reaction produces a polymer from many small monomer units?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Cracking",
+      "Polymerisation",
+      "Esterification",
+      "Fermentation"
+    ],
+    "answer": [
+      "Polymerisation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The main greenhouse gas produced by burning fossil fuels is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Nitrogen",
+      "Carbon dioxide",
+      "Oxygen",
+      "Hydrogen"
+    ],
+    "answer": [
+      "Carbon dioxide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Acid rain is mainly caused by oxides of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Carbon and hydrogen",
+      "Sulphur and nitrogen",
+      "Calcium and iron",
+      "Magnesium and zinc"
+    ],
+    "answer": [
+      "Sulphur and nitrogen"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Water pollution caused by excess fertiliser runoff leading to excessive algae growth is called",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Eutrophication",
+      "Bioaccumulation",
+      "Photosynthesis",
+      "Desertification"
+    ],
+    "answer": [
+      "Eutrophication"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Rusting of iron is an example of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Physical change",
+      "Reduction",
+      "Oxidation",
+      "Sublimation"
+    ],
+    "answer": [
+      "Oxidation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The chemical formula for rust is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Fe₂O₃",
+      "Fe₃O₄",
+      "Fe₂O₃·xH₂O",
+      "FeO"
+    ],
+    "answer": [
+      "Fe₂O₃·xH₂O"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is not a method of preventing rusting?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Galvanising",
+      "Painting",
+      "Oiling",
+      "Heating"
+    ],
+    "answer": [
+      "Heating"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Galvanising is the process of coating iron with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Tin",
+      "Zinc",
+      "Aluminium",
+      "Copper"
+    ],
+    "answer": [
+      "Zinc"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the name of the process by which plants make their food?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Photosynthesis",
+      "is photosynthesis",
+      "are photosynthesis",
+      "it is photosynthesis",
+      "they are photosynthesis"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Name the three subatomic particles found in an atom.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "proton",
+      "neutron",
+      "electron",
+      "protons",
+      "neutrons",
+      "electrons",
+      "is proton",
+      "are proton",
+      "it is proton",
+      "they are proton",
+      "is neutron",
+      "are neutron",
+      "it is neutron",
+      "they are neutron",
+      "is electron",
+      "are electron",
+      "it is electron",
+      "they are electron",
+      "is protons",
+      "are protons",
+      "it is protons",
+      "they are protons",
+      "is neutrons",
+      "are neutrons",
+      "it is neutrons",
+      "they are neutrons",
+      "is electrons",
+      "are electrons",
+      "it is electrons",
+      "they are electrons"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What type of bonding holds sodium chloride (NaCl) together?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "ionic",
+      "ionic bonding",
+      "electrostatic",
+      "is ionic",
+      "are ionic",
+      "it is ionic",
+      "they are ionic",
+      "is electrostatic",
+      "are electrostatic",
+      "it is electrostatic",
+      "they are electrostatic"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "State the law of conservation of mass.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "mass",
+      "created",
+      "destroyed",
+      "conserved",
+      "constant",
+      "total mass",
+      "is mass",
+      "are mass",
+      "it is mass",
+      "they are mass",
+      "is created",
+      "are created",
+      "it is created",
+      "they are created",
+      "is destroyed",
+      "are destroyed",
+      "it is destroyed",
+      "they are destroyed",
+      "is conserved",
+      "are conserved",
+      "it is conserved",
+      "they are conserved",
+      "is constant",
+      "are constant",
+      "it is constant",
+      "they are constant"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is a catalyst?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "catalyst",
+      "speed up",
+      "rate",
+      "activation energy",
+      "unchanged",
+      "not consumed",
+      "is catalyst",
+      "are catalyst",
+      "it is catalyst",
+      "they are catalyst",
+      "is rate",
+      "are rate",
+      "it is rate",
+      "they are rate",
+      "is unchanged",
+      "are unchanged",
+      "it is unchanged",
+      "they are unchanged"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Define oxidation in terms of electron transfer.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "loss",
+      "electrons",
+      "electron",
+      "OIL",
+      "is loss",
+      "are loss",
+      "it is loss",
+      "they are loss",
+      "is electrons",
+      "are electrons",
+      "it is electrons",
+      "they are electrons",
+      "is electron",
+      "are electron",
+      "it is electron",
+      "they are electron",
+      "is oil",
+      "are oil",
+      "it is oil",
+      "they are oil"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the name of the electrode at which reduction occurs during electrolysis?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "cathode",
+      "is cathode",
+      "are cathode",
+      "it is cathode",
+      "they are cathode"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Name the process used to separate crude oil into its fractions.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "fractional distillation",
+      "distillation",
+      "is distillation",
+      "are distillation",
+      "it is distillation",
+      "they are distillation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the half-life of a radioactive isotope if 100g is reduced to 25g after 20 years?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "10",
+      "10 years",
+      "= 10",
+      "=10",
+      "x = 10",
+      "x=10",
+      "ten"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "State one use of radioactive isotopes in medicine.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "cancer treatment",
+      "radiotherapy",
+      "tracing",
+      "diagnosis",
+      "sterilisation",
+      "imaging",
+      "is radiotherapy",
+      "are radiotherapy",
+      "it is radiotherapy",
+      "they are radiotherapy",
+      "is tracing",
+      "are tracing",
+      "it is tracing",
+      "they are tracing",
+      "is diagnosis",
+      "are diagnosis",
+      "it is diagnosis",
+      "they are diagnosis",
+      "is sterilisation",
+      "are sterilisation",
+      "it is sterilisation",
+      "they are sterilisation",
+      "is imaging",
+      "are imaging",
+      "it is imaging",
+      "they are imaging"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the IUPAC name of the compound with formula C₂H₅OH?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "ethanol",
+      "is ethanol",
+      "are ethanol",
+      "it is ethanol",
+      "they are ethanol"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Name the type of chemical reaction that releases energy to the surroundings.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "exothermic",
+      "is exothermic",
+      "are exothermic",
+      "it is exothermic",
+      "they are exothermic"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the formula for calculating concentration of a solution?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "moles divided by volume",
+      "mol/dm3",
+      "moles per litre",
+      "n/V",
+      "moldm3",
+      "is mol/dm3",
+      "are mol/dm3",
+      "it is mol/dm3",
+      "they are mol/dm3",
+      "nv",
+      "is n/v",
+      "are n/v",
+      "it is n/v",
+      "they are n/v"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Name the gas produced when zinc reacts with dilute hydrochloric acid.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "hydrogen",
+      "H2",
+      "is hydrogen",
+      "are hydrogen",
+      "it is hydrogen",
+      "they are hydrogen"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the term for the minimum energy needed for a reaction to occur?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "activation energy"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In a blast furnace, what raw material provides the carbon monoxide that reduces iron ore?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "coke",
+      "coal",
+      "carbon",
+      "is coke",
+      "are coke",
+      "it is coke",
+      "they are coke",
+      "is coal",
+      "are coal",
+      "it is coal",
+      "they are coal",
+      "is carbon",
+      "are carbon",
+      "it is carbon",
+      "they are carbon"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What does pH stand for and what scale does it use?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "hydrogen",
+      "0 to 14",
+      "power of hydrogen",
+      "0-14",
+      "is hydrogen",
+      "are hydrogen",
+      "it is hydrogen",
+      "they are hydrogen",
+      "014",
+      "is 0-14",
+      "are 0-14",
+      "it is 0-14",
+      "they are 0-14"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the charge on an electron?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "+1",
+      "-1",
+      "0",
+      "+2"
+    ],
+    "answer": [
+      "-1"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas is produced when calcium carbonate is heated strongly?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Oxygen",
+      "Carbon monoxide",
+      "Carbon dioxide",
+      "Sulphur dioxide"
+    ],
+    "answer": [
+      "Carbon dioxide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process of adding chlorine to drinking water to kill germs is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Filtration",
+      "Chlorination",
+      "Fluoridation",
+      "Sedimentation"
+    ],
+    "answer": [
+      "Chlorination"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is an alloy of copper and zinc?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Bronze",
+      "Brass",
+      "Stainless steel",
+      "Duralumin"
+    ],
+    "answer": [
+      "Brass"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Steel is an alloy of iron and",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Zinc",
+      "Aluminium",
+      "Carbon",
+      "Copper"
+    ],
+    "answer": [
+      "Carbon"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following fuels produces the most energy per gram when burned?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Coal",
+      "Natural gas",
+      "Wood",
+      "Peat"
+    ],
+    "answer": [
+      "Natural gas"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process by which nitrogen in the atmosphere is converted to ammonia by bacteria is called",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Denitrification",
+      "Nitrification",
+      "Nitrogen fixation",
+      "Ammonification"
+    ],
+    "answer": [
+      "Nitrogen fixation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Ammonia is manufactured industrially by the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Contact process",
+      "Haber process",
+      "Ostwald process",
+      "Bayer process"
+    ],
+    "answer": [
+      "Haber process"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In the Haber process, what are the two reactants used to make ammonia?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Nitrogen and oxygen",
+      "Nitrogen and hydrogen",
+      "Hydrogen and carbon",
+      "Oxygen and hydrogen"
+    ],
+    "answer": [
+      "Nitrogen and hydrogen"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is the role of iron in the Haber process?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Reactant",
+      "Product",
+      "Catalyst",
+      "Solvent"
+    ],
+    "answer": [
+      "Catalyst"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is a property of metals?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Poor electrical conductors",
+      "Brittle",
+      "Lustrous and malleable",
+      "Non-conductors of heat"
+    ],
+    "answer": [
+      "Lustrous and malleable"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The reactivity series is used to predict",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The colour of metals",
+      "Whether a metal can displace another from solution",
+      "The melting point of metals",
+      "The hardness of metals"
+    ],
+    "answer": [
+      "Whether a metal can displace another from solution"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following metals is the most reactive?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Gold",
+      "Iron",
+      "Zinc",
+      "Potassium"
+    ],
+    "answer": [
+      "Potassium"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The empirical formula of a compound gives",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The actual number of atoms",
+      "The simplest whole number ratio of atoms",
+      "The 3D arrangement of atoms",
+      "The molecular mass"
+    ],
+    "answer": [
+      "The simplest whole number ratio of atoms"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "A solution with a pH of 2 is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Strongly alkaline",
+      "Weakly alkaline",
+      "Neutral",
+      "Strongly acidic"
+    ],
+    "answer": [
+      "Strongly acidic"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following processes occurs at the anode during electrolysis of copper sulphate solution using copper electrodes?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Copper deposits",
+      "Copper dissolves",
+      "Oxygen is released",
+      "Hydrogen is released"
+    ],
+    "answer": [
+      "Copper dissolves"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Esterification is a reaction between an acid and",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A ketone",
+      "An alkane",
+      "An alcohol",
+      "A base"
+    ],
+    "answer": [
+      "An alcohol"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The functional group -COOH is found in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Alcohols",
+      "Aldehydes",
+      "Carboxylic acids",
+      "Esters"
+    ],
+    "answer": [
+      "Carboxylic acids"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of these is a saturated hydrocarbon?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ethene",
+      "Propyne",
+      "Butane",
+      "Benzene"
+    ],
+    "answer": [
+      "Butane"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is produced when ethene reacts with bromine water?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Ethane",
+      "1,2-dibromoethane",
+      "Bromoethane",
+      "Ethanol"
+    ],
+    "answer": [
+      "1,2-dibromoethane"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Fermentation of glucose produces ethanol and which other substance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Methane",
+      "Hydrogen"
+    ],
+    "answer": [
+      "Carbon dioxide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The contact process is used to manufacture",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Ammonia",
+      "Nitric acid",
+      "Sulphuric acid",
+      "Hydrochloric acid"
+    ],
+    "answer": [
+      "Sulphuric acid"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas has the smell of rotten eggs?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Chlorine",
+      "Ammonia",
+      "Hydrogen sulphide",
+      "Sulphur dioxide"
+    ],
+    "answer": [
+      "Hydrogen sulphide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "A buffer solution resists changes in",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Temperature",
+      "Pressure",
+      "pH",
+      "Concentration"
+    ],
+    "answer": [
+      "pH"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following best describes a homogeneous mixture?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A mixture where components are clearly visible",
+      "A mixture with uniform composition throughout",
+      "A mixture that cannot be separated",
+      "A pure substance"
+    ],
+    "answer": [
+      "A mixture with uniform composition throughout"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process of obtaining a pure solid from its solution by cooling is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Distillation",
+      "Chromatography",
+      "Crystallisation",
+      "Filtration"
+    ],
+    "answer": [
+      "Crystallisation"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Paper chromatography separates mixtures based on differences in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Density",
+      "Boiling point",
+      "Solubility and adsorption",
+      "Colour alone"
+    ],
+    "answer": [
+      "Solubility and adsorption"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The Rf value in chromatography is calculated as",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Distance moved by solvent ÷ distance moved by spot",
+      "Distance moved by spot ÷ distance moved by solvent",
+      "Mass of spot ÷ mass of solvent",
+      "Volume of solvent ÷ volume of solution"
+    ],
+    "answer": [
+      "Distance moved by spot ÷ distance moved by solvent"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is a physical change?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Burning wood",
+      "Rusting iron",
+      "Melting ice",
+      "Cooking an egg"
+    ],
+    "answer": [
+      "Melting ice"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What volume does one mole of any gas occupy at STP?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "22.4 dm³",
+      "24.0 dm³",
+      "11.2 dm³",
+      "44.8 dm³"
+    ],
+    "answer": [
+      "22.4 dm³"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The bond angle in a water molecule is approximately",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "90°",
+      "109.5°",
+      "104.5°",
+      "120°"
+    ],
+    "answer": [
+      "104.5°"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following has a tetrahedral shape?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "CO₂",
+      "H₂O",
+      "NH₃",
+      "CH₄"
+    ],
+    "answer": [
+      "CH₄"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Electronegativity increases across a period because",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Atomic radius increases",
+      "Nuclear charge increases while shielding stays similar",
+      "More electrons are added",
+      "The number of neutrons increases"
+    ],
+    "answer": [
+      "Nuclear charge increases while shielding stays similar"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which gas is produced when dilute sulphuric acid reacts with sodium carbonate?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Oxygen",
+      "Hydrogen",
+      "Carbon dioxide",
+      "Sulphur dioxide"
+    ],
+    "answer": [
+      "Carbon dioxide"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Limewater turns milky when carbon dioxide is bubbled through it because",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "It forms calcium oxide",
+      "It forms calcium carbonate precipitate",
+      "It forms carbonic acid",
+      "It forms calcium hydroxide"
+    ],
+    "answer": [
+      "It forms calcium carbonate precipitate"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is an example of a metalloid?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Sodium",
+      "Silicon",
+      "Sulphur",
+      "Selenium"
+    ],
+    "answer": [
+      "Silicon"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The process by which iron is protected by connecting it to a more reactive metal is called",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Galvanising",
+      "Electroplating",
+      "Sacrificial protection",
+      "Passivation"
+    ],
+    "answer": [
+      "Sacrificial protection"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "In a redox reaction, the substance that gains electrons is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Oxidised",
+      "Reduced",
+      "The reducing agent",
+      "Unchanged"
+    ],
+    "answer": [
+      "Reduced"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Which of the following is the strongest oxidising agent?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Fluorine",
+      "Chlorine",
+      "Bromine",
+      "Iodine"
+    ],
+    "answer": [
+      "Fluorine"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The test for an alkene is that it",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Burns with a blue flame",
+      "Decolourises bromine water",
+      "Turns lime water milky",
+      "Reacts with sodium to give hydrogen"
+    ],
+    "answer": [
+      "Decolourises bromine water"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The reaction of ethene with water in the presence of an acid catalyst to form ethanol is called",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Fermentation",
+      "Substitution",
+      "Hydration",
+      "Dehydration"
+    ],
+    "answer": [
+      "Hydration"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Nylon is an example of a",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Natural polymer",
+      "Condensation polymer",
+      "Addition polymer",
+      "Biopolymer"
+    ],
+    "answer": [
+      "Condensation polymer"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Poly(ethene) is made by the addition polymerisation of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ethane",
+      "Ethanol",
+      "Ethene",
+      "Ethanal"
+    ],
+    "answer": [
+      "Ethene"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "The empirical formula of a compound that is 40% C, 6.7% H, and 53.3% O by mass is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "CH₂O",
+      "C₂H₄O₂",
+      "C₃H₆O₃",
+      "CHO"
+    ],
+    "answer": [
+      "CH₂O"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Name the product when sodium reacts with water.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "sodium hydroxide",
+      "hydrogen",
+      "NaOH",
+      "hydrogen gas",
+      "is hydrogen",
+      "are hydrogen",
+      "it is hydrogen",
+      "they are hydrogen",
+      "is naoh",
+      "are naoh",
+      "it is naoh",
+      "they are naoh"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "State two uses of chlorine.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "water treatment",
+      "disinfectant",
+      "PVC",
+      "bleach",
+      "plastics",
+      "swimming pools",
+      "manufacture",
+      "is disinfectant",
+      "are disinfectant",
+      "it is disinfectant",
+      "they are disinfectant",
+      "is pvc",
+      "are pvc",
+      "it is pvc",
+      "they are pvc",
+      "is bleach",
+      "are bleach",
+      "it is bleach",
+      "they are bleach",
+      "is plastics",
+      "are plastics",
+      "it is plastics",
+      "they are plastics",
+      "is manufacture",
+      "are manufacture",
+      "it is manufacture",
+      "they are manufacture"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Explain why noble gases are unreactive.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "full outer shell",
+      "stable",
+      "octet",
+      "8 electrons",
+      "complete",
+      "valence shell",
+      "is stable",
+      "are stable",
+      "it is stable",
+      "they are stable",
+      "is octet",
+      "are octet",
+      "it is octet",
+      "they are octet",
+      "is complete",
+      "are complete",
+      "it is complete",
+      "they are complete"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "What is a displacement reaction? Give an example.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "more reactive",
+      "displaces",
+      "less reactive",
+      "iron",
+      "copper sulphate",
+      "zinc",
+      "example",
+      "is displaces",
+      "are displaces",
+      "it is displaces",
+      "they are displaces",
+      "is iron",
+      "are iron",
+      "it is iron",
+      "they are iron",
+      "is zinc",
+      "are zinc",
+      "it is zinc",
+      "they are zinc",
+      "is example",
+      "are example",
+      "it is example",
+      "they are example"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "State the condition required for the Haber process to produce ammonia.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "450",
+      "iron catalyst",
+      "200 atm",
+      "temperature",
+      "pressure",
+      "catalyst",
+      "= 450",
+      "=450",
+      "x = 450",
+      "x=450",
+      "is 450",
+      "are 450",
+      "it is 450",
+      "they are 450",
+      "is temperature",
+      "are temperature",
+      "it is temperature",
+      "they are temperature",
+      "is pressure",
+      "are pressure",
+      "it is pressure",
+      "they are pressure",
+      "is catalyst",
+      "are catalyst",
+      "it is catalyst",
+      "they are catalyst"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Describe the test for hydrogen gas.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "lit splint",
+      "squeaky pop",
+      "burns",
+      "flame",
+      "pop",
+      "is burns",
+      "are burns",
+      "it is burns",
+      "they are burns",
+      "is flame",
+      "are flame",
+      "it is flame",
+      "they are flame",
+      "is pop",
+      "are pop",
+      "it is pop",
+      "they are pop"
+    ]
+  },
+  {
+    "subject": "Chemistry",
+    "question": "Define the term 'relative atomic mass'.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "average mass",
+      "carbon-12",
+      "isotopes",
+      "abundance",
+      "weighted",
+      "12",
+      "scale",
+      "carbon12",
+      "is carbon-12",
+      "are carbon-12",
+      "it is carbon-12",
+      "they are carbon-12",
+      "is isotopes",
+      "are isotopes",
+      "it is isotopes",
+      "they are isotopes",
+      "is abundance",
+      "are abundance",
+      "it is abundance",
+      "they are abundance",
+      "is weighted",
+      "are weighted",
+      "it is weighted",
+      "they are weighted",
+      "= 12",
+      "=12",
+      "x = 12",
+      "x=12",
+      "twelve",
+      "is scale",
+      "are scale",
+      "it is scale",
+      "they are scale"
+    ]
+  }
 ]

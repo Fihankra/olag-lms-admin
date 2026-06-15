@@ -1,90 +1,1775 @@
 [
-  {"subject":"Social Studies","question":"Which of the following best describes the concept of culture?","type":"mcq","difficulty":"easy","options":["The language spoken by a people","The way of life of a people","The religion practiced by a society","The government of a country"],"answer":"The way of life of a people"},
-  {"subject":"Social Studies","question":"The process by which an individual learns the norms, values, and customs of society is called","type":"mcq","difficulty":"easy","options":["Acculturation","Socialization","Enculturation","Assimilation"],"answer":"Socialization"},
-  {"subject":"Social Studies","question":"The primary agent of Socialization is the","type":"mcq","difficulty":"easy","options":["School","Church","Family","Peer group"],"answer":"Family"},
-  {"subject":"Social Studies","question":"Which of the following is an example of a social norm?","type":"mcq","difficulty":"easy","options":["Paying taxes","Greeting elders respectfully","Voting in elections","Obeying traffic laws"],"answer":"Greeting elders respectfully"},
-  {"subject":"Social Studies","question":"The transfer of cultural traits between two societies is called","type":"mcq","difficulty":"medium","options":["Diffusion","Socialization","Evolution","Innovation"],"answer":"Diffusion"},
-  {"subject":"Social Studies","question":"Which of the following is NOT a function of the family?","type":"mcq","difficulty":"easy","options":["Reproduction","Socialization of children","Making laws","Providing emotional support"],"answer":"Making laws"},
-  {"subject":"Social Studies","question":"A nuclear family consists of","type":"mcq","difficulty":"easy","options":["Parents, children, and extended relatives","Only the husband and wife","Parents and their unmarried children","Three or more generations"],"answer":"Parents and their unmarried children"},
-  {"subject":"Social Studies","question":"Extended family systems are most common in","type":"mcq","difficulty":"easy","options":["Western Europe","North America","Sub-Saharan Africa","East Asia"],"answer":"Sub-Saharan Africa"},
-  {"subject":"Social Studies","question":"The right to vote in elections is known as","type":"mcq","difficulty":"easy","options":["Civil liberty","Suffrage","Autonomy","Sovereignty"],"answer":"Suffrage"},
-  {"subject":"Social Studies","question":"Which of the following is a civic responsibility?","type":"mcq","difficulty":"easy","options":["Freedom of speech","Paying taxes","Right to education","Right to fair trial"],"answer":"Paying taxes"},
-  {"subject":"Social Studies","question":"Ghana gained independence from Britain on","type":"mcq","difficulty":"easy","options":["6th March 1957","1st January 1960","24th February 1966","3rd September 1979"],"answer":"6th March 1957"},
-  {"subject":"Social Studies","question":"Who led Ghana to independence?","type":"mcq","difficulty":"easy","options":["J.B. Danquah","K.A. Busia","Kwame Nkrumah","Jerry John Rawlings"],"answer":"Kwame Nkrumah"},
-  {"subject":"Social Studies","question":"Ghana's current constitution was adopted in","type":"mcq","difficulty":"medium","options":["1957","1966","1979","1992"],"answer":"1992"},
-  {"subject":"Social Studies","question":"Under Ghana's 1992 constitution, the President can serve a maximum of how many terms?","type":"mcq","difficulty":"easy","options":["One term","Two terms","Three terms","Four terms"],"answer":"Two terms"},
-  {"subject":"Social Studies","question":"The legislative body of Ghana is known as","type":"mcq","difficulty":"easy","options":["The Cabinet","Parliament","The Supreme Court","The Electoral Commission"],"answer":"Parliament"},
-  {"subject":"Social Studies","question":"The three arms of government in Ghana are","type":"mcq","difficulty":"easy","options":["Executive, Legislature, Military","Legislature, Judiciary, Electoral Commission","Executive, Legislature, Judiciary","Presidency, Parliament, Local Councils"],"answer":"Executive, Legislature, Judiciary"},
-  {"subject":"Social Studies","question":"The principle of separation of powers means that","type":"mcq","difficulty":"medium","options":["The military controls the government","Power is divided among three branches to prevent abuse","All citizens have equal rights","The President has unlimited power"],"answer":"Power is divided among three branches to prevent abuse"},
-  {"subject":"Social Studies","question":"The highest court in Ghana is the","type":"mcq","difficulty":"easy","options":["High Court","Court of Appeal","Supreme Court","District Court"],"answer":"Supreme Court"},
-  {"subject":"Social Studies","question":"Local government in Ghana is headed by","type":"mcq","difficulty":"easy","options":["The President","Member of Parliament","District Chief Executive","Regional Minister"],"answer":"District Chief Executive"},
-  {"subject":"Social Studies","question":"Decentralisation in Ghana refers to","type":"mcq","difficulty":"medium","options":["Concentrating power in the central government","Transferring power and resources to local government units","Abolishing local councils","Increasing military control"],"answer":"Transferring power and resources to local government units"},
-  {"subject":"Social Studies","question":"The capital city of Ghana is","type":"mcq","difficulty":"easy","options":["Kumasi","Tamale","Accra","Cape Coast"],"answer":"Accra"},
-  {"subject":"Social Studies","question":"Ghana is located in which part of Africa?","type":"mcq","difficulty":"easy","options":["East Africa","North Africa","West Africa","Southern Africa"],"answer":"West Africa"},
-  {"subject":"Social Studies","question":"Ghana shares a border to the north with","type":"mcq","difficulty":"medium","options":["Togo","Burkina Faso","Côte d'Ivoire","Benin"],"answer":"Burkina Faso"},
-  {"subject":"Social Studies","question":"The Volta Lake, one of the largest man-made lakes in the world, was created by the","type":"mcq","difficulty":"easy","options":["Kpong Dam","Bui Dam","Akosombo Dam","Weija Dam"],"answer":"Akosombo Dam"},
-  {"subject":"Social Studies","question":"The main purpose of the Akosombo Dam is","type":"mcq","difficulty":"easy","options":["Irrigation","Hydroelectric power generation","Flood control","Tourism"],"answer":"Hydroelectric power generation"},
-  {"subject":"Social Studies","question":"The predominant vegetation in northern Ghana is","type":"mcq","difficulty":"medium","options":["Rainforest","Savanna","Mangrove","Desert"],"answer":"Savanna"},
-  {"subject":"Social Studies","question":"The southern part of Ghana is characterised by","type":"mcq","difficulty":"medium","options":["Saharan desert","Semi-arid grassland","Tropical rainforest","Tundra"],"answer":"Tropical rainforest"},
-  {"subject":"Social Studies","question":"Which of the following is Ghana's most important export commodity?","type":"mcq","difficulty":"easy","options":["Cotton","Crude oil","Gold and Cocoa","Timber only"],"answer":"Gold and Cocoa"},
-  {"subject":"Social Studies","question":"The concept of sustainable development means meeting","type":"mcq","difficulty":"medium","options":["Current needs without compromising future generations","Only present economic needs","Future needs at the expense of present needs","Industrial needs above all others"],"answer":"Current needs without compromising future generations"},
-  {"subject":"Social Studies","question":"Desertification refers to","type":"mcq","difficulty":"medium","options":["Afforestation of desert areas","The expansion of desert conditions into previously fertile land","Irrigation of farmlands","Flooding of coastal areas"],"answer":"The expansion of desert conditions into previously fertile land"},
-  {"subject":"Social Studies","question":"The main cause of deforestation in Ghana is","type":"mcq","difficulty":"easy","options":["Tourism","Over-mining","Farming and logging","Urbanisation only"],"answer":"Farming and logging"},
-  {"subject":"Social Studies","question":"globalization is best described as","type":"mcq","difficulty":"medium","options":["The isolation of countries from each other","The increasing interconnectedness of countries economically, politically, and culturally","A military alliance among nations","The dominance of one nation over others"],"answer":"The increasing interconnectedness of countries economically, politically, and culturally"},
-  {"subject":"Social Studies","question":"The United Nations (UN) was established in","type":"mcq","difficulty":"easy","options":["1919","1939","1945","1957"],"answer":"1945"},
-  {"subject":"Social Studies","question":"The main goal of the United Nations is","type":"mcq","difficulty":"easy","options":["To promote global trade","To maintain international peace and security","To form a world government","To control global resources"],"answer":"To maintain international peace and security"},
-  {"subject":"Social Studies","question":"The African Union (AU) was established in","type":"mcq","difficulty":"medium","options":["1957","1963","2002","1991"],"answer":"2002"},
-  {"subject":"Social Studies","question":"ECOWAS stands for","type":"mcq","difficulty":"easy","options":["East Community of West African States","Economic Community of West African States","European Community of West Africa","East-Central Organization of West African States"],"answer":"Economic Community of West African States"},
-  {"subject":"Social Studies","question":"The headquarters of ECOWAS is in","type":"mcq","difficulty":"medium","options":["Accra","Lagos","Abuja","Dakar"],"answer":"Abuja"},
-  {"subject":"Social Studies","question":"Human rights are rights that","type":"mcq","difficulty":"easy","options":["Are granted by government","Belong to all human beings regardless of nationality or status","Only apply to adults","Are earned through citizenship"],"answer":"Belong to all human beings regardless of nationality or status"},
-  {"subject":"Social Studies","question":"The Universal Declaration of Human Rights was adopted in","type":"mcq","difficulty":"medium","options":["1945","1948","1960","1966"],"answer":"1948"},
-  {"subject":"Social Studies","question":"Child labour refers to","type":"mcq","difficulty":"easy","options":["Children helping with light household chores","Children working in ways that harm their health or deny them education","Children assisting on family farms","School children doing part-time work"],"answer":"Children working in ways that harm their health or deny them education"},
-  {"subject":"Social Studies","question":"The Ghana Education Service (GES) is responsible for","type":"mcq","difficulty":"easy","options":["Providing health services","Overseeing pre-tertiary education","Managing the police service","Handling immigration"],"answer":"Overseeing pre-tertiary education"},
-  {"subject":"Social Studies","question":"HIV/AIDS is primarily transmitted through","type":"mcq","difficulty":"easy","options":["Sharing food and drinks","Unprotected sexual contact and infected blood","Mosquito bites","Handshakes"],"answer":"Unprotected sexual contact and infected blood"},
-  {"subject":"Social Studies","question":"The process by which families seek better living conditions by moving to cities is called","type":"mcq","difficulty":"easy","options":["Emigration","Rural-urban migration","Immigration","Seasonal migration"],"answer":"Rural-urban migration"},
-  {"subject":"Social Studies","question":"Which of the following is a negative effect of rural-urban migration?","type":"mcq","difficulty":"medium","options":["Increased agricultural production","Development of slums in cities","Growth of village economies","Improved rural infrastructure"],"answer":"Development of slums in cities"},
-  {"subject":"Social Studies","question":"Population density refers to","type":"mcq","difficulty":"easy","options":["Total population of a country","Rate of population growth","Number of people per unit area","Percentage of urban population"],"answer":"Number of people per unit area"},
-  {"subject":"Social Studies","question":"A high birth rate combined with a declining death rate leads to","type":"mcq","difficulty":"medium","options":["Population decline","Population explosion","Stable population","Emigration"],"answer":"Population explosion"},
-  {"subject":"Social Studies","question":"The major religion practised in southern Ghana is predominantly","type":"mcq","difficulty":"easy","options":["Islam","Christianity","Traditional African religion","Buddhism"],"answer":"Christianity"},
-  {"subject":"Social Studies","question":"The National Commission for Civic Education (NCCE) in Ghana is responsible for","type":"mcq","difficulty":"medium","options":["Conducting elections","Educating citizens about their rights and responsibilities","Providing social welfare","Policing the country"],"answer":"Educating citizens about their rights and responsibilities"},
-  {"subject":"Social Studies","question":"Which institution in Ghana is responsible for conducting elections?","type":"mcq","difficulty":"easy","options":["NCCE","CHRAJ","Electoral Commission","Ghana Police Service"],"answer":"Electoral Commission"},
-  {"subject":"Social Studies","question":"The Commission on Human Rights and Administrative Justice (CHRAJ) deals with","type":"mcq","difficulty":"medium","options":["Economic crimes","Human rights violations and corruption","Electoral disputes","Environmental protection"],"answer":"Human rights violations and corruption"},
-  {"subject":"Social Studies","question":"Define Socialization.","type":"short_answer","difficulty":"easy","keywords":["learning","norms","values","society","culture","process","individual"]},
-  {"subject":"Social Studies","question":"State two functions of the family.","type":"short_answer","difficulty":"easy","keywords":["Socialization","reproduction","protection","emotional support","economic","education","nurturing"]},
-  {"subject":"Social Studies","question":"What is meant by decentralisation?","type":"short_answer","difficulty":"medium","keywords":["power","local government","transfer","central government","districts","regions"]},
-  {"subject":"Social Studies","question":"Name the three arms of government in Ghana.","type":"short_answer","difficulty":"easy","keywords":["executive","legislature","judiciary","parliament","courts"]},
-  {"subject":"Social Studies","question":"What is globalization?","type":"short_answer","difficulty":"medium","keywords":["interconnected","world","economies","cultures","trade","integration","global"]},
-  {"subject":"Social Studies","question":"State one cause of rural-urban migration in Ghana.","type":"short_answer","difficulty":"easy","keywords":["jobs","employment","better life","poverty","infrastructure","education","facilities"]},
-  {"subject":"Social Studies","question":"Define sustainable development.","type":"short_answer","difficulty":"medium","keywords":["current needs","future generations","without compromising","development","balance","resources"]},
-  {"subject":"Social Studies","question":"On what date did Ghana become independent?","type":"short_answer","difficulty":"easy","keywords":["6th March 1957","March 6","1957"]},
-  {"subject":"Social Studies","question":"What is the full meaning of ECOWAS?","type":"short_answer","difficulty":"easy","keywords":["Economic Community of West African States"]},
-  {"subject":"Social Studies","question":"Name two effects of deforestation.","type":"short_answer","difficulty":"medium","keywords":["erosion","flooding","climate change","loss of biodiversity","desertification","drought","soil erosion"]},
-  {"subject":"Social Studies","question":"What is the role of the Electoral Commission in Ghana?","type":"short_answer","difficulty":"easy","keywords":["elections","conduct","register voters","organize","voting","electoral"]},
-  {"subject":"Social Studies","question":"State two human rights guaranteed by Ghana's 1992 Constitution.","type":"short_answer","difficulty":"medium","keywords":["freedom","speech","life","education","fair trial","assembly","movement","expression","religion"]},
-  {"subject":"Social Studies","question":"Define population density.","type":"short_answer","difficulty":"easy","keywords":["people per unit area","per square kilometre","number of people","area"]},
-  {"subject":"Social Studies","question":"Name two negative effects of urbanisation.","type":"short_answer","difficulty":"medium","keywords":["slums","congestion","pollution","crime","unemployment","overcrowding","sanitation"]},
-  {"subject":"Social Studies","question":"What is the main economic activity in the Ashanti Region of Ghana?","type":"short_answer","difficulty":"medium","keywords":["gold mining","cocoa farming","trade","agriculture","mining","cocoa"]},
-  {"subject":"Social Studies","question":"The process by which people from different cultures gradually adopt elements of another culture is called","type":"mcq","difficulty":"medium","options":["Socialisation","Acculturation","Ethnocentrism","Xenophobia"],"answer":"Acculturation"},
-  {"subject":"Social Studies","question":"Ethnocentrism refers to the belief that","type":"mcq","difficulty":"medium","options":["All cultures are equal","One's own culture is superior to others","Cultural diversity is important","Foreign cultures should be adopted"],"answer":"One's own culture is superior to others"},
-  {"subject":"Social Studies","question":"Which of these is a positive effect of globalisation?","type":"mcq","difficulty":"medium","options":["Loss of cultural identity","Increased cultural exchange and technology transfer","Exploitation of developing nations","Widening inequality"],"answer":"Increased cultural exchange and technology transfer"},
-  {"subject":"Social Studies","question":"The main language of government and education in Ghana is","type":"mcq","difficulty":"easy","options":["Twi","Ga","Hausa","English"],"answer":"English"},
-  {"subject":"Social Studies","question":"Which of the following is a renewable source of energy?","type":"mcq","difficulty":"easy","options":["Coal","Natural gas","Solar energy","Petroleum"],"answer":"Solar energy"},
-  {"subject":"Social Studies","question":"Democracy literally means","type":"mcq","difficulty":"easy","options":["Rule by the military","Rule by the people","Rule by the elite","Rule by one person"],"answer":"Rule by the people"},
-  {"subject":"Social Studies","question":"A referendum is a","type":"mcq","difficulty":"medium","options":["Election for a member of parliament","Vote on a specific issue put to the electorate","Local government meeting","Election of a president"],"answer":"Vote on a specific issue put to the electorate"},
-  {"subject":"Social Studies","question":"The concept of the rule of law means that","type":"mcq","difficulty":"medium","options":["The military makes the laws","All persons and institutions are subject to the law","Only the poor are prosecuted","The president is above the law"],"answer":"All persons and institutions are subject to the law"},
-  {"subject":"Social Studies","question":"The main cash crop of Ghana is","type":"mcq","difficulty":"easy","options":["Maize","Cocoa","Rice","Cassava"],"answer":"Cocoa"},
-  {"subject":"Social Studies","question":"Ghana's oil production is mainly centred around the","type":"mcq","difficulty":"medium","options":["Brong-Ahafo Region","Jubilee Field off the coast of the Western Region","Northern Region","Central Region"],"answer":"Jubilee Field off the coast of the Western Region"},
-  {"subject":"Social Studies","question":"The main river in Ghana is the","type":"mcq","difficulty":"easy","options":["Niger","Pra","Volta","Bia"],"answer":"Volta"},
-  {"subject":"Social Studies","question":"The term 'brain drain' refers to","type":"mcq","difficulty":"medium","options":["A neurological disease","The emigration of educated or skilled workers to other countries","The failure of the education system","Low literacy rates"],"answer":"The emigration of educated or skilled workers to other countries"},
-  {"subject":"Social Studies","question":"The policy of apartheid was practised in","type":"mcq","difficulty":"easy","options":["Ghana","Nigeria","South Africa","Kenya"],"answer":"South Africa"},
-  {"subject":"Social Studies","question":"The term 'GDP' stands for","type":"mcq","difficulty":"easy","options":["Gross Domestic Product","General Development Plan","Global Democracy Programme","Government Development Project"],"answer":"Gross Domestic Product"},
-  {"subject":"Social Studies","question":"Inflation refers to","type":"mcq","difficulty":"easy","options":["A decrease in the general price level","An increase in the general price level over time","A decrease in employment","An increase in the value of money"],"answer":"An increase in the general price level over time"},
-  {"subject":"Social Studies","question":"Name two types of marriages recognised in Ghana.","type":"short_answer","difficulty":"medium","keywords":["customary","ordinance","Islamic","Christian","statutory","traditional"]},
-  {"subject":"Social Studies","question":"What is meant by 'cultural relativism'?","type":"short_answer","difficulty":"hard","keywords":["judging","own standards","context","culture","understanding","perspective","values"]},
-  {"subject":"Social Studies","question":"State two causes of poverty in Ghana.","type":"short_answer","difficulty":"medium","keywords":["unemployment","poor education","inequality","corruption","disease","poor infrastructure","low productivity"]},
-  {"subject":"Social Studies","question":"What is the difference between immigration and emigration?","type":"short_answer","difficulty":"easy","keywords":["immigration","entering","emigration","leaving","country","move in","move out"]},
-  {"subject":"Social Studies","question":"Name three regions in Ghana.","type":"short_answer","difficulty":"easy","keywords":["Greater Accra","Ashanti","Western","Eastern","Central","Volta","Northern","Upper East","Upper West","Brong-Ahafo","Oti","Ahafo","Savannah","North East","Western North","Bono East"]},
-  {"subject":"Social Studies","question":"What is the role of the media in a democracy?","type":"short_answer","difficulty":"medium","keywords":["inform","educate","accountability","watchdog","freedom of press","public opinion","check government"]},
-  {"subject":"Social Studies","question":"Define 'citizenship'.","type":"short_answer","difficulty":"easy","keywords":["member","state","rights","responsibilities","legal status","nation","belong"]},
-  {"subject":"Social Studies","question":"State two negative effects of rapid population growth.","type":"short_answer","difficulty":"medium","keywords":["unemployment","poverty","strain on resources","environmental","food shortage","housing","overcrowding"]}
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following best describes the concept of culture?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The language spoken by a people",
+      "The way of life of a people",
+      "The religion practiced by a society",
+      "The government of a country"
+    ],
+    "answer": [
+      "The way of life of a people"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The process by which an individual learns the norms, values, and customs of society is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Acculturation",
+      "Socialization",
+      "Enculturation",
+      "Assimilation"
+    ],
+    "answer": [
+      "Socialization"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The primary agent of Socialization is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "School",
+      "Church",
+      "Family",
+      "Peer group"
+    ],
+    "answer": [
+      "Family"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is an example of a social norm?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Paying taxes",
+      "Greeting elders respectfully",
+      "Voting in elections",
+      "Obeying traffic laws"
+    ],
+    "answer": [
+      "Greeting elders respectfully"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The transfer of cultural traits between two societies is called",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Diffusion",
+      "Socialization",
+      "Evolution",
+      "Innovation"
+    ],
+    "answer": [
+      "Diffusion"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is NOT a function of the family?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Reproduction",
+      "Socialization of children",
+      "Making laws",
+      "Providing emotional support"
+    ],
+    "answer": [
+      "Making laws"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "A nuclear family consists of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Parents, children, and extended relatives",
+      "Only the husband and wife",
+      "Parents and their unmarried children",
+      "Three or more generations"
+    ],
+    "answer": [
+      "Parents and their unmarried children"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Extended family systems are most common in",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Western Europe",
+      "North America",
+      "Sub-Saharan Africa",
+      "East Asia"
+    ],
+    "answer": [
+      "Sub-Saharan Africa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The right to vote in elections is known as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Civil liberty",
+      "Suffrage",
+      "Autonomy",
+      "Sovereignty"
+    ],
+    "answer": [
+      "Suffrage"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is a civic responsibility?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Freedom of speech",
+      "Paying taxes",
+      "Right to education",
+      "Right to fair trial"
+    ],
+    "answer": [
+      "Paying taxes"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ghana gained independence from Britain on",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "6th March 1957",
+      "1st January 1960",
+      "24th February 1966",
+      "3rd September 1979"
+    ],
+    "answer": [
+      "6th March 1957"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Who led Ghana to independence?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "J.B. Danquah",
+      "K.A. Busia",
+      "Kwame Nkrumah",
+      "Jerry John Rawlings"
+    ],
+    "answer": [
+      "Kwame Nkrumah"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ghana's current constitution was adopted in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1957",
+      "1966",
+      "1979",
+      "1992"
+    ],
+    "answer": [
+      "1992"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Under Ghana's 1992 constitution, the President can serve a maximum of how many terms?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "One term",
+      "Two terms",
+      "Three terms",
+      "Four terms"
+    ],
+    "answer": [
+      "Two terms"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The legislative body of Ghana is known as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The Cabinet",
+      "Parliament",
+      "The Supreme Court",
+      "The Electoral Commission"
+    ],
+    "answer": [
+      "Parliament"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The three arms of government in Ghana are",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Executive, Legislature, Military",
+      "Legislature, Judiciary, Electoral Commission",
+      "Executive, Legislature, Judiciary",
+      "Presidency, Parliament, Local Councils"
+    ],
+    "answer": [
+      "Executive, Legislature, Judiciary"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The principle of separation of powers means that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The military controls the government",
+      "Power is divided among three branches to prevent abuse",
+      "All citizens have equal rights",
+      "The President has unlimited power"
+    ],
+    "answer": [
+      "Power is divided among three branches to prevent abuse"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The highest court in Ghana is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "High Court",
+      "Court of Appeal",
+      "Supreme Court",
+      "District Court"
+    ],
+    "answer": [
+      "Supreme Court"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Local government in Ghana is headed by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The President",
+      "Member of Parliament",
+      "District Chief Executive",
+      "Regional Minister"
+    ],
+    "answer": [
+      "District Chief Executive"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Decentralisation in Ghana refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Concentrating power in the central government",
+      "Transferring power and resources to local government units",
+      "Abolishing local councils",
+      "Increasing military control"
+    ],
+    "answer": [
+      "Transferring power and resources to local government units"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The capital city of Ghana is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Kumasi",
+      "Tamale",
+      "Accra",
+      "Cape Coast"
+    ],
+    "answer": [
+      "Accra"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ghana is located in which part of Africa?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "East Africa",
+      "North Africa",
+      "West Africa",
+      "Southern Africa"
+    ],
+    "answer": [
+      "West Africa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ghana shares a border to the north with",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Togo",
+      "Burkina Faso",
+      "Côte d'Ivoire",
+      "Benin"
+    ],
+    "answer": [
+      "Burkina Faso"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The Volta Lake, one of the largest man-made lakes in the world, was created by the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Kpong Dam",
+      "Bui Dam",
+      "Akosombo Dam",
+      "Weija Dam"
+    ],
+    "answer": [
+      "Akosombo Dam"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main purpose of the Akosombo Dam is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Irrigation",
+      "Hydroelectric power generation",
+      "Flood control",
+      "Tourism"
+    ],
+    "answer": [
+      "Hydroelectric power generation"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The predominant vegetation in northern Ghana is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Rainforest",
+      "Savanna",
+      "Mangrove",
+      "Desert"
+    ],
+    "answer": [
+      "Savanna"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The southern part of Ghana is characterised by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Saharan desert",
+      "Semi-arid grassland",
+      "Tropical rainforest",
+      "Tundra"
+    ],
+    "answer": [
+      "Tropical rainforest"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is Ghana's most important export commodity?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cotton",
+      "Crude oil",
+      "Gold and Cocoa",
+      "Timber only"
+    ],
+    "answer": [
+      "Gold and Cocoa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The concept of sustainable development means meeting",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Current needs without compromising future generations",
+      "Only present economic needs",
+      "Future needs at the expense of present needs",
+      "Industrial needs above all others"
+    ],
+    "answer": [
+      "Current needs without compromising future generations"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Desertification refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Afforestation of desert areas",
+      "The expansion of desert conditions into previously fertile land",
+      "Irrigation of farmlands",
+      "Flooding of coastal areas"
+    ],
+    "answer": [
+      "The expansion of desert conditions into previously fertile land"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main cause of deforestation in Ghana is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Tourism",
+      "Over-mining",
+      "Farming and logging",
+      "Urbanisation only"
+    ],
+    "answer": [
+      "Farming and logging"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "globalization is best described as",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The isolation of countries from each other",
+      "The increasing interconnectedness of countries economically, politically, and culturally",
+      "A military alliance among nations",
+      "The dominance of one nation over others"
+    ],
+    "answer": [
+      "The increasing interconnectedness of countries economically, politically, and culturally"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The United Nations (UN) was established in",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1919",
+      "1939",
+      "1945",
+      "1957"
+    ],
+    "answer": [
+      "1945"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main goal of the United Nations is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "To promote global trade",
+      "To maintain international peace and security",
+      "To form a world government",
+      "To control global resources"
+    ],
+    "answer": [
+      "To maintain international peace and security"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The African Union (AU) was established in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1957",
+      "1963",
+      "2002",
+      "1991"
+    ],
+    "answer": [
+      "2002"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "ECOWAS stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "East Community of West African States",
+      "Economic Community of West African States",
+      "European Community of West Africa",
+      "East-Central Organization of West African States"
+    ],
+    "answer": [
+      "Economic Community of West African States"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The headquarters of ECOWAS is in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Accra",
+      "Lagos",
+      "Abuja",
+      "Dakar"
+    ],
+    "answer": [
+      "Abuja"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Human rights are rights that",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Are granted by government",
+      "Belong to all human beings regardless of nationality or status",
+      "Only apply to adults",
+      "Are earned through citizenship"
+    ],
+    "answer": [
+      "Belong to all human beings regardless of nationality or status"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The Universal Declaration of Human Rights was adopted in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1945",
+      "1948",
+      "1960",
+      "1966"
+    ],
+    "answer": [
+      "1948"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Child labour refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Children helping with light household chores",
+      "Children working in ways that harm their health or deny them education",
+      "Children assisting on family farms",
+      "School children doing part-time work"
+    ],
+    "answer": [
+      "Children working in ways that harm their health or deny them education"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The Ghana Education Service (GES) is responsible for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Providing health services",
+      "Overseeing pre-tertiary education",
+      "Managing the police service",
+      "Handling immigration"
+    ],
+    "answer": [
+      "Overseeing pre-tertiary education"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "HIV/AIDS is primarily transmitted through",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Sharing food and drinks",
+      "Unprotected sexual contact and infected blood",
+      "Mosquito bites",
+      "Handshakes"
+    ],
+    "answer": [
+      "Unprotected sexual contact and infected blood"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The process by which families seek better living conditions by moving to cities is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Emigration",
+      "Rural-urban migration",
+      "Immigration",
+      "Seasonal migration"
+    ],
+    "answer": [
+      "Rural-urban migration"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is a negative effect of rural-urban migration?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Increased agricultural production",
+      "Development of slums in cities",
+      "Growth of village economies",
+      "Improved rural infrastructure"
+    ],
+    "answer": [
+      "Development of slums in cities"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Population density refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Total population of a country",
+      "Rate of population growth",
+      "Number of people per unit area",
+      "Percentage of urban population"
+    ],
+    "answer": [
+      "Number of people per unit area"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "A high birth rate combined with a declining death rate leads to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Population decline",
+      "Population explosion",
+      "Stable population",
+      "Emigration"
+    ],
+    "answer": [
+      "Population explosion"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The major religion practised in southern Ghana is predominantly",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Islam",
+      "Christianity",
+      "Traditional African religion",
+      "Buddhism"
+    ],
+    "answer": [
+      "Christianity"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The National Commission for Civic Education (NCCE) in Ghana is responsible for",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Conducting elections",
+      "Educating citizens about their rights and responsibilities",
+      "Providing social welfare",
+      "Policing the country"
+    ],
+    "answer": [
+      "Educating citizens about their rights and responsibilities"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which institution in Ghana is responsible for conducting elections?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "NCCE",
+      "CHRAJ",
+      "Electoral Commission",
+      "Ghana Police Service"
+    ],
+    "answer": [
+      "Electoral Commission"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The Commission on Human Rights and Administrative Justice (CHRAJ) deals with",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Economic crimes",
+      "Human rights violations and corruption",
+      "Electoral disputes",
+      "Environmental protection"
+    ],
+    "answer": [
+      "Human rights violations and corruption"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Define Socialization.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "learning",
+      "norms",
+      "values",
+      "society",
+      "culture",
+      "process",
+      "individual",
+      "is learning",
+      "are learning",
+      "it is learning",
+      "they are learning",
+      "is norms",
+      "are norms",
+      "it is norms",
+      "they are norms",
+      "is values",
+      "are values",
+      "it is values",
+      "they are values",
+      "is society",
+      "are society",
+      "it is society",
+      "they are society",
+      "is culture",
+      "are culture",
+      "it is culture",
+      "they are culture",
+      "is process",
+      "are process",
+      "it is process",
+      "they are process",
+      "is individual",
+      "are individual",
+      "it is individual",
+      "they are individual"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "State two functions of the family.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Socialization",
+      "reproduction",
+      "protection",
+      "emotional support",
+      "economic",
+      "education",
+      "nurturing",
+      "is socialization",
+      "are socialization",
+      "it is socialization",
+      "they are socialization",
+      "is reproduction",
+      "are reproduction",
+      "it is reproduction",
+      "they are reproduction",
+      "is protection",
+      "are protection",
+      "it is protection",
+      "they are protection",
+      "is economic",
+      "are economic",
+      "it is economic",
+      "they are economic",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is nurturing",
+      "are nurturing",
+      "it is nurturing",
+      "they are nurturing"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is meant by decentralisation?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "power",
+      "local government",
+      "transfer",
+      "central government",
+      "districts",
+      "regions",
+      "is power",
+      "are power",
+      "it is power",
+      "they are power",
+      "is transfer",
+      "are transfer",
+      "it is transfer",
+      "they are transfer",
+      "is districts",
+      "are districts",
+      "it is districts",
+      "they are districts",
+      "is regions",
+      "are regions",
+      "it is regions",
+      "they are regions"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Name the three arms of government in Ghana.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "executive",
+      "legislature",
+      "judiciary",
+      "parliament",
+      "courts",
+      "is executive",
+      "are executive",
+      "it is executive",
+      "they are executive",
+      "is legislature",
+      "are legislature",
+      "it is legislature",
+      "they are legislature",
+      "is judiciary",
+      "are judiciary",
+      "it is judiciary",
+      "they are judiciary",
+      "is parliament",
+      "are parliament",
+      "it is parliament",
+      "they are parliament",
+      "is courts",
+      "are courts",
+      "it is courts",
+      "they are courts"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is globalization?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "interconnected",
+      "world",
+      "economies",
+      "cultures",
+      "trade",
+      "integration",
+      "global",
+      "is interconnected",
+      "are interconnected",
+      "it is interconnected",
+      "they are interconnected",
+      "is world",
+      "are world",
+      "it is world",
+      "they are world",
+      "is economies",
+      "are economies",
+      "it is economies",
+      "they are economies",
+      "is cultures",
+      "are cultures",
+      "it is cultures",
+      "they are cultures",
+      "is trade",
+      "are trade",
+      "it is trade",
+      "they are trade",
+      "is integration",
+      "are integration",
+      "it is integration",
+      "they are integration",
+      "is global",
+      "are global",
+      "it is global",
+      "they are global"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "State one cause of rural-urban migration in Ghana.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "jobs",
+      "employment",
+      "better life",
+      "poverty",
+      "infrastructure",
+      "education",
+      "facilities",
+      "is jobs",
+      "are jobs",
+      "it is jobs",
+      "they are jobs",
+      "is employment",
+      "are employment",
+      "it is employment",
+      "they are employment",
+      "is poverty",
+      "are poverty",
+      "it is poverty",
+      "they are poverty",
+      "is infrastructure",
+      "are infrastructure",
+      "it is infrastructure",
+      "they are infrastructure",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is facilities",
+      "are facilities",
+      "it is facilities",
+      "they are facilities"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Define sustainable development.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "current needs",
+      "future generations",
+      "without compromising",
+      "development",
+      "balance",
+      "resources",
+      "is development",
+      "are development",
+      "it is development",
+      "they are development",
+      "is balance",
+      "are balance",
+      "it is balance",
+      "they are balance",
+      "is resources",
+      "are resources",
+      "it is resources",
+      "they are resources"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "On what date did Ghana become independent?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "6th March 1957",
+      "March 6",
+      "1957",
+      "= 1957",
+      "=1957",
+      "x = 1957",
+      "x=1957",
+      "is 1957",
+      "are 1957",
+      "it is 1957",
+      "they are 1957"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the full meaning of ECOWAS?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Economic Community of West African States",
+      "ecowas"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Name two effects of deforestation.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "erosion",
+      "flooding",
+      "climate change",
+      "loss of biodiversity",
+      "desertification",
+      "drought",
+      "soil erosion",
+      "is erosion",
+      "are erosion",
+      "it is erosion",
+      "they are erosion",
+      "is flooding",
+      "are flooding",
+      "it is flooding",
+      "they are flooding",
+      "is desertification",
+      "are desertification",
+      "it is desertification",
+      "they are desertification",
+      "is drought",
+      "are drought",
+      "it is drought",
+      "they are drought"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the Electoral Commission in Ghana?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "elections",
+      "conduct",
+      "register voters",
+      "organize",
+      "voting",
+      "electoral",
+      "is elections",
+      "are elections",
+      "it is elections",
+      "they are elections",
+      "is conduct",
+      "are conduct",
+      "it is conduct",
+      "they are conduct",
+      "is organize",
+      "are organize",
+      "it is organize",
+      "they are organize",
+      "is voting",
+      "are voting",
+      "it is voting",
+      "they are voting",
+      "is electoral",
+      "are electoral",
+      "it is electoral",
+      "they are electoral"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "State two human rights guaranteed by Ghana's 1992 Constitution.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "freedom",
+      "speech",
+      "life",
+      "education",
+      "fair trial",
+      "assembly",
+      "movement",
+      "expression",
+      "religion",
+      "is freedom",
+      "are freedom",
+      "it is freedom",
+      "they are freedom",
+      "is speech",
+      "are speech",
+      "it is speech",
+      "they are speech",
+      "is life",
+      "are life",
+      "it is life",
+      "they are life",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is assembly",
+      "are assembly",
+      "it is assembly",
+      "they are assembly",
+      "is movement",
+      "are movement",
+      "it is movement",
+      "they are movement",
+      "is expression",
+      "are expression",
+      "it is expression",
+      "they are expression",
+      "is religion",
+      "are religion",
+      "it is religion",
+      "they are religion"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Define population density.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "people per unit area",
+      "per square kilometre",
+      "number of people",
+      "area",
+      "is area",
+      "are area",
+      "it is area",
+      "they are area"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Name two negative effects of urbanisation.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "slums",
+      "congestion",
+      "pollution",
+      "crime",
+      "unemployment",
+      "overcrowding",
+      "sanitation",
+      "is slums",
+      "are slums",
+      "it is slums",
+      "they are slums",
+      "is congestion",
+      "are congestion",
+      "it is congestion",
+      "they are congestion",
+      "is pollution",
+      "are pollution",
+      "it is pollution",
+      "they are pollution",
+      "is crime",
+      "are crime",
+      "it is crime",
+      "they are crime",
+      "is unemployment",
+      "are unemployment",
+      "it is unemployment",
+      "they are unemployment",
+      "is overcrowding",
+      "are overcrowding",
+      "it is overcrowding",
+      "they are overcrowding",
+      "is sanitation",
+      "are sanitation",
+      "it is sanitation",
+      "they are sanitation"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the main economic activity in the Ashanti Region of Ghana?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "gold mining",
+      "cocoa farming",
+      "trade",
+      "agriculture",
+      "mining",
+      "cocoa",
+      "is trade",
+      "are trade",
+      "it is trade",
+      "they are trade",
+      "is agriculture",
+      "are agriculture",
+      "it is agriculture",
+      "they are agriculture",
+      "is mining",
+      "are mining",
+      "it is mining",
+      "they are mining",
+      "is cocoa",
+      "are cocoa",
+      "it is cocoa",
+      "they are cocoa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The process by which people from different cultures gradually adopt elements of another culture is called",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Socialisation",
+      "Acculturation",
+      "Ethnocentrism",
+      "Xenophobia"
+    ],
+    "answer": [
+      "Acculturation"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ethnocentrism refers to the belief that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "All cultures are equal",
+      "One's own culture is superior to others",
+      "Cultural diversity is important",
+      "Foreign cultures should be adopted"
+    ],
+    "answer": [
+      "One's own culture is superior to others"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of these is a positive effect of globalisation?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Loss of cultural identity",
+      "Increased cultural exchange and technology transfer",
+      "Exploitation of developing nations",
+      "Widening inequality"
+    ],
+    "answer": [
+      "Increased cultural exchange and technology transfer"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main language of government and education in Ghana is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Twi",
+      "Ga",
+      "Hausa",
+      "English"
+    ],
+    "answer": [
+      "English"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Which of the following is a renewable source of energy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Coal",
+      "Natural gas",
+      "Solar energy",
+      "Petroleum"
+    ],
+    "answer": [
+      "Solar energy"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Democracy literally means",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Rule by the military",
+      "Rule by the people",
+      "Rule by the elite",
+      "Rule by one person"
+    ],
+    "answer": [
+      "Rule by the people"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "A referendum is a",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Election for a member of parliament",
+      "Vote on a specific issue put to the electorate",
+      "Local government meeting",
+      "Election of a president"
+    ],
+    "answer": [
+      "Vote on a specific issue put to the electorate"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The concept of the rule of law means that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The military makes the laws",
+      "All persons and institutions are subject to the law",
+      "Only the poor are prosecuted",
+      "The president is above the law"
+    ],
+    "answer": [
+      "All persons and institutions are subject to the law"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main cash crop of Ghana is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Maize",
+      "Cocoa",
+      "Rice",
+      "Cassava"
+    ],
+    "answer": [
+      "Cocoa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Ghana's oil production is mainly centred around the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Brong-Ahafo Region",
+      "Jubilee Field off the coast of the Western Region",
+      "Northern Region",
+      "Central Region"
+    ],
+    "answer": [
+      "Jubilee Field off the coast of the Western Region"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The main river in Ghana is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Niger",
+      "Pra",
+      "Volta",
+      "Bia"
+    ],
+    "answer": [
+      "Volta"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The term 'brain drain' refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A neurological disease",
+      "The emigration of educated or skilled workers to other countries",
+      "The failure of the education system",
+      "Low literacy rates"
+    ],
+    "answer": [
+      "The emigration of educated or skilled workers to other countries"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The policy of apartheid was practised in",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ghana",
+      "Nigeria",
+      "South Africa",
+      "Kenya"
+    ],
+    "answer": [
+      "South Africa"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "The term 'GDP' stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Gross Domestic Product",
+      "General Development Plan",
+      "Global Democracy Programme",
+      "Government Development Project"
+    ],
+    "answer": [
+      "Gross Domestic Product"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Inflation refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A decrease in the general price level",
+      "An increase in the general price level over time",
+      "A decrease in employment",
+      "An increase in the value of money"
+    ],
+    "answer": [
+      "An increase in the general price level over time"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Name two types of marriages recognised in Ghana.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "customary",
+      "ordinance",
+      "Islamic",
+      "Christian",
+      "statutory",
+      "traditional",
+      "is customary",
+      "are customary",
+      "it is customary",
+      "they are customary",
+      "is ordinance",
+      "are ordinance",
+      "it is ordinance",
+      "they are ordinance",
+      "is islamic",
+      "are islamic",
+      "it is islamic",
+      "they are islamic",
+      "is christian",
+      "are christian",
+      "it is christian",
+      "they are christian",
+      "is statutory",
+      "are statutory",
+      "it is statutory",
+      "they are statutory",
+      "is traditional",
+      "are traditional",
+      "it is traditional",
+      "they are traditional"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is meant by 'cultural relativism'?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "judging",
+      "own standards",
+      "context",
+      "culture",
+      "understanding",
+      "perspective",
+      "values",
+      "is judging",
+      "are judging",
+      "it is judging",
+      "they are judging",
+      "is context",
+      "are context",
+      "it is context",
+      "they are context",
+      "is culture",
+      "are culture",
+      "it is culture",
+      "they are culture",
+      "is understanding",
+      "are understanding",
+      "it is understanding",
+      "they are understanding",
+      "is perspective",
+      "are perspective",
+      "it is perspective",
+      "they are perspective",
+      "is values",
+      "are values",
+      "it is values",
+      "they are values"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "State two causes of poverty in Ghana.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "unemployment",
+      "poor education",
+      "inequality",
+      "corruption",
+      "disease",
+      "poor infrastructure",
+      "low productivity",
+      "is unemployment",
+      "are unemployment",
+      "it is unemployment",
+      "they are unemployment",
+      "is inequality",
+      "are inequality",
+      "it is inequality",
+      "they are inequality",
+      "is corruption",
+      "are corruption",
+      "it is corruption",
+      "they are corruption",
+      "is disease",
+      "are disease",
+      "it is disease",
+      "they are disease"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the difference between immigration and emigration?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "immigration",
+      "entering",
+      "emigration",
+      "leaving",
+      "country",
+      "move in",
+      "move out",
+      "is immigration",
+      "are immigration",
+      "it is immigration",
+      "they are immigration",
+      "is entering",
+      "are entering",
+      "it is entering",
+      "they are entering",
+      "is emigration",
+      "are emigration",
+      "it is emigration",
+      "they are emigration",
+      "is leaving",
+      "are leaving",
+      "it is leaving",
+      "they are leaving",
+      "is country",
+      "are country",
+      "it is country",
+      "they are country"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Name three regions in Ghana.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Greater Accra",
+      "Ashanti",
+      "Western",
+      "Eastern",
+      "Central",
+      "Volta",
+      "Northern",
+      "Upper East",
+      "Upper West",
+      "Brong-Ahafo",
+      "Oti",
+      "Ahafo",
+      "Savannah",
+      "North East",
+      "Western North",
+      "Bono East",
+      "is ashanti",
+      "are ashanti",
+      "it is ashanti",
+      "they are ashanti",
+      "is western",
+      "are western",
+      "it is western",
+      "they are western",
+      "is eastern",
+      "are eastern",
+      "it is eastern",
+      "they are eastern",
+      "is central",
+      "are central",
+      "it is central",
+      "they are central",
+      "is volta",
+      "are volta",
+      "it is volta",
+      "they are volta",
+      "is northern",
+      "are northern",
+      "it is northern",
+      "they are northern",
+      "brongahafo",
+      "is brong-ahafo",
+      "are brong-ahafo",
+      "it is brong-ahafo",
+      "they are brong-ahafo",
+      "is oti",
+      "are oti",
+      "it is oti",
+      "they are oti",
+      "is ahafo",
+      "are ahafo",
+      "it is ahafo",
+      "they are ahafo",
+      "is savannah",
+      "are savannah",
+      "it is savannah",
+      "they are savannah"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "What is the role of the media in a democracy?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "inform",
+      "educate",
+      "accountability",
+      "watchdog",
+      "freedom of press",
+      "public opinion",
+      "check government",
+      "is inform",
+      "are inform",
+      "it is inform",
+      "they are inform",
+      "is educate",
+      "are educate",
+      "it is educate",
+      "they are educate",
+      "is accountability",
+      "are accountability",
+      "it is accountability",
+      "they are accountability",
+      "is watchdog",
+      "are watchdog",
+      "it is watchdog",
+      "they are watchdog"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "Define 'citizenship'.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "member",
+      "state",
+      "rights",
+      "responsibilities",
+      "legal status",
+      "nation",
+      "belong",
+      "is member",
+      "are member",
+      "it is member",
+      "they are member",
+      "is state",
+      "are state",
+      "it is state",
+      "they are state",
+      "is rights",
+      "are rights",
+      "it is rights",
+      "they are rights",
+      "is responsibilities",
+      "are responsibilities",
+      "it is responsibilities",
+      "they are responsibilities",
+      "is nation",
+      "are nation",
+      "it is nation",
+      "they are nation",
+      "is belong",
+      "are belong",
+      "it is belong",
+      "they are belong"
+    ]
+  },
+  {
+    "subject": "Social Studies",
+    "question": "State two negative effects of rapid population growth.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "unemployment",
+      "poverty",
+      "strain on resources",
+      "environmental",
+      "food shortage",
+      "housing",
+      "overcrowding",
+      "is unemployment",
+      "are unemployment",
+      "it is unemployment",
+      "they are unemployment",
+      "is poverty",
+      "are poverty",
+      "it is poverty",
+      "they are poverty",
+      "is environmental",
+      "are environmental",
+      "it is environmental",
+      "they are environmental",
+      "is housing",
+      "are housing",
+      "it is housing",
+      "they are housing",
+      "is overcrowding",
+      "are overcrowding",
+      "it is overcrowding",
+      "they are overcrowding"
+    ]
+  }
 ]

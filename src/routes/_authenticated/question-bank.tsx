@@ -64,7 +64,7 @@ type ImportRow = {
   type?: string;
   difficulty?: string;
   options?: (string | { text: string; correct?: boolean })[];
-  answer?: number | string;
+  answer?: number | string | string[];
   correct?: number | string;
   keywords?: string[];
   answers?: string[];
@@ -197,20 +197,16 @@ function QuestionBankPage() {
 
     if (question_type === "multiple_choice") {
       const rawOptions = row.options ?? [];
-      const answerText =
-        typeof row.answer === "string"
-          ? row.answer.trim().toLowerCase()
-          : typeof row.correct === "string"
-            ? (row.correct as string).trim().toLowerCase()
-            : null;
+
+      // answer may be a string, a string[], or a number (index)
+      const rawAnswer = row.answer ?? row.correct;
+      const answerTexts: string[] = Array.isArray(rawAnswer)
+        ? (rawAnswer as string[]).map((a) => a.trim().toLowerCase())
+        : typeof rawAnswer === "string"
+          ? [rawAnswer.trim().toLowerCase()]
+          : [];
       const correctIdx =
-        answerText === null
-          ? typeof row.answer === "number"
-            ? row.answer
-            : typeof row.correct === "number"
-              ? row.correct
-              : -1
-          : -1;
+        answerTexts.length === 0 && typeof rawAnswer === "number" ? rawAnswer : -1;
 
       const options: string[] = [];
       const correct_answers: string[] = [];
@@ -219,7 +215,10 @@ function QuestionBankPage() {
         const opt = rawOptions[i];
         if (typeof opt === "string") {
           options.push(opt);
-          const isCorrect = answerText ? opt.trim().toLowerCase() === answerText : i === correctIdx;
+          const isCorrect =
+            answerTexts.length > 0
+              ? answerTexts.includes(opt.trim().toLowerCase())
+              : i === correctIdx;
           if (isCorrect) correct_answers.push(opt);
         } else if (opt && typeof opt === "object") {
           options.push(opt.text ?? "");

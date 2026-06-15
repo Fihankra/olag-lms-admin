@@ -1,112 +1,1964 @@
 [
-  {"subject":"Physics","question":"Speed is defined as the distance travelled per unit","type":"mcq","difficulty":"easy","options":["Mass","Time","Force","Energy"],"answer":"Time"},
-  {"subject":"Physics","question":"What is the SI unit of force?","type":"mcq","difficulty":"easy","options":["Joule","Watt","Newton","Pascal"],"answer":"Newton"},
-  {"subject":"Physics","question":"Newton's first law of motion states that a body will remain at rest or in uniform motion unless acted upon by","type":"mcq","difficulty":"easy","options":["Gravity","A net external force","Friction","Air resistance"],"answer":"A net external force"},
-  {"subject":"Physics","question":"The tendency of a body to resist changes in its state of motion is called","type":"mcq","difficulty":"easy","options":["Momentum","Inertia","Velocity","Acceleration"],"answer":"Inertia"},
-  {"subject":"Physics","question":"Newton's second law of motion relates force to","type":"mcq","difficulty":"easy","options":["Mass and velocity","Mass and acceleration","Weight and distance","Speed and time"],"answer":"Mass and acceleration"},
-  {"subject":"Physics","question":"If a 5 kg object accelerates at 3 m/s², what net force acts on it?","type":"mcq","difficulty":"easy","options":["8 N","2 N","15 N","1.67 N"],"answer":"15 N"},
-  {"subject":"Physics","question":"Newton's third law states that for every action there is","type":"mcq","difficulty":"easy","options":["A greater reaction","A smaller reaction","An equal and opposite reaction","No reaction"],"answer":"An equal and opposite reaction"},
-  {"subject":"Physics","question":"Momentum is defined as","type":"mcq","difficulty":"easy","options":["Mass times distance","Mass times velocity","Force times time","Mass times acceleration"],"answer":"Mass times velocity"},
-  {"subject":"Physics","question":"The unit of momentum is","type":"mcq","difficulty":"easy","options":["kg·m","kg·m/s²","kg·m/s","N/m"],"answer":"kg·m/s"},
-  {"subject":"Physics","question":"In a perfectly elastic collision, which quantity is conserved?","type":"mcq","difficulty":"medium","options":["Kinetic energy only","Momentum only","Both kinetic energy and momentum","Neither"],"answer":"Both kinetic energy and momentum"},
-  {"subject":"Physics","question":"The work done on an object is calculated as","type":"mcq","difficulty":"easy","options":["Force × time","Force × distance","Mass × velocity","Mass × acceleration"],"answer":"Force × distance"},
-  {"subject":"Physics","question":"What is the SI unit of energy?","type":"mcq","difficulty":"easy","options":["Watt","Newton","Joule","Pascal"],"answer":"Joule"},
-  {"subject":"Physics","question":"Power is defined as","type":"mcq","difficulty":"easy","options":["Work done per unit distance","Work done per unit time","Force per unit area","Energy per unit mass"],"answer":"Work done per unit time"},
-  {"subject":"Physics","question":"An object of mass 2 kg is lifted 5 m above the ground. What is its gravitational potential energy? (g = 10 m/s²)","type":"mcq","difficulty":"medium","options":["10 J","25 J","100 J","50 J"],"answer":"100 J"},
-  {"subject":"Physics","question":"A 4 kg object moving at 3 m/s has a kinetic energy of","type":"mcq","difficulty":"medium","options":["12 J","18 J","6 J","24 J"],"answer":"18 J"},
-  {"subject":"Physics","question":"The principle of conservation of energy states that energy","type":"mcq","difficulty":"easy","options":["Can be created but not destroyed","Can be destroyed but not created","Cannot be created nor destroyed","Can be both created and destroyed"],"answer":"Cannot be created nor destroyed"},
-  {"subject":"Physics","question":"Velocity differs from speed in that velocity includes","type":"mcq","difficulty":"easy","options":["Magnitude only","Direction only","Both magnitude and direction","Mass"],"answer":"Both magnitude and direction"},
-  {"subject":"Physics","question":"A car decelerates from 20 m/s to rest in 4 seconds. What is the deceleration?","type":"mcq","difficulty":"medium","options":["80 m/s²","0.2 m/s²","5 m/s²","8 m/s²"],"answer":"5 m/s²"},
-  {"subject":"Physics","question":"On a velocity-time graph, acceleration is represented by the","type":"mcq","difficulty":"medium","options":["Area under the graph","Gradient of the graph","X-intercept","Y-intercept"],"answer":"Gradient of the graph"},
-  {"subject":"Physics","question":"The distance covered by a uniformly accelerating body is represented on a velocity-time graph by the","type":"mcq","difficulty":"medium","options":["Gradient","Y-intercept","Area under the graph","X-intercept"],"answer":"Area under the graph"},
-  {"subject":"Physics","question":"The acceleration due to gravity on Earth is approximately","type":"mcq","difficulty":"easy","options":["9.8 m/s²","10.8 m/s²","8.9 m/s²","11 m/s²"],"answer":"9.8 m/s²"},
-  {"subject":"Physics","question":"A ball is thrown vertically upward. At the highest point, its velocity is","type":"mcq","difficulty":"medium","options":["Maximum","Minimum but non-zero","Zero","Equal to initial velocity"],"answer":"Zero"},
-  {"subject":"Physics","question":"The turning effect of a force about a pivot is called","type":"mcq","difficulty":"easy","options":["Pressure","Moment","Torque","Work"],"answer":"Moment"},
-  {"subject":"Physics","question":"Pressure is defined as force per unit","type":"mcq","difficulty":"easy","options":["Volume","Mass","Area","Length"],"answer":"Area"},
-  {"subject":"Physics","question":"Archimedes' principle states that a body immersed in a fluid experiences an upward force equal to","type":"mcq","difficulty":"medium","options":["The weight of the body","The weight of fluid displaced","The mass of the body","The volume of fluid displaced"],"answer":"The weight of fluid displaced"},
-  {"subject":"Physics","question":"The frequency of a wave is the number of complete oscillations per","type":"mcq","difficulty":"easy","options":["Metre","Second","Kilometre","Minute"],"answer":"Second"},
-  {"subject":"Physics","question":"The SI unit of frequency is the","type":"mcq","difficulty":"easy","options":["Hertz","Newton","Watt","Joule"],"answer":"Hertz"},
-  {"subject":"Physics","question":"The relationship between wave speed (v), frequency (f) and wavelength (λ) is","type":"mcq","difficulty":"easy","options":["v = f/λ","v = λ/f","v = fλ","v = f + λ"],"answer":"v = fλ"},
-  {"subject":"Physics","question":"Sound waves are examples of","type":"mcq","difficulty":"easy","options":["Transverse waves","Longitudinal waves","Electromagnetic waves","Stationary waves"],"answer":"Longitudinal waves"},
-  {"subject":"Physics","question":"Light waves are examples of","type":"mcq","difficulty":"easy","options":["Longitudinal waves","Mechanical waves","Transverse electromagnetic waves","Sound waves"],"answer":"Transverse electromagnetic waves"},
-  {"subject":"Physics","question":"Which of the following electromagnetic waves has the shortest wavelength?","type":"mcq","difficulty":"medium","options":["Radio waves","Infrared","Visible light","Gamma rays"],"answer":"Gamma rays"},
-  {"subject":"Physics","question":"The speed of light in a vacuum is approximately","type":"mcq","difficulty":"easy","options":["3 × 10⁶ m/s","3 × 10⁸ m/s","3 × 10¹⁰ m/s","3 × 10⁴ m/s"],"answer":"3 × 10⁸ m/s"},
-  {"subject":"Physics","question":"When light passes from air into glass, it","type":"mcq","difficulty":"medium","options":["Speeds up and bends away from the normal","Slows down and bends towards the normal","Speeds up and bends towards the normal","Slows down and bends away from the normal"],"answer":"Slows down and bends towards the normal"},
-  {"subject":"Physics","question":"The bending of light as it passes from one medium to another is called","type":"mcq","difficulty":"easy","options":["Reflection","Diffraction","Refraction","Dispersion"],"answer":"Refraction"},
-  {"subject":"Physics","question":"Total internal reflection occurs when light travels from a denser medium to a less dense medium at an angle","type":"mcq","difficulty":"medium","options":["Less than the critical angle","Equal to the critical angle","Greater than the critical angle","Any angle"],"answer":"Greater than the critical angle"},
-  {"subject":"Physics","question":"A concave mirror is also known as a","type":"mcq","difficulty":"easy","options":["Diverging mirror","Converging mirror","Plane mirror","Flat mirror"],"answer":"Converging mirror"},
-  {"subject":"Physics","question":"Which type of lens is used to correct short-sightedness (myopia)?","type":"mcq","difficulty":"medium","options":["Convex lens","Concave lens","Bifocal lens","Cylindrical lens"],"answer":"Concave lens"},
-  {"subject":"Physics","question":"The unit of electric charge is the","type":"mcq","difficulty":"easy","options":["Ampere","Volt","Coulomb","Ohm"],"answer":"Coulomb"},
-  {"subject":"Physics","question":"Ohm's law states that current is proportional to voltage provided","type":"mcq","difficulty":"medium","options":["Resistance is zero","Temperature is constant","Power is constant","Resistance changes"],"answer":"Temperature is constant"},
-  {"subject":"Physics","question":"If the voltage across a 4 Ω resistor is 12 V, what is the current?","type":"mcq","difficulty":"easy","options":["48 A","0.33 A","3 A","8 A"],"answer":"3 A"},
-  {"subject":"Physics","question":"Two resistors of 6 Ω and 3 Ω are connected in parallel. What is their combined resistance?","type":"mcq","difficulty":"medium","options":["9 Ω","2 Ω","3 Ω","0.5 Ω"],"answer":"2 Ω"},
-  {"subject":"Physics","question":"Electrical power is calculated as","type":"mcq","difficulty":"easy","options":["P = V/I","P = IV","P = I/V","P = I + V"],"answer":"P = IV"},
-  {"subject":"Physics","question":"A 60 W bulb runs for 5 hours. How many joules of energy does it use?","type":"mcq","difficulty":"medium","options":["300 J","1 080 000 J","12 J","3 600 J"],"answer":"1 080 000 J"},
-  {"subject":"Physics","question":"The domestic mains electricity supply in Ghana is approximately","type":"mcq","difficulty":"easy","options":["110 V, 50 Hz","240 V, 50 Hz","120 V, 60 Hz","220 V, 60 Hz"],"answer":"240 V, 50 Hz"},
-  {"subject":"Physics","question":"A transformer with 100 turns in the primary and 500 turns in the secondary is a","type":"mcq","difficulty":"medium","options":["Step-down transformer","Step-up transformer","Isolation transformer","Current transformer"],"answer":"Step-up transformer"},
-  {"subject":"Physics","question":"The specific heat capacity of a substance is defined as the heat required to raise the temperature of","type":"mcq","difficulty":"medium","options":["1 kg of the substance by 1 °C","1 g of the substance by 10 °C","Any mass by 1 °C","1 kg by 100 °C"],"answer":"1 kg of the substance by 1 °C"},
-  {"subject":"Physics","question":"Heat transfer by direct contact between particles is called","type":"mcq","difficulty":"easy","options":["Radiation","Convection","Conduction","Evaporation"],"answer":"Conduction"},
-  {"subject":"Physics","question":"Heat transfer through a vacuum is possible by","type":"mcq","difficulty":"easy","options":["Conduction","Convection","Radiation","All of the above"],"answer":"Radiation"},
-  {"subject":"Physics","question":"The Boyle's law states that at constant temperature, the pressure of a gas is","type":"mcq","difficulty":"medium","options":["Directly proportional to its volume","Inversely proportional to its volume","Equal to its volume","Independent of its volume"],"answer":"Inversely proportional to its volume"},
-  {"subject":"Physics","question":"Absolute zero is the temperature at which","type":"mcq","difficulty":"medium","options":["Water boils","All molecular motion ceases","Ice melts","All gases become liquid"],"answer":"All molecular motion ceases"},
-  {"subject":"Physics","question":"Absolute zero on the Celsius scale is","type":"mcq","difficulty":"medium","options":["0 °C","-100 °C","-273 °C","273 °C"],"answer":"-273 °C"},
-  {"subject":"Physics","question":"The photoelectric effect demonstrates that light behaves as","type":"mcq","difficulty":"hard","options":["A wave","A particle (photon)","A magnetic field","An electric field"],"answer":"A particle (photon)"},
-  {"subject":"Physics","question":"Which scientist proposed the theory of general relativity?","type":"mcq","difficulty":"easy","options":["Isaac Newton","Max Planck","Albert Einstein","Niels Bohr"],"answer":"Albert Einstein"},
-  {"subject":"Physics","question":"In nuclear fission, a heavy nucleus","type":"mcq","difficulty":"medium","options":["Combines with another nucleus","Splits into smaller nuclei","Emits a photon","Gains neutrons"],"answer":"Splits into smaller nuclei"},
-  {"subject":"Physics","question":"What type of radiation is the least penetrating?","type":"mcq","difficulty":"medium","options":["Alpha","Beta","Gamma","X-ray"],"answer":"Alpha"},
-  {"subject":"Physics","question":"A semiconductor is a material whose electrical conductivity is","type":"mcq","difficulty":"medium","options":["Higher than metals","Lower than insulators","Between that of conductors and insulators","Zero"],"answer":"Between that of conductors and insulators"},
-  {"subject":"Physics","question":"A diode allows current to flow in","type":"mcq","difficulty":"medium","options":["Both directions","Neither direction","One direction only","Only when heated"],"answer":"One direction only"},
-  {"subject":"Physics","question":"A p-n junction diode in reverse bias","type":"mcq","difficulty":"hard","options":["Allows large current to flow","Allows small leakage current only","Acts as a conductor","Stores charge"],"answer":"Allows small leakage current only"},
-  {"subject":"Physics","question":"Define acceleration.","type":"short_answer","difficulty":"easy","keywords":["rate of change","velocity","change in velocity","per unit time"]},
-  {"subject":"Physics","question":"State Newton's first law of motion.","type":"short_answer","difficulty":"easy","keywords":["rest","uniform motion","net force","external force","inertia"]},
-  {"subject":"Physics","question":"What is the difference between a scalar and a vector quantity?","type":"short_answer","difficulty":"easy","keywords":["direction","magnitude","scalar","vector","direction only","magnitude only"]},
-  {"subject":"Physics","question":"State Ohm's law.","type":"short_answer","difficulty":"easy","keywords":["current","voltage","proportional","constant temperature","resistance"]},
-  {"subject":"Physics","question":"What is meant by total internal reflection?","type":"short_answer","difficulty":"medium","keywords":["critical angle","denser","less dense","reflected","refraction","internal"]},
-  {"subject":"Physics","question":"Define the term 'half-life' in nuclear physics.","type":"short_answer","difficulty":"medium","keywords":["half","atoms","decay","radioactive","time","activity"]},
-  {"subject":"Physics","question":"What is the principle of conservation of momentum?","type":"short_answer","difficulty":"medium","keywords":["total momentum","constant","no external force","conserved","collision"]},
-  {"subject":"Physics","question":"Calculate the weight of an object of mass 10 kg on Earth. (g = 10 m/s²)","type":"short_answer","difficulty":"easy","keywords":["100 N","100","Newtons"]},
-  {"subject":"Physics","question":"What is the name of the force that opposes motion between two surfaces in contact?","type":"short_answer","difficulty":"easy","keywords":["friction","Friction"]},
-  {"subject":"Physics","question":"State one difference between longitudinal and transverse waves.","type":"short_answer","difficulty":"medium","keywords":["perpendicular","parallel","vibration","direction","transverse","longitudinal","propagation"]},
-  {"subject":"Physics","question":"What is the critical angle in optics?","type":"short_answer","difficulty":"medium","keywords":["angle of incidence","total internal reflection","refracted ray","90 degrees","grazes"]},
-  {"subject":"Physics","question":"Name the device used to convert mechanical energy into electrical energy.","type":"short_answer","difficulty":"easy","keywords":["generator","dynamo","Generator","alternator"]},
-  {"subject":"Physics","question":"What happens to the resistance of a metallic conductor as its temperature increases?","type":"short_answer","difficulty":"medium","keywords":["increases","resistance increases","higher temperature"]},
-  {"subject":"Physics","question":"Define the term 'specific heat capacity'.","type":"short_answer","difficulty":"medium","keywords":["heat energy","1 kg","1 degree","temperature","per kilogram","per degree"]},
-  {"subject":"Physics","question":"State the law of reflection.","type":"short_answer","difficulty":"easy","keywords":["angle of incidence","angle of reflection","equal","normal","same plane"]},
-  {"subject":"Physics","question":"What is the formula for calculating the moment of a force?","type":"short_answer","difficulty":"easy","keywords":["force times distance","F × d","moment = force × perpendicular distance"]},
-  {"subject":"Physics","question":"Name two applications of total internal reflection.","type":"short_answer","difficulty":"medium","keywords":["optical fibre","periscope","prism","endoscope","binoculars","diamond","reflector"]},
-  {"subject":"Physics","question":"What is the relationship between frequency and period of a wave?","type":"short_answer","difficulty":"medium","keywords":["reciprocal","f = 1/T","T = 1/f","inversely proportional","period","frequency"]},
-  {"subject":"Physics","question":"In Ghana, the mains electricity is AC. What does AC stand for?","type":"short_answer","difficulty":"easy","keywords":["alternating current","Alternating Current","alternating"]},
-  {"subject":"Physics","question":"What is meant by the term 'resonance' in physics?","type":"short_answer","difficulty":"hard","keywords":["natural frequency","forced vibration","maximum amplitude","driving frequency","resonance"]},
-  {"subject":"Physics","question":"Which of the following is a vector quantity?","type":"mcq","difficulty":"easy","options":["Mass","Temperature","Force","Speed"],"answer":"Force"},
-  {"subject":"Physics","question":"A body moving in a circle at constant speed is accelerating because","type":"mcq","difficulty":"medium","options":["Its speed is changing","Its direction is changing","Both speed and direction are changing","It is decelerating"],"answer":"Its direction is changing"},
-  {"subject":"Physics","question":"The centripetal force on a body moving in a circle acts","type":"mcq","difficulty":"medium","options":["Outward from the centre","Tangentially","Towards the centre","Upward"],"answer":"Towards the centre"},
-  {"subject":"Physics","question":"Hooke's law states that the extension of a spring is proportional to the applied force provided the","type":"mcq","difficulty":"medium","options":["Spring is compressed","Temperature is constant","Elastic limit is not exceeded","Mass is constant"],"answer":"Elastic limit is not exceeded"},
-  {"subject":"Physics","question":"The efficiency of a machine is calculated as","type":"mcq","difficulty":"medium","options":["Work input ÷ Work output × 100%","Work output ÷ Work input × 100%","Power output ÷ Force × 100%","Distance ÷ Time × 100%"],"answer":"Work output ÷ Work input × 100%"},
-  {"subject":"Physics","question":"A simple pendulum of length L has a period T = 2π√(L/g). If the length is quadrupled, the period","type":"mcq","difficulty":"hard","options":["Doubles","Quadruples","Halves","Stays the same"],"answer":"Doubles"},
-  {"subject":"Physics","question":"The unit of pressure is the Pascal, which equals","type":"mcq","difficulty":"medium","options":["N·m","N/m²","N·m²","kg/m³"],"answer":"N/m²"},
-  {"subject":"Physics","question":"Atmospheric pressure at sea level is approximately","type":"mcq","difficulty":"medium","options":["10,000 Pa","101,325 Pa","1,000,000 Pa","500 Pa"],"answer":"101,325 Pa"},
-  {"subject":"Physics","question":"Charles' law states that at constant pressure, the volume of a gas is","type":"mcq","difficulty":"medium","options":["Inversely proportional to temperature","Directly proportional to absolute temperature","Inversely proportional to pressure","Constant"],"answer":"Directly proportional to absolute temperature"},
-  {"subject":"Physics","question":"An ideal gas obeys the equation PV = nRT, where R is","type":"mcq","difficulty":"hard","options":["Avogadro's constant","Boltzmann's constant","The universal gas constant","The specific heat capacity"],"answer":"The universal gas constant"},
-  {"subject":"Physics","question":"The wavelength of a wave is the distance between","type":"mcq","difficulty":"easy","options":["A crest and a trough","Two consecutive crests","A node and antinode","The source and observer"],"answer":"Two consecutive crests"},
-  {"subject":"Physics","question":"Diffraction is most noticeable when the wavelength of the wave is","type":"mcq","difficulty":"medium","options":["Much larger than the gap","About the same size as the gap","Much smaller than the gap","Zero"],"answer":"About the same size as the gap"},
-  {"subject":"Physics","question":"The Doppler effect describes the change in observed frequency when","type":"mcq","difficulty":"hard","options":["A wave enters a denser medium","The source and observer are moving relative to each other","The wave is reflected","The amplitude increases"],"answer":"The source and observer are moving relative to each other"},
-  {"subject":"Physics","question":"In a series circuit, the total resistance is","type":"mcq","difficulty":"easy","options":["Less than the smallest resistor","Greater than the largest resistor","Equal to the sum of all resistors","The product of all resistors"],"answer":"Equal to the sum of all resistors"},
-  {"subject":"Physics","question":"The electromotive force (EMF) of a cell is defined as the","type":"mcq","difficulty":"medium","options":["Terminal voltage when current flows","Total energy supplied per unit charge","Resistance of the cell","Charge stored in the cell"],"answer":"Total energy supplied per unit charge"},
-  {"subject":"Physics","question":"Magnetic field lines around a bar magnet run from","type":"mcq","difficulty":"easy","options":["South to North inside the magnet","North to South outside the magnet","North to South inside the magnet","South pole to South pole"],"answer":"North to South outside the magnet"},
-  {"subject":"Physics","question":"Fleming's left-hand rule is used to find the direction of","type":"mcq","difficulty":"medium","options":["Induced EMF","Force on a current-carrying conductor in a magnetic field","Magnetic field direction","Current flow in a coil"],"answer":"Force on a current-carrying conductor in a magnetic field"},
-  {"subject":"Physics","question":"Lenz's law states that the induced current always acts to","type":"mcq","difficulty":"hard","options":["Increase the inducing flux","Oppose the change causing it","Increase resistance","Reduce temperature"],"answer":"Oppose the change causing it"},
-  {"subject":"Physics","question":"A step-down transformer has","type":"mcq","difficulty":"medium","options":["More turns in primary than secondary","More turns in secondary than primary","Equal turns in both coils","No iron core"],"answer":"More turns in primary than secondary"},
-  {"subject":"Physics","question":"The process of splitting the nucleus of a heavy atom to release energy is called","type":"mcq","difficulty":"easy","options":["Nuclear fusion","Radioactive decay","Nuclear fission","Beta emission"],"answer":"Nuclear fission"},
-  {"subject":"Physics","question":"In nuclear fusion, energy is released when","type":"mcq","difficulty":"medium","options":["A heavy nucleus splits","Light nuclei combine to form a heavier nucleus","An electron is emitted","A gamma ray is absorbed"],"answer":"Light nuclei combine to form a heavier nucleus"},
-  {"subject":"Physics","question":"X-rays are produced when","type":"mcq","difficulty":"hard","options":["Electrons are accelerated through a vacuum","High-speed electrons hit a metal target","Radioactive decay occurs","Sound waves are amplified"],"answer":"High-speed electrons hit a metal target"},
-  {"subject":"Physics","question":"The unit of radioactivity (number of decays per second) is the","type":"mcq","difficulty":"medium","options":["Gray","Sievert","Becquerel","Hertz"],"answer":"Becquerel"},
-  {"subject":"Physics","question":"Gamma radiation is stopped by","type":"mcq","difficulty":"medium","options":["Paper","A few cm of air","A few mm of aluminium","Several cm of lead"],"answer":"Several cm of lead"},
-  {"subject":"Physics","question":"What is Archimedes' principle?","type":"short_answer","difficulty":"medium","keywords":["upthrust","weight","fluid","displaced","buoyant force","equal to weight of fluid displaced"]},
-  {"subject":"Physics","question":"Define the term 'work done' in physics.","type":"short_answer","difficulty":"easy","keywords":["force","distance","W = Fd","displacement","direction of force","joules"]},
-  {"subject":"Physics","question":"What is centripetal acceleration?","type":"short_answer","difficulty":"medium","keywords":["towards centre","circle","v²/r","direction","acceleration","circular motion"]},
-  {"subject":"Physics","question":"State Hooke's law.","type":"short_answer","difficulty":"easy","keywords":["extension","force","proportional","elastic limit","spring","load"]},
-  {"subject":"Physics","question":"Explain what is meant by 'absolute zero'.","type":"short_answer","difficulty":"medium","keywords":["-273","0 Kelvin","molecular motion","ceases","lowest temperature","Kelvin"]},
-  {"subject":"Physics","question":"What is the difference between nuclear fission and nuclear fusion?","type":"short_answer","difficulty":"medium","keywords":["fission","splits","heavy","fusion","combine","light nuclei","energy","join"]},
-  {"subject":"Physics","question":"State two uses of X-rays.","type":"short_answer","difficulty":"easy","keywords":["medical imaging","cancer treatment","airport security","bone","radiotherapy","security scanning"]},
-  {"subject":"Physics","question":"What is Lenz's law?","type":"short_answer","difficulty":"hard","keywords":["induced current","opposes","change","flux","electromagnetic induction","direction"]}
+  {
+    "subject": "Physics",
+    "question": "Speed is defined as the distance travelled per unit",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass",
+      "Time",
+      "Force",
+      "Energy"
+    ],
+    "answer": [
+      "Time"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the SI unit of force?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Joule",
+      "Watt",
+      "Newton",
+      "Pascal"
+    ],
+    "answer": [
+      "Newton"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Newton's first law of motion states that a body will remain at rest or in uniform motion unless acted upon by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Gravity",
+      "A net external force",
+      "Friction",
+      "Air resistance"
+    ],
+    "answer": [
+      "A net external force"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The tendency of a body to resist changes in its state of motion is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Momentum",
+      "Inertia",
+      "Velocity",
+      "Acceleration"
+    ],
+    "answer": [
+      "Inertia"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Newton's second law of motion relates force to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass and velocity",
+      "Mass and acceleration",
+      "Weight and distance",
+      "Speed and time"
+    ],
+    "answer": [
+      "Mass and acceleration"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "If a 5 kg object accelerates at 3 m/s², what net force acts on it?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "8 N",
+      "2 N",
+      "15 N",
+      "1.67 N"
+    ],
+    "answer": [
+      "15 N"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Newton's third law states that for every action there is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A greater reaction",
+      "A smaller reaction",
+      "An equal and opposite reaction",
+      "No reaction"
+    ],
+    "answer": [
+      "An equal and opposite reaction"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Momentum is defined as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass times distance",
+      "Mass times velocity",
+      "Force times time",
+      "Mass times acceleration"
+    ],
+    "answer": [
+      "Mass times velocity"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The unit of momentum is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "kg·m",
+      "kg·m/s²",
+      "kg·m/s",
+      "N/m"
+    ],
+    "answer": [
+      "kg·m/s"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "In a perfectly elastic collision, which quantity is conserved?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Kinetic energy only",
+      "Momentum only",
+      "Both kinetic energy and momentum",
+      "Neither"
+    ],
+    "answer": [
+      "Both kinetic energy and momentum"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The work done on an object is calculated as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Force × time",
+      "Force × distance",
+      "Mass × velocity",
+      "Mass × acceleration"
+    ],
+    "answer": [
+      "Force × distance"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the SI unit of energy?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Watt",
+      "Newton",
+      "Joule",
+      "Pascal"
+    ],
+    "answer": [
+      "Joule"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Power is defined as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Work done per unit distance",
+      "Work done per unit time",
+      "Force per unit area",
+      "Energy per unit mass"
+    ],
+    "answer": [
+      "Work done per unit time"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "An object of mass 2 kg is lifted 5 m above the ground. What is its gravitational potential energy? (g = 10 m/s²)",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "10 J",
+      "25 J",
+      "100 J",
+      "50 J"
+    ],
+    "answer": [
+      "100 J"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A 4 kg object moving at 3 m/s has a kinetic energy of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "12 J",
+      "18 J",
+      "6 J",
+      "24 J"
+    ],
+    "answer": [
+      "18 J"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The principle of conservation of energy states that energy",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Can be created but not destroyed",
+      "Can be destroyed but not created",
+      "Cannot be created nor destroyed",
+      "Can be both created and destroyed"
+    ],
+    "answer": [
+      "Cannot be created nor destroyed"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Velocity differs from speed in that velocity includes",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Magnitude only",
+      "Direction only",
+      "Both magnitude and direction",
+      "Mass"
+    ],
+    "answer": [
+      "Both magnitude and direction"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A car decelerates from 20 m/s to rest in 4 seconds. What is the deceleration?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "80 m/s²",
+      "0.2 m/s²",
+      "5 m/s²",
+      "8 m/s²"
+    ],
+    "answer": [
+      "5 m/s²"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "On a velocity-time graph, acceleration is represented by the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Area under the graph",
+      "Gradient of the graph",
+      "X-intercept",
+      "Y-intercept"
+    ],
+    "answer": [
+      "Gradient of the graph"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The distance covered by a uniformly accelerating body is represented on a velocity-time graph by the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Gradient",
+      "Y-intercept",
+      "Area under the graph",
+      "X-intercept"
+    ],
+    "answer": [
+      "Area under the graph"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The acceleration due to gravity on Earth is approximately",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "9.8 m/s²",
+      "10.8 m/s²",
+      "8.9 m/s²",
+      "11 m/s²"
+    ],
+    "answer": [
+      "9.8 m/s²"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A ball is thrown vertically upward. At the highest point, its velocity is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Maximum",
+      "Minimum but non-zero",
+      "Zero",
+      "Equal to initial velocity"
+    ],
+    "answer": [
+      "Zero"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The turning effect of a force about a pivot is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Pressure",
+      "Moment",
+      "Torque",
+      "Work"
+    ],
+    "answer": [
+      "Moment"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Pressure is defined as force per unit",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Volume",
+      "Mass",
+      "Area",
+      "Length"
+    ],
+    "answer": [
+      "Area"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Archimedes' principle states that a body immersed in a fluid experiences an upward force equal to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The weight of the body",
+      "The weight of fluid displaced",
+      "The mass of the body",
+      "The volume of fluid displaced"
+    ],
+    "answer": [
+      "The weight of fluid displaced"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The frequency of a wave is the number of complete oscillations per",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Metre",
+      "Second",
+      "Kilometre",
+      "Minute"
+    ],
+    "answer": [
+      "Second"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The SI unit of frequency is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Hertz",
+      "Newton",
+      "Watt",
+      "Joule"
+    ],
+    "answer": [
+      "Hertz"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The relationship between wave speed (v), frequency (f) and wavelength (λ) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "v = f/λ",
+      "v = λ/f",
+      "v = fλ",
+      "v = f + λ"
+    ],
+    "answer": [
+      "v = fλ"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Sound waves are examples of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Transverse waves",
+      "Longitudinal waves",
+      "Electromagnetic waves",
+      "Stationary waves"
+    ],
+    "answer": [
+      "Longitudinal waves"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Light waves are examples of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Longitudinal waves",
+      "Mechanical waves",
+      "Transverse electromagnetic waves",
+      "Sound waves"
+    ],
+    "answer": [
+      "Transverse electromagnetic waves"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Which of the following electromagnetic waves has the shortest wavelength?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Radio waves",
+      "Infrared",
+      "Visible light",
+      "Gamma rays"
+    ],
+    "answer": [
+      "Gamma rays"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The speed of light in a vacuum is approximately",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "3 × 10⁶ m/s",
+      "3 × 10⁸ m/s",
+      "3 × 10¹⁰ m/s",
+      "3 × 10⁴ m/s"
+    ],
+    "answer": [
+      "3 × 10⁸ m/s"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "When light passes from air into glass, it",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Speeds up and bends away from the normal",
+      "Slows down and bends towards the normal",
+      "Speeds up and bends towards the normal",
+      "Slows down and bends away from the normal"
+    ],
+    "answer": [
+      "Slows down and bends towards the normal"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The bending of light as it passes from one medium to another is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Reflection",
+      "Diffraction",
+      "Refraction",
+      "Dispersion"
+    ],
+    "answer": [
+      "Refraction"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Total internal reflection occurs when light travels from a denser medium to a less dense medium at an angle",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Less than the critical angle",
+      "Equal to the critical angle",
+      "Greater than the critical angle",
+      "Any angle"
+    ],
+    "answer": [
+      "Greater than the critical angle"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A concave mirror is also known as a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Diverging mirror",
+      "Converging mirror",
+      "Plane mirror",
+      "Flat mirror"
+    ],
+    "answer": [
+      "Converging mirror"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Which type of lens is used to correct short-sightedness (myopia)?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Convex lens",
+      "Concave lens",
+      "Bifocal lens",
+      "Cylindrical lens"
+    ],
+    "answer": [
+      "Concave lens"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The unit of electric charge is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ampere",
+      "Volt",
+      "Coulomb",
+      "Ohm"
+    ],
+    "answer": [
+      "Coulomb"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Ohm's law states that current is proportional to voltage provided",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Resistance is zero",
+      "Temperature is constant",
+      "Power is constant",
+      "Resistance changes"
+    ],
+    "answer": [
+      "Temperature is constant"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "If the voltage across a 4 Ω resistor is 12 V, what is the current?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "48 A",
+      "0.33 A",
+      "3 A",
+      "8 A"
+    ],
+    "answer": [
+      "3 A"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Two resistors of 6 Ω and 3 Ω are connected in parallel. What is their combined resistance?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "9 Ω",
+      "2 Ω",
+      "3 Ω",
+      "0.5 Ω"
+    ],
+    "answer": [
+      "2 Ω"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Electrical power is calculated as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "P = V/I",
+      "P = IV",
+      "P = I/V",
+      "P = I + V"
+    ],
+    "answer": [
+      "P = IV"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A 60 W bulb runs for 5 hours. How many joules of energy does it use?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "300 J",
+      "1 080 000 J",
+      "12 J",
+      "3 600 J"
+    ],
+    "answer": [
+      "1 080 000 J"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The domestic mains electricity supply in Ghana is approximately",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "110 V, 50 Hz",
+      "240 V, 50 Hz",
+      "120 V, 60 Hz",
+      "220 V, 60 Hz"
+    ],
+    "answer": [
+      "240 V, 50 Hz"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A transformer with 100 turns in the primary and 500 turns in the secondary is a",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Step-down transformer",
+      "Step-up transformer",
+      "Isolation transformer",
+      "Current transformer"
+    ],
+    "answer": [
+      "Step-up transformer"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The specific heat capacity of a substance is defined as the heat required to raise the temperature of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "1 kg of the substance by 1 °C",
+      "1 g of the substance by 10 °C",
+      "Any mass by 1 °C",
+      "1 kg by 100 °C"
+    ],
+    "answer": [
+      "1 kg of the substance by 1 °C"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Heat transfer by direct contact between particles is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Radiation",
+      "Convection",
+      "Conduction",
+      "Evaporation"
+    ],
+    "answer": [
+      "Conduction"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Heat transfer through a vacuum is possible by",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "All of the above"
+    ],
+    "answer": [
+      "Radiation"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The Boyle's law states that at constant temperature, the pressure of a gas is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Directly proportional to its volume",
+      "Inversely proportional to its volume",
+      "Equal to its volume",
+      "Independent of its volume"
+    ],
+    "answer": [
+      "Inversely proportional to its volume"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Absolute zero is the temperature at which",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Water boils",
+      "All molecular motion ceases",
+      "Ice melts",
+      "All gases become liquid"
+    ],
+    "answer": [
+      "All molecular motion ceases"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Absolute zero on the Celsius scale is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "0 °C",
+      "-100 °C",
+      "-273 °C",
+      "273 °C"
+    ],
+    "answer": [
+      "-273 °C"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The photoelectric effect demonstrates that light behaves as",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A wave",
+      "A particle (photon)",
+      "A magnetic field",
+      "An electric field"
+    ],
+    "answer": [
+      "A particle (photon)"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Which scientist proposed the theory of general relativity?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Isaac Newton",
+      "Max Planck",
+      "Albert Einstein",
+      "Niels Bohr"
+    ],
+    "answer": [
+      "Albert Einstein"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "In nuclear fission, a heavy nucleus",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Combines with another nucleus",
+      "Splits into smaller nuclei",
+      "Emits a photon",
+      "Gains neutrons"
+    ],
+    "answer": [
+      "Splits into smaller nuclei"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What type of radiation is the least penetrating?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Alpha",
+      "Beta",
+      "Gamma",
+      "X-ray"
+    ],
+    "answer": [
+      "Alpha"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A semiconductor is a material whose electrical conductivity is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Higher than metals",
+      "Lower than insulators",
+      "Between that of conductors and insulators",
+      "Zero"
+    ],
+    "answer": [
+      "Between that of conductors and insulators"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A diode allows current to flow in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Both directions",
+      "Neither direction",
+      "One direction only",
+      "Only when heated"
+    ],
+    "answer": [
+      "One direction only"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A p-n junction diode in reverse bias",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Allows large current to flow",
+      "Allows small leakage current only",
+      "Acts as a conductor",
+      "Stores charge"
+    ],
+    "answer": [
+      "Allows small leakage current only"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Define acceleration.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "rate of change",
+      "velocity",
+      "change in velocity",
+      "per unit time",
+      "is velocity",
+      "are velocity",
+      "it is velocity",
+      "they are velocity"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State Newton's first law of motion.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "rest",
+      "uniform motion",
+      "net force",
+      "external force",
+      "inertia",
+      "is rest",
+      "are rest",
+      "it is rest",
+      "they are rest",
+      "is inertia",
+      "are inertia",
+      "it is inertia",
+      "they are inertia"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the difference between a scalar and a vector quantity?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "direction",
+      "magnitude",
+      "scalar",
+      "vector",
+      "direction only",
+      "magnitude only",
+      "is direction",
+      "are direction",
+      "it is direction",
+      "they are direction",
+      "is magnitude",
+      "are magnitude",
+      "it is magnitude",
+      "they are magnitude",
+      "is scalar",
+      "are scalar",
+      "it is scalar",
+      "they are scalar",
+      "is vector",
+      "are vector",
+      "it is vector",
+      "they are vector"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State Ohm's law.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "current",
+      "voltage",
+      "proportional",
+      "constant temperature",
+      "resistance",
+      "is current",
+      "are current",
+      "it is current",
+      "they are current",
+      "is voltage",
+      "are voltage",
+      "it is voltage",
+      "they are voltage",
+      "is proportional",
+      "are proportional",
+      "it is proportional",
+      "they are proportional",
+      "is resistance",
+      "are resistance",
+      "it is resistance",
+      "they are resistance"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is meant by total internal reflection?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "critical angle",
+      "denser",
+      "less dense",
+      "reflected",
+      "refraction",
+      "internal",
+      "is denser",
+      "are denser",
+      "it is denser",
+      "they are denser",
+      "is reflected",
+      "are reflected",
+      "it is reflected",
+      "they are reflected",
+      "is refraction",
+      "are refraction",
+      "it is refraction",
+      "they are refraction",
+      "is internal",
+      "are internal",
+      "it is internal",
+      "they are internal"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Define the term 'half-life' in nuclear physics.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "half",
+      "atoms",
+      "decay",
+      "radioactive",
+      "time",
+      "activity",
+      "is half",
+      "are half",
+      "it is half",
+      "they are half",
+      "is atoms",
+      "are atoms",
+      "it is atoms",
+      "they are atoms",
+      "is decay",
+      "are decay",
+      "it is decay",
+      "they are decay",
+      "is radioactive",
+      "are radioactive",
+      "it is radioactive",
+      "they are radioactive",
+      "is time",
+      "are time",
+      "it is time",
+      "they are time",
+      "is activity",
+      "are activity",
+      "it is activity",
+      "they are activity"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the principle of conservation of momentum?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "total momentum",
+      "constant",
+      "no external force",
+      "conserved",
+      "collision",
+      "is constant",
+      "are constant",
+      "it is constant",
+      "they are constant",
+      "is conserved",
+      "are conserved",
+      "it is conserved",
+      "they are conserved",
+      "is collision",
+      "are collision",
+      "it is collision",
+      "they are collision"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Calculate the weight of an object of mass 10 kg on Earth. (g = 10 m/s²)",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "100 N",
+      "100",
+      "Newtons",
+      "= 100",
+      "=100",
+      "x = 100",
+      "x=100",
+      "is 100",
+      "are 100",
+      "it is 100",
+      "they are 100",
+      "is newtons",
+      "are newtons",
+      "it is newtons",
+      "they are newtons"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the name of the force that opposes motion between two surfaces in contact?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "friction",
+      "is friction",
+      "are friction",
+      "it is friction",
+      "they are friction"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State one difference between longitudinal and transverse waves.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "perpendicular",
+      "parallel",
+      "vibration",
+      "direction",
+      "transverse",
+      "longitudinal",
+      "propagation",
+      "is perpendicular",
+      "are perpendicular",
+      "it is perpendicular",
+      "they are perpendicular",
+      "is parallel",
+      "are parallel",
+      "it is parallel",
+      "they are parallel",
+      "is vibration",
+      "are vibration",
+      "it is vibration",
+      "they are vibration",
+      "is direction",
+      "are direction",
+      "it is direction",
+      "they are direction",
+      "is transverse",
+      "are transverse",
+      "it is transverse",
+      "they are transverse",
+      "is longitudinal",
+      "are longitudinal",
+      "it is longitudinal",
+      "they are longitudinal",
+      "is propagation",
+      "are propagation",
+      "it is propagation",
+      "they are propagation"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the critical angle in optics?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "angle of incidence",
+      "total internal reflection",
+      "refracted ray",
+      "90 degrees",
+      "grazes",
+      "is grazes",
+      "are grazes",
+      "it is grazes",
+      "they are grazes"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Name the device used to convert mechanical energy into electrical energy.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "generator",
+      "dynamo",
+      "alternator",
+      "is generator",
+      "are generator",
+      "it is generator",
+      "they are generator",
+      "is dynamo",
+      "are dynamo",
+      "it is dynamo",
+      "they are dynamo",
+      "is alternator",
+      "are alternator",
+      "it is alternator",
+      "they are alternator"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What happens to the resistance of a metallic conductor as its temperature increases?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "increases",
+      "resistance increases",
+      "higher temperature",
+      "is increases",
+      "are increases",
+      "it is increases",
+      "they are increases"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Define the term 'specific heat capacity'.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "heat energy",
+      "1 kg",
+      "1 degree",
+      "temperature",
+      "per kilogram",
+      "per degree",
+      "is temperature",
+      "are temperature",
+      "it is temperature",
+      "they are temperature"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State the law of reflection.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "angle of incidence",
+      "angle of reflection",
+      "equal",
+      "normal",
+      "same plane",
+      "is equal",
+      "are equal",
+      "it is equal",
+      "they are equal",
+      "is normal",
+      "are normal",
+      "it is normal",
+      "they are normal"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the formula for calculating the moment of a force?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "force times distance",
+      "F × d",
+      "moment = force × perpendicular distance",
+      "f  d",
+      "F x d",
+      "moment  force  perpendicular distance",
+      "moment = force x perpendicular distance",
+      "moment  force x perpendicular distance"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Name two applications of total internal reflection.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "optical fibre",
+      "periscope",
+      "prism",
+      "endoscope",
+      "binoculars",
+      "diamond",
+      "reflector",
+      "is periscope",
+      "are periscope",
+      "it is periscope",
+      "they are periscope",
+      "is prism",
+      "are prism",
+      "it is prism",
+      "they are prism",
+      "is endoscope",
+      "are endoscope",
+      "it is endoscope",
+      "they are endoscope",
+      "is binoculars",
+      "are binoculars",
+      "it is binoculars",
+      "they are binoculars",
+      "is diamond",
+      "are diamond",
+      "it is diamond",
+      "they are diamond",
+      "is reflector",
+      "are reflector",
+      "it is reflector",
+      "they are reflector"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the relationship between frequency and period of a wave?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "reciprocal",
+      "f = 1/T",
+      "T = 1/f",
+      "inversely proportional",
+      "period",
+      "frequency",
+      "is reciprocal",
+      "are reciprocal",
+      "it is reciprocal",
+      "they are reciprocal",
+      "f  1t",
+      "t  1f",
+      "is period",
+      "are period",
+      "it is period",
+      "they are period",
+      "is frequency",
+      "are frequency",
+      "it is frequency",
+      "they are frequency"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "In Ghana, the mains electricity is AC. What does AC stand for?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "alternating current",
+      "alternating",
+      "ac",
+      "is alternating",
+      "are alternating",
+      "it is alternating",
+      "they are alternating"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is meant by the term 'resonance' in physics?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "natural frequency",
+      "forced vibration",
+      "maximum amplitude",
+      "driving frequency",
+      "resonance",
+      "is resonance",
+      "are resonance",
+      "it is resonance",
+      "they are resonance"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Which of the following is a vector quantity?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Mass",
+      "Temperature",
+      "Force",
+      "Speed"
+    ],
+    "answer": [
+      "Force"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A body moving in a circle at constant speed is accelerating because",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Its speed is changing",
+      "Its direction is changing",
+      "Both speed and direction are changing",
+      "It is decelerating"
+    ],
+    "answer": [
+      "Its direction is changing"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The centripetal force on a body moving in a circle acts",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Outward from the centre",
+      "Tangentially",
+      "Towards the centre",
+      "Upward"
+    ],
+    "answer": [
+      "Towards the centre"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Hooke's law states that the extension of a spring is proportional to the applied force provided the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Spring is compressed",
+      "Temperature is constant",
+      "Elastic limit is not exceeded",
+      "Mass is constant"
+    ],
+    "answer": [
+      "Elastic limit is not exceeded"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The efficiency of a machine is calculated as",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Work input ÷ Work output × 100%",
+      "Work output ÷ Work input × 100%",
+      "Power output ÷ Force × 100%",
+      "Distance ÷ Time × 100%"
+    ],
+    "answer": [
+      "Work output ÷ Work input × 100%"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A simple pendulum of length L has a period T = 2π√(L/g). If the length is quadrupled, the period",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Doubles",
+      "Quadruples",
+      "Halves",
+      "Stays the same"
+    ],
+    "answer": [
+      "Doubles"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The unit of pressure is the Pascal, which equals",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "N·m",
+      "N/m²",
+      "N·m²",
+      "kg/m³"
+    ],
+    "answer": [
+      "N/m²"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Atmospheric pressure at sea level is approximately",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "10,000 Pa",
+      "101,325 Pa",
+      "1,000,000 Pa",
+      "500 Pa"
+    ],
+    "answer": [
+      "101,325 Pa"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Charles' law states that at constant pressure, the volume of a gas is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Inversely proportional to temperature",
+      "Directly proportional to absolute temperature",
+      "Inversely proportional to pressure",
+      "Constant"
+    ],
+    "answer": [
+      "Directly proportional to absolute temperature"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "An ideal gas obeys the equation PV = nRT, where R is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Avogadro's constant",
+      "Boltzmann's constant",
+      "The universal gas constant",
+      "The specific heat capacity"
+    ],
+    "answer": [
+      "The universal gas constant"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The wavelength of a wave is the distance between",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A crest and a trough",
+      "Two consecutive crests",
+      "A node and antinode",
+      "The source and observer"
+    ],
+    "answer": [
+      "Two consecutive crests"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Diffraction is most noticeable when the wavelength of the wave is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Much larger than the gap",
+      "About the same size as the gap",
+      "Much smaller than the gap",
+      "Zero"
+    ],
+    "answer": [
+      "About the same size as the gap"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The Doppler effect describes the change in observed frequency when",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A wave enters a denser medium",
+      "The source and observer are moving relative to each other",
+      "The wave is reflected",
+      "The amplitude increases"
+    ],
+    "answer": [
+      "The source and observer are moving relative to each other"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "In a series circuit, the total resistance is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Less than the smallest resistor",
+      "Greater than the largest resistor",
+      "Equal to the sum of all resistors",
+      "The product of all resistors"
+    ],
+    "answer": [
+      "Equal to the sum of all resistors"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The electromotive force (EMF) of a cell is defined as the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Terminal voltage when current flows",
+      "Total energy supplied per unit charge",
+      "Resistance of the cell",
+      "Charge stored in the cell"
+    ],
+    "answer": [
+      "Total energy supplied per unit charge"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Magnetic field lines around a bar magnet run from",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "South to North inside the magnet",
+      "North to South outside the magnet",
+      "North to South inside the magnet",
+      "South pole to South pole"
+    ],
+    "answer": [
+      "North to South outside the magnet"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Fleming's left-hand rule is used to find the direction of",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Induced EMF",
+      "Force on a current-carrying conductor in a magnetic field",
+      "Magnetic field direction",
+      "Current flow in a coil"
+    ],
+    "answer": [
+      "Force on a current-carrying conductor in a magnetic field"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Lenz's law states that the induced current always acts to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Increase the inducing flux",
+      "Oppose the change causing it",
+      "Increase resistance",
+      "Reduce temperature"
+    ],
+    "answer": [
+      "Oppose the change causing it"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "A step-down transformer has",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "More turns in primary than secondary",
+      "More turns in secondary than primary",
+      "Equal turns in both coils",
+      "No iron core"
+    ],
+    "answer": [
+      "More turns in primary than secondary"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The process of splitting the nucleus of a heavy atom to release energy is called",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Nuclear fusion",
+      "Radioactive decay",
+      "Nuclear fission",
+      "Beta emission"
+    ],
+    "answer": [
+      "Nuclear fission"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "In nuclear fusion, energy is released when",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A heavy nucleus splits",
+      "Light nuclei combine to form a heavier nucleus",
+      "An electron is emitted",
+      "A gamma ray is absorbed"
+    ],
+    "answer": [
+      "Light nuclei combine to form a heavier nucleus"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "X-rays are produced when",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Electrons are accelerated through a vacuum",
+      "High-speed electrons hit a metal target",
+      "Radioactive decay occurs",
+      "Sound waves are amplified"
+    ],
+    "answer": [
+      "High-speed electrons hit a metal target"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "The unit of radioactivity (number of decays per second) is the",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Gray",
+      "Sievert",
+      "Becquerel",
+      "Hertz"
+    ],
+    "answer": [
+      "Becquerel"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Gamma radiation is stopped by",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Paper",
+      "A few cm of air",
+      "A few mm of aluminium",
+      "Several cm of lead"
+    ],
+    "answer": [
+      "Several cm of lead"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is Archimedes' principle?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "upthrust",
+      "weight",
+      "fluid",
+      "displaced",
+      "buoyant force",
+      "equal to weight of fluid displaced",
+      "is upthrust",
+      "are upthrust",
+      "it is upthrust",
+      "they are upthrust",
+      "is weight",
+      "are weight",
+      "it is weight",
+      "they are weight",
+      "is fluid",
+      "are fluid",
+      "it is fluid",
+      "they are fluid",
+      "is displaced",
+      "are displaced",
+      "it is displaced",
+      "they are displaced"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Define the term 'work done' in physics.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "force",
+      "distance",
+      "W = Fd",
+      "displacement",
+      "direction of force",
+      "joules",
+      "is force",
+      "are force",
+      "it is force",
+      "they are force",
+      "is distance",
+      "are distance",
+      "it is distance",
+      "they are distance",
+      "w  fd",
+      "is displacement",
+      "are displacement",
+      "it is displacement",
+      "they are displacement",
+      "is joules",
+      "are joules",
+      "it is joules",
+      "they are joules"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is centripetal acceleration?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "towards centre",
+      "circle",
+      "v²/r",
+      "direction",
+      "acceleration",
+      "circular motion",
+      "is circle",
+      "are circle",
+      "it is circle",
+      "they are circle",
+      "vr",
+      "v2/r",
+      "v2r",
+      "is v²/r",
+      "are v²/r",
+      "it is v²/r",
+      "they are v²/r",
+      "is direction",
+      "are direction",
+      "it is direction",
+      "they are direction",
+      "is acceleration",
+      "are acceleration",
+      "it is acceleration",
+      "they are acceleration"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State Hooke's law.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "extension",
+      "force",
+      "proportional",
+      "elastic limit",
+      "spring",
+      "load",
+      "is extension",
+      "are extension",
+      "it is extension",
+      "they are extension",
+      "is force",
+      "are force",
+      "it is force",
+      "they are force",
+      "is proportional",
+      "are proportional",
+      "it is proportional",
+      "they are proportional",
+      "is spring",
+      "are spring",
+      "it is spring",
+      "they are spring",
+      "is load",
+      "are load",
+      "it is load",
+      "they are load"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "Explain what is meant by 'absolute zero'.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "-273",
+      "0 Kelvin",
+      "molecular motion",
+      "ceases",
+      "lowest temperature",
+      "Kelvin",
+      "273",
+      "= -273",
+      "=-273",
+      "x = -273",
+      "x=-273",
+      "is -273",
+      "are -273",
+      "it is -273",
+      "they are -273",
+      "is ceases",
+      "are ceases",
+      "it is ceases",
+      "they are ceases",
+      "is kelvin",
+      "are kelvin",
+      "it is kelvin",
+      "they are kelvin"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is the difference between nuclear fission and nuclear fusion?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "fission",
+      "splits",
+      "heavy",
+      "fusion",
+      "combine",
+      "light nuclei",
+      "energy",
+      "join",
+      "is fission",
+      "are fission",
+      "it is fission",
+      "they are fission",
+      "is splits",
+      "are splits",
+      "it is splits",
+      "they are splits",
+      "is heavy",
+      "are heavy",
+      "it is heavy",
+      "they are heavy",
+      "is fusion",
+      "are fusion",
+      "it is fusion",
+      "they are fusion",
+      "is combine",
+      "are combine",
+      "it is combine",
+      "they are combine",
+      "is energy",
+      "are energy",
+      "it is energy",
+      "they are energy",
+      "is join",
+      "are join",
+      "it is join",
+      "they are join"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "State two uses of X-rays.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "medical imaging",
+      "cancer treatment",
+      "airport security",
+      "bone",
+      "radiotherapy",
+      "security scanning",
+      "is bone",
+      "are bone",
+      "it is bone",
+      "they are bone",
+      "is radiotherapy",
+      "are radiotherapy",
+      "it is radiotherapy",
+      "they are radiotherapy"
+    ]
+  },
+  {
+    "subject": "Physics",
+    "question": "What is Lenz's law?",
+    "type": "short_answer",
+    "difficulty": "hard",
+    "keywords": [
+      "induced current",
+      "opposes",
+      "change",
+      "flux",
+      "electromagnetic induction",
+      "direction",
+      "is opposes",
+      "are opposes",
+      "it is opposes",
+      "they are opposes",
+      "is change",
+      "are change",
+      "it is change",
+      "they are change",
+      "is flux",
+      "are flux",
+      "it is flux",
+      "they are flux",
+      "is direction",
+      "are direction",
+      "it is direction",
+      "they are direction"
+    ]
+  }
 ]

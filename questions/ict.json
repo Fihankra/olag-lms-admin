@@ -1,142 +1,2714 @@
 [
-  {"subject":"ICT","question":"ICT stands for","type":"mcq","difficulty":"easy","options":["Information and Computer Technology","International Computer Trade","Information and Communication Technology","Integrated Circuit Technology"],"answer":"Information and Communication Technology"},
-  {"subject":"ICT","question":"The 'brain' of the computer that processes instructions is the","type":"mcq","difficulty":"easy","options":["RAM","Hard drive","CPU","Monitor"],"answer":"CPU"},
-  {"subject":"ICT","question":"CPU stands for","type":"mcq","difficulty":"easy","options":["Central Processing Unit","Computer Programme Unit","Control Processing Unit","Central Programme Utility"],"answer":"Central Processing Unit"},
-  {"subject":"ICT","question":"RAM stands for","type":"mcq","difficulty":"easy","options":["Read Access Memory","Random Access Memory","Rapid Application Memory","Read And Modify"],"answer":"Random Access Memory"},
-  {"subject":"ICT","question":"RAM is described as volatile memory because","type":"mcq","difficulty":"medium","options":["It is always full","It loses its data when power is removed","It is very slow","It stores data permanently"],"answer":"It loses its data when power is removed"},
-  {"subject":"ICT","question":"ROM stands for","type":"mcq","difficulty":"easy","options":["Read Only Memory","Random Output Memory","Rapid Open Module","Read On Monitor"],"answer":"Read Only Memory"},
-  {"subject":"ICT","question":"ROM is non-volatile because","type":"mcq","difficulty":"medium","options":["It is connected to the CPU","It retains data even when power is off","It is very large","It cannot be written to"],"answer":"It retains data even when power is off"},
-  {"subject":"ICT","question":"The BIOS (Basic Input/Output System) is stored in","type":"mcq","difficulty":"hard","options":["RAM","Hard drive","ROM","CPU cache"],"answer":"ROM"},
-  {"subject":"ICT","question":"Which of the following is an input device?","type":"mcq","difficulty":"easy","options":["Monitor","Printer","Speaker","Keyboard"],"answer":"Keyboard"},
-  {"subject":"ICT","question":"Which of the following is an output device?","type":"mcq","difficulty":"easy","options":["Scanner","Keyboard","Mouse","Printer"],"answer":"Printer"},
-  {"subject":"ICT","question":"A hard disk drive (HDD) is used for","type":"mcq","difficulty":"easy","options":["Processing data","Displaying output","Long-term data storage","Input only"],"answer":"Long-term data storage"},
-  {"subject":"ICT","question":"Which storage device has no moving parts and is faster than an HDD?","type":"mcq","difficulty":"medium","options":["Floppy disk","CD-ROM","SSD (Solid State Drive)","Magnetic tape"],"answer":"SSD (Solid State Drive)"},
-  {"subject":"ICT","question":"1 kilobyte (KB) is equal to","type":"mcq","difficulty":"easy","options":["100 bytes","1000 bits","1024 bytes","500 bytes"],"answer":"1024 bytes"},
-  {"subject":"ICT","question":"1 megabyte (MB) is approximately","type":"mcq","difficulty":"easy","options":["1000 KB","1024 KB","512 KB","2048 KB"],"answer":"1024 KB"},
-  {"subject":"ICT","question":"1 gigabyte (GB) is approximately","type":"mcq","difficulty":"easy","options":["1024 MB","100 MB","512 MB","2048 MB"],"answer":"1024 MB"},
-  {"subject":"ICT","question":"Which is larger: a terabyte or a gigabyte?","type":"mcq","difficulty":"easy","options":["Gigabyte","They are equal","Terabyte","It depends on the device"],"answer":"Terabyte"},
-  {"subject":"ICT","question":"The motherboard is the main circuit board of a computer. It connects","type":"mcq","difficulty":"medium","options":["Only the CPU and RAM","Only storage devices","All major components (CPU, RAM, storage, etc.)","The computer to the internet"],"answer":"All major components (CPU, RAM, storage, etc.)"},
-  {"subject":"ICT","question":"The speed of a CPU is measured in","type":"mcq","difficulty":"medium","options":["Bytes","Hertz (GHz or MHz)","Megapixels","Watts"],"answer":"Hertz (GHz or MHz)"},
-  {"subject":"ICT","question":"What does the term 'booting' a computer mean?","type":"mcq","difficulty":"easy","options":["Shutting it down","Starting up the operating system","Installing software","Deleting files"],"answer":"Starting up the operating system"},
-  {"subject":"ICT","question":"An operating system (OS) is","type":"mcq","difficulty":"easy","options":["A type of printer","Software that manages computer hardware and software resources","A web browser","A spreadsheet application"],"answer":"Software that manages computer hardware and software resources"},
-  {"subject":"ICT","question":"Examples of operating systems include","type":"mcq","difficulty":"easy","options":["Microsoft Word, Excel, PowerPoint","Windows, macOS, Linux, Android","Google Chrome, Firefox, Edge","Photoshop, Premiere, Illustrator"],"answer":"Windows, macOS, Linux, Android"},
-  {"subject":"ICT","question":"Application software is designed to","type":"mcq","difficulty":"easy","options":["Manage hardware resources","Perform specific tasks for users (e.g., word processing, gaming)","Start the computer","Provide antivirus protection"],"answer":"Perform specific tasks for users (e.g., word processing, gaming)"},
-  {"subject":"ICT","question":"A GUI (Graphical User Interface) allows users to interact with a computer through","type":"mcq","difficulty":"easy","options":["Text commands only","Visual icons, windows, and menus","Programming codes","Command-line prompts"],"answer":"Visual icons, windows, and menus"},
-  {"subject":"ICT","question":"Which of the following is an example of office productivity software?","type":"mcq","difficulty":"easy","options":["Windows 10","Android","Microsoft Office (Word, Excel)","Ubuntu"],"answer":"Microsoft Office (Word, Excel)"},
-  {"subject":"ICT","question":"A spreadsheet application is best used for","type":"mcq","difficulty":"easy","options":["Writing essays","Creating presentations","Numerical data, calculations, and graphs","Editing videos"],"answer":"Numerical data, calculations, and graphs"},
-  {"subject":"ICT","question":"Microsoft Excel is primarily a","type":"mcq","difficulty":"easy","options":["Word processor","Database management system","Spreadsheet application","Presentation software"],"answer":"Spreadsheet application"},
-  {"subject":"ICT","question":"In a spreadsheet, the intersection of a row and a column is called a","type":"mcq","difficulty":"easy","options":["Field","Record","Cell","Range"],"answer":"Cell"},
-  {"subject":"ICT","question":"The cell reference B3 means","type":"mcq","difficulty":"easy","options":["Row B, Column 3","Column B, Row 3","Block 3, Section B","Neither — it is invalid"],"answer":"Column B, Row 3"},
-  {"subject":"ICT","question":"In Microsoft Excel, formulas begin with","type":"mcq","difficulty":"easy","options":["#","@","=","$"],"answer":"="},
-  {"subject":"ICT","question":"The Excel formula =SUM(A1:A5) calculates","type":"mcq","difficulty":"easy","options":["The average of A1 to A5","The total of all values in cells A1 to A5","The maximum value in A1 to A5","The product of A1 to A5"],"answer":"The total of all values in cells A1 to A5"},
-  {"subject":"ICT","question":"The Excel function =AVERAGE(B1:B4) returns","type":"mcq","difficulty":"easy","options":["The sum","The minimum value","The mean of the values in B1 to B4","The count"],"answer":"The mean of the values in B1 to B4"},
-  {"subject":"ICT","question":"A database is best described as","type":"mcq","difficulty":"easy","options":["A type of spreadsheet","An organised collection of structured data","A computer program for presentations","A security system"],"answer":"An organised collection of structured data"},
-  {"subject":"ICT","question":"In a database, a table is made up of","type":"mcq","difficulty":"easy","options":["Files and folders","Rows (records) and columns (fields)","Graphs and charts","Web pages"],"answer":"Rows (records) and columns (fields)"},
-  {"subject":"ICT","question":"A primary key in a database uniquely identifies","type":"mcq","difficulty":"medium","options":["A column","Each record (row) in a table","Each database","The whole table"],"answer":"Each record (row) in a table"},
-  {"subject":"ICT","question":"A query in a database is used to","type":"mcq","difficulty":"medium","options":["Delete all records","Format the database","Search for, filter, and retrieve specific records","Create new tables"],"answer":"Search for, filter, and retrieve specific records"},
-  {"subject":"ICT","question":"SQL stands for","type":"mcq","difficulty":"medium","options":["Standard Quality Language","Sequential Query Logic","Structured Query Language","System Query Link"],"answer":"Structured Query Language"},
-  {"subject":"ICT","question":"A LAN (Local Area Network) connects computers","type":"mcq","difficulty":"easy","options":["Across countries","Across continents","Within a small local area like a building or campus","Only using satellites"],"answer":"Within a small local area like a building or campus"},
-  {"subject":"ICT","question":"A WAN (Wide Area Network) covers","type":"mcq","difficulty":"easy","options":["A single room","A single building","A large geographical area such as a country or the globe","Only wireless connections"],"answer":"A large geographical area such as a country or the globe"},
-  {"subject":"ICT","question":"The internet is an example of a","type":"mcq","difficulty":"easy","options":["LAN","MAN","WAN","PAN"],"answer":"WAN"},
-  {"subject":"ICT","question":"The World Wide Web (WWW) is","type":"mcq","difficulty":"easy","options":["The same as the internet","A system of web pages accessed via the internet using browsers","A type of network hardware","A programming language"],"answer":"A system of web pages accessed via the internet using browsers"},
-  {"subject":"ICT","question":"A web browser is used to","type":"mcq","difficulty":"easy","options":["Write computer programs","Browse and display web pages","Manage files on your hard drive","Create databases"],"answer":"Browse and display web pages"},
-  {"subject":"ICT","question":"Examples of web browsers include","type":"mcq","difficulty":"easy","options":["Windows, macOS, Android","Google Chrome, Mozilla Firefox, Microsoft Edge","Microsoft Word, Excel, PowerPoint","Photoshop, Illustrator, InDesign"],"answer":"Google Chrome, Mozilla Firefox, Microsoft Edge"},
-  {"subject":"ICT","question":"A URL (Uniform Resource Locator) is","type":"mcq","difficulty":"easy","options":["A type of virus","The unique address of a resource on the internet","A programming language","A type of network cable"],"answer":"The unique address of a resource on the internet"},
-  {"subject":"ICT","question":"HTTP stands for","type":"mcq","difficulty":"easy","options":["High Transfer Text Protocol","Hypertext Transfer Protocol","Home Tool Text Processor","Hardware Transfer Technology Program"],"answer":"Hypertext Transfer Protocol"},
-  {"subject":"ICT","question":"HTTPS is more secure than HTTP because it uses","type":"mcq","difficulty":"medium","options":["A faster connection","Encryption (SSL/TLS)","More bandwidth","Bigger servers"],"answer":"Encryption (SSL/TLS)"},
-  {"subject":"ICT","question":"An IP address is used to","type":"mcq","difficulty":"medium","options":["Name a website","Identify devices on a network","Speed up downloads","Encrypt data"],"answer":"Identify devices on a network"},
-  {"subject":"ICT","question":"A router is a networking device that","type":"mcq","difficulty":"medium","options":["Stores data permanently","Directs data packets between networks","Provides power to devices","Converts analogue to digital signals"],"answer":"Directs data packets between networks"},
-  {"subject":"ICT","question":"A modem is a device that","type":"mcq","difficulty":"medium","options":["Stores data","Connects devices on a LAN","Converts digital signals to/from analogue for transmission over phone lines","Prints documents"],"answer":"Converts digital signals to/from analogue for transmission over phone lines"},
-  {"subject":"ICT","question":"Wi-Fi is a technology that provides","type":"mcq","difficulty":"easy","options":["Wired internet connections","Wireless network connectivity","Storage for the internet","Satellite communication"],"answer":"Wireless network connectivity"},
-  {"subject":"ICT","question":"Bluetooth is a wireless technology used mainly for","type":"mcq","difficulty":"easy","options":["Long-range internet access","Short-range communication between nearby devices","Connecting to the internet","Satellite navigation"],"answer":"Short-range communication between nearby devices"},
-  {"subject":"ICT","question":"Email (Electronic Mail) is a method of","type":"mcq","difficulty":"easy","options":["Printing documents","Sending and receiving messages electronically over the internet","Storing files in the cloud","Creating web pages"],"answer":"Sending and receiving messages electronically over the internet"},
-  {"subject":"ICT","question":"An attachment in an email is","type":"mcq","difficulty":"easy","options":["The signature at the bottom","A file sent along with the email message","The subject line","The CC field"],"answer":"A file sent along with the email message"},
-  {"subject":"ICT","question":"Phishing is a cyber attack that attempts to","type":"mcq","difficulty":"medium","options":["Delete your files","Trick users into revealing sensitive information (passwords, bank details)","Speed up the internet","Block your network"],"answer":"Trick users into revealing sensitive information (passwords, bank details)"},
-  {"subject":"ICT","question":"A virus in computing is","type":"mcq","difficulty":"easy","options":["A hardware failure","Malicious software that replicates and damages files","A slow internet connection","A type of printer error"],"answer":"Malicious software that replicates and damages files"},
-  {"subject":"ICT","question":"Malware is a general term for","type":"mcq","difficulty":"easy","options":["Safe software","Malicious software (viruses, spyware, ransomware, etc.)","Hardware malfunctions","Slow network speed"],"answer":"Malicious software (viruses, spyware, ransomware, etc.)"},
-  {"subject":"ICT","question":"Ransomware is malware that","type":"mcq","difficulty":"medium","options":["Speeds up your computer","Encrypts the victim's files and demands payment for the key","Monitors your keystrokes","Displays unwanted adverts"],"answer":"Encrypts the victim's files and demands payment for the key"},
-  {"subject":"ICT","question":"A firewall is a security system that","type":"mcq","difficulty":"medium","options":["Creates backups","Monitors and controls incoming/outgoing network traffic","Detects viruses on emails","Speeds up your connection"],"answer":"Monitors and controls incoming/outgoing network traffic"},
-  {"subject":"ICT","question":"Strong passwords should include","type":"mcq","difficulty":"easy","options":["Your name and birthday","A combination of uppercase, lowercase, numbers, and special characters","A single word that is easy to remember","Only numbers"],"answer":"A combination of uppercase, lowercase, numbers, and special characters"},
-  {"subject":"ICT","question":"Two-factor authentication (2FA) improves security by requiring","type":"mcq","difficulty":"medium","options":["Two different passwords","A second form of verification (e.g., SMS code) in addition to a password","A longer password","A special keyboard"],"answer":"A second form of verification (e.g., SMS code) in addition to a password"},
-  {"subject":"ICT","question":"The binary number system uses only the digits","type":"mcq","difficulty":"easy","options":["0, 1, 2","0 and 1","1, 2, 3","0 through 9"],"answer":"0 and 1"},
-  {"subject":"ICT","question":"The decimal number 5 in binary is","type":"mcq","difficulty":"medium","options":["0101","1010","0110","1001"],"answer":"0101"},
-  {"subject":"ICT","question":"The binary number 1010 equals what decimal number?","type":"mcq","difficulty":"medium","options":["8","10","12","6"],"answer":"10"},
-  {"subject":"ICT","question":"A bit is","type":"mcq","difficulty":"easy","options":["8 bytes","The smallest unit of data (0 or 1)","1024 bytes","A type of processor"],"answer":"The smallest unit of data (0 or 1)"},
-  {"subject":"ICT","question":"How many bits make one byte?","type":"mcq","difficulty":"easy","options":["4","16","8","2"],"answer":"8"},
-  {"subject":"ICT","question":"ASCII (American Standard Code for Information Interchange) is a system that","type":"mcq","difficulty":"medium","options":["Compresses images","Assigns numerical codes to characters (letters, numbers, symbols)","Encrypts network traffic","Manages database records"],"answer":"Assigns numerical codes to characters (letters, numbers, symbols)"},
-  {"subject":"ICT","question":"In a network, a server is a computer that","type":"mcq","difficulty":"easy","options":["Only receives data","Provides resources or services to other computers (clients)","Is always portable","Cannot connect to the internet"],"answer":"Provides resources or services to other computers (clients)"},
-  {"subject":"ICT","question":"Cloud computing refers to","type":"mcq","difficulty":"easy","options":["Using weather satellites","Storing and accessing data/services over the internet rather than locally","A type of cooling system for computers","Building clouds with computers"],"answer":"Storing and accessing data/services over the internet rather than locally"},
-  {"subject":"ICT","question":"Examples of cloud storage services include","type":"mcq","difficulty":"easy","options":["USB drives and CDs","Google Drive, Dropbox, iCloud","RAM and ROM","Hard drives and SSDs"],"answer":"Google Drive, Dropbox, iCloud"},
-  {"subject":"ICT","question":"SaaS stands for","type":"mcq","difficulty":"hard","options":["Software as a Solution","Secure and Safe Software","Software as a Service","Standard Application Software"],"answer":"Software as a Service"},
-  {"subject":"ICT","question":"The advantage of cloud storage over local storage includes","type":"mcq","difficulty":"medium","options":["Always works without internet","Requires no subscription","Accessible from anywhere with internet; easy to share","Faster than local storage"],"answer":"Accessible from anywhere with internet; easy to share"},
-  {"subject":"ICT","question":"A social network is an online platform that allows users to","type":"mcq","difficulty":"easy","options":["Store large files","Create and share content and connect with others","Write programs","Build hardware"],"answer":"Create and share content and connect with others"},
-  {"subject":"ICT","question":"Examples of social media platforms include","type":"mcq","difficulty":"easy","options":["Microsoft Office, LibreOffice","Facebook, Twitter/X, Instagram, TikTok","Windows, macOS, Linux","Chrome, Firefox, Edge"],"answer":"Facebook, Twitter/X, Instagram, TikTok"},
-  {"subject":"ICT","question":"Cyberbullying refers to","type":"mcq","difficulty":"easy","options":["Cheating in online games","Using technology to harass, threaten, or humiliate others","Hacking into systems","Sending spam emails"],"answer":"Using technology to harass, threaten, or humiliate others"},
-  {"subject":"ICT","question":"Digital literacy means the ability to","type":"mcq","difficulty":"easy","options":["Read and write print books","Use digital tools and evaluate digital information critically","Only use a smartphone","Only write programs"],"answer":"Use digital tools and evaluate digital information critically"},
-  {"subject":"ICT","question":"E-commerce refers to","type":"mcq","difficulty":"easy","options":["Electronic government services","Buying and selling goods and services over the internet","Email communication","Cloud storage"],"answer":"Buying and selling goods and services over the internet"},
-  {"subject":"ICT","question":"Which of the following is NOT a feature of a word processor?","type":"mcq","difficulty":"easy","options":["Spell check","Font formatting","Pivot tables for data analysis","Find and replace"],"answer":"Pivot tables for data analysis"},
-  {"subject":"ICT","question":"The undo function in most applications is accessed using","type":"mcq","difficulty":"easy","options":["Ctrl+S","Ctrl+Z","Ctrl+X","Ctrl+V"],"answer":"Ctrl+Z"},
-  {"subject":"ICT","question":"Ctrl+C in most applications performs a","type":"mcq","difficulty":"easy","options":["Cut","Paste","Save","Copy"],"answer":"Copy"},
-  {"subject":"ICT","question":"Ctrl+V in most applications performs a","type":"mcq","difficulty":"easy","options":["Copy","Cut","Paste","Print"],"answer":"Paste"},
-  {"subject":"ICT","question":"Ctrl+S in most applications performs a","type":"mcq","difficulty":"easy","options":["Select All","Send","Save","Screen capture"],"answer":"Save"},
-  {"subject":"ICT","question":"The file extension .docx is associated with","type":"mcq","difficulty":"easy","options":["Excel spreadsheets","PowerPoint presentations","Microsoft Word documents","PDF files"],"answer":"Microsoft Word documents"},
-  {"subject":"ICT","question":"The file extension .xlsx is associated with","type":"mcq","difficulty":"easy","options":["Word documents","Microsoft Excel spreadsheets","PowerPoint files","Image files"],"answer":"Microsoft Excel spreadsheets"},
-  {"subject":"ICT","question":"The file extension .pdf stands for","type":"mcq","difficulty":"easy","options":["Portable Document Format","Printed Document File","Picture Display Format","Personal Data Format"],"answer":"Portable Document Format"},
-  {"subject":"ICT","question":"JPEG is a file format used for","type":"mcq","difficulty":"easy","options":["Documents","Audio files","Compressed image files","Spreadsheets"],"answer":"Compressed image files"},
-  {"subject":"ICT","question":"MP3 is a file format used for","type":"mcq","difficulty":"easy","options":["Video","Images","Compressed audio","Spreadsheets"],"answer":"Compressed audio"},
-  {"subject":"ICT","question":"A pixel is","type":"mcq","difficulty":"easy","options":["A unit of storage","The smallest element of a digital image","A type of network connection","A programming concept"],"answer":"The smallest element of a digital image"},
-  {"subject":"ICT","question":"A higher resolution image has","type":"mcq","difficulty":"easy","options":["Fewer pixels","More pixels and therefore more detail","A smaller file size always","Less colour"],"answer":"More pixels and therefore more detail"},
-  {"subject":"ICT","question":"Artificial Intelligence (AI) refers to","type":"mcq","difficulty":"easy","options":["Human intelligence stored on computers","Machines that simulate human intelligence to perform tasks","A programming language","A type of internet connection"],"answer":"Machines that simulate human intelligence to perform tasks"},
-  {"subject":"ICT","question":"Machine learning is a type of AI where","type":"mcq","difficulty":"hard","options":["Humans program every decision","Computers learn patterns from data without being explicitly programmed","A robot performs physical tasks","Data is deleted after use"],"answer":"Computers learn patterns from data without being explicitly programmed"},
-  {"subject":"ICT","question":"The Internet of Things (IoT) refers to","type":"mcq","difficulty":"hard","options":["Traditional wired internet","Everyday physical devices connected to the internet and sharing data","Social media platforms","Cloud storage systems"],"answer":"Everyday physical devices connected to the internet and sharing data"},
-  {"subject":"ICT","question":"5G is the fifth generation of","type":"mcq","difficulty":"easy","options":["Computer processors","Internet browsers","Mobile wireless network technology","Satellite communication"],"answer":"Mobile wireless network technology"},
-  {"subject":"ICT","question":"An algorithm is","type":"mcq","difficulty":"easy","options":["A type of computer hardware","A step-by-step set of instructions to solve a problem or perform a task","A programming language","A network protocol"],"answer":"A step-by-step set of instructions to solve a problem or perform a task"},
-  {"subject":"ICT","question":"A flowchart is used to","type":"mcq","difficulty":"easy","options":["Draw network diagrams","Visually represent an algorithm using shapes and arrows","Store data","Format text documents"],"answer":"Visually represent an algorithm using shapes and arrows"},
-  {"subject":"ICT","question":"A diamond shape in a flowchart represents","type":"mcq","difficulty":"medium","options":["Start/End","A process step","A decision (Yes/No)","Input/Output"],"answer":"A decision (Yes/No)"},
-  {"subject":"ICT","question":"Programming languages used at SHS level in Ghana include","type":"mcq","difficulty":"medium","options":["Assembly language only","Scratch, Python, and Logo","Only C++","Binary code"],"answer":"Scratch, Python, and Logo"},
-  {"subject":"ICT","question":"A conditional statement in programming uses the keyword","type":"mcq","difficulty":"easy","options":["LOOP","PRINT","IF","RUN"],"answer":"IF"},
-  {"subject":"ICT","question":"In programming, a loop is used to","type":"mcq","difficulty":"easy","options":["Stop a program","Repeat a block of code multiple times","Define a variable","Print output"],"answer":"Repeat a block of code multiple times"},
-  {"subject":"ICT","question":"A variable in programming is","type":"mcq","difficulty":"easy","options":["A type of loop","A named storage location that holds a value","A hardware component","A network protocol"],"answer":"A named storage location that holds a value"},
-  {"subject":"ICT","question":"Debugging in programming refers to","type":"mcq","difficulty":"easy","options":["Writing new code","Finding and fixing errors in code","Saving a program","Running a program"],"answer":"Finding and fixing errors in a code"},
-  {"subject":"ICT","question":"Which of the following is NOT a programming language?","type":"mcq","difficulty":"easy","options":["Python","Java","HTML","Microsoft Excel"],"answer":"Microsoft Excel"},
-  {"subject":"ICT","question":"HTML is used to","type":"mcq","difficulty":"easy","options":["Write system software","Create the structure and content of web pages","Process data in databases","Manage networks"],"answer":"Create the structure and content of web pages"},
-  {"subject":"ICT","question":"CSS (Cascading Style Sheets) is used to","type":"mcq","difficulty":"medium","options":["Add interactivity to web pages","Style and format the appearance of HTML web pages","Store website data","Create algorithms"],"answer":"Style and format the appearance of HTML web pages"},
-  {"subject":"ICT","question":"The health and safety risk of prolonged computer use includes","type":"mcq","difficulty":"easy","options":["Improved posture","Eye strain, repetitive strain injury (RSI), and back problems","Better concentration","Increased physical fitness"],"answer":"Eye strain, repetitive strain injury (RSI), and back problems"},
-  {"subject":"ICT","question":"E-waste refers to","type":"mcq","difficulty":"easy","options":["Emails that are spam","Discarded electronic and electrical equipment","Wasted bandwidth","Paper from printers"],"answer":"Discarded electronic and electrical equipment"},
-  {"subject":"ICT","question":"The digital divide refers to","type":"mcq","difficulty":"medium","options":["The gap between old and new computers","Inequality in access to digital technologies between different groups or regions","The difference between hardware and software","Internet speed differences"],"answer":"Inequality in access to digital technologies between different groups or regions"},
-  {"subject":"ICT","question":"Copyright law in computing means you cannot","type":"mcq","difficulty":"medium","options":["Use your own files","Copy, distribute, or modify software without permission","Buy software","Use open-source software"],"answer":"Copy, distribute, or modify software without permission"},
-  {"subject":"ICT","question":"Open-source software is","type":"mcq","difficulty":"medium","options":["Always paid for","Software whose source code is freely available for anyone to view, modify, and distribute","Only for programmers","Insecure software"],"answer":"Software whose source code is freely available for anyone to view, modify, and distribute"},
-  {"subject":"ICT","question":"An example of open-source software is","type":"mcq","difficulty":"medium","options":["Microsoft Windows","macOS","Adobe Photoshop","Linux"],"answer":"Linux"},
-  {"subject":"ICT","question":"Data privacy refers to","type":"mcq","difficulty":"easy","options":["Keeping data on a USB drive","The right of individuals to control how their personal data is collected and used","Making all data public","Encrypting only financial data"],"answer":"The right of individuals to control how their personal data is collected and used"},
-  {"subject":"ICT","question":"A backup is a copy of data that is kept","type":"mcq","difficulty":"easy","options":["On the same hard drive","Separately, so it can be restored if the original is lost","In RAM","Only in the cloud"],"answer":"Separately, so it can be restored if the original is lost"},
-  {"subject":"ICT","question":"M-Pesa and MTN Mobile Money are examples of","type":"mcq","difficulty":"easy","options":["Social media platforms","Mobile banking and payment services","Programming languages","Cloud services"],"answer":"Mobile banking and payment services"},
-  {"subject":"ICT","question":"A touchscreen is both an input and output device because it","type":"mcq","difficulty":"medium","options":["Has a keyboard","Displays information AND receives touch input from the user","Is wireless","Has a stylus"],"answer":"Displays information AND receives touch input from the user"},
-  {"subject":"ICT","question":"The CPU has two main components: the CU (Control Unit) and the","type":"mcq","difficulty":"hard","options":["GPU","ALU (Arithmetic Logic Unit)","RAM","BIOS"],"answer":"ALU (Arithmetic Logic Unit)"},
-  {"subject":"ICT","question":"The Control Unit (CU) of the CPU is responsible for","type":"mcq","difficulty":"hard","options":["Performing arithmetic calculations","Directing operations of all parts of the processor","Storing long-term data","Displaying graphics"],"answer":"Directing operations of all parts of the processor"},
-  {"subject":"ICT","question":"Volatile memory is memory that","type":"mcq","difficulty":"medium","options":["Is never changed","Loses its contents when power is removed","Stores the operating system permanently","Only holds one file at a time"],"answer":"Loses its contents when power is removed"},
-  {"subject":"ICT","question":"A presentation software (e.g., PowerPoint) is primarily used to","type":"mcq","difficulty":"easy","options":["Manage databases","Create slide-based visual presentations","Process payroll","Design websites"],"answer":"Create slide-based visual presentations"},
-  {"subject":"ICT","question":"In a computer network, a 'packet' is","type":"mcq","difficulty":"hard","options":["A hardware device","A small unit of data transmitted over a network","A type of firewall","A software license"],"answer":"A small unit of data transmitted over a network"},
-  {"subject":"ICT","question":"DNS (Domain Name System) translates","type":"mcq","difficulty":"hard","options":["Binary to decimal","Website domain names to IP addresses","Emails into text","Data into images"],"answer":"Website domain names to IP addresses"},
-  {"subject":"ICT","question":"Which type of network topology connects all devices to a central switch/hub?","type":"mcq","difficulty":"hard","options":["Bus topology","Ring topology","Star topology","Mesh topology"],"answer":"Star topology"},
-  {"subject":"ICT","question":"Ergonomics in computing refers to","type":"mcq","difficulty":"medium","options":["Computer speed optimisation","Designing workstations and practices to reduce health risks and improve comfort","Data security practices","Network configuration"],"answer":"Designing workstations and practices to reduce health risks and improve comfort"},
-  {"subject":"ICT","question":"What does ICT stand for?","type":"short_answer","difficulty":"easy","keywords":["Information and Communication Technology","technology","communication","information"]},
-  {"subject":"ICT","question":"Describe the difference between hardware and software.","type":"short_answer","difficulty":"easy","keywords":["hardware","physical components","keyboard","monitor","software","programs","instructions","intangible","applications"]},
-  {"subject":"ICT","question":"What is the function of RAM in a computer?","type":"short_answer","difficulty":"easy","keywords":["temporary","storage","working memory","volatile","data","programs","currently in use","CPU","access"]},
-  {"subject":"ICT","question":"Explain the difference between a LAN and a WAN.","type":"short_answer","difficulty":"easy","keywords":["LAN","local","small area","building","WAN","wide","large area","country","internet","geography"]},
-  {"subject":"ICT","question":"What is the internet and how is it different from the World Wide Web?","type":"short_answer","difficulty":"medium","keywords":["internet","global network","infrastructure","WWW","web pages","websites","subset","browser","HTTP"]},
-  {"subject":"ICT","question":"Explain what a computer virus is and how it can be prevented.","type":"short_answer","difficulty":"medium","keywords":["malicious","replicates","damages","antivirus","software","updates","avoid unknown links","email attachments","firewalls"]},
-  {"subject":"ICT","question":"What is e-commerce? State two advantages.","type":"short_answer","difficulty":"easy","keywords":["buying","selling","internet","online","24/7","convenient","global reach","lower costs","comparison shopping"]},
-  {"subject":"ICT","question":"What is cloud computing and state two benefits?","type":"short_answer","difficulty":"medium","keywords":["internet","remote servers","store","access","anywhere","automatic backup","scalable","no local storage","collaboration"]},
-  {"subject":"ICT","question":"Explain what a database is and name two components of a database table.","type":"short_answer","difficulty":"medium","keywords":["organised","collection","data","table","record","field","row","column","structured","query"]},
-  {"subject":"ICT","question":"What are the risks of using social media? State two.","type":"short_answer","difficulty":"easy","keywords":["cyberbullying","privacy","data theft","addiction","misinformation","inappropriate content","phishing","identity theft"]},
-  {"subject":"ICT","question":"What is phishing and how can you protect yourself from it?","type":"short_answer","difficulty":"medium","keywords":["trick","fake emails","steal","passwords","bank details","verify sender","don't click links","HTTPS","check URL"]},
-  {"subject":"ICT","question":"Describe two ways to keep data secure on a personal computer.","type":"short_answer","difficulty":"easy","keywords":["strong password","antivirus","firewall","backup","encryption","update software","2FA","avoid public Wi-Fi"]},
-  {"subject":"ICT","question":"What is an algorithm? Give a simple everyday example.","type":"short_answer","difficulty":"easy","keywords":["step-by-step","instructions","problem","task","recipe","making tea","ATM","procedure","sequence"]},
-  {"subject":"ICT","question":"Explain the digital divide and suggest one way to address it.","type":"short_answer","difficulty":"medium","keywords":["inequality","access","technology","rural","urban","education","poverty","government","infrastructure","training","affordable devices"]},
-  {"subject":"ICT","question":"State the binary equivalents of the decimal numbers 0 to 7.","type":"short_answer","difficulty":"medium","keywords":["0=000","1=001","2=010","3=011","4=100","5=101","6=110","7=111","binary"]},
-  {"subject":"ICT","question":"What is e-waste and why is it a concern?","type":"short_answer","difficulty":"medium","keywords":["electronic waste","discarded","toxic","environment","heavy metals","landfill","recycling","health hazard","Ghana","Agbogbloshie"]},
-  {"subject":"ICT","question":"Describe two health risks associated with excessive computer use and how to prevent them.","type":"short_answer","difficulty":"easy","keywords":["eye strain","RSI","back pain","posture","20-20-20 rule","breaks","ergonomic chair","screen distance","wrist support"]},
-  {"subject":"ICT","question":"What is open-source software? Give an example.","type":"short_answer","difficulty":"medium","keywords":["free","source code","modify","distribute","Linux","Firefox","LibreOffice","open","community","no cost"]},
-  {"subject":"ICT","question":"What is the difference between input and output devices? Give an example of each.","type":"short_answer","difficulty":"easy","keywords":["input","data entered","keyboard","mouse","scanner","output","processed data","monitor","printer","speaker"]},
-  {"subject":"ICT","question":"Explain what a firewall does.","type":"short_answer","difficulty":"medium","keywords":["monitor","network traffic","block","unauthorised","incoming","outgoing","security","rules","protect","filter"]}
+  {
+    "subject": "ICT",
+    "question": "ICT stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Information and Computer Technology",
+      "International Computer Trade",
+      "Information and Communication Technology",
+      "Integrated Circuit Technology"
+    ],
+    "answer": [
+      "Information and Communication Technology"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The 'brain' of the computer that processes instructions is the",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "RAM",
+      "Hard drive",
+      "CPU",
+      "Monitor"
+    ],
+    "answer": [
+      "CPU"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "CPU stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Central Processing Unit",
+      "Computer Programme Unit",
+      "Control Processing Unit",
+      "Central Programme Utility"
+    ],
+    "answer": [
+      "Central Processing Unit"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "RAM stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Rapid Application Memory",
+      "Read And Modify"
+    ],
+    "answer": [
+      "Random Access Memory"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "RAM is described as volatile memory because",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "It is always full",
+      "It loses its data when power is removed",
+      "It is very slow",
+      "It stores data permanently"
+    ],
+    "answer": [
+      "It loses its data when power is removed"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "ROM stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Read Only Memory",
+      "Random Output Memory",
+      "Rapid Open Module",
+      "Read On Monitor"
+    ],
+    "answer": [
+      "Read Only Memory"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "ROM is non-volatile because",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "It is connected to the CPU",
+      "It retains data even when power is off",
+      "It is very large",
+      "It cannot be written to"
+    ],
+    "answer": [
+      "It retains data even when power is off"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The BIOS (Basic Input/Output System) is stored in",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "RAM",
+      "Hard drive",
+      "ROM",
+      "CPU cache"
+    ],
+    "answer": [
+      "ROM"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which of the following is an input device?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Monitor",
+      "Printer",
+      "Speaker",
+      "Keyboard"
+    ],
+    "answer": [
+      "Keyboard"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which of the following is an output device?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Scanner",
+      "Keyboard",
+      "Mouse",
+      "Printer"
+    ],
+    "answer": [
+      "Printer"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A hard disk drive (HDD) is used for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Processing data",
+      "Displaying output",
+      "Long-term data storage",
+      "Input only"
+    ],
+    "answer": [
+      "Long-term data storage"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which storage device has no moving parts and is faster than an HDD?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Floppy disk",
+      "CD-ROM",
+      "SSD (Solid State Drive)",
+      "Magnetic tape"
+    ],
+    "answer": [
+      "SSD (Solid State Drive)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "1 kilobyte (KB) is equal to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "100 bytes",
+      "1000 bits",
+      "1024 bytes",
+      "500 bytes"
+    ],
+    "answer": [
+      "1024 bytes"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "1 megabyte (MB) is approximately",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1000 KB",
+      "1024 KB",
+      "512 KB",
+      "2048 KB"
+    ],
+    "answer": [
+      "1024 KB"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "1 gigabyte (GB) is approximately",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "1024 MB",
+      "100 MB",
+      "512 MB",
+      "2048 MB"
+    ],
+    "answer": [
+      "1024 MB"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which is larger: a terabyte or a gigabyte?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Gigabyte",
+      "They are equal",
+      "Terabyte",
+      "It depends on the device"
+    ],
+    "answer": [
+      "Terabyte"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The motherboard is the main circuit board of a computer. It connects",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Only the CPU and RAM",
+      "Only storage devices",
+      "All major components (CPU, RAM, storage, etc.)",
+      "The computer to the internet"
+    ],
+    "answer": [
+      "All major components (CPU, RAM, storage, etc.)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The speed of a CPU is measured in",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Bytes",
+      "Hertz (GHz or MHz)",
+      "Megapixels",
+      "Watts"
+    ],
+    "answer": [
+      "Hertz (GHz or MHz)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What does the term 'booting' a computer mean?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Shutting it down",
+      "Starting up the operating system",
+      "Installing software",
+      "Deleting files"
+    ],
+    "answer": [
+      "Starting up the operating system"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "An operating system (OS) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of printer",
+      "Software that manages computer hardware and software resources",
+      "A web browser",
+      "A spreadsheet application"
+    ],
+    "answer": [
+      "Software that manages computer hardware and software resources"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Examples of operating systems include",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Microsoft Word, Excel, PowerPoint",
+      "Windows, macOS, Linux, Android",
+      "Google Chrome, Firefox, Edge",
+      "Photoshop, Premiere, Illustrator"
+    ],
+    "answer": [
+      "Windows, macOS, Linux, Android"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Application software is designed to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Manage hardware resources",
+      "Perform specific tasks for users (e.g., word processing, gaming)",
+      "Start the computer",
+      "Provide antivirus protection"
+    ],
+    "answer": [
+      "Perform specific tasks for users (e.g., word processing, gaming)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A GUI (Graphical User Interface) allows users to interact with a computer through",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Text commands only",
+      "Visual icons, windows, and menus",
+      "Programming codes",
+      "Command-line prompts"
+    ],
+    "answer": [
+      "Visual icons, windows, and menus"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which of the following is an example of office productivity software?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Windows 10",
+      "Android",
+      "Microsoft Office (Word, Excel)",
+      "Ubuntu"
+    ],
+    "answer": [
+      "Microsoft Office (Word, Excel)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A spreadsheet application is best used for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Writing essays",
+      "Creating presentations",
+      "Numerical data, calculations, and graphs",
+      "Editing videos"
+    ],
+    "answer": [
+      "Numerical data, calculations, and graphs"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Microsoft Excel is primarily a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Word processor",
+      "Database management system",
+      "Spreadsheet application",
+      "Presentation software"
+    ],
+    "answer": [
+      "Spreadsheet application"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In a spreadsheet, the intersection of a row and a column is called a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Field",
+      "Record",
+      "Cell",
+      "Range"
+    ],
+    "answer": [
+      "Cell"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The cell reference B3 means",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Row B, Column 3",
+      "Column B, Row 3",
+      "Block 3, Section B",
+      "Neither — it is invalid"
+    ],
+    "answer": [
+      "Column B, Row 3"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In Microsoft Excel, formulas begin with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "#",
+      "@",
+      "=",
+      "$"
+    ],
+    "answer": [
+      "="
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The Excel formula =SUM(A1:A5) calculates",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The average of A1 to A5",
+      "The total of all values in cells A1 to A5",
+      "The maximum value in A1 to A5",
+      "The product of A1 to A5"
+    ],
+    "answer": [
+      "The total of all values in cells A1 to A5"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The Excel function =AVERAGE(B1:B4) returns",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The sum",
+      "The minimum value",
+      "The mean of the values in B1 to B4",
+      "The count"
+    ],
+    "answer": [
+      "The mean of the values in B1 to B4"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A database is best described as",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of spreadsheet",
+      "An organised collection of structured data",
+      "A computer program for presentations",
+      "A security system"
+    ],
+    "answer": [
+      "An organised collection of structured data"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In a database, a table is made up of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Files and folders",
+      "Rows (records) and columns (fields)",
+      "Graphs and charts",
+      "Web pages"
+    ],
+    "answer": [
+      "Rows (records) and columns (fields)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A primary key in a database uniquely identifies",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A column",
+      "Each record (row) in a table",
+      "Each database",
+      "The whole table"
+    ],
+    "answer": [
+      "Each record (row) in a table"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A query in a database is used to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Delete all records",
+      "Format the database",
+      "Search for, filter, and retrieve specific records",
+      "Create new tables"
+    ],
+    "answer": [
+      "Search for, filter, and retrieve specific records"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "SQL stands for",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Standard Quality Language",
+      "Sequential Query Logic",
+      "Structured Query Language",
+      "System Query Link"
+    ],
+    "answer": [
+      "Structured Query Language"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A LAN (Local Area Network) connects computers",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Across countries",
+      "Across continents",
+      "Within a small local area like a building or campus",
+      "Only using satellites"
+    ],
+    "answer": [
+      "Within a small local area like a building or campus"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A WAN (Wide Area Network) covers",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A single room",
+      "A single building",
+      "A large geographical area such as a country or the globe",
+      "Only wireless connections"
+    ],
+    "answer": [
+      "A large geographical area such as a country or the globe"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The internet is an example of a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "LAN",
+      "MAN",
+      "WAN",
+      "PAN"
+    ],
+    "answer": [
+      "WAN"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The World Wide Web (WWW) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The same as the internet",
+      "A system of web pages accessed via the internet using browsers",
+      "A type of network hardware",
+      "A programming language"
+    ],
+    "answer": [
+      "A system of web pages accessed via the internet using browsers"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A web browser is used to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Write computer programs",
+      "Browse and display web pages",
+      "Manage files on your hard drive",
+      "Create databases"
+    ],
+    "answer": [
+      "Browse and display web pages"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Examples of web browsers include",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Windows, macOS, Android",
+      "Google Chrome, Mozilla Firefox, Microsoft Edge",
+      "Microsoft Word, Excel, PowerPoint",
+      "Photoshop, Illustrator, InDesign"
+    ],
+    "answer": [
+      "Google Chrome, Mozilla Firefox, Microsoft Edge"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A URL (Uniform Resource Locator) is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of virus",
+      "The unique address of a resource on the internet",
+      "A programming language",
+      "A type of network cable"
+    ],
+    "answer": [
+      "The unique address of a resource on the internet"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "HTTP stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "High Transfer Text Protocol",
+      "Hypertext Transfer Protocol",
+      "Home Tool Text Processor",
+      "Hardware Transfer Technology Program"
+    ],
+    "answer": [
+      "Hypertext Transfer Protocol"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "HTTPS is more secure than HTTP because it uses",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "A faster connection",
+      "Encryption (SSL/TLS)",
+      "More bandwidth",
+      "Bigger servers"
+    ],
+    "answer": [
+      "Encryption (SSL/TLS)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "An IP address is used to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Name a website",
+      "Identify devices on a network",
+      "Speed up downloads",
+      "Encrypt data"
+    ],
+    "answer": [
+      "Identify devices on a network"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A router is a networking device that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Stores data permanently",
+      "Directs data packets between networks",
+      "Provides power to devices",
+      "Converts analogue to digital signals"
+    ],
+    "answer": [
+      "Directs data packets between networks"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A modem is a device that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Stores data",
+      "Connects devices on a LAN",
+      "Converts digital signals to/from analogue for transmission over phone lines",
+      "Prints documents"
+    ],
+    "answer": [
+      "Converts digital signals to/from analogue for transmission over phone lines"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Wi-Fi is a technology that provides",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Wired internet connections",
+      "Wireless network connectivity",
+      "Storage for the internet",
+      "Satellite communication"
+    ],
+    "answer": [
+      "Wireless network connectivity"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Bluetooth is a wireless technology used mainly for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Long-range internet access",
+      "Short-range communication between nearby devices",
+      "Connecting to the internet",
+      "Satellite navigation"
+    ],
+    "answer": [
+      "Short-range communication between nearby devices"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Email (Electronic Mail) is a method of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Printing documents",
+      "Sending and receiving messages electronically over the internet",
+      "Storing files in the cloud",
+      "Creating web pages"
+    ],
+    "answer": [
+      "Sending and receiving messages electronically over the internet"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "An attachment in an email is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "The signature at the bottom",
+      "A file sent along with the email message",
+      "The subject line",
+      "The CC field"
+    ],
+    "answer": [
+      "A file sent along with the email message"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Phishing is a cyber attack that attempts to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Delete your files",
+      "Trick users into revealing sensitive information (passwords, bank details)",
+      "Speed up the internet",
+      "Block your network"
+    ],
+    "answer": [
+      "Trick users into revealing sensitive information (passwords, bank details)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A virus in computing is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A hardware failure",
+      "Malicious software that replicates and damages files",
+      "A slow internet connection",
+      "A type of printer error"
+    ],
+    "answer": [
+      "Malicious software that replicates and damages files"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Malware is a general term for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Safe software",
+      "Malicious software (viruses, spyware, ransomware, etc.)",
+      "Hardware malfunctions",
+      "Slow network speed"
+    ],
+    "answer": [
+      "Malicious software (viruses, spyware, ransomware, etc.)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Ransomware is malware that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Speeds up your computer",
+      "Encrypts the victim's files and demands payment for the key",
+      "Monitors your keystrokes",
+      "Displays unwanted adverts"
+    ],
+    "answer": [
+      "Encrypts the victim's files and demands payment for the key"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A firewall is a security system that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Creates backups",
+      "Monitors and controls incoming/outgoing network traffic",
+      "Detects viruses on emails",
+      "Speeds up your connection"
+    ],
+    "answer": [
+      "Monitors and controls incoming/outgoing network traffic"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Strong passwords should include",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Your name and birthday",
+      "A combination of uppercase, lowercase, numbers, and special characters",
+      "A single word that is easy to remember",
+      "Only numbers"
+    ],
+    "answer": [
+      "A combination of uppercase, lowercase, numbers, and special characters"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Two-factor authentication (2FA) improves security by requiring",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Two different passwords",
+      "A second form of verification (e.g., SMS code) in addition to a password",
+      "A longer password",
+      "A special keyboard"
+    ],
+    "answer": [
+      "A second form of verification (e.g., SMS code) in addition to a password"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The binary number system uses only the digits",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "0, 1, 2",
+      "0 and 1",
+      "1, 2, 3",
+      "0 through 9"
+    ],
+    "answer": [
+      "0 and 1"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The decimal number 5 in binary is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "0101",
+      "1010",
+      "0110",
+      "1001"
+    ],
+    "answer": [
+      "0101"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The binary number 1010 equals what decimal number?",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "6"
+    ],
+    "answer": [
+      "10"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A bit is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "8 bytes",
+      "The smallest unit of data (0 or 1)",
+      "1024 bytes",
+      "A type of processor"
+    ],
+    "answer": [
+      "The smallest unit of data (0 or 1)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "How many bits make one byte?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "4",
+      "16",
+      "8",
+      "2"
+    ],
+    "answer": [
+      "8"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "ASCII (American Standard Code for Information Interchange) is a system that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Compresses images",
+      "Assigns numerical codes to characters (letters, numbers, symbols)",
+      "Encrypts network traffic",
+      "Manages database records"
+    ],
+    "answer": [
+      "Assigns numerical codes to characters (letters, numbers, symbols)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In a network, a server is a computer that",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Only receives data",
+      "Provides resources or services to other computers (clients)",
+      "Is always portable",
+      "Cannot connect to the internet"
+    ],
+    "answer": [
+      "Provides resources or services to other computers (clients)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Cloud computing refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Using weather satellites",
+      "Storing and accessing data/services over the internet rather than locally",
+      "A type of cooling system for computers",
+      "Building clouds with computers"
+    ],
+    "answer": [
+      "Storing and accessing data/services over the internet rather than locally"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Examples of cloud storage services include",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "USB drives and CDs",
+      "Google Drive, Dropbox, iCloud",
+      "RAM and ROM",
+      "Hard drives and SSDs"
+    ],
+    "answer": [
+      "Google Drive, Dropbox, iCloud"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "SaaS stands for",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Software as a Solution",
+      "Secure and Safe Software",
+      "Software as a Service",
+      "Standard Application Software"
+    ],
+    "answer": [
+      "Software as a Service"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The advantage of cloud storage over local storage includes",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Always works without internet",
+      "Requires no subscription",
+      "Accessible from anywhere with internet; easy to share",
+      "Faster than local storage"
+    ],
+    "answer": [
+      "Accessible from anywhere with internet; easy to share"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A social network is an online platform that allows users to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Store large files",
+      "Create and share content and connect with others",
+      "Write programs",
+      "Build hardware"
+    ],
+    "answer": [
+      "Create and share content and connect with others"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Examples of social media platforms include",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Microsoft Office, LibreOffice",
+      "Facebook, Twitter/X, Instagram, TikTok",
+      "Windows, macOS, Linux",
+      "Chrome, Firefox, Edge"
+    ],
+    "answer": [
+      "Facebook, Twitter/X, Instagram, TikTok"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Cyberbullying refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cheating in online games",
+      "Using technology to harass, threaten, or humiliate others",
+      "Hacking into systems",
+      "Sending spam emails"
+    ],
+    "answer": [
+      "Using technology to harass, threaten, or humiliate others"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Digital literacy means the ability to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Read and write print books",
+      "Use digital tools and evaluate digital information critically",
+      "Only use a smartphone",
+      "Only write programs"
+    ],
+    "answer": [
+      "Use digital tools and evaluate digital information critically"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "E-commerce refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Electronic government services",
+      "Buying and selling goods and services over the internet",
+      "Email communication",
+      "Cloud storage"
+    ],
+    "answer": [
+      "Buying and selling goods and services over the internet"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which of the following is NOT a feature of a word processor?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Spell check",
+      "Font formatting",
+      "Pivot tables for data analysis",
+      "Find and replace"
+    ],
+    "answer": [
+      "Pivot tables for data analysis"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The undo function in most applications is accessed using",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Ctrl+S",
+      "Ctrl+Z",
+      "Ctrl+X",
+      "Ctrl+V"
+    ],
+    "answer": [
+      "Ctrl+Z"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Ctrl+C in most applications performs a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Cut",
+      "Paste",
+      "Save",
+      "Copy"
+    ],
+    "answer": [
+      "Copy"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Ctrl+V in most applications performs a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Copy",
+      "Cut",
+      "Paste",
+      "Print"
+    ],
+    "answer": [
+      "Paste"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Ctrl+S in most applications performs a",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Select All",
+      "Send",
+      "Save",
+      "Screen capture"
+    ],
+    "answer": [
+      "Save"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The file extension .docx is associated with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Excel spreadsheets",
+      "PowerPoint presentations",
+      "Microsoft Word documents",
+      "PDF files"
+    ],
+    "answer": [
+      "Microsoft Word documents"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The file extension .xlsx is associated with",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Word documents",
+      "Microsoft Excel spreadsheets",
+      "PowerPoint files",
+      "Image files"
+    ],
+    "answer": [
+      "Microsoft Excel spreadsheets"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The file extension .pdf stands for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Portable Document Format",
+      "Printed Document File",
+      "Picture Display Format",
+      "Personal Data Format"
+    ],
+    "answer": [
+      "Portable Document Format"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "JPEG is a file format used for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Documents",
+      "Audio files",
+      "Compressed image files",
+      "Spreadsheets"
+    ],
+    "answer": [
+      "Compressed image files"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "MP3 is a file format used for",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Video",
+      "Images",
+      "Compressed audio",
+      "Spreadsheets"
+    ],
+    "answer": [
+      "Compressed audio"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A pixel is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A unit of storage",
+      "The smallest element of a digital image",
+      "A type of network connection",
+      "A programming concept"
+    ],
+    "answer": [
+      "The smallest element of a digital image"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A higher resolution image has",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Fewer pixels",
+      "More pixels and therefore more detail",
+      "A smaller file size always",
+      "Less colour"
+    ],
+    "answer": [
+      "More pixels and therefore more detail"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Artificial Intelligence (AI) refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Human intelligence stored on computers",
+      "Machines that simulate human intelligence to perform tasks",
+      "A programming language",
+      "A type of internet connection"
+    ],
+    "answer": [
+      "Machines that simulate human intelligence to perform tasks"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Machine learning is a type of AI where",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Humans program every decision",
+      "Computers learn patterns from data without being explicitly programmed",
+      "A robot performs physical tasks",
+      "Data is deleted after use"
+    ],
+    "answer": [
+      "Computers learn patterns from data without being explicitly programmed"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The Internet of Things (IoT) refers to",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Traditional wired internet",
+      "Everyday physical devices connected to the internet and sharing data",
+      "Social media platforms",
+      "Cloud storage systems"
+    ],
+    "answer": [
+      "Everyday physical devices connected to the internet and sharing data"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "5G is the fifth generation of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Computer processors",
+      "Internet browsers",
+      "Mobile wireless network technology",
+      "Satellite communication"
+    ],
+    "answer": [
+      "Mobile wireless network technology"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "An algorithm is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of computer hardware",
+      "A step-by-step set of instructions to solve a problem or perform a task",
+      "A programming language",
+      "A network protocol"
+    ],
+    "answer": [
+      "A step-by-step set of instructions to solve a problem or perform a task"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A flowchart is used to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Draw network diagrams",
+      "Visually represent an algorithm using shapes and arrows",
+      "Store data",
+      "Format text documents"
+    ],
+    "answer": [
+      "Visually represent an algorithm using shapes and arrows"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A diamond shape in a flowchart represents",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Start/End",
+      "A process step",
+      "A decision (Yes/No)",
+      "Input/Output"
+    ],
+    "answer": [
+      "A decision (Yes/No)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Programming languages used at SHS level in Ghana include",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Assembly language only",
+      "Scratch, Python, and Logo",
+      "Only C++",
+      "Binary code"
+    ],
+    "answer": [
+      "Scratch, Python, and Logo"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A conditional statement in programming uses the keyword",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "LOOP",
+      "PRINT",
+      "IF",
+      "RUN"
+    ],
+    "answer": [
+      "IF"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In programming, a loop is used to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Stop a program",
+      "Repeat a block of code multiple times",
+      "Define a variable",
+      "Print output"
+    ],
+    "answer": [
+      "Repeat a block of code multiple times"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A variable in programming is",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "A type of loop",
+      "A named storage location that holds a value",
+      "A hardware component",
+      "A network protocol"
+    ],
+    "answer": [
+      "A named storage location that holds a value"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Debugging in programming refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Writing new code",
+      "Finding and fixing errors in code",
+      "Saving a program",
+      "Running a program"
+    ],
+    "answer": [
+      "Finding and fixing errors in a code"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which of the following is NOT a programming language?",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Python",
+      "Java",
+      "HTML",
+      "Microsoft Excel"
+    ],
+    "answer": [
+      "Microsoft Excel"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "HTML is used to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Write system software",
+      "Create the structure and content of web pages",
+      "Process data in databases",
+      "Manage networks"
+    ],
+    "answer": [
+      "Create the structure and content of web pages"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "CSS (Cascading Style Sheets) is used to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Add interactivity to web pages",
+      "Style and format the appearance of HTML web pages",
+      "Store website data",
+      "Create algorithms"
+    ],
+    "answer": [
+      "Style and format the appearance of HTML web pages"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The health and safety risk of prolonged computer use includes",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Improved posture",
+      "Eye strain, repetitive strain injury (RSI), and back problems",
+      "Better concentration",
+      "Increased physical fitness"
+    ],
+    "answer": [
+      "Eye strain, repetitive strain injury (RSI), and back problems"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "E-waste refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Emails that are spam",
+      "Discarded electronic and electrical equipment",
+      "Wasted bandwidth",
+      "Paper from printers"
+    ],
+    "answer": [
+      "Discarded electronic and electrical equipment"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The digital divide refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "The gap between old and new computers",
+      "Inequality in access to digital technologies between different groups or regions",
+      "The difference between hardware and software",
+      "Internet speed differences"
+    ],
+    "answer": [
+      "Inequality in access to digital technologies between different groups or regions"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Copyright law in computing means you cannot",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Use your own files",
+      "Copy, distribute, or modify software without permission",
+      "Buy software",
+      "Use open-source software"
+    ],
+    "answer": [
+      "Copy, distribute, or modify software without permission"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Open-source software is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Always paid for",
+      "Software whose source code is freely available for anyone to view, modify, and distribute",
+      "Only for programmers",
+      "Insecure software"
+    ],
+    "answer": [
+      "Software whose source code is freely available for anyone to view, modify, and distribute"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "An example of open-source software is",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Microsoft Windows",
+      "macOS",
+      "Adobe Photoshop",
+      "Linux"
+    ],
+    "answer": [
+      "Linux"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Data privacy refers to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Keeping data on a USB drive",
+      "The right of individuals to control how their personal data is collected and used",
+      "Making all data public",
+      "Encrypting only financial data"
+    ],
+    "answer": [
+      "The right of individuals to control how their personal data is collected and used"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A backup is a copy of data that is kept",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "On the same hard drive",
+      "Separately, so it can be restored if the original is lost",
+      "In RAM",
+      "Only in the cloud"
+    ],
+    "answer": [
+      "Separately, so it can be restored if the original is lost"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "M-Pesa and MTN Mobile Money are examples of",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Social media platforms",
+      "Mobile banking and payment services",
+      "Programming languages",
+      "Cloud services"
+    ],
+    "answer": [
+      "Mobile banking and payment services"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A touchscreen is both an input and output device because it",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Has a keyboard",
+      "Displays information AND receives touch input from the user",
+      "Is wireless",
+      "Has a stylus"
+    ],
+    "answer": [
+      "Displays information AND receives touch input from the user"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The CPU has two main components: the CU (Control Unit) and the",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "GPU",
+      "ALU (Arithmetic Logic Unit)",
+      "RAM",
+      "BIOS"
+    ],
+    "answer": [
+      "ALU (Arithmetic Logic Unit)"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "The Control Unit (CU) of the CPU is responsible for",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Performing arithmetic calculations",
+      "Directing operations of all parts of the processor",
+      "Storing long-term data",
+      "Displaying graphics"
+    ],
+    "answer": [
+      "Directing operations of all parts of the processor"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Volatile memory is memory that",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Is never changed",
+      "Loses its contents when power is removed",
+      "Stores the operating system permanently",
+      "Only holds one file at a time"
+    ],
+    "answer": [
+      "Loses its contents when power is removed"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "A presentation software (e.g., PowerPoint) is primarily used to",
+    "type": "mcq",
+    "difficulty": "easy",
+    "options": [
+      "Manage databases",
+      "Create slide-based visual presentations",
+      "Process payroll",
+      "Design websites"
+    ],
+    "answer": [
+      "Create slide-based visual presentations"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "In a computer network, a 'packet' is",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "A hardware device",
+      "A small unit of data transmitted over a network",
+      "A type of firewall",
+      "A software license"
+    ],
+    "answer": [
+      "A small unit of data transmitted over a network"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "DNS (Domain Name System) translates",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Binary to decimal",
+      "Website domain names to IP addresses",
+      "Emails into text",
+      "Data into images"
+    ],
+    "answer": [
+      "Website domain names to IP addresses"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Which type of network topology connects all devices to a central switch/hub?",
+    "type": "mcq",
+    "difficulty": "hard",
+    "options": [
+      "Bus topology",
+      "Ring topology",
+      "Star topology",
+      "Mesh topology"
+    ],
+    "answer": [
+      "Star topology"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Ergonomics in computing refers to",
+    "type": "mcq",
+    "difficulty": "medium",
+    "options": [
+      "Computer speed optimisation",
+      "Designing workstations and practices to reduce health risks and improve comfort",
+      "Data security practices",
+      "Network configuration"
+    ],
+    "answer": [
+      "Designing workstations and practices to reduce health risks and improve comfort"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What does ICT stand for?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "Information and Communication Technology",
+      "technology",
+      "communication",
+      "information",
+      "is technology",
+      "are technology",
+      "it is technology",
+      "they are technology",
+      "is communication",
+      "are communication",
+      "it is communication",
+      "they are communication",
+      "is information",
+      "are information",
+      "it is information",
+      "they are information"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Describe the difference between hardware and software.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "hardware",
+      "physical components",
+      "keyboard",
+      "monitor",
+      "software",
+      "programs",
+      "instructions",
+      "intangible",
+      "applications",
+      "is hardware",
+      "are hardware",
+      "it is hardware",
+      "they are hardware",
+      "is keyboard",
+      "are keyboard",
+      "it is keyboard",
+      "they are keyboard",
+      "is monitor",
+      "are monitor",
+      "it is monitor",
+      "they are monitor",
+      "is software",
+      "are software",
+      "it is software",
+      "they are software",
+      "is programs",
+      "are programs",
+      "it is programs",
+      "they are programs",
+      "is instructions",
+      "are instructions",
+      "it is instructions",
+      "they are instructions",
+      "is intangible",
+      "are intangible",
+      "it is intangible",
+      "they are intangible",
+      "is applications",
+      "are applications",
+      "it is applications",
+      "they are applications"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is the function of RAM in a computer?",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "temporary",
+      "storage",
+      "working memory",
+      "volatile",
+      "data",
+      "programs",
+      "currently in use",
+      "CPU",
+      "access",
+      "is temporary",
+      "are temporary",
+      "it is temporary",
+      "they are temporary",
+      "is storage",
+      "are storage",
+      "it is storage",
+      "they are storage",
+      "is volatile",
+      "are volatile",
+      "it is volatile",
+      "they are volatile",
+      "is data",
+      "are data",
+      "it is data",
+      "they are data",
+      "is programs",
+      "are programs",
+      "it is programs",
+      "they are programs",
+      "central processing unit",
+      "is cpu",
+      "are cpu",
+      "it is cpu",
+      "they are cpu",
+      "is access",
+      "are access",
+      "it is access",
+      "they are access"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Explain the difference between a LAN and a WAN.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "LAN",
+      "local",
+      "small area",
+      "building",
+      "WAN",
+      "wide",
+      "large area",
+      "country",
+      "internet",
+      "geography",
+      "local area network",
+      "is lan",
+      "are lan",
+      "it is lan",
+      "they are lan",
+      "is local",
+      "are local",
+      "it is local",
+      "they are local",
+      "is building",
+      "are building",
+      "it is building",
+      "they are building",
+      "wide area network",
+      "is wan",
+      "are wan",
+      "it is wan",
+      "they are wan",
+      "is wide",
+      "are wide",
+      "it is wide",
+      "they are wide",
+      "is country",
+      "are country",
+      "it is country",
+      "they are country",
+      "is internet",
+      "are internet",
+      "it is internet",
+      "they are internet",
+      "is geography",
+      "are geography",
+      "it is geography",
+      "they are geography"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is the internet and how is it different from the World Wide Web?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "internet",
+      "global network",
+      "infrastructure",
+      "WWW",
+      "web pages",
+      "websites",
+      "subset",
+      "browser",
+      "HTTP",
+      "is internet",
+      "are internet",
+      "it is internet",
+      "they are internet",
+      "is infrastructure",
+      "are infrastructure",
+      "it is infrastructure",
+      "they are infrastructure",
+      "world wide web",
+      "is www",
+      "are www",
+      "it is www",
+      "they are www",
+      "is websites",
+      "are websites",
+      "it is websites",
+      "they are websites",
+      "is subset",
+      "are subset",
+      "it is subset",
+      "they are subset",
+      "is browser",
+      "are browser",
+      "it is browser",
+      "they are browser",
+      "hypertext transfer protocol",
+      "is http",
+      "are http",
+      "it is http",
+      "they are http"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Explain what a computer virus is and how it can be prevented.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "malicious",
+      "replicates",
+      "damages",
+      "antivirus",
+      "software",
+      "updates",
+      "avoid unknown links",
+      "email attachments",
+      "firewalls",
+      "is malicious",
+      "are malicious",
+      "it is malicious",
+      "they are malicious",
+      "is replicates",
+      "are replicates",
+      "it is replicates",
+      "they are replicates",
+      "is damages",
+      "are damages",
+      "it is damages",
+      "they are damages",
+      "is antivirus",
+      "are antivirus",
+      "it is antivirus",
+      "they are antivirus",
+      "is software",
+      "are software",
+      "it is software",
+      "they are software",
+      "is updates",
+      "are updates",
+      "it is updates",
+      "they are updates",
+      "is firewalls",
+      "are firewalls",
+      "it is firewalls",
+      "they are firewalls"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is e-commerce? State two advantages.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "buying",
+      "selling",
+      "internet",
+      "online",
+      "24/7",
+      "convenient",
+      "global reach",
+      "lower costs",
+      "comparison shopping",
+      "is buying",
+      "are buying",
+      "it is buying",
+      "they are buying",
+      "is selling",
+      "are selling",
+      "it is selling",
+      "they are selling",
+      "is internet",
+      "are internet",
+      "it is internet",
+      "they are internet",
+      "is online",
+      "are online",
+      "it is online",
+      "they are online",
+      "247",
+      "is 24/7",
+      "are 24/7",
+      "it is 24/7",
+      "they are 24/7",
+      "is convenient",
+      "are convenient",
+      "it is convenient",
+      "they are convenient"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is cloud computing and state two benefits?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "internet",
+      "remote servers",
+      "store",
+      "access",
+      "anywhere",
+      "automatic backup",
+      "scalable",
+      "no local storage",
+      "collaboration",
+      "is internet",
+      "are internet",
+      "it is internet",
+      "they are internet",
+      "is store",
+      "are store",
+      "it is store",
+      "they are store",
+      "is access",
+      "are access",
+      "it is access",
+      "they are access",
+      "is anywhere",
+      "are anywhere",
+      "it is anywhere",
+      "they are anywhere",
+      "is scalable",
+      "are scalable",
+      "it is scalable",
+      "they are scalable",
+      "is collaboration",
+      "are collaboration",
+      "it is collaboration",
+      "they are collaboration"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Explain what a database is and name two components of a database table.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "organised",
+      "collection",
+      "data",
+      "table",
+      "record",
+      "field",
+      "row",
+      "column",
+      "structured",
+      "query",
+      "is organised",
+      "are organised",
+      "it is organised",
+      "they are organised",
+      "is collection",
+      "are collection",
+      "it is collection",
+      "they are collection",
+      "is data",
+      "are data",
+      "it is data",
+      "they are data",
+      "is table",
+      "are table",
+      "it is table",
+      "they are table",
+      "is record",
+      "are record",
+      "it is record",
+      "they are record",
+      "is field",
+      "are field",
+      "it is field",
+      "they are field",
+      "is row",
+      "are row",
+      "it is row",
+      "they are row",
+      "is column",
+      "are column",
+      "it is column",
+      "they are column",
+      "is structured",
+      "are structured",
+      "it is structured",
+      "they are structured",
+      "is query",
+      "are query",
+      "it is query",
+      "they are query"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What are the risks of using social media? State two.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "cyberbullying",
+      "privacy",
+      "data theft",
+      "addiction",
+      "misinformation",
+      "inappropriate content",
+      "phishing",
+      "identity theft",
+      "is cyberbullying",
+      "are cyberbullying",
+      "it is cyberbullying",
+      "they are cyberbullying",
+      "is privacy",
+      "are privacy",
+      "it is privacy",
+      "they are privacy",
+      "is addiction",
+      "are addiction",
+      "it is addiction",
+      "they are addiction",
+      "is misinformation",
+      "are misinformation",
+      "it is misinformation",
+      "they are misinformation",
+      "is phishing",
+      "are phishing",
+      "it is phishing",
+      "they are phishing"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is phishing and how can you protect yourself from it?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "trick",
+      "fake emails",
+      "steal",
+      "passwords",
+      "bank details",
+      "verify sender",
+      "don't click links",
+      "HTTPS",
+      "check URL",
+      "is trick",
+      "are trick",
+      "it is trick",
+      "they are trick",
+      "is steal",
+      "are steal",
+      "it is steal",
+      "they are steal",
+      "is passwords",
+      "are passwords",
+      "it is passwords",
+      "they are passwords",
+      "dont click links",
+      "is https",
+      "are https",
+      "it is https",
+      "they are https"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Describe two ways to keep data secure on a personal computer.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "strong password",
+      "antivirus",
+      "firewall",
+      "backup",
+      "encryption",
+      "update software",
+      "2FA",
+      "avoid public Wi-Fi",
+      "is antivirus",
+      "are antivirus",
+      "it is antivirus",
+      "they are antivirus",
+      "is firewall",
+      "are firewall",
+      "it is firewall",
+      "they are firewall",
+      "is backup",
+      "are backup",
+      "it is backup",
+      "they are backup",
+      "is encryption",
+      "are encryption",
+      "it is encryption",
+      "they are encryption",
+      "is 2fa",
+      "are 2fa",
+      "it is 2fa",
+      "they are 2fa",
+      "avoid public wifi"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is an algorithm? Give a simple everyday example.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "step-by-step",
+      "instructions",
+      "problem",
+      "task",
+      "recipe",
+      "making tea",
+      "ATM",
+      "procedure",
+      "sequence",
+      "stepbystep",
+      "is step-by-step",
+      "are step-by-step",
+      "it is step-by-step",
+      "they are step-by-step",
+      "is instructions",
+      "are instructions",
+      "it is instructions",
+      "they are instructions",
+      "is problem",
+      "are problem",
+      "it is problem",
+      "they are problem",
+      "is task",
+      "are task",
+      "it is task",
+      "they are task",
+      "is recipe",
+      "are recipe",
+      "it is recipe",
+      "they are recipe",
+      "is atm",
+      "are atm",
+      "it is atm",
+      "they are atm",
+      "is procedure",
+      "are procedure",
+      "it is procedure",
+      "they are procedure",
+      "is sequence",
+      "are sequence",
+      "it is sequence",
+      "they are sequence"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Explain the digital divide and suggest one way to address it.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "inequality",
+      "access",
+      "technology",
+      "rural",
+      "urban",
+      "education",
+      "poverty",
+      "government",
+      "infrastructure",
+      "training",
+      "affordable devices",
+      "is inequality",
+      "are inequality",
+      "it is inequality",
+      "they are inequality",
+      "is access",
+      "are access",
+      "it is access",
+      "they are access",
+      "is technology",
+      "are technology",
+      "it is technology",
+      "they are technology",
+      "is rural",
+      "are rural",
+      "it is rural",
+      "they are rural",
+      "is urban",
+      "are urban",
+      "it is urban",
+      "they are urban",
+      "is education",
+      "are education",
+      "it is education",
+      "they are education",
+      "is poverty",
+      "are poverty",
+      "it is poverty",
+      "they are poverty",
+      "is government",
+      "are government",
+      "it is government",
+      "they are government",
+      "is infrastructure",
+      "are infrastructure",
+      "it is infrastructure",
+      "they are infrastructure",
+      "is training",
+      "are training",
+      "it is training",
+      "they are training"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "State the binary equivalents of the decimal numbers 0 to 7.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "0=000",
+      "1=001",
+      "2=010",
+      "3=011",
+      "4=100",
+      "5=101",
+      "6=110",
+      "7=111",
+      "binary",
+      "0000",
+      "is 0=000",
+      "are 0=000",
+      "it is 0=000",
+      "they are 0=000",
+      "1001",
+      "is 1=001",
+      "are 1=001",
+      "it is 1=001",
+      "they are 1=001",
+      "2010",
+      "is 2=010",
+      "are 2=010",
+      "it is 2=010",
+      "they are 2=010",
+      "3011",
+      "is 3=011",
+      "are 3=011",
+      "it is 3=011",
+      "they are 3=011",
+      "4100",
+      "is 4=100",
+      "are 4=100",
+      "it is 4=100",
+      "they are 4=100",
+      "5101",
+      "is 5=101",
+      "are 5=101",
+      "it is 5=101",
+      "they are 5=101",
+      "6110",
+      "is 6=110",
+      "are 6=110",
+      "it is 6=110",
+      "they are 6=110",
+      "7111",
+      "is 7=111",
+      "are 7=111",
+      "it is 7=111",
+      "they are 7=111",
+      "is binary",
+      "are binary",
+      "it is binary",
+      "they are binary"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is e-waste and why is it a concern?",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "electronic waste",
+      "discarded",
+      "toxic",
+      "environment",
+      "heavy metals",
+      "landfill",
+      "recycling",
+      "health hazard",
+      "Ghana",
+      "Agbogbloshie",
+      "is discarded",
+      "are discarded",
+      "it is discarded",
+      "they are discarded",
+      "is toxic",
+      "are toxic",
+      "it is toxic",
+      "they are toxic",
+      "is environment",
+      "are environment",
+      "it is environment",
+      "they are environment",
+      "is landfill",
+      "are landfill",
+      "it is landfill",
+      "they are landfill",
+      "is recycling",
+      "are recycling",
+      "it is recycling",
+      "they are recycling",
+      "gh",
+      "is ghana",
+      "are ghana",
+      "it is ghana",
+      "they are ghana",
+      "is agbogbloshie",
+      "are agbogbloshie",
+      "it is agbogbloshie",
+      "they are agbogbloshie"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Describe two health risks associated with excessive computer use and how to prevent them.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "eye strain",
+      "RSI",
+      "back pain",
+      "posture",
+      "20-20-20 rule",
+      "breaks",
+      "ergonomic chair",
+      "screen distance",
+      "wrist support",
+      "is rsi",
+      "are rsi",
+      "it is rsi",
+      "they are rsi",
+      "is posture",
+      "are posture",
+      "it is posture",
+      "they are posture",
+      "202020 rule",
+      "is breaks",
+      "are breaks",
+      "it is breaks",
+      "they are breaks"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is open-source software? Give an example.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "free",
+      "source code",
+      "modify",
+      "distribute",
+      "Linux",
+      "Firefox",
+      "LibreOffice",
+      "open",
+      "community",
+      "no cost",
+      "is free",
+      "are free",
+      "it is free",
+      "they are free",
+      "is modify",
+      "are modify",
+      "it is modify",
+      "they are modify",
+      "is distribute",
+      "are distribute",
+      "it is distribute",
+      "they are distribute",
+      "is linux",
+      "are linux",
+      "it is linux",
+      "they are linux",
+      "is firefox",
+      "are firefox",
+      "it is firefox",
+      "they are firefox",
+      "is libreoffice",
+      "are libreoffice",
+      "it is libreoffice",
+      "they are libreoffice",
+      "is open",
+      "are open",
+      "it is open",
+      "they are open",
+      "is community",
+      "are community",
+      "it is community",
+      "they are community"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "What is the difference between input and output devices? Give an example of each.",
+    "type": "short_answer",
+    "difficulty": "easy",
+    "keywords": [
+      "input",
+      "data entered",
+      "keyboard",
+      "mouse",
+      "scanner",
+      "output",
+      "processed data",
+      "monitor",
+      "printer",
+      "speaker",
+      "is input",
+      "are input",
+      "it is input",
+      "they are input",
+      "is keyboard",
+      "are keyboard",
+      "it is keyboard",
+      "they are keyboard",
+      "is mouse",
+      "are mouse",
+      "it is mouse",
+      "they are mouse",
+      "is scanner",
+      "are scanner",
+      "it is scanner",
+      "they are scanner",
+      "is output",
+      "are output",
+      "it is output",
+      "they are output",
+      "is monitor",
+      "are monitor",
+      "it is monitor",
+      "they are monitor",
+      "is printer",
+      "are printer",
+      "it is printer",
+      "they are printer",
+      "is speaker",
+      "are speaker",
+      "it is speaker",
+      "they are speaker"
+    ]
+  },
+  {
+    "subject": "ICT",
+    "question": "Explain what a firewall does.",
+    "type": "short_answer",
+    "difficulty": "medium",
+    "keywords": [
+      "monitor",
+      "network traffic",
+      "block",
+      "unauthorised",
+      "incoming",
+      "outgoing",
+      "security",
+      "rules",
+      "protect",
+      "filter",
+      "is monitor",
+      "are monitor",
+      "it is monitor",
+      "they are monitor",
+      "is block",
+      "are block",
+      "it is block",
+      "they are block",
+      "is unauthorised",
+      "are unauthorised",
+      "it is unauthorised",
+      "they are unauthorised",
+      "is incoming",
+      "are incoming",
+      "it is incoming",
+      "they are incoming",
+      "is outgoing",
+      "are outgoing",
+      "it is outgoing",
+      "they are outgoing",
+      "is security",
+      "are security",
+      "it is security",
+      "they are security",
+      "is rules",
+      "are rules",
+      "it is rules",
+      "they are rules",
+      "is protect",
+      "are protect",
+      "it is protect",
+      "they are protect",
+      "is filter",
+      "are filter",
+      "it is filter",
+      "they are filter"
+    ]
+  }
 ]
