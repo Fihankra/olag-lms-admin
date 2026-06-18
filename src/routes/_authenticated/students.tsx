@@ -12,12 +12,6 @@ import { ExcelExport } from "../../components/ExcelExport";
 
 export const Route = createFileRoute("/_authenticated/students")({
   component: StudentsPage,
-  head: () => ({
-    meta: [
-      { title: "Students — OLAG LMS" },
-      { name: "description", content: "Manage students and device assignments" },
-    ],
-  }),
 });
 
 type Student = {

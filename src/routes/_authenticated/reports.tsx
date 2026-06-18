@@ -17,12 +17,6 @@ import { submitBatchReport, getDeadlineSetting } from "../../utils/reports.funct
 
 export const Route = createFileRoute("/_authenticated/reports")({
   component: ReportsPage,
-  head: () => ({
-    meta: [
-      { title: "Weekly Reports — OLAG LMS" },
-      { name: "description", content: "View weekly form master reports per class" },
-    ],
-  }),
 });
 
 type Report = {
@@ -131,15 +125,7 @@ function ReportsPage() {
   useEffect(() => {
     async function init() {
       try {
-        const session = await supabase.auth.getSession();
-        const token = session.data.session?.access_token;
-        if (!token) {
-          setFilterWeek(getWeekStart(new Date(), 2));
-          return;
-        }
-        const result = await getDeadlineSetting({
-          headers: { authorization: `Bearer ${token}` },
-        });
+        const result = await getDeadlineSetting();
         setWeekStartDay(result.weekStartDay);
         setDeadline({ day: result.day, hour: result.hour, minute: result.minute });
         setFilterWeek(getWeekStart(new Date(), result.weekStartDay));
@@ -319,11 +305,7 @@ function ReportsPage() {
     });
 
     try {
-      const session = await supabase.auth.getSession();
-      const result = await submitBatchReport({
-        headers: { authorization: `Bearer ${session.data.session?.access_token}` },
-        data: { week_start: filterWeek, entries },
-      });
+      const result = await submitBatchReport({ week_start: filterWeek, entries });
 
       if (result.error) {
         setErrorMsg(result.error);

@@ -160,10 +160,4 @@ function ChangePasswordPage() {
 
 export const Route = createFileRoute("/change-password")({
   component: ChangePasswordPage,
-  head: () => ({
-    meta: [
-      { title: "Change Password — OLAG LMS" },
-      { name: "description", content: "Update your default password" },
-    ],
-  }),
 });

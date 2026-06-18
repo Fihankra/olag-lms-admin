@@ -10,12 +10,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/programs")({
   component: ProgramsPage,
-  head: () => ({
-    meta: [
-      { title: "Programs — OLAG LMS" },
-      { name: "description", content: "Manage academic programs" },
-    ],
-  }),
 });
 
 type Program = { id: string; name: string; description: string | null; created_at: string };

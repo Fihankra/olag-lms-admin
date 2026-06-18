@@ -25,12 +25,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/quizzes")({
   component: QuizzesPage,
-  head: () => ({
-    meta: [
-      { title: "Quizzes — OLAG LMS" },
-      { name: "description", content: "Manage quizzes and assessments" },
-    ],
-  }),
 });
 
 // ── Types ────────────────────────────────────────────────────────────────────

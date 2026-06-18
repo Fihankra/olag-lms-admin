@@ -7,12 +7,6 @@ import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/_authenticated/settings")({
   component: SettingsPage,
-  head: () => ({
-    meta: [
-      { title: "Settings — OLAG LMS" },
-      { name: "description", content: "System configuration and preferences" },
-    ],
-  }),
 });
 
 const DAY_OPTIONS = [

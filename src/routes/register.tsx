@@ -141,10 +141,4 @@ function RegisterPage() {
 
 export const Route = createFileRoute("/register")({
   component: RegisterPage,
-  head: () => ({
-    meta: [
-      { title: "Register — OLAG LMS" },
-      { name: "description", content: "Register as a teacher on OLAG LMS" },
-    ],
-  }),
 });

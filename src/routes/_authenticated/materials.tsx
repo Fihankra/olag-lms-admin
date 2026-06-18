@@ -20,12 +20,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/materials")({
   component: MaterialsPage,
-  head: () => ({
-    meta: [
-      { title: "Materials — OLAG LMS" },
-      { name: "description", content: "Manage learning materials, files, and folder access" },
-    ],
-  }),
 });
 
 type Folder = {

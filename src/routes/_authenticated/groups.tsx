@@ -20,9 +20,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/groups")({
   component: GroupsPage,
-  head: () => ({
-    meta: [{ title: "Groups — OLAG LMS" }, { name: "description", content: "Manage groups" }],
-  }),
 });
 
 type Group = {

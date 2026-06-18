@@ -18,12 +18,6 @@ import {
 
 export const Route = createFileRoute("/_authenticated/")({
   component: DashboardPage,
-  head: () => ({
-    meta: [
-      { title: "Dashboard — OLAG LMS" },
-      { name: "description", content: "Overview of students, devices, and system activity" },
-    ],
-  }),
 });
 
 type DeviceRow = {

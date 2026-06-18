@@ -22,12 +22,6 @@ const db = supabase as any;
 
 export const Route = createFileRoute("/_authenticated/games")({
   component: GamesPage,
-  head: () => ({
-    meta: [
-      { title: "Games — OLAG LMS" },
-      { name: "description", content: "View multiplayer game sessions" },
-    ],
-  }),
 });
 
 // ── Types ─────────────────────────────────────────────────────────────────────

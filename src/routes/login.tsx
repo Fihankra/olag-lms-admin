@@ -6,12 +6,6 @@ import { PasswordInput } from "../components/PasswordInput";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,
-  head: () => ({
-    meta: [
-      { title: "Login — OLAG LMS" },
-      { name: "description", content: "Admin login for OLAG LMS" },
-    ],
-  }),
 });
 
 function LoginPage() {

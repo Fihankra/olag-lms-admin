@@ -24,12 +24,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/question-bank")({
   component: QuestionBankPage,
-  head: () => ({
-    meta: [
-      { title: "Question Bank — OLAG LMS" },
-      { name: "description", content: "Manage quiz game questions" },
-    ],
-  }),
 });
 
 // ── Types ─────────────────────────────────────────────────────────────────────

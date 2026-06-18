@@ -12,12 +12,6 @@ import { toastResult } from "../../lib/supabase-toast";
 
 export const Route = createFileRoute("/_authenticated/devices")({
   component: DevicesPage,
-  head: () => ({
-    meta: [
-      { title: "Devices — OLAG LMS" },
-      { name: "description", content: "Manage student tablets and device settings" },
-    ],
-  }),
 });
 
 type Device = {
