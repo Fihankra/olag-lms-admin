@@ -4,7 +4,7 @@ import { DataTable } from "../../components/DataTable";
 import { StatusBadge } from "../../components/StatusBadge";
 import { supabase } from "../../integrations/supabase/client";
 import { useEffect, useState, useMemo } from "react";
-import { UserPlus, UserMinus, Trash2 } from "lucide-react";
+import { UserPlus, UserMinus, Trash2, Search } from "lucide-react";
 import { AdminOnly } from "../../components/AdminOnly";
 import { ExcelImport } from "../../components/ExcelImport";
 import { ExcelExport } from "../../components/ExcelExport";
@@ -32,6 +32,7 @@ function DevicesPage() {
   const [filter, setFilter] = useState<"all" | "assigned" | "unassigned" | "online" | "offline">(
     "all",
   );
+  const [search, setSearch] = useState("");
 
   // Assign modal state
   const [assignDevice, setAssignDevice] = useState<Device | null>(null);
@@ -151,10 +152,27 @@ function DevicesPage() {
   }, [allStudents, assignedStudentIds, studentSearch]);
 
   const filtered = devices.filter((d) => {
-    if (filter === "assigned") return d.assigned_student_id;
-    if (filter === "unassigned") return !d.assigned_student_id;
-    if (filter === "online") return d.network_status === "online";
-    if (filter === "offline") return d.network_status === "offline";
+    if (filter === "assigned") {
+      if (!d.assigned_student_id) return false;
+    } else if (filter === "unassigned") {
+      if (d.assigned_student_id) return false;
+    } else if (filter === "online") {
+      if (d.network_status !== "online") return false;
+    } else if (filter === "offline") {
+      if (d.network_status !== "offline") return false;
+    }
+
+    if (search) {
+      const q = search.toLowerCase();
+      if (
+        !d.device_id.toLowerCase().includes(q) &&
+        !d.students?.name?.toLowerCase().includes(q) &&
+        !d.students?.student_id?.toLowerCase().includes(q)
+      ) {
+        return false;
+      }
+    }
+
     return true;
   });
 
@@ -270,20 +288,32 @@ function DevicesPage() {
           }
         />
 
-        <div className="flex gap-2 mb-4 flex-wrap">
-          {filters.map((f) => (
-            <button
-              key={f.value}
-              onClick={() => setFilter(f.value)}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                filter === f.value
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground"
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
+        <div className="flex gap-2 mb-4 flex-wrap items-center">
+          <div className="relative">
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Search by device ID or student…"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-8 pr-3 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs border border-border w-52 focus:outline-none focus:ring-1 focus:ring-ring"
+            />
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {filters.map((f) => (
+              <button
+                key={f.value}
+                onClick={() => setFilter(f.value)}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  filter === f.value
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <DataTable data={filtered as Record<string, unknown>[]} columns={columns as any} />
