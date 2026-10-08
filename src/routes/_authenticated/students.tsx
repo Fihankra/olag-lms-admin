@@ -185,6 +185,7 @@ function StudentsPage() {
   const [filterProgram, setFilterProgram] = useState("");
   const [deletingStudent, setDeletingStudent] = useState<Student | null>(null);
   const [filterClass, setFilterClass] = useState("");
+  const [filterDevice, setFilterDevice] = useState<"" | "assigned" | "unassigned">("");
   const [search, setSearch] = useState("");
   const [revealedPasswords, setRevealedPasswords] = useState<Set<string>>(new Set());
   const [showAllPasswords, setShowAllPasswords] = useState(false);
@@ -256,6 +257,7 @@ function StudentsPage() {
     const { error } = await supabase.from("students").insert({
       student_id: form.student_id.trim(),
       name: form.name.trim(),
+      password: form.student_id.trim().toLowerCase(),
       program_id: form.program_id || null,
       class_id: form.class_id || null,
       gender: form.gender || null,
@@ -297,6 +299,8 @@ function StudentsPage() {
   const filtered = students.filter((s) => {
     if (filterProgram && s.program_id !== filterProgram) return false;
     if (filterClass && s.class_id !== filterClass) return false;
+    if (filterDevice === "assigned" && !s.assigned_device_id) return false;
+    if (filterDevice === "unassigned" && s.assigned_device_id) return false;
     if (search) {
       const q = search.toLowerCase();
       if (!s.student_id.toLowerCase().includes(q) && !s.name.toLowerCase().includes(q))
@@ -469,6 +473,15 @@ function StudentsPage() {
                 {c.name}
               </option>
             ))}
+          </select>
+          <select
+            value={filterDevice}
+            onChange={(e) => setFilterDevice(e.target.value as typeof filterDevice)}
+            className="px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs border border-border"
+          >
+            <option value="">All Devices</option>
+            <option value="assigned">Assigned to a tablet</option>
+            <option value="unassigned">Not assigned to a tablet</option>
           </select>
         </div>
 
