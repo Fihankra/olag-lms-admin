@@ -20,6 +20,7 @@ type ClassItem = {
   programs?: { name: string } | null;
 };
 type Program = { id: string; name: string };
+type ClassStats = { formMasters: string[]; total: number; assigned: number };
 
 function ClassesPage() {
   const [classes, setClasses] = useState<ClassItem[]>([]);
@@ -27,6 +28,7 @@ function ClassesPage() {
   const [showModal, setShowModal] = useState(false);
   const [editClass, setEditClass] = useState<ClassItem | null>(null);
   const [form, setForm] = useState({ name: "", program_id: "" });
+  const [stats, setStats] = useState<Map<string, ClassStats>>(new Map());
 
   async function fetchClasses() {
     const { data } = await supabase
@@ -41,10 +43,49 @@ function ClassesPage() {
     setPrograms(data ?? []);
   }
 
+  async function fetchStats() {
+    const next = new Map<string, ClassStats>();
+    const get = (id: string) => {
+      let st = next.get(id);
+      if (!st) next.set(id, (st = { formMasters: [], total: 0, assigned: 0 }));
+      return st;
+    };
+
+    const { data: teachers } = await supabase
+      .from("teachers")
+      .select("name, assigned_class_id")
+      .not("assigned_class_id", "is", null);
+    for (const t of teachers ?? []) get(t.assigned_class_id!).formMasters.push(t.name);
+
+    // Supabase caps responses at 1000 rows, so page through students
+    const PAGE = 1000;
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await supabase
+        .from("students")
+        .select("class_id, assigned_device_id")
+        .not("class_id", "is", null)
+        .range(from, from + PAGE - 1);
+      if (error) {
+        console.error("fetchStats error:", error);
+        break;
+      }
+      for (const s of data ?? []) {
+        const st = get(s.class_id!);
+        st.total++;
+        if (s.assigned_device_id) st.assigned++;
+      }
+      if (!data || data.length < PAGE) break;
+    }
+    setStats(next);
+  }
+
   useEffect(() => {
     fetchClasses();
     fetchPrograms();
+    fetchStats();
   }, []);
+
+  const statsFor = (c: ClassItem) => stats.get(c.id) ?? { formMasters: [], total: 0, assigned: 0 };
 
   function openAdd() {
     setEditClass(null);
@@ -79,11 +120,37 @@ function ClassesPage() {
     if (!toastResult(error)) return;
     toastResult(null, "Class deleted");
     fetchClasses();
+    fetchStats();
   }
 
   const columns = [
     { key: "name", label: "Class Name" },
     { key: "program_id", label: "Program", render: (c: ClassItem) => c.programs?.name ?? "—" },
+    {
+      key: "form_master",
+      label: "Form Master",
+      render: (c: ClassItem) => {
+        const names = statsFor(c).formMasters;
+        return names.length ? names.join(", ") : <span className="text-muted-foreground">—</span>;
+      },
+    },
+    { key: "students", label: "Students", render: (c: ClassItem) => statsFor(c).total },
+    {
+      key: "assigned",
+      label: "Assigned Device",
+      render: (c: ClassItem) => statsFor(c).assigned,
+      hideOnMobile: true,
+    },
+    {
+      key: "unassigned",
+      label: "Unassigned",
+      render: (c: ClassItem) => {
+        const st = statsFor(c);
+        const n = st.total - st.assigned;
+        return <span className={n > 0 ? "text-destructive" : ""}>{n}</span>;
+      },
+      hideOnMobile: true,
+    },
     {
       key: "created_at",
       label: "Created",
@@ -126,7 +193,17 @@ function ClassesPage() {
           actions={
             <div className="flex items-center gap-2">
               <ExcelExport
-                data={classes.map((c) => ({ name: c.name, program_name: c.programs?.name ?? "" }))}
+                data={classes.map((c) => {
+                  const st = statsFor(c);
+                  return {
+                    name: c.name,
+                    program_name: c.programs?.name ?? "",
+                    form_master: st.formMasters.join(", "),
+                    students: st.total,
+                    assigned_device: st.assigned,
+                    unassigned: st.total - st.assigned,
+                  };
+                })}
                 filename="classes_export"
                 sheetName="Classes"
               />
