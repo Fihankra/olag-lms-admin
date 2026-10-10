@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface Column<T> {
   key: string;
-  label: string;
+  label: React.ReactNode;
   render?: (item: T) => React.ReactNode;
   /** Hide this column below sm breakpoint */
   hideOnMobile?: boolean;

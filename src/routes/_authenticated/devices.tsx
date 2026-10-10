@@ -33,6 +33,8 @@ function DevicesPage() {
     "all",
   );
   const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [bulkDeleting, setBulkDeleting] = useState(false);
 
   // Assign modal state
   const [assignDevice, setAssignDevice] = useState<Device | null>(null);
@@ -136,6 +138,53 @@ function DevicesPage() {
     fetchStudents();
   }
 
+  async function deleteSelected() {
+    const targets = devices.filter((d) => selected.has(d.id));
+    if (targets.length === 0) return;
+    if (
+      !confirm(
+        `Delete ${targets.length} device${targets.length === 1 ? "" : "s"}? This will also remove their assignments.`,
+      )
+    )
+      return;
+    setBulkDeleting(true);
+    try {
+      // Chunk to keep the `in` filter's URL length reasonable
+      const CHUNK = 100;
+      const studentIds = targets.map((d) => d.assigned_student_id).filter(Boolean) as string[];
+      for (let i = 0; i < studentIds.length; i += CHUNK) {
+        const { error } = await supabase
+          .from("students")
+          .update({ assigned_device_id: null })
+          .in("id", studentIds.slice(i, i + CHUNK));
+        if (!toastResult(error)) return;
+      }
+      const ids = targets.map((d) => d.id);
+      for (let i = 0; i < ids.length; i += CHUNK) {
+        const { error } = await supabase
+          .from("devices")
+          .delete()
+          .in("id", ids.slice(i, i + CHUNK));
+        if (!toastResult(error)) return;
+      }
+      toastResult(null, `${targets.length} device${targets.length === 1 ? "" : "s"} deleted`);
+      setSelected(new Set());
+    } finally {
+      setBulkDeleting(false);
+      fetchDevices();
+      fetchStudents();
+    }
+  }
+
+  function toggleSelected(id: string) {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
   // Students not already assigned to a device
   const assignedStudentIds = useMemo(
     () => new Set(devices.filter((d) => d.assigned_student_id).map((d) => d.assigned_student_id!)),
@@ -176,7 +225,44 @@ function DevicesPage() {
     return true;
   });
 
+  const allFilteredSelected = filtered.length > 0 && filtered.every((d) => selected.has(d.id));
+  const selectedCount = devices.filter((d) => selected.has(d.id)).length;
+
+  function toggleAllFiltered() {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      for (const d of filtered) {
+        if (allFilteredSelected) next.delete(d.id);
+        else next.add(d.id);
+      }
+      return next;
+    });
+  }
+
   const columns = [
+    {
+      key: "select",
+      label: (
+        <input
+          type="checkbox"
+          checked={allFilteredSelected}
+          onChange={toggleAllFiltered}
+          title="Select all shown devices"
+          aria-label="Select all shown devices"
+          className="h-3.5 w-3.5 accent-primary align-middle"
+        />
+      ),
+      render: (d: Device) => (
+        <input
+          type="checkbox"
+          checked={selected.has(d.id)}
+          onChange={() => toggleSelected(d.id)}
+          onClick={(e) => e.stopPropagation()}
+          aria-label={`Select device ${d.device_id}`}
+          className="h-3.5 w-3.5 accent-primary align-middle"
+        />
+      ),
+    },
     { key: "device_id", label: "Device ID" },
     {
       key: "network_status",
@@ -271,6 +357,16 @@ function DevicesPage() {
           description="Manage student tablets and device settings"
           actions={
             <div className="flex items-center gap-2">
+              {selectedCount > 0 && (
+                <button
+                  onClick={deleteSelected}
+                  disabled={bulkDeleting}
+                  className="px-3 py-2 rounded-md bg-destructive text-destructive-foreground text-xs font-medium hover:bg-destructive/90 transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                  {bulkDeleting ? "Deleting…" : `Delete selected (${selectedCount})`}
+                </button>
+              )}
               <ExcelExport
                 data={filtered.map((d) => ({
                   device_id: d.device_id,
