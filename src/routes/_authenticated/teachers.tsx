@@ -7,6 +7,7 @@ import { useAuth } from "../../hooks/use-auth";
 import { ExcelExport } from "../../components/ExcelExport";
 import { toastResult } from "../../lib/supabase-toast";
 import { PasswordInput } from "../../components/PasswordInput";
+import { UserCheck } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/teachers")({
   component: TeachersPage,
@@ -86,13 +87,11 @@ function TeachersPage() {
     fetchTeachers();
   }
 
-  async function toggleApproval(t: Teacher) {
-    const { error } = await supabase
-      .from("teachers")
-      .update({ approved: !t.approved })
-      .eq("id", t.id);
+  async function setApproval(t: Teacher, approved: boolean) {
+    if (!approved && !confirm(`Revoke approval for ${t.name}? They will lose access.`)) return;
+    const { error } = await supabase.from("teachers").update({ approved }).eq("id", t.id);
     if (!toastResult(error)) return;
-    toastResult(null, t.approved ? "Teacher approval revoked" : "Teacher approved");
+    toastResult(null, approved ? `${t.name} approved` : `Approval revoked for ${t.name}`);
     fetchTeachers();
   }
 
@@ -131,6 +130,11 @@ function TeachersPage() {
   // Only show for admin
   if (role !== "admin") return null;
 
+  const isPending = (t: Teacher) => !!t.user_id && !t.approved;
+  const pendingCount = teachers.filter(isPending).length;
+  // Pending teachers first, then newest first (fetch order)
+  const sortedTeachers = [...teachers].sort((a, b) => Number(isPending(b)) - Number(isPending(a)));
+
   const columns = [
     { key: "teacher_id", label: "Teacher ID" },
     { key: "name", label: "Name" },
@@ -144,19 +148,13 @@ function TeachersPage() {
       label: "Status",
       render: (t: Teacher) =>
         t.user_id ? (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleApproval(t);
-            }}
-            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
-              t.approved
-                ? "bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20"
-                : "bg-amber-500/10 text-amber-400 hover:bg-amber-500/20"
+          <span
+            className={`px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap ${
+              t.approved ? "bg-emerald-500/10 text-emerald-400" : "bg-amber-500/10 text-amber-400"
             }`}
           >
-            {t.approved ? "Approved" : "Pending — Click to Approve"}
-          </button>
+            {t.approved ? "Approved" : "Pending approval"}
+          </span>
         ) : (
           <span className="text-xs text-muted-foreground">Not registered</span>
         ),
@@ -175,7 +173,29 @@ function TeachersPage() {
       key: "actions",
       label: "",
       render: (t: Teacher) => (
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
+          {isPending(t) && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setApproval(t, true);
+              }}
+              className="px-2.5 py-1 rounded-md bg-emerald-600 text-white text-xs font-medium hover:bg-emerald-700 transition-colors"
+            >
+              Approve
+            </button>
+          )}
+          {t.user_id && t.approved && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setApproval(t, false);
+              }}
+              className="text-xs text-amber-400 hover:underline"
+            >
+              Revoke
+            </button>
+          )}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -236,7 +256,16 @@ function TeachersPage() {
           </div>
         }
       />
-      <DataTable data={teachers as Record<string, unknown>[]} columns={columns as any} />
+      {pendingCount > 0 && (
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 mb-4 rounded-lg border border-amber-500/30 bg-amber-500/10 text-xs sm:text-sm text-amber-400">
+          <UserCheck className="h-4 w-4 shrink-0" />
+          <span>
+            {pendingCount} teacher{pendingCount === 1 ? " is" : "s are"} waiting for approval. Click{" "}
+            <strong>Approve</strong> next to their name to give them access.
+          </span>
+        </div>
+      )}
+      <DataTable data={sortedTeachers as Record<string, unknown>[]} columns={columns as any} />
 
       {showModal && editTeacher && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
