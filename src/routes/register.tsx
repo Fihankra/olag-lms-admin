@@ -28,24 +28,28 @@ function RegisterPage() {
 
     setSubmitting(true);
     try {
+      // Check before creating the auth account so a taken ID doesn't leave an orphaned login
+      const { data: available, error: checkError } = await supabase.rpc("teacher_id_available", {
+        _teacher_id: teacherId.trim(),
+      });
+      if (checkError) throw checkError;
+      if (!available) throw new Error("This Teacher ID is already registered");
+
       const { data: authData, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: { data: { password_changed: true } },
       });
       if (signUpError) throw signUpError;
-      if (!authData.user) throw new Error("Signup failed");
+      if (!authData.session) {
+        throw new Error("Signup did not return a session. Please contact the admin.");
+      }
 
-      const userId = authData.user.id;
-
-      await supabase.from("user_roles").insert({ user_id: userId, role: "teacher" });
-
-      await supabase.from("teachers").insert({
-        teacher_id: teacherId.trim(),
-        name: name.trim(),
-        user_id: userId,
-        approved: false,
+      const { error: registerError } = await supabase.rpc("register_teacher", {
+        _teacher_id: teacherId.trim(),
+        _name: name.trim(),
       });
+      if (registerError) throw registerError;
 
       navigate({ to: "/login" });
     } catch (err: any) {

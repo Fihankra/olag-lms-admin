@@ -993,6 +993,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_set_teacher_password: {
+        Args: { _password: string; _teacher_id: string }
+        Returns: undefined
+      }
+      admin_teacher_emails: {
+        Args: never
+        Returns: { email: string; teacher_id: string }[]
+      }
       get_student_for_login: {
         Args: { _raw_password: string; _student_id: string }
         Returns: {
@@ -1015,6 +1023,14 @@ export type Database = {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
         }
+        Returns: boolean
+      }
+      register_teacher: {
+        Args: { _name: string; _teacher_id: string }
+        Returns: undefined
+      }
+      teacher_id_available: {
+        Args: { _teacher_id: string }
         Returns: boolean
       }
     }
