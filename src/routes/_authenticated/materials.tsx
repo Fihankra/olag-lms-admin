@@ -15,6 +15,8 @@ import {
   FileAudio,
   File,
   Settings2,
+  Pencil,
+  Lock,
 } from "lucide-react";
 import { toastResult } from "../../lib/supabase-toast";
 
@@ -75,6 +77,8 @@ function MaterialsPage() {
 
   // Modals
   const [showNewFolder, setShowNewFolder] = useState(false);
+  const [renamingFolder, setRenamingFolder] = useState<Folder | null>(null);
+  const [onlyMine, setOnlyMine] = useState(false);
   const [showAccessModal, setShowAccessModal] = useState<Folder | null>(null);
   const [folderName, setFolderName] = useState("");
   const [uploading, setUploading] = useState(false);
@@ -85,12 +89,9 @@ function MaterialsPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Everyone can view all folders; only the creator (or an admin) can change one
   function canManageFolder(folder: Folder) {
     return isAdmin || (userId != null && folder.created_by === userId);
-  }
-
-  function canManageFile(file: FileItem) {
-    return isAdmin || (userId != null && file.created_by === userId);
   }
 
   async function fetchFolders() {
@@ -126,14 +127,14 @@ function MaterialsPage() {
       .not("user_id", "is", null);
     const map = new Map<string, string>();
     if (data) for (const t of data as TeacherUser[]) map.set(t.user_id, t.name);
-    // Add admin fallback
-    if (userId && !map.has(userId)) map.set(userId, "Admin");
     setCreators(map);
   }
 
   function creatorName(id: string | null) {
     if (!id) return "Unknown";
-    return creators.get(id) ?? "Unknown";
+    if (id === userId) return "you";
+    // Non-teacher creators are admins
+    return creators.get(id) ?? "Admin";
   }
 
   useEffect(() => {
@@ -158,7 +159,21 @@ function MaterialsPage() {
     fetchFolders();
   }
 
-  async function deleteFolder(id: string) {
+  async function renameFolder() {
+    if (!renamingFolder || !folderName.trim()) return;
+    const name = folderName.trim();
+    const { error } = await supabase.from("folders").update({ name }).eq("id", renamingFolder.id);
+    if (!toastResult(error)) return;
+    toastResult(null, "Folder renamed");
+    if (activeFolder?.id === renamingFolder.id) setActiveFolder({ ...activeFolder, name });
+    setRenamingFolder(null);
+    setFolderName("");
+    fetchFolders();
+  }
+
+  async function deleteFolder(folder: Folder) {
+    if (!confirm(`Delete folder "${folder.name}" and all its files?`)) return;
+    const id = folder.id;
     const { data: folderFiles } = await supabase
       .from("files")
       .select("file_url")
@@ -219,6 +234,7 @@ function MaterialsPage() {
   }
 
   async function deleteFile(file: FileItem) {
+    if (!confirm(`Delete "${file.file_name}"?`)) return;
     const parts = file.file_url.split("/materials/");
     if (parts[1]) await supabase.storage.from("materials").remove([parts[1]]);
     const { error } = await supabase.from("files").delete().eq("id", file.id);
@@ -272,31 +288,77 @@ function MaterialsPage() {
     return parts.join(", ");
   }
 
+  const visibleFolders = onlyMine ? folders.filter((f) => f.created_by === userId) : folders;
+
+  const renameModal = renamingFolder && (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="bg-card rounded-lg border border-border p-6 w-full max-w-md mx-4">
+        <h2 className="text-lg font-semibold mb-4">Rename Folder</h2>
+        <input
+          placeholder="Folder name"
+          value={folderName}
+          onChange={(e) => setFolderName(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && renameFolder()}
+          className="w-full px-3 py-2 rounded-md bg-input border border-border text-foreground text-sm mb-4"
+          autoFocus
+        />
+        <div className="flex gap-2 justify-end">
+          <button
+            onClick={() => setRenamingFolder(null)}
+            className="px-4 py-2 text-sm rounded-md bg-secondary text-secondary-foreground"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={renameFolder}
+            className="px-4 py-2 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   // ---- File view inside folder ----
   if (activeFolder) {
+    const canManage = canManageFolder(activeFolder);
     return (
       <div>
         <PageHeader
           title={activeFolder.name}
-          description={isAdmin ? `Access: ${accessLabel(activeFolder)}` : "Learning materials"}
+          description={`Created by ${creatorName(activeFolder.created_by)} · Student access: ${accessLabel(activeFolder)}`}
           actions={
-            <div className="flex gap-2">
-              {isAdmin && (
+            canManage ? (
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setFolderName(activeFolder.name);
+                    setRenamingFolder(activeFolder);
+                  }}
+                  className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5"
+                >
+                  <Pencil className="h-4 w-4" /> Rename
+                </button>
                 <button
                   onClick={() => openAccessModal(activeFolder)}
                   className="px-3 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center gap-1.5"
                 >
                   <Settings2 className="h-4 w-4" /> Access
                 </button>
-              )}
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                disabled={uploading}
-                className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5 disabled:opacity-50"
-              >
-                <Upload className="h-4 w-4" /> {uploading ? "Uploading…" : "Upload Files"}
-              </button>
-            </div>
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploading}
+                  className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                >
+                  <Upload className="h-4 w-4" /> {uploading ? "Uploading…" : "Upload Files"}
+                </button>
+              </div>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-muted text-muted-foreground text-xs font-medium">
+                <Lock className="h-3.5 w-3.5" /> View only
+              </span>
+            )
           }
         />
 
@@ -316,15 +378,21 @@ function MaterialsPage() {
           <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
             <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
             <h2 className="text-lg font-semibold mb-2">No files yet</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Upload files to this folder to get started.
-            </p>
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
-            >
-              <Upload className="h-4 w-4" /> Upload Files
-            </button>
+            {canManage ? (
+              <>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Upload files to this folder to get started.
+                </p>
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
+                >
+                  <Upload className="h-4 w-4" /> Upload Files
+                </button>
+              </>
+            ) : (
+              <p className="text-sm text-muted-foreground">This folder is empty.</p>
+            )}
           </div>
         ) : (
           <div className="bg-card rounded-lg border border-border divide-y divide-border">
@@ -348,10 +416,10 @@ function MaterialsPage() {
                     <span className="text-xs text-muted-foreground">
                       {formatSize(file.file_size)} ·{" "}
                       {new Date(file.created_at).toLocaleDateString()}
-                      {isAdmin && ` · by ${creatorName(file.created_by)}`}
+                      {` · by ${creatorName(file.created_by)}`}
                     </span>
                   </div>
-                  {canManageFile(file) && (
+                  {canManage && (
                     <button
                       onClick={() => deleteFile(file)}
                       className="p-1.5 rounded hover:bg-destructive/10 text-destructive transition-colors"
@@ -365,6 +433,8 @@ function MaterialsPage() {
             })}
           </div>
         )}
+
+        {renameModal}
 
         {showAccessModal && (
           <AccessModal
@@ -392,7 +462,10 @@ function MaterialsPage() {
         description="Organize and distribute learning materials"
         actions={
           <button
-            onClick={() => setShowNewFolder(true)}
+            onClick={() => {
+              setFolderName("");
+              setShowNewFolder(true);
+            }}
             className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
           >
             <FolderPlus className="h-4 w-4" /> New Folder
@@ -400,17 +473,38 @@ function MaterialsPage() {
         }
       />
 
-      {folders.length === 0 ? (
+      <div className="flex rounded-md border border-border overflow-hidden w-fit mb-4">
+        {[
+          { value: false, label: "All folders" },
+          { value: true, label: "My folders" },
+        ].map((o) => (
+          <button
+            key={o.label}
+            onClick={() => setOnlyMine(o.value)}
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+              onlyMine === o.value
+                ? "bg-primary text-primary-foreground"
+                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            }`}
+          >
+            {o.label}
+          </button>
+        ))}
+      </div>
+
+      {visibleFolders.length === 0 ? (
         <div className="bg-card rounded-lg border border-border p-12 flex flex-col items-center justify-center text-center">
           <FolderOpen className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-lg font-semibold mb-2">No folders yet</h2>
+          <h2 className="text-lg font-semibold mb-2">
+            {onlyMine ? "You haven't created any folders" : "No folders yet"}
+          </h2>
           <p className="text-sm text-muted-foreground">
             Create a folder to start uploading materials.
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {folders.map((folder) => (
+          {visibleFolders.map((folder) => (
             <div
               key={folder.id}
               className="bg-card rounded-lg border border-border p-4 hover:border-primary/40 transition-colors group"
@@ -423,35 +517,45 @@ function MaterialsPage() {
                   <FolderOpen className="h-5 w-5 text-primary shrink-0" />
                   <span className="font-medium text-foreground truncate">{folder.name}</span>
                 </button>
-                <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {isAdmin && (
+                {canManageFolder(folder) ? (
+                  <div className="flex gap-1 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+                    <button
+                      onClick={() => {
+                        setFolderName(folder.name);
+                        setRenamingFolder(folder);
+                      }}
+                      className="p-1 rounded hover:bg-accent text-muted-foreground"
+                      title="Rename folder"
+                    >
+                      <Pencil className="h-3.5 w-3.5" />
+                    </button>
                     <button
                       onClick={() => openAccessModal(folder)}
                       className="p-1 rounded hover:bg-accent text-muted-foreground"
-                      title="Access settings"
+                      title="Student access"
                     >
                       <Settings2 className="h-3.5 w-3.5" />
                     </button>
-                  )}
-                  {canManageFolder(folder) && (
                     <button
-                      onClick={() => deleteFolder(folder.id)}
+                      onClick={() => deleteFolder(folder)}
                       className="p-1 rounded hover:bg-destructive/10 text-destructive"
                       title="Delete folder"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <span title="View only — created by someone else">
+                    <Lock className="h-3.5 w-3.5 text-muted-foreground" />
+                  </span>
+                )}
               </div>
               <div className="text-xs text-muted-foreground space-y-0.5">
-                {isAdmin && <p>Access: {accessLabel(folder)}</p>}
-                {isAdmin && (
-                  <p>
-                    Created by {creatorName(folder.created_by)} ·{" "}
-                    {new Date(folder.created_at).toLocaleDateString()}
-                  </p>
-                )}
+                <p>Student access: {accessLabel(folder)}</p>
+                <p>
+                  Created by {creatorName(folder.created_by)} ·{" "}
+                  {new Date(folder.created_at).toLocaleDateString()}
+                </p>
               </div>
             </div>
           ))}
@@ -487,6 +591,8 @@ function MaterialsPage() {
           </div>
         </div>
       )}
+
+      {renameModal}
 
       {showAccessModal && (
         <AccessModal
