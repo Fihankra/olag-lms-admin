@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { supabase } from "@/integrations/supabase/client";
 
 type DeviceReportEntry = {
@@ -12,7 +11,8 @@ type DeviceReportEntry = {
 };
 
 type BatchReportInput = {
-  week_start: string;
+  /** YYYY-MM-DD, any date up to today */
+  report_date: string;
   entries: DeviceReportEntry[];
 };
 
@@ -47,8 +47,12 @@ export async function submitBatchReport(data: BatchReportInput): Promise<{
     return { error: "You are not assigned as a form master." };
   }
 
-  const deadlineError = await checkDeadline(data.week_start);
-  if (deadlineError) return { error: deadlineError };
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(data.report_date)) {
+    return { error: "Please choose a valid report date." };
+  }
+  if (data.report_date > localDateString(new Date())) {
+    return { error: "You can't submit a report for a future date." };
+  }
 
   const { data: existingReports } = await supabase
     .from("reports")
@@ -56,7 +60,7 @@ export async function submitBatchReport(data: BatchReportInput): Promise<{
       "id, device_id, kiosk_status, device_condition, fault_description, missing_status, missing_accessories, lms_status",
     )
     .eq("class_id", teacher.assigned_class_id)
-    .eq("week_start", data.week_start)
+    .eq("report_date", data.report_date)
     .eq("teacher_id", teacher.id);
 
   const existingMap = new Map(
@@ -67,7 +71,7 @@ export async function submitBatchReport(data: BatchReportInput): Promise<{
     teacher_id: string;
     class_id: string;
     device_id: string;
-    week_start: string;
+    report_date: string;
     kiosk_status: boolean;
     device_condition: string;
     fault_description: string | null;
@@ -96,7 +100,7 @@ export async function submitBatchReport(data: BatchReportInput): Promise<{
         teacher_id: teacher.id,
         class_id: teacher.assigned_class_id,
         device_id: entry.device_id,
-        week_start: data.week_start,
+        report_date: data.report_date,
         kiosk_status: entry.kiosk_status,
         device_condition: entry.device_condition,
         fault_description: entry.fault_description || null,
@@ -145,72 +149,10 @@ export async function submitBatchReport(data: BatchReportInput): Promise<{
   };
 }
 
-export async function getDeadlineSetting(): Promise<{
-  day: number;
-  hour: number;
-  minute: number;
-  weekStartDay: number;
-}> {
-  const defaults = { day: 2, hour: 23, minute: 59, weekStartDay: 2 };
-
-  const { data } = await supabase
-    .from("settings")
-    .select("key, value")
-    .in("key", ["report_deadline", "report_week_start"]);
-
-  if (!data?.length) return defaults;
-
-  const result = { ...defaults };
-  for (const row of data) {
-    const v = row.value as Record<string, number>;
-    if (row.key === "report_deadline") {
-      result.day = v.day ?? defaults.day;
-      result.hour = v.hour ?? defaults.hour;
-      result.minute = v.minute ?? defaults.minute;
-    }
-    if (row.key === "report_week_start") {
-      result.weekStartDay = v.day ?? defaults.weekStartDay;
-    }
-  }
-  return result;
-}
-
-async function checkDeadline(weekStart: string): Promise<string | null> {
-  const { data } = await supabase
-    .from("settings")
-    .select("key, value")
-    .in("key", ["report_deadline", "report_week_start"]);
-
-  const deadlineRow = data?.find((r) => r.key === "report_deadline")?.value as any;
-  const weekStartRow = data?.find((r) => r.key === "report_week_start")?.value as any;
-
-  const deadlineDay: number = deadlineRow?.day ?? 2;
-  const hour: number = deadlineRow?.hour ?? 23;
-  const minute: number = deadlineRow?.minute ?? 59;
-  const weekStartDay: number = weekStartRow?.day ?? 2;
-
-  const startDate = new Date(weekStart + "T00:00:00Z");
-
-  let dayOffset = deadlineDay - weekStartDay;
-  if (dayOffset < 0) dayOffset += 7;
-
-  const deadlineDate = new Date(startDate);
-  deadlineDate.setUTCDate(startDate.getUTCDate() + dayOffset);
-  deadlineDate.setUTCHours(hour, minute, 59, 999);
-
-  if (new Date() > deadlineDate) {
-    const dayNames = [
-      "",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
-    return `The deadline for this week's reports was ${dayNames[deadlineDay]} at ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}. Submissions are closed.`;
-  }
-
-  return null;
+/** YYYY-MM-DD in the user's local timezone */
+export function localDateString(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }

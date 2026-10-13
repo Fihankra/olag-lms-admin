@@ -796,7 +796,7 @@ export type Database = {
           missing_accessories: string[] | null
           missing_status: boolean | null
           teacher_id: string
-          week_start: string
+          report_date: string
         }
         Insert: {
           class_id: string
@@ -810,7 +810,7 @@ export type Database = {
           missing_accessories?: string[] | null
           missing_status?: boolean | null
           teacher_id: string
-          week_start: string
+          report_date: string
         }
         Update: {
           class_id?: string
@@ -824,7 +824,7 @@ export type Database = {
           missing_accessories?: string[] | null
           missing_status?: boolean | null
           teacher_id?: string
-          week_start?: string
+          report_date?: string
         }
         Relationships: [
           {
